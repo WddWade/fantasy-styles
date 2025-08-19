@@ -1,0 +1,16 @@
+/*
+  共用
+  datepicker
+*/
+
+.datepicker {
+  table {
+    tr {
+      td {
+        &.selected {
+          background-color: #999999;
+        }
+      }
+    }
+  }
+}

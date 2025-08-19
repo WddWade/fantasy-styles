@@ -1,0 +1,29 @@
+/*
+  共用
+  ams 頁面 log table
+*/
+
+.log_table {
+  width: 100%;
+
+  thead {
+    tr {
+      background-color: #2e2e2e;
+      color: #fff;
+    }
+  }
+
+  tbody {
+    tr {
+      &:hover {
+        cursor: pointer;
+        background-color: #eee;
+      }
+    }
+  }
+
+  th,
+  td {
+    padding: 10px;
+  }
+}

@@ -1,0 +1,19 @@
+/*
+  共用
+  fms 檔案編輯 自訂網址名稱欄位
+*/
+
+.fms_url_name {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  p {
+    flex: 1;
+  }
+
+  input {
+    min-width: 200px;
+  }
+}
+

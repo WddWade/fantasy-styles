@@ -1,0 +1,36 @@
+/*
+  共用
+  cms 編輯設定 段落內容 圖片/影片管理 項目
+*/
+
+.article_video {
+  .ThreeContent {
+    display: flex;
+    gap: 30px;
+  }
+
+  li {
+    padding: 10px 0 10px 10px !important;
+  }
+
+  .picture_box {
+    padding: 10px;
+  }
+
+  .check_box {
+    min-width: 20px !important;
+  }
+
+  .frame {
+    margin-right: 0px !important;
+    margin-bottom: 0px !important;
+  }
+}
+
+.article_video_left {
+  width: 180px;
+}
+
+.article_video_right {
+  flex: 1;
+}

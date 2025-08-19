@@ -1,0 +1,273 @@
+/*
+  共用
+  select2MultiNew 好像是套件，考慮更換到 plugin 資料夾
+  檔案編輯 多選選項 顯示最新 100 筆
+*/
+
+/* 全選按鈕 */
+.select2MultiNew_all {
+  margin: 2px;
+  padding: 8px 12px;
+  display: flex;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  color: #000000;
+  box-sizing: border-box;
+  align-items: center;
+  user-select: none;
+
+  &::before {
+    content: " ";
+    width: 6px;
+    height: 10px;
+    border-right: 2px solid #11cfbd;
+    border-bottom: 2px solid #11cfbd;
+    transform: rotate(40deg);
+    margin-right: 10px;
+  }
+}
+
+/* 清除全選按鈕 */
+.select2MultiNew_unall {
+  margin: 2px;
+  padding: 8px 12px;
+  display: flex;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  color: #000000;
+  box-sizing: border-box;
+  align-items: center;
+  user-select: none;
+
+  &::before {
+    content: "X";
+    color: #7f7f7f;
+    font-weight: 700;
+    margin-right: 5px;
+  }
+}
+
+.select2MultiNew {
+  width: 100%;
+  min-height: 42px;
+  border-radius: 0;
+  border: solid 1px #c7c7c7;
+  background-color: #efefef;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
+  flex-wrap: wrap;
+
+  span {
+    color: #fff;
+    background-color: #10cfbd;
+    padding: 7px 10px;
+    user-select: none;
+    display: flex;
+    position: relative;
+    padding-left: 28px;
+    cursor: move;
+
+    a {
+      height: 28px;
+      position: absolute;
+      width: 28px;
+      left: 0;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+  }
+}
+
+.select2MultiNew_option {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  flex-wrap: wrap;
+  min-height: 150px;
+  max-height: 350px;
+  overflow: auto;
+  border: 1px solid #c7c7c7;
+  align-items: flex-start;
+  border-top: 0px;
+  user-select: none;
+
+  span {
+    background: #ffffff;
+    margin: 2px;
+    padding: 8px 12px;
+    display: flex;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    border: 1px solid #c7c7c7;
+    user-select: none;
+
+    &.active {
+      background: #ffd683;
+      margin: 2px;
+      padding: 8px 12px;
+      display: flex;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      border: 1px solid #ffffff;
+      color: #000000;
+      box-sizing: border-box;
+
+      &::before {
+        content: " ";
+        width: 6px;
+        height: 10px;
+        border-right: 2px solid #000000;
+        border-bottom: 2px solid #000000;
+        transform: rotate(40deg);
+        margin-right: 10px;
+      }
+    }
+
+    &::before {
+      content: " ";
+      width: 6px;
+      height: 10px;
+      border-right: 0px solid #ffffff;
+      border-bottom: 2px solid #dfdfdf;
+      transform: rotate(0deg);
+      margin-right: 10px;
+    }
+  }
+
+  /* 2025.06.20 Ash 同步 Leon 新增 */
+  a {
+    background: #ffffff;
+    margin: 2px;
+    padding: 8px 12px;
+    display: flex;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    user-select: none;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    &::after {
+      content: "\f105";
+      font-size: 16px;
+      font-family: FontAwesome;
+      text-shadow: none;
+      margin: 0;
+      display: block;
+      -webkit-transition: 0.12s ease;
+      -o-transition: 0.12s ease;
+      transition: 0.12s ease;
+      -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+      transform-origin: center;
+    }
+
+    &:hover,
+    &.active {
+      background: #f5f5f5;
+    }
+  }
+}
+
+/* 2025.06.20 Ash 同步 Leon 新增 */
+.select2MultiNew_option_relation {
+  display: flex;
+  flex: 1;
+  gap: 10px;
+
+  div {
+    overflow: auto;
+    flex: 1;
+    max-height: 300px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &.hide {
+    display: none;
+  }
+}
+
+.select2MultiNew_option_item,
+.select2MultiNew_option_item_search {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+
+  &.hide {
+    display: none;
+  }
+}
+
+.select2MultiNew_search {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  border: 1px solid #c7c7c7;
+  border-bottom: 0;
+  padding: 5px;
+
+  div {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+
+    &::before {
+      content: " ";
+      width: 5px;
+      height: 20px;
+      padding-right: 20px;
+      border-left: 2px solid #11cfbd;
+    }
+  }
+
+  input {
+    flex: 1;
+    width: 120px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    padding: 0px 10px;
+    border: 0;
+    background-color: transparent;
+  }
+
+  a {
+    width: 120px;
+    height: 40px;
+    background-color: #434343;
+    color: #fff !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    cursor: pointer;
+  }
+}
+
+.select2MultiNewtip {
+  padding: 0px 0px 10px 15px;
+  color: #ff0000;
+  background-color: #f5f5f5;
+  border: 1px solid #c7c7c7;
+  border-bottom: 0;
+  border-top: 0;
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}

@@ -1,0 +1,46 @@
+/*
+  共用
+  cms 切換到正式站資料按鈕
+*/
+
+/* header 按鈕 */
+.cms_change {
+  a {
+    color: #F95775;
+  }
+}
+
+/* 點進編輯後右側設定選單中按鈕 */
+.CmsChangeBtn {
+  position: absolute;
+  top: 15px;
+  width: 240px;
+
+  a {
+    display: block;
+    background-color: #F95775;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.Cms_review {
+  .cms_change {
+    a {
+      color: #11b0a1;
+    }
+  }
+
+  .CmsChangeBtn {
+    a {
+      background-color: #11b0a1;
+    }
+  }
+}
+

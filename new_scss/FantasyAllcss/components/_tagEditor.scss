@@ -1,0 +1,43 @@
+/*
+  共用
+  tag editor
+  2025.06.19 Ash -> 目前在頁面上找尋不到
+*/
+
+.tag-editor {
+  border: 1px solid #c7c7c7;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  input {
+    border: none;
+    outline: none;
+    flex: 1;
+  }
+}
+
+.tag-item {
+  color: #fff;
+  background-color: #10cfbd;
+  padding: 7px 30px 7px 10px;
+  user-select: none;
+  display: flex;
+  position: relative;
+  cursor: move;
+
+  .tag-remove {
+    margin-left: 5px;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+  }
+}

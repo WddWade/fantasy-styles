@@ -1,0 +1,18 @@
+/* 批次修改視窗 */
+
+.batch-modify {
+  .modal-dialog {
+    width: 70vw;
+    max-width: none;
+  }
+
+  .modal-content {
+    max-height: 70vh;
+    overflow: hidden;
+
+    .modal-header  {
+      min-height: 70px;
+    }
+  }
+}
+

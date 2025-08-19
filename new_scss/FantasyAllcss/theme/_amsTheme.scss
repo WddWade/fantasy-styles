@@ -1,0 +1,110 @@
+@import "./themeMixin.scss";
+
+/* ams theme */
+.ams_theme {
+  @include main-nav($ams-main);
+  @include main-body($ams-main, ams);
+  @include dark-theme($ams-main, ams);
+  @include pace($ams-main);
+  @include tips($ams-main);
+  @include input-type($ams-main, ams);
+  @include select2($ams-main);
+  @include response($ams-main);
+}
+
+.ams_theme {
+  .productImage {
+    .has_img:hover .box {
+      border-color: #3a9eea;
+    }
+
+    .frame .box .icon {
+      background-color: #3a9eea;
+    }
+
+    .tips {
+      margin: 0;
+    }
+  }
+}
+
+.quill_sidebarWall {
+  width: 100px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999999999999999;
+  background-color: rgba(255, 255, 255, 0);
+
+  &.close {
+    display: none;
+  }
+}
+
+.sidebar-menu .body-list > li > ul.sub-menu li > a > .arrow::before, .sidebar-menu .body-list > li > ul.sub-menu li > a > .arrow.open::before {
+  margin: 0;
+}
+
+.content-sidebar {
+  .sidebar-menu .body-list li {
+    .i_open {
+      display: none;
+    }
+    &.open {
+      > a {
+        .i_open {
+          display: block;
+        }
+
+        .i_close {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .body-list {
+    li {
+      position: relative;
+    }
+
+    a {
+      position: relative;
+      overflow: visible !important;
+    }
+  }
+}
+
+.main-table .box.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.table-box {
+  .content-head {
+    padding: 0px 50px 30px 50px;
+
+    .subtitle {
+      margin-top: 50px;
+    }
+  }
+
+  .card-block tbody tr .box.text_pic .head_img {
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+
+    img {
+      border-radius: 50%;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.hiddenArea_frame_box .editorHeader .info {
+  width: 100%;
+  max-width: none;
+}

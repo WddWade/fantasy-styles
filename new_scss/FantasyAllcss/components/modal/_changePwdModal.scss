@@ -1,0 +1,26 @@
+/*
+  共用
+  更換密碼燈箱
+*/
+
+.change_pwd_modal {
+  position: absolute;
+  top: 0;
+  z-index: 999;
+  background-color: #000000c7;
+  width: 100%;
+  height: 100vh;
+  display: none !important;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+
+  &.active {
+    display: flex !important;
+  }
+
+  .changePwd_sec {
+    background-color: #fff;
+  }
+}
+

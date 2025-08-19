@@ -1,0 +1,342 @@
+@mixin rwdmin($min) {
+  @media only screen and (min-width: #{$min}px) {
+    @content;
+  }
+}
+
+@mixin rwdmax($max) {
+  @media only screen and (max-width: #{$max}px) {
+    @content;
+  }
+}
+
+
+$basic_rwd: 900;
+
+// article 間間距
+$article-gap: 100px;
+$article-gap_rwd: 80px;
+
+// 影像左右間間距
+$cover-LR-gap: 12px;
+$cover-LR-gap_rwd: 12px;
+
+// 影像間的上下間距
+$cover-TB-gap: 30px;
+$cover-TB-gap_rwd: 10px;
+
+// 影像和其他的左右間距
+$img-cover-LR-gap: 30px;
+$img-cover-LR-gap_rwd: 0;
+
+// 影像和其他的上下間距
+$img-cover-TB-gap: 40px;
+$img-cover-TB-gap_rwd: 30px;
+
+// 文字左右間間距 rwd 統一為 0
+$text-LR-gap: 40px;
+
+// 文字 padding
+$text-padding: 20px;
+$text-padding_rwd: 0;
+
+// _H 和其他的間距
+$H-gap: 15px;
+$H-gap_rwd: 15px;
+
+// _subH 和其他的間距
+$subH-gap: 15px;
+$subH-gap_rwd: 15px;
+
+// 按鈕和其他的間距
+$button-cover-gap: 30px;
+$button-cover-gap_rwd: 20px;
+
+// swiper pagination 和其他的上下間距
+$pagination-TB-gap: 10px;
+$pagination-TB-gap_rwd: 0;
+
+// 文繞圖修正
+$wrapping-gap: 20px;
+
+// type full padding
+$typeFull-padding: 120px 40px 115px;
+$typeFull-padding_rwd: 30px 20px;
+
+// type full content padding
+$typeFull-content-padding: 85px 75px 100px;
+$typeFull-content-padding_rwd: 20px;
+
+%_contentWrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+%_imgCover {
+  margin-bottom: #{-$cover-TB-gap};
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-height: 100%;
+
+  .swiper {
+    width: 100%;
+  }
+
+  @include rwdmax($basic_rwd) {
+    margin-bottom: #{-$cover-TB-gap_rwd};
+  }
+}
+
+%_cover {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $cover-TB-gap;
+  width: 100%;
+
+  @include rwdmax($basic_rwd) {
+    margin-bottom: $cover-TB-gap_rwd
+  }
+}
+
+%_photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  video-player {
+    width: 100%;
+  }
+
+  iframe {
+    width: 100%;
+  }
+}
+
+%_wordCover {
+  margin-top: $img-cover-TB-gap;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  @include rwdmax($basic_rwd) {
+    margin-top: $img-cover-TB-gap_rwd;
+  }
+}
+
+%_H {
+  padding: 0 $text-padding;
+  width: 100%;
+  font-size: 22px;
+  line-height: 1.3;
+
+  &:not(:last-child) {
+    margin-bottom: $H-gap;
+  }
+
+  @include rwdmax($basic_rwd) {
+    padding: $text-padding_rwd;
+    font-size: 20px;
+    line-height: 1.25;
+
+    &:not(:last-child) {
+      margin-bottom: $H-gap_rwd;
+    }
+  }
+}
+
+%_subH {
+  padding: 0 $text-padding;
+  width: 100%;
+  font-size: 18px;
+  line-height: 1.25;
+
+  &:not(:last-child) {
+    margin-bottom: $subH-gap;
+  }
+
+  @include rwdmax($basic_rwd) {
+    padding: $text-padding_rwd;
+    font-size: 16px;
+    line-height: 1.2;
+
+    &:not(:last-child) {
+      margin-bottom: $subH-gap_rwd;
+    }
+  }
+}
+
+%_P {
+  padding: 0 $text-padding;
+  width: 100%;
+  font-size: 16px;
+  line-height: 1.6;
+
+  .instagram-media.instagram-media-rendered {
+    display: inline-block !important;
+    margin: 15px 0 !important;
+    max-width: 500px !important;
+    width: 100% !important;
+    min-width: unset !important
+  }
+
+  a:not(._button) {
+    color: #007aff;
+  }
+
+  ol,
+  ul {
+    display: inline-block;
+    text-align: left;
+
+    li {
+      margin-left: 16px;
+    }
+  }
+
+  ol {
+    list-style: decimal !important;
+  }
+
+  ul {
+    list-style: disc !important;
+  }
+
+  @include rwdmax($basic_rwd) {
+    padding: $text-padding_rwd;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}
+
+%_description {
+  padding: 0;
+  margin-top: 10px;
+  width: 100%;
+  font-size: 14px;
+
+  @include rwdmax($basic_rwd) {
+    font-size: 12px;
+  }
+}
+
+%_buttonCover {
+  display: block;
+  text-align: left;
+
+  &:not(:only-child) {
+    margin-top: $button-cover-gap;
+  }
+
+  @include rwdmax($basic_rwd) {
+    &:not(:only-child) {
+      margin-top: $button-cover-gap_rwd;
+    }
+  }
+}
+
+%_button {
+  display: inline-block;
+  position: relative;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  font-size: 14px;
+  z-index: 0;
+
+  span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity .3s;
+  }
+
+  &:hover {
+    @include rwdmin($basic_rwd) {
+      span {
+        opacity: 1
+      }
+    }
+  }
+
+  @include rwdmax($basic_rwd) {
+    font-size: 12px;
+  }
+}
+
+%swiper_pagination {
+  margin: #{-$pagination-TB-gap} 0 0;
+  display: block;
+  position: relative;
+  top: auto;
+  bottom: auto;
+  left: auto;
+  right: auto;
+
+  @include rwdmax($basic_rwd) {
+    margin: #{$pagination-TB-gap_rwd} 0 0;
+  }
+}
+
+%swiper_pagination_bullet {
+  margin: 0 10px;
+  background-color: #c4c4c4;
+  width: 6px;
+  height: 6px;
+  cursor: pointer;
+
+  &.swiper-pagination-bullet-active {
+    background-color: #000;
+  }
+}
+
+%swiper_button_cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+%swiper_button_common {
+  position: absolute;
+  top: 50%;
+  margin: 0;
+  pointer-events: auto;
+  width: 20px;
+  height: 20px;
+
+  &::after {
+    content: "";
+  }
+}
+
+%swiper_button_next {
+  @extend %swiper_button_common;
+
+  right: 20px;
+  transform: translateY(-50%) rotate(-45deg);
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+
+%swiper_button_prev {
+  @extend %swiper_button_common;
+
+  left: 20px;
+  transform: translateY(-50%) rotate(45deg);
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+
+
+

@@ -1,0 +1,35 @@
+/*
+  共用
+  verify required 找不到
+*/
+
+.verify_required {
+  background-color: #ffecd6 !important;
+}
+
+.inventory {
+  &:has(.verify_required) {
+    > .title {
+      > .subtitle {
+        color: #f58300;
+
+        &::before {
+          content: "(必填)";
+          color: #f58300;
+          margin-right: 5px;
+        }
+      }
+    }
+
+    > .subtitle {
+      color: #f58300;
+
+      &::before {
+        content: "(必填)";
+        color: #f58300;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+

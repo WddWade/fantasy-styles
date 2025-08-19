@@ -1,0 +1,291 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Noto+Sans+TC:wght@100..900&display=swap");
+
+:root {
+  --baseFont: "Microsoft JhengHei", "微軟正黑體","Microsoft YaHei",  sans-serif;
+}
+
+body {
+  font-family: var(--baseFont);
+  color: #626262;
+  font-size: 14px;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  direction: ltr;
+  width: 100vw;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+  .open_hideBlock {
+    .dataTables_scrollBody {
+      overflow-y: hidden !important;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.6);
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 11;
+    }
+  }
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+div,
+section,
+article {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--baseFont);
+}
+
+a,
+a:active,
+a:focus,
+a:hover {
+  outline: 0 !important;
+  text-decoration: none;
+}
+
+a {
+  color: #584b8d;
+  text-shadow: none !important;
+	-webkit-transition: color 0.1s linear 0s, background-color 0.1s linear 0s, opacity 0.2s linear 0s !important;
+	-o-transition: color 0.1s linear 0s, background-color 0.1s linear 0s, opacity 0.2s linear 0s !important;
+	transition: color 0.1s linear 0s, background-color 0.1s linear 0s, opacity 0.2s linear 0s !important;
+}
+
+p {
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  list-style-type: none;
+  padding: 0;
+  line-height: 1;
+}
+
+input {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+textarea {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+button,
+input,
+label,
+select,
+textarea {
+  font-family: var(--baseFont);
+  font-size: 0.8125rem;
+  font-weight: normal;
+  line-height: 20px;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+input:disabled,
+textarea:disabled {
+  background-color: #fff;
+  cursor: not-allowed;
+}
+
+*,
+::after,
+::before {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+/* 排版用類別 */
+* {
+  .t-a-c {
+    text-align: center;
+  }
+}
+
+.t-a-l {
+  text-align: left;
+}
+
+.t-a-r {
+  text-align: right;
+}
+
+.mrg-0 {
+  margin: 0;
+}
+
+.mrg-b-5 {
+  margin: 0 0 5px 0;
+}
+
+.mrg-l-10 {
+  margin: 0 0 0 10px;
+}
+
+.mrg-l-20 {
+  margin: 0 0 0 20px;
+}
+
+.mrg-l-30 {
+  margin: 0 0 0 30px;
+}
+
+.mrg-r-10 {
+  margin: 0 10px 0 0;
+}
+
+.mrg-r-20 {
+  margin: 0 20px 0 0;
+}
+
+.mrg-r-30 {
+  margin: 0 30px 0 0;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.w-50 {
+  width: 100%;
+}
+
+.nor_style {
+  display: block;
+}
+
+.row_style {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.cul_style {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.center_style {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.f-900 {
+  font-weight: 900;
+}
+
+.modal.show {
+  display: block;
+}
+
+.container-fluid {
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+/*因為表格內容放置右邊隱藏選單的關係，所以把表格的表單z-index提高才不會被右邊隱藏選單遮住*/
+div.cs-skin-slide.cs-active,
+.select2-dropdown,
+.datepicker.dropdown-menu,
+.daterangepicker.dropdown-menu,
+.bootstrap-timepicker-widget.dropdown-menu {
+  z-index: 1001 !important;
+}
+
+/*Date Range的兩個日期欄位太窄，把寬度加寬*/
+.input-group .form-control {
+  width: 50%;
+}
+
+/*Fantasy Layout*/
+body {
+  &.mobile {
+    .sidebar-menu {
+      overflow: hidden;
+    }
+  }
+
+  &.isContent {
+    .hiddenArea:before,
+    .editContentArea .trash,
+    .editContentArea .remove {
+      display: none !important;
+    }
+
+    .sub_title {
+      min-width: 100px;
+    }
+
+    .backEnd_quill {
+      padding-bottom: 60px;
+    }
+  }
+}
+
+.mainBody {
+  width: 100%;
+  height: 100%;
+  padding-left: 60px;
+}
+

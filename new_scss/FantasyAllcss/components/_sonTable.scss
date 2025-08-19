@@ -1,0 +1,44 @@
+/*
+  共用
+  cms 檔案編輯設定
+  段落內容 顯示/全開/全關 功能按鈕
+*/
+
+.sontable_action {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 5px;
+
+  .title {
+    padding: 6px 10px;
+  }
+}
+
+.sontable_action_area {
+  display: flex;
+  background-color: #f7f7f7;
+  padding: 10px;
+  border: 1px solid #c7c7c7;
+}
+
+/* 全開/全關 */
+.radio_action {
+  display: flex;
+  gap: 5px;
+
+  a {
+    padding: 6px 10px;
+    background-color: #eee;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+
+    &.enable {
+      background-color: #11cfbd;
+      color: #fff !important;
+    }
+  }
+}
+

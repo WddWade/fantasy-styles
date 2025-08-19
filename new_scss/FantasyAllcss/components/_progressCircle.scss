@@ -1,0 +1,104 @@
+/*
+  共用
+  圓圈進度條
+*/
+
+/*為了我們自己動態控制圓圈進度條所改*/
+
+.circle_pace {
+  width: 36px;
+  height: 36px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.progress_circle {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  display: block;
+
+  .shadow {
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+  }
+
+  .pie {
+    width: 100%;
+    height: 100%;
+    clip: rect(0, 36px, 36px, 18px);
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  
+  .half_circle {
+    border: 3px solid #775bc2;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    clip: rect(0, 18px, 36px, 0);
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  &::after {
+    content: attr(data-value);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
+
+.total_pace {
+  width: 88px;
+  height: 88px;
+
+  .shadow {
+    border: 10px solid rgba(255, 255, 255, 0.8);
+  }
+
+  .progress_circle {
+    .half_circle {
+      border-width: 10px;
+    }
+
+    &::after {
+      color: #fff;
+    }
+  }
+}
+
+.mini_circle_pace {
+  width: 38px;
+  height: 38px;
+
+  .shadow {
+    border: 3px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .progress_circle {
+    .half_circle {
+      border-color: #e5dbff;
+    }
+
+    &::after {
+      color: #fff;
+    }
+  }
+}
+

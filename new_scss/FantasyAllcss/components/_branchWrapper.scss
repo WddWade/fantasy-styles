@@ -1,0 +1,40 @@
+/*
+  共用
+  cms 選擇分支 總覽/紅茶館/綠茶館 外容器
+*/
+
+.branch_wrapper {
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+
+  .branch_area {
+    border: 1px solid #eee;
+
+    .branch_header {
+      border-bottom: 1px solid #eee;
+      display: flex;
+      gap: 15px;
+      padding: 15px;
+      font-weight: 700;
+    }
+
+    .branch_lang {
+      display: flex;
+      padding: 15px;
+
+      a {
+        display: flex;
+        width: 150px;
+        height: 60px;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+          background-color: #eee;
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,37 @@
+/*
+  共用
+  file use table
+  2025.06.19 Ash -> 目前在頁面上找尋不到
+*/
+
+.file_use_table {
+  width: 100%;
+  margin-top: 15px;
+
+  td {
+    padding: 0px 0px;
+
+    &:last-child {
+      width: 80px;
+      text-align: center;
+    }
+  }
+
+  .link {
+    display: block;
+    padding: 7px;
+
+    &:hover {
+      background-color: #eee;
+    }
+  }
+
+  span {
+    display: block;
+    padding: 7px;
+  }
+
+  .count {
+    text-align: center;
+  }
+}

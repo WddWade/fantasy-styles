@@ -1,0 +1,16 @@
+/*
+  共用
+  review info 找不到
+*/
+
+.review_info {
+  background-color: #ffcece;
+  border: 1px solid #ff6f6f;
+  padding: 10px 10px;
+  margin-top: -44px;
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}

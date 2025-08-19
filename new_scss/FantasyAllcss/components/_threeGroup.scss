@@ -1,0 +1,12 @@
+/*
+  共用 three group 不知道是什麼 找不到
+*/
+
+.three_group {
+  display: flex;
+  flex-direction: row;
+
+  > div {
+    flex: 1;
+  }
+}

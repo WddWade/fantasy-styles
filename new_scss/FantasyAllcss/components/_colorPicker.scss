@@ -1,0 +1,44 @@
+/*
+  共用
+  color picker
+*/
+
+/* 底部常用顏色區域 */
+.color_picker_palette {
+  display: flex;
+  order: 2;
+  width: 100%;
+  padding: 0px 20px 20px 20px;
+  flex-direction: column;
+
+  label {
+    text-align: center;
+    font-weight: 700;
+  }
+}
+
+.color_picker_list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-top: 15px;
+
+  > div {
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAGUlEQVQYV2M4gwH+YwCGIasIUwhT25BVBADtzYNYrHvv4gAAAABJRU5ErkJggg==);
+    position: relative;
+  }
+
+  span {
+    width: 25px;
+    height: 25px;
+    -webkit-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+  }
+}
+

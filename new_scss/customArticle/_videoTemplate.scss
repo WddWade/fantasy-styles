@@ -1,0 +1,75 @@
+[video-template] {
+  .modal-wrapper {
+    padding: 0 40px;
+  }
+
+  .modal-content {
+    max-width: 1280px;
+    width: 100%;
+    background-color: transparent;
+  }
+
+  &[video-typeStyle=instagram] {
+    .modal-wrapper {
+      padding: 40px;
+    }
+
+    .modal-content {
+      padding: 30px;
+      max-width: 540px;
+      background: #fff;
+      opacity: 0;
+      transition: opacity .5s;
+
+      &.active {
+        opacity: 1;
+      }
+    }
+
+    .instagram-media {
+      min-width: unset!important;
+      width: 100%;
+      border: 0;
+    }
+  }
+
+  &[video-typeStyle=tiktok] {
+    iframe {
+      border: 0;
+    }
+  }
+
+  .close-button {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    transform: rotate(45deg);
+    z-index: 1;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%,-50%,0);
+      background-color: #fff;
+    }
+
+    &::before {
+      width: 3px;
+      height: 20px;
+    }
+
+    &::after {
+      width: 20px;
+      height: 3px;
+    }
+  }
+}

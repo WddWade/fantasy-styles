@@ -1,0 +1,32 @@
+.article_wysiwyg{
+  position: relative;
+}
+
+._atricle_leon_action{
+  display: none;
+  background-color: #10cab9;
+  color: #fff;
+  font-weight: 700;
+
+  &.active {
+    display: flex;
+    position: absolute;
+    z-index: 50;
+  }
+
+  a {
+    padding: 7px;
+    cursor: pointer;
+    color: #fff;
+
+    &:hover {
+      background: #404040;
+      color: #fff;
+    }
+  }
+}
+
+@import "customArticle/aost.scss";
+@import "customArticle/videoTemplate.scss";
+@import "customArticle/article4.scss";
+

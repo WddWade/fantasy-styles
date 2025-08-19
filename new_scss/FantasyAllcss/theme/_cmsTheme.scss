@@ -1,0 +1,63 @@
+@import "./themeMixin.scss";
+
+/* cms theme */
+
+// CMS Review 特殊色
+.cms_theme.Cms_review {
+  .mainNav {
+    border-right: 1px solid $cms-review;
+  }
+  .mainBody .header .blockCover .blockLogo p {
+    color: $cms-review;
+  }
+  .mainBody .mainContent .content .content-sidebar .sidebar-menu .head-bar {
+    background: $cms-review !important;
+    &::after {
+      border-color: $cms-review transparent transparent transparent !important;
+    }
+  }
+  .mainBody .mainContent .content .content-sidebar .sidebar-menu .body-list {
+    .level-1.open > a .icon,
+    .level-1.active > a .icon {
+      color: $cms-review;
+    }
+    .level-1.open > a .arrow::before,
+    .level-1.active > a .arrow::before {
+      color: $cms-review;
+    }
+    .level-2.open > a .iconSquare,
+    .level-2.active > a .iconSquare {
+      background-color: $cms-review;
+    }
+  }
+  .mainBody
+    .mainContent
+    .content
+    .inner-content
+    .content-scrollbox
+    .content-wrap
+    .content-head
+    h1::before {
+    background-color: $cms-review;
+  }
+  .mainBody .hiddenArea .editorHeader .title::after {
+    background-color: $cms-review;
+  }
+}
+
+.cms_theme {
+  @include main-nav($cms-main);
+  @include main-body($cms-main, cms);
+  .mainBody .mainContent .content .content-sidebar .sidebar-menu .head-bar {
+    background: #10b0a1 !important;
+    &::after {
+      border-color: #10b0a1 transparent transparent transparent !important;
+    }
+  }
+  @include dark-theme($cms-main, cms);
+  @include pace($cms-main);
+  @include tips($cms-main);
+  @include input-type($cms-main, cms);
+  @include select2($cms-main);
+  // @include response($cms-main);
+}

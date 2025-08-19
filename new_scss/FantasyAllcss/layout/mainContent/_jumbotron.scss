@@ -1,0 +1,147 @@
+/* 佈告欄 */
+
+.jumbotron {
+  overflow: visible;
+  margin: 0;
+  padding: 0;
+  display: block;
+  background-color: #ededed;
+  border-radius: 0;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+
+  .inner {
+    height: 50px;
+    padding: 0 56px 0 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+
+    .inner-left {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+
+      .switch-menu {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        margin-right: 15px;
+        cursor: pointer;
+
+        .bar {
+          display: block;
+          width: 3px;
+          height: 16px;
+          background-color: black;
+          &:not(:last-child) {
+            margin-right: 3px;
+          }
+        }
+      }
+
+      .breadcrumb {
+        font-size: 12px;
+        font-family: var(--baseFont);
+        background-color: transparent;
+        border: none;
+        border-radius: 0px;
+        list-style: none;
+        display: block;
+        float: left;
+        margin: 0;
+        padding: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        text-transform: uppercase;
+
+        .breadcrumb-item {
+          line-height: 24px;
+          padding: 0;
+          margin: 0;
+          float: left;
+          &:last-child {
+            color: #000;
+            font-weight: bold;
+            letter-spacing: 0.06em;
+            a {
+              color: #000;
+            }
+          }
+          a {
+            color: #7b7d82;
+            &:hover {
+              color: #000;
+            }
+          }
+        }
+
+        > .breadcrumb-item {
+          + .breadcrumb-item {
+            &::before {
+              font-family: FontAwesome;
+              padding: 0 10px;
+              color: #000;
+              content: "\f105";
+            }
+          }
+        }
+      }
+    }
+
+    .total {
+      p {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        line-height: normal;
+      }
+
+      span {
+        display: block;
+      }
+
+      .text {
+        font-family: var(--baseFont);
+        font-weight: bold;
+        font-size: 14px;
+        color: #010101;
+      }
+
+      .num {
+        font-family: var(--baseFont);
+        font-weight: bold;
+        font-size: 18px;
+        color: #010101;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1550px) {
+  .jumbotron {
+    .inner {
+      padding: 0 56px 0 40px;
+    }
+  }
+}
+

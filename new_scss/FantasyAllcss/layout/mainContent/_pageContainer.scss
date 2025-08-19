@@ -1,0 +1,76 @@
+/*
+  內容區外容器
+*/
+
+.radio_area .content {
+  flex-wrap: wrap;
+
+  /* 2025.06.20 Ash 同步 Leon 新增 */
+  &.radio_area_grid_2,
+  &.radio_area_grid_3,
+  &.radio_area_grid_4 {
+    display: grid;
+    justify-content: start;
+  }
+
+  &.radio_area_grid_2 {
+    grid-template-columns: auto auto;
+  }
+
+  &.radio_area_grid_3 {
+    grid-template-columns: auto auto auto;
+  }
+
+  &.radio_area_grid_4 {
+    grid-template-columns: auto auto auto auto;
+  }
+}
+
+.page-container {
+  .page-content-wrapper {
+    .content {
+      min-height: 100%;
+      padding-top: 0;
+      padding-bottom: 0px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      z-index: 10;
+      -webkit-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+
+      .inner-content {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #fff;
+        position: relative;
+        overflow: hidden;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+      }
+    }
+
+    &.mainContent {
+      min-height: 100%;
+      position: relative;
+    }
+
+    &.content-sidebar-open {
+      .jumbotron {
+        .inner {
+          padding: 0 56px 0 42px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+/*
+  共用
+  isContent 找不到
+*/
+
+.isContent {
+  .main-table,
+  .cms-copy-btn {
+    display: none !important;
+  }
+
+  .editContentArea {
+    width: 100% !important;
+    position: static !important;
+
+    .remove,
+    .trash {
+      display: none !important;
+    }
+
+    .hiddenArea_frame {
+      height: calc(100vh - 110px) !important;
+      position: relative !important;
+      width: 100% !important;
+    }
+
+    .detailEditor .editorNav ul.navGroup {
+      padding: 110px 60px 150px 0;
+    }
+  }
+
+  // .editContentFormArea {
+  //   margin-top: 40px !important;
+
+  //   > form {
+  //     margin-top: 110px !important;
+  //   }
+  // }
+
+  #main {
+    display: none;
+  }
+}
+
+.onCms_review,
+.on_review_title {
+  display: none;
+}
+
+.Cms_review {
+  .on_review_title {
+    display: inline;
+    color: #f95775;
+    font-weight: 700;
+    padding-left: 15px;
+  }
+}

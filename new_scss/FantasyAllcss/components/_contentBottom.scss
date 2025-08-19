@@ -1,0 +1,44 @@
+/*
+  共用
+  內容底部 頁碼
+*/
+
+.content-bottom {
+  display: none;
+  justify-content: flex-end;
+  border: 1px solid #babfc7;
+  border-top: 0px;
+  align-items: center;
+
+  &.active {
+    display: flex;
+  }
+}
+
+.content-bottom-page {
+  display: flex;
+
+  div {
+    padding: 10px 15px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #bec7d5;
+      color: #fff;
+    }
+
+    &.active {
+      background-color: #6b84ad;
+      color: #fff;
+    }
+  }
+}
+
+.content-bottom-info {
+  margin-right: 30px;
+
+  .blod {
+    font-weight: bold;
+    color: #000;
+  }
+}

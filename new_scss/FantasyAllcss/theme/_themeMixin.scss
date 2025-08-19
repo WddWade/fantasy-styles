@@ -1,0 +1,447 @@
+// 主題色變數
+$cms-main: #10cfbd;
+$cms-review: #f95775;
+$ams-main: #3a9eea;
+$fms-main: #775bc2;
+
+@mixin main-nav($main-color) {
+  .mainNav {
+    border-right: 1px solid $main-color;
+  }
+}
+
+@mixin main-body($main-color, $type) {
+  .mainBody {
+    @if $type != cms {
+      .ajax_control_btn {
+        width: 100%;
+        display: none;
+      }
+    }
+
+    // header 左側文字顏色
+    .header {
+      .blockCover {
+        .blockLogo p {
+          color: $main-color;
+        }
+        .blockName p {
+          font-size: 0.875rem;
+          color: #5e5e5e;
+        }
+      }
+    }
+
+    .mainContent {
+      .content {
+        // 內容側邊欄
+        .content-sidebar {
+          background-color: #424242;
+          .sidebar-menu {
+            .head-bar {
+              background: $main-color !important;
+              &::after {
+                border-color: $main-color transparent transparent transparent !important;
+              }
+              li {
+                &.level-1 .sub-menu {
+                  background-color: transparent !important;
+                }
+                &.level-2 {
+                  background: none;
+                  .title {
+                    color: white;
+                  }
+                  &.open > a .title {
+                    color: #fff;
+                  }
+                }
+                &.level-3 {
+                  color: white;
+                }
+                a {
+                  color: #fff;
+                }
+              }
+            }
+            .body-list {
+              @if $type == fms {
+                .fa-lock {
+                  &::before {
+                    color: #775bc2 !important;
+                  }
+                }
+              }
+              .level-1 {
+                &.open,
+                &.active {
+                  > a {
+                    .icon {
+                      color: $main-color;
+                    }
+
+                    @if $type == fms {
+                      .arrow {
+                        color: $main-color;
+                      }
+                    } @else {
+                      .arrow::before {
+                        color: $main-color;
+                      }
+                    }
+                    .iconSquare {
+                      background-color: $main-color;
+                    }
+                  }
+                }
+
+                > a {
+                  &:hover {
+                    .icon,
+                    .arrow {
+                      color: $main-color;
+                    }
+                  }
+                }
+              }
+              .level-2,
+              .level-3,
+              .level-4 {
+                &.open,
+                &.active {
+                  > a {
+                    @if $type == fms {
+                      .arrow {
+                        &.open {
+                          color: $main-color;
+                        }
+                      }
+                    } @else {
+                      .arrow::before {
+                        color: $main-color;
+                      }
+                    }
+                    .iconSquare {
+                      background-color: $main-color;
+                    }
+                  }
+                }
+                > a {
+                  &:hover {
+                    .arrow {
+                      color: $main-color;
+                    }
+                    .iconSquare {
+                      background-color: $main-color;
+                    }
+                  }
+                }
+              }
+            }
+            .level_list {
+              &.open,
+              &.active {
+                > a {
+                  .content .icon {
+                    color: $main-color;
+                  }
+                  .circle {
+                    background-color: $main-color;
+                  }
+                }
+              }
+
+              @if $type == fms {
+                > a {
+                  .iconFolder {
+                    &._open {
+                      display: none;
+                    }
+
+                    &._close {
+                      display: block;
+                    }
+                  }
+                }
+
+                &.open {
+                  > a {
+                    .arrow {
+                      &::before {
+                        color: #775bc2 !important;
+                      }
+                    }
+
+                    .iconFolder {
+                      &._open {
+                        display: block;
+                        color: #775bc2;
+                      }
+
+                      &._close {
+                        display: none;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .inner-content {
+          .content-scrollbox {
+            @if $type == fms {
+              .content-head {
+                padding: 0px 50px 30px 50px;
+
+                .subtitle {
+                  margin-top: 50px;
+                }
+              }
+            }
+
+            .scroll-element {
+              .scroll-element_outer {
+                opacity: 0.6;
+              }
+              .scroll-bar {
+                background-color: #000;
+                opacity: 1;
+              }
+              &:hover {
+                &.scroll-y {
+                  .scroll-element_outer {
+                    opacity: 1;
+                    .scroll-bar {
+                      min-width: 7px;
+                      width: 15px;
+                      background-color: $main-color;
+                    }
+                  }
+                }
+              }
+            }
+            .content-wrap {
+              .content-head h1::before {
+                background-color: $main-color;
+              }
+              .content-body .datatable .tables {
+                @if $type != fms {
+                  input:checked + .check-circle {
+                    background-color: $main-color;
+                    border: none;
+                  }
+                }
+                thead .fake-th.active .sort::after {
+                  border-color: $main-color transparent transparent transparent;
+                }
+                @if $type == ams {
+                  .title-img {
+                    border-radius: 50px;
+                    background-color: #ececec;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .hiddenArea {
+      @if $type == cms {
+        // width: 90%;
+        width: 100vw;
+      }
+      @if $type == ams {
+        // width: 90%;
+        width: 100vw;
+        max-width: 1920px;
+        min-width: 1300px;
+      }
+      .editorHeader .title::after {
+        background-color: $main-color;
+      }
+      .btnGroup .check {
+        background-color: $main-color;
+      }
+      .tips .title {
+        color: $main-color;
+      }
+    }
+
+    .ajax_ams {
+      .title_section,
+      .box_container,
+      .ajax_control_btn .setting {
+        background-color: $main-color;
+      }
+      .search_section .title_area p {
+        color: $main-color;
+      }
+    }
+  }
+}
+
+@mixin dark-theme($main-color, $type) {
+  &.dark_theme {
+    .mainContent
+      .inner-content
+      .jumbotron
+      .inner
+      .inner-left
+      .switch-menu
+      .bar {
+      background-color: $main-color;
+    }
+    @if $type != fms {
+      .switch input:checked + .slider {
+        background-color: $main-color !important;
+        border: 1px solid $main-color !important;
+      }
+    }
+  }
+}
+
+// 載入圈圈
+@mixin pace($main-color) {
+  .pace {
+    .pace-progress {
+      background: $main-color;
+    }
+    .pace-activity {
+      border-top-color: $main-color;
+      border-left-color: $main-color;
+    }
+  }
+}
+
+// 欄位提示
+@mixin tips($main-color) {
+  .tips .title {
+    color: $main-color;
+  }
+}
+
+@mixin input-type($main-color, $type) {
+  @if $type == fms {
+    .normal_input,
+    .normal_input input {
+      &:focus {
+        border: solid 1px $main-color;
+      }
+    }
+  } @else {
+    .normal_input,
+    .____input input {
+      &:focus {
+        border: solid 1px $main-color;
+      }
+    }
+
+    .____tagsinput .tag {
+      background-color: $main-color;
+      border: 1px solid $main-color;
+      &.onfocus {
+        border: solid 1px $main-color;
+      }
+    }
+
+    textarea,
+    .normal_textarea,
+    .____normal_textarea {
+      &:focus {
+        border: solid 1px $main-color;
+      }
+    }
+  }
+
+  .switch input:checked + .slider {
+    background-color: $main-color !important;
+    border: 1px solid $main-color !important;
+  }
+
+  .ios_switch,
+  .____ios_switch {
+    &.on .box {
+      background-color: $main-color;
+      border: solid 1px $main-color;
+      border-color: $main-color;
+    }
+  }
+}
+
+// select2 選項式欄位
+@mixin select2($main-color) {
+  .____select2 + .select2 {
+    &.select2-container {
+      .selection .select2-selection {
+        &.select2-selection--multiple .select2-selection__choice {
+          color: #fff;
+          background-color: $main-color;
+          .select2-selection__choice__remove {
+            color: #fff;
+            transition: 0.5s;
+          }
+          &:hover,
+          &:visited,
+          &:active {
+            color: #000;
+            background-color: #fff;
+            border: 1px solid $main-color;
+            .select2-selection__choice__remove {
+              color: #000;
+              transform: rotate(360deg);
+            }
+          }
+        }
+      }
+    }
+    &.select2-container--open .selection .select2-selection {
+      &.select2-selection--single {
+        border: 1px solid $main-color !important;
+      }
+      &.select2-selection--multiple {
+        border: 1px solid $main-color !important;
+        .select2-selection__choice {
+          color: #fff;
+          background-color: $main-color !important;
+        }
+      }
+      .select2-selection__rendered {
+        color: #333;
+      }
+    }
+    .select2-selection:hover .select2-selection__arrow b {
+      border-color: $main-color transparent transparent transparent;
+    }
+    .select2-selection__clear:hover {
+      color: $main-color;
+    }
+  }
+
+  .select2-container--open.select2-container
+    .select2-results__option--highlighted {
+    background-color: $main-color !important;
+    color: #fff !important;
+  }
+}
+
+@mixin response($main-color) {
+  @media (max-width: 1700px) {
+    .mainBody .hiddenArea {
+      width: 80%;
+    }
+  }
+  @media (max-width: 1400px) {
+    .mainBody .hiddenArea {
+      width: 85%;
+    }
+  }
+  @media (max-width: 1100px) {
+    .mainBody .hiddenArea {
+      width: 90%;
+    }
+  }
+}

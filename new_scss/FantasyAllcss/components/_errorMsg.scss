@@ -1,0 +1,59 @@
+/*
+  共用
+  錯誤訊息
+*/
+
+#errorMeg {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  z-index: 100;
+  user-select: none;
+  display: none;
+  transition: 0.1s ease;
+  border-radius: 3px;
+  box-shadow: rgba(255, 0, 0, 0.5) 0 0 5px;
+  background-color: white;
+  width: 100%;
+  max-width: 500px;
+  margin-left: -250px;
+
+  &.active {
+    display: block;
+  }
+}
+
+.errorMeg_header {
+  background-color: #c84747;
+  color: #fff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: grab;
+
+  strong {
+    padding: 15px;
+  }
+
+  span {
+    padding: 15px;
+    cursor: auto;
+  }
+}
+
+.errorMeg_list {
+  height: 250px;
+  overflow: auto;
+
+  div {
+    padding: 10px;
+
+    &:hover,
+    &.active {
+      background-color: #434343;
+      color: #fff;
+    }
+  }
+}
+

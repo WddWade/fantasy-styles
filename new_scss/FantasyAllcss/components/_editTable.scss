@@ -1,0 +1,69 @@
+/*
+  共用
+  edit table 
+  2025.06.19 Ash -> 目前在頁面上找尋不到
+*/
+
+.edit_table_drag {
+  ._delete,
+  ._number {
+    width: 45px;
+  }
+
+  .drag {
+    user-select: none;
+    cursor: move;
+    width: 45px;
+
+    &::before {
+      content: " ";
+      width: 15px;
+      height: 7px;
+      border-top: 2px solid #000;
+      border-bottom: 2px solid #000;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
+
+.edit_table {
+  width: 100%;
+
+  thead {
+    tr {
+      th {
+        padding: 10px 0;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      &:hover {
+        background-color: #c8f2f1;
+      }
+    }
+  }
+}
+
+.edit_table_add {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+
+  a {
+    background-color: #10cfbd;
+    color: #fff !important;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+  }
+}
+
+.edit_delete {
+  cursor: pointer;
+}
+

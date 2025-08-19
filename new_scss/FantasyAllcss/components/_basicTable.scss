@@ -1,0 +1,32 @@
+/*
+  共用
+  basic table 找不到
+*/
+
+.basic-table {
+  width: 100%;
+  margin-top: 30px;
+  font-size: 14px;
+  line-height: 1.4;
+  border: 1px solid #e2e2e2;
+
+  thead {
+    tr {
+      background-color: #f5f5f5;
+    }
+  }
+
+  td,
+  th {
+    text-align: left;
+    vertical-align: middle;
+    padding: 5px;
+    border: 1px solid #e5e5e5;
+  }
+
+  .w200 {
+    width: 200px;
+    text-align: left;
+  }
+}
+

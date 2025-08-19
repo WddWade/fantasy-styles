@@ -1,0 +1,20 @@
+/*
+  共用
+  中間表格相關設定
+*/
+
+/* 靠左編輯按鈕 */
+.ag-cell-last-left-pinned {
+  width: 70px !important;
+}
+
+/* 欄位大小拖動 */
+.ag-header-cell-resize {
+  z-index: 1 !important;
+}
+
+/* 可編輯文字 ex: 排序欄位 */
+.text_editable {
+  cursor: pointer;
+}
+

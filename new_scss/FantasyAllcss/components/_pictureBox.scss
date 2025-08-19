@@ -1,0 +1,32 @@
+/*
+  共用
+  編輯選項 圖片選取範圍容器
+*/
+
+.picture_box {
+  &.has_input {
+    .open_fms_lightbox {
+      margin-right: 0px;
+      margin-bottom: 0px;
+      position: relative;
+      width: 25%;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .input_area {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      width: 100%;
+
+      input {
+        border: 1px solid #c7c7c7;
+        padding: 7px;
+      }
+    }
+  }
+}
+

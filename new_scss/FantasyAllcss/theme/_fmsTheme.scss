@@ -1,0 +1,13 @@
+@import "./themeMixin.scss";
+
+/* fms theme */
+.fms_theme {
+  @include main-nav($fms-main);
+  @include main-body($fms-main, fms);
+  @include dark-theme($fms-main, fms);
+  @include pace($fms-main);
+  @include tips($fms-main);
+  @include input-type($fms-main, fms);
+  @include select2($fms-main);
+  @include response($fms-main);
+}
