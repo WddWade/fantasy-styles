@@ -1,3 +1,9 @@
+.data-aggrid.ag-theme-alpine {
+  height: calc(100vh - 130px);
+  padding-top: 0px;
+  pointer-events: auto;
+}
+
 .ag-cell-focus,
 .ag-cell-no-focus {
   border: none !important;
@@ -248,8 +254,8 @@ textarea[class^=ag-]:focus {
 
 .content-bottom {
   position: absolute;
-  right: 20px;
-  bottom: 20px;
+  right: 10px;
+  bottom: 10px;
   border-radius: 5px;
   background-color: #2e2e2e;
   -webkit-box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);

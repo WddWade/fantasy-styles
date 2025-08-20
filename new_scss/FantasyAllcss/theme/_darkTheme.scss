@@ -57,10 +57,10 @@
             li {
               &.level-1 {
                 .sub-menu {
-                  background-color: transparent !important;
+                  // background-color: transparent !important;
                 }
               }
-              
+
               &.level-2 {
                 background: none;
 
@@ -369,7 +369,7 @@
     &:focus {
       border: solid 1px #10cfbd;
     }
-    
+
     input {
       &:focus {
         border: solid 1px #10cfbd;
@@ -414,7 +414,6 @@
       }
     }
   }
-
 
   .____select2 {
     + .select2 {
@@ -503,4 +502,3 @@
     }
   }
 }
-
