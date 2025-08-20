@@ -261,9 +261,9 @@
 
     .control {
       width: 300px;
-      height: 170px;
+      // height: 170px;
       background-color: #fff;
-      padding: 74px 60px 0 0;
+      padding: 20px 60px 0 0;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -363,18 +363,14 @@
 
     ul {
       &.navGroup {
-        padding: 170px 60px 150px 0;
+        padding: 110px 60px 150px 0;
         overflow: auto;
         height: 100%;
 
         li {
-          padding: 10px 0;
+          padding: 5px 0;
           margin: 0;
           border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-          -webkit-transition: all 0.5s ease 0s;
-          -moz-transition: all 0.5s ease 0s;
-          -ms-transition: all 0.5s ease 0s;
-          -o-transition: all 0.5s ease 0s;
           transition: all 0.5s ease 0s;
 
           p {
@@ -515,6 +511,7 @@
     /* min-width: 1300px; */
     height: 100vh;
     padding: 0;
+    margin: 0 auto;
     background-color: #fff;
     overflow: hidden;
     display: none;
@@ -535,10 +532,6 @@
 
     &.open {
       display: block;
-      -webkit-transition: all 0.5s ease 0.2s;
-      -moz-transition: all 0.5s ease 0.2s;
-      -ms-transition: all 0.5s ease 0.2s;
-      -o-transition: all 0.5s ease 0.2s;
       transition: all 0.5s ease 0.2s;
       // -webkit-transform: translateX(0);
       // -ms-transform: translateX(0);
@@ -548,10 +541,6 @@
 
     &.open_fast {
       display: block;
-      -webkit-transition: all 0s ease 0s !important;
-      -moz-transition: all 0s ease 0s !important;
-      -ms-transition: all 0s ease 0s !important;
-      -o-transition: all 0s ease 0s !important;
       transition: all 0s ease 0s !important;
       // -webkit-transform: translateX(0);
       // -ms-transform: translateX(0);
@@ -2087,13 +2076,9 @@
 /* 右側展開欄的每個欄位 */
 
 .inventory {
-  border-bottom: solid 1px #c7c7c7;
-  padding: 25px 0 30px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  border-bottom: solid 1px #e2e2e2;
+  padding: 18px 0;
   display: flex;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
   align-items: flex-start;
 
   .input {
@@ -2105,10 +2090,10 @@
   }
 
   .subtitle {
-    font-size: 0.85rem;
+    // font-size: 1.4rem;
     font-weight: 900;
     width: 100%;
-    margin-bottom: 16px;
+    // margin-bottom: 16px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -2119,7 +2104,7 @@
     width: 100%;
     max-width: 210px;
     min-width: 150px;
-    padding: 10px 20px 0 0;
+    padding: 10px 20px 10px 0;
 
     img {
       display: block;
@@ -2260,22 +2245,13 @@
 
 .sortStatusSet {
   &.inventory {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
     align-items: flex-start;
 
     > .inner {
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
       align-items: center;
       padding-top: 10px;
-
       .state_button {
         width: 100%;
       }

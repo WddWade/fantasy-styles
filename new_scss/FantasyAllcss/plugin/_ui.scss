@@ -177,41 +177,41 @@
         // }
 
         .inner-content {
-          .jumbotron {
-            width: calc(100% - 60px);
-            height: 40px;
-            position: fixed;
-            top: 0;
-            right: 0;
-            left: auto;
-            z-index: 1;
+          // .jumbotron {
+          // width: calc(100% - 60px);
+          // height: 40px;
+          // position: fixed;
+          // top: 0;
+          // right: 0;
+          // left: auto;
+          // z-index: 1;
 
-            .inner {
-              height: 100%;
-              padding: 0 20px;
+          // .inner {
+          //   height: 100%;
+          //   padding: 0 20px;
 
-              .total {
-                display: none;
-              }
-            }
-          }
+          //   .total {
+          //     display: none;
+          //   }
+          // }
+          // }
 
           .content-scrollbox {
             height: calc(100vh - 40px);
 
             .content-wrap {
-              .content-head {
-                // padding: 20px 0;
+              // .content-head {
+              // padding: 20px 0;
 
-                .content-nav {
-                  // padding-top: 5px;
+              // .content-nav {
+              // padding-top: 5px;
 
-                  // .btn-item {
-                  //   min-height: 30px;
-                  //   padding: 0px 24px;
-                  // }
-                }
-              }
+              // .btn-item {
+              //   min-height: 30px;
+              //   padding: 0px 24px;
+              // }
+              // }
+              // }
 
               .content-body {
                 padding: 130px 0 60px 0;
@@ -249,17 +249,17 @@
   //   }
   // }
 
-  &.header-blockcover-open {
-    .mainContent {
-      &.content-sidebar-open {
-        .inner-content {
-          .jumbotron {
-            width: calc(100% - 310px);
-          }
-        }
-      }
-    }
-  }
+  // &.header-blockcover-open {
+  //   .mainContent {
+  //     &.content-sidebar-open {
+  //       .inner-content {
+  //         .jumbotron {
+  //           width: calc(100% - 310px);
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 
   &.fms_theme {
     &.dark_theme {
@@ -451,12 +451,12 @@
 .checkbox_area {
   label {
     &.box {
-      background: #ddd;
+      background: #fff;
       margin: 0;
       padding: 8px 12px;
       display: flex;
-      border-radius: 5px;
-      border: 2px solid transparent;
+      border-radius: 3px;
+      border: 2px solid #dbdbdb;
       cursor: pointer;
       transition: all 0.25s ease;
       margin-right: 10px;
@@ -472,7 +472,7 @@
       }
 
       &:hover {
-        background: #10cfbd26;
+        border-color: #000000;
       }
 
       .circle {
@@ -528,6 +528,7 @@
 
 .datetime-group {
   > input {
+    font-size: 1.3rem;
     position: relative;
     flex: 1 1 auto;
     width: 1%;

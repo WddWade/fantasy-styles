@@ -1,43 +1,38 @@
 /* 佈告欄 */
 
 .jumbotron {
+  width: calc(100% - 60px);
+  height: 40px;
   overflow: visible;
   margin: 0;
   padding: 0;
   display: block;
-  background-color: #ededed;
+  background-color: #f2f2f2;
   border-radius: 0;
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: auto;
+  z-index: 1;
   transition: 0.5s;
 
   .inner {
-    height: 50px;
-    padding: 0 56px 0 30px;
-    display: -webkit-box;
-    display: -ms-flexbox;
+    height: 100%;
+    padding: 0 20px;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
     justify-content: space-between;
-    -webkit-transition: 0.5s;
-    -o-transition: 0.5s;
+
     transition: 0.5s;
 
     .inner-left {
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center;
 
       .switch-menu {
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
         margin-right: 15px;
         cursor: pointer;
@@ -103,9 +98,8 @@
     }
 
     .total {
+      display: none;
       p {
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
         -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -137,6 +131,14 @@
   }
 }
 
+.content-sidebar-open {
+  .inner-content {
+    .jumbotron {
+      width: calc(100% - 310px);
+    }
+  }
+}
+
 @media screen and (max-width: 1550px) {
   .jumbotron {
     .inner {
@@ -144,4 +146,3 @@
     }
   }
 }
-

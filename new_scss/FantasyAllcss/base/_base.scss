@@ -2,16 +2,24 @@
 
 :root {
   --baseFont: "Microsoft JhengHei", "微軟正黑體", "Microsoft YaHei", sans-serif;
+  --cms-main: #10cfbd;
+  --cms-review: #f95775;
+  --ams-main: #3a9eea;
+  --fms-main: #775bc2;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+  font-size: 62.5%;
 }
 
 body {
   font-family: var(--baseFont);
   color: #626262;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: normal;
-  -webkit-font-smoothing: antialiased;
   line-height: 1.5;
-  letter-spacing: 0.01em;
+  // letter-spacing: 0.01em;
   direction: ltr;
   width: 100vw;
   height: 100%;
@@ -36,11 +44,6 @@ body {
       z-index: 11;
     }
   }
-}
-
-html {
-  -webkit-tap-highlight-color: transparent;
-  font-size: 62.5%;
 }
 
 div,
@@ -119,7 +122,6 @@ label,
 select,
 textarea {
   font-family: var(--baseFont);
-  font-size: 0.8125rem;
   font-weight: normal;
   line-height: 20px;
 }

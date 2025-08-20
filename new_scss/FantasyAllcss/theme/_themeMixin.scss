@@ -36,13 +36,13 @@ $fms-main: #775bc2;
       .content {
         // 內容側邊欄
         .content-sidebar {
-          background-color: #424242;
+          // background-color: #424242;
           .sidebar-menu {
             .head-bar {
-              background: $main-color !important;
-              &::after {
-                border-color: $main-color transparent transparent transparent !important;
-              }
+              // background: $main-color !important;
+              // &::after {
+              //   border-color: $main-color transparent transparent transparent !important;
+              // }
               li {
                 &.level-1 .sub-menu {
                   // background-color: transparent !important;

@@ -11,10 +11,10 @@
     color: $cms-review;
   }
   .mainBody .mainContent .content .content-sidebar .sidebar-menu .head-bar {
-    background: $cms-review !important;
-    &::after {
-      border-color: $cms-review transparent transparent transparent !important;
-    }
+    // background: $cms-review !important;
+    // &::after {
+    //   border-color: $cms-review transparent transparent transparent !important;
+    // }
   }
   .mainBody .mainContent .content .content-sidebar .sidebar-menu .body-list {
     .level-1.open > a .icon,
@@ -49,10 +49,10 @@
   @include main-nav($cms-main);
   @include main-body($cms-main, cms);
   .mainBody .mainContent .content .content-sidebar .sidebar-menu .head-bar {
-    background: #10b0a1 !important;
-    &::after {
-      border-color: #10b0a1 transparent transparent transparent !important;
-    }
+    // background: #10b0a1 !important;
+    // &::after {
+    //   border-color: #10b0a1 transparent transparent transparent !important;
+    // }
   }
   @include dark-theme($cms-main, cms);
   @include pace($cms-main);

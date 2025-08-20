@@ -296,24 +296,16 @@
 }
 
 .tips {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: baseline;
-  -ms-flex-align: baseline;
   align-items: baseline;
-  margin: 15px 0;
+  margin-top: 5px;
 
   .title {
     color: #10cfbd;
-    font-size: 0.75rem;
+    // font-size: 0.75rem;
     font-weight: 900;
     font-family: var(--baseFont);
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
 
     &::after {
@@ -678,5 +670,3 @@
     color: #c5c5c5;
   }
 }
-
-
