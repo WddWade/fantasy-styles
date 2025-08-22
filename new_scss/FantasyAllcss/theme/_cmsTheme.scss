@@ -58,6 +58,6 @@
   @include pace($cms-main);
   @include tips($cms-main);
   @include input-type($cms-main, cms);
-  @include select2($cms-main);
+  // @include select2($cms-main);
   // @include response($cms-main);
 }

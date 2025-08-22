@@ -344,16 +344,12 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 0 25px;
+    gap: 10px 25px;
   }
   label {
     &.box {
-      // background: #ffffff;
-      // margin: 2px 5px;
-      // padding: 6px 12px;
+      margin: 0;
       display: flex;
-      // border-radius: 5px;
-      // border: 2px solid #e2e2e2;
       cursor: pointer;
       transition: all 0.25s ease;
 
@@ -376,7 +372,7 @@
 
         border: 3px solid #e2e2e2;
         display: inline-block;
-        margin-right: 10px;
+        margin-right: 5px;
         border-radius: 50%;
         transition: all 0.25s ease;
       }
@@ -520,39 +516,6 @@
     position: absolute;
     top: 0;
     right: 0;
-  }
-}
-
-.datetime-group {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
-  width: 100%;
-}
-
-.datetime-group {
-  > input {
-    font-size: 1.3rem;
-    position: relative;
-    flex: 1 1 auto;
-    width: 1%;
-    min-width: 0;
-    line-height: 20px;
-    min-height: auto;
-    height: auto;
-    padding: 10px 12px;
-    border: 1px solid #c7c7c7;
-    border-radius: 0;
-
-    + input {
-      margin-left: 5px;
-    }
-  }
-
-  .input-group-addon {
-    background-color: #10cfbd;
-    color: #fff;
   }
 }
 

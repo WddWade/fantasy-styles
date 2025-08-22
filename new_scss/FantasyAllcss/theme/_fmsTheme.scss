@@ -8,6 +8,6 @@
   @include pace($fms-main);
   @include tips($fms-main);
   @include input-type($fms-main, fms);
-  @include select2($fms-main);
+  // @include select2($fms-main);
   @include response($fms-main);
 }

@@ -42,13 +42,16 @@
   flex-direction: row-reverse;
 
   .tips {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
 
     .title {
-      margin-bottom: 5px;
+      font-size: 1rem;
+    }
+    p {
+      font-size: 1.2rem;
+      color: #555555;
     }
   }
 
@@ -231,6 +234,7 @@
 
     .editorContent {
       width: 100%;
+      height: 100%;
       padding: 0 35px 25px 35px;
       flex: 1;
 
@@ -775,6 +779,23 @@
 }
 
 /* 未知日期選單 */
+.datepicker-input,
+.timepicker-input {
+  max-width: 200px;
+}
+.file-picker {
+  & > input:first-child {
+    color: #000;
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 3px;
+    border: solid 1px transparent;
+    background-color: #f5f5f5;
+    &:focus {
+      border: solid 1px #10cfbd;
+    }
+  }
+}
 .datepicker-range {
   max-width: 510px;
   border: solid 1px #c7c7c7;
@@ -1128,15 +1149,14 @@
     }
 
     input {
-      font-family: var(--baseFont);
       text-align: center;
       text-align: center;
       display: flex;
       width: 70px;
       border: 0;
-      font-size: 16px;
-      font-weight: 700;
-      background-color: #eee;
+      font-size: 1.3rem;
+      font-weight: 600;
+      background-color: transparent;
     }
   }
 
@@ -1271,9 +1291,9 @@
     }
 
     .for_ajax_box {
-      width: 100%;
-      height: 100%;
-      position: absolute;
+      // width: 100%;
+      // height: 100%;
+      // position: absolute;
       pointer-events: none;
     }
 
@@ -1286,28 +1306,30 @@
     .box {
       width: 100%;
       height: 40px;
-      border: solid 1px #c7c7c7;
+      border: solid 1px #e5e5e5;
       margin: 0 auto;
       display: flex;
       align-items: center;
+      gap: 0 1px;
       position: sticky;
       top: 79px;
-      background-color: #fff;
+      background-color: #e5e5e5;
       pointer-events: auto;
       z-index: 10;
+      border-radius: 3px;
 
       li {
         cursor: pointer;
         width: 100%;
         height: 100%;
         font-size: 12px;
-        border-right: solid 1px #c7c7c7;
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 0 5px;
         transition: all 0.5s ease 0s;
         user-select: none;
+        background-color: #fff;
 
         p {
           font-size: 1.2rem;
@@ -1351,9 +1373,32 @@
     .content_a {
       position: relative;
       margin: 0 auto;
+      > .frame {
+        > li:first-child {
+          position: sticky;
+          top: 79px;
+          background-color: #fff;
+          z-index: 1;
+        }
+      }
 
       .tabulation_head {
-        margin-bottom: 0px;
+        .sontable_action {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          gap: 5px;
+          .title {
+            padding: 6px 10px;
+          }
+        }
+        .sontable_action_area {
+          display: none;
+          // display: flex;
+          background-color: #f7f7f7;
+          padding: 10px;
+          border: 1px solid #c7c7c7;
+        }
 
         &.three {
           margin-bottom: 0px;
@@ -1368,6 +1413,7 @@
         }
 
         .item {
+          font-size: 1.2rem;
           position: relative;
 
           &::after {
@@ -1375,12 +1421,10 @@
             display: block;
             width: 1px;
             height: 12px;
-            background-color: #000;
+            background-color: #d1d1d1;
             position: absolute;
             right: 0;
             top: 50%;
-            -webkit-transform: translateY(-50%);
-            -ms-transform: translateY(-50%);
             transform: translateY(-50%);
           }
 
@@ -1398,10 +1442,11 @@
         }
 
         .list {
+          height: 35px;
+          margin: 20px 0 0 0;
           display: flex;
           align-items: center;
-          border: 1px solid #c7c7c7;
-          border-bottom: 0;
+          // border: 1px solid #c7c7c7;
         }
       }
 
@@ -1416,25 +1461,25 @@
           align-items: center;
           flex-direction: row;
 
-          &::after {
-            content: "";
-            display: block;
-            width: 1px;
-            height: 20px;
-            background-color: #c7c7c7;
-            position: absolute;
-            right: 0;
-            top: 50%;
-            -webkit-transform: translateY(-50%);
-            -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
-          }
+          // &::after {
+          //   content: "";
+          //   display: block;
+          //   width: 1px;
+          //   height: 20px;
+          //   background-color: #c7c7c7;
+          //   position: absolute;
+          //   right: 0;
+          //   top: 50%;
+          //   -webkit-transform: translateY(-50%);
+          //   -ms-transform: translateY(-50%);
+          //   transform: translateY(-50%);
+          // }
 
-          &:last-child {
-            &::after {
-              display: none;
-            }
-          }
+          // &:last-child {
+          //   &::after {
+          //     display: none;
+          //   }
+          // }
         }
 
         .quill_partImg {
@@ -1447,25 +1492,19 @@
 
         .list {
           margin-bottom: 8px;
-          -webkit-transition: all 0.5s ease 0s;
-          -moz-transition: all 0.5s ease 0s;
-          -ms-transition: all 0.5s ease 0s;
-          -o-transition: all 0.5s ease 0s;
           transition: all 0.5s ease 0s;
 
           width: 100%;
           min-height: 70px;
-          border: solid 1px #c7c7c7;
-          display: -webkit-box;
-          display: -ms-flexbox;
+          border-radius: 3px;
+          border: solid 1px #e5e5e5;
           display: flex;
-          -webkit-box-align: center;
-          -ms-flex-align: center;
+
           align-items: center;
           position: relative;
 
           &.active {
-            background-color: #66dad75c;
+            // background-color: #66dad75c;
           }
 
           .wait-save-box {
@@ -1562,7 +1601,7 @@
 
       .check_box {
         min-width: 70px !important;
-        height: 100%;
+        // height: 100%;
       }
 
       .sort_number {
@@ -1575,6 +1614,10 @@
 
       .edit_btnGroup {
         min-width: 105px;
+        gap: 0 10px;
+        .fa {
+          margin: 0;
+        }
       }
 
       .paragraph_type {
@@ -1634,8 +1677,6 @@
 
       .list_headBar {
         width: 100%;
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
         position: sticky;
         top: 119px;
@@ -1649,8 +1690,8 @@
           cursor: pointer;
           width: 100%;
           height: 40px;
-          color: #fff;
-          background-color: #464646;
+          color: #000;
+          // background-color: #ffffff;
           position: relative;
           display: flex;
           align-items: center;
@@ -1661,7 +1702,7 @@
           }
 
           &.now {
-            background-color: #10cfbd;
+            background-color: #e3e3e3;
 
             &::after {
               content: "";
@@ -1705,17 +1746,9 @@
         }
       }
 
-      .list_part_body {
-        .inventory {
-          &:first-child {
-            padding-top: 0;
-          }
-        }
-      }
-
       .inventory {
-        padding: 35px 0 35px 0;
-        flex-direction: column;
+        // padding: 35px 0 35px 0;
+        // flex-direction: column;
 
         // 2025.07.10 Ash 新增
         .inner {
@@ -1849,9 +1882,14 @@
     .list_box {
       width: 100%;
       height: 70px;
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
+      align-items: center;
+      .radio_btn_switch {
+        justify-content: center;
+        .box {
+          left: auto !important;
+        }
+      }
     }
   }
 }
@@ -2099,7 +2137,8 @@
     width: 100%;
     max-width: 210px;
     min-width: 150px;
-    padding: 10px 20px 10px 0;
+    min-height: 20px;
+    padding: 0 20px 0 2px;
 
     img {
       display: block;
@@ -2113,7 +2152,7 @@
 
   > .inner {
     width: 100%;
-    min-height: 32px;
+    // min-height: 32px;
     &:has(.table-editor) {
       width: calc(100% - 210px);
     }
@@ -2244,7 +2283,7 @@
     > .inner {
       display: flex;
       align-items: center;
-      padding-top: 10px;
+      // padding-top: 10px;
       .state_button {
         width: 100%;
       }

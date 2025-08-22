@@ -266,9 +266,9 @@ $fms-main: #775bc2;
       .btnGroup .check {
         background-color: $main-color;
       }
-      .tips .title {
-        color: $main-color;
-      }
+      // .tips .title {
+      //   color: $main-color;
+      // }
     }
 
     .ajax_ams {
@@ -373,60 +373,60 @@ $fms-main: #775bc2;
 }
 
 // select2 選項式欄位
-@mixin select2($main-color) {
-  .____select2 + .select2 {
-    &.select2-container {
-      .selection .select2-selection {
-        &.select2-selection--multiple .select2-selection__choice {
-          color: #fff;
-          background-color: $main-color;
-          .select2-selection__choice__remove {
-            color: #fff;
-            transition: 0.5s;
-          }
-          &:hover,
-          &:visited,
-          &:active {
-            color: #000;
-            background-color: #fff;
-            border: 1px solid $main-color;
-            .select2-selection__choice__remove {
-              color: #000;
-              transform: rotate(360deg);
-            }
-          }
-        }
-      }
-    }
-    &.select2-container--open .selection .select2-selection {
-      &.select2-selection--single {
-        border: 1px solid $main-color !important;
-      }
-      &.select2-selection--multiple {
-        border: 1px solid $main-color !important;
-        .select2-selection__choice {
-          color: #fff;
-          background-color: $main-color !important;
-        }
-      }
-      .select2-selection__rendered {
-        color: #333;
-      }
-    }
-    .select2-selection:hover .select2-selection__arrow b {
-      border-color: $main-color transparent transparent transparent;
-    }
-    .select2-selection__clear:hover {
-      color: $main-color;
-    }
-  }
+// @mixin select2($main-color) {
+//   .____select2 + .select2 {
+//     &.select2-container {
+//       .selection .select2-selection {
+//         &.select2-selection--multiple .select2-selection__choice {
+//           color: #fff;
+//           background-color: $main-color;
+//           .select2-selection__choice__remove {
+//             color: #fff;
+//             transition: 0.5s;
+//           }
+//           &:hover,
+//           &:visited,
+//           &:active {
+//             color: #000;
+//             background-color: #fff;
+//             border: 1px solid $main-color;
+//             .select2-selection__choice__remove {
+//               color: #000;
+//               transform: rotate(360deg);
+//             }
+//           }
+//         }
+//       }
+//     }
+//     &.select2-container--open .selection .select2-selection {
+//       &.select2-selection--single {
+//         border: 1px solid $main-color !important;
+//       }
+//       &.select2-selection--multiple {
+//         border: 1px solid $main-color !important;
+//         .select2-selection__choice {
+//           color: #fff;
+//           background-color: $main-color !important;
+//         }
+//       }
+//       .select2-selection__rendered {
+//         color: #333;
+//       }
+//     }
+//     .select2-selection:hover .select2-selection__arrow b {
+//       border-color: $main-color transparent transparent transparent;
+//     }
+//     .select2-selection__clear:hover {
+//       color: $main-color;
+//     }
+//   }
 
-  .select2-container--open.select2-container
-    .select2-results__option--highlighted {
-    background-color: $main-color !important;
-    color: #fff !important;
-  }
-}
+//   .select2-container--open.select2-container
+//     .select2-results__option--highlighted {
+//     background-color: $main-color !important;
+//     color: #fff !important;
+//   }
+// }
 
 @mixin response($main-color) {
   @media (max-width: 1700px) {

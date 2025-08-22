@@ -4,24 +4,25 @@
   段落內容 顯示/全開/全關 功能按鈕
 */
 
-.sontable_action {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-bottom: 10px;
-  gap: 5px;
+// .sontable_action {
+//   display: flex;
+//   justify-content: flex-end;
+//   align-items: center;
+//   margin-bottom: 10px;
+//   gap: 5px;
 
-  .title {
-    padding: 6px 10px;
-  }
-}
+//   .title {
+//     padding: 6px 10px;
+//   }
+// }
 
-.sontable_action_area {
-  display: flex;
-  background-color: #f7f7f7;
-  padding: 10px;
-  border: 1px solid #c7c7c7;
-}
+// .sontable_action_area {
+//   display: none;
+//   display: flex;
+//   background-color: #f7f7f7;
+//   padding: 10px;
+//   border: 1px solid #c7c7c7;
+// }
 
 /* 全開/全關 */
 .radio_action {
@@ -41,4 +42,3 @@
     }
   }
 }
-

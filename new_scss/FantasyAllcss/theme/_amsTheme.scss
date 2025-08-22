@@ -8,7 +8,7 @@
   @include pace($ams-main);
   @include tips($ams-main);
   @include input-type($ams-main, ams);
-  @include select2($ams-main);
+  // @include select2($ams-main);
   @include response($ams-main);
 }
 
@@ -42,7 +42,8 @@
   }
 }
 
-.sidebar-menu .body-list > li > ul.sub-menu li > a > .arrow::before, .sidebar-menu .body-list > li > ul.sub-menu li > a > .arrow.open::before {
+.sidebar-menu .body-list > li > ul.sub-menu li > a > .arrow::before,
+.sidebar-menu .body-list > li > ul.sub-menu li > a > .arrow.open::before {
   margin: 0;
 }
 
