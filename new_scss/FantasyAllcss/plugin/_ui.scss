@@ -313,22 +313,22 @@
   }
 }
 
-.cms {
-  .detailEditor {
-    .editorNav {
-      ul {
-        li {
-          &.active {
-            p {
-              color: #fff;
-              background-color: #434343;
-            }
-          }
-        }
-      }
-    }
-  }
-}
+// .cms {
+//   .detailEditor {
+//     .editorNav {
+//       ul {
+//         li {
+//           &.active {
+//             p {
+//               color: #fff;
+//               background-color: #434343;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
 
 .ThreeContent {
   ._a_radio_btn {
@@ -340,36 +340,41 @@
 }
 
 .radio_area {
+  .content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0 25px;
+  }
   label {
     &.box {
-      background: #ddd;
-      margin: 2px 5px;
-      padding: 6px 12px;
+      // background: #ffffff;
+      // margin: 2px 5px;
+      // padding: 6px 12px;
       display: flex;
-      border-radius: 5px;
-      border: 2px solid transparent;
+      // border-radius: 5px;
+      // border: 2px solid #e2e2e2;
       cursor: pointer;
       transition: all 0.25s ease;
 
       &.active {
-        border-color: #10cfbd;
-        background: #10cfbd26;
+        // border-color: #10cfbd;
+        // background: #ffffff26;
 
         .circle {
           border-color: #10cfbd;
-          background: #fff;
         }
       }
 
       &:hover {
-        background: #10cfbd26;
+        // border-color: #10cfbd;
       }
 
       .circle {
         height: 15px;
         width: 15px;
-        background: #ccc;
-        border: 3px solid transparent;
+
+        border: 3px solid #e2e2e2;
         display: inline-block;
         margin-right: 10px;
         border-radius: 50%;
