@@ -14,7 +14,7 @@
   }
 
   .picture_box {
-    padding: 10px;
+    padding: 0 10px;
   }
 
   .check_box {
@@ -33,4 +33,13 @@
 
 .article_video_right {
   flex: 1;
+  > div {
+    padding: 30px 0;
+    border-top: solid 1px #e2e2e2;
+
+    &:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+  }
 }
