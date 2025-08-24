@@ -57,7 +57,8 @@
                             <div class="content-scrollbox scroll-content" style="height: 877px; margin-bottom: 0px; margin-right: 0px; max-height: none;">
                                 <div class="content-wrap main-table index-table-div" data-tableid="new_cms_table">
                                     <div class="content-head cms-index_table" data-can_review="1" data-edit="1" data-delete="1" data-create="1" data-model="Class_faq" data-page="1" data-pn="1" data-auth="206" data-pagetitle="常見問題分類" data-issearch="1" data-isbatch="1" data-isclone="1" data-isexport="">
-                                        <h1>品牌總覽</h1>
+                                        <h1>CMS</h1>
+                                        <div>品牌總覽</div>
                                     </div>
                                     <div class="content-body">
                                         <div class="branch_wrapper">

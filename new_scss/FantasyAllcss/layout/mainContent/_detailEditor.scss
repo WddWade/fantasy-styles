@@ -14,19 +14,11 @@
   &.open {
     opacity: 1;
     display: block;
-    -webkit-transition: all 0.5s ease 0s;
-    -moz-transition: all 0.5s ease 0s;
-    -ms-transition: all 0.5s ease 0s;
-    -o-transition: all 0.5s ease 0s;
     transition: all 0.5s ease 0s;
   }
 
   &.remove {
     opacity: 0;
-    -webkit-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    -ms-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
   }
 }
@@ -67,7 +59,7 @@
       // width: calc(100% - 460px);
       width: 100%;
       height: 79px;
-      padding: 25px 35px;
+      padding: 25px 45px;
       background-color: #fff;
       // border-bottom: solid 1px #000;
       display: -webkit-box;
@@ -94,8 +86,7 @@
         }
 
         .dataEditTitle {
-          font-size: 1.8rem;
-          font-weight: bold;
+          font-size: 1.6rem;
           line-height: 1.35;
           display: flex;
           align-items: center;
@@ -227,7 +218,7 @@
     .editorContent {
       width: 100%;
       // height: 100%;
-      padding: 0 35px 25px 35px;
+      padding: 0 45px 25px 45px;
       flex: 1;
 
       &.scroll-wrapper {
@@ -259,7 +250,7 @@
       width: 100%;
       height: 80px;
       background-color: #f5f5f5;
-      padding: 25px 30px;
+      padding: 25px 45px;
       display: flex;
       align-items: flex-start;
       flex-direction: column;
@@ -353,9 +344,8 @@
 
     ul {
       &.navGroup {
-        padding: 0 30px 40px 30px;
+        padding: 0 45px 40px 45px;
         overflow: hidden;
-        height: 100%;
         display: flex;
         flex-direction: column;
         gap: 8px 0;
@@ -515,28 +505,17 @@
     display: block;
     opacity: 1;
     -webkit-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    -ms-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
   }
 
   &.open_fast {
     display: block;
     opacity: 1;
-    -webkit-transition: all 0s ease 0s !important;
-    -moz-transition: all 0s ease 0s !important;
-    -ms-transition: all 0s ease 0s !important;
-    -o-transition: all 0s ease 0s !important;
     transition: all 0s ease 0s !important;
   }
 
   &.remove {
     opacity: 0 !important;
-    -webkit-transition: all 0.5s ease 0s;
-    -moz-transition: all 0.5s ease 0s;
-    -ms-transition: all 0.5s ease 0s;
-    -o-transition: all 0.5s ease 0s;
     transition: all 0.5s ease 0s;
   }
 
@@ -546,20 +525,14 @@
     /* min-width: 1300px; */
     height: 100vh;
     padding: 0;
-    margin: 0 auto;
+    // margin: 0 auto;
     background-color: #fff;
     overflow: hidden;
     display: none;
     position: relative;
-    right: -100%;
-    // position: fixed;
-    // top: 0;
-    // right: 0;
-    // z-index: 1;
-    // -webkit-transform: translateX(100%);
-    // -ms-transform: translateX(100%);
-    // transform: translateX(100%);
-    margin-left: auto;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, 50%);
 
     &.active {
       display: block;
@@ -567,32 +540,29 @@
 
     &.open {
       display: block;
-      transition: all 0.5s ease 0.2s;
+      opacity: 1;
+      transform: translate(-50%, 0%);
       // -webkit-transform: translateX(0);
       // -ms-transform: translateX(0);
       // transform: translateX(0);
-      right: 0;
     }
 
     &.open_fast {
-      display: block;
-      transition: all 0s ease 0s !important;
+      // display: block;
+      // transition: all 0.5s ease 0.3s;
+      // transform: translate(-50%, 0);
       // -webkit-transform: translateX(0);
       // -ms-transform: translateX(0);
       // transform: translateX(0);
-      right: 0;
     }
 
     &.remove {
-      -webkit-transition: all 0.5s ease 0s;
-      -moz-transition: all 0.5s ease 0s;
-      -ms-transition: all 0.5s ease 0s;
-      -o-transition: all 0.5s ease 0s;
+      opacity: 0;
       transition: all 0.5s ease 0s;
+      transform: translate(-50%, 50%);
       // -webkit-transform: translateX(100%);
       // -ms-transform: translateX(100%);
       // transform: translateX(100%);
-      right: -100%;
     }
 
     .hiddenArea_frame_controlBtn {
@@ -773,6 +743,7 @@
 .timepicker-input {
   max-width: 200px;
 }
+
 .file-picker {
   & > input:first-child {
     color: #000;
@@ -786,6 +757,7 @@
     }
   }
 }
+
 .datepicker-range {
   max-width: 510px;
   border: solid 1px #c7c7c7;

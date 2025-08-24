@@ -121,12 +121,21 @@
     </div>
     <article class="article_lbox">
         <div class="article_container">
+            <div class="article_header">
+                <div class="title">Select Article Style</div>
+                <div class="controller">
+                    <button class="closeBtn">close</button>
+                </div>
+            </div>
             <div class="article_container_scroll">
             @foreach (config('article') as $val)
                 <div class="article_item" data-key="{{ $val['key'] }}">
                     <div class="article_sub">
                         <img src="/vender/assets/img/article4/{{ $val['key'] }}.jpg">
-                        <p>{{ $val['title'] }}</p>
+                        <div class="article_content">
+                            <span>Style Name</span>
+                            <p>{{ $val['title'] }}</p>
+                        </div>
                     </div>
                 </div>
             @endforeach

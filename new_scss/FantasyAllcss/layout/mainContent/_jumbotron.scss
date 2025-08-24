@@ -1,7 +1,7 @@
 /* 佈告欄 */
 
 .jumbotron {
-  width: calc(100% - 60px);
+  width: calc(100% - 40px);
   height: 40px;
   overflow: visible;
   margin: 0;
@@ -134,7 +134,7 @@
 .content-sidebar-open {
   .inner-content {
     .jumbotron {
-      width: calc(100% - 310px);
+      width: calc(100% - 290px);
     }
   }
 }

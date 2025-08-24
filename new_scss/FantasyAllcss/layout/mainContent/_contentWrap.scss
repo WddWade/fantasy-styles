@@ -22,15 +22,15 @@
     transition: 0.5s;
 
     h1 {
+      height: 20px;
+      font-weight: 500;
+      font-size: 1.6rem;
+      line-height: 1;
       color: #000;
+      margin: 0;
       padding-left: 15px;
       display: flex;
       align-items: center;
-      margin: 0;
-      height: 20px;
-      font-weight: bold;
-      font-size: 1.6rem;
-      line-height: 1;
       position: relative;
 
       &::before {
