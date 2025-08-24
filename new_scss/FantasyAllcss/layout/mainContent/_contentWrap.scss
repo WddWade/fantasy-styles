@@ -71,9 +71,11 @@
       }
 
       > a {
-        display: block;
+        display: flex;
         padding: 0;
         color: #000;
+        gap: 0 5px;
+        align-items: center;
       }
 
       // [class^="icon-"],

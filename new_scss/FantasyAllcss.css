@@ -1,7 +1,8 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Noto+Sans+TC:wght@100..900&display=swap");
 :root {
-  --baseFont: "Microsoft JhengHei", "微軟正黑體", "Microsoft YaHei", sans-serif;
+  --baseFont: "Noto Sans TC", "Microsoft JhengHei", "微軟正黑體",
+    "Microsoft YaHei", sans-serif;
   --cms-main: #10cfbd;
   --cms-review: #f95775;
   --ams-main: #3a9eea;
@@ -773,18 +774,19 @@ body.isContent .backEnd_quill {
 */
 /* header 按鈕 */
 .cms_change a {
-  color: #F95775;
+  color: #f95775;
 }
 
 /* 點進編輯後右側設定選單中按鈕 */
 .CmsChangeBtn {
+  display: none;
   position: absolute;
   top: 15px;
   width: 240px;
 }
 .CmsChangeBtn a {
   display: block;
-  background-color: #F95775;
+  background-color: #f95775;
   padding: 10px;
   text-align: center;
   color: #fff;
@@ -2459,7 +2461,7 @@ body.isContent .backEnd_quill {
           animation: cgIN 0.5s ease 1s both;
 }
 .mainBody .header .inforCover > * {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #000;
 }
@@ -3349,9 +3351,15 @@ body.isContent .backEnd_quill {
   padding-right: 0;
 }
 .content-wrap .content-nav .btn-item > a {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   padding: 0;
   color: #000;
+  gap: 0 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .content-wrap .content-nav .btn-item .text {
   font-family: var(--baseFont);
@@ -3405,82 +3413,59 @@ body.isContent .backEnd_quill {
 }
 
 /* 右上角 icon dropdown */
-.dropdown > .dropdown-menu.profile-dropdown::before, .dropdown > .dropdown-menu.profile-dropdown::after {
-  display: inline-block;
-  position: absolute;
+.dropdown > .dropdown-menu {
+  min-width: 180px;
+  -webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.2);
+  border: none;
+  border-radius: 3px;
+  margin: 0;
+  padding: 10px 20px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px 0;
 }
-.dropdown > .dropdown-menu.profile-dropdown::before {
-  content: "";
-  border-right: 7px solid transparent;
-  border-bottom: 7px solid #ccc;
-  border-left: 7px solid transparent;
-  border-bottom-color: rgba(0, 0, 0, 0.2);
-}
-.dropdown > .dropdown-menu.profile-dropdown::after {
-  content: "";
-  border-right: 6px solid transparent;
-  border-bottom: 6px solid #ffffff;
-  border-left: 6px solid transparent;
-}
-.dropdown > .dropdown-menu.dropdown-menu-left {
-  right: auto;
-  left: 0;
-}
-.dropdown > .dropdown-menu.dropdown-menu-left.profile-dropdown::before {
-  top: -7px;
-  left: 15px;
-}
-.dropdown > .dropdown-menu.dropdown-menu-left.profile-dropdown::after {
-  top: -6px;
-  left: 16px;
-}
-.dropdown > .dropdown-menu.dropdown-menu-right {
-  right: 0;
-  left: auto;
-}
-.dropdown > .dropdown-menu.dropdown-menu-right.profile-dropdown::before {
-  top: -7px;
-  right: 15px;
-}
-.dropdown > .dropdown-menu.dropdown-menu-right.profile-dropdown::after {
-  top: -6px;
-  right: 16px;
+.dropdown.show > .dropdown-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 .dropdown .dropdown-item {
-  padding-left: 0px;
-  line-height: 35px;
-  color: #000000;
-  padding: 0 20px;
+  font-size: 1.2rem;
+  font-weight: 400;
+  padding: 5px 0px;
   border-radius: 3px;
-  display: block;
-  clear: both;
+  color: #000000;
   white-space: nowrap;
   text-align: left;
   opacity: 1;
   cursor: pointer;
+  position: relative;
+}
+.dropdown .dropdown-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 1px;
+  background-color: #e5e5e5;
 }
 .dropdown .dropdown-item > i {
-  padding-left: 0px;
-  line-height: 35px;
-  color: #000000;
-  border-radius: 3px;
-  clear: both;
-  white-space: nowrap;
-  text-align: left;
+  display: none;
+}
+.dropdown .dropdown-item:last-child {
+  border-bottom: none;
+}
+.dropdown .dropdown-item:last-child::before {
+  content: none;
 }
 .dropdown .dropdown-item:hover {
-  color: #fff;
+  color: #000000;
   text-decoration: none;
-  background-color: #10cfbd;
-}
-.dropdown .dropdown-item:hover i {
-  color: #fff;
-}
-.dropdown .dropdown-item:hover:first-child {
-  padding-top: 0px;
-}
-.dropdown .dropdown-item i {
-  color: #000;
+  background-color: transparent;
 }
 
 /*
@@ -4150,27 +4135,6 @@ table.dataTable thead td {
       -ms-flex-align: center;
           align-items: center;
 }
-.detailEditor .editorBody .editorHeader .control .btnGroup .check span::after {
-  font-size: 1.3rem;
-  font-weight: 600;
-  content: "Setting";
-  padding-left: 5px;
-  color: #000;
-}
-.detailEditor .editorBody .editorHeader .control .btnGroup .trash span::after {
-  font-size: 1.3rem;
-  font-weight: 600;
-  content: "Delete";
-  padding-left: 5px;
-  color: #000;
-}
-.detailEditor .editorBody .editorHeader .control .btnGroup .remove span::after {
-  font-size: 1.3rem;
-  font-weight: 600;
-  content: "Cancel";
-  padding-left: 5px;
-  color: #000;
-}
 .detailEditor .editorBody .editorHeader .control .btnGroup li {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4188,9 +4152,9 @@ table.dataTable thead td {
   content: "|";
   color: #d1d1d1;
   padding: 0 13px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 1;
-  margin-top: 4px;
+  margin-top: 1px;
 }
 .detailEditor .editorBody .editorHeader .control .btnGroup li:last-child::after {
   content: "";
@@ -4202,8 +4166,12 @@ table.dataTable thead td {
 .detailEditor .editorBody .editorHeader .control .btnGroup li a:not(.btn) {
   opacity: 1;
 }
-.detailEditor .editorBody .editorHeader .control .btnGroup li span {
-  font-size: 1.4rem;
+.detailEditor .editorBody .editorHeader .control .btnGroup li .label {
+  font-size: 1.3rem;
+  font-family: "inter";
+  font-weight: 600;
+  content: "Cancel";
+  padding-left: 5px;
   color: #000;
 }
 .detailEditor .editorBody .editorHeader p {
@@ -4274,6 +4242,7 @@ table.dataTable thead td {
   z-index: 2;
 }
 .detailEditor .editorNav .control .sub_title {
+  font-family: "inter";
   font-size: 2rem;
   font-weight: 600;
   color: #000;
@@ -4438,7 +4407,6 @@ table.dataTable thead td {
   border: 1px solid #ccc;
   max-height: 400px;
   padding: 0;
-  margin-bottom: -2px;
 }
 .detailEditor .table-editor .jss_worksheet {
   border: none;
@@ -4554,7 +4522,6 @@ table.dataTable thead td {
 .hiddenArea .ajaxItem .hiddenArea_frame_controlBtn,
 .cmsAjaxArea .ajaxItem .hiddenArea_frame_controlBtn {
   width: 100%;
-  height: 50px;
   position: sticky;
   left: 80px;
   right: auto;
@@ -4599,6 +4566,7 @@ table.dataTable thead td {
 .hiddenArea .ajaxItem .hiddenArea_frame_controlBtn ul li,
 .cmsAjaxArea .ajaxItem .hiddenArea_frame_controlBtn ul li {
   font-size: 1.2rem;
+  font-family: "inter";
   width: 100%;
   height: 45px;
   border-radius: 0;
@@ -5927,7 +5895,7 @@ table.dataTable thead td {
   width: 100%;
 }
 .inventory .subtitle {
-  font-weight: 900;
+  font-weight: 600;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;

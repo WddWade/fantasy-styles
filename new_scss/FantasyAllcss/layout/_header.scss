@@ -58,20 +58,6 @@
         }
       }
 
-      // &:hover {
-      //   .blockLogo {
-      //     // -webkit-transform: translateY(-30px);
-      //     // -ms-transform: translateY(-30px);
-      //     transform: translateY(-30px);
-      //   }
-
-      //   .blockName {
-      //     // -webkit-transform: translateY(-12px);
-      //     // -ms-transform: translateY(-12px);
-      //     transform: translateY(-12px);
-      //   }
-      // }
-
       div {
         &::before {
           display: none;
@@ -92,7 +78,7 @@
       animation: cgIN 0.5s ease 1s both;
 
       > * {
-        font-size: 1.2rem;
+        font-size: 1rem;
         font-weight: 600;
         color: #000;
         &::after {

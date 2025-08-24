@@ -6,19 +6,20 @@
 /* header 按鈕 */
 .cms_change {
   a {
-    color: #F95775;
+    color: #f95775;
   }
 }
 
 /* 點進編輯後右側設定選單中按鈕 */
 .CmsChangeBtn {
+  display: none;
   position: absolute;
   top: 15px;
   width: 240px;
 
   a {
     display: block;
-    background-color: #F95775;
+    background-color: #f95775;
     padding: 10px;
     text-align: center;
     color: #fff;
@@ -43,4 +44,3 @@
     }
   }
 }
-

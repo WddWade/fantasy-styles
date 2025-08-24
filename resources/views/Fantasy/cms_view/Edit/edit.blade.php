@@ -11,6 +11,7 @@
                             <li class="check editSentBtn">
                                 <a href="javascript:;">
                                     <span class="fa fa-check"></span>
+                                    <span class="label">Setting</span>
                                 </a>
                             </li>
                         @endif
@@ -19,6 +20,7 @@
                             <li class="trash cms-delete-btn">
                                 <a href="javascript:void(0)">
                                     <span class="fa fa-trash"></span>
+                                    <span class="label">Delete</span>
                                 </a>
                             </li>
                         @endif
@@ -26,6 +28,7 @@
                             <li class="remove">
                                 <a class="close_btn" href="javascript:;">
                                     <span class="fa fa-remove"></span>
+                                    <span class="label">Cancel</span>
                                 </a>
                             </li>
                         @endif

@@ -47,7 +47,9 @@
     <link href="{{ asset('/vender/assets/css/tree/quicksand.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('/vender/assets/css/tree/filetree.css') }}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    {{-- 資料夾樹 end --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap" rel="stylesheet">    {{-- 資料夾樹 end --}}
     <link rel="stylesheet" href="{{ asset('dist-summernote/css/summernote/summernote-lite.min.css') }}" attr="attr" />
     <link rel="stylesheet" href="{{ asset('dist-summernote/icon/style.css') }}" attr="attr" />
     <link rel="stylesheet" href="{{ asset('dist-summernote/css/editor.css') }}" attr="attr" />
