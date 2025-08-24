@@ -16,20 +16,17 @@
     justify-content: space-between;
 
     .blockCover {
-      width: 250px;
-      height: inherit;
       padding: 0 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      position: absolute;
-      z-index: 100;
-      top: 0;
-      left: calc(50% - 72px);
       animation: blockCover-cgIN 0.5s ease both;
-      opacity: 0;
+      align-items: flex-start;
+      position: static;
+      z-index: initial;
+      left: 0;
 
       .blockLogo {
         width: auto;
@@ -82,7 +79,6 @@
       }
     }
     .inforCover {
-      height: 100%;
       display: flex;
       justify-content: end;
       align-items: center;
@@ -128,12 +124,8 @@
 .header-blockcover-open {
   .header {
     .blockCover {
-      align-items: flex-start;
-      position: static;
-      z-index: initial;
-      left: 0;
       opacity: 1;
-      animation: cgIN 0.5s ease both;
+      // animation: cgIN 0.5s ease both;
       .blockName {
         p {
           color: #fff !important;

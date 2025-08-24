@@ -14,11 +14,11 @@
     }
 
     &:not(.content-sidebar-open) {
-      .content-wrap {
-        .content-head {
-          width: calc(100% - 172px);
-        }
-      }
+      // .content-wrap {
+      //   .content-head {
+      //     width: calc(100% - 172px);
+      //   }
+      // }
 
       .datatable {
         .tables {

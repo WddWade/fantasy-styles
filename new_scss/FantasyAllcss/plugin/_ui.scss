@@ -562,39 +562,38 @@
 
   .uiv2 {
     .mainBody {
-      .header {
-        .blockCover {
-          position: absolute;
-          z-index: 100;
-          top: 0;
-          left: calc(50% - 72px);
-          -webkit-box-align: center;
-          -ms-flex-align: center;
-          align-items: center;
-          -webkit-animation: blockCover-cgIN 0.5s ease 1s both;
-          animation: blockCover-cgIN 0.5s ease 1s both;
-          opacity: 0;
+      // .header {
+      //   justify-content: flex-end;
+      //   .blockCover {
+      //     position: absolute;
+      //     z-index: 11;
+      //     top: 0;
+      //     left: 50%;
+      //     align-items: center;
+      //     transform: translate(-50% 0);
+      //     animation: blockCover-cgIN 0.5s ease 1s both;
+      //     opacity: 0;
 
-          .blockName {
-            p {
-              color: #000 !important;
-              text-align: center;
-            }
-          }
-        }
-      }
+      //     .blockName {
+      //       p {
+      //         color: #000 !important;
+      //         text-align: center;
+      //       }
+      //     }
+      //   }
+      // }
 
-      .mainContent {
-        .content {
-          .inner-content {
-            .jumbotron {
-              .inner {
-                padding: 0 56px;
-              }
-            }
-          }
-        }
-      }
+      // .mainContent {
+      //   .content {
+      //     .inner-content {
+      //       .jumbotron {
+      //         .inner {
+      //           padding: 0 56px;
+      //         }
+      //       }
+      //     }
+      //   }
+      // }
     }
 
     &.header-blockcover-open {
@@ -650,28 +649,28 @@
     }
   }
 
-  .detailEditor {
-    .editorBody {
-      padding: 0 50px;
+  // .detailEditor {
+  // .editorBody {
+  //   padding: 0 50px;
 
-      // .editorHeader {
-      //   width: calc(100% - 370px);
-      // }
-    }
+  // .editorHeader {
+  //   width: calc(100% - 370px);
+  // }
+  // }
 
-    .editorNav {
-      max-width: 270px;
+  // .editorNav {
+  //   max-width: 270px;
 
-      .control {
-        width: 270px;
-        padding: 74px 30px 0 0;
-      }
+  //   .control {
+  //     width: 270px;
+  //     padding: 74px 30px 0 0;
+  //   }
 
-      ul {
-        &.navGroup {
-          padding: 170px 30px 50px 0;
-        }
-      }
-    }
-  }
+  //   ul {
+  //     &.navGroup {
+  //       padding: 170px 30px 50px 0;
+  //     }
+  //   }
+  // }
+  // }
 }
