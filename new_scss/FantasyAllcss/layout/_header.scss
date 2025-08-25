@@ -7,7 +7,7 @@
     // padding: 0 28px;
     margin: 0;
     position: static;
-    background-color: #2e2e2e;
+    background-color: #f2f2f2;
 
     border: 0;
     height: 40px;
@@ -28,7 +28,26 @@
       z-index: initial;
       left: 0;
 
+      .inner-left {
+        .switch-menu {
+          display: flex;
+          margin-right: 15px;
+          cursor: pointer;
+
+          .bar {
+            display: block;
+            width: 3px;
+            height: 16px;
+            background-color: black;
+            &:not(:last-child) {
+              margin-right: 3px;
+            }
+          }
+        }
+      }
+
       .blockLogo {
+        display: none;
         width: auto;
         user-select: none;
 

@@ -60,7 +60,7 @@
 
                 .content-sidebar {
                   margin-top: 60px;
-                  
+
                   .sidebar-menu {
                     .head-bar {
                       top: 0;
@@ -86,17 +86,17 @@
                   min-height: auto;
                   margin-top: 60px;
 
-                  .jumbotron {
-                    width: calc(100% - 300px);
+                  // .jumbotron {
+                  //   width: calc(100% - 300px);
 
-                    .inner-right {
-                      display: block;
+                  //   .inner-right {
+                  //     display: block;
 
-                      .close_btn {
-                        color: #000;
-                      }
-                    }
-                  }
+                  //     .close_btn {
+                  //       color: #000;
+                  //     }
+                  //   }
+                  // }
 
                   .content-scrollbox {
                     height: calc(92vh - 110px);
@@ -688,10 +688,15 @@
   }
 }
 
-.fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload .editorContent .inventory .radio_area .content,
+.fmsDetailAjaxArea
+  .ajaxItem
+  .ajaxContainer.fmsUpload
+  .editorContent
+  .inventory
+  .radio_area
+  .content,
 .amsDetailAjaxArea .radio_area .content,
 .fmsDetail_edit .radio_area .content,
-.fmsFolder_add .radio_area .content{
+.fmsFolder_add .radio_area .content {
   display: flex;
 }
-
