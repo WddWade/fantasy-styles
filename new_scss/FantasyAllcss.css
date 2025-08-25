@@ -11519,24 +11519,23 @@ textarea:focus::-webkit-input-placeholder,
 }
 .wddLoginMain .login_sec {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   width: 100%;
   height: 100vh;
-  max-width: 450px;
   padding: 0 3%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .wddLoginMain .login_sec .title {
   width: 100%;
@@ -11544,21 +11543,23 @@ textarea:focus::-webkit-input-placeholder,
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-bottom: 20px;
 }
 .wddLoginMain .login_sec .title .fantasylogo {
-  font-size: 2.8rem;
+  font-size: 18vw;
   font-weight: bold;
+  font-family: "inter";
   color: #000;
+  line-height: 1;
 }
 .wddLoginMain .login_sec .title .fantasylogo .fantasyver {
   font-size: 0.8rem;
@@ -11572,14 +11573,26 @@ textarea:focus::-webkit-input-placeholder,
   padding: 0;
 }
 .wddLoginMain .login_sec #accountForm {
-  width: 100%;
+  width: 450px;
   margin-bottom: 15px;
+}
+.wddLoginMain .login_sec #accountForm .frame {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 0 20px;
 }
 .wddLoginMain .login_sec .forwho {
   text-transform: uppercase;
   text-align: center;
-  margin: 50px 0;
-  font-size: 0.5rem;
+  margin: 20px 0;
+  font-size: 1rem;
   color: #000;
   line-height: 1.8;
 }
@@ -11588,54 +11601,49 @@ textarea:focus::-webkit-input-placeholder,
   padding-left: 10px;
 }
 .wddLoginMain .login_sec .input_box {
-  border-radius: 50px;
-  border: solid 1px #7b7b7b;
-  padding: 10px;
-  margin-bottom: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  padding-bottom: 10px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
-.wddLoginMain .login_sec .input_box label {
-  display: block;
-  margin: 0 10px;
-  color: #000;
-  font-weight: bold;
+.wddLoginMain .login_sec .input_box:last-child {
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  width: 100%;
 }
 .wddLoginMain .login_sec input {
   border: none;
   border: none;
   text-align: center;
   width: 100%;
+  border-bottom: solid 1px #e5e5e5;
+  padding: 10px 0;
 }
-.wddLoginMain .login_btn {
+.wddLoginMain .login_sec input:focus, .wddLoginMain .login_sec input:focus-visible {
+  border-bottom: solid 1px #000;
+}
+.wddLoginMain .login_sec .login_btn {
+  font-size: 1.2rem;
   cursor: pointer;
-  color: #fff;
-  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #d0d0d0;
   width: 200px;
   height: 40px;
   border: none;
-  border-radius: 50px;
-  background-color: #10cfbd;
-  background: linear-gradient(135deg, #e9ff00 0%, #00d8ff 25%, #007bff 50%, #9d00ff 75%, #ff0061 100%);
-  letter-spacing: 1px;
+  border-radius: 3px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  background-color: #767676;
 }
-.wddLoginMain .login_btn:hover {
+.wddLoginMain .login_sec .login_btn:hover {
   background-color: black;
+  color: #fff;
 }
-.wddLoginMain .bg_sec {
+.wddLoginMain .login_sec .bg_sec {
   width: calc(100% - 450px);
 }
-.wddLoginMain .bg_photo {
+.wddLoginMain .login_sec .bg_photo {
   width: 100%;
   height: 100vh;
   background-position: center center;
