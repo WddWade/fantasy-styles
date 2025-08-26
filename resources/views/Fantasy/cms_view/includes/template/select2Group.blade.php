@@ -6,7 +6,7 @@ $is_tableData = !empty($tableData) ? 'is_tableData' : '';
         <li class="inventory {!! $sontable === false ? 'row_style' : '' !!}">
             @if($batch || $search)
                 <div>
-                    <div class="radioSmall inventory sortStatusSet" style="padding: 0px !important;">
+                    <div class="radioSmall sortStatusSet" style="padding: 0px !important;">
                         <div style="display:flex; align-items: center; padding: 8px">
                             <div class="ios_switch radio_btn_switch">
                                 <input name="{{ 'batch_' . $name }}" type="text" value="">

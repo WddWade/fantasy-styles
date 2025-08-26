@@ -1,6 +1,6 @@
-<div class="mainBody page-container extract-block">
+<div class="page-container extract-block">
     @include('Fantasy.includes.header')
-    <div class="page-content-wrapper mainContent full-height">
+    <div class="mainContent full-height">
         <div class="content full-height">
             <nav class="content-sidebar">
                 <div class="sidebar-menu">
@@ -9,7 +9,8 @@
                 </div>
             </nav>
             <div class="inner-content">
-                <div class="jumbotron">
+                {{-- wade:delete --}}
+                {{-- <div class="jumbotron">
                     <div class="container-fluid">
                         <div class="inner">
                             <div class="inner-left">
@@ -25,11 +26,22 @@
                             <div class="total"></div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <div class="content-scrollbox">
                     <div class="content-wrap main-table index-table-div" data-tableid="new_cms_table">
                         <div class="content-head cms-index_table">
-                            <h1>WDD Design</h1>
+                            {{-- wade:add --}}
+                            <div class="content-title">
+                                <div class="switch-menu navigation-toggle">
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                </div>
+                                <h1>WDD Design</h1>
+                            </div>
+
+                            {{-- wade:delete --}}
+                            {{-- <h1>WDD Design</h1> --}}
                             <div class="content-nav">
                             </div>
                         </div>

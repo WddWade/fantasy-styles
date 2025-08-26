@@ -11,7 +11,7 @@ $fms-main: #775bc2;
 }
 
 @mixin main-body($main-color, $type) {
-  .mainBody {
+  .page-container {
     @if $type != cms {
       .ajax_control_btn {
         width: 100%;
@@ -223,9 +223,6 @@ $fms-main: #775bc2;
               }
             }
             .content-wrap {
-              .content-head h1::before {
-                background-color: $main-color;
-              }
               .content-body .datatable .tables {
                 @if $type != fms {
                   input:checked + .check-circle {
@@ -263,9 +260,9 @@ $fms-main: #775bc2;
       .editorHeader .title::after {
         background-color: $main-color;
       }
-      .btnGroup .check {
-        background-color: $main-color;
-      }
+      // .btnGroup .check {
+      //   background-color: $main-color;
+      // }
       // .tips .title {
       //   color: $main-color;
       // }
@@ -430,17 +427,17 @@ $fms-main: #775bc2;
 
 @mixin response($main-color) {
   @media (max-width: 1700px) {
-    .mainBody .hiddenArea {
+    .page-container .hiddenArea {
       width: 80%;
     }
   }
   @media (max-width: 1400px) {
-    .mainBody .hiddenArea {
+    .page-container .hiddenArea {
       width: 85%;
     }
   }
   @media (max-width: 1100px) {
-    .mainBody .hiddenArea {
+    .page-container .hiddenArea {
       width: 90%;
     }
   }

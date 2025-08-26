@@ -14,7 +14,10 @@
         'ITS' => 1,
     ];
 @endphp
-<nav class="mainNav" data-pages="sidebar">
+
+ {{-- wade:delete --}}
+ 
+{{-- <nav class="mainNav" data-pages="sidebar">
     <!-- BEGIN SIDEBAR MENU HEADER-->
     <div class="navHeader">
         <img class="fantasyLogo" src="{{ asset('/vender/assets/img/Fantasy-icon.svg') }}" alt="logo">
@@ -137,4 +140,4 @@
         <div class="clearfix"></div>
     </div>
     <!-- END SIDEBAR MENU -->
-</nav>
+</nav> --}}

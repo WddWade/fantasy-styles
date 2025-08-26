@@ -1,4 +1,4 @@
-<li class="radioSmall inventory sortStatusSet"
+<li class="radioSmall sortStatusSet"
     style="width: 33.33%; border-bottom: solid 1px #c7c7c7 !important; padding: 0px !important;">
 
     <div style="display:flex; align-items: center; padding: 15px">

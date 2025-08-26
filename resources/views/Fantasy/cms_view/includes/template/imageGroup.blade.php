@@ -9,7 +9,7 @@
             @foreach($image_array as $key_img => $value_img)
                 @if($batch || $search)
                     <div>
-                        <div class="radioSmall inventory sortStatusSet" style="padding: 0px !important;">
+                        <div class="radioSmall sortStatusSet" style="padding: 0px !important;">
                             <div style="display:flex; align-items: center; padding: 8px">
                                 <div class="ios_switch radio_btn_switch">
                                     <input name="{{ 'batch_' .  $value_img['name'] }}" type="text" value="">

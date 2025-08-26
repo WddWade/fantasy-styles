@@ -8,7 +8,7 @@
             <div class="Leon-langs-input">
                 @if($batch || $search)
                     <div>
-                        <div class="radioSmall inventory sortStatusSet" style="padding: 0px !important;">
+                        <div class="radioSmall sortStatusSet" style="padding: 0px !important;">
                             <div style="display:flex; align-items: center; padding: 8px">
                                 <div class="ios_switch radio_btn_switch">
                                     <input name="{{ 'batch_' . $set['model'] . '[' . $val['key'] . '_' . $name . ']' }}" type="text" value="">

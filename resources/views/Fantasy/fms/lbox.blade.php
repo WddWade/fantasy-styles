@@ -1,6 +1,6 @@
 <div class="fixed-header fms_theme ajax_fms ajax_temp">
     <!-- 中間主區塊 -->
-    <div class="mainBody page-container extract-block">
+    <div class="page-container extract-block">
         <!-- 最上面的 header bar -->
         <div class="header">
             <div class="blockCover">
@@ -19,7 +19,7 @@
         </div>
         <!-- 最上面的 header bar -->
         <!-- 內容 CONTENT -->
-        <div class="page-content-wrapper mainContent content-sidebar-open">
+        <div class="mainContent">
             @include('Fantasy.fms.lbox_full',['cms_open'=>$cms_open])
         </div>
         <!-- 內容 CONTENT -->

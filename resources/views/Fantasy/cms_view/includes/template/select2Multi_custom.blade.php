@@ -6,7 +6,7 @@ $value = (is_array($value)) ? $value : [];
 <li class="inventory {!! $sontable===false?'row_style':'' !!} {{ ($search===true)? 'card_search_input':''}}" {!! ($search===true)?'data-search_type="single_select" data-search_field="'.$search_field.'"':'' !!}>
     @if($batch)
     <div>
-        <div class="radioSmall inventory sortStatusSet" style="padding: 0px !important;">
+        <div class="radioSmall sortStatusSet" style="padding: 0px !important;">
             <div style="display:flex; align-items: center; padding: 8px">
                 <div class="ios_switch radio_btn_switch">
                     <input type="text" name="{{ 'batch_'.$name }}" value="">

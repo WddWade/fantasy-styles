@@ -10,12 +10,12 @@
 @include('Fantasy.includes.sidebar')
 <!-- 左邊滑動的 sidebar -->
 <!-- 中間主區塊 -->
-<div class="mainBody page-container extract-block">
+<div class="page-container extract-block">
     <!-- 最上面的 header bar -->
     @include('Fantasy.includes.header')
     <!-- 最上面的 header bar -->
     <!-- 內容 CONTENT -->
-    <div class="page-content-wrapper mainContent">
+    <div class="mainContent">
         @include('Fantasy.fms.lbox_full')
     </div>
     <!-- 內容 CONTENT -->

@@ -1,11 +1,11 @@
 <!-- cms主要內容區 -->
-<div class="mainBody page-container extract-block">
+<div class="page-container extract-block">
     <!-- header -->
     @include('Fantasy.includes.header')
     <!-- header -->
 
     <!-- 內容 CONTENT -->
-    <div class="page-content-wrapper mainContent full-height">
+    <div class="mainContent full-height">
         <div class="content full-height">
             <!-- SIDEBAR MENU-->
             <nav class="content-sidebar">

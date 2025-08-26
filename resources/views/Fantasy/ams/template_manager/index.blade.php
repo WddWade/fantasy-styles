@@ -9,11 +9,11 @@
 @include('Fantasy.includes.sidebar')
 <!-- 左邊滑動的 sidebar -->
 <!-- 中間主區塊 -->
-<div class="mainBody page-container extract-block">
+<div class="page-container extract-block">
     <!-- 最上面的 header bar -->
     @include('Fantasy.includes.header')
     <!-- 最上面的 header bar -->
-    <div class="page-content-wrapper mainContent full-height">
+    <div class="mainContent full-height">
         <div class="content full-height">
             <!-- 左邊 SECONDARY SIDEBAR MENU-->
             <nav class="content-sidebar">

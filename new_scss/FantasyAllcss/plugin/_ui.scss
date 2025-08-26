@@ -13,7 +13,7 @@
     }
   }
 
-  .mainBody {
+  .page-container {
     // .header {
     //   width: 100%;
     //   // height: 60px;
@@ -267,7 +267,7 @@
         background-color: #0c0c0c !important;
       }
 
-      .mainBody {
+      .page-container {
         .mainContent {
           .content {
             .content-sidebar {
@@ -561,7 +561,7 @@
   }
 
   .uiv2 {
-    .mainBody {
+    .page-container {
       // .header {
       //   justify-content: flex-end;
       //   .blockCover {
@@ -609,33 +609,33 @@
     }
   }
 
-  .mainBody {
-    .mainContent {
-      &.content-sidebar-open {
-        .content {
-          .content-sidebar {
-            width: 250px;
-          }
-        }
-      }
+  // .page-container {
+  //   .mainContent {
+  //     &.content-sidebar-open {
+  //       .content {
+  //         .content-sidebar {
+  //           width: 250px;
+  //         }
+  //       }
+  //     }
 
-      .content {
-        .content-sidebar {
-          .sidebar-menu {
-            .head-bar {
-              width: 250px;
-            }
-          }
-        }
-      }
-    }
-  }
+  //     .content {
+  //       .content-sidebar {
+  //         .sidebar-menu {
+  //           .head-bar {
+  //             width: 250px;
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 
-  .content-wrap {
-    .content-head {
-      // width: calc(100% - 422px);
-    }
-  }
+  // .content-wrap {
+  //   .content-head {
+  // width: calc(100% - 422px);
+  //   }
+  // }
 
   .datatable {
     .tables {

@@ -1,13 +1,32 @@
 <div class="header">
     <div class="blockCover">
-        <div class="blockLogo">
+
+        {{-- wade:add --}}
+         <h1 class="logo">Fantasy</h1>
+         <div class="navigations">
+            <div>
+                <a href="{{ url('Fantasy/Cms') }}">CMS</a>
+            </div>
+            <div>
+                <a href="{{ url('Fantasy/Fms') }}">FMS</a>
+            </div>
+            <div>
+                <a href="{{ url('Fantasy/Ams') }}">AMS</a>
+            </div>
+         </div>
+        {{-- wade:add --}}
+
+        {{-- wade:delete --}}
+        {{-- <div class="blockLogo">
             <p>{{ $unitTitle }}</p>
-        </div>
-        @if(!empty($unitSubTitle))
+        </div> --}}
+
+         {{-- wade:delete --}}
+        {{-- @if(!empty($unitSubTitle))
             <div class="blockName">
                 <p>{{ $unitSubTitle }}</p>
             </div>
-        @endif
+        @endif --}}
     </div>
     <div class="inforCover">
         <div class="projectName">{{ Config::get('app.name') }}</div>
