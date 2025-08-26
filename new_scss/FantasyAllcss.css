@@ -2383,13 +2383,6 @@ body.isContent .backEnd_quill {
 /* header 最上方 header */
 .page-container .header {
   width: 100%;
-<<<<<<< HEAD
-  margin: 0;
-  position: static;
-  background-color: #f2f2f2;
-  border: 0;
-=======
->>>>>>> db0eff1 (wade dev update)
   height: 40px;
   padding-inline: 20px;
   background-color: #2e2e2e;
@@ -2412,41 +2405,10 @@ body.isContent .backEnd_quill {
           align-items: center;
   gap: 0 30px;
 }
-<<<<<<< HEAD
-.mainBody .header .blockCover .inner-left .switch-menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-right: 15px;
-  cursor: pointer;
-}
-.mainBody .header .blockCover .inner-left .switch-menu .bar {
-  display: block;
-  width: 3px;
-  height: 16px;
-  background-color: black;
-}
-.mainBody .header .blockCover .inner-left .switch-menu .bar:not(:last-child) {
-  margin-right: 3px;
-}
-.mainBody .header .blockCover .blockLogo {
-  display: none;
-  width: auto;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-.mainBody .header .blockCover .blockLogo p {
-  font-size: 1.5rem;
-  font-weight: 500;
-  font-family: inter;
-=======
 .page-container .header .blockCover .logo {
   font-family: "inter";
   font-size: 1.6rem;
   font-weight: 600;
->>>>>>> db0eff1 (wade dev update)
   text-transform: uppercase;
   color: #fff;
   padding: 0;
@@ -7256,20 +7218,7 @@ table.dataTable thead td {
   min-height: auto;
   margin-top: 60px;
 }
-<<<<<<< HEAD
-.fmsAjaxArea .ajaxItem .ajaxContainer .detailEditor .editorBody .mainBody .mainContent .content .inner-content .content-scrollbox {
-=======
-.fmsAjaxArea .ajaxItem .ajaxContainer .detailEditor .editorBody .page-container .mainContent .content .inner-content .jumbotron {
-  width: calc(100% - 300px);
-}
-.fmsAjaxArea .ajaxItem .ajaxContainer .detailEditor .editorBody .page-container .mainContent .content .inner-content .jumbotron .inner-right {
-  display: block;
-}
-.fmsAjaxArea .ajaxItem .ajaxContainer .detailEditor .editorBody .page-container .mainContent .content .inner-content .jumbotron .inner-right .close_btn {
-  color: #000;
-}
 .fmsAjaxArea .ajaxItem .ajaxContainer .detailEditor .editorBody .page-container .mainContent .content .inner-content .content-scrollbox {
->>>>>>> db0eff1 (wade dev update)
   height: calc(92vh - 110px);
 }
 .fmsAjaxArea .ajaxItem .ajaxContainer .detailEditor .editorBody .page-container .mainContent .content .inner-content .content-scrollbox .content-head {

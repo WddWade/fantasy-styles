@@ -23,7 +23,8 @@
             </nav>
             <!-- 左邊 SECONDARY SIDEBAR MENU -->
             <div class="inner-content" style="background-image:url(); background-size:cover;">
-                <div class="jumbotron">
+                {{-- wade:delete --}}
+                {{-- <div class="jumbotron">
                     <div class="container-fluid">
                         <div class="inner">
                             <div class="inner-left">
@@ -42,7 +43,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

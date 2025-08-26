@@ -58,11 +58,10 @@ $formarr = [
       <div class="inner-content">
 
         <!-- 上面區塊 (佈告欄)-->
-        <div class="jumbotron">
+        {{-- wade:delete --}}
+        {{-- <div class="jumbotron">
           <div class="container-fluid">
-            {{-- 2.0NEW --}}
-            {{-- 2.0NEW --}}
-            <div class="inner">
+                    <div class="inner">
               <div class="inner-left shake-vertical">
                 <div class="switch-menu">
                   <span class="bar"></span>
@@ -82,12 +81,9 @@ $formarr = [
                   <span class="num">&nbsp;{{ number_format($count) }}</span>
                 </p>
               </div>
-
             </div>
-            {{-- 2.0NEW END --}}
-            {{-- 2.0NEW END --}}
           </div>
-        </div>
+        </div> --}}
         <!-- 上面區塊 -->
         <!-- 下面列表 -->
 

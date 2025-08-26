@@ -1,5 +1,6 @@
        <!-- 目前路徑 jumbotron -->
-       <div class="jumbotron">
+       {{-- wade:delete --}}
+       {{-- <div class="jumbotron">
            <div class="container-fluid">
                <div class="inner">
                    <div class="inner-left">
@@ -32,7 +33,7 @@
                    </div>
                </div>
            </div>
-       </div>
+       </div> --}}
        <!-- 目前路徑 jumbotron -->
        <!-- 上面區塊 -->
 

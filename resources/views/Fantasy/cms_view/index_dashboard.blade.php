@@ -39,7 +39,8 @@
       </nav>
       <!-- 左邊 SECONDARY SIDEBAR MENU -->
       <div class="inner-content">
-        <div class="jumbotron">
+        {{-- wade:delete --}}
+        {{-- <div class="jumbotron">
           <div class="container-fluid">
             <div class="inner">
               <div class="inner-left">
@@ -51,7 +52,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> --}}
 
         <div class="scroll-wrapper content-scrollbox" style="position: relative;">
           <div class="content-scrollbox scroll-content"

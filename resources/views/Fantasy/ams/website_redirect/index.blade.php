@@ -24,7 +24,8 @@
             <!-- 左邊 SECONDARY SIDEBAR MENU -->
             <div class="inner-content" style="">
                 <!-- 上面區塊 (佈告欄)-->
-                <div class="jumbotron">
+                {{-- wade:delete --}}
+                {{-- <div class="jumbotron">
                     <div class="container-fluid">
                         <div class="inner">
                             <div class="inner-left">
@@ -50,7 +51,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
                 <div class="content-scrollbox" style="position: relative;">
                     <div class="content-wrap main-table index-table-div" data-tableid="new_cms_table">

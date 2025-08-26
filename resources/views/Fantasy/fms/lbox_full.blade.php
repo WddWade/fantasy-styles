@@ -10,7 +10,8 @@
             <!-- 右邊 PAGE CONTENT -->
             <div class="inner-content">
                 <!-- 上面區塊 (佈告欄)-->
-                <div class="jumbotron">
+                {{-- wade:delete --}}
+                {{-- <div class="jumbotron">
                     <div class="container-fluid">
                         <div class="inner">
                             <div class="inner-left">
@@ -22,8 +23,8 @@
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb files-breadcrumb">
                                         @include('Fantasy.fms.breadcrumb',['active'=>1])
-                                        {{-- <li class="breadcrumb-item"><a href="#">品牌總覽</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">第一層</li> --}}
+                                        <li class="breadcrumb-item"><a href="#">品牌總覽</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">第一層</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -35,7 +36,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- 上面區塊 (佈告欄) -->
                 <!-- search_bar -->
                 {{-- <div class="search_area">
