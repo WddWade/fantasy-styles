@@ -31,14 +31,15 @@
     <link href="{{ asset('/vender/assets/plugins/bootstrap-datepicker1.9/css/bootstrap-datepicker3.css') }}" rel="stylesheet" type="text/css" media="screen" />
     <link href="{{ asset('/vender/assets/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css') }}" rel="stylesheet" type="text/css" media="screen" />
     <link href="{{ asset('/vender/assets/plugins/bootstrap-timepicker/bootstrap-timepicker.min.css') }}" rel="stylesheet" type="text/css" media="screen" />
-    <link href="/vender/pages/css/pages-icons.css" rel="stylesheet" type="text/css" />
-    <link class="main-stylesheet" href="/vender/pages/css/pages.css" rel="stylesheet" type="text/css" />
+    {{-- wade:delete --}}
+    {{-- <link href="/vender/pages/css/pages-icons.css" rel="stylesheet" type="text/css" /> --}}
+    {{-- <link class="main-stylesheet" href="/vender/pages/css/pages.css" rel="stylesheet" type="text/css" /> --}}
     <!--datatable-->
     <link type="text/css" rel="stylesheet" href="{{ asset('/vender/assets/plugins/jquery-datatable/media/css/jquery.dataTables.css') }}" />
     <link type="text/css" rel="stylesheet" href="{{ asset('/vender/assets/plugins/jquery-datatable/extensions/FixedColumns/css/dataTables.fixedColumns.min.css') }}" />
     <link media="screen" type="text/css" rel="stylesheet" href="{{ asset('/vender/assets/plugins/datatables-responsive/css/datatables.responsive.css') }}" />
     <!--color-picker(2018/4/3 引入)-->
-    <link type="text/css" rel="stylesheet" href="{{ asset('/vender/assets/js/spectrum/spectrum.css') }}" />
+    <link type="text/css" rel="stylesheet" href="{{ asset('/vender/assets/plugins/spectrum/spectrum.css') }}" />
     <!--icomoon(2019/7/25 引入) -->
     <link type="text/css" rel="stylesheet" href="{{ asset('/vender/assets/font/icomoon/style.css') }}" />
 
@@ -270,20 +271,23 @@
     <script type="text/javascript" src="{{ asset('/vender/assets/plugins/jquery-datatable/media/js/jquery.dataTables.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('/vender/assets/plugins/jquery-datatable/extensions/TableTools/js/dataTables.tableTools.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('/vender/assets/plugins/jquery-datatable/extensions/Bootstrap/jquery-datatable-bootstrap.js') }}"></script>
-    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+    <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
     <script type="text/javascript" src="{{ asset('/vender/assets/plugins/jquery-datatable/extensions/FixedColumns/js/dataTables.fixedColumns.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('/vender/assets/plugins/jquery-datatable/extensions/FixedHeader/js/dataTables.fixedHeader.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('/vender/assets/plugins/spectrum/spectrum.js') }}"></script>
+
+    <script type="text/javascript" src="{{ asset('/vender/assets/js/fantasy.js?v=') . BaseFunction::getV() }}"></script>
     <!--table-->
     {{-- <script type="text/javascript" src="{{ asset('/vender/backend/js/tables.js') }}"></script>疑似未使用#HondaDebug --}}
     <!--color-picker(2018/4/3 引入)-->
-    <script type="text/javascript" src="{{ asset('/vender/assets/js/spectrum/spectrum.js') }}"></script>
     <!--==========  引入JS End  ==========-->
     <!--QuillCircleProgram.js(2018/5/14 引入)-->
-    <script type="text/javascript" src="{{ asset('/vender/backend/js/QuillCircleProgram/QuillCircleProgram.js') }}">
-    </script>{{-- 僅在上傳檔案時fms有使用#HondaDebug --}}
+    {{-- wade:delete --}}
+    {{-- 僅在上傳檔案時fms有使用#HondaDebug --}}
+    {{-- <script type="text/javascript" src="{{ asset('/vender/backend/js/QuillCircleProgram/QuillCircleProgram.js') }}"> </script>--}}
+
     <script type="text/javascript" src="{{ asset('/vender/backend/js/custom.js') }}"></script>
     <script type="text/javascript" src="{{ asset('/vender/backend/js/js_builder.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('/vender/assets/js/fantasy_main_leon.js?v=') . BaseFunction::getV() }}"></script>
     <!--==========  後端用JS  ==========-->
 
     <script type="text/javascript" src="/vender/backend/js/cms/cms_backend.js?v={{ BaseFunction::getV() }}"></script>
@@ -292,8 +296,8 @@
     <!--Leon(2019/10/18 引入)-->
     <script type="text/javascript" src="{{ asset('/vender/backend/js/jquery.serializejson.js') }}"></script>
     <script type="text/javascript" src="{{ asset('/vender/backend/js/fms/file_upload.js') }}"></script>
-    <script type="text/javascript" src="/vender/backend/js/cms/verify.js?v={{ BaseFunction::getV() }}"></script>
     <script type="text/javascript" src="{{ asset('/vender/backend/js/fms/dropzone.min.js') }}"></script>
+    <script type="text/javascript" src="/vender/backend/js/cms/verify.js?v={{ BaseFunction::getV() }}"></script>
     <script src="/vender/backend/js/jsencrypt.min.js"></script>
     {{-- 資料夾樹 --}}
     <script src="{{ asset('/vender/backend/js/tree/filetree.js') }}"></script>
@@ -313,8 +317,8 @@
     {{-- <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.1/localization/messages_zh_tw.js"></script> --}}
 
     {{-- jspreadsheet --}}
-    <script src="/vender/jspreadsheet/index.min.js?v={{ BaseFunction::getV() }}"></script>
-    <script src="/vender/jspreadsheet/jsuites.min.js?v={{ BaseFunction::getV() }}"></script>
+    <script type="text/javascript" src="/vender/jspreadsheet/index.min.js?v={{ BaseFunction::getV() }}"></script>
+    <script type="text/javascript" src="/vender/jspreadsheet/jsuites.min.js?v={{ BaseFunction::getV() }}"></script>
     <link rel="stylesheet" href="/vender/jspreadsheet/jspreadsheet.min.css?v={{ BaseFunction::getV() }}" type="text/css" />
     <link rel="stylesheet" href="/vender/jspreadsheet/jsuites.min.css?v={{ BaseFunction::getV() }}" type="text/css" />
     <link rel="stylesheet" href="/vender/jspreadsheet/custom.css" type="text/css" />

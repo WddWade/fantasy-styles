@@ -13,6 +13,11 @@
             <div>
                 <a href="{{ url('Fantasy/Ams') }}">AMS</a>
             </div>
+            @if(isset($locale) && ($unitTitle == 'Cms' || $unitTitle == 'Cms 審核站' || $unitTitle == 'Cms 正式站' ))
+            <div>
+                <a href="{{ BaseFunction::preview_url('') }}" target="_blank" class="previewButton" data-toggle="tooltip" data-placement="bottom" data-original-title="前往預覽未正式發佈的網站內容">PREVIEW</a>
+            </div>
+            @endif
          </div>
         {{-- wade:add --}}
 
