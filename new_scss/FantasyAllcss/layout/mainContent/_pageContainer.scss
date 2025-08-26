@@ -34,13 +34,11 @@
     .content {
       min-height: 100%;
       padding-top: 0;
+      background-color: #e4e4e4;
       padding-bottom: 0px;
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
+      gap: 0 1px;
       z-index: 10;
-      -webkit-transition: all 0.3s ease;
-      -o-transition: all 0.3s ease;
       transition: all 0.3s ease;
 
       .inner-content {

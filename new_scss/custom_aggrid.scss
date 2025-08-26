@@ -1,8 +1,13 @@
 .data-aggrid {
   &.ag-theme-alpine {
+    --ag-row-height: 40px !important;
     height: calc(100vh - 125px);
     padding-top: 0px;
     pointer-events: auto;
+  }
+  .ag-header-row,
+  .ag-pinned-left-header {
+    background-color: #f5f5f5;
   }
 }
 
@@ -96,7 +101,27 @@
     text-align: left;
   }
 
+  .ag-color-cell {
+    border-radius: 50%;
+    width: 30px !important;
+    height: 30px !important;
+    padding: 0 !important;
+    overflow: hidden;
+    border: 1px solid #b2b2b2;
+    margin: 0 auto;
+    .ag-color-cell-transparent {
+      background-image: none !important;
+    }
+    .ag-color-cell-colorText {
+      display: none;
+    }
+    .ag-color-cell-colorBlock {
+      border: none !important;
+    }
+  }
+
   .img_box {
+    padding: 8px;
     display: flex;
     justify-content: center;
     align-items: center;

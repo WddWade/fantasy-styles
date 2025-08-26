@@ -10,6 +10,8 @@ const ColorCol = (agControl, role, col) => {
         init(params) {
             // create the cell
             this.eGui = document.createElement('div');
+            // wade:add
+            this.eGui.classList.add('ag-color-cell');
             if (params.value == null) {
             } else {
                 $(this.eGui)
@@ -17,12 +19,14 @@ const ColorCol = (agControl, role, col) => {
                     .css('padding', '5px')
                     .css('height', '50px');
                 const transparent = document.createElement('div');
+                transparent.classList.add('ag-color-cell-transparent');
                 $(transparent)
                     .css('background-image', 'url(/vender/assets/img/transparent.jpg)')
                     .css('background-size', 'cover')
                     .css('width', '100%')
                     .css('height', '100%');
                 this.colorBlock = document.createElement('div');
+                this.colorBlock.classList.add('ag-color-cell-colorBlock');
                 $(this.colorBlock)
                     .css('overflow', 'hidden')
                     .css('display', 'flex')
@@ -35,6 +39,7 @@ const ColorCol = (agControl, role, col) => {
                     .css('border-radius', '2px')
                     .css('border-width', '1px');
                 this.colorText = document.createElement('div');
+                this.colorText.classList.add('ag-color-cell-colorText');
                 $(this.colorText)
                     .css('text-align', 'center')
                     .css('background-color', 'rgba(255, 255, 255, 0.6)')

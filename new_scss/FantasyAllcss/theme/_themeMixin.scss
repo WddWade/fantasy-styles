@@ -43,26 +43,26 @@ $fms-main: #775bc2;
               // &::after {
               //   border-color: $main-color transparent transparent transparent !important;
               // }
-              li {
-                &.level-1 .sub-menu {
-                  // background-color: transparent !important;
-                }
-                &.level-2 {
-                  background: none;
-                  .title {
-                    color: white;
-                  }
-                  &.open > a .title {
-                    color: #fff;
-                  }
-                }
-                &.level-3 {
-                  color: white;
-                }
-                a {
-                  color: #fff;
-                }
-              }
+              // li {
+              //   &.level-1 .sub-menu {
+              //     // background-color: transparent !important;
+              //   }
+              //   &.level-2 {
+              //     background: none;
+              //     .title {
+              //       color: white;
+              //     }
+              //     &.open > a .title {
+              //       color: #fff;
+              //     }
+              //   }
+              //   &.level-3 {
+              //     color: white;
+              //   }
+              //   a {
+              //     color: #fff;
+              //   }
+              // }
             }
             .body-list {
               @if $type == fms {
