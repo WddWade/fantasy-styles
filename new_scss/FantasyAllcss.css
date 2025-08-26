@@ -2385,7 +2385,7 @@ body.isContent .backEnd_quill {
   width: 100%;
   height: 40px;
   padding-inline: 20px;
-  background-color: #2e2e2e;
+  background-color: #eee;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2407,10 +2407,10 @@ body.isContent .backEnd_quill {
 }
 .page-container .header .blockCover .logo {
   font-family: "inter";
-  font-size: 1.6rem;
-  font-weight: 600;
+  font-size: 1.8rem;
+  font-weight: 800;
   text-transform: uppercase;
-  color: #fff;
+  color: #000;
   padding: 0;
   margin: 0;
 }
@@ -2424,7 +2424,7 @@ body.isContent .backEnd_quill {
   font-size: 1.2rem;
   font-weight: 400;
   font-family: "inter";
-  color: #fff;
+  color: #000;
 }
 .page-container .header .inforCover {
   display: -webkit-box;
@@ -2440,11 +2440,11 @@ body.isContent .backEnd_quill {
 .page-container .header .inforCover > * {
   font-size: 1rem;
   font-weight: 600;
-  color: #ffffff;
+  color: #000;
 }
 .page-container .header .inforCover > *::after {
   content: "|";
-  color: #666;
+  color: #adadad;
   padding: 0 10px;
 }
 .page-container .header .inforCover > *:last-child::after {
@@ -2516,7 +2516,7 @@ body.isContent .backEnd_quill {
   height: calc(100vh - 40px);
 }
 .page-container .content .content-sidebar .scroll-wrapper.body-list {
-  height: calc(100vh - 80px) !important;
+  height: calc(100vh - 90px) !important;
 }
 .page-container .content .content-sidebar .scroll-wrapper > .scroll-content {
   -webkit-box-sizing: inherit !important;
@@ -2528,7 +2528,7 @@ body.isContent .backEnd_quill {
 }
 .page-container .content .content-sidebar .sidebar-menu .head-bar {
   width: 100%;
-  height: 40px;
+  height: 50px;
   list-style: none;
   padding-bottom: 0;
   background-color: #000;
@@ -2546,7 +2546,7 @@ body.isContent .backEnd_quill {
   left: 0;
   width: 100%;
   z-index: 14;
-  height: 40px;
+  height: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2580,7 +2580,7 @@ body.isContent .backEnd_quill {
   padding: 10px 20px 15px 20px;
   margin: 0;
   position: absolute;
-  top: 40px;
+  top: 50px;
   left: 0px;
   width: 100%;
   background-color: #000 !important;

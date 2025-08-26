@@ -3,10 +3,9 @@
 .page-container {
   .header {
     width: 100%;
-
     height: 40px;
     padding-inline: 20px;
-    background-color: #2e2e2e;
+    background-color: #eee;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -18,10 +17,10 @@
       // animation: blockCover-cgIN 0.5s ease both;
       .logo {
         font-family: "inter";
-        font-size: 1.6rem;
-        font-weight: 600;
+        font-size: 1.8rem;
+        font-weight: 800;
         text-transform: uppercase;
-        color: #fff;
+        color: #000;
         padding: 0;
         margin: 0;
       }
@@ -32,7 +31,7 @@
           font-size: 1.2rem;
           font-weight: 400;
           font-family: "inter";
-          color: #fff;
+          color: #000;
         }
       }
     }
@@ -44,10 +43,10 @@
       > * {
         font-size: 1rem;
         font-weight: 600;
-        color: #ffffff;
+        color: #000;
         &::after {
           content: "|";
-          color: #666;
+          color: #adadad;
           padding: 0 10px;
         }
         &:last-child {
