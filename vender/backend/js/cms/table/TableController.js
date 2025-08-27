@@ -43,7 +43,7 @@ export const TableController = (target, {
      */
     async function updateGrid(response, colSort, cb = () => Promise.resolve()) {
         removeGrid();
-        if (response.menu.is_content!=1) {
+        if (response.menu.is_content != 1) {
             gridOptions = newOptions();
             updateRole(response.data.role);
             createGrid(gridOptions, response.data.colSetting);
@@ -61,6 +61,13 @@ export const TableController = (target, {
         return {
             localeText: AG_GRID_LOCALE_TW,
             suppressContextMenu: true,
+            statusBar: {
+                statusPanels: [
+                    { statusPanel: 'agTotalRowCountComponent', align: 'left' },
+                    { statusPanel: 'agSelectedRowCountComponent', align: 'center' },
+                    { statusPanel: 'agAggregationComponent', align: 'right' }
+                ]
+            },
             getRowId: (params) => params.data.id,
             onDisplayedColumnsChanged: (e) => {
                 onDisplayedColumnsChanged(e, obj);
@@ -114,15 +121,15 @@ export const TableController = (target, {
     function formatCol(columnDefs, colSetting, role, currentOptions) {
         const def = [];
         const hasWidthGreaterThan300 = colSetting.fields.some(item => item.width >= 300);
-        if(!hasWidthGreaterThan300){
-            if(colSetting.fields[0].field == 'w_rank'){
+        if (!hasWidthGreaterThan300) {
+            if (colSetting.fields[0].field == 'w_rank') {
                 colSetting.fields[1].width = 300;
-            }else{
+            } else {
                 colSetting.fields[0].width = 300;
             }
         }
         for (const col of Array.from(colSetting.fields)) {
-            let flex=col.width>=300?1:0;
+            let flex = col.width >= 300 ? 1 : 0;
             def.push(defineColumn(object, role, {
                 field: col.field,
                 headerName: col.headerName ?? null,
@@ -130,7 +137,7 @@ export const TableController = (target, {
                 width: col.width,
                 options: col.options ?? [],
                 group: colSetting.group?.includes(col.field) ?? false,
-                flex:flex
+                flex: flex
             }).get());
         }
 

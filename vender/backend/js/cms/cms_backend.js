@@ -1,51 +1,59 @@
 var cms = $('.cms_theme');
 var fms = $('.fms_theme');
+
 let draggingRow = null;
 let LeonSearchLock = false;
-$('body').on('click', function(e) {
+
+$('body').on('click', function (e) {
     if (!$(e.target).closest('.leon-select').length) {
         $('.leon-select').removeClass('active'); // 隱藏所有選單
     }
 });
-$('body').on('click', '.leon-select .selected', function(e) {
+$('body').on('click', '.leon-select .selected', function (e) {
     let _this = $(this);
     let _inner = _this.closest('.leon-select');
     _inner.toggleClass('active');
 });
-$('body').on('click', '.leon-select .options_item div', function(e) {
+
+$('body').on('click', '.leon-select .options_item div', function (e) {
     let _this = $(this);
     let _inner = _this.closest('.leon-select');
     _inner.toggleClass('active');
     _inner.find('.__value').val(_this.attr('data-value'));
     _inner.find('.selected').html(_this.text());
 });
-$('body').on('compositionstart', '.leon-select .search-box', function(e) {
+
+$('body').on('compositionstart', '.leon-select .search-box', function (e) {
     LeonSearchLock = true;
     e.preventDefault();
 });
-$('body').on('compositionend', '.leon-select .search-box', function(e) {
+
+$('body').on('compositionend', '.leon-select .search-box', function (e) {
     LeonSearchLock = false;
     e.preventDefault();
 });
-$('body').on('keydown', '.leon-select .search-box', function(e) {
+
+$('body').on('keydown', '.leon-select .search-box', function (e) {
     if (e.key == "Enter" && !LeonSearchLock) {
         let _this = $(this);
         let options_model = _this.closest('.leon-select').attr('data-options_model');
         let main_model = _this.closest('.leon-select').attr('data-main_model');
         let foreign_key = _this.closest('.leon-select').attr('data-foreign_key');
         let keyword = _this.val();
-        selectAjaxSearch(_this.closest('.leon-select'),options_model,main_model,foreign_key,keyword);
+        selectAjaxSearch(_this.closest('.leon-select'), options_model, main_model, foreign_key, keyword);
     }
 });
-$('body').on('click', '.leon-select .leon-select-bar a', function(e) {
+
+$('body').on('click', '.leon-select .leon-select-bar a', function (e) {
     let _this = $(this);
     let options_model = _this.closest('.leon-select').attr('data-options_model');
     let main_model = _this.closest('.leon-select').attr('data-main_model');
     let foreign_key = _this.closest('.leon-select').attr('data-foreign_key');
     let keyword = _this.closest('.leon-select').find('.leon-select-bar').find('input').val();
-    selectAjaxSearch(_this.closest('.leon-select'),options_model,main_model,foreign_key,keyword);
+    selectAjaxSearch(_this.closest('.leon-select'), options_model, main_model, foreign_key, keyword);
 });
-function selectAjaxSearch(_this,options_model,main_model,foreign_key,keyword){
+
+function selectAjaxSearch(_this, options_model, main_model, foreign_key, keyword) {
     $.ajax({
         type: "POST",
         url: location.href + '/Ajax/Search',
@@ -53,32 +61,32 @@ function selectAjaxSearch(_this,options_model,main_model,foreign_key,keyword){
             ajax: true,
             options_model: options_model,
             main_model: main_model,
-            foreign_key:foreign_key,
+            foreign_key: foreign_key,
             keyword: keyword
         },
         dataType: 'JSON',
         cache: false,
     }).done(function (response) {
         _this.find('.options_item').empty();
-        if(response.count == 0){
+        if (response.count == 0) {
             _this.find('.options_item').append(`<span>找不到相關資料</span>`);
-        }else{
-            if(response.count > parseInt(_this.attr('data-max'))){
-                if(keyword == ""){
+        } else {
+            if (response.count > parseInt(_this.attr('data-max'))) {
+                if (keyword == "") {
                     let selectCOunt = 0;
                     Object.entries(response.data).forEach(([key, value]) => {
-                        if(selectCOunt < parseInt(_this.attr('data-max'))){
-                            _this.find('.options_item').append(`<div data-value="`+value.key+`">`+value.title+`</span>`);
+                        if (selectCOunt < parseInt(_this.attr('data-max'))) {
+                            _this.find('.options_item').append(`<div data-value="` + value.key + `">` + value.title + `</span>`);
                         }
                         selectCOunt++;
                     });
-                    _this.find('.options_item').append(`<span>以上僅顯示最新`+_this.attr('data-max')+`筆,其他資料請使用搜尋</span>`);
-                }else{
+                    _this.find('.options_item').append(`<span>以上僅顯示最新` + _this.attr('data-max') + `筆,其他資料請使用搜尋</span>`);
+                } else {
                     _this.find('.options_item').append(`<span>搜尋結果過多，請填寫更完整的關鍵字</span>`);
                 }
-            }else{
+            } else {
                 Object.entries(response.data).forEach(([key, value]) => {
-                    _this.find('.options_item').append(`<div data-value="`+value.key+`">`+value.title+`</span>`);
+                    _this.find('.options_item').append(`<div data-value="` + value.key + `">` + value.title + `</span>`);
                 });
             }
         }
@@ -87,16 +95,17 @@ function selectAjaxSearch(_this,options_model,main_model,foreign_key,keyword){
     })
 }
 
-$('body').on('click', '.checkbox_list span', function(e) {
+$('body').on('click', '.checkbox_list span', function (e) {
     let _this = $(this);
     let _inner = _this.closest('.inner');
     _this.toggleClass('active');
-    let _value = JSON.stringify(_inner.find('.checkbox_list span.active').get().map(function(el){
+    let _value = JSON.stringify(_inner.find('.checkbox_list span.active').get().map(function (el) {
         return $(el).attr('data-value');
     }));
     _this.closest('.inventory').find('.normal_input').val(_value);
 });
-$('body').on('keypress', '.tag-editor .tag-input', function(event) {
+
+$('body').on('keypress', '.tag-editor .tag-input', function (event) {
     let _this = $(this);
     if (event.key == 'Enter' && _this.val().trim() !== '') {
         event.preventDefault();
@@ -107,41 +116,41 @@ $('body').on('keypress', '.tag-editor .tag-input', function(event) {
         // $($tagElement).insertBefore(_this);
         // _this.val('');
 
-        CreateTagItem(_this,_this.val().trim());
+        CreateTagItem(_this, _this.val().trim());
         getTagEditValue(editor);
     }
 });
-function CreateTagItem(editor,value){
+function CreateTagItem(editor, value) {
     const $tagElement = $('<div class="tag-item" draggable="true"></div>').text(value);
     const $removeButton = $('<span class="tag-remove"><a class="fa fa-remove"></a></span>');
     $tagElement.append($removeButton);
     $($tagElement).insertBefore(editor);
     editor.val('');
 }
-function getTagEditValue(editor){
-    const tags = editor.find('.tag-item').map(function() {
+function getTagEditValue(editor) {
+    const tags = editor.find('.tag-item').map(function () {
         return $(this).contents().get(0).nodeValue.trim();
     }).get();
     editor.find('.normal_input').val(JSON.stringify(tags));
 }
-$('body').on('click', '.tag-remove', function(e) {
+$('body').on('click', '.tag-remove', function (e) {
     let _this = $(this);
     let editor = _this.closest('.tag-editor');
     _this.closest('.tag-item').remove();
     getTagEditValue(editor);
 });
-$('body').on('dragstart', '.tag-item', function(e) {
+$('body').on('dragstart', '.tag-item', function (e) {
     draggingRow = $(this);
     draggingRow.addClass('dragging');
     e.originalEvent.dataTransfer.effectAllowed = 'move';
 });
 
-$('body').on('dragend', '.tag-item', function() {
+$('body').on('dragend', '.tag-item', function () {
     draggingRow.removeClass('dragging');
     draggingRow = null;
 });
 
-$('body').on('dragover', '.tag-item', function(e) {
+$('body').on('dragover', '.tag-item', function (e) {
     e.preventDefault();
     const targetRow = $(this);
     if (targetRow[0] !== draggingRow[0]) {
@@ -155,70 +164,70 @@ $('body').on('dragover', '.tag-item', function(e) {
     }
     let _this = $(this);
     let _inner = _this.closest('.inner');
-    const tags = _inner.find('.tag-item').map(function() {
+    const tags = _inner.find('.tag-item').map(function () {
         return $(this).contents().get(0).nodeValue.trim();
     }).get();
     _this.closest('.inventory').find('.normal_input').val(JSON.stringify(tags));
 });
-$('body').on('paste', '.LeonSearchInput', function(e) {
+$('body').on('paste', '.LeonSearchInput', function (e) {
     e.preventDefault(); // 防止默認粘貼行為
     let text = (e.originalEvent || e).clipboardData.getData('text/plain');
     $(this).val(text);
     $(".LeonSearchBtn").click();
 });
-$('body').on('paste', '.tag-input', function(e) {
+$('body').on('paste', '.tag-input', function (e) {
     e.preventDefault(); // 防止默認粘貼行為
     let text = (e.originalEvent || e).clipboardData.getData('text/plain');
     let _this = $(this);
     const commaSplit = text.split(',');
     const result = commaSplit.flatMap(part => part.trim().split(' '));
     let editor = _this.closest('.tag-editor');
-    result.forEach(function(value){
-        CreateTagItem(_this,value);
+    result.forEach(function (value) {
+        CreateTagItem(_this, value);
     });
     _this.val('');
     getTagEditValue(editor);
 });
-$('body').on('blur', '.tag-input', function(e) {
+$('body').on('blur', '.tag-input', function (e) {
     let _this = $(this);
     let editor = _this.closest('.tag-editor');
     const inputValue = $(this).val().trim();
     if (inputValue !== '') {
-        CreateTagItem(_this,inputValue);
+        CreateTagItem(_this, inputValue);
         getTagEditValue(editor);
     }
 });
 
-$('body').on('paste', '.CheckDomain', function(e) {
+$('body').on('paste', '.CheckDomain', function (e) {
     e.preventDefault(); // 防止默認粘貼行為
     let text = (e.originalEvent || e).clipboardData.getData('text/plain');
     const domain = location.host;
-    if(text.indexOf(domain) >= 0){
-        text = text.replace(location.origin,'');
+    if (text.indexOf(domain) >= 0) {
+        text = text.replace(location.origin, '');
     }
     $(this).val(text);
 });
 var SearchLock = false;
-$('body').on('compositionstart', '.select2MultiNew_search input', function(event) {
+$('body').on('compositionstart', '.select2MultiNew_search input', function (event) {
     SearchLock = true;
     event.preventDefault();
 });
-$('body').on('compositionend', '.select2MultiNew_search input', function(event) {
+$('body').on('compositionend', '.select2MultiNew_search input', function (event) {
     SearchLock = false;
     event.preventDefault();
 });
-$('body').on('keyup', '.select2MultiNew_search input', function(event) {
-    if(!SearchLock){
+$('body').on('keyup', '.select2MultiNew_search input', function (event) {
+    if (!SearchLock) {
         let _this = $(this);
         let keyword = _this.val().trim().replace(/\s/g, "");
-        if(keyword == ""){
+        if (keyword == "") {
             _this.closest('.inner').find('.select2MultiNew_option_item_search').empty().addClass('hide');
             _this.closest('.inner').find('.select2MultiNew_option_item').removeClass('hide');
             _this.closest('.inner').find('.select2MultiNew_option_relation').removeClass('hide');
         }
     }
 });
-$('body').on('keydown', '.select2MultiNew_search input', function(event) {
+$('body').on('keydown', '.select2MultiNew_search input', function (event) {
     if (event.key == 'Enter' && !SearchLock) {
         let _this = $(this);
         let options_model = _this.closest('.select2MultiNew_search').attr('data-options_model');
@@ -226,10 +235,10 @@ $('body').on('keydown', '.select2MultiNew_search input', function(event) {
         let foreign_key = _this.closest('.select2MultiNew_search').attr('data-foreign_key');
         let two_level = _this.closest('.select2MultiNew_search').attr('data-two_level');
         let keyword = _this.val();
-        selectSearch(_this.closest('.inner'),options_model,main_model,foreign_key,keyword,two_level);
+        selectSearch(_this.closest('.inner'), options_model, main_model, foreign_key, keyword, two_level);
     }
 });
-$('body').on('click', '.select2MultiNew_search a', function() {
+$('body').on('click', '.select2MultiNew_search a', function () {
     let _this = $(this);
     let options_model = _this.closest('.select2MultiNew_search').attr('data-options_model');
     let main_model = _this.closest('.select2MultiNew_search').attr('data-main_model');
@@ -237,119 +246,119 @@ $('body').on('click', '.select2MultiNew_search a', function() {
     let two_level = _this.closest('.select2MultiNew_search').attr('data-two_level');
 
     let keyword = _this.closest('.select2MultiNew_search').find('input').val();
-    selectSearch(_this.closest('.inner'),options_model,main_model,foreign_key,keyword,two_level);
+    selectSearch(_this.closest('.inner'), options_model, main_model, foreign_key, keyword, two_level);
 });
-$('body').on('click', '.select2MultiNew_all', function() {
+$('body').on('click', '.select2MultiNew_all', function () {
     let _this = $(this);
-    let _value = JSON.stringify(_this.closest('.inventory').find('.select2MultiNew_option span').get().map(function(el){
+    let _value = JSON.stringify(_this.closest('.inventory').find('.select2MultiNew_option span').get().map(function (el) {
         return $(el).attr('data-id');
     }));
-    let _valuehtml = _this.closest('.inventory').find('.select2MultiNew_option span').get().map(function(el){
-        return '<span data-id="'+$(el).attr('data-id')+'" draggable="true"><a class="fa fa-remove"></a>'+$(el).data('text')+'</span>';
+    let _valuehtml = _this.closest('.inventory').find('.select2MultiNew_option span').get().map(function (el) {
+        return '<span data-id="' + $(el).attr('data-id') + '" draggable="true"><a class="fa fa-remove"></a>' + $(el).data('text') + '</span>';
     }).join("");
     _this.closest('.inventory').find('.normal_input').val(_value);
     _this.closest('.inventory').find('.select2MultiNew_option span').addClass('active');
     _this.closest('.inventory').find('.select2MultiNew').html(_valuehtml);
 });
-$('body').on('click', '.select2MultiNew_unall', function() {
+$('body').on('click', '.select2MultiNew_unall', function () {
     let _this = $(this);
     _this.closest('.inventory').find('.normal_input').val('');
     _this.closest('.inventory').find('.select2MultiNew_option span').removeClass('active');
     _this.closest('.inventory').find('.select2MultiNew').html('');
 });
-function selectSearchData(_this,two_level,response){
-    let selectItem = _this.closest('.inner').find('.select2MultiNew').find('span').get().map(function(el){
+function selectSearchData(_this, two_level, response) {
+    let selectItem = _this.closest('.inner').find('.select2MultiNew').find('span').get().map(function (el) {
         return parseInt($(el).attr('data-id'));
     });
-    if(!two_level){
+    if (!two_level) {
         _this.find('.select2MultiNew_option_item_search').empty().removeClass('hide');
         _this.find('.select2MultiNew_option_item').addClass('hide');
         Object.entries(response.data).forEach(([key, value]) => {
-            let _active = selectItem.indexOf(value.key) >= 0 ? 'active':'';
-            _this.find('.select2MultiNew_option_item_search').append(`<span data-id="`+value.key+`" class="`+_active+`" data-text="`+value.title+`">`+value.title+`</span>`);
+            let _active = selectItem.indexOf(value.key) >= 0 ? 'active' : '';
+            _this.find('.select2MultiNew_option_item_search').append(`<span data-id="` + value.key + `" class="` + _active + `" data-text="` + value.title + `">` + value.title + `</span>`);
         });
-    }else{
+    } else {
         _this.find('.select2MultiNew_option_relation div').empty();
         Object.entries(response.data).forEach(([key, value]) => {
-            let _active = key == 0 ? 'active':'';
-            _this.find('.select2MultiNew_option_relation>div:first').append(`<a class="`+_active+`" data-key="`+value.key+`">`+value.title+`</a>`);
+            let _active = key == 0 ? 'active' : '';
+            _this.find('.select2MultiNew_option_relation>div:first').append(`<a class="` + _active + `" data-key="` + value.key + `">` + value.title + `</a>`);
             Object.entries(value._son_data).forEach(([key1, value1]) => {
-                let _active1 = selectItem.indexOf(value1.key) >= 0 ? 'active':'';
-                let _display1 = key == 0 ? '':'display: none;';
-                _this.find('.select2MultiNew_option_relation>div:last').append(`<span class="`+_active1+`" style="`+_display1+`" data-key="`+value1[response.foreign_key]+`" data-id="`+value1.key+`" class="" data-text="`+value.title+` -> `+value1.title+`">`+value1.title+`</span>`);
+                let _active1 = selectItem.indexOf(value1.key) >= 0 ? 'active' : '';
+                let _display1 = key == 0 ? '' : 'display: none;';
+                _this.find('.select2MultiNew_option_relation>div:last').append(`<span class="` + _active1 + `" style="` + _display1 + `" data-key="` + value1[response.foreign_key] + `" data-id="` + value1.key + `" class="" data-text="` + value.title + ` -> ` + value1.title + `">` + value1.title + `</span>`);
             });
         });
     }
 }
-function selectSearch(_this,options_model,main_model,foreign_key,keyword,two_level){
-        $.ajax({
-            type: "POST",
-            url: location.href + '/Ajax/Search',
-            data: {
-                ajax: true,
-                options_model: options_model,
-                main_model: main_model,
-                foreign_key:foreign_key,
-                keyword: keyword,
-                two_level:two_level
-            },
-            dataType: 'JSON',
-            cache: false,
-        }).done(function (response) {
-            if(response.count == 0){
-                _this.find('.select2MultiNewtip').html(`找不到相關資料`).addClass('active');
-            }else{
-                let maxCount = parseInt(_this.find('.select2MultiNew_search').attr('data-max'));
-                if(two_level){
-                    if(response.sonCount > maxCount && maxCount > 0){
-                        _this.find('.select2MultiNewtip').html(`搜尋結果過多，請填寫更完整的關鍵字`).addClass('active');
-                    }else{
-                        selectSearchData(_this,two_level,response);
-                    }
-                }else{
-                    if(response.count > maxCount && maxCount > 0){
-                        _this.find('.select2MultiNewtip').html(`搜尋結果過多，請填寫更完整的關鍵字`).addClass('active');
-                    }else{
-                        selectSearchData(_this,two_level,response);
-                    }
+function selectSearch(_this, options_model, main_model, foreign_key, keyword, two_level) {
+    $.ajax({
+        type: "POST",
+        url: location.href + '/Ajax/Search',
+        data: {
+            ajax: true,
+            options_model: options_model,
+            main_model: main_model,
+            foreign_key: foreign_key,
+            keyword: keyword,
+            two_level: two_level
+        },
+        dataType: 'JSON',
+        cache: false,
+    }).done(function (response) {
+        if (response.count == 0) {
+            _this.find('.select2MultiNewtip').html(`找不到相關資料`).addClass('active');
+        } else {
+            let maxCount = parseInt(_this.find('.select2MultiNew_search').attr('data-max'));
+            if (two_level) {
+                if (response.sonCount > maxCount && maxCount > 0) {
+                    _this.find('.select2MultiNewtip').html(`搜尋結果過多，請填寫更完整的關鍵字`).addClass('active');
+                } else {
+                    selectSearchData(_this, two_level, response);
+                }
+            } else {
+                if (response.count > maxCount && maxCount > 0) {
+                    _this.find('.select2MultiNewtip').html(`搜尋結果過多，請填寫更完整的關鍵字`).addClass('active');
+                } else {
+                    selectSearchData(_this, two_level, response);
                 }
             }
-        }).fail(function () {
-            console.log("open_file_edit error");
-        })
+        }
+    }).fail(function () {
+        console.log("open_file_edit error");
+    })
 }
-$('body').on('click', '.select2MultiNew a', function(e) {
+$('body').on('click', '.select2MultiNew a', function (e) {
     let _this = $(this).closest('span');
     let _inventory = _this.closest('.inventory');
     let _inner = _this.closest('.inner');
-    _inner.find('.select2MultiNew_option span[data-id="'+_this.attr('data-id')+'"]').removeClass('active');
+    _inner.find('.select2MultiNew_option span[data-id="' + _this.attr('data-id') + '"]').removeClass('active');
     _this.remove();
-    let _value = JSON.stringify(_inner.find('.select2MultiNew span').get().map(function(el){
+    let _value = JSON.stringify(_inner.find('.select2MultiNew span').get().map(function (el) {
         return $(el).attr('data-id');
     }));
     _inventory.find('.normal_input').val(_value);
 });
-$('body').on('click', '.select2MultiNew_option a', function(e) {
+$('body').on('click', '.select2MultiNew_option a', function (e) {
     let _this = $(this);
     let _relation = _this.closest('.select2MultiNew_option_relation');
     _relation.find('a').removeClass('active');
     _relation.find('span').hide();
-    _relation.find('span[data-key="'+_this.data('key')+'"]').show();
+    _relation.find('span[data-key="' + _this.data('key') + '"]').show();
     _this.addClass('active');
 });
-$('body').on('click', '.select2MultiNew_option span', function(e) {
+$('body').on('click', '.select2MultiNew_option span', function (e) {
     let _this = $(this);
     let _inner = _this.closest('.inner');
     _this.toggleClass('active');
 
-    if(_this.hasClass('active')){
-        _inner.find('.select2MultiNew').append('<span data-id="'+_this.attr('data-id')+'" draggable="true"><a class="fa fa-remove"></a>'+_this.data('text')+'</span>');
-        _inner.find('.select2MultiNew_option span[data-id="'+_this.attr('data-id')+'"]').addClass('active');
-    }else{
-        _inner.find('.select2MultiNew span[data-id="'+_this.attr('data-id')+'"]').remove();
-        _inner.find('.select2MultiNew_option span[data-id="'+_this.attr('data-id')+'"]').removeClass('active');
+    if (_this.hasClass('active')) {
+        _inner.find('.select2MultiNew').append('<span data-id="' + _this.attr('data-id') + '" draggable="true"><a class="fa fa-remove"></a>' + _this.data('text') + '</span>');
+        _inner.find('.select2MultiNew_option span[data-id="' + _this.attr('data-id') + '"]').addClass('active');
+    } else {
+        _inner.find('.select2MultiNew span[data-id="' + _this.attr('data-id') + '"]').remove();
+        _inner.find('.select2MultiNew_option span[data-id="' + _this.attr('data-id') + '"]').removeClass('active');
     }
-    let _value = JSON.stringify(_inner.find('.select2MultiNew span').get().map(function(el){
+    let _value = JSON.stringify(_inner.find('.select2MultiNew span').get().map(function (el) {
         return $(el).attr('data-id');
     }));
     _this.closest('.inventory').find('.normal_input').val(_value);
@@ -358,31 +367,31 @@ $('body').on('click', '.radio_action_fuc', function () {
     let _this = $(this);
     let _key = _this.closest('.tabulation_head').attr('data-table');
     let _action = _this.attr('data-action');
-    if(_action == 'enable_all_preview'){
+    if (_action == 'enable_all_preview') {
         $(".tabulation_body_" + _key).find('[name*="is_preview"]').val('1').closest('.radio_btn_switch').addClass('on');
     }
-    if(_action == 'disable_all_preview'){
+    if (_action == 'disable_all_preview') {
         $(".tabulation_body_" + _key).find('[name*="is_preview"]').val('0').closest('.radio_btn_switch').removeClass('on');
     }
-    if(_action == 'enable_all_visible'){
+    if (_action == 'enable_all_visible') {
         $(".tabulation_body_" + _key).find('[name*="is_visible"]').val('1').closest('.radio_btn_switch').addClass('on');
     }
-    if(_action == 'disable_all_visible'){
+    if (_action == 'disable_all_visible') {
         $(".tabulation_body_" + _key).find('[name*="is_visible"]').val('0').closest('.radio_btn_switch').removeClass('on');
     }
 });
-$('body').on('dragstart', '.select2MultiNew span', function(e) {
+$('body').on('dragstart', '.select2MultiNew span', function (e) {
     draggingRow = $(this);
     draggingRow.addClass('dragging');
     e.originalEvent.dataTransfer.effectAllowed = 'move';
 });
 
-$('body').on('dragend', '.select2MultiNew span', function() {
+$('body').on('dragend', '.select2MultiNew span', function () {
     draggingRow.removeClass('dragging');
     draggingRow = null;
 });
 
-$('body').on('dragover', '.select2MultiNew span', function(e) {
+$('body').on('dragover', '.select2MultiNew span', function (e) {
     e.preventDefault();
     const targetRow = $(this);
     if (targetRow[0] !== draggingRow[0]) {
@@ -396,14 +405,14 @@ $('body').on('dragover', '.select2MultiNew span', function(e) {
     }
     let _this = $(this);
     let _inner = _this.closest('.inner');
-    let _value = JSON.stringify(_inner.find('.select2MultiNew span').get().map(function(el){
+    let _value = JSON.stringify(_inner.find('.select2MultiNew span').get().map(function (el) {
         return $(el).attr('data-id');
     }));
     _this.closest('.inventory').find('.normal_input').val(_value);
 });
-$('body').on('mousedown', '.edit_table_drag tbody tr .drag', function(e) {
+$('body').on('mousedown', '.edit_table_drag tbody tr .drag', function (e) {
     draggingRow = $(this).closest('tr');
-    draggingRow.attr('draggable',true);
+    draggingRow.attr('draggable', true);
     // 手動觸發 dragstart 事件
     const dragEvent = new DragEvent('dragstart', {
         bubbles: true,
@@ -412,23 +421,23 @@ $('body').on('mousedown', '.edit_table_drag tbody tr .drag', function(e) {
     });
     draggingRow[0].dispatchEvent(dragEvent);
 });
-$('body').on('mouseup', '.edit_table_drag tbody tr .drag', function(e) {
+$('body').on('mouseup', '.edit_table_drag tbody tr .drag', function (e) {
     draggingRow = $(this).closest('tr');
     draggingRow.removeAttr('draggable');
     draggingRow.removeClass('dragging');
 });
-$('body').on('dragstart', '.edit_table_drag tbody tr', function(e) {
+$('body').on('dragstart', '.edit_table_drag tbody tr', function (e) {
     draggingRow = $(this);
     draggingRow.addClass('dragging');
     e.originalEvent.dataTransfer.effectAllowed = 'move';
 });
 
-$('body').on('dragend', '.edit_table_drag tbody tr', function() {
+$('body').on('dragend', '.edit_table_drag tbody tr', function () {
     draggingRow.removeClass('dragging');
     draggingRow = null;
 });
 
-$('body').on('dragover', '.edit_table_drag tbody tr', function(e) {
+$('body').on('dragover', '.edit_table_drag tbody tr', function (e) {
     e.preventDefault();
     const targetRow = $(this);
     if (targetRow[0] !== draggingRow[0]) {
@@ -443,18 +452,18 @@ $('body').on('dragover', '.edit_table_drag tbody tr', function(e) {
     draggingRow.removeAttr('draggable');
 });
 
-$('body').on('dragstart', '.picture_box.img_list .has_img', function(e) {
+$('body').on('dragstart', '.picture_box.img_list .has_img', function (e) {
     draggingRow = $(this);
     draggingRow.addClass('dragging');
     e.originalEvent.dataTransfer.effectAllowed = 'move';
 });
 
-$('body').on('dragend', '.picture_box.img_list .has_img', function() {
+$('body').on('dragend', '.picture_box.img_list .has_img', function () {
     draggingRow.removeClass('dragging');
     draggingRow = null;
 });
 
-$('body').on('dragover', '.picture_box.img_list .has_img', function(e) {
+$('body').on('dragover', '.picture_box.img_list .has_img', function (e) {
     e.preventDefault();
     const targetRow = $(this);
     if (targetRow[0] !== draggingRow[0]) {
@@ -469,7 +478,7 @@ $('body').on('dragover', '.picture_box.img_list .has_img', function(e) {
     let picture_box = $(this).closest('.picture_box');
     //順序重排
     let _rank = 1;
-    picture_box.find('.open_fms_lightbox.has_img').each(function(index, el){
+    picture_box.find('.open_fms_lightbox.has_img').each(function (index, el) {
         $(el).find('.rank').html(_rank);
         _rank = _rank + 1;
     });
@@ -480,12 +489,12 @@ $('body').on('click', '.edit_table_add a', function () {
     let $firstRow = _this.closest('.inner').find('tbody').find('tr:first');
     let $newRow = $firstRow.clone();
     $newRow.find('input').val('');
-    if(pos == 'top'){
+    if (pos == 'top') {
         _this.closest('.inner').find('tbody').prepend($newRow);
-    }else{
-    _this.closest('.inner').find('tbody').append($newRow);
+    } else {
+        _this.closest('.inner').find('tbody').append($newRow);
     }
-    _this.closest('.inner').find('tbody').find('tr').each(function(index) {
+    _this.closest('.inner').find('tbody').find('tr').each(function (index) {
         $(this).find('th:eq(2)').text(index + 1);
     });
 });
@@ -493,12 +502,12 @@ $('body').on('click', '.edit_table_add a', function () {
 $('body').on('click', '.edit_delete', function () {
     let _this = $(this);
     let _tbody = _this.closest('tbody');
-    if(_tbody.find('tr').length == 1){
+    if (_tbody.find('tr').length == 1) {
         alert('第一筆預設無法刪除');
-    }else{
+    } else {
         _this.closest('tr').remove();
-        _tbody.find('tr').each(function(index) {
-        $(this).find('th:eq(2)').text(index + 1); // 設置第一欄為當前行數 + 1
+        _tbody.find('tr').each(function (index) {
+            $(this).find('th:eq(2)').text(index + 1); // 設置第一欄為當前行數 + 1
         });
     }
 });
@@ -514,28 +523,28 @@ $('body').on('change', '.local_file_set', function () {
 
 
 let isComposing = false;
-$('body').on('compositionstart', 'input[name*="[url_name]"]', function() {
-  isComposing = true;
+$('body').on('compositionstart', 'input[name*="[url_name]"]', function () {
+    isComposing = true;
 });
-$('body').on('compositionend', 'input[name*="[url_name]"]', function() {
-  isComposing = false;
-  validateInput(this);
-});
-$('body').on('input', 'input[name*="[url_name]"]', function() {
-  if (!isComposing) {
+$('body').on('compositionend', 'input[name*="[url_name]"]', function () {
+    isComposing = false;
     validateInput(this);
-  }
+});
+$('body').on('input', 'input[name*="[url_name]"]', function () {
+    if (!isComposing) {
+        validateInput(this);
+    }
 });
 function validateInput(input) {
-  // 在這裡處理input事件
-  let coverStr = $(input).val().replace(/[^(\u3400-\u4DBF|\u4E00-\u9FFF|\uF900-\uFAFF|\u0020-\u007E|\u3040-\u309F|\u30A0-\u30FF|\uAC00-\uD7AF)]/g, '');
-  coverStr = coverStr.replace(/[\s+\?\.\/\!@#$%^&*]/g, '');
-  $(input).val(coverStr);
+    // 在這裡處理input事件
+    let coverStr = $(input).val().replace(/[^(\u3400-\u4DBF|\u4E00-\u9FFF|\uF900-\uFAFF|\u0020-\u007E|\u3040-\u309F|\u30A0-\u30FF|\uAC00-\uD7AF)]/g, '');
+    coverStr = coverStr.replace(/[\s+\?\.\/\!@#$%^&*]/g, '');
+    $(input).val(coverStr);
 }
 
 $('body').on('click', '.coordinate_size', function (e) {
     let action = $(this).data('action');
-    if(action == 'add'){
+    if (action == 'add') {
         $("#pinContainer")[0].img_width = $("#pinContainer")[0].img_width / $("#pinContainer")[0].scale;
         $("#pinContainer")[0].img_height = $("#pinContainer")[0].img_height / $("#pinContainer")[0].scale;
         let scale = $("#pinContainer")[0].scale + 0.5;
@@ -543,7 +552,7 @@ $('body').on('click', '.coordinate_size', function (e) {
         $("#pinContainer")[0].img_width = $("#pinContainer")[0].img_width * scale;
         $("#pinContainer")[0].img_height = $("#pinContainer")[0].img_height * scale;
         $("#pinContainer")[0].scale = scale;
-    }else{
+    } else {
         $(".coordinate_img").css('scale', '1');
         $("#pinContainer")[0].img_width = $($("#pinContainer")[0].el).data('width');
         $("#pinContainer")[0].img_height = $($("#pinContainer")[0].el).data('height');
@@ -553,7 +562,7 @@ $('body').on('click', '.coordinate_size', function (e) {
 $('body').on('click', '.coordinate_modal', function (e) {
     $('.coordinate_lbox').addClass('active');
     let _this = $(this);
-    $('#mainImage').attr('src',_this.data('image'));
+    $('#mainImage').attr('src', _this.data('image'));
     let offset = _this.val().split(',');
     let pinContainer = document.getElementById("pinContainer");
     pinContainer.style.left = offset[0];
@@ -565,16 +574,16 @@ $('body').on('click', '.coordinate_modal', function (e) {
     $("#pinContainer")[0].scale = 1;
     $("#pinContainer")[0].return = _this.data('return');
     $("#pinContainer")[0].el = _this;
-    $(".coordinate_img").css('scale','1');
-    $(".coordinate_img").css('width',_this.data('width'));
+    $(".coordinate_img").css('scale', '1');
+    $(".coordinate_img").css('width', _this.data('width'));
 });
 $('body').on('mousedown', '#mainImage', function (event) {
     let mainImage = document.getElementById("mainImage");
     let pinContainer = document.getElementById("pinContainer");
 
     //滑鼠實際位置
-    let offsetX = event.clientX - mainImage.getBoundingClientRect().left ;
-    let offsetY = event.clientY - mainImage.getBoundingClientRect().top ;
+    let offsetX = event.clientX - mainImage.getBoundingClientRect().left;
+    let offsetY = event.clientY - mainImage.getBoundingClientRect().top;
 
     let PercentageX = (offsetX / $("#pinContainer")[0].img_width) * 100;
     let PercentageY = (offsetY / $("#pinContainer")[0].img_height) * 100;
@@ -592,10 +601,10 @@ $('body').on('click', '.coordinate_set', function (e) {
     let x_PX = $("#pinContainer")[0].offsetX_PX;
     let y_PX = $("#pinContainer")[0].offsetY_PX;
     $('.coordinate_lbox').removeClass('active');
-    if($("#pinContainer")[0].return == '0'){
-        $($("#pinContainer")[0].el).val(x+','+y)
-    }else{
-        $($("#pinContainer")[0].el).val(x_PX+','+y_PX)
+    if ($("#pinContainer")[0].return == '0') {
+        $($("#pinContainer")[0].el).val(x + ',' + y)
+    } else {
+        $($("#pinContainer")[0].el).val(x_PX + ',' + y_PX)
     }
 });
 
@@ -620,34 +629,34 @@ $('body').on('click', '.article_item', function () {
     let key = $(this).attr('data-key');
     let img = $(this).find('img').attr('src');
     let title = $(this).find('p').text();
-    if(key == 'typeQuote'){
-        $(".article_lbox")[0].select_item.closest('.list_body').find('[name="'+$(".article_lbox")[0].select_item.closest('.list').serializeJSON()['modelName']+'[h_heading_tag_num]"]').closest('.inventory').hide();
+    if (key == 'typeQuote') {
+        $(".article_lbox")[0].select_item.closest('.list_body').find('[name="' + $(".article_lbox")[0].select_item.closest('.list').serializeJSON()['modelName'] + '[h_heading_tag_num]"]').closest('.inventory').hide();
         // $(".article_lbox")[0].select_item.closest('.list_body').find('[name="'+$(".article_lbox")[0].select_item.closest('.list').serializeJSON()['modelName']+'[article_inner]"]').closest('.inventory').hide();
-        $(".article_lbox")[0].select_item.closest('.list_body').find('[name="'+$(".article_lbox")[0].select_item.closest('.list').serializeJSON()['modelName']+'[subh_align]"]').closest('.inventory').hide();
-        $(".article_lbox")[0].select_item.closest('.list_body').find('[name="'+$(".article_lbox")[0].select_item.closest('.list').serializeJSON()['modelName']+'[subh_color]"]').closest('.inventory').hide();
+        $(".article_lbox")[0].select_item.closest('.list_body').find('[name="' + $(".article_lbox")[0].select_item.closest('.list').serializeJSON()['modelName'] + '[subh_align]"]').closest('.inventory').hide();
+        $(".article_lbox")[0].select_item.closest('.list_body').find('[name="' + $(".article_lbox")[0].select_item.closest('.list').serializeJSON()['modelName'] + '[subh_color]"]').closest('.inventory').hide();
         // $(".article_lbox")[0].select_item.closest('.list_body').find('[name="'+$(".article_lbox")[0].select_item.closest('.list').serializeJSON()['modelName']+'[p_align]"]').closest('.inventory').hide();
         // $(".article_lbox")[0].select_item.closest('.list_body').find('[name="'+$(".article_lbox")[0].select_item.closest('.list').serializeJSON()['modelName']+'[p_color]"]').closest('.inventory').hide();
     }
-    else{
-        $(".article_lbox")[0].select_item.closest('.list_body').find('[name="'+$(".article_lbox")[0].select_item.closest('.list').serializeJSON()['modelName']+'[h_heading_tag_num]"]').closest('.inventory').show();
+    else {
+        $(".article_lbox")[0].select_item.closest('.list_body').find('[name="' + $(".article_lbox")[0].select_item.closest('.list').serializeJSON()['modelName'] + '[h_heading_tag_num]"]').closest('.inventory').show();
         // $(".article_lbox")[0].select_item.closest('.list_body').find('[name="'+$(".article_lbox")[0].select_item.closest('.list').serializeJSON()['modelName']+'[article_inner]"]').closest('.inventory').show();
-        $(".article_lbox")[0].select_item.closest('.list_body').find('[name="'+$(".article_lbox")[0].select_item.closest('.list').serializeJSON()['modelName']+'[subh_align]"]').closest('.inventory').show();
-        $(".article_lbox")[0].select_item.closest('.list_body').find('[name="'+$(".article_lbox")[0].select_item.closest('.list').serializeJSON()['modelName']+'[subh_color]"]').closest('.inventory').show();
+        $(".article_lbox")[0].select_item.closest('.list_body').find('[name="' + $(".article_lbox")[0].select_item.closest('.list').serializeJSON()['modelName'] + '[subh_align]"]').closest('.inventory').show();
+        $(".article_lbox")[0].select_item.closest('.list_body').find('[name="' + $(".article_lbox")[0].select_item.closest('.list').serializeJSON()['modelName'] + '[subh_color]"]').closest('.inventory').show();
         // $(".article_lbox")[0].select_item.closest('.list_body').find('[name="'+$(".article_lbox")[0].select_item.closest('.list').serializeJSON()['modelName']+'[p_align]"]').closest('.inventory').show();
         // $(".article_lbox")[0].select_item.closest('.list_body').find('[name="'+$(".article_lbox")[0].select_item.closest('.list').serializeJSON()['modelName']+'[p_color]"]').closest('.inventory').show();
     }
     $(".article_lbox")[0].select_item.closest('.list_body').find('.bk_spreadsheet').closest('.inventory').hide();
-    $(".article_lbox")[0].select_item.closest('.list_body').find('[name="'+$(".article_lbox")[0].select_item.closest('.list').serializeJSON()['modelName']+'[data_table_markdown]"]').closest('.inventory').hide();
-    if(key == 'typeTable'){
-        $(".article_lbox")[0].select_item.closest('.list_body').find('[name="'+$(".article_lbox")[0].select_item.closest('.list').serializeJSON()['modelName']+'[data_table_markdown]"]').closest('.inventory').show();
+    $(".article_lbox")[0].select_item.closest('.list_body').find('[name="' + $(".article_lbox")[0].select_item.closest('.list').serializeJSON()['modelName'] + '[data_table_markdown]"]').closest('.inventory').hide();
+    if (key == 'typeTable') {
+        $(".article_lbox")[0].select_item.closest('.list_body').find('[name="' + $(".article_lbox")[0].select_item.closest('.list').serializeJSON()['modelName'] + '[data_table_markdown]"]').closest('.inventory').show();
         $(".article_lbox")[0].select_item.closest('.list_body').find('.bk_spreadsheet').closest('.inventory').show();
     }
     //文繞圖禁止使用IG
     $(".article_lbox")[0].select_item.closest('.list_body').find('textarea[name*="instagram_content"]').closest('.inventory').show();
-    if(key == 'typeLR' || key == 'typeRR' ||  key == 'typeQuote' ||  key == 'typeTable'){
+    if (key == 'typeLR' || key == 'typeRR' || key == 'typeQuote' || key == 'typeTable') {
         let instagram_content = $(".article_lbox")[0].select_item.closest('.list_body').find('textarea[name*="instagram_content"]');
-        if(instagram_content.length > 0 && instagram_content.val() != ""){
-            if(!confirm('此段落樣式不支援instagram，切換後將會刪除instagram內容，是否切換?')){
+        if (instagram_content.length > 0 && instagram_content.val() != "") {
+            if (!confirm('此段落樣式不支援instagram，切換後將會刪除instagram內容，是否切換?')) {
                 return false;
             }
         }
@@ -663,10 +672,10 @@ $('body').on('click', '.article_item', function () {
     article_wysiwyg($(".article_lbox")[0].select_item.closest('.list'));
     $('.article_lbox').removeClass('active');
 });
-function article_wysiwyg(_article){
+function article_wysiwyg(_article) {
     let _articleData = _article.serializeJSON();
     const originalElement = _article.find('.article_wysiwyg')[0];
-    if(!originalElement){
+    if (!originalElement) {
         return false;
     }
     let shadow;
@@ -695,13 +704,13 @@ function article_wysiwyg(_article){
         // 使用已存在的 Shadow Root
         shadow = originalElement.shadowRoot;
     }
-    if(Object.entries(_articleData).length > 0){
+    if (Object.entries(_articleData).length > 0) {
         _articleData = _articleData[_articleData['modelName']];
         //段落編輯器
-        if(typeof _articleData['is_swiper'] !== 'undefined'){
+        if (typeof _articleData['is_swiper'] !== 'undefined') {
             let imgData = _article.find('.three-item');
             let sonObject = [];
-            imgData.each(function(){
+            imgData.each(function () {
                 let sonData = $(this).serializeJSON();
                 sonData = sonData[sonData['modelName']];
                 sonData['title'] = sonData['title'];
@@ -778,20 +787,20 @@ function article_wysiwyg(_article){
             ];
 
             let article_type = _article.find("[name*='article_style']").val();
-            if(rwd_img_b.indexOf(article_type) >= 0){
+            if (rwd_img_b.indexOf(article_type) >= 0) {
                 _article.find('.rwd_b').show();
                 _article.find('.rwd_t').hide();
                 _article.find('.rwd_off_b').hide();
                 _article.find('.rwd_off_t').show();
-                if(!_article.find('.rwd_b').hasClass('active') && !_article.find('.rwd_off_t').hasClass('active')){
+                if (!_article.find('.rwd_b').hasClass('active') && !_article.find('.rwd_off_t').hasClass('active')) {
                     _article.find('.rwd_off_t').click();
                 }
-            }else{
+            } else {
                 _article.find('.rwd_b').hide();
                 _article.find('.rwd_t').show();
                 _article.find('.rwd_off_b').show();
                 _article.find('.rwd_off_t').hide();
-                if(!_article.find('.rwd_t').hasClass('active') && !_article.find('.rwd_off_b').hasClass('active')){
+                if (!_article.find('.rwd_t').hasClass('active') && !_article.find('.rwd_off_b').hasClass('active')) {
                     _article.find('.rwd_off_b').click();
                 }
             }
@@ -874,44 +883,44 @@ function article_wysiwyg(_article){
                 "typeRR"
             ];
             if (fruitsBasic.indexOf(_articleData['article_style']) >= 0) {
-                _articleDom.querySelectorAll('._H.typeBasic').forEach(element => {element.style.display = 'block';});
-                _articleDom.querySelectorAll('.typefloat').forEach(element => {element.style.display = 'none';});
-                _articleDom.querySelectorAll('._wordCover ._H').forEach(element => {element.style.display = 'none';});
-                _articleDom.querySelectorAll('._wordCover ._subH').forEach(element => {element.style.display = 'block';});
-                _articleDom.querySelectorAll('._wordCover ._P').forEach(element => {element.style.display = 'block';});
-                _articleDom.querySelectorAll('._wordCover').forEach(element => {element.style.display = 'block';});
+                _articleDom.querySelectorAll('._H.typeBasic').forEach(element => { element.style.display = 'block'; });
+                _articleDom.querySelectorAll('.typefloat').forEach(element => { element.style.display = 'none'; });
+                _articleDom.querySelectorAll('._wordCover ._H').forEach(element => { element.style.display = 'none'; });
+                _articleDom.querySelectorAll('._wordCover ._subH').forEach(element => { element.style.display = 'block'; });
+                _articleDom.querySelectorAll('._wordCover ._P').forEach(element => { element.style.display = 'block'; });
+                _articleDom.querySelectorAll('._wordCover').forEach(element => { element.style.display = 'block'; });
                 _articleDom.querySelectorAll('._quote')[0].style.display = 'none';
                 _articleDom.querySelectorAll('._table')[0].style.display = 'none';
-            }else if(fruitsfloat.indexOf(_articleData['article_style']) >= 0){
-                _articleDom.querySelectorAll('._H.typeBasic').forEach(element => {element.style.display = 'none';});
-                _articleDom.querySelectorAll('._wordCover').forEach(element => {element.style.display = 'none';});
-                _articleDom.querySelectorAll('.typefloat').forEach(element => {element.style.display = 'block';});
+            } else if (fruitsfloat.indexOf(_articleData['article_style']) >= 0) {
+                _articleDom.querySelectorAll('._H.typeBasic').forEach(element => { element.style.display = 'none'; });
+                _articleDom.querySelectorAll('._wordCover').forEach(element => { element.style.display = 'none'; });
+                _articleDom.querySelectorAll('.typefloat').forEach(element => { element.style.display = 'block'; });
                 _articleDom.querySelectorAll('._quote')[0].style.display = 'none';
                 _articleDom.querySelectorAll('._table')[0].style.display = 'none';
-            }else if(['typeTable'].indexOf(_articleData['article_style']) >= 0){
+            } else if (['typeTable'].indexOf(_articleData['article_style']) >= 0) {
                 //新增表格顯示
-                _articleDom.querySelectorAll('._H.typeBasic').forEach(element => {element.style.display = 'none';});
-                _articleDom.querySelectorAll('.typefloat').forEach(element => {element.style.display = 'none';});
-                _articleDom.querySelectorAll('._wordCover ._H').forEach(element => {element.style.display = 'block';});
-                _articleDom.querySelectorAll('._wordCover ._subH').forEach(element => {element.style.display = 'block';});
-                _articleDom.querySelectorAll('._wordCover ._P').forEach(element => {element.style.display = 'block';});
-                _articleDom.querySelectorAll('._wordCover').forEach(element => {element.style.display = 'block';});
+                _articleDom.querySelectorAll('._H.typeBasic').forEach(element => { element.style.display = 'none'; });
+                _articleDom.querySelectorAll('.typefloat').forEach(element => { element.style.display = 'none'; });
+                _articleDom.querySelectorAll('._wordCover ._H').forEach(element => { element.style.display = 'block'; });
+                _articleDom.querySelectorAll('._wordCover ._subH').forEach(element => { element.style.display = 'block'; });
+                _articleDom.querySelectorAll('._wordCover ._P').forEach(element => { element.style.display = 'block'; });
+                _articleDom.querySelectorAll('._wordCover').forEach(element => { element.style.display = 'block'; });
                 _articleDom.querySelectorAll('._quote')[0].style.display = 'none';
                 _articleDom.querySelectorAll('._table')[0].style.display = 'block';
-            }else if(['typeQuote'].indexOf(_articleData['article_style']) >= 0){
-                _articleDom.querySelectorAll('._H.typeBasic').forEach(element => {element.style.display = 'none';});
-                _articleDom.querySelectorAll('.typefloat').forEach(element => {element.style.display = 'none';});
-                _articleDom.querySelectorAll('._wordCover ._H').forEach(element => {element.style.display = 'none';});
-                _articleDom.querySelectorAll('._wordCover ._subH').forEach(element => {element.style.display = 'none';});
-                _articleDom.querySelectorAll('._wordCover').forEach(element => {element.style.display = 'block';});
+            } else if (['typeQuote'].indexOf(_articleData['article_style']) >= 0) {
+                _articleDom.querySelectorAll('._H.typeBasic').forEach(element => { element.style.display = 'none'; });
+                _articleDom.querySelectorAll('.typefloat').forEach(element => { element.style.display = 'none'; });
+                _articleDom.querySelectorAll('._wordCover ._H').forEach(element => { element.style.display = 'none'; });
+                _articleDom.querySelectorAll('._wordCover ._subH').forEach(element => { element.style.display = 'none'; });
+                _articleDom.querySelectorAll('._wordCover').forEach(element => { element.style.display = 'block'; });
                 _articleDom.querySelectorAll('._quote')[0].style.display = 'block';
                 _articleDom.querySelectorAll('._table')[0].style.display = 'none';
-            }else{
-                _articleDom.querySelectorAll('._H.typeBasic').forEach(element => {element.style.display = 'none';});
-                _articleDom.querySelectorAll('.typefloat').forEach(element => {element.style.display = 'none';});
-                _articleDom.querySelectorAll('._wordCover ._H').forEach(element => {element.style.display = 'block';});
-                _articleDom.querySelectorAll('._wordCover ._subH').forEach(element => {element.style.display = 'block';});
-                _articleDom.querySelectorAll('._wordCover').forEach(element => {element.style.display = 'block';});
+            } else {
+                _articleDom.querySelectorAll('._H.typeBasic').forEach(element => { element.style.display = 'none'; });
+                _articleDom.querySelectorAll('.typefloat').forEach(element => { element.style.display = 'none'; });
+                _articleDom.querySelectorAll('._wordCover ._H').forEach(element => { element.style.display = 'block'; });
+                _articleDom.querySelectorAll('._wordCover ._subH').forEach(element => { element.style.display = 'block'; });
+                _articleDom.querySelectorAll('._wordCover').forEach(element => { element.style.display = 'block'; });
                 _articleDom.querySelectorAll('._quote')[0].style.display = 'none';
                 _articleDom.querySelectorAll('._table')[0].style.display = 'none';
             }
@@ -936,8 +945,8 @@ function article_wysiwyg(_article){
             }
             // 初始化 Swiper
             new Swiper(_articleDom.querySelector('.mySwiper'), {
-                slidesPerGroup:_articleData['swiper_num'],
-                slidesPerView:_articleData['swiper_num']
+                slidesPerGroup: _articleData['swiper_num'],
+                slidesPerView: _articleData['swiper_num']
             });
         }
     }
@@ -1240,7 +1249,7 @@ function fms_lightbox() {
     table_view_mode();
 }
 
-function editFolderRank(folder_id,w_rank){
+function editFolderRank(folder_id, w_rank) {
     $.ajax({
         type: "POST",
         url: $('.base-url').val() + '/Ajax/post-edit-folder-new',
@@ -1248,7 +1257,7 @@ function editFolderRank(folder_id,w_rank){
         cache: false,
         data: {
             '_token': $('._token').val(),
-            'editFolderRank':true,
+            'editFolderRank': true,
             'id': folder_id,
             'w_rank': w_rank,
         },
@@ -1395,7 +1404,7 @@ function Leon_fms_wrapper() {
                 let _rank = $(this).text();
                 const selection = window.getSelection();
                 selection.removeAllRanges();
-                editFolderRank(folder_id,_rank);
+                editFolderRank(folder_id, _rank);
                 break;
 
             case 'keydown':
@@ -1474,15 +1483,15 @@ function Leon_fms_wrapper() {
         var fileIDArray = $(".fms_list.can_use .fms_lbox_file_select_checkbox:checked").map(function () { return $(this).attr('data-id'); }).get();
         var useCountArray = $(".fms_list.can_use .fms_lbox_file_select_checkbox:checked").map(function () {
             let fileName = $(this).closest(".fms_list").find('.title-name').text();
-            if($(this).attr('data-use-count') > 0) return fileName;
+            if ($(this).attr('data-use-count') > 0) return fileName;
         }).get();
-        if(useCountArray.length > 0){
+        if (useCountArray.length > 0) {
             alert("有檔案正在使用中,無法刪除");
             return;
         }
         // var folderIDArray = $(".fms_folder.can_use .fms_lbox_file_select_checkbox:checked").map(function () { return $(this).attr('data-id'); }).get();
-        var folderIDArray = $(".fms_folder.can_use .fms_lbox_file_select_checkbox:checked").map(function(){
-            if(!$(this).closest('.fms_folder').is(":hidden")) return $(this).attr('data-id');
+        var folderIDArray = $(".fms_folder.can_use .fms_lbox_file_select_checkbox:checked").map(function () {
+            if (!$(this).closest('.fms_folder').is(":hidden")) return $(this).attr('data-id');
         }).get();
 
         if (fileIDArray.length == 0 && folderIDArray.length == 0) {
@@ -1726,12 +1735,12 @@ $('body').on('click', '.deleteSonTableDataGroup', function () {
 $('body').on('click', '.controlSonTableDataGroup', function () {
     let _this_table = $(this).attr('data-table');
     let _this_body_control = $('.tabulation_body_' + _this_table).attr('data-control') || "close";
-    if(_this_body_control == 'close'){
-        $('.tabulation_body_' + _this_table).attr('data-control','open');
+    if (_this_body_control == 'close') {
+        $('.tabulation_body_' + _this_table).attr('data-control', 'open');
         $('.tabulation_body_' + _this_table + " form").addClass('active');
         $('.tabulation_body_' + _this_table + " .list_frame").show();
-    }else{
-        $('.tabulation_body_' + _this_table).attr('data-control','close');
+    } else {
+        $('.tabulation_body_' + _this_table).attr('data-control', 'close');
         $('.tabulation_body_' + _this_table + " form").removeClass('active');
         $('.tabulation_body_' + _this_table + " .list_frame").hide();
     }
@@ -1766,7 +1775,7 @@ function reload_color(action, color) {
             color: color
         }
     }).done(function (response) {
-        if(action == 'add'){
+        if (action == 'add') {
             alert("已加入");
         }
     }).fail(function () {
@@ -1806,7 +1815,7 @@ function radio_area_set(_ele) {
     }
     _this.closest('.radio_area').find('label').map(function () {
         let _temp = $(this).attr('data-hide');
-        if (_temp!=undefined && _temp != "") {
+        if (_temp != undefined && _temp != "") {
             let _tempArray = _temp.split(',');
             _tempArray.forEach(function (value) {
                 ele.find("[name='" + _model + "[" + value + "]']").closest('.inventory').show();
@@ -1815,7 +1824,7 @@ function radio_area_set(_ele) {
             });
         }
         let _temptip = $(this).attr('data-hidetip') || "";
-        if (_temptip!=undefined && _temptip != "") {
+        if (_temptip != undefined && _temptip != "") {
             let _tempArray = _temptip.split(',');
             _tempArray.forEach(function (value) {
                 if (value != "") {
@@ -1826,7 +1835,7 @@ function radio_area_set(_ele) {
     });
     _this.closest('.radio_area').find('label').map(function () {
         let _temp = $(this).attr('data-hide');
-        if (_temp!=undefined && _temp != "") {
+        if (_temp != undefined && _temp != "") {
             let _tempArray = _temp.split(',');
             _tempArray.forEach(function (value) {
                 if (ele.find("[name='" + _model + "[" + value + "]']").closest('.radio_area').find('label.active').length > 0) {
@@ -1837,12 +1846,12 @@ function radio_area_set(_ele) {
     });
     _hideArray.forEach(function (value) {
         if (value != "") {
-            if(ele.find("[name='" + _model + "[" + value + "]']").closest('._a_textInput').length > 0){
+            if (ele.find("[name='" + _model + "[" + value + "]']").closest('._a_textInput').length > 0) {
                 ele.find("[name='" + _model + "[" + value + "]']").closest('._a_textInput').addClass('domHide').hide();
-            }else{
-            ele.find("[name='" + _model + "[" + value + "]']").closest('.inventory').addClass('domHide').hide();
-            ele.find("[name='" + _model + "[" + value + "][]']").closest('.inventory').addClass('domHide').hide();
-        }
+            } else {
+                ele.find("[name='" + _model + "[" + value + "]']").closest('.inventory').addClass('domHide').hide();
+                ele.find("[name='" + _model + "[" + value + "][]']").closest('.inventory').addClass('domHide').hide();
+            }
         }
     });
     _hidetipArray.forEach(function (value) {
@@ -1850,7 +1859,7 @@ function radio_area_set(_ele) {
     });
 
 }
-$('body').on('paste','.video_url_format', function(e) {
+$('body').on('paste', '.video_url_format', function (e) {
     // 等待貼上事件完成
     setTimeout(() => {
         let url = $(this).val();
@@ -1914,8 +1923,8 @@ $('body').on('drop', '.lbox_fms_open', function (e) {
         $('.img_' + _this_key).attr('src', response.file.real_route);
         $('.value_' + _this_key).attr('value', response.file.file_key);
         $('.file_' + _this_key).html('<span>FILE</span>' + response.file.title + '.' + response.file.type);
-        $('.folder_' + _this_key).html('<span>FOLDER</span>' );
-        $('.type_' + _this_key).html('<span>TYPE</span>' );
+        $('.folder_' + _this_key).html('<span>FOLDER</span>');
+        $('.type_' + _this_key).html('<span>TYPE</span>');
         $('.size_' + _this_key).html('<span>SIZE</span>');
         $('.img_' + _this_key).parent('div').parent('div').addClass('has_img');
         //自動換圖
@@ -1928,22 +1937,22 @@ $('body').on('drop', '.lbox_fms_open', function (e) {
     });
 });
 $('body').on('click', '.lbox_fms_open', function () {
-    if($("body").hasClass('Cms_review')){
+    if ($("body").hasClass('Cms_review')) {
         return false;
     }
     var _this_type = $(this).attr('data-type'),
         _this_key = $(this).attr('data-key');
     var _this_input = '';
-    if(_this_type=='img' || _this_type == 'img_list') _this_input = 'input.value_' + _this_key;
-    if(_this_type=='file') _this_input = 'input.filepicker_value_' + _this_key;
+    if (_this_type == 'img' || _this_type == 'img_list') _this_input = 'input.value_' + _this_key;
+    if (_this_type == 'file') _this_input = 'input.filepicker_value_' + _this_key;
     var _this_value = $(_this_input).val() != '' ? $(_this_input).val() : '0';
 
-    if(_this_type == 'img_list' && _this_value != '0'){
+    if (_this_type == 'img_list' && _this_value != '0') {
         _this_type = 'img';
     }
 
     //如果切換類型,要更新燈箱
-    if($("body")[0].fms_data_type != _this_type){
+    if ($("body")[0].fms_data_type != _this_type) {
         $(".fmsAjaxArea .ajaxItem").removeClass('open');
     }
 
@@ -1951,74 +1960,74 @@ $('body').on('click', '.lbox_fms_open', function () {
     $("body")[0].fms_data_key = _this_key;
     $("body")[0].fms_data_value = _this_value;
 
-    if($(".fmsAjaxArea .ajaxItem").hasClass('open') && _this_value == "0"){
+    if ($(".fmsAjaxArea .ajaxItem").hasClass('open') && _this_value == "0") {
         $(".fmsAjaxArea").addClass('open');
-        $('.fms_lbox_file_select_checkbox:checked').prop('checked',false);
+        $('.fms_lbox_file_select_checkbox:checked').prop('checked', false);
         $(".LeonSearchInput").val('');
-        if(_this_type == 'sontable' || _this_type == 'img_list'){
+        if (_this_type == 'sontable' || _this_type == 'img_list') {
             $(".hiddenArea_frame_controlBtn .number").html('multiple');
-        }else{
-            $(".hiddenArea_frame_controlBtn .number").html('1');
-        }
-    }else{
-    $.ajax({
-        url: $('.base-url').val() + "/Ajax/fms-lbox/" + _this_type + '/' + _this_key + '/' + _this_value,
-        type: 'GET',
-        dataType: 'JSON',
-        cache: false,
-        data: {
-            cms_open: true
-        }
-    }).done(function (response) {
-        const frame = $(".fms_lbox .frame").first();
-        frame.html(response.blade);
-        $("#folder_id").val(response.folder_id);
-        $("body")[0].cms_open_file = _this_value;
-        //需啟動的JS
-        fms_lightbox();
-        if (_this_type == 'img' || _this_type == 'file') {
-            $('.Leon-fms-check-all').hide();
-            $('.fms-move').parents('.btn-item').hide();
-            $(".Leon_fms_table").addClass('one_shot').removeClass('multi_shot');
         } else {
-            $(".Leon_fms_table").addClass('multi_shot').removeClass('one_shot');
-        }
-        // set_fms_basic(false);
-        $('.tree-title[data-folder-id="' + response.folder_id + '"]').click();
-        Leon_fms_wrapper();
-        $('.tree-title.trash').parent().hide();
-        $('.fmsAjaxArea.fms_lbox').addClass('active');
-        $('.fmsAjaxArea.fms_lbox .ajaxItem').addClass('active');
-        $('.fmsAjaxArea.fms_lbox .ajaxItem .fms_container ').addClass('active');
-
-        setTimeout(function () {
-            $('.fmsAjaxArea.fms_lbox').addClass('open').removeClass('active');
-            $('.fmsAjaxArea.fms_lbox .ajaxItem').addClass('open').removeClass('active');
-            $('.fmsAjaxArea.fms_lbox .ajaxItem .fms_container ').addClass('open').removeClass('active');
-        }, 0)
-
-        setTimeout(() => {
-            frame.find('.content-scrollbox').scrollbar();
-            const scroll = frame.find('.scroll-content');
-            const checked = frame.find('.fms_lbox_file_select_checkbox:checked');
-            if (scroll.length > 0 && checked.length > 0) {
-                scroll.scrollTop(checked.eq(0).closest('.fms_list').position().top - window.innerHeight / 4);
-            }
-        }, 1000)
-        if(_this_type == 'sontable'){
-            $(".hiddenArea_frame_controlBtn .number").html('multiple');
-        }else{
             $(".hiddenArea_frame_controlBtn .number").html('1');
         }
-    }).fail(function () {
-        console.log("delete data error");
-    });
+    } else {
+        $.ajax({
+            url: $('.base-url').val() + "/Ajax/fms-lbox/" + _this_type + '/' + _this_key + '/' + _this_value,
+            type: 'GET',
+            dataType: 'JSON',
+            cache: false,
+            data: {
+                cms_open: true
+            }
+        }).done(function (response) {
+            const frame = $(".fms_lbox .frame").first();
+            frame.html(response.blade);
+            $("#folder_id").val(response.folder_id);
+            $("body")[0].cms_open_file = _this_value;
+            //需啟動的JS
+            fms_lightbox();
+            if (_this_type == 'img' || _this_type == 'file') {
+                $('.Leon-fms-check-all').hide();
+                $('.fms-move').parents('.btn-item').hide();
+                $(".Leon_fms_table").addClass('one_shot').removeClass('multi_shot');
+            } else {
+                $(".Leon_fms_table").addClass('multi_shot').removeClass('one_shot');
+            }
+            // set_fms_basic(false);
+            $('.tree-title[data-folder-id="' + response.folder_id + '"]').click();
+            Leon_fms_wrapper();
+            $('.tree-title.trash').parent().hide();
+            $('.fmsAjaxArea.fms_lbox').addClass('active');
+            $('.fmsAjaxArea.fms_lbox .ajaxItem').addClass('active');
+            $('.fmsAjaxArea.fms_lbox .ajaxItem .fms_container ').addClass('active');
+
+            setTimeout(function () {
+                $('.fmsAjaxArea.fms_lbox').addClass('open').removeClass('active');
+                $('.fmsAjaxArea.fms_lbox .ajaxItem').addClass('open').removeClass('active');
+                $('.fmsAjaxArea.fms_lbox .ajaxItem .fms_container ').addClass('open').removeClass('active');
+            }, 0)
+
+            setTimeout(() => {
+                frame.find('.content-scrollbox').scrollbar();
+                const scroll = frame.find('.scroll-content');
+                const checked = frame.find('.fms_lbox_file_select_checkbox:checked');
+                if (scroll.length > 0 && checked.length > 0) {
+                    scroll.scrollTop(checked.eq(0).closest('.fms_list').position().top - window.innerHeight / 4);
+                }
+            }, 1000)
+            if (_this_type == 'sontable') {
+                $(".hiddenArea_frame_controlBtn .number").html('multiple');
+            } else {
+                $(".hiddenArea_frame_controlBtn .number").html('1');
+            }
+        }).fail(function () {
+            console.log("delete data error");
+        });
     }
 });
 $('body').on('click', '.fms_lbox_current_btn', function () {
     var _this = $(this),
-    _this_key = $("body")[0].fms_data_key,
-    _this_type = $("body")[0].fms_data_type;
+        _this_key = $("body")[0].fms_data_key,
+        _this_type = $("body")[0].fms_data_type;
 
     var _val_src = '',
         _val_id = 0,
@@ -2088,7 +2097,7 @@ $('body').on('click', '.fms_lbox_current_btn', function () {
                 $('.img_' + _this_key).closest('.list').find('.list_box').find('.filesText').find('p').html(_val_title + '.' + _val_type);
                 //段落編輯換圖
                 $('.img_' + _this_key).closest('.three-item').find('.list_box').find('.s_img img').attr('src', _val_src);
-                $("body").attr('data-temp-file',_val_id);
+                $("body").attr('data-temp-file', _val_id);
             }
         }
 
@@ -2133,10 +2142,9 @@ $('body').on('click', '.fms_lbox_current_btn', function () {
 
         const name = triggerButton.attr('data-model') + '[' + triggerButton.attr('data-column') + ']';
 
-        if(list.length == 0)
-        {
+        if (list.length == 0) {
 
-            let search = "ul .thirdTbNew_"+_this_key;
+            let search = "ul .thirdTbNew_" + _this_key;
             const three_key = $(search);
             $('input.fms_lbox_file_select_checkbox:checked').each(function (index, el) {
                 const self = $(this);
@@ -2158,8 +2166,8 @@ $('body').on('click', '.fms_lbox_current_btn', function () {
                     const image = input.siblings('img');
                     if (image.length > 0) {
                         image.attr('src', _val_src);
-                            let img = input.parents('form.three-item').children('.list_box').find('.AutoSet_article_img');
-                            img.attr('src',_val_src);
+                        let img = input.parents('form.three-item').children('.list_box').find('.AutoSet_article_img');
+                        img.attr('src', _val_src);
 
 
                         input.closest('.frame').addClass('has_img').find('.info_detail').find('p').each(function (i) {
@@ -2199,7 +2207,7 @@ $('body').on('click', '.fms_lbox_current_btn', function () {
 
                 }
             });
-        }else{
+        } else {
             $('input.fms_lbox_file_select_checkbox:checked').each(function (index, el) {
                 const self = $(this);
                 if (self.data('type') == 'folder') {
@@ -2215,11 +2223,11 @@ $('body').on('click', '.fms_lbox_current_btn', function () {
                     const input = list.find('form').last().find(`input[name="${name}"]`).val(_val_id).attr('value', _val_id);
 
                     const image = input.siblings('img');
-                if (image.length > 0) {
-                    let s_img = list.find('form').last().find('.s_img img');
-                    if(s_img.length > 0){
-                        s_img.attr('src',_val_src);
-                    }
+                    if (image.length > 0) {
+                        let s_img = list.find('form').last().find('.s_img img');
+                        if (s_img.length > 0) {
+                            s_img.attr('src', _val_src);
+                        }
 
 
                         image.attr('src', _val_src);
@@ -2261,12 +2269,12 @@ $('body').on('click', '.fms_lbox_current_btn', function () {
                 }
             });
         }
-    }else if (_this_type == 'img_list') {
+    } else if (_this_type == 'img_list') {
         let picture_box = $(`.lbox_fms_open[data-key="${_this_key}"]`).closest('.picture_box');
 
         let max_select = parseInt(picture_box.attr('data-max-select'));
-        if(max_select > 0){
-            if((picture_box.find('.open_fms_lightbox').length + $('input.fms_lbox_file_select_checkbox:checked').length) > (max_select + 1)){
+        if (max_select > 0) {
+            if ((picture_box.find('.open_fms_lightbox').length + $('input.fms_lbox_file_select_checkbox:checked').length) > (max_select + 1)) {
                 alert('選擇數量超過限制');
                 return false;
             }
@@ -2284,7 +2292,7 @@ $('body').on('click', '.fms_lbox_current_btn', function () {
                 _val_size = self.parents('.fms_list').find('td').eq(5).find('p').text()
                 let $newRow = $(`.lbox_fms_open[data-key="${_this_key}"]`).closest('.open_fms_lightbox').clone();
                 let regex = new RegExp(_this_key, 'g');
-                $newRow.find('*').each(function() {
+                $newRow.find('*').each(function () {
                     let currentClass = $(this).attr('class');
                     if (currentClass) {
                         var newClass = currentClass.replace(regex, rand);
@@ -2303,13 +2311,13 @@ $('body').on('click', '.fms_lbox_current_btn', function () {
         });
         //順序重排
         let _rank = 1;
-        picture_box.find('.open_fms_lightbox.has_img').each(function(index, el){
+        picture_box.find('.open_fms_lightbox.has_img').each(function (index, el) {
             $(el).find('.rank').html(_rank);
             _rank = _rank + 1;
         });
 
-        if(max_select > 0){
-            if(picture_box.find('.open_fms_lightbox').length == (max_select + 1)){
+        if (max_select > 0) {
+            if (picture_box.find('.open_fms_lightbox').length == (max_select + 1)) {
                 picture_box.find('.open_fms_lightbox:last').hide();
             }
         }
@@ -2347,7 +2355,7 @@ $('body').on('click', '.Leon-fms-check-all', function (e) {
         $(this).addClass('checked');
     }
     // $('.Leon_fms_table .select-item input').prop("checked", checked);
-    $('.fms_list:visible input').prop( "checked", checked );
+    $('.fms_list:visible input').prop("checked", checked);
 });
 $('body').on('click', 'li.rankSonTableTop', function () {
     const list = $(this).closest('.composite_btn').parent('li').next().next('.tabulation_body');
@@ -2400,18 +2408,18 @@ $('body').on('click', '.image_remove', function () {
     div_tool.parent().parent().removeClass('has_img'); //移掉"代表有圖片"的class
     div_tool.prev().prev().prev().attr('src', 'javascript:;'); //清除圖片的src(不能放空值，不然會變破圖)
     div_tool.prev().prev().attr('value', ''); //清除hidden裡存的值
-    if(_type == 'img_list'){
+    if (_type == 'img_list') {
         let picture_box = $(this).closest('.picture_box');
         let max_select = parseInt(picture_box.attr('data-max-select'));
         $(this).closest('.open_fms_lightbox').remove();
         //順序重排
         let _rank = 1;
-        picture_box.find('.open_fms_lightbox.has_img').each(function(index, el){
+        picture_box.find('.open_fms_lightbox.has_img').each(function (index, el) {
             $(el).find('.rank').html(_rank);
             _rank = _rank + 1;
         });
-        if(max_select > 0){
-            if(picture_box.find('.open_fms_lightbox').length < (max_select + 1)){
+        if (max_select > 0) {
+            if (picture_box.find('.open_fms_lightbox').length < (max_select + 1)) {
                 picture_box.find('.open_fms_lightbox:last').show();
             }
         }

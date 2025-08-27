@@ -87,7 +87,7 @@ import { getTableData } from "./ajax/cms_table_ajax.js";
         menuInit();
     });
 
-    function refresh(url = "", page = 1, option = {}, cb = (response) => {}) {
+    function refresh(url = "", page = 1, option = {}, cb = (response) => { }) {
         return new Promise(async (res) => {
             try {
                 unitState.changing = true;
@@ -112,19 +112,19 @@ import { getTableData } from "./ajax/cms_table_ajax.js";
                             editControl.closeContent();
                             editControl.clearEditArea();
 
-                            if(response.menu.has_auth == 1){
+                            if (response.menu.has_auth == 1) {
                                 unitState.has_auth = response.menu.use_id;
                                 editControl.hasAuth(response.menu.use_id);
                             }
                             buttonInit(response.data);
                         }
-                            pageInit(
-                                response.data.data,
-                                response.data.totalPage,
-                                response.data.perPage,
-                                response.data.perCount,
-                                response.data.totalCount
-                            );
+                        pageInit(
+                            response.data.data,
+                            response.data.totalPage,
+                            response.data.perPage,
+                            response.data.perCount,
+                            response.data.totalCount
+                        );
                         unitInit(response.data.crumb, response.data.unitTitle);
                         unitState.modelName = response.data.modelName;
                         unitState.ids = [];
@@ -200,8 +200,8 @@ import { getTableData } from "./ajax/cms_table_ajax.js";
                     treeclick(
                         $(
                             '.tree-title[data-folder-id="' +
-                                e.state.folder_id +
-                                '"]'
+                            e.state.folder_id +
+                            '"]'
                         ),
                         false
                     );
@@ -298,7 +298,7 @@ import { getTableData } from "./ajax/cms_table_ajax.js";
                     });
                     await afterDelete(response);
                     //限制資料筆數
-                    if($(".createBtn").attr('data-max') != "" && $('.ag-center-cols-container>div').length < $(".createBtn").attr('data-max')){
+                    if ($(".createBtn").attr('data-max') != "" && $('.ag-center-cols-container>div').length < $(".createBtn").attr('data-max')) {
                         $(".createBtn").closest('.btn-item').removeClass('d-none');
                         $(".cloneBtn").removeClass('d-none');
                     }
@@ -359,7 +359,7 @@ import { getTableData } from "./ajax/cms_table_ajax.js";
                         const response = await copyTableData({
                             ids,
                             modelName: unitState.modelName,
-                            has_auth : unitState.has_auth
+                            has_auth: unitState.has_auth
                         });
                         await afterCopy(response);
                     }
@@ -423,46 +423,38 @@ import { getTableData } from "./ajax/cms_table_ajax.js";
             const disableStyle = 'style="opacity: 0.2; pointer-events: none;"';
             if (totalPage <= 5) {
                 for (const x of Array(totalPage).keys()) {
-                    page_html += `<div class="go-page" data-page="${x + 1}">${
-                        x + 1
-                    }</div>`;
+                    page_html += `<div class="go-page" data-page="${x + 1}">${x + 1
+                        }</div>`;
                 }
             } else {
-                page_html += `<div class="go-page ag-icon ag-icon-first" ${
-                    perPage < 3 ? disableStyle : ""
-                } data-page="1"></div>`;
-                page_html += `<div class="go-page ag-icon ag-icon-previous" ${
-                    perPage === 1 ? disableStyle : ""
-                } data-page="prev"></div>`;
+                page_html += `<div class="go-page ag-icon ag-icon-first" ${perPage < 3 ? disableStyle : ""
+                    } data-page="1"></div>`;
+                page_html += `<div class="go-page ag-icon ag-icon-previous" ${perPage === 1 ? disableStyle : ""
+                    } data-page="prev"></div>`;
                 if (perPage <= 3) {
                     for (const x of Array(5).keys()) {
-                        page_html += `<div class="go-page go-nb" data-page="${
-                            x + 1
-                        }">${x + 1}</div>`;
+                        page_html += `<div class="go-page go-nb" data-page="${x + 1
+                            }">${x + 1}</div>`;
                     }
                 } else {
                     if (perPage + 2 <= totalPage) {
                         let star_page = perPage - 2;
                         for (const x of Array(5).keys()) {
-                            page_html += `<div class="go-page go-nb" data-page="${
-                                x + star_page
-                            }">${x + star_page}</div>`;
+                            page_html += `<div class="go-page go-nb" data-page="${x + star_page
+                                }">${x + star_page}</div>`;
                         }
                     } else {
                         let star_page = totalPage - 4;
                         for (const x of Array(5).keys()) {
-                            page_html += `<div class="go-page go-nb" data-page="${
-                                x + star_page
-                            }">${x + star_page}</div>`;
+                            page_html += `<div class="go-page go-nb" data-page="${x + star_page
+                                }">${x + star_page}</div>`;
                         }
                     }
                 }
-                page_html += `<div class="go-page ag-icon ag-icon-next" ${
-                    perPage === totalPage ? disableStyle : ""
-                } data-page="next"></div>`;
-                page_html += `<div class="go-page go-last ag-icon ag-icon-last" ${
-                    perPage > totalPage - 2 ? disableStyle : ""
-                } data-page="${totalPage}"></div>`;
+                page_html += `<div class="go-page ag-icon ag-icon-next" ${perPage === totalPage ? disableStyle : ""
+                    } data-page="next"></div>`;
+                page_html += `<div class="go-page go-last ag-icon ag-icon-last" ${perPage > totalPage - 2 ? disableStyle : ""
+                    } data-page="${totalPage}"></div>`;
             }
             $(".content-bottom-page").html(page_html);
             $('.go-page[data-page="' + perPage + '"]').addClass("active");
