@@ -64,7 +64,7 @@
                         <p class="subtitle">檔案上傳後系統會重新編寫檔名，如 dog.png -> {{ date('YmdHi') }}abcdefg.png，若勾選下載時使用原檔名可使下載的檔案檔名同上傳時的檔名，但相對的會使用較多的伺服器資源。</p>
                         <div class="inner">
                             <div class="radio_area">
-                                <div class="content">
+                                <div class="radio_area_content">
                                     <input id="use_origin_name" name="fms[use_origin_name]" type="hidden" value="{{ $File['use_origin_name'] ?? 0 }}">
                                     <label class="box @if($File['use_origin_name']==0) active @endif">
                                         <div class="plan">

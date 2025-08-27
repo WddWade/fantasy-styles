@@ -6,12 +6,12 @@
     --ag-row-hover-color: rgb(145 248 255 / 24%);
     // --ag-header-background-color:""
 
-    height: calc(100vh - 82px);
+    height: calc(100vh - 83px);
     padding-top: 0px;
     pointer-events: auto;
   }
   &.defaultPaging {
-    height: calc(100vh - 122px);
+    height: calc(100vh - 123px);
   }
   .ag-header-row,
   .ag-pinned-left-header {
@@ -78,7 +78,6 @@
 }
 
 .ag-header {
-  border-top: 1px solid #e4e4e4 !important;
   border-bottom: 1px solid #e4e4e4 !important;
   * {
     font-size: 1.2rem !important;

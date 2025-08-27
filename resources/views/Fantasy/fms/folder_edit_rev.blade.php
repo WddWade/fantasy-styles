@@ -79,7 +79,7 @@
                         <p class="subtitle">權限設定</p>
                         <div class="inner">
                             <div class="radio_area">
-                                <div class="content">
+                                <div class="radio_area_content">
                                     <input id="is_private" name="fms[is_private]" type="hidden" value="{{$selfFolder['is_private'] ?? 0}}">
                                     <label class="box {{ (isset($selfFolder['is_private']) && $selfFolder['is_private']==1) ? '':'active' }}" data-value="0" data-hide="can_use">
                                         <div class="plan">

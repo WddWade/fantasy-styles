@@ -54,7 +54,7 @@
                                 </div>
                                 <div class="inner">
                                     <div class="radio_area">
-                                        <div class="content">
+                                        <div class="radio_area_content">
                                             <input id="is_active" name="amsData[is_active]" type="hidden" value="{{$data['is_active'] ?? 0}}">
                                             <label class="box {{ (isset($data['is_active']) && $data['is_active']==1) ? '':'active' }}" data-value="0" data-hide="">
                                                 <div class="plan">

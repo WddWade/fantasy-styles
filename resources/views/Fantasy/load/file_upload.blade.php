@@ -71,7 +71,7 @@
                                     <p class="subtitle"><span class="en_title">Step3.</span>權限設定</p>
                                     <div class="inner">
                                         <div class="radio_area">
-                                            <div class="content">
+                                            <div class="radio_area_content">
                                                 <input id="is_private" name="fms[is_private]" type="hidden" value="{{$selfFolder['is_private'] ?? 0}}">
                                                 <label class="box {{ (isset($selfFolder['is_private']) && $selfFolder['is_private']==1) ? '':'active' }}" data-value="0" data-hide="can_use">
                                                     <div class="plan">
@@ -121,7 +121,7 @@
                                         <p class="subtitle">檔案上傳後系統會重新編寫檔名，如 dog.png -> {{ date('YmdHi') }}abcdefg.png，若勾選下載時使用原檔名可使下載的檔案檔名同上傳時的檔名，但相對的會使用較多的伺服器資源。</p>
                                         <div class="inner">
                                             <div class="radio_area">
-                                                <div class="content">
+                                                <div class="radio_area_content">
                                                     <input id="use_origin_name" name="fms[use_origin_name]" type="hidden" value="0">
                                                     <label class="box active">
                                                         <div class="plan">

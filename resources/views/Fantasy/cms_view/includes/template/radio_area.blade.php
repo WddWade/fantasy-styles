@@ -22,7 +22,7 @@
                     $active = (empty($active)) ? ['key'=>$options[array_key_first($options)]['key']] : $active;
                 @endphp
         <div class="radio_area">
-            <div class="content">
+            <div class="radio_area_content">
                 <input name="{{ $disabled ? '' : $name }}" type="hidden" value="{{ $value }}">
                 @foreach ($options as $key => $row)
                     <label

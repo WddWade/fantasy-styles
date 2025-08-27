@@ -30,7 +30,7 @@
     font-size: 1rem;
     line-height: 1;
     font-weight: bold;
-    padding: 1px 7px;
+    padding: 4px 7px;
     cursor: pointer;
     border-radius: 3px;
     display: flex;
@@ -43,8 +43,8 @@
     }
 
     &.active {
-      background-color: #000;
-      color: #919191;
+      background-color: #777777;
+      color: #ffffff;
 
       &.ag-icon-first,
       &.ag-icon-last {

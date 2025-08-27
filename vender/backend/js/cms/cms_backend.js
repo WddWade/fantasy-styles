@@ -966,10 +966,10 @@ $('.head-bar .display-title').on('click', function (e) {
     let _this = $(this);
     if (_this.hasClass('open')) {
         _this.removeClass('open');
-        $('.head-bar .level-1 > .sub-menu').slideUp();
+        $('.head-bar .level-1 > .sub-menu').slideUp(300);
     } else {
         _this.addClass('open');
-        $('.head-bar .level-1 > .sub-menu').slideDown();
+        $('.head-bar .level-1 > .sub-menu').slideDown(300);
     }
 });
 
