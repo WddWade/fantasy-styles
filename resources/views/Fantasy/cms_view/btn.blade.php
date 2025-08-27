@@ -1,4 +1,3 @@
-<div class="navleft">
     {{-- 若需要開啟search 在各自的xxxApi內新增 $role['search'] = true; --}}
     @if(isset($roles['search']) && $roles['search'])
         <div class="btn-item">
@@ -14,7 +13,7 @@
             <a class="createBtn" href="javascript:void(0)" data-max="{{$roles['maxAddCount'] ?? ''}}">
                 <span class="icon-add"></span>
                 {{-- wade:add --}}
-                <span class="text">新增資料</span>
+                <span class="text">新增</span>
             </a>
         </div>
     @endif
@@ -23,7 +22,7 @@
             <a class="remove-data-btn" id="leon-cms-delete-list" href="javascript:void(0)">
                 <span class="icon-delete"></span>
                 {{-- wade:add --}}
-                <span class="text">刪除資料</span>
+                <span class="text">刪除</span>
             </a>
         </div>
     @endif
@@ -32,9 +31,9 @@
             <a class="" data-toggle="dropdown" href="javascript:void(0)" aria-haspopup="true" aria-expanded="false">
                 <span class="icon-batch"></span>
                 {{-- wade:add --}}
-                <span class="text">批次修改</span>
+                <span class="text">批次</span>
             </a>
-            <div class="dropdown-menu dropdown-menu-left profile-dropdown" role="menu">
+            <div class="dropdown-menu dropdown-menu-right profile-dropdown" role="menu">
                 <a class="dropdown-item batchBtn" data-action="1" href="javascript:void(0)">
                     <i class="pg-outdent"></i>
                     選取資料
@@ -48,13 +47,34 @@
             </div>
         </div>
     @endif
+
+    {{-- wade:add --}}
+    <div class="btn-item dropdown">
+        <a class="" data-toggle="dropdown" href="javascript:void(0)" aria-haspopup="true" aria-expanded="false">
+            <span class="icon-option"></span>
+            {{-- wade:add --}}
+            <span class="text">選項</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right profile-dropdown" role="menu">
+            <a class="dropdown-item saveSort" data-action="1" href="javascript:void(0)">
+                <span class="text">儲存列表</span>
+            </a>
+            <a class="dropdown-item sortCustom" data-action="1" href="javascript:void(0)">
+                <span class="text">載入列表</span>
+            </a>
+            <a class="dropdown-item sortDefault" data-action="1" href="javascript:void(0)">
+                <span class="text">重置列表</span>
+            </a>
+        </div>
+    </div>
+
     @if($roles['canExport'] || $roles['create'])
         <div class="btn-item dropdown btn-role">
             <a class="" data-toggle="dropdown" href="javascript:void(0)" aria-haspopup="true" aria-expanded="false">
-                <span class="icon-option"></span>
-                <span class="text">進階選項</span>
+                <span class="icon-setting"></span>
+                <span class="text">進階</span>
             </a>
-            <div class="dropdown-menu dropdown-menu-left profile-dropdown" role="menu">
+            <div class="dropdown-menu dropdown-menu-right profile-dropdown" role="menu">
                 @if($roles['canExport'])
                     <a class="dropdown-item ExportBtnCheck" href="javascript:void(0)" title="下載勾選項目">
                         <i class="pg-outdent"></i> 匯出Excel : 選取資料</a>
@@ -72,27 +92,25 @@
             </div>
         </div>
     @endif
-</div>
-<div class="navright">
+
+{{-- wade:delete --}}
+{{-- <div class="navright">
     <div class="btn-item">
         <a class="saveSort" href="javascript:void(0)">
             <span class="fa fa-floppy-o"></span>
-            {{-- wade:add --}}
             <span class="text">儲存列表</span>
         </a>
     </div>
     <div class="btn-item">
         <a class="sortCustom" href="javascript:void(0)">
             <span class="fa fa-refresh"></span>
-            {{-- wade:add --}}
             <span class="text">載入列表</span>
         </a>
     </div>
     <div class="btn-item">
         <a class="sortDefault" href="javascript:void(0)">
             <span class="fa fa-refresh"></span>
-            {{-- wade:add --}}
             <span class="text">重置列表</span>
         </a>
     </div>
-</div>
+</div> --}}

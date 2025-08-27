@@ -6,9 +6,12 @@
     --ag-row-hover-color: rgb(145 248 255 / 24%);
     // --ag-header-background-color:""
 
-    height: calc(100vh - 125px);
+    height: calc(100vh - 82px);
     padding-top: 0px;
     pointer-events: auto;
+  }
+  &.defaultPaging {
+    height: calc(100vh - 122px);
   }
   .ag-header-row,
   .ag-pinned-left-header {
@@ -17,6 +20,14 @@
   .ag-center-aligned-header {
     .ag-header-cell-label {
       justify-content: center;
+    }
+  }
+  .ag-checkbox-input-wrapper {
+    line-height: 1;
+    width: 13px;
+    height: 13px;
+    &::after {
+      font-size: 1.3rem !important;
     }
   }
 }
@@ -278,7 +289,7 @@ textarea[class^="ag-"] {
 .ag-status-bar {
   border: none !important;
   position: fixed !important;
-  bottom: 3px !important;
+  bottom: 5px !important;
   height: 31px !important;
   font-size: 1rem !important;
   line-height: 1 !important;

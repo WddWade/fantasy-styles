@@ -31,19 +31,24 @@
                     <div class="content-wrap main-table index-table-div" data-tableid="new_cms_table">
                         <div class="content-head cms-index_table">
                             {{-- wade:add --}}
-                            <div class="content-title">
-                                <div class="switch-menu navigation-toggle">
-                                    <span class="bar"></span>
-                                    <span class="bar"></span>
-                                    <span class="bar"></span>
+                            <div class="content-head-container">
+                                <div class="content-title">
+                                    <div class="switch-menu navigation-toggle">
+                                        <span class="bar"></span>
+                                        <span class="bar"></span>
+                                        <span class="bar"></span>
+                                    </div>
+                                    <h1>WDD Design</h1>
                                 </div>
-                                <h1>WDD Design</h1>
+                                <div class="content-nav">
+
+                                </div>
                             </div>
 
                             {{-- wade:delete --}}
                             {{-- <h1>WDD Design</h1> --}}
-                            <div class="content-nav">
-                            </div>
+                            {{-- <div class="content-nav">
+                            </div> --}}
                         </div>
                     </div>
                     <div class="data-aggrid ag-theme-alpine" id="main"></div>
