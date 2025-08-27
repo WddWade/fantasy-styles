@@ -1,5 +1,5 @@
 .data-aggrid.ag-theme-alpine {
-  --ag-header-height: 45px
+  --ag-header-height: 40px;
   --ag-row-height: 40px;
   --ag-selected-row-background-color: rgb(145 248 255 / 24%);
   --ag-row-hover-color: rgb(145 248 255 / 24%);
@@ -66,9 +66,11 @@
 }
 
 .ag-header {
-  background-color: transparent !important;
   border-top: 1px solid #e4e4e4 !important;
   border-bottom: 1px solid #e4e4e4 !important;
+}
+.ag-header * {
+  font-size: 1.2rem !important;
 }
 
 .ag-pinned-left-header {
@@ -267,7 +269,7 @@ textarea[class^=ag-]:focus {
 .ag-status-bar {
   border: none !important;
   position: fixed !important;
-  bottom: 0 !important;
+  bottom: 3px !important;
   height: 31px !important;
   font-size: 1rem !important;
   line-height: 1 !important;
@@ -276,7 +278,7 @@ textarea[class^=ag-]:focus {
 }
 
 .ag-paging-panel {
-  padding-block: 5px !important;
+  padding-block: 10px !important;
   padding-right: 13px !important;
   padding-left: 20px !important;
   border-top: 1px solid #dde2eb !important;
