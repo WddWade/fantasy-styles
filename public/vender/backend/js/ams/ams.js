@@ -45,8 +45,8 @@ $(function () {
                 if (_this.hasClass('review-switch')) {
                     _this.val(0).attr('value', '0').removeClass('on');
                     _this.children('input.check_ams_rabio').val('0');
-                } 
-                else if(_this.hasClass('view-switch')){
+                }
+                else if (_this.hasClass('view-switch')) {
                     _this.removeClass('on');
                     _this.children('input.check_ams_rabio').attr('value', '0');
                     _this.children('input.check_ams_rabio').val('0');
@@ -82,15 +82,15 @@ $(function () {
             if (_this.hasClass('clicked')) {
                 return false;
             } else {
-                if($('[name="amsData[id]"]').val() == 0){
+                if ($('[name="amsData[id]"]').val() == 0) {
                     let account = $('[name="amsData[account]"]').val();
                     let password = $('[name="amsData[password]"]').val();
                     let password2 = $('[name="amsData[password2]"]').val();
-                    if(account == '' || password == '' || password2 == ''){
+                    if (account == '' || password == '' || password2 == '') {
                         alert('請填寫登入帳號及登入密碼');
                         return false;
                     }
-                    if(password != password2){
+                    if (password != password2) {
                         alert('登入密碼不相同');
                         return false;
                     }
@@ -262,7 +262,7 @@ $(function () {
             } else {
                 _this.addClass('clicked');
                 let _openUrl = $('.base-url-plus').val() + '/Fantasy/Ajax/ams-information/' + _this_type + '/' + _this_id;
-                if(_this_ym!=undefined) _openUrl += '?date='+_this_ym;
+                if (_this_ym != undefined) _openUrl += '?date=' + _this_ym;
                 $.ajax({
                     url: _openUrl,
                     type: 'GET',
@@ -320,10 +320,10 @@ var amsBasicFunction = {
         $('.amsDetailAjaxArea.ams_hiddenArea .ajaxItem #ams_edit_form').addClass('active');
 
         setTimeout(function () {
-            $('.amsDetailAjaxArea.ams_hiddenArea').addClass('open').removeClass('active');
-            $('.amsDetailAjaxArea.ams_hiddenArea .ajaxItem').addClass('open').removeClass('active');
-            $('.amsDetailAjaxArea.ams_hiddenArea .ajaxItem #ams_edit_form').addClass('open').removeClass('active');
-        }, 400)
+            $('.amsDetailAjaxArea.ams_hiddenArea').addClass('open');
+            $('.amsDetailAjaxArea.ams_hiddenArea .ajaxItem').addClass('open');
+            $('.amsDetailAjaxArea.ams_hiddenArea .ajaxItem #ams_edit_form').addClass('open');
+        }, 0)
 
         $('.editorBody').scrollbar();
         // var content = $('.ams_hiddenArea .hiddenArea_frame_box .box_block');
@@ -350,20 +350,22 @@ var amsBasicFunction = {
     close_wrapper: function () {
 
         $('.close_ams_hiddenArea').on('click', function () {
-            //20200202 wade
-            $('.amsDetailAjaxArea.ams_hiddenArea .ajaxItem').addClass('remove');
-            $('.amsDetailAjaxArea.ams_hiddenArea .ajaxItem .ajaxContainer').addClass('remove');
+            //wade 20250828
+            $('.amsDetailAjaxArea.ams_hiddenArea .ajaxItem').removeClass('open');
+            $('.amsDetailAjaxArea.ams_hiddenArea .ajaxItem .ajaxContainer').removeClass('open');
+            $('.amsDetailAjaxArea.ams_hiddenArea').removeClass('open');
+
 
             setTimeout(function () {
-                $('.amsDetailAjaxArea.ams_hiddenArea .ajaxItem').removeClass('open remove');
-                $('.amsDetailAjaxArea.ams_hiddenArea .ajaxItem .ajaxContainer').removeClass('open remove');
-                $('.amsDetailAjaxArea.ams_hiddenArea').addClass('remove');
+                $('.amsDetailAjaxArea.ams_hiddenArea .ajaxItem').removeClass('active');
+                $('.amsDetailAjaxArea.ams_hiddenArea .ajaxItem .ajaxContainer').removeClass('active');
+                $('.amsDetailAjaxArea.ams_hiddenArea').removeClass('active');
 
-            }, 500)
+            }, 350)
 
-            setTimeout(function () {
-                $('.amsDetailAjaxArea.ams_hiddenArea').removeClass('open remove');
-            }, 650)
+            // setTimeout(function () {
+            //     $('.amsDetailAjaxArea.ams_hiddenArea').removeClass('open remove');
+            // }, 650)
 
             $('.amsDetailAjaxArea.ams_hiddenArea .ajaxItem .ajaxContainer').empty();
 

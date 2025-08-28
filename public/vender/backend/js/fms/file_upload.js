@@ -57,7 +57,7 @@ $('body').on('click', 'a.btn-item.searchbar', function () {
     $(this).find('.search-data').addClass('active').focus();
 })
 
-$("body").on('keyup','.LeonSearchInput',function(event) {
+$("body").on('keyup', '.LeonSearchInput', function (event) {
     if (event.which === 13) {
         $(".LeonSearchBtn").click();
     }
@@ -132,13 +132,13 @@ $('body').on('click', '.folder_edit_upload_new', function () {
 
             'title': title,
             'note': note,
-            'w_rank':w_rank,
+            'w_rank': w_rank,
             'is_private': is_private,
             'can_use': JSON.stringify(can_use),
         },
     }).done(function (data) {
         let code = data.code || '';
-        if(code == 'err'){
+        if (code == 'err') {
             alert(data.callback);
             return;
         }
@@ -191,8 +191,8 @@ $('body').on('click', '.folder_edit_delete', function () {
                 }
                 if (folderIDArray.length > 0) {
                     syncFolderTreeAndBreadcrumb();
-                }else{
-                set_fms_basic(false);
+                } else {
+                    set_fms_basic(false);
                 }
                 $(".folder_edit_delete").closest('ul').find('.close_btn').click();
                 return;
@@ -203,7 +203,6 @@ $('body').on('click', '.folder_edit_delete', function () {
 
 
 });
-
 //編輯檔案
 $('body').on('click', '.file_edit_upload', function () {
     if ($(this).hasClass('cant_use')) {
@@ -232,9 +231,9 @@ $('body').on('click', '.file_edit_upload', function () {
         var can_use = JSON.stringify(this_form.find('select.____select2[name="fms[can_use][]"]').val());
 
         //切片大小
-        const chunkSize = 1024*1024*1; //1024*1024 = 1mb
-        let chunkCount = Math.ceil(file.size/chunkSize); //總切片數量
-        if(file=='' || chunkCount==1){
+        const chunkSize = 1024 * 1024 * 1; //1024*1024 = 1mb
+        let chunkCount = Math.ceil(file.size / chunkSize); //總切片數量
+        if (file == '' || chunkCount == 1) {
             formData.append('file', file);
             formData.append('_token', $('._token').val());
             formData.append('id', _val_id);
@@ -333,9 +332,9 @@ $('body').on('click', '.file_edit_upload', function () {
                 }).fail(function () {
                     console.log('edit error');
                 });
-            } 
+            }
         }// chunk==1 if
-        else{
+        else {
             $('.pace').show();
             let __form = document.createElement('form');
             __form.id = 'my-dropzone';
@@ -380,10 +379,10 @@ $('body').on('click', '.file_edit_upload', function () {
                         console.log('complete')
                     });
                     //全部切片上傳成功
-                    this.on('success', function (file,data) {
+                    this.on('success', function (file, data) {
                         $('.pace').hide();
                         // 此處data會自動解開成物件
-                        
+
                         //刪除上傳用的form及Dropzone產出的input
                         $('#my-dropzone').remove();
                         $('.dz-hidden-input').remove();
@@ -459,10 +458,10 @@ $('body').on('click', '.file_edit_upload', function () {
                         } else {
                             alert('編輯失敗\n' + data['message']);
                         }
-                       
+
                     });
                     //上傳失敗
-                    this.on("error", function(file, errorMessage) {
+                    this.on("error", function (file, errorMessage) {
                         alert('上傳失敗');
                     });
                 }
@@ -482,7 +481,7 @@ $('body').on('click', '.file_edit_delete', function () {
     }
     var this_form = $(".ajaxContainer.open");
     let _file_use_count = this_form.find('input[name="fms[file_use_count]"]').val();
-    if(_file_use_count > 0){
+    if (_file_use_count > 0) {
         alert('目前檔案被使用中,無法刪除');
         return false;
     }
@@ -944,7 +943,7 @@ function checkWhatFileNotUpload() {
                     fast_table += '     </div>                                                                                                                ';
                     fast_table += ' </td>                                                                                                                     ';
                     fast_table += ' <td class="text-center">                                                                                                  ';
-                    fast_table += '     <div class="tableContent"><a class="fileUse" data-key="'+_this.attr('data-key')+'">0</a></div>                                                                    ';
+                    fast_table += '     <div class="tableContent"><a class="fileUse" data-key="' + _this.attr('data-key') + '">0</a></div>                                                                    ';
                     fast_table += ' </td>                                                                                                                     ';
                     fast_table += ' <td class="text-center">                                                                                                  ';
                     fast_table += '     <div class="tableContent">' + _this.attr('data-type') + '</div>                                                                    ';
@@ -991,10 +990,10 @@ function checkWhatFileNotUpload() {
 //上傳檔案
 function postFilesToServer(file, key) {
     //切片大小
-    const chunkSize = 1024*1024*1; //1024*1024 = 1mb
-    let chunkCount = Math.ceil(file.size/chunkSize); //總切片數量
+    const chunkSize = 1024 * 1024 * 1; //1024*1024 = 1mb
+    let chunkCount = Math.ceil(file.size / chunkSize); //總切片數量
 
-    if(chunkCount==1){
+    if (chunkCount == 1) {
         var formData = new FormData(); //建構new FormData()
         formData.append('file', file);
         formData.append('key', key);
@@ -1039,7 +1038,7 @@ function postFilesToServer(file, key) {
             UploadAfterDo('upload_error', key, '');
         });
     }
-    else{
+    else {
         let __form = document.createElement('form');
         __form.id = 'my-dropzone';
         document.body.appendChild(__form);
@@ -1071,10 +1070,10 @@ function postFilesToServer(file, key) {
                     formData.append('use_origin_name', $("#use_origin_name").val());
                     formData.append('can_use', JSON.stringify($("#can_use").val()));
                     //當前切片位置
-                    let currentChunkIndex = file.upload.chunks.length*1;
-                    let allChunk = file.upload.totalChunkCount*1;
-                    if(currentChunkIndex>0) currentChunkIndex--;
-                    percentVal = Math.round(currentChunkIndex/allChunk * 100) + "%";
+                    let currentChunkIndex = file.upload.chunks.length * 1;
+                    let allChunk = file.upload.totalChunkCount * 1;
+                    if (currentChunkIndex > 0) currentChunkIndex--;
+                    percentVal = Math.round(currentChunkIndex / allChunk * 100) + "%";
                     let className = '.circle_' + key;
                     $(className).quillCircleBar({
                         type: 'normal',
@@ -1086,7 +1085,7 @@ function postFilesToServer(file, key) {
                     console.log('complete')
                 });
                 //全部切片上傳成功
-                this.on('success', function (file,response) {
+                this.on('success', function (file, response) {
                     //進度百分比顯示
                     let className = '.circle_' + key;
                     $(className).quillCircleBar({
@@ -1110,7 +1109,7 @@ function postFilesToServer(file, key) {
                     }
                 });
                 //上傳失敗
-                this.on("error", function(file, errorMessage) {
+                this.on("error", function (file, errorMessage) {
                     UploadAfterDo('upload_error', key, '');
                 });
             }

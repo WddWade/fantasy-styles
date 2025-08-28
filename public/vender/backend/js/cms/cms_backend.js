@@ -998,9 +998,9 @@ $('body').on('click', '.fileUse', function (e) {
                 $('.fmsDetailAjaxArea.uploadArea .ajaxItem .fmsDetail_edit').addClass('active');
 
                 setTimeout(function () {
-                    $('.fmsDetailAjaxArea.uploadArea').addClass('open').removeClass('active');
-                    $('.fmsDetailAjaxArea.uploadArea .ajaxItem').addClass('open').removeClass('active');
-                    $('.fmsDetailAjaxArea.uploadArea .ajaxItem .fmsDetail_edit').addClass('open').removeClass('active');
+                    $('.fmsDetailAjaxArea.uploadArea').addClass('open');
+                    $('.fmsDetailAjaxArea.uploadArea .ajaxItem').addClass('open');
+                    $('.fmsDetailAjaxArea.uploadArea .ajaxItem .fmsDetail_edit').addClass('open');
                 }, 0)
 
                 $('.editorBody').scrollbar();
@@ -1049,9 +1049,9 @@ $('body').on('click', '.cms_open_file_edit', function (e) {
                 $('.fmsDetailAjaxArea.uploadArea .ajaxItem .fmsDetail_edit').addClass('active');
 
                 setTimeout(function () {
-                    $('.fmsDetailAjaxArea.uploadArea').addClass('open').removeClass('active');
-                    $('.fmsDetailAjaxArea.uploadArea .ajaxItem').addClass('open').removeClass('active');
-                    $('.fmsDetailAjaxArea.uploadArea .ajaxItem .fmsDetail_edit').addClass('open').removeClass('active');
+                    $('.fmsDetailAjaxArea.uploadArea').addClass('open');
+                    $('.fmsDetailAjaxArea.uploadArea .ajaxItem').addClass('open');
+                    $('.fmsDetailAjaxArea.uploadArea .ajaxItem .fmsDetail_edit').addClass('open');
                 }, 0)
 
                 $('.editorBody').scrollbar();
@@ -1307,9 +1307,9 @@ function Leon_fms_wrapper() {
                 $('.fmsDetailAjaxArea.uploadArea .ajaxItem').addClass('active');
                 $('.fmsDetailAjaxArea.uploadArea .ajaxItem .fmsUpload').addClass('active');
                 setTimeout(function () {
-                    $('.fmsDetailAjaxArea.uploadArea').addClass('open').removeClass('active');
-                    $('.fmsDetailAjaxArea.uploadArea .ajaxItem').addClass('open').removeClass('active');
-                    $('.fmsDetailAjaxArea.uploadArea .ajaxItem .fmsUpload').addClass('open').removeClass('active');
+                    $('.fmsDetailAjaxArea.uploadArea').addClass('open');
+                    $('.fmsDetailAjaxArea.uploadArea .ajaxItem').addClass('open');
+                    $('.fmsDetailAjaxArea.uploadArea .ajaxItem .fmsUpload').addClass('open');
                 }, 400)
                 $('.editorBody').scrollbar();
                 //Leon 更改預設資料夾位置
@@ -1439,14 +1439,15 @@ function Leon_fms_wrapper() {
                         return;
                     }
                     $('.fmsDetailAjaxArea.uploadArea .ajaxItem .fmsFolder_add').html(data);
+
                     $('.fmsDetailAjaxArea.uploadArea').addClass('active');
                     $('.fmsDetailAjaxArea.uploadArea .ajaxItem').addClass('active');
                     $('.fmsDetailAjaxArea.uploadArea .ajaxItem .fmsFolder_add').addClass('active');
                     setTimeout(function () {
-                        $('.fmsDetailAjaxArea.uploadArea').addClass('open').removeClass('active');
-                        $('.fmsDetailAjaxArea.uploadArea .ajaxItem').addClass('open').removeClass('active');
-                        $('.fmsDetailAjaxArea.uploadArea .ajaxItem .fmsFolder_add').addClass('open').removeClass('active');
-                    }, 400)
+                        $('.fmsDetailAjaxArea.uploadArea').addClass('open');
+                        $('.fmsDetailAjaxArea.uploadArea .ajaxItem').addClass('open');
+                        $('.fmsDetailAjaxArea.uploadArea .ajaxItem .fmsFolder_add').addClass('open');
+                    }, 0)
                     $('.editorBody').scrollbar();
                     close_wrapper();
                     //quill_select();
@@ -1558,10 +1559,10 @@ function Leon_fms_wrapper() {
                     $('.fmsDetailAjaxArea.uploadArea .ajaxItem .fmsDetail_edit').addClass('active');
 
                     setTimeout(function () {
-                        $('.fmsDetailAjaxArea.uploadArea').addClass('open').removeClass('active');
-                        $('.fmsDetailAjaxArea.uploadArea .ajaxItem').addClass('open').removeClass('active');
-                        $('.fmsDetailAjaxArea.uploadArea .ajaxItem .fmsDetail_edit').addClass('open').removeClass('active');
-                    }, 400)
+                        $('.fmsDetailAjaxArea.uploadArea').addClass('open');
+                        $('.fmsDetailAjaxArea.uploadArea .ajaxItem').addClass('open');
+                        $('.fmsDetailAjaxArea.uploadArea .ajaxItem .fmsDetail_edit').addClass('open');
+                    }, 0)
 
                     $('.editorBody').scrollbar();
                     close_wrapper();
@@ -1632,17 +1633,20 @@ function close_wrapper() {
 
     // fms關閉按鈕 //wade
     $('.fms_theme .ajaxContainer').on('click', '.close_btn', function () {
-        $('.fmsDetailAjaxArea.uploadArea .ajaxItem').addClass('remove');
-        $('.fmsDetailAjaxArea.uploadArea .ajaxItem .ajaxContainer').addClass('remove');
-        setTimeout(function () {
-            $('.fmsDetailAjaxArea.uploadArea .ajaxItem').removeClass('open remove');
-            $('.fmsDetailAjaxArea.uploadArea .ajaxItem .ajaxContainer').removeClass('open remove');
-            $('.fmsDetailAjaxArea.uploadArea').addClass('remove');
+        // $('.fmsDetailAjaxArea.uploadArea .ajaxItem').addClass('remove');
+        // $('.fmsDetailAjaxArea.uploadArea .ajaxItem .ajaxContainer').addClass('remove');
+        // setTimeout(function () {
+        $('.fmsDetailAjaxArea.uploadArea .ajaxItem').removeClass('open');
+        $('.fmsDetailAjaxArea.uploadArea .ajaxItem .ajaxContainer').removeClass('open');
+        $('.fmsDetailAjaxArea.uploadArea').removeClass('open');
 
-        }, 0)
+        // }, 0)
         setTimeout(function () {
-            $('.fmsDetailAjaxArea.uploadArea').removeClass('open remove');
-        }, 150)
+            $('.fmsDetailAjaxArea').removeClass('active');
+            $('.fmsDetailAjaxArea.uploadArea .ajaxItem').removeClass('active');
+            $('.fmsDetailAjaxArea.uploadArea .ajaxItem .ajaxContainer').removeClass('active');
+            $('.fmsDetailAjaxArea.uploadArea').removeClass('active');
+        }, 350)
 
         if (!$('.ajaxContainer').hasClass('fmsUpload') && !$('.ajaxContainer').hasClass('fmsUpload_ing') && !$('.ajaxContainer').hasClass('fmsUpload_done')) {
             $('.fmsDetailAjaxArea.uploadArea .ajaxItem .ajaxContainer').empty();
@@ -2000,10 +2004,11 @@ $('body').on('click', '.lbox_fms_open', function () {
             $('.fmsAjaxArea.fms_lbox .ajaxItem').addClass('active');
             $('.fmsAjaxArea.fms_lbox .ajaxItem .fms_container ').addClass('active');
 
+            //wade20250828
             setTimeout(function () {
-                $('.fmsAjaxArea.fms_lbox').addClass('open').removeClass('active');
-                $('.fmsAjaxArea.fms_lbox .ajaxItem').addClass('open').removeClass('active');
-                $('.fmsAjaxArea.fms_lbox .ajaxItem .fms_container ').addClass('open').removeClass('active');
+                $('.fmsAjaxArea.fms_lbox').addClass('open');
+                $('.fmsAjaxArea.fms_lbox .ajaxItem').addClass('open');
+                $('.fmsAjaxArea.fms_lbox .ajaxItem .fms_container ').addClass('open');
             }, 0)
 
             setTimeout(() => {
@@ -2013,7 +2018,7 @@ $('body').on('click', '.lbox_fms_open', function () {
                 if (scroll.length > 0 && checked.length > 0) {
                     scroll.scrollTop(checked.eq(0).closest('.fms_list').position().top - window.innerHeight / 4);
                 }
-            }, 1000)
+            }, 350)
             if (_this_type == 'sontable') {
                 $(".hiddenArea_frame_controlBtn .number").html('multiple');
             } else {

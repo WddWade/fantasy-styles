@@ -115,13 +115,14 @@
             </div>
         </div>
         <div class="editorNav">
-            <div class="control">
-                @if(config('cms.reviewfunction') && !empty($dataUrl))
+            {{-- wade:delete --}}
+            {{-- <div class="control"> --}}
+                {{-- @if(config('cms.reviewfunction') && !empty($dataUrl))
                 <div class="CmsChangeBtn">
                     <a href="{{$dataUrl}}" target="_blank">{{$dataUrlBtn}}</a>
                 </div>
-                @endif
-                <ul class="btnGroup">
+                @endif --}}
+                {{-- <ul class="btnGroup"> --}}
                     {{-- @if ($role['edit'] || ($action === 'create' && $role['create']))
                         <li class="check editSentBtn">
                             <a href="javascript:;">
@@ -144,9 +145,9 @@
                             </a>
                         </li>
                     @endif --}}
-                </ul>
-                <p class="sub_title">Content Editor</p>
-            </div>
+                {{-- </ul> --}}
+            {{-- </div> --}}
+            <div class="editorTitle">Content</div>
             <ul class="editContentMenu navGroup">
                 @php
                     $count = 0;

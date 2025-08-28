@@ -6,7 +6,7 @@
     <li class="level-1">
         <!---->
         <a href="javascript:;" class="display-title" style="cursor: auto;">
-            <span class="title">AMS Overview 資訊總覽</span>
+            <span class="title">AMS</span>
         </a>
         <!---->
     </li>
@@ -17,7 +17,7 @@
         <li class="level-1 level_list">
             <a href="{{ url('Fantasy/Ams/fantasy-account') }}" class="content">
                 <span class="icon">{{ ++$index }}.</span>
-                <span class="title">Fantasy Account 帳號管理</span>
+                <span class="title">帳號管理</span>
             </a>
         </li>
     @endif
@@ -25,7 +25,7 @@
         <li class="level-1 level_list">
             <a href="{{ url('Fantasy/Ams/ams-manager') }}" class="content">
                 <span class="icon">{{ ++$index }}.</span>
-                <span class="title">AMS 權限管理</span>
+                <span class="title">帳號權限管理</span>
             </a>
         </li>
     @endif
@@ -57,7 +57,7 @@
         <li class="level-1 level_list">
             <a href="{{ url('Fantasy/Ams/template-manager') }}" class="content">
                 <span class="icon">{{ ++$index }}.</span>
-                <span class="title">CMS Template 分館語系設定</span>
+                <span class="title">分站設定</span>
             </a>
         </li>
     @endif
@@ -67,7 +67,7 @@
         <li class="level-1 level_list">
             <a href="{{ url('Fantasy/Ams/template-setting') }}" class="content">
                 <span class="icon">{{ ++$index }}.</span>
-                <span class="title">CMS Template 分館資料設定</span>
+                <span class="title">分站內容設定</span>
             </a>
         </li>
     @endif
@@ -75,7 +75,7 @@
         <li class="level-1 level_list">
             <a href="{{ url('Fantasy/Ams/cms-manager') }}" class="content">
                 <span class="icon">{{ ++$index }}.</span>
-                <span class="title">CMS Template 帳號權限管理</span>
+                <span class="title">分站帳號管理</span>
             </a>
         </li>
     @endif
@@ -83,7 +83,7 @@
         <li class="level-1 level_list">
             <a href="{{ url('Fantasy/Ams/crs-template') }}" class="content">
                 <span class="icon">{{ ++$index }}.</span>
-                <span class="title">CMS Template Review 權限管理</span>
+                <span class="title">分站帳號權限管理</span>
             </a>
         </li>
     @endif
@@ -144,7 +144,7 @@
         <li class="level-1 level_list">
             <a href="{{ url('Fantasy/Ams/fms-folder') }}" class="content">
                 <span class="icon">{{ ++$index }}.</span>
-                <span class="title">Fms Folder 基本目錄管理</span>
+                <span class="title">檔案目錄管理</span>
             </a>
         </li>
     @endif
@@ -154,7 +154,7 @@
         <li class="level-1 level_list">
             <a href="{{ url('Fantasy/Ams/autoredirect') }}" class="content">
                 <span class="icon">{{ ++$index }}.</span>
-                <span class="title">Website Redirect 管理</span>
+                <span class="title">網址導向設定</span>
             </a>
         </li>
     @endif
@@ -162,14 +162,14 @@
         <li class="level-1 level_list">
             <a href="{{ url('Fantasy/Ams/log') }}" class="content">
                 <span class="icon">{{ ++$index }}.</span>
-                <span class="title">Log 紀錄</span>
+                <span class="title">Log紀錄</span>
             </a>
         </li>
     @endif
     <li class="level-1 level_list" style="display:none;">
         <a href="javascript:;" class="content">
             <span class="icon">{{ ++$index }}.</span>
-            <span class="title">Fantasy Setting 權限管理</span>
+            <span class="title">系統設定</span>
         </a>
     </li>
 </ul>

@@ -2838,7 +2838,7 @@ body.isContent .backEnd_quill {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  line-height: 1;
+  line-height: 1.3;
   color: #000000;
   float: left;
   margin-left: 6px;
@@ -4009,7 +4009,7 @@ table.dataTable thead td {
 }
 .detailEditor .editorBody .editorHeader {
   width: 100%;
-  height: 79px;
+  min-height: 67px;
   padding: 20px 45px;
   background-color: #fff;
   display: -webkit-box;
@@ -4150,7 +4150,7 @@ table.dataTable thead td {
   opacity: 0 !important;
 }
 .detailEditor .editorNav {
-  width: 250px;
+  width: 200px;
   height: 100vh;
   background-color: #f5f5f5;
   border-right: solid 0;
@@ -4158,9 +4158,15 @@ table.dataTable thead td {
   position: relative;
   overflow-y: auto;
 }
-.detailEditor .editorNav .control {
+.detailEditor .editorNav .editorTitle {
+  font-family: "inter";
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #000;
   width: 100%;
-  height: 60px;
+  line-height: 1.2;
+  width: 100%;
+  min-height: 67px;
   background-color: #f5f5f5;
   padding: 20px 45px;
   display: -webkit-box;
@@ -4169,6 +4175,9 @@ table.dataTable thead td {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -4176,66 +4185,6 @@ table.dataTable thead td {
   position: sticky;
   top: 0;
   z-index: 2;
-}
-.detailEditor .editorNav .control .sub_title {
-  font-family: "inter";
-  font-size: 2rem;
-  font-weight: 600;
-  color: #000;
-  width: 100%;
-  line-height: 1.2;
-}
-.detailEditor .editorNav .control .btnGroup {
-  display: none;
-}
-.detailEditor .editorNav .control .btnGroup .check {
-  background-color: #10cfbd;
-}
-.detailEditor .editorNav .control .btnGroup .trash {
-  background-color: #424242;
-}
-.detailEditor .editorNav .control .btnGroup .file {
-  background-color: #c5c5c5;
-}
-.detailEditor .editorNav .control .btnGroup .remove {
-  border: solid 1px #414141;
-}
-.detailEditor .editorNav .control .btnGroup .remove span {
-  color: #414141;
-}
-.detailEditor .editorNav .control .btnGroup li {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  padding: 0;
-  margin-right: 6px;
-  position: relative;
-}
-.detailEditor .editorNav .control .btnGroup li:last-child {
-  margin-right: 0;
-}
-.detailEditor .editorNav .control .btnGroup li a {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-.detailEditor .editorNav .control .btnGroup li a:not(.btn) {
-  opacity: 1;
-}
-.detailEditor .editorNav .control .btnGroup li span {
-  color: #fff;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-.detailEditor .editorNav .control .btnGroup .close_btn {
-  cursor: pointer;
-  padding: 10px;
-  position: absolute;
-  right: 0px;
-  top: 0px;
 }
 .detailEditor .editorNav ul.navGroup {
   padding: 0 45px 40px 45px;
@@ -4270,7 +4219,7 @@ table.dataTable thead td {
 }
 .detailEditor .editorNav ul.navGroup li p {
   font-size: 1.3rem;
-  font-weight: 600;
+  font-weight: 500;
   color: #000;
   padding-block: 2px;
   -webkit-transition: all 0.5s ease 0s;
@@ -4378,7 +4327,10 @@ table.dataTable thead td {
   right: 0;
   top: 0;
   z-index: 11;
+  opacity: 0;
   display: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 .hiddenArea::before,
 .cmsAjaxArea::before {
@@ -4393,21 +4345,10 @@ table.dataTable thead td {
 .hiddenArea.active,
 .cmsAjaxArea.active {
   display: block;
-  opacity: 0;
 }
 .hiddenArea.open,
 .cmsAjaxArea.open {
-  display: block;
   opacity: 1;
-  -webkit-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
-.hiddenArea.open_fast,
-.cmsAjaxArea.open_fast {
-  display: block;
-  opacity: 1;
-  -webkit-transition: all 0s ease 0s !important;
-  transition: all 0s ease 0s !important;
 }
 .hiddenArea.remove,
 .cmsAjaxArea.remove {
@@ -4418,17 +4359,18 @@ table.dataTable thead td {
 .hiddenArea .ajaxItem,
 .cmsAjaxArea .ajaxItem {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1280px;
   height: 100vh;
   padding: 0;
+  margin: 0 auto;
   background-color: #fff;
   overflow: hidden;
   display: none;
   position: relative;
-  left: 50%;
+  top: -3%;
   opacity: 0;
-  -webkit-transform: translate(-50%, 50%);
-          transform: translate(-50%, 50%);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 .hiddenArea .ajaxItem.active,
 .cmsAjaxArea .ajaxItem.active {
@@ -4436,10 +4378,8 @@ table.dataTable thead td {
 }
 .hiddenArea .ajaxItem.open,
 .cmsAjaxArea .ajaxItem.open {
-  display: block;
   opacity: 1;
-  -webkit-transform: translate(-50%, 0%);
-          transform: translate(-50%, 0%);
+  top: 0;
 }
 .hiddenArea .ajaxItem.remove,
 .cmsAjaxArea .ajaxItem.remove {
@@ -5143,7 +5083,7 @@ table.dataTable thead td {
 }
 .hiddenArea .content_box .content_a > .frame > li:first-child:not(.inventory) {
   position: sticky;
-  top: 66px;
+  top: 67px;
   z-index: 3;
 }
 .hiddenArea .content_box .content_a .tabulation_head .sontable_action {
@@ -5414,7 +5354,7 @@ table.dataTable thead td {
   display: -ms-flexbox;
   display: flex;
   position: sticky;
-  top: 106px;
+  top: 107px;
   z-index: 1;
   background-color: #424242;
 }
@@ -5500,7 +5440,7 @@ table.dataTable thead td {
 }
 .hiddenArea .detailEditor .list_frame .inventory .table_head {
   position: sticky;
-  top: 159px;
+  top: 147px;
   z-index: 1;
   background-color: #fff;
   border: solid 1px #c7c7c7;
@@ -5806,13 +5746,18 @@ table.dataTable thead td {
 /* 右側展開欄的每個欄位 */
 .inventory {
   border-bottom: solid 1px #e2e2e2;
-  padding: 18px 0;
+  padding: 25px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
 }
 .inventory .input {
   padding: 10px 12px;
@@ -5821,7 +5766,7 @@ table.dataTable thead td {
   width: 100%;
 }
 .inventory .subtitle {
-  font-weight: 600;
+  font-weight: 500;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5837,8 +5782,6 @@ table.dataTable thead td {
 }
 .inventory > .title {
   width: 100%;
-  max-width: 210px;
-  min-width: 150px;
   min-height: 20px;
   padding: 0 20px 0 2px;
 }
@@ -5850,10 +5793,13 @@ table.dataTable thead td {
   display: none;
 }
 .inventory > .inner {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   width: 100%;
 }
 .inventory > .inner:has(.table-editor) {
-  width: calc(100% - 210px);
+  overflow: hidden;
 }
 .inventory .no_selfie img {
   display: none;
@@ -7228,24 +7174,6 @@ table.dataTable thead td {
 */
 .fmsAjaxArea::before {
   background-color: rgba(23, 11, 56, 0.7803921569);
-}
-.fmsAjaxArea .ajaxItem {
-  margin: initial;
-  width: 95vw;
-  height: 92vh;
-  border-radius: 5px;
-  top: 50%;
-  left: 50%;
-  right: auto;
-  bottom: auto;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  opacity: 0;
-}
-.fmsAjaxArea .ajaxItem.open {
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  opacity: 1;
 }
 .fmsAjaxArea .ajaxItem .ajaxContainer {
   height: auto;

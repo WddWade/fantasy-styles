@@ -2,7 +2,7 @@
  * 客製化js
  * ============================================================ */
 
-$(document).ready(function() {
+$(document).ready(function () {
     //
     card_table('fms_table');
 
@@ -14,7 +14,7 @@ $(document).ready(function() {
 
     //content_sidebar_click
     // content_sidebar_click();
-    setTimeout(function() {
+    setTimeout(function () {
         $('.sidebar-menu').scrollbar();
         $('.dataTables_scrollBody').scrollbar();
     }, 1000)
@@ -25,7 +25,7 @@ $(document).ready(function() {
 
 function calculate_grid() {
     var _innerContent = $('.fms_theme .inner-content'),
-        _innerHeight = _innerContent.height(),
+        _innerHeight = _innerContent.heightƒ(),
         _jumbotronHeight = _innerContent.find('.jumbotron').outerHeight(),
         _cardHeaderHeight = _innerContent.find('.card-header').outerHeight(),
 
@@ -42,7 +42,7 @@ function calculate_grid() {
 // 沒用到 #adam
 function content_sidebar_click() {
     var target = $('.level_list');
-    target.on('click', 'a', function() {
+    target.on('click', 'a', function () {
         var _this_father = $(this).closest('.level_list'),
             _this_grand_father = $(this).closest('.body-list'),
             li = _this_father.find('.level_list'),
@@ -52,7 +52,7 @@ function content_sidebar_click() {
         //關閉所點擊的分支截點
         if (_this_father.hasClass('open active')) {
             arrow.removeClass("open active");
-            sub.slideUp(200, function() {
+            sub.slideUp(200, function () {
                 li.removeClass("open active");
             });
         }
@@ -60,7 +60,7 @@ function content_sidebar_click() {
         //當點擊另一個 level-1 的時候 除了會打開另一個的 level-1 
         //同時還會把現在這個 level-1 以及她抵下的所有被打開的分支都關上
         if (_this_grand_father.children('.level_list.open').hasClass('open active')) {
-            _this_grand_father.children('.level_list.open').siblings().find('.sub-menu').slideUp(200, function() {
+            _this_grand_father.children('.level_list.open').siblings().find('.sub-menu').slideUp(200, function () {
                 $(this).find('.level_list').removeClass('open active');
             });
         }

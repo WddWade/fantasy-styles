@@ -956,22 +956,29 @@ export function EditController(
         editState.has_auth = use_id;
     }
 
+    //wade2025
     function closeContent() {
-        editArea.find(".ajaxItem").removeClass("open").removeClass("open_fast");
-        editArea.removeClass("open").removeClass("open_fast");
+        editArea.find(".ajaxItem").removeClass("open")
+        editArea.removeClass("open")
+
+        setTimeout(() => {
+            editArea.find(".ajaxItem").removeClass("active")
+            editArea.removeClass("active")
+        }, 350)
+
         editState.isContent = false;
         verifyControl.clearInputs();
     }
 
+    //wade2025
     function openContent() {
-        editArea.addClass("open").addClass("open_fast");
-        editArea.find(".ajaxItem").addClass("open").addClass("open_fast");
-        $(".editorBody.scroll-content").animate(
-            {
-                scrollTop: 0,
-            },
-            200
-        );
+        editArea.addClass("active")
+        editArea.find(".ajaxItem").addClass("active")
+        setTimeout(() => {
+            editArea.addClass("open")
+            editArea.find(".ajaxItem").addClass("open")
+        }, 0)
+        $(".editorBody.scroll-content").animate({ scrollTop: 0, }, 200);
     }
 
     function clearEditArea() {
@@ -1604,8 +1611,8 @@ export function EditController(
                                 let left = parseInt(contextMenu.style.left, 10);
 
                                 // 選單燈箱位置調整
-                                contextMenu.style.top = (top - 20) + 'px';
-                                contextMenu.style.left = (left - 300) + 'px';
+                                // contextMenu.style.top = (top - 20) + 'px';
+                                // contextMenu.style.left = (left - 300) + 'px';
                             }
                         }, 10);
                         //設定列表頭樣式

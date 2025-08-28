@@ -1,4 +1,3 @@
-
 const close_notifyScreen2 = () => {
     const object = ".quickview-wrapper";
     $(".notify-screen").on("click", ".btn", function () {
@@ -93,25 +92,14 @@ const close_change_pwd_view2 = () => {
     })
 }
 
-// const checkFantasyStatus = setInterval(function () {
-//     $.ajax({
-//         async: true,
-//         type: "POST",
-//         url: "//" + location.host + "/auth/status",
-//     }).done(function (data) {
-//         if (data == 0) {
-//             $(".login_modal").addClass("active");
-//         } else {
-//             $(".login_modal").removeClass("active");
-//         }
-//     }).fail(function () {
+const loginBottonClickEvent = () => {
+    const loginBtn = $(".login_modal .loginBtn")
+    const isActive = loginBtn.hasClass("active")
 
-//     });
-// }, 10000);
+    if (isActive) return
 
-
-const loginModal = () => {
-    $(".login_modal .loginBtn").on("click", function () {
+    loginBtn.addClass("active")
+    loginBtn.on("click", function () {
         const accountInput = $(".accountInput").val();
         const passwordInput = $(".passwordInput").val();
         const publicKey = $(".publickey").val();
@@ -143,6 +131,26 @@ const loginModal = () => {
 
     });
 }
+
+const checkFantasyStatus = setInterval(function () {
+    $.ajax({
+        async: true,
+        type: "POST",
+        url: "//" + location.host + "/auth/status",
+    }).done(function (data) {
+        if (data == 0) {
+            loginBottonClickEvent();
+            $(".login_modal").addClass("active");
+        } else {
+            $(".login_modal").removeClass("active");
+        }
+    }).fail(function () {
+
+    });
+}, 10000);
+
+
+
 
 const utils = {}
 
@@ -798,21 +806,7 @@ fmsFunctions.content_sidebar_click = () => {
     });
 }
 
-
-
-//#08.detail test相關
-// const testfunction = {}
-// testfunction.load = (fileName) => {
-//     const newscript = document.createElement("script");
-//     newscript.setAttribute("type", "text/javascript");
-//     newscript.setAttribute("src", fileName);
-//     const head = document.getElementsByTagName("head")[0];
-//     head.appendChild(newscript);
-// }
-
 $(() => {
-
-    loginModal();
     changePwdclick();
     close_notifyScreen2();
     uis.init();
