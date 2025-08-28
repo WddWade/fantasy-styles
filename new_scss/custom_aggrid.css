@@ -1,8 +1,8 @@
 .data-aggrid.ag-theme-alpine {
   --ag-header-height: 40px;
   --ag-row-height: 40px;
-  --ag-selected-row-background-color: rgb(145 248 255 / 24%);
-  --ag-row-hover-color: rgb(145 248 255 / 24%);
+  --ag-selected-row-background-color: rgb(240 240 249);
+  --ag-row-hover-color: rgb(245 245 245);
   height: calc(100vh - 83px);
   padding-top: 0px;
   pointer-events: auto;
@@ -172,7 +172,7 @@
 
 .ag-checkbox-input-wrapper.ag-checked:after,
 .ag-radio-button-input-wrapper.ag-checked:after {
-  color: #34cfbd !important;
+  color: #5e00ff !important;
 }
 
 .ag-theme-alpine-dark .ag-chart-menu-close:hover,

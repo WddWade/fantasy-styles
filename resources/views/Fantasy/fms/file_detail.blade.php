@@ -113,16 +113,16 @@
     <!--區塊功能按鈕-->
     <div class="hiddenArea_frame_controlBtn">
         <ul class="btnGroup">
+            <li class="cancel">
+                <a href="javascript:void(0)" class="close_btn">
+                    <span class="fa fa-remove"></span>
+                    <p>CANCEL</p>
+                </a>
+            </li>
             <li class="check @if($file_type['title']=='資料夾') open_folder_edit @else open_file_edit @endif">
                 <a href="javascript:void(0)" >
                     <span class="fa fa-pencil"></span>
                     <p>EDIT</p>
-                </a>
-            </li>
-            <li class="remove">
-                <a href="javascript:void(0)" class="close_btn">
-                    <span class="fa fa-remove"></span>
-                    <p>CANCEL</p>
                 </a>
             </li>
         </ul>

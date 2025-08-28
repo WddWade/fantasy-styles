@@ -248,10 +248,10 @@
         <!--區塊功能按鈕-->
         <div class="hiddenArea_frame_controlBtn">
             <ul class="btnGroup">
-                <li class="check">
-                    <a href="javascript:void(0)" class="updated_ams_edit_btn" data-type="crs-overview">
-                        <span class="fa fa-check"></span>
-                        <p>SETTING</p>
+                 <li class="cancel">
+                    <a href="javascript:void(0)" class="close_btn close_ams_hiddenArea">
+                        <span class="fa fa-remove"></span>
+                        <p>CANCEL</p>
                     </a>
                 </li>
                 <li class="trash delete_ams_hiddenArea">
@@ -260,10 +260,10 @@
                         <p>DELETE</p>
                     </a>
                 </li>
-                <li class="remove">
-                    <a href="javascript:void(0)" class="close_btn close_ams_hiddenArea">
-                        <span class="fa fa-remove"></span>
-                        <p>CANCEL</p>
+                <li class="check">
+                    <a href="javascript:void(0)" class="updated_ams_edit_btn" data-type="crs-overview">
+                        <span class="fa fa-check"></span>
+                        <p>SETTING</p>
                     </a>
                 </li>
             </ul>

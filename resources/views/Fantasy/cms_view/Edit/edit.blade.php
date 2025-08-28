@@ -7,11 +7,11 @@
                 </div>
                 <div class="control">
                     <ul class="btnGroup">
-                        @if ($role['edit'] || ($action === 'create' && $role['create']))
-                            <li class="check editSentBtn">
-                                <a href="javascript:;">
-                                    <span class="fa fa-check"></span>
-                                    <span class="label">Setting</span>
+                         @if (!$menu['is_content'])
+                            <li class="cancel">
+                                <a class="close_btn" href="javascript:;">
+                                    <span class="fa fa-remove"></span>
+                                    <span class="label">Cancel</span>
                                 </a>
                             </li>
                         @endif
@@ -24,14 +24,16 @@
                                 </a>
                             </li>
                         @endif
-                        @if (!$menu['is_content'])
-                            <li class="remove">
-                                <a class="close_btn" href="javascript:;">
-                                    <span class="fa fa-remove"></span>
-                                    <span class="label">Cancel</span>
+
+                         @if ($role['edit'] || ($action === 'create' && $role['create']))
+                            <li class="check editSentBtn">
+                                <a href="javascript:;">
+                                    <span class="fa fa-check"></span>
+                                    <span class="label">Setting</span>
                                 </a>
                             </li>
                         @endif
+                       
                     </ul>
                 </div>
             </div>
@@ -60,15 +62,16 @@
                     </div>
                 @endif
                 <ul class="btnGroup">
-                    @if ($role['edit'] || ($action === 'create' && $role['create']))
-                        <li class="check editSentBtn" data-reviewed="{{ $is_reviewed }}"
-                            data-reviewed-pass="{{ $role['can_review'] }}">
-                            <a href="javascript:void(0)">
-                                <span class="fa fa-check"></span>
-                                <p>Setting</p>
+
+                      @if (!$menu['is_content'])
+                        <li class="cancel">
+                            <a class="close_btn" href="javascript:void(0)">
+                                <span class="fa fa-remove"></span>
+                                <p>Cancel</p>
                             </a>
                         </li>
                     @endif
+                   
                     @if ($role['delete'] && $action === 'edit' && !$menu['is_content'])
                         <li class="trash cms-delete-btn">
                             <a href="javascript:void(0)">
@@ -77,14 +80,17 @@
                             </a>
                         </li>
                     @endif
-                    @if (!$menu['is_content'])
-                        <li class="remove">
-                            <a class="close_btn" href="javascript:void(0)">
-                                <span class="fa fa-remove"></span>
-                                <p>Cancel</p>
+                  
+                     @if ($role['edit'] || ($action === 'create' && $role['create']))
+                        <li class="check editSentBtn" data-reviewed="{{ $is_reviewed }}"
+                            data-reviewed-pass="{{ $role['can_review'] }}">
+                            <a href="javascript:void(0)">
+                                <span class="fa fa-check"></span>
+                                <p>Setting</p>
                             </a>
                         </li>
                     @endif
+                    
                     @if ($role['need_review'] && !$role['can_review'] && ($action === 'edit' || $action === 'batch'))
                         <li class="notify_admin {{ $is_reviewed ? 'hide' : '' }}" data-action="review"
                             style="background-color: #ee4c4c;">

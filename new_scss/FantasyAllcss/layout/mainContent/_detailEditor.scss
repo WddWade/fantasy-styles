@@ -17,7 +17,7 @@
     transition: all 0.5s ease 0s;
   }
 
-  &.remove {
+  &.cancel {
     opacity: 0;
     transition: all 0.3s ease 0s;
   }
@@ -611,7 +611,7 @@
           background-color: #c5c5c5;
         }
 
-        .remove {
+        .cancel {
           border: solid 1px #414141;
 
           span {
@@ -662,7 +662,7 @@
       }
 
       .btnGroup {
-        .remove {
+        .cancel {
           background-color: #c5c5c5;
           border: none;
 
@@ -752,7 +752,7 @@
 /* 未知日期選單 */
 .datepicker-input,
 .timepicker-input {
-  max-width: 200px;
+  max-width: 220px;
 }
 
 .file-picker {
@@ -2158,7 +2158,7 @@
 
   .subtitle {
     // font-size: 1.4rem;
-    font-weight: 500;
+    font-weight: 600;
     width: 100%;
     // margin-bottom: 16px;
     display: flex;

@@ -8,7 +8,7 @@
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  
+
   .btn-area {
     width: 100%;
   }
@@ -24,7 +24,7 @@
     -webkit-box-align: baseline;
     -ms-flex-align: baseline;
     align-items: baseline;
-    
+
     .btn-group {
       margin: 0;
       padding: 0;
@@ -296,7 +296,7 @@
     width: 100vw;
     height: 100vh;
     background-color: #000;
-    opacity: 0.9;
+    opacity: 0.3;
     position: fixed;
     z-index: 1999;
     top: 0;
@@ -311,7 +311,7 @@
   .pace-progress {
     width: 100%;
     height: 3px;
-    background: #000;
+    background: #5e00ff;
     position: fixed;
     top: 0;
     right: 100%;
@@ -336,8 +336,8 @@
     width: 50px;
     height: 50px;
     border: solid 8px transparent;
-    border-top-color: #000;
-    border-left-color: #000;
+    border-top-color: #5e00ff;
+    border-left-color: #5e00ff;
     border-radius: 50px;
     background-size: 100% auto;
     margin: 0 auto;
@@ -409,7 +409,7 @@
       }
     }
 
-    &.scroll-y  {
+    &.scroll-y {
       height: 100%;
       min-height: 100%;
       right: 0;
@@ -453,4 +453,3 @@
     border-radius: 0;
   }
 }
-

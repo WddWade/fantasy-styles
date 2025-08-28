@@ -216,12 +216,14 @@ $formarr = [
     <!--區塊功能按鈕-->
     <div class="hiddenArea_frame_controlBtn">
       <ul class="btnGroup">
-        <li class="check editSentBtn">
-          <a href="javascript:void(0)">
-            <span class="fa fa-check"></span>
-            <p>setting</p>
+
+        <li class="cancel">
+          <a href="javascript:void(0)" class="close_btn">
+            <span class="fa fa-remove"></span>
+            <p>cancel</p>
           </a>
         </li>
+
         @if($isDelete == 1)
         <li class="trash cms-delete-btn">
           <a href="javascript:void(0)">
@@ -230,12 +232,14 @@ $formarr = [
           </a>
         </li>
         @endif
-        <li class="remove">
-          <a href="javascript:void(0)" class="close_btn">
-            <span class="fa fa-remove"></span>
-            <p>cancel</p>
+        
+        <li class="check editSentBtn">
+          <a href="javascript:void(0)">
+            <span class="fa fa-check"></span>
+            <p>setting</p>
           </a>
         </li>
+
       </ul>
     </div>
 

@@ -137,13 +137,15 @@
 
                    <!--區塊功能按鈕-->
                    <div class="hiddenArea_frame_controlBtn">
+                    
                        <ul class="btnGroup">
-                           <li class="check editSentBtn">
-                               <a href="javascript:void(0)">
-                                   <span class="fa fa-check"></span>
-                                   <p>Setting</p>
+                            <li class="cancel">
+                               <a href="javascript:void(0)" class="close_btn">
+                                   <span class="fa fa-remove"></span>
+                                   <p>Cancel</p>
                                </a>
                            </li>
+
                            @if($can_review && $isDelete == 1)
                            <li class="trash cms-delete-btn">
                                <a href="javascript:void(0)">
@@ -152,13 +154,14 @@
                                </a>
                            </li>
                            @endif
-                           <li class="remove">
-                               <a href="javascript:void(0)" class="close_btn">
-                                   <span class="fa fa-remove"></span>
-                                   <p>Cancel</p>
+
+                           <li class="check editSentBtn">
+                               <a href="javascript:void(0)">
+                                   <span class="fa fa-check"></span>
+                                   <p>Setting</p>
                                </a>
                            </li>
-
+ 
                            @if($need_Review && $can_review == 0)
                            <li style="background-color: #ee4c4c;" class="notify_admin" data-action="review">
                                <a href="javascript:void(0)">

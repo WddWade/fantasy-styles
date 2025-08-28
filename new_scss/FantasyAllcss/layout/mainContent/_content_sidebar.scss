@@ -276,7 +276,8 @@
       .body-list {
         display: flex;
         flex-direction: column;
-        padding-top: 8px;
+        gap: 1px 0;
+        background-color: #e4e4e4;
         .content {
           background-color: #ffffff;
         }
@@ -286,13 +287,8 @@
           clear: right;
           position: relative;
           background-color: #ffffff;
-          &.hr {
-            border-bottom: 1px solid;
-            padding-bottom: 15px;
-            margin-bottom: 15px;
-          }
           a {
-            padding: 8px 20px;
+            padding: 6px 20px;
             font-weight: normal;
             color: #000000;
             text-overflow: ellipsis;
@@ -324,7 +320,6 @@
             line-height: 1.3;
             color: #000000;
             float: left;
-            margin-left: 6px;
             white-space: nowrap;
             text-overflow: ellipsis;
             overflow: hidden;
@@ -374,8 +369,7 @@
             border-radius: 5px;
             margin-right: 10px;
           }
-          &.open,
-          &.active {
+          &.open {
             > a {
               .content {
                 .icon {
@@ -387,12 +381,30 @@
               }
             }
           }
+          &.active {
+            > a {
+              background-color: #5e00ff;
+              > .title,
+              > .icon {
+                color: #fff;
+              }
+            }
+          }
         }
 
         .level-1 {
-          > *:not(.sub-menu) {
-            padding: 8px 20px;
+          padding: 10px 0;
+          .blockname {
+            padding: 0 20px;
+            margin-bottom: 15px;
+            font-size: 0.8rem;
+            font-family: "Inter";
+            text-transform: uppercase;
+            font-weight: 600;
           }
+          // > *:not(.sub-menu) {
+          //   padding: 8px 20px;
+          // }
           > .sub-menu {
             padding: 8px 0 8px 20px;
           }
@@ -406,7 +418,7 @@
                 opacity: 1;
                 &::before {
                   transform: rotate(90deg);
-                  color: #fff;
+                  color: #5e00ff;
                 }
               }
               .iconSquare {
@@ -665,8 +677,6 @@
               .arrow {
                 opacity: 1;
                 &::before {
-                  -webkit-transform: rotate(90deg);
-                  -ms-transform: rotate(90deg);
                   transform: rotate(90deg);
                   color: #000000;
                 }

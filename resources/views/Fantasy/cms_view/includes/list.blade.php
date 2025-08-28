@@ -60,48 +60,61 @@
 <!--分館/語系 head-bar-->
 
 <!--CMS主選項-->
-<ul class="body-list">
-    @foreach ($cmsMenuList as $key => $row)
-        <li class="level-1 level_list {{ $row['active'] }}" data-route="{{ $row['link'] }}">
-            <a class="content" href="javascript:;">
-                <span class="icon">{{ sprintf('%02d', $key + 1) }}.</span>
-                <span class="title">{{ $row['title'] }}</span>
+{{-- wade:add --}}
+<div class="body-list">
+    {{-- wade:add --}}
+    <div class="menu-block">
+        {{-- wade:add --}}
+        <div class="menu-block-title">Blockname</div>
+        {{-- wade:add --}}
+        <ul class="menu-block-content">
+        @foreach ($cmsMenuList as $key => $row)
+            <li class="level-1 level_list {{ $row['active'] }}" data-route="{{ $row['link'] }}">
+                {{-- wade:add --}}
+                <a class="level-1-link" href="javascript:;">
+                    {{-- wade:delete --}}
+                    {{-- <span class="icon">{{ sprintf('%02d', $key + 1) }}.</span> --}}
+                    <span class="title">{{ $row['title'] }}</span>
+                    @if (isset($row['list']) and !empty($row['list']))
+                        <span class="arrow {{ $row['active'] }}"></span>
+                        {{-- <!--<span class="tip">{{$row['DataCount']}}</span>--> --}}
+                    @endif
+                </a>
                 @if (isset($row['list']) and !empty($row['list']))
-                    <span class="arrow {{ $row['active'] }}"></span>
-                    {{-- <!--<span class="tip">{{$row['DataCount']}}</span>--> --}}
-                @endif
-            </a>
-            @if (isset($row['list']) and !empty($row['list']))
-                <ul class="sub-menu" @if (!empty($row['active'])) style="display:block;" @endif>
-                    @foreach ($row['list'] as $key2 => $row2)
-                        <li class="level-2 level_list {{ $row2['active'] }}" data-route="{{ $row2['link'] }}">
-                            <a href="javascript:;">
-                                <span class="iconSquare"></span>
-                                <span class="title">{{ $row2['title'] }}</span>
+                    <ul class="sub-menu" @if (!empty($row['active'])) style="display:block;" @endif>
+                        @foreach ($row['list'] as $key2 => $row2)
+                            <li class="level-2 level_list {{ $row2['active'] }}" data-route="{{ $row2['link'] }}">
+                                {{-- wade:add --}}
+                                <a class="level-2-link" href="javascript:;">
+                                    <span class="iconSquare"></span>
+                                    <span class="title">{{ $row2['title'] }}</span>
+                                    @if (isset($row2['list']) and !empty($row2['list']))
+                                        <span class="arrow {{ $row2['active'] }}"></span>
+                                    @endif
+                                    {{-- <!--<span class="tip">{{$row2['DataCount']}}</span>--> --}}
+                                </a>
                                 @if (isset($row2['list']) and !empty($row2['list']))
-                                    <span class="arrow {{ $row2['active'] }}"></span>
+                                    <ul class="sub-menu" @if (!empty($row2['active'])) style="display:block;" @endif>
+                                        @foreach ($row2['list'] as $key3 => $row3)
+                                            {{-- wade:add --}}
+                                            <li class="level-3 level_list {{ $row3['active'] }}"
+                                                data-route="{{ $row3['link'] }}">
+                                                <a class="level-3-link" href="javascript:;">
+                                                    <span class="iconSquare"></span>
+                                                    <span class="title">{{ $row3['title'] }}</span>
+                                                    {{-- <!--<span class="tip">{{$row3['DataCount']}}</span>--> --}}
+                                                </a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
                                 @endif
-                                {{-- <!--<span class="tip">{{$row2['DataCount']}}</span>--> --}}
-                            </a>
-                            @if (isset($row2['list']) and !empty($row2['list']))
-                                <ul class="sub-menu" @if (!empty($row2['active'])) style="display:block;" @endif>
-                                    @foreach ($row2['list'] as $key3 => $row3)
-                                        <li class="level-3 level_list {{ $row3['active'] }}"
-                                            data-route="{{ $row3['link'] }}">
-                                            <a href="javascript:;">
-                                                <span class="iconSquare"></span>
-                                                <span class="title">{{ $row3['title'] }}</span>
-                                                {{-- <!--<span class="tip">{{$row3['DataCount']}}</span>--> --}}
-                                            </a>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            @endif
-                        </li>
-                    @endforeach
-                </ul>
-            @endif
-        </li>
-    @endforeach
-</ul>
+                            </li>
+                        @endforeach
+                    </ul>
+                @endif
+            </li>
+        @endforeach
+        </ul>
+    </div>
+</div>
 <!--CMS主選項-->

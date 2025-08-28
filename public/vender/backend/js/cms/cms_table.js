@@ -214,6 +214,7 @@ import { getTableData } from "./ajax/cms_table_ajax.js";
             }
         });
 
+        //wade 20250828
         function changeMenu(route) {
             $(`.body-list li[data-route]`)
                 .removeClass("active")
@@ -223,7 +224,10 @@ import { getTableData } from "./ajax/cms_table_ajax.js";
                     self.addClass("active")
                         .parents("li[data-route]")
                         .addClass("open")
-                        .addClass("active");
+
+                    // wade:delete
+                    // .addClass("active");
+
                     self.parents(".sub-menu").slideDown(200);
                     self.siblings("li")
                         .removeClass("active")

@@ -25,7 +25,10 @@
         <!-- 內容 CONTENT -->
         <!--control_btn-->
         <ul class="ajax_control_btn hiddenArea_frame_controlBtn">
-            @if($img_key!='undefined' && $unit_type!='undefined')
+            <li class="list close_ajax_btn fms_lbox_current_close"><span class="fa fa-remove"></span>
+                <p>CANCEL</p>
+            </li>
+              @if($img_key!='undefined' && $unit_type!='undefined')
                 <li class="list selected">
                     <p>YOU CAN SELECTED <span class="number">1</span> FILES</p>
                 </li>
@@ -33,9 +36,6 @@
                     <p>SETTING</p>
                 </li>
             @endif
-            <li class="list close_ajax_btn fms_lbox_current_close"><span class="fa fa-remove"></span>
-                <p>CANCEL</p>
-            </li>
         </ul>
         <!--control_btn-->
     </div>

@@ -796,7 +796,7 @@ export function EditController(
             editState.editing = false;
         });
 
-        editArea.find(".remove").on("click", function () {
+        editArea.find(".cancel").on("click", function () {
             // let ajaxData = formatData();
             // if (JSON.stringify(editOriginalData) != JSON.stringify(ajaxData)){
             //     if (!confirm("您修改資料尚未存檔，若未存檔關閉，修改的資料將會遺失")){

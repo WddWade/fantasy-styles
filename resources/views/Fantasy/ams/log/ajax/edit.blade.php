@@ -104,7 +104,7 @@
         <!--區塊功能按鈕-->
         <div class="hiddenArea_frame_controlBtn">
             <ul class="btnGroup">
-                <li class="remove">
+                <li class="cancel">
                     <a class="close_btn close_ams_hiddenArea" href="javascript:void(0)">
                         <span class="fa fa-remove"></span>
                         <p>CANCEL</p>

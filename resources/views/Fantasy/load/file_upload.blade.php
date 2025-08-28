@@ -165,6 +165,12 @@
                 <!--區塊功能按鈕-->
                 <div class="hiddenArea_frame_controlBtn">
                     <ul class="btnGroup">
+                        <li class="cancel">
+                            <a href="javascript:void(0)" class="close_btn">
+                                <span class="fa fa-remove"></span>
+                                <p>CANCEL</p>
+                            </a>
+                        </li>
                         <li class="check">
                             <a href="javascript:void(0)" class="localeToServer">
                                 <span class="fa fa-cloud-upload"></span>
@@ -285,7 +291,7 @@
                 </div>
                 <div class="hiddenArea_frame_controlBtn">
                     <ul class="btnGroup">
-                        <li class="remove">
+                        <li class="cancel">
                             <a href="javascript:void(0)" class="close_btn">
                                 <span class="fa fa-remove"></span>
                                 <p>CANCEL</p>
@@ -365,16 +371,16 @@
                     <!--區塊功能按鈕-->
                     <div class="hiddenArea_frame_controlBtn">
                         <ul class="btnGroup">
+                            <li class="cancel">
+                                <a href="javascript:void(0)" class="close_btn">
+                                    <span class="fa fa-remove"></span>
+                                    <p>CANCEL</p>
+                                </a>
+                            </li>
                             <li class="check">
                                 <a href="javascript:void(0)" class="localeToNewFolder">
                                     <span class="fa fa-cloud-upload"></span>
                                     <p>NEW</p>
-                                </a>
-                            </li>
-                            <li class="remove">
-                                <a href="javascript:void(0)" class="close_btn">
-                                    <span class="fa fa-remove"></span>
-                                    <p>CANCEL</p>
                                 </a>
                             </li>
                         </ul>
@@ -434,16 +440,16 @@
                     <!--區塊功能按鈕-->
                     <div class="hiddenArea_frame_controlBtn">
                         <ul class="btnGroup">
+                            <li class="cancel">
+                                <a href="javascript:void(0)" class="close_btn">
+                                    <span class="fa fa-remove"></span>
+                                    <p>CANCEL</p>
+                                </a>
+                            </li>
                             <li class="check">
                                 <a href="javascript:void(0)" class="localeToNameFolder">
                                     <span class="fa fa-cloud-upload"></span>
                                     <p>CHANGE</p>
-                                </a>
-                            </li>
-                            <li class="remove">
-                                <a href="javascript:void(0)" class="close_btn">
-                                    <span class="fa fa-remove"></span>
-                                    <p>CANCEL</p>
                                 </a>
                             </li>
                         </ul>

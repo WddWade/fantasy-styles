@@ -166,16 +166,17 @@
         <!--區塊功能按鈕-->
         <div class="hiddenArea_frame_controlBtn">
             <ul class="btnGroup">
+             
+                <li class="cancel">
+                    <a class="close_btn close_ams_hiddenArea" href="javascript:void(0)">
+                        <span class="fa fa-remove"></span>
+                        <p>CANCEL</p>
+                    </a>
+                </li>
                 <li class="check">
                     <a class="updated_ams_edit_btn" data-type="template-setting" href="javascript:void(0)">
                         <span class="fa fa-check"></span>
                         <p>SETTING</p>
-                    </a>
-                </li>
-                <li class="remove">
-                    <a class="close_btn close_ams_hiddenArea" href="javascript:void(0)">
-                        <span class="fa fa-remove"></span>
-                        <p>CANCEL</p>
                     </a>
                 </li>
             </ul>
