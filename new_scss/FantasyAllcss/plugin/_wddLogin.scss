@@ -1,14 +1,8 @@
 /* wdd 系統登入 */
 
 .wddLoginMain {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
 
   .login_sec {
@@ -32,7 +26,7 @@
       .fantasylogo {
         font-size: 18vw;
         font-weight: bold;
-        font-family: "inter";
+        font-family: "Noto Sans TC", "Inter";
         color: #000;
         line-height: 1;
 

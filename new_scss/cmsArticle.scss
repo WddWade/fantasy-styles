@@ -1,12 +1,12 @@
-.article_wysiwyg{
+.article_wysiwyg {
   position: relative;
 }
 
-._atricle_leon_action{
+._atricle_leon_action {
   display: none;
   background-color: #10cab9;
   color: #fff;
-  font-weight: 700;
+  font-weight: 600;
 
   &.active {
     display: flex;
@@ -29,4 +29,3 @@
 @import "customArticle/aost.scss";
 @import "customArticle/videoTemplate.scss";
 @import "customArticle/article4.scss";
-
