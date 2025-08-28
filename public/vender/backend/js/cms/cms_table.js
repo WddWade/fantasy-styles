@@ -496,8 +496,10 @@ import { getTableData } from "./ajax/cms_table_ajax.js";
                 $("#d-index-e").html(totalCount);
             }
             $(".content-bottom").addClass("active");
+            $(".data-aggrid").addClass("defaultPaging");
         } else {
             $(".content-bottom").removeClass("active");
+            $(".data-aggrid").removeClass("defaultPaging");
             $(".content-bottom-page").html("");
         }
     }
