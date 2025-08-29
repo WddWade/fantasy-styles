@@ -117,6 +117,7 @@
             .title {
               font-size: 1.3rem;
               color: #000;
+              white-space: nowrap;
             }
             .icon-open-menu {
               font-size: 1.3rem !important;
@@ -299,7 +300,7 @@
           }
           &.active {
             > a {
-              background-color: #5e00ff;
+              background-color: #000;
               > .title {
                 color: #fff;
               }

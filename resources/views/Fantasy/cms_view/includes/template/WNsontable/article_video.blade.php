@@ -87,12 +87,13 @@ if(!empty($value_son)){
         </div>
     </div>
 </div>
+{{-- wade:add --}}
 <div class="article_video_right">
     <div class="_a_textInput">
-        <p class="type">{{$three['three_content'][1]['title']}}</p>
-        <p>
+        <label class="type">{{$three['three_content'][1]['title']}}</label>
+        <div>
             <input class="normal_input DataSync" data-autosetup="AutoSet_article_dec" type="text" value="{{!empty($value_son)?$value_son[$three['three_content'][1]['value']]:''}}" name="{{$son_son_db}}[{{$three['three_content'][1]['value']}}]">
-        </p>
+        </div>
         @if(isset($three['three_content'][1]['tip']))
         <div class="tips">
             <span class="title">TIPS</span>
@@ -101,10 +102,10 @@ if(!empty($value_son)){
         @endif
     </div>
         <div class="_a_radio_area">
-            <p class="type">{{$three['three_content'][2]['title']}}</p>
+            <label class="type">{{$three['three_content'][2]['title']}}</label>
             <div class="radio_area">
             <input type="hidden" name="{{$son_son_db . '[' . $three['three_content'][2]['value'] . ']'}}" value="{{$value_son[$three['three_content'][2]['value']] ?? '-'}}">
-                <div class="content">
+                <div class="radio_area_content">
                     @foreach ($three['three_content'][2]['options'] as $key => $row)
                 <label class="box {{(($value_son[$three['three_content'][2]['value']] ?? '-') == $row['key']) ? 'active':''}}" data-autosetup="" data-value="{{ $row['key'] }}" data-hide="{{$row['hide']}}" data-hidetip="{{$row['hidetip']}}">
                     <div class="plan">
@@ -117,10 +118,10 @@ if(!empty($value_son)){
             </div>
         </div>
         <div class="_a_textInput">
-            <p class="type">{{$three['three_content'][3]['title']}}</p>
-            <p>
-            <input class="normal_input video_url_format" type="text" value="{{!empty($value_son)?$value_son[$three['three_content'][3]['value']]:''}}" name="{{$son_son_db}}[{{$three['three_content'][3]['value']}}]" autocomplete="off">
-            </p>
+            <label class="type">{{$three['three_content'][3]['title']}}</label>
+            <div>
+                <input class="normal_input video_url_format" type="text" value="{{!empty($value_son)?$value_son[$three['three_content'][3]['value']]:''}}" name="{{$son_son_db}}[{{$three['three_content'][3]['value']}}]" autocomplete="off">
+            </div>
         <div class="tips youtube" id="youtube" style="{{ (empty($value_son)) ? 'display: none;':'' }}">
             <span class="title">TIPS</span>
             <p>影片代碼請輸入Youtube影片網址V後面的英文數字。<br>例：https://www.youtube.com/watch?v=abcdef，請輸入<span style="color:#ff0000;">abcdef</span></p>
@@ -139,20 +140,20 @@ if(!empty($value_son)){
         </div>
     </div>
     <div class="_a_textInput">
-        <p class="type">{{$three['three_content'][4]['title']}}</p>
-        <p>
+        <label class="type">{{$three['three_content'][4]['title']}}</label>
+        <div>
             <input class="normal_input" type="text" value="{{!empty($value_son)?$value_son[$three['three_content'][4]['value']]:''}}" name="{{$son_son_db}}[{{$three['three_content'][4]['value']}}]" autocomplete="off">
-        </p>
+        </div>
         <div class="tips">
             <span class="title">TIPS</span>
             <p>{!!$three['three_content'][4]['tip']!!}</p>
         </div>
     </div>
     <div class="_a_radio_area _a_textInput">
-        <p class="type">{{$three['three_content'][5]['title']}}</p>
+        <label class="type">{{$three['three_content'][5]['title']}}</label>
         <div class="radio_area">
             <input type="hidden" name="{{$son_son_db . '[' . $three['three_content'][5]['value'] . ']'}}" value="{{$value_son[$three['three_content'][5]['value']] ?? '-'}}">
-            <div class="content">
+            <div class="radio_area_content">
                 @foreach ($three['three_content'][5]['options'] as $key => $row)
                 <label class="box {{(($value_son[$three['three_content'][5]['value']] ?? 'false') == $row['key']) ? 'active':''}}" data-autosetup="" data-value="{{ $row['key'] }}" data-hide="" data-hidetip="">
                 <div class="plan">

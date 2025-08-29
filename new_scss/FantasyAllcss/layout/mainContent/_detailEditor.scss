@@ -192,7 +192,7 @@
           height: 4px;
           max-width: 135px;
           margin-top: 7px;
-          background-color: #10cfbd;
+          background-color: #5e00ff;
           display: block;
         }
       }
@@ -297,7 +297,7 @@
     //   // min-height: 40px;
 
     //   .check {
-    //     background-color: #10cfbd;
+    //     background-color: #5e00ff;
     //   }
 
     //   .trash {
@@ -764,7 +764,7 @@
     border: solid 1px transparent;
     background-color: #f5f5f5;
     &:focus {
-      border: solid 1px #10cfbd;
+      border: solid 1px #5e00ff;
     }
   }
 }
@@ -947,7 +947,7 @@
     }
 
     .save {
-      background-color: #10cfbd;
+      background-color: #5e00ff;
     }
 
     .cancel {
@@ -1171,27 +1171,20 @@
   }
 
   .file_detail_box {
-    color: #fff;
-    background-color: #464646;
-    border: solid 1px #10cfbd;
-    -webkit-box-shadow: 5px 5px 6px #b5b5b5;
-    box-shadow: 5px 5px 6px #b5b5b5;
-    padding: 30px;
-    // position: fixed;
+    min-width: 200px;
+    max-width: 250px;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+    padding: 15px;
+    border-radius: 3px;
     position: absolute;
-    // left: 0;
     left: initial !important;
-    right: 16.5px !important;
-    // top: 0;
-    top: calc(-100% - 40px) !important;
+    right: 7px !important;
+    top: -100% !important;
     transform: translateX(50%);
     z-index: -1;
     visibility: hidden;
     opacity: 0;
-    -webkit-transition: opacity 0.8s ease 0s;
-    -moz-transition: opacity 0.8s ease 0s;
-    -ms-transition: opacity 0.8s ease 0s;
-    -o-transition: opacity 0.8s ease 0s;
     transition: opacity 0.8s ease 0s;
 
     &.open {
@@ -1205,31 +1198,35 @@
     }
 
     p {
-      font-weight: 300;
+      font-size: 1.3rem;
+      font-weight: 400;
     }
 
     span {
-      color: #10cfbd;
-      font-weight: 900;
-      margin-right: 5px;
+      color: #000000;
+
+      &::after {
+        content: ":";
+        padding: 0 5px;
+      }
     }
 
-    &::after {
-      content: "";
-      display: block;
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 6px 6px 0 6px;
-      border-color: #464646 transparent transparent transparent;
-      position: absolute;
-      left: 50%;
-      bottom: -6px;
-      z-index: 1;
-      -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-      transform: translateX(-50%);
-    }
+    // &::after {
+    //   content: "";
+    //   display: block;
+    //   width: 0;
+    //   height: 0;
+    //   border-style: solid;
+    //   border-width: 6px 6px 0 6px;
+    //   border-color: #464646 transparent transparent transparent;
+    //   position: absolute;
+    //   left: 50%;
+    //   bottom: -6px;
+    //   z-index: 1;
+    //   -webkit-transform: translateX(-50%);
+    //   -ms-transform: translateX(-50%);
+    //   transform: translateX(-50%);
+    // }
   }
 
   .img_title {
@@ -1639,11 +1636,8 @@
                 p {
                   font-size: 0.75rem;
                   height: 22px;
-                  display: -webkit-box;
-                  display: -ms-flexbox;
+
                   display: flex;
-                  -webkit-box-align: center;
-                  -ms-flex-align: center;
                   align-items: center;
                 }
               }
@@ -1658,8 +1652,7 @@
         position: sticky;
         top: 107px;
         z-index: 1;
-        // border-top: 1px solid #c7c7c7;
-        background-color: #424242;
+        background-color: #000;
         &.top {
           top: 108px;
         }
@@ -1684,7 +1677,7 @@
           //   display: block;
           //   width: 0;
           //   height: 2px;
-          //   background-color: #10cfbd;
+          //   background-color: #5e00ff;
           //   position: absolute;
           //   left: 0;
           //   bottom: 0;
@@ -1692,7 +1685,7 @@
           // }
 
           &.now {
-            background-color: #10cfbd;
+            background-color: #5e00ff;
 
             // &::after {
             //   width: 100%;
@@ -1911,7 +1904,7 @@
   .note-editor {
     border: 1px solid #e5e5e5;
     &:hover {
-      border: solid 1px #10cfbd;
+      border: solid 1px #5e00ff;
     }
     .note-toolbar {
       background-color: #f5f5f5;
@@ -2376,6 +2369,6 @@
 .ThreeContent {
   .type {
     line-height: 1;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
   }
 }

@@ -352,18 +352,14 @@
       display: flex;
       cursor: pointer;
       transition: all 0.25s ease;
-
-      &.active {
+      &.active,
+      &:hover {
         // border-color: #10cfbd;
         // background: #ffffff26;
 
         .circle {
-          border-color: #000000;
+          border-color: #5e00ff;
         }
-      }
-
-      &:hover {
-        // border-color: #10cfbd;
       }
 
       .circle {
