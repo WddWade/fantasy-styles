@@ -278,8 +278,18 @@
         flex-direction: column;
         gap: 1px 0;
         background-color: #e4e4e4;
-        .content {
-          background-color: #ffffff;
+        .menu-block {
+          background-color: #fff;
+
+          .menu-block-title {
+            padding: 10px 20px;
+            font-size: 0.8rem;
+            font-family: "Inter";
+            text-transform: uppercase;
+            font-weight: 600;
+          }
+        }
+        .menu-block-content {
         }
         .level_list {
           display: block;
@@ -393,15 +403,6 @@
         }
 
         .level-1 {
-          padding: 10px 0;
-          .blockname {
-            padding: 0 20px;
-            margin-bottom: 15px;
-            font-size: 0.8rem;
-            font-family: "Inter";
-            text-transform: uppercase;
-            font-weight: 600;
-          }
           // > *:not(.sub-menu) {
           //   padding: 8px 20px;
           // }

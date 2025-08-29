@@ -2783,8 +2783,15 @@ body.isContent .backEnd_quill {
   gap: 1px 0;
   background-color: #e4e4e4;
 }
-.page-container .content .content-sidebar .body-list .content {
-  background-color: #ffffff;
+.page-container .content .content-sidebar .body-list .menu-block {
+  background-color: #fff;
+}
+.page-container .content .content-sidebar .body-list .menu-block .menu-block-title {
+  padding: 10px 20px;
+  font-size: 0.8rem;
+  font-family: "Inter";
+  text-transform: uppercase;
+  font-weight: 600;
 }
 .page-container .content .content-sidebar .body-list .level_list {
   display: block;
@@ -2896,17 +2903,6 @@ body.isContent .backEnd_quill {
 .page-container .content .content-sidebar .body-list .level_list.active > a > .title,
 .page-container .content .content-sidebar .body-list .level_list.active > a > .icon {
   color: #fff;
-}
-.page-container .content .content-sidebar .body-list .level-1 {
-  padding: 10px 0;
-}
-.page-container .content .content-sidebar .body-list .level-1 .blockname {
-  padding: 0 20px;
-  margin-bottom: 15px;
-  font-size: 0.8rem;
-  font-family: "Inter";
-  text-transform: uppercase;
-  font-weight: 600;
 }
 .page-container .content .content-sidebar .body-list .level-1 > .sub-menu {
   padding: 8px 0 8px 20px;
