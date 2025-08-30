@@ -32,6 +32,1253 @@
                                     4 => ['key' => '4', 'title' => '多筆分類4'],
                                 ];
                             @endphp
+                            @if ($formKey == 'Form_msg')
+<style>
+.chat-container {
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        .messages {
+            flex-grow: 1;
+            padding: 10px;
+            overflow-y: auto;
+            height: 450px;
+            border-bottom: 1px solid #ccc;
+        }
+        .messages div {
+            margin: 10px 0;
+            padding: 8px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            display: flex;
+        }
+        .messages .content{
+            flex: 1;
+        }
+        .messages .messages_del{
+            cursor: pointer;
+            width: 50px;
+            text-align: right;
+        }
+        .admin {
+            justify-content: flex-end;
+        }
+        .user .messages_area{
+            background-color: #e1f5fe;
+            align-self: flex-start;
+        }
+        .admin .messages_area{
+            background-color: #ffe0b2;
+            align-self: flex-end;
+        }
+        .input-area {
+            display: flex;
+            padding: 10px;
+        }
+        .input-area input {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .input-area .sendButton {
+padding: 10px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white !important;
+    cursor: pointer;
+    display: flex
+;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+        }
+
+</style>
+
+<li>
+    <div class="chat-container">
+        <div class="messages" id="messages">
+            <div class="user">
+                <div class="messages_area">
+                    <span class="content">您好</span>
+                </div>    
+            </div>
+            <div class="admin">
+                <div class="messages_area">
+                    <span class="content">您好</span>
+                    <span class="messages_del" data-id="0">刪除</span>
+                </div>    
+            </div>
+        </div>
+        <div class="input-area">
+            <textarea type="text" id="messageInput" placeholder="輸入訊息..." ></textarea>
+            <a class="sendButton">發送</a>
+        </div>
+    </div>
+</li>
+                            @endif
+                            @if ($formKey == 'Form_order')
+                            <li>
+                                 {{-- sample A --}}
+                                <div id="orderContent" class="informationTable orderContent">
+                                    <div class="table-header">
+                                        <h2 class="table-title">Order No.:NC200202S20250826000001</h2>
+                                        <div class="table-controllers">
+                                            <button onclick="printOrder()">Print Order</button>
+                                            <button onclick="printOrder()">列印訂單</button>
+                                        </div>
+                                    </div>
+                                    <div class="table-content">
+                                        <section data-style="default-odd">
+                                            <div class="section-title">
+                                                <span>Ordering Information 訂購資訊 :</span>
+                                            </div>
+                                            <div class="section-content">
+                                                <div class="items">
+                                                    <span><strong>訂購姓名：</strong></span>
+                                                    <span>Leon</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>訂購聯繫手機：</strong></span>
+                                                    <span>Leon</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>付款方式：</strong></span>
+                                                    <span>信用卡一次付清</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>付款狀態：</strong></span>
+                                                    <span>已付款</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>手機載具：</strong></span>
+                                                     <span>00000000</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>公司統編：</strong></span>
+                                                     <span>00000000</span>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section data-style="default-odd">
+                                            <div class="section-title">
+                                                <span>Payment Information 付款資訊 :</span>
+                                            </div>
+                                            <div class="section-content">
+                                                <div class="items">
+                                                    <span><strong>訂單總額：</strong></span>
+                                                    <span><strong>$1000</strong></span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>商品小計：</strong></span>
+                                                    <span><strong>1000</strong></span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>加購小計：</strong></span>
+                                                     <span><strong>$1000</strong></span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>宅配運費：</strong></span>
+                                                    <span><strong>$1000</strong></span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>訂單優惠折抵：</strong></span>
+                                                    <span><strong>$1000</strong></span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>Coupon優惠折抵：</strong></span>
+                                                    <span><strong>$1000</strong></span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>運費折抵：</strong></span>
+                                                    <span><strong>$1000</strong></span>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section data-style="default-odd">
+                                            <div class="section-title">
+                                                <span>Dealers Information 經銷商 :</span>
+                                            </div>
+                                            <div class="section-content">
+                                                <div class="items">
+                                                    <span><strong>門市名稱：</strong></span>
+                                                    <span>新竹二輪廠</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>門市電話：</strong></span>
+                                                    <span>04-23223899</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>門市地址：</strong></span>
+                                                     <span>台中市台灣大道</span>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section data-style="default-odd">
+                                            <div class="section-title">
+                                                <span>Receiving Information 收件資訊 :</span>
+                                            </div>
+                                            <div class="section-content">
+                                                <div class="items">
+                                                    <span><strong>收件方式：</strong></span>
+                                                    <span>宅配取貨</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>收件姓名：</strong></span>
+                                                    <span>Leon</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>收件聯繫手機：</strong></span>
+                                                    <span>0912345678</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>收件地址：</strong></span>
+                                                     <span>台中市台灣大道</span>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section data-style="default-odd">
+                                            <div class="section-title">
+                                                <span>Purchase Items 購買品項 :</span>
+                                            </div>
+                                            <div class="section-content">
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                    </span>
+                                                    <span>
+                                                        <span><strong>5</strong>件</span>
+                                                    </span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                    </span>
+                                                    <span>
+                                                        <span><strong>5</strong>件</span>
+                                                    </span>                                                
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                    </span>
+                                                    <span>
+                                                        <span><strong>5</strong>件</span>
+                                                    </span>                                                
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                    </span>
+                                                    <span>
+                                                        <span><strong>5</strong>件</span>
+                                                    </span>                                                
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section data-style="default-odd">
+                                            <div class="section-title">
+                                                <span>Gift items 贈品品項 :</span>
+                                            </div>
+                                            <div class="section-content">
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                    </span>
+                                                    <span>
+                                                        <span><strong>5</strong>件</span>
+                                                    </span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                    </span>
+                                                    <span>
+                                                        <span><strong>5</strong>件</span>
+                                                    </span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                    </span>
+                                                    <span>
+                                                        <span><strong>5</strong>件</span>
+                                                    </span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                    </span>
+                                                    <span>
+                                                        <span><strong>5</strong>件</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section data-style="default-odd">
+                                            <div class="section-title">
+                                                <span>Add-on items 贈品品項 :</span>
+                                            </div>
+                                            <div class="section-content">
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                    </span>
+                                                    <span>
+                                                        <span><strong>5</strong>件</span>
+                                                    </span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                    </span>
+                                                    <span>
+                                                        <span><strong>5</strong>件</span>
+                                                    </span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                    </span>
+                                                    <span>
+                                                        <span><strong>5</strong>件</span>
+                                                    </span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                    </span>
+                                                    <span>
+                                                        <span><strong>5</strong>件</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section>
+                                            <div class="section-title">
+                                                <span>Order Notes 訂單備註 :</span>
+                                            </div>
+                                            <div class="section-content">
+                                                <div class="items">
+                                                    <p>無 或 大家好，我想詢問一下，在下單時，看到下單的商品下方有出現這個訂單備註，請問是不用理他，還是我需要聯繫店家處理呢，謝謝，因為下單了不同店家的？</p>
+                                                </div>
+                                            </div>
+                                        </section>                                        
+                                    </div>
+                                </div>
+
+                                {{-- sample B --}}
+                                <div class="informationTable orderContent double-line">
+                                    <div class="table-header">
+                                        <h2 class="table-title">Order No.:NC200202S20250826000001</h2>
+                                        <div class="table-controllers">
+                                            <button onclick="printOrder()">Print Order</button>
+                                            <button onclick="printOrder()">列印訂單</button>
+                                        </div>
+                                    </div>
+                                    <div class="table-content">
+                                        <section data-style="grid-span2">
+                                            <div class="section-title">
+                                                <span>Ordering Information 訂購資訊 :</span>
+                                            </div>
+                                            <div class="section-content">
+                                                <div class="items">
+                                                    <span><strong>訂購姓名：</strong></span>
+                                                    <span>Leon</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>訂購聯繫手機：</strong></span>
+                                                    <span>Leon</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>付款方式：</strong></span>
+                                                    <span>信用卡一次付清</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>付款狀態：</strong></span>
+                                                    <span>已付款</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>手機載具：</strong></span>
+                                                     <span>00000000</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>公司統編：</strong></span>
+                                                     <span>00000000</span>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section data-style="grid-span2">
+                                            <div class="section-title">
+                                                <span>Payment Information 付款資訊 :</span>
+                                            </div>
+                                            <div class="section-content">
+                                                <div class="items">
+                                                    <span><strong>訂單總額：</strong></span>
+                                                    <span><strong>$1000</strong></span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>商品小計：</strong></span>
+                                                    <span><strong>1000</strong></span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>加購小計：</strong></span>
+                                                     <span><strong>$1000</strong></span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>宅配運費：</strong></span>
+                                                    <span><strong>$1000</strong></span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>訂單優惠折抵：</strong></span>
+                                                    <span><strong>$1000</strong></span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>Coupon優惠折抵：</strong></span>
+                                                    <span><strong>$1000</strong></span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>運費折抵：</strong></span>
+                                                    <span><strong>$1000</strong></span>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section data-style="grid-span2">
+                                            <div class="section-title">
+                                                <span>Dealers Information 經銷商 :</span>
+                                            </div>
+                                            <div class="section-content">
+                                                <div class="items">
+                                                    <span><strong>門市名稱：</strong></span>
+                                                    <span>新竹二輪廠</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>門市電話：</strong></span>
+                                                    <span>04-23223899</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>門市地址：</strong></span>
+                                                     <span>台中市台灣大道</span>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section data-style="grid-span2">
+                                            <div class="section-title">
+                                                <span>Receiving Information 收件資訊 :</span>
+                                            </div>
+                                            <div class="section-content">
+                                                <div class="items">
+                                                    <span><strong>收件方式：</strong></span>
+                                                    <span>宅配取貨</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>收件姓名：</strong></span>
+                                                    <span>Leon</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>收件聯繫手機：</strong></span>
+                                                    <span>0912345678</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>收件地址：</strong></span>
+                                                     <span>台中市台灣大道</span>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section data-style="grid-span2">
+                                            <div class="section-title">
+                                                <span>Purchase Items 購買品項 :</span>
+                                            </div>
+                                            <div class="section-content">
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                        <p><strong>售價：</strong>$500</p>
+                                                    </span>
+                                                    <span>
+                                                        <span><strong>5</strong>件</span>
+                                                    </span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                        <p><strong>售價：</strong>$500</p>
+                                                    </span>
+                                                    <span>
+                                                        <span><strong>5</strong>件</span>
+                                                    </span>                                         
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                        <p><strong>售價：</strong>$500</p>
+                                                    </span>
+                                                    <span>
+                                                        <span><strong>5</strong>件</span>
+                                                    </span>                                
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                        <p><strong>售價：</strong>$500</p>
+                                                    </span>
+                                                    <span>
+                                                        <span><strong>5</strong>件</span>
+                                                    </span>                                              
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section data-style="grid-span2">
+                                            <div class="section-title">
+                                                <span>Gift items 贈品品項 :</span>
+                                            </div>
+                                            <div class="section-content">
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                        <p><strong>售價：</strong>$500</p>
+                                                    </span>
+                                                    <span>
+                                                        <span><strong>5</strong>件</span>
+                                                    </span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                        <p><strong>售價：</strong>$500</p>
+                                                    </span>
+                                                    <span>
+                                                        <span><strong>5</strong>件</span>
+                                                    </span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                        <p><strong>售價：</strong>$500</p>
+                                                    </span>
+                                                    <span>
+                                                        <span><strong>5</strong>件</span>
+                                                    </span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                        <p><strong>售價：</strong>$500</p>
+                                                    </span>
+                                                    <span>
+                                                        <span><strong>5</strong>件</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section data-style="grid-span2">
+                                            <div class="section-title">
+                                                <span>Add-on items 贈品品項 :</span>
+                                            </div>
+                                            <div class="section-content">
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                        <p><strong>售價：</strong>$500</p>
+                                                    </span>
+                                                    <span>
+                                                        <span><strong>5</strong>件</span>
+                                                    </span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                        <p><strong>售價：</strong>$500</p>
+                                                    </span>
+                                                    <span>
+                                                        <span><strong>5</strong>件</span>
+                                                    </span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                        <p><strong>售價：</strong>$500</p>
+                                                    </span>
+                                                    <span>
+                                                        <span><strong>5</strong>件</span>
+                                                    </span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                        <p><strong>售價：</strong>$500</p>
+                                                    </span>
+                                                    <span>
+                                                        <span><strong>5</strong>件</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section data-style="grid-span2">
+                                            <div class="section-title">
+                                                <span>Order Notes 訂單備註 :</span>
+                                            </div>
+                                            <div class="section-content">
+                                                <div class="items">
+                                                    <p>無 或 大家好，我想詢問一下，在下單時，看到下單的商品下方有出現這個訂單備註，請問是不用理他，還是我需要聯繫店家處理呢，謝謝，因為下單了不同店家的？</p>
+                                                </div>
+                                            </div>
+                                        </section>                                        
+                                    </div>
+                                </div>
+
+                                {{-- sample C --}}
+                                <div class="informationTable orderContent">
+                                  <div class="table-header">
+                                        <h2 class="table-title">Order No.:NC200202S20250826000001</h2>
+                                        <div class="table-controllers">
+                                            <button onclick="printOrder()">Print Order</button>
+                                            <button onclick="printOrder()">列印訂單</button>
+                                        </div>
+                                    </div>
+                                    <div class="table-content">
+                                        <section data-style="left-title">
+                                            <div class="section-title">
+                                                <span>Ordering Information</span>
+                                                <span>訂購資訊</span>
+                                            </div>
+                                            <div class="section-content">
+                                                <div class="items">
+                                                    <span><strong>訂購姓名：</strong></span>
+                                                    <span>Leon</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>訂購聯繫手機：</strong></span>
+                                                    <span>Leon</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>付款方式：</strong></span>
+                                                    <span>信用卡一次付清</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>付款狀態：</strong></span>
+                                                    <span>已付款</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>手機載具：</strong></span>
+                                                     <span>00000000</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>公司統編：</strong></span>
+                                                     <span>00000000</span>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section data-style="left-title">
+                                            <div class="section-title">
+                                                <span>Payment Information</span>
+                                                <span>付款資訊</span>
+                                            </div>
+                                            <div class="section-content">
+                                                <div class="items">
+                                                    <span><strong>訂單總額：</strong></span>
+                                                    <span><strong>$1000</strong></span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>商品小計：</strong></span>
+                                                    <span><strong>1000</strong></span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>加購小計：</strong></span>
+                                                     <span><strong>$1000</strong></span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>宅配運費：</strong></span>
+                                                    <span><strong>$1000</strong></span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>訂單優惠折抵：</strong></span>
+                                                    <span><strong>$1000</strong></span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>Coupon優惠折抵：</strong></span>
+                                                    <span><strong>$1000</strong></span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>運費折抵：</strong></span>
+                                                    <span><strong>$1000</strong></span>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section data-style="left-title">
+                                            <div class="section-title">
+                                                <span>Dealers Information</span>
+                                                <span>經銷商</span>
+                                            </div>
+                                            <div class="section-content">
+                                                <div class="items">
+                                                    <span><strong>門市名稱：</strong></span>
+                                                    <span>新竹二輪廠</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>門市電話：</strong></span>
+                                                    <span>04-23223899</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>門市地址：</strong></span>
+                                                     <span>台中市台灣大道</span>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section data-style="left-title">
+                                            <div class="section-title">
+                                                <span>Receiving Information</span>
+                                                <span>收件資訊</span>
+                                            </div>
+                                            <div class="section-content">
+                                                <div class="items">
+                                                    <span><strong>收件方式：</strong></span>
+                                                    <span>宅配取貨</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>收件姓名：</strong></span>
+                                                    <span>Leon</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>收件聯繫手機：</strong></span>
+                                                    <span>0912345678</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>收件地址：</strong></span>
+                                                     <span>台中市台灣大道</span>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section data-style="left-title">
+                                            <div class="section-title">
+                                                <span>Purchase Items</span>
+                                                <span>購買品項</span>                                                
+                                            </div>
+                                            <div class="section-content">
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                        <p><strong>售價：</strong>$500</p>
+                                                    </span>
+                                                    <span><strong>5</strong>件</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                        <p><strong>售價：</strong>$500</p>
+                                                    </span>
+                                                    <span><strong>5</strong>件</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                        <p><strong>售價：</strong>$500</p>
+                                                    </span>
+                                                    <span><strong>5</strong>件</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                        <p><strong>售價：</strong>$500</p>
+                                                    </span>
+                                                    <span><strong>5</strong>件</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <strong>總件數：</strong>
+                                                    </span>
+                                                    <span><strong>25</strong>件</span>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section data-style="left-title">
+                                            <div class="section-title">
+                                                <span>Gift items</span>
+                                                <span>贈品品項</span>                                                
+                                            </div>
+                                            <div class="section-content">
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                        <p><strong>售價：</strong>$500</p>
+                                                    </span>
+                                                    <span><strong>5</strong>件</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                        <p><strong>售價：</strong>$500</p>
+                                                    </span>
+                                                    <span><strong>5</strong>件</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                        <p><strong>售價：</strong>$500</p>
+                                                    </span>
+                                                    <span><strong>5</strong>件</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                        <p><strong>售價：</strong>$500</p>
+                                                    </span>
+                                                    <span><strong>5</strong>件</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <strong>總件數：</strong>
+                                                    </span>
+                                                    <span><strong>25</strong>件</span>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section data-style="left-title">
+                                            <div class="section-title">
+                                                <span>Add-on items</span>
+                                                <span>贈品品項</span>                                                
+                                            </div>
+                                            <div class="section-content">
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                        <p><strong>售價：</strong>$500</p>
+                                                    </span>
+                                                    <span><strong>5</strong>件</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                        <p><strong>售價：</strong>$500</p>
+                                                    </span>
+                                                    <span><strong>5</strong>件</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                        <p><strong>售價：</strong>$500</p>
+                                                    </span>
+                                                    <span><strong>5</strong>件</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                        <p><strong>售價：</strong>$500</p>
+                                                    </span>
+                                                    <span><strong>5</strong>件</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <strong>總額/件：</strong>
+                                                    </span>
+                                                    <span><strong>25</strong>件</span>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section data-style="left-title">
+                                            <div class="section-title">
+                                                <span>Order Notes</span>
+                                                <span>訂單備註</span>                                                
+                                            </div>
+                                            <div class="section-content">
+                                                <div class="items">
+                                                    <p>無 或 大家好，我想詢問一下，在下單時，看到下單的商品下方有出現這個訂單備註，請問是不用理他，還是我需要聯繫店家處理呢，謝謝，因為下單了不同店家的？</p>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>   
+
+                                {{-- sample D --}}
+                                <div class="informationTable orderContent">
+                                  <div class="table-header">
+                                        <h2 class="table-title">Order No.:NC200202S20250826000001</h2>
+                                        <div class="table-controllers">
+                                            <button onclick="printOrder()">Print Order</button>
+                                            <button onclick="printOrder()">列印訂單</button>
+                                        </div>
+                                    </div>
+                                    <div class="table-content">
+                                        <section data-style="default-odd">
+                                            <div class="section-title">
+                                                <span>Ordering Information 訂購資訊 :</span>
+                                            </div>
+                                            <div class="section-content">
+                                                <div class="items">
+                                                    <span><strong>訂購姓名：</strong></span>
+                                                    <span>Leon</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>訂購聯繫手機：</strong></span>
+                                                    <span>Leon</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>付款方式：</strong></span>
+                                                    <span>信用卡一次付清</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>付款狀態：</strong></span>
+                                                    <span>已付款</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>手機載具：</strong></span>
+                                                     <span>00000000</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>公司統編：</strong></span>
+                                                     <span>00000000</span>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section data-style="default-odd">
+                                            <div class="section-title">
+                                                <span>Payment Information 付款資訊 :</span>
+                                            </div>
+                                            <div class="section-content">
+                                                <div class="items">
+                                                    <span><strong>訂單總額：</strong></span>
+                                                    <span><strong>$1000</strong></span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>商品小計：</strong></span>
+                                                    <span><strong>1000</strong></span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>加購小計：</strong></span>
+                                                     <span><strong>$1000</strong></span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>宅配運費：</strong></span>
+                                                    <span><strong>$1000</strong></span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>訂單優惠折抵：</strong></span>
+                                                    <span><strong>$1000</strong></span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>Coupon優惠折抵：</strong></span>
+                                                    <span><strong>$1000</strong></span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>運費折抵：</strong></span>
+                                                    <span><strong>$1000</strong></span>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section data-style="default-odd">
+                                            <div class="section-title">
+                                                <span>Dealers Information 經銷商 :</span>
+                                            </div>
+                                            <div class="section-content">
+                                                <div class="items">
+                                                    <span><strong>門市名稱：</strong></span>
+                                                    <span>新竹二輪廠</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>門市電話：</strong></span>
+                                                    <span>04-23223899</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>門市地址：</strong></span>
+                                                     <span>台中市台灣大道</span>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section data-style="default-odd">
+                                            <div class="section-title">
+                                                <span>Receiving Information 收件資訊 :</span>
+                                            </div>
+                                            <div class="section-content">
+                                                <div class="items">
+                                                    <span><strong>收件方式：</strong></span>
+                                                    <span>宅配取貨</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>收件姓名：</strong></span>
+                                                    <span>Leon</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>收件聯繫手機：</strong></span>
+                                                    <span>0912345678</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span><strong>收件地址：</strong></span>
+                                                     <span>台中市台灣大道</span>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section data-style="grid-span2">
+                                            <div class="section-title">
+                                                <span>Purchase Items</span>
+                                                <span>購買品項</span>                                                
+                                            </div>
+                                            <div class="section-content">
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                        <p><strong>售價：</strong>$500</p>
+                                                    </span>
+                                                    <span><strong>5</strong>件</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                        <p><strong>售價：</strong>$500</p>
+                                                    </span>
+                                                    <span><strong>5</strong>件</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                        <p><strong>售價：</strong>$500</p>
+                                                    </span>
+                                                    <span><strong>5</strong>件</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                        <p><strong>售價：</strong>$500</p>
+                                                    </span>
+                                                    <span><strong>5</strong>件</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <strong>總件數：</strong>
+                                                    </span>
+                                                    <span><strong>25</strong>件</span>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section data-style="grid-span2">
+                                            <div class="section-title">
+                                                <span>Gift items</span>
+                                                <span>贈品品項</span>                                                
+                                            </div>
+                                            <div class="section-content">
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                        <p><strong>售價：</strong>$500</p>
+                                                    </span>
+                                                    <span><strong>5</strong>件</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                        <p><strong>售價：</strong>$500</p>
+                                                    </span>
+                                                    <span><strong>5</strong>件</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                        <p><strong>售價：</strong>$500</p>
+                                                    </span>
+                                                    <span><strong>5</strong>件</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                        <p><strong>售價：</strong>$500</p>
+                                                    </span>
+                                                    <span><strong>5</strong>件</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <strong>總件數：</strong>
+                                                    </span>
+                                                    <span><strong>25</strong>件</span>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section data-style="grid-span2">
+                                            <div class="section-title">
+                                                <span>Add-on items</span>
+                                                <span>贈品品項</span>                                                
+                                            </div>
+                                            <div class="section-content">
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                        <p><strong>售價：</strong>$500</p>
+                                                    </span>
+                                                    <span><strong>5</strong>件</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                        <p><strong>售價：</strong>$500</p>
+                                                    </span>
+                                                    <span><strong>5</strong>件</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                        <p><strong>售價：</strong>$500</p>
+                                                    </span>
+                                                    <span><strong>5</strong>件</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <p><strong>品名：</strong>Star Line 網眼夾克 銀色 LL</p>
+                                                        <p><strong>型號：</strong>0SYES-73A-SLL</p>
+                                                        <p><strong>售價：</strong>$500</p>
+                                                    </span>
+                                                    <span><strong>5</strong>件</span>
+                                                </div>
+                                                <div class="items">
+                                                    <span>
+                                                        <strong>總額/件：</strong>
+                                                    </span>
+                                                    <span><strong>25</strong>件</span>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section>
+                                            <div class="section-title">
+                                                <span>Order Notes</span>
+                                                <span>訂單備註</span>                                                
+                                            </div>
+                                            <div class="section-content">
+                                                <div class="items">
+                                                    <p>無 或 大家好，我想詢問一下，在下單時，看到下單的商品下方有出現這個訂單備註，請問是不用理他，還是我需要聯繫店家處理呢，謝謝，因為下單了不同店家的？</p>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                                
+                                {{-- sample D --}}
+
+                                <div class="informationTable orderContent">
+                                  <div class="table-header">
+                                        <h2 class="table-title">Order No.:NC200202S20250826000001</h2>
+                                        <div class="table-controllers">
+                                            <button onclick="printOrder()">Print Order</button>
+                                            <button onclick="printOrder()">列印訂單</button>
+                                        </div>
+                                    </div>
+                                    <div class="table-content">
+                                        <section data-style="default-table">
+                                            <div class="section-title">
+                                                <span>Ordering Information 訂購資訊 :</span>
+                                            </div>
+                                            <div class="section-content">
+                                                <div class="items">
+                                                    <table>
+                                                        <thead>
+                                                            <tr>
+                                                                <th>品名/型號</th>
+                                                                <th>顏色</th>
+                                                                <th>尺寸</th>
+                                                                <th>數量</th>
+                                                                <th>售價</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <span>Star Line 網眼夾克</span>
+                                                                    <span>0SYES-73A-SLL</span>
+                                                                </td>
+                                                                <td>銀色</td>
+                                                                <td>LL</td>
+                                                                <td>５</td>
+                                                                <td>$1,000</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <span>Star Line 網眼夾克</span>
+                                                                    <span>0SYES-73A-SLL</span>
+                                                                </td>
+                                                                <td>銀色</td>
+                                                                <td>LL</td>
+                                                                <td>５</td>
+                                                                <td>$1,000</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <span>Star Line 網眼夾克</span>
+                                                                    <span>0SYES-73A-SLL</span>
+                                                                </td>
+                                                                <td>銀色</td>
+                                                                <td>LL</td>
+                                                                <td>５</td>
+                                                                <td>$1,000</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <span>Star Line 網眼夾克</span>
+                                                                    <span>0SYES-73A-SLL</span>
+                                                                </td>
+                                                                <td>銀色</td>
+                                                                <td>LL</td>
+                                                                <td>５</td>
+                                                                <td>$1,000</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                            </li>
+                            @endif
                             @if ($formKey == 'search')
                                 {{ UnitMaker::textInput([
                                     'name' => $model . '[textInput]',
