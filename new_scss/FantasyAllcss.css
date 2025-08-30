@@ -1101,6 +1101,111 @@ body.isContent .backEnd_quill {
   margin-top: 0;
 }
 
+.detailEditor .messageChat {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.detailEditor .messageChat .message-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-bottom: 10px;
+}
+.detailEditor .messageChat .message-header .message-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.detailEditor .messageChat .message-header .message-controllers button {
+  color: #ffffff;
+  background-color: #000000;
+  border: none;
+  font-size: 1.2rem;
+  padding: 2px 13px;
+  border-radius: 3px;
+}
+.detailEditor .messageChat .message-content {
+  height: calc(100vh - 147px - 177px - 49px);
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 40px;
+  margin-bottom: 15px;
+  overflow-y: auto;
+}
+.detailEditor .messageChat .message-content > * {
+  margin-block: 20px;
+}
+.detailEditor .messageChat .date {
+  text-align: center;
+  font-size: 1rem;
+}
+.detailEditor .messageChat .time {
+  font-size: 1rem;
+}
+.detailEditor .messageChat .name {
+  font-weight: 500;
+}
+.detailEditor .messageChat .customer,
+.detailEditor .messageChat .service {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 8px;
+}
+.detailEditor .messageChat .customer p,
+.detailEditor .messageChat .service p {
+  display: block;
+  max-width: 70%;
+  padding: 20px;
+  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.26);
+          box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.26);
+}
+.detailEditor .messageChat .customer {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.detailEditor .messageChat .customer p {
+  color: #fff;
+  background-color: #000000;
+  border-radius: 8px 8px 8px 0;
+}
+.detailEditor .messageChat .service {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.detailEditor .messageChat .service p {
+  color: #000000;
+  background-color: #ffffff;
+  border-radius: 8px 8px 0 8px;
+}
+
 /*
   共用
   tag editor

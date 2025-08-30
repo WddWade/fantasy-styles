@@ -102,32 +102,54 @@ padding: 10px;
 
 </style>
 
-<li>
-    <div class="chat-container">
-        <div class="messages" id="messages">
-            <div class="user">
-                <div class="messages_area">
-                    <span class="content">您好</span>
-                </div>    
-            </div>
-            <div class="admin">
-                <div class="messages_area">
-                    <span class="content">您好</span>
-                    <span class="messages_del" data-id="0">刪除</span>
-                </div>    
-            </div>
-        </div>
-        <div class="input-area">
-            <textarea type="text" id="messageInput" placeholder="輸入訊息..." ></textarea>
-            <a class="sendButton">發送</a>
-        </div>
-    </div>
-</li>
+                            <li>
+                                <div class="messageChat">
+                                    <div class="message-header">
+                                        <h2 class="message-title">To : Leon Lee</h2>
+                                        <div class="message-controllers">
+                                            <button onclick="printOrder()">Export Chat</button>
+                                            <button onclick="printOrder()">Options</button>
+                                        </div>
+                                    </div>
+                                    <div class="message-content">
+                                        <p class="date">2025年9月1日 星期一</p>
+                                        <div class="customer">
+                                            <span class="name">Leo Lee</span>
+                                            <p>我想詢問一下，在下單時，看到下單的商品下方有出現這個訂單備註，請問是不用理他，還是我需要聯繫店家處理呢，謝謝，因為下單了不同店家的？</p>
+                                            <span class="time">13:31</span>
+                                        </div>
+                                        <div class="customer">
+                                            <span class="name">Leo Lee</span>
+                                            <p>我想詢問一下，在下單時，看到下單的商品下方有出現這個訂單備註，請問是不用理他，還是我需要聯繫店家處理呢，謝謝，因為下單了不同店家的？</p>
+                                            <span class="time">13:31</span>
+                                        </div>
+                                        <p class="date">2025年9月3日 星期三</p>
+                                        <div class="service">
+                                            <span class="name">Wdd</span>
+                                            <p>我想詢問一下，在下單時，看到下單的商品下方有出現這個訂單備註，請問是不用理他，還是我需要聯繫店家處理呢，謝謝，因為下單了不同店家的？</p>
+                                            <span class="time">13:31</span>
+                                        </div>
+                                        <div class="service">
+                                            <span>Wdd</span>
+                                            <p>我想詢問一下，在下單時，看到下單的商品下方有出現這個訂單備註，請問是不用理他，還是我需要聯繫店家處理呢，謝謝，因為下單了不同店家的？</p>
+                                            <span class="time">13:31</span>
+                                        </div>
+                                    </div>
+                                    <div class="message-typing">
+                                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                                        <div class="controllers">
+                                            <button>Reset</button>
+                                            <button>Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
                             @endif
                             @if ($formKey == 'Form_order')
                             <li>
                                  {{-- sample A --}}
-                                <div id="orderContent" class="informationTable orderContent">
+                                <div id="orderContent" class="informationTable">
                                     <div class="table-header">
                                         <h2 class="table-title">Order No.:NC200202S20250826000001</h2>
                                         <div class="table-controllers">
@@ -387,7 +409,7 @@ padding: 10px;
                                 </div>
 
                                 {{-- sample B --}}
-                                <div class="informationTable orderContent double-line">
+                                <div class="informationTable">
                                     <div class="table-header">
                                         <h2 class="table-title">Order No.:NC200202S20250826000001</h2>
                                         <div class="table-controllers">
@@ -659,7 +681,7 @@ padding: 10px;
                                 </div>
 
                                 {{-- sample C --}}
-                                <div class="informationTable orderContent">
+                                <div class="informationTable">
                                   <div class="table-header">
                                         <h2 class="table-title">Order No.:NC200202S20250826000001</h2>
                                         <div class="table-controllers">
@@ -933,7 +955,7 @@ padding: 10px;
                                 </div>   
 
                                 {{-- sample D --}}
-                                <div class="informationTable orderContent">
+                                <div class="informationTable">
                                   <div class="table-header">
                                         <h2 class="table-title">Order No.:NC200202S20250826000001</h2>
                                         <div class="table-controllers">
@@ -1203,8 +1225,7 @@ padding: 10px;
                                 </div>
                                 
                                 {{-- sample D --}}
-
-                                <div class="informationTable orderContent">
+                                <div class="informationTable">
                                   <div class="table-header">
                                         <h2 class="table-title">Order No.:NC200202S20250826000001</h2>
                                         <div class="table-controllers">
