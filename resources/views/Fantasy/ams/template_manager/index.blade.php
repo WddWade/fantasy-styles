@@ -55,11 +55,36 @@
                 <div class="content-scrollbox" style="position: relative;">
                     <div class="content-wrap main-table index-table-div" data-tableid="new_cms_table">
                         <div class="content-head cms-index_table" data-edit="1" data-delete="1" data-create="1" data-model="" data-page="1" data-pn="1" data-auth="0" data-pagetitle="Cover Page 權限管理">
-                            <h1>CMS Template 管理與設定</h1>
-                            <div class="content-nav">
-                                <div class="navleft">
+                            {{-- wade:add --}}
+                            <div class="content-head-container">
+                                <div class="content-title">
+                                    <div class="switch-menu navigation-toggle">
+                                        <span class="bar"></span>
+                                        <span class="bar"></span>
+                                        <span class="bar"></span>
+                                    </div>
+                                    <h1>CMS Template 管理與設定</h1>
+                                </div>
+                                <div class="content-nav">
+                                    <div class="btn-item">
                                     {{-- 有開分館設定才可以新增 --}}
                                     @if ( Config::get('cms.setBranchs') )
+                                    <div class="btn-item">
+                                        <a href="javascript:void(0)" class="create_ams_wrapper" data-type="template-manager" data-id="0">
+                                            <span class="icon-add"></span>
+                                            <span class="text">新增分站</span>
+                                        </a>
+                                    </div>
+                                    @endif
+                                </div>
+                            </div>
+                            
+                            {{-- wade:delete --}}
+                            {{-- <h1>CMS Template 管理與設定</h1> --}}
+                            {{-- <div class="content-nav"> --}}
+                                {{-- <div class="navleft"> --}}
+                                    {{-- 有開分館設定才可以新增 --}}
+                                    {{-- @if ( Config::get('cms.setBranchs') )
                                     <div class="btn-item">
                                         <a href="javascript:void(0)" class="create_ams_wrapper" data-type="template-manager" data-id="0">
                                             <span class="icon-add"></span>
@@ -68,7 +93,7 @@
                                     </div>
                                     @endif
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="content-body">
                             <div class="datatable">

@@ -675,6 +675,14 @@
   }
 }
 
+.hiddenArea {
+  &.cmsDetailAjaxSearch {
+    .inventory {
+      flex-direction: row;
+    }
+  }
+}
+
 /* fms 點擊上傳檔案後開啟右側區塊 */
 .uploadArea {
   &.open {

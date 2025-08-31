@@ -112,34 +112,71 @@ padding: 10px;
                                         </div>
                                     </div>
                                     <div class="message-content">
-                                        <p class="date">2025年9月1日 星期一</p>
-                                        <div class="customer">
-                                            <span class="name">Leo Lee</span>
-                                            <p>我想詢問一下，在下單時，看到下單的商品下方有出現這個訂單備註，請問是不用理他，還是我需要聯繫店家處理呢，謝謝，因為下單了不同店家的？</p>
-                                            <span class="time">13:31</span>
+                                        <div class="date">
+                                            <span >2025年9月1日 星期一</span>
                                         </div>
                                         <div class="customer">
                                             <span class="name">Leo Lee</span>
-                                            <p>我想詢問一下，在下單時，看到下單的商品下方有出現這個訂單備註，請問是不用理他，還是我需要聯繫店家處理呢，謝謝，因為下單了不同店家的？</p>
-                                            <span class="time">13:31</span>
+                                            <div class="chats">
+                                                <p>我想詢問一下，在下單時，看到下單的商品下方有出現這個訂單備註，請問是不用理他，還是我需要聯繫店家處理呢，謝謝，因為下單了不同店家的？</p>
+                                                <span class="time">13:31</span>
+                                            </div>
                                         </div>
-                                        <p class="date">2025年9月3日 星期三</p>
+                                        <div class="customer">
+                                            <span class="name">Leo Lee</span>
+                                            <div class="chats">
+                                                <p>我想詢問一下，在下單時，看到下單的商品下方有出現這個訂單備註，請問是不用理他，還是我需要聯繫店家處理呢，謝謝，因為下單了不同店家的？</p>
+                                                <span class="time">13:31</span>
+                                            </div>
+                                        </div>
+                                        <div class="date">
+                                            <span >2025年9月3日 星期三</span>
+                                        </div>
                                         <div class="service">
                                             <span class="name">Wdd</span>
-                                            <p>我想詢問一下，在下單時，看到下單的商品下方有出現這個訂單備註，請問是不用理他，還是我需要聯繫店家處理呢，謝謝，因為下單了不同店家的？</p>
-                                            <span class="time">13:31</span>
+                                            <div class="chats">
+                                                <p>我想詢問一下，在下單時，看到下單的商品下方有出現這個訂單備註，請問是不用理他，還是我需要聯繫店家處理呢，謝謝，因為下單了不同店家的？ 我想詢問一下，在下單時，看到下單的商品下方有出現這個訂單備註，請問是不用理他，還是我需要聯繫店家處理呢，謝謝，因為下單了不同店家的？</p>
+                                                <div class="control">
+                                                    <span class="time">13:31</span>
+                                                    <div class="edit">
+                                                        <div>Edit</div>
+                                                        <div>Delete</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                         <div class="customer">
+                                            <span class="name">Leo Lee</span>
+                                            <div class="chats">
+                                                <p>我想詢問一下，在下單時，看到下單的商品下方有出現這個訂單備註，請問是不用理他，還是我需要聯繫店家處理呢，謝謝，因為下單了不同店家的？</p>
+                                                <span class="time">13:31</span>
+                                            </div>
+                                        </div>
+                                         <div class="customer">
+                                            <span class="name">Leo Lee</span>
+                                            <div class="chats">
+                                                <p>我想詢問一下，在下單時，看到下單的商品下方有出現這個訂單備註，請問是不用理他，還是我需要聯繫店家處理呢，謝謝，因為下單了不同店家的？</p>
+                                                <span class="time">13:31</span>
+                                            </div>
                                         </div>
                                         <div class="service">
                                             <span>Wdd</span>
-                                            <p>我想詢問一下，在下單時，看到下單的商品下方有出現這個訂單備註，請問是不用理他，還是我需要聯繫店家處理呢，謝謝，因為下單了不同店家的？</p>
-                                            <span class="time">13:31</span>
+                                            <div class="chats">
+                                                <p>沒問題喔！</p>
+                                                <div class="control">
+                                                    <span class="time">13:31</span>
+                                                    <div class="edit">
+                                                        <div>Edit</div>
+                                                        <div>Delete</div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="message-typing">
-                                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                                        <textarea name="" id="" cols="30" rows="10" placeholder="typing message..."></textarea>
                                         <div class="controllers">
-                                            <button>Reset</button>
-                                            <button>Submit</button>
+                                            <button class="send">Send</button>
                                         </div>
                                     </div>
                                 </div>

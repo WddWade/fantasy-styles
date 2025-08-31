@@ -206,6 +206,28 @@
   }
 }
 
+.ams_theme {
+  .content-wrap {
+    .content-head {
+      width: 100%;
+      background-color: #e4e4e4;
+      display: flex;
+      flex-direction: column;
+      gap: 1px 0;
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
+      .content-head-container {
+      }
+      .content-title {
+      }
+      .content-nav {
+      }
+    }
+    .content-body {
+    }
+  }
+}
+
 .fms_theme {
   .content-wrap {
     .content-nav {

@@ -54,9 +54,79 @@
                     </div> --}}
                     <div class="content-scrollbox" style="position: relative;">
                         <div class="content-wrap main-table index-table-div" data-tableid="new_cms_table">
-                            <div class="content-head cms-index_table" data-edit="1" data-delete="1" data-create="1"
-                                data-model="" data-page="1" data-pn="1" data-auth="0" data-pagetitle="Log 紀錄">
-                                <h1>{{ $ShowTime }} - Log 紀錄</h1>
+                            <div class="content-head cms-index_table" data-edit="1" data-delete="1" data-create="1" data-model="" data-page="1" data-pn="1" data-auth="0" data-pagetitle="Log 紀錄">
+
+                                {{-- wade:add --}}
+                                <div class="content-head-container">
+                                    <div class="content-title">
+                                        <div class="switch-menu navigation-toggle">
+                                            <span class="bar"></span>
+                                            <span class="bar"></span>
+                                            <span class="bar"></span>
+                                        </div>
+                                        <h1>Log 紀錄 : {{ $ShowTime }}</h1>
+                                    </div>
+                                    <div class="content-nav">
+                                        {{-- wade:add --}}
+                                        <div class="btn-item dropdown btn-role">
+                                            <a class="" data-toggle="dropdown" href="javascript:void(0)" aria-haspopup="true" aria-expanded="true">
+                                                <span class="text">2024</span>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right profile-dropdown" role="menu">
+                                                <a class="dropdown-item ExportBtnCheck" href="javascript:void(0)" title="下載勾選項目"">１月</a>
+                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">2月</a>
+                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">3月</a>
+                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">4月</a>
+                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">5月</a>
+                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">6月</a>
+                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">7月</a>
+                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">8月</a>
+                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">9月</a>
+                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">１0月</a>
+                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">１1月</a>
+                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">１2月</a>
+                                                <a class="clearfix bg-master-lighter dropdown-item" href="javascript:void(0)">
+                                                    <span class="pull-left">關閉選單</span>
+                                                    <span class="pull-right"><i class="pg-power"></i></span>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <div class="btn-item dropdown btn-role">
+                                            <a class="" data-toggle="dropdown" href="javascript:void(0)" aria-haspopup="true" aria-expanded="true">
+                                                <span class="text">2023</span>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right profile-dropdown" role="menu">
+                                                <a class="dropdown-item ExportBtnCheck" href="javascript:void(0)" title="下載勾選項目"">１月</a>
+                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">2月</a>
+                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">3月</a>
+                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">4月</a>
+                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">5月</a>
+                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">6月</a>
+                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">7月</a>
+                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">8月</a>
+                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">9月</a>
+                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">１0月</a>
+                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">１1月</a>
+                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">１2月</a>
+                                                <a class="clearfix bg-master-lighter dropdown-item" href="javascript:void(0)">
+                                                    <span class="pull-left">關閉選單</span>
+                                                    <span class="pull-right"><i class="pg-power"></i></span>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        {{-- wade:delete --}}
+                                        {{-- <div class="btn-item">
+                                            @foreach ($M_list as $val)
+                                            <a href="/Fantasy/Ams/log?date={{ $val }}"
+                                                style="margin-right: 15px;">{{ $val }}</a>
+                                            @endforeach
+                                        </div> --}}
+                                </div>
+
+                                {{-- wade"delete --}}
+                                {{-- <h1>{{ $ShowTime }} - Log 紀錄</h1>
                                 <div class="content-nav">
                                     <div class="navleft">
                                         @foreach ($M_list as $val)
@@ -64,7 +134,8 @@
                                                 style="margin-right: 15px;">{{ $val }}</a>
                                         @endforeach
                                     </div>
-                                </div>
+                                </div> --}}
+
                             </div>
                             <div class="content-body">
                                 <div class="datatable">

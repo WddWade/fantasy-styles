@@ -56,7 +56,28 @@
                         <div class="content-wrap main-table index-table-div" data-tableid="new_cms_table">
                             <div class="content-head cms-index_table" data-edit="1" data-delete="1" data-create="1"
                                 data-model="" data-page="1" data-pn="1" data-auth="0" data-pagetitle="Log 紀錄">
-                                <h1>{{ $ShowTime }} - Log 紀錄</h1>
+
+                                {{-- wade:add --}}
+                                <div class="content-head-container">
+                                    <div class="content-title">
+                                        <div class="switch-menu navigation-toggle">
+                                            <span class="bar"></span>
+                                            <span class="bar"></span>
+                                            <span class="bar"></span>
+                                        </div>
+                                        <h1>Log 紀錄 : {{ $ShowTime }}</h1>
+                                    </div>
+                                    <div class="content-nav">
+                                        <div class="btn-item">
+                                            @foreach ($M_list as $val)
+                                            <a href="/Fantasy/Ams/log?date={{ $val }}"
+                                                style="margin-right: 15px;">{{ $val }}</a>
+                                        @endforeach
+                                    </div>
+                                </div>
+
+                                {{-- wade"delete --}}
+                                {{-- <h1>{{ $ShowTime }} - Log 紀錄</h1>
                                 <div class="content-nav">
                                     <div class="navleft">
                                         @foreach ($M_list as $val)
@@ -64,7 +85,7 @@
                                                 style="margin-right: 15px;">{{ $val }}</a>
                                         @endforeach
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="content-body">
                                 <div class="datatable">
