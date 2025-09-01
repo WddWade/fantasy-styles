@@ -7,7 +7,7 @@
             <section class="content_box">
                 <div class="for_ajax_content">
                     <section class="content_a">
-                        <ul class="frame">
+                        <ul class="frame @if($formKey == 'search')filter @endif">
                             @php
                                 $getList = [
                                     1 => ['key' => '1', 'title' => '分類1'],
@@ -33,74 +33,6 @@
                                 ];
                             @endphp
                             @if ($formKey == 'Form_msg')
-<style>
-.chat-container {
-            display: flex;
-            flex-direction: column;
-            margin: auto;
-            border-radius: 5px;
-            background-color: #fff;
-        }
-        .messages {
-            flex-grow: 1;
-            padding: 10px;
-            overflow-y: auto;
-            height: 450px;
-            border-bottom: 1px solid #ccc;
-        }
-        .messages div {
-            margin: 10px 0;
-            padding: 8px;
-            border-radius: 5px;
-            white-space: pre-wrap;
-            display: flex;
-        }
-        .messages .content{
-            flex: 1;
-        }
-        .messages .messages_del{
-            cursor: pointer;
-            width: 50px;
-            text-align: right;
-        }
-        .admin {
-            justify-content: flex-end;
-        }
-        .user .messages_area{
-            background-color: #e1f5fe;
-            align-self: flex-start;
-        }
-        .admin .messages_area{
-            background-color: #ffe0b2;
-            align-self: flex-end;
-        }
-        .input-area {
-            display: flex;
-            padding: 10px;
-        }
-        .input-area input {
-            flex-grow: 1;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .input-area .sendButton {
-padding: 10px;
-    margin-left: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: white !important;
-    cursor: pointer;
-    display: flex
-;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-        }
-
-</style>
 
                             <li>
                                 <div class="messageChat">

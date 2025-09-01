@@ -3102,8 +3102,7 @@ body.isContent .backEnd_quill {
           justify-content: space-between;
 }
 .page-container .content .content-sidebar .head-bar .level-1 > .display-title .title {
-  font-size: 1.2rem;
-  font-weight: 500;
+  font-size: 1.3rem;
   color: #000;
   white-space: nowrap;
 }

@@ -4,7 +4,7 @@
 <ul class="head-bar">
     <li class="level-1">
         <a class="display-title" href="javascript:;">
-            <span class="title">{{ $branchMenuList['now'] }}</span>
+            <span class="title">CMS {{ $branchMenuList['now'] }}</span>
             <span class="icon-open-menu"></span>
         </a>
 

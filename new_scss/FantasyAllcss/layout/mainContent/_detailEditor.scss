@@ -2318,61 +2318,61 @@
   在 cms 編輯資料右側選單中前三個 inventory 帶有此類別
 */
 
-.sortStatusSet {
-  &.inventory {
-    display: flex;
-    align-items: flex-start;
+// .sortStatusSet {
+//   &.inventory {
+//     display: flex;
+//     align-items: flex-start;
 
-    > .inner {
-      display: flex;
-      align-items: center;
-      // padding-top: 10px;
-      .state_button {
-        width: 100%;
-      }
-    }
-  }
+//     > .inner {
+//       display: flex;
+//       align-items: center;
+//       // padding-top: 10px;
+//       .state_button {
+//         width: 100%;
+//       }
+//     }
+//   }
 
-  .state_box {
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-  }
+//   .state_box {
+//     -ms-flex-wrap: wrap;
+//     flex-wrap: wrap;
+//   }
 
-  .normal_input {
-    max-width: 100px;
-    margin-right: 20px;
-    text-align: center;
-  }
+//   .normal_input {
+//     max-width: 100px;
+//     margin-right: 20px;
+//     text-align: center;
+//   }
 
-  .ios_switch,
-  .____ios_switch {
-    margin-right: 20px;
-  }
+//   .ios_switch,
+//   .____ios_switch {
+//     margin-right: 20px;
+//   }
 
-  .tips {
-    margin: 0;
-  }
-}
+//   .tips {
+//     margin: 0;
+//   }
+// }
 
 /* 找不到 fileDownloadConnect */
-.fileDownloadConnect {
-  .text {
-    span {
-      margin-right: 12px;
-      padding-top: 5px;
-    }
-  }
-}
+// .fileDownloadConnect {
+//   .text {
+//     span {
+//       margin-right: 12px;
+//       padding-top: 5px;
+//     }
+//   }
+// }
 
 /* 未找到 file_authority */
-.file_authority {
-  input {
-    &[type="password"] {
-      font-size: 0.875rem;
-      letter-spacing: 1px;
-    }
-  }
-}
+// .file_authority {
+//   input {
+//     &[type="password"] {
+//       font-size: 0.875rem;
+//       letter-spacing: 1px;
+//     }
+//   }
+// }
 
 .ThreeContent {
   .type {
