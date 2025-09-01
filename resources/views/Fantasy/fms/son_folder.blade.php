@@ -37,11 +37,15 @@
             @else
                 <td class="w_Check"></td>
             @endif
-            <td class="tool_ctrl">
+            <td class="edit_ctrl">
                 <div class="tableMaintitle fms_folder_on_list" data-id="{{ $val['id'] }}" data-parent-id="{{ $val['parent_id'] }}">
                     <div class="fms_bulider_new edit file-edit" data-id="{{ $val['id'] }}">
-                        <span class="fa fa-pencil"></span>
-                        <span class="edit-txt">編輯</span>
+                        {{-- wade:delete --}}
+                        {{-- <span class="fa fa-pencil"></span>
+                        <span class="edit-txt">編輯</span> --}}
+
+                        {{-- wade:add --}}
+                        <span class="fa fa-pencil-square-o edit-txt"></span>
                     </div>
                 </div>
             </td>

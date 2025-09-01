@@ -12,15 +12,19 @@
                                             @else
                                             <td class="w_Check"></td>
                                             @endif
-                                            <td class="tool_ctrl">
+                                            <td class="edit_ctrl">
                                                 <div class="tableMaintitle fms_folder_on_list @if($row['is_delete']) is_delete @endif" data-id="{{$row['id']}}" data-parent-id="{{$row['parent_id']}}">
                                                     <div class="title-img rwdhide">
                                                         <img src="/vender/assets/img/folder.png" alt="">
                                                     </div>
                                                     <span class="title-name bold">{{ $row['title'] }}</span>
                                                     <div class="fms_bulider_new edit file-edit" data-id="{{$row['id']}}">
-                                                        <span class="fa fa-pencil"></span>
-                                                        <span class="edit-txt">編輯</span>
+                                                        {{-- wade:delete --}}
+                                                        {{-- <span class="fa fa-pencil"></span>
+                                                        <span class="edit-txt">編輯</span> --}}
+
+                                                        {{-- wade:add --}}
+                                                        <span class="fa fa-pencil-square-o edit-txt"></span>
                                                     </div>
                                                 </div>
                                             </td>
@@ -78,8 +82,14 @@
                                                     </div>
                                                     <span class="title-name bold">{{ $row['title'] }}.{{ $row['type'] }}</span>
                                                     <div class="cms_open_file_edit file-edit" data-id="{{$row['id']}}">
-                                                        <span class="fa fa-pencil"></span>
-                                                        <span class="edit-txt">編輯</span>
+                                                        
+                                                        {{-- wade:delete --}}
+                                                        {{-- <span class="fa fa-pencil"></span>
+                                                        <span class="edit-txt">編輯</span> --}}
+
+                                                        {{-- wade:add --}}
+                                                        <span class="fa fa-pencil-square-o edit-txt"></span>
+
                                                     </div>
                                                 </div>
                                             </td>

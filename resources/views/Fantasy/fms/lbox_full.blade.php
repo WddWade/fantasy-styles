@@ -195,12 +195,10 @@
 
                                                 </div>
                                             </td>
-                                            <td class="tool_ctrl fms_folder_on_list fms_folder_back" data-id="0" data-parent_id="0">
-                                                <div class="tableMaintitle">
-                                                    <div class="title-img rwdhide">
-                                                        <div class="fms-back" style="font-size: 17px;color: #735ebc"></div>
-                                                    </div>
-                                                    <span class="title-name bold">BACK 上一層資料夾</span>
+                                            <td class="back_ctrl fms_folder_on_list fms_folder_back" data-id="0" data-parent_id="0">
+                                                <div class="back_controller">
+                                                    <div class="fms-back" style="font-size: 17px;color: #735ebc"></div>
+                                                    <span>BackK to Previous Folder</span>
                                                 </div>
                                             </td>
                                             <td>
@@ -245,11 +243,15 @@
                                             @endif
 
                                             {{-- wade:add --}}                                            
-                                            <td class="tool_ctrl">
+                                            <td class="edit_ctrl">
                                                 <div class="tableMaintitle fms_folder_on_list @if($row['is_delete']) is_delete @endif" data-id="{{$row['id']}}" data-parent-id="{{$row['parent_id']}}">
                                                     <div class="fms_bulider_new edit file-edit" data-id="{{$row['id']}}">
-                                                        <span class="fa fa-pencil"></span>
-                                                        <span class="edit-txt">編輯</span>
+                                                        {{-- wade:delete --}}
+                                                        {{-- <span class="fa fa-pencil"></span>
+                                                        <span class="edit-txt">編輯</span> --}}
+
+                                                        {{-- wade:add --}}
+                                                        <span class="fa fa-pencil-square-o edit-txt"></span>
                                                     </div>
                                                 </div>
                                             </td>
@@ -305,7 +307,7 @@
                                             </td>
 
                                             {{-- wade:add --}}
-                                            <td class="tool_ctrl @if(!isset($cms_open)) open_file_edit @endif" @if(isset($cms_open)) onclick="Leon_open_file_edit(this);" @endif>
+                                            <td class="edit_ctrl @if(!isset($cms_open)) open_file_edit @endif" @if(isset($cms_open)) onclick="Leon_open_file_edit(this);" @endif>
                                                 <div class="tableMaintitle">
                                                     @php
                                                     $ext = strtolower(pathinfo($row['real_m_route'],PATHINFO_EXTENSION));
@@ -319,8 +321,12 @@
                                                     @endphp
                                                    
                                                     <div class="cms_open_file_edit file-edit" data-id="{{$row['id']}}">
-                                                        <span class="fa fa-pencil"></span>
-                                                        <span class="edit-txt">編輯</span>
+                                                        {{-- wade:delete --}}
+                                                        {{-- <span class="fa fa-pencil"></span>
+                                                        <span class="edit-txt">編輯</span> --}}
+
+                                                        {{-- wade:add --}}
+                                                        <span class="fa fa-pencil-square-o edit-txt"></span>
                                                     </div>
                                                 </div>
                                             </td>
@@ -342,8 +348,12 @@
                                                     </div>
                                                     <span class="title-name bold">{{ $row['title'] }}.{{ $row['type'] }}</span>
                                                     <div class="cms_open_file_edit file-edit" data-id="{{$row['id']}}">
-                                                        <span class="fa fa-pencil"></span>
-                                                        <span class="edit-txt">編輯</span>
+                                                        {{-- wade:delete --}}
+                                                        {{-- <span class="fa fa-pencil"></span>
+                                                        <span class="edit-txt">編輯</span> --}}
+
+                                                        {{-- wade:add --}}
+                                                        <span class="fa fa-pencil-square-o edit-txt"></span>
                                                     </div>
                                                 </div>
                                             </td>

@@ -8,11 +8,15 @@
             </label>
         </div>
     </td>
-    <td class="tool_ctrl @if(!isset($cms_open)) open_file_edit @endif" @if(isset($cms_open)) onclick="Leon_open_file_edit(this);" @endif>
+    <td class="edit_ctrl @if(!isset($cms_open)) open_file_edit @endif" @if(isset($cms_open)) onclick="Leon_open_file_edit(this);" @endif>
         <div class="tableMaintitle">
             <div class="cms_open_file_edit file-edit" data-id="{{$row['id']}}">
-                <span class="fa fa-pencil"></span>
-                <span class="edit-txt">編輯</span>
+                {{-- wade:delete --}}
+                {{-- <span class="fa fa-pencil"></span>
+                <span class="edit-txt">編輯</span> --}}
+
+                {{-- wade:add --}}
+                <span class="fa fa-pencil-square-o edit-txt"></span>
             </div>
         </div>
     </td>

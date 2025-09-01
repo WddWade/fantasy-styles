@@ -3439,6 +3439,7 @@ body.isContent .backEnd_quill {
   transition: 0.5s;
   position: sticky;
   top: 0;
+  z-index: 1;
 }
 .content-wrap .content-head .content-head-container {
   display: -webkit-box;
@@ -10955,6 +10956,7 @@ textarea:focus::-webkit-input-placeholder,
   top: 0;
   right: auto;
   left: 0;
+  pointer-events: auto;
 }
 .pace.pace-inactive {
   display: none;
