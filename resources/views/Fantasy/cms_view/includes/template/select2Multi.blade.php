@@ -1,21 +1,23 @@
 <li class="inventory {!! $sontable ? '' : 'row_style' !!}">
-    @if($batch || $search)
-        <div>
-            <div class="radioSmall sortStatusSet" style="padding: 0px !important;">
-                <div style="display:flex; align-items: center; padding: 8px">
-                    <div class="ios_switch radio_btn_switch">
-                        <input name="{{ 'batch_' . $name }}" type="text" value="">
-                        <div class="box">
-                            <span class="ball"></span>
+    {!! $sontable ? '' : ' <div class="title">' !!}
+    <div class="subtitle">
+        @if ($batch || $search)
+            <div>
+                <div class="radioSmall sortStatusSet" style="padding: 0px !important;">
+                    <div style="display:flex; align-items: center; padding: 8px">
+                        <div class="ios_switch radio_btn_switch">
+                            <input name="{{ 'batch_' . $name }}" type="text" value="">
+                            <div class="box">
+                                <span class="ball"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    @endif
-    {!! $sontable ? '' : ' <div class="title">' !!}
-        <p class="subtitle">{{ $title }}</p>
-        {!! $sontable ? '' : '</div>' !!}
+        @endif
+        <div>{{ $title }}</div>
+    </div>
+    {!! $sontable ? '' : '</div>' !!}
     <div class="inner">
         @if($isAll)
             <a class="__multiple2all" href="javascript:void(0)" style="padding: 6px 8px;margin-bottom: 10px;display: inline-flex;align-items:center;background-color: #434343;color: #fff;">

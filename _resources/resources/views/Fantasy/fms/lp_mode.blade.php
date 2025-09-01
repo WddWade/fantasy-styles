@@ -56,7 +56,7 @@
         <tbody class="multi_shot">
             @foreach($folder as $key => $row)
             <tr class="tbody_tick fms_list_folder_btn {{ $folderLevel }}" data-id="{{ $row['id'] }}" style="cursor: pointer;">
-                <td class="text-center w_Check">
+                <td class="w_Check">
                     <div class="tableContent">
                         <label class="select-item">
                             <input type="checkbox" class="input_number fms_lbox_file_select_checkbox" data-type="folder" data-level="{{ $folderLevel }}" data-id="{{ $row['id'] }}" data-title="{{ $row['title'] }}">
@@ -71,29 +71,29 @@
                     </div>
                 </td>
 
-                <td class="text-center">
+                <td>
                     <div class="tableContent">Folder</div>
                 </td>
-                <td class="text-center">
+                <td>
                     <div class="tableContent">資料夾</div>
                 </td>
-                <td class="text-center">
+                <td>
                     <div class="tableContent"></div>
                 </td>
-                <td class="text-center">
+                <td>
                     <div class="tableContent"></div>
                 </td>
-                <td class="text-center">
+                <td>
                     <div class="tableContent">{{ $row['updated_at'] }}</div>
                 </td>
-                <td class="text-center">
+                <td>
                     <div class="tableContent">{{$row['create_user']['name'] ?? ''}}</div>
                 </td>
             </tr>
             @endforeach
             @foreach($file as $key => $row)
             <tr class="tbody_tick fms_list Leon-f Leon-in-f-{{$row['zero_id']}}-{{$row['first_id']}}-{{$row['second_id']}}-{{$row['third_id']}}" style="cursor: pointer;">
-                <td class="text-center w_Check">
+                <td class="w_Check">
                     <div class="tableContent">
                         <label class="select-item">
                             <input type="checkbox" class="input_number fms_lbox_file_select_checkbox" data-id="{{ $row['id'] }}" data-src="{{ $row['real_route'] }}" data-title="{{ $row['title'].".".$row['type'] }}" data-type="{{ $row['type'] }}" data-key="{{ $row['file_key'] }}">
@@ -108,22 +108,22 @@
                     </div>
                 </td>
 
-                <td class="text-center">
+                <td>
                     <div class="tableContent">{{ $row['type'] }}</div>
                 </td>
-                <td class="text-center">
+                <td>
                     <div class="tableContent">{{ $row['file_type']['title'] }}</div>
                 </td>
-                <td class="text-center">
+                <td>
                     <div class="tableContent">{{ $row['_this_size'] }}</div>
                 </td>
-                <td class="text-center">
+                <td>
                     <div class="tableContent">{{ $row['resolution'] }}</div>
                 </td>
-                <td class="text-center">
+                <td>
                     <div class="tableContent">{{ $row['updated_at'] }}</div>
                 </td>
-                <td class="text-center">
+                <td>
                     <div class="tableContent">-</div>
                 </td>
             </tr>

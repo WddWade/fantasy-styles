@@ -3,12 +3,12 @@
   --ag-row-height: 40px;
   --ag-selected-row-background-color: rgb(240 240 249);
   --ag-row-hover-color: rgb(245 245 245);
-  height: calc(100vh - 83px);
+  height: calc(100vh - 84px);
   padding-top: 0px;
   pointer-events: auto;
 }
 .data-aggrid.defaultPaging {
-  height: calc(100vh - 123px);
+  height: calc(100vh - 124px);
 }
 .data-aggrid .ag-center-aligned-header .ag-header-cell-label {
   -webkit-box-pack: center;
@@ -22,6 +22,10 @@
 }
 .data-aggrid .ag-checkbox-input-wrapper::after {
   font-size: 1.3rem !important;
+}
+
+.ag-header-row {
+  font-weight: 500 !important;
 }
 
 .ag-cell-focus,

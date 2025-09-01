@@ -14,10 +14,13 @@
   .content-head {
     width: 100%;
     background-color: #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
     display: flex;
     flex-direction: column;
     gap: 1px 0;
     transition: 0.5s;
+    position: sticky;
+    top: 0;
     .content-head-container {
       display: flex;
       flex-direction: row;
@@ -205,15 +208,15 @@
 .ams_theme {
   .content-wrap {
     .content-head {
-      width: 100%;
-      background-color: #e4e4e4;
+      // width: 100%;
+      // background-color: #e4e4e4;
       border-bottom: 1px solid #e4e4e4;
-      display: flex;
-      flex-direction: column;
-      gap: 1px 0;
-      transition: 0.5s;
-      position: sticky;
-      top: 0;
+      // display: flex;
+      // flex-direction: column;
+      // gap: 1px 0;
+      // transition: 0.5s;
+      // position: sticky;
+      // top: 0;
       .content-head-container {
       }
       .content-title {

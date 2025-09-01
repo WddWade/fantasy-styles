@@ -1,6 +1,6 @@
                     @foreach($data as $key => $row)
                     <tr>
-                        <td class="text-center w_Check">
+                        <td class="w_Check">
                             <div class="tableContent">
                                 <label class="select-item">
                                     <input type="checkbox" data-id="1">

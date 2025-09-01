@@ -25,7 +25,7 @@
         <tr class="tbody_tick fms_folder fms_folder_{{ $val['parent_id'] }} {{ $val['use_auth'] }} @if ($val['is_delete']) is_delete @endif"
             style="cursor: pointer;display: none;" data-folder-id="{{ $val['parent_id'] }}">
             @if ($val['use_auth'] == 'can_use' && !$cms_open)
-                <td class="text-center w_Check">
+                <td class="w_Check">
                     <div class="tableContent">
                         <label class="select-item">
                             <input type="checkbox" class="input_number fms_lbox_file_select_checkbox" data-type="folder"
@@ -35,7 +35,7 @@
                     </div>
                 </td>
             @else
-                <td class="text-center w_Check"></td>
+                <td class="w_Check"></td>
             @endif
             <td class="tool_ctrl">
                 <div class="tableMaintitle fms_folder_on_list" data-id="{{ $val['id'] }}" data-parent-id="{{ $val['parent_id'] }}">
@@ -49,25 +49,25 @@
                     </div>
                 </div>
             </td>
-            <td class="text-center">
+            <td>
                 <div class="tableContent"><div class="folder_edit_rank" contenteditable="true">{{$val['w_rank']}}</div></div>
             </td>
-            <td class="text-center">
+            <td>
                 <div class="tableContent">Folder</div>
             </td>
-            <td class="text-center">
+            <td>
                 <div class="tableContent">資料夾</div>
             </td>
-            <td class="text-center">
+            <td>
                 <div class="tableContent"></div>
             </td>
-            <td class="text-center">
+            <td>
                 <div class="tableContent"></div>
             </td>
-            <td class="text-center">
+            <td>
                 <div class="tableContent">{{ $val['updated_at'] }}</div>
             </td>
-            <td class="text-center">
+            <td>
                 <div class="tableContent">{{ $val['create_user']['name'] }}</div>
             </td>
         </tr>

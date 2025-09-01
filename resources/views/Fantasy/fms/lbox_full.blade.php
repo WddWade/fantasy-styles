@@ -56,11 +56,19 @@
                 <!-- no_left 是針對這個table沒有 fixedColumns:left 的時候的checkbox數字順序計算 -->
                 <div class="container-fluid bg-white content-scrollbox">
 
-                    <div class="table-box content-wrap card card-transparent no_left" data-tableID="fms_table" style="position: relative;">
+                    {{-- wade:add --}}
+                    <div class="table-box content-wrap" data-tableID="fms_table" style="position: relative;">
                         <div class="content-head cms-index_table">
-                            <h1 class="select_folder_name">根目錄</h1>
-                            <div class="content-nav">
-                                <div class="navleft">
+                            <div class="content-head-container">
+                                <div class="content-title">
+                                    <div class="switch-menu navigation-toggle">
+                                        <span class="bar"></span>
+                                        <span class="bar"></span>
+                                        <span class="bar"></span>
+                                    </div>
+                                    <h1 class="select_folder_name">根目錄</h1>
+                                </div>
+                                <div class="content-nav">
                                     <div class="btn-item leon-trash-show" style="display: none;">
                                         <a href="javascript:;" class="fms_recovery_data" data-model="All_colunm">
                                             <span class="fms-upload"></span>
@@ -99,17 +107,19 @@
                                         </a>
                                     </div>
                                     @endif
-                                </div>
-                                <div class="navright leon-trash-hide">
-                                    <a href="javascript:void(0)" class="btn-item searchbar" data-quick="textInput">
-                                        <span class="icon-search LeonSearchBtn"></span>
-                                        <input type="text" class="search-data LeonSearchInput">
-                                        <span class="text LeonSearchBtn">SEARCH</span>
-                                    </a>
+                                    <div class="search leon-trash-hide">
+                                        <a href="javascript:void(0)" class="btn-item searchbar" data-quick="textInput">
+                                            <span class="icon-search LeonSearchBtn"></span>
+                                            <input type="text" class="search-data LeonSearchInput">
+                                            <span class="text LeonSearchBtn">SEARCH</span>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="content-body card-block table_mode lp_mode open">
+
+                        {{-- wade:add --}}
+                        <div class="content-body table_mode lp_mode open">
                             <!--view MODE:List + Pic-->
                             <div class="datatable">
                                 <table id="LeonSortTable" class="tables">
@@ -124,63 +134,67 @@
                                                     </div>
                                                 </div>
                                             </th>
-                                            {{-- <th class=" " style="width: 100px;">
+                                            {{-- <th style="width: 100px;">
                                                 <div class="fake-th ">
                                                     <span data-column="w_title"></span>
                                                 </div>
                                             </th> --}}
-                                            <th class=" ">
+
+                                            {{-- wade:add --}}                                            
+                                            <th>
                                                 <div class="fake-th ">
-                                                    <span class="sort theadSortBtn" data-column="1" data-sort="0">資料夾/檔案名稱</span>
+                                                    <span class="sort theadSortBtn" data-column="99" data-sort="0">Edit</span>
                                                 </div>
                                             </th>
-                                            <th class=" " style="width: 120px;">
-                                                <div class="fake-th" style="width: 120px;">
-                                                    <span class="" data-column="8" data-sort="0">順序/使用</span>
+                                            <th>
+                                                <div class="fake-th ">
+                                                    <span class="sort theadSortBtn" data-column="1" data-sort="0">Folder/File Name</span>
                                                 </div>
                                             </th>
-                                            <th class=" " style="width: 120px;">
-                                                <div class="fake-th" style="width: 120px;">
-                                                    <span class="sort theadSortBtn" data-column="2" data-sort="0">檔案格式</span>
+                                            <th>
+                                                <div class="fake-th">
+                                                    <span class="" data-column="8" data-sort="0">Order/Usage</span>
                                                 </div>
                                             </th>
-                                            <th class=" " style="width: 120px;">
-                                                <div class="fake-th" style="width: 120px;">
-                                                    <span class="" data-column="3" data-sort="0">檔案類型</span>
+                                            <th>
+                                                <div class="fake-th">
+                                                    <span class="sort theadSortBtn" data-column="2" data-sort="0">File Format</span>
                                                 </div>
                                             </th>
-                                            <th class=" " style="width: 120px;">
-                                                <div class="fake-th" style="width: 120px;">
-                                                    <span class="sort theadSortBtn" data-column="4" data-sort="0">檔案容量</span>
+                                            <th>
+                                                <div class="fake-th">
+                                                    <span class="" data-column="3" data-sort="0">File Type</span>
                                                 </div>
                                             </th>
-                                            <th class=" " style="width: 120px;">
-                                                <div class="fake-th" style="width: 120px;">
-                                                    <span class="sort theadSortBtn" data-column="5" data-sort="0">檔案尺寸</span>
+                                            <th>
+                                                <div class="fake-th">
+                                                    <span class="sort theadSortBtn" data-column="4" data-sort="0">File Size</span>
                                                 </div>
                                             </th>
-                                            <th class=" " style="width: 120px;">
-                                                <div class="fake-th" style="width: 120px;">
-                                                    <span class="sort theadSortBtn" data-column="6" data-sort="0">最後異動時間</span>
+                                            <th>
+                                                <div class="fake-th">
+                                                    <span class="sort theadSortBtn" data-column="5" data-sort="0">Dimensions</span>
                                                 </div>
                                             </th>
-                                            <th class=" " style="width: 120px;">
-                                                <div class="fake-th" style="width: 120px;">
-                                                    <span class="" data-column="7" data-sort="0">擁有者</span>
+                                            <th>
+                                                <div class="fake-th">
+                                                    <span class="sort theadSortBtn" data-column="6" data-sort="0">Last Modified</span>
+                                                </div>
+                                            </th>
+                                            <th>
+                                                <div class="fake-th">
+                                                    <span class="" data-column="7" data-sort="0">Owner</span>
                                                 </div>
                                             </th>
                                         </tr>
                                     </thead>
                                     <tbody class="multi_shot Leon_fms_table">
                                         <tr class="tbody_tick Leon_folder_back" style="cursor: pointer;display: none;" data-folder-id="0">
-                                            <td class="text-center w_Check">
+                                            <td class="w_Check">
                                                 <div class="tableContent">
 
                                                 </div>
                                             </td>
-                                            {{-- <td class="text-center">
-                                                <div class="tableContent"></div>
-                                            </td> --}}
                                             <td class="tool_ctrl fms_folder_on_list fms_folder_back" data-id="0" data-parent_id="0">
                                                 <div class="tableMaintitle">
                                                     <div class="title-img rwdhide">
@@ -189,25 +203,28 @@
                                                     <span class="title-name bold">BACK 上一層資料夾</span>
                                                 </div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent"></div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent"></div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent"></div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent"></div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent"></div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent"></div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
+                                                <div class="tableContent"></div>
+                                            </td>
+                                            <td>
                                                 <div class="tableContent">-</div>
                                             </td>
                                         </tr>
@@ -215,7 +232,7 @@
                                         @foreach($folderAll as $key => $row)
                                         <tr class="tbody_tick fms_folder fms_folder_{{$row['parent_id']}} {{ $row['use_auth'] }} @if($row['is_delete']) is_delete @endif" style="cursor: pointer;display: none;" data-folder-id="{{$row['parent_id']}}">
                                             @if($row['use_auth'] == 'can_use')
-                                            <td class="text-center w_Check">
+                                            <td class="w_Check">
                                                 <div class="tableContent">
                                                     <label class="select-item">
                                                         <input type="checkbox" class="input_number fms_lbox_file_select_checkbox" data-type="folder" data-id="{{ $row['id'] }}" data-title="{{ $row['title'] }}">
@@ -224,39 +241,50 @@
                                                 </div>
                                             </td>
                                             @else
-                                            <td class="text-center w_Check"></td>
+                                            <td class="w_Check"></td>
                                             @endif
+
+                                            {{-- wade:add --}}                                            
                                             <td class="tool_ctrl">
                                                 <div class="tableMaintitle fms_folder_on_list @if($row['is_delete']) is_delete @endif" data-id="{{$row['id']}}" data-parent-id="{{$row['parent_id']}}">
-                                                    <div class="title-img rwdhide">
-                                                        <img src="/vender/assets/img/folder.png" alt="">
-                                                    </div>
-                                                    <span class="title-name bold">{{ $row['title'] }}</span>
                                                     <div class="fms_bulider_new edit file-edit" data-id="{{$row['id']}}">
                                                         <span class="fa fa-pencil"></span>
                                                         <span class="edit-txt">編輯</span>
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="text-center">
+
+                                            <td class="tool_ctrl">
+                                                <div class="tableMaintitle fms_folder_on_list @if($row['is_delete']) is_delete @endif" data-id="{{$row['id']}}" data-parent-id="{{$row['parent_id']}}">
+                                                    <div class="title-img rwdhide">
+                                                        <img src="/vender/assets/img/folder.png" alt="">
+                                                    </div>
+                                                    <span class="title-name bold">{{ $row['title'] }}</span>
+                                                    {{-- <div class="fms_bulider_new edit file-edit" data-id="{{$row['id']}}">
+                                                        <span class="fa fa-pencil"></span>
+                                                        <span class="edit-txt">編輯</span>
+                                                    </div> --}}
+                                                </div>
+                                            </td>
+                                            <td>
                                                 <div class="tableContent"><div class="folder_edit_rank" contenteditable="true">{{$row['w_rank']}}</div></div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent">Folder</div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent">資料夾</div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent"></div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent"></div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent">{{ $row['updated_at'] }}</div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent">{{$row['create_user']['name'] ?? ''}}</div>
                                             </td>
                                         </tr>
@@ -267,7 +295,7 @@
                                         {{-- @dd($file) --}}
                                         @foreach($file as $key=> $row)
                                         <tr class="tbody_tick fms_list fms_list_{{$row['folder_id']}} can_use @if($row['is_delete']) is_delete @endif" style="cursor: pointer;display: none;" data-folder-id="{{$row['folder_id']}}">
-                                            <td class="text-center w_Check">
+                                            <td class="w_Check">
                                                 <div class="tableContent">
                                                     <label class="select-item">
                                                         <input type="checkbox" class="input_number fms_lbox_file_select_checkbox" data-use-count="{{$row['fms_file_use_count']}}" data-id="{{ $row['id'] }}" data-file-key="{{ $row['file_key']}}" data-src="{{ $row['real_route'] }}" data-title="{{ $row['title'].".".$row['type'] }}" data-type="{{ $row['type'] }}" data-key="{{ $row['file_key'] }}">
@@ -275,6 +303,28 @@
                                                     </label>
                                                 </div>
                                             </td>
+
+                                            {{-- wade:add --}}
+                                            <td class="tool_ctrl @if(!isset($cms_open)) open_file_edit @endif" @if(isset($cms_open)) onclick="Leon_open_file_edit(this);" @endif>
+                                                <div class="tableMaintitle">
+                                                    @php
+                                                    $ext = strtolower(pathinfo($row['real_m_route'],PATHINFO_EXTENSION));
+                                                    $filepath = $row['real_m_route'];
+                                                    $NotImg = false;
+
+                                                    if(in_array($ext,['pdf','doc','docx','ppt','pptx','xls','xlsx','txt','zip','rar','video','mpg','mpeg','avi','mp4','webm'])){
+                                                    $filepath = '/vender/assets/img/icon/'.$ext.'.png';
+                                                    $NotImg = true;
+                                                    }
+                                                    @endphp
+                                                   
+                                                    <div class="cms_open_file_edit file-edit" data-id="{{$row['id']}}">
+                                                        <span class="fa fa-pencil"></span>
+                                                        <span class="edit-txt">編輯</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+
                                             <td class="tool_ctrl @if(!isset($cms_open)) open_file_edit @endif" @if(isset($cms_open)) onclick="Leon_open_file_edit(this);" @endif>
                                                 <div class="tableMaintitle">
                                                     @php
@@ -297,27 +347,27 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent"><a class="fileUse" data-key="{{$row['file_key']}}">{{$row['fms_file_use_count']}}</a></div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent">{{ $row['type'] }}</div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent">檔案</div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent">{{ formatBytes($row['size']) }}</div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent">
                                                     {{ (!empty($row['img_w'])) ? $row['img_w'] .' x '.$row['img_h'] : '' }}
                                                 </div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent">{{ $row['updated_at'] }}</div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent">{{ isset($row['create_user']) ? $row['create_user']['name'] : 'N/A' }} </div>
                                             </td>
                                         </tr>

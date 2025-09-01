@@ -244,7 +244,7 @@
             <tbody>
                 @foreach ($data as $key => $value)
                 <tr>
-                    <td class="text-center w_Check">
+                    <td class="w_Check">
                         <div class="tableContent">
                             <label class="select-item">
                                 <input type="checkbox" data-id="{{$value['id']}}">

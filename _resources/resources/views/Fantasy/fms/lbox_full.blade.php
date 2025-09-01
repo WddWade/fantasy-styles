@@ -173,12 +173,12 @@
                                     </thead>
                                     <tbody class="multi_shot Leon_fms_table">
                                         <tr class="tbody_tick Leon_folder_back" style="cursor: pointer;display: none;" data-folder-id="0">
-                                            <td class="text-center w_Check">
+                                            <td class="w_Check">
                                                 <div class="tableContent">
 
                                                 </div>
                                             </td>
-                                            {{-- <td class="text-center">
+                                            {{-- <td>
                                                 <div class="tableContent"></div>
                                             </td> --}}
                                             <td class="tool_ctrl fms_folder_on_list fms_folder_back" data-id="0" data-parent_id="0">
@@ -189,25 +189,25 @@
                                                     <span class="title-name bold">BACK 上一層資料夾</span>
                                                 </div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent"></div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent"></div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent"></div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent"></div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent"></div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent"></div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent">-</div>
                                             </td>
                                         </tr>
@@ -215,7 +215,7 @@
                                         @foreach($folderAll as $key => $row)
                                         <tr class="tbody_tick fms_folder fms_folder_{{$row['parent_id']}} {{ $row['use_auth'] }} @if($row['is_delete']) is_delete @endif" style="cursor: pointer;display: none;" data-folder-id="{{$row['parent_id']}}">
                                             @if($row['use_auth'] == 'can_use')
-                                            <td class="text-center w_Check">
+                                            <td class="w_Check">
                                                 <div class="tableContent">
                                                     <label class="select-item">
                                                         <input type="checkbox" class="input_number fms_lbox_file_select_checkbox" data-type="folder" data-id="{{ $row['id'] }}" data-title="{{ $row['title'] }}">
@@ -224,7 +224,7 @@
                                                 </div>
                                             </td>
                                             @else
-                                            <td class="text-center w_Check"></td>
+                                            <td class="w_Check"></td>
                                             @endif
                                             <td class="tool_ctrl">
                                                 <div class="tableMaintitle fms_folder_on_list @if($row['is_delete']) is_delete @endif" data-id="{{$row['id']}}" data-parent-id="{{$row['parent_id']}}">
@@ -238,25 +238,25 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent"><div class="folder_edit_rank" contenteditable="true">{{$row['w_rank']}}</div></div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent">Folder</div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent">資料夾</div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent"></div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent"></div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent">{{ $row['updated_at'] }}</div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent">{{$row['create_user']['name'] ?? ''}}</div>
                                             </td>
                                         </tr>
@@ -267,7 +267,7 @@
                                         {{-- @dd($file) --}}
                                         @foreach($file as $key=> $row)
                                         <tr class="tbody_tick fms_list fms_list_{{$row['folder_id']}} can_use @if($row['is_delete']) is_delete @endif" style="cursor: pointer;display: none;" data-folder-id="{{$row['folder_id']}}">
-                                            <td class="text-center w_Check">
+                                            <td class="w_Check">
                                                 <div class="tableContent">
                                                     <label class="select-item">
                                                         <input type="checkbox" class="input_number fms_lbox_file_select_checkbox" data-use-count="{{$row['fms_file_use_count']}}" data-id="{{ $row['id'] }}" data-file-key="{{ $row['file_key']}}" data-src="{{ $row['real_route'] }}" data-title="{{ $row['title'].".".$row['type'] }}" data-type="{{ $row['type'] }}" data-key="{{ $row['file_key'] }}">
@@ -297,27 +297,27 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent"><a class="fileUse" data-key="{{$row['file_key']}}">{{$row['fms_file_use_count']}}</a></div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent">{{ $row['type'] }}</div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent">檔案</div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent">{{ formatBytes($row['size']) }}</div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent">
                                                     {{ (!empty($row['img_w'])) ? $row['img_w'] .' x '.$row['img_h'] : '' }}
                                                 </div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent">{{ $row['updated_at'] }}</div>
                                             </td>
-                                            <td class="text-center">
+                                            <td>
                                                 <div class="tableContent">{{ isset($row['create_user']) ? $row['create_user']['name'] : 'N/A' }} </div>
                                             </td>
                                         </tr>

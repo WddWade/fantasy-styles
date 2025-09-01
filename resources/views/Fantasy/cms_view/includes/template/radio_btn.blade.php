@@ -1,22 +1,23 @@
 <li class="inventory sortStatusSet">
-    @if($batch || $search)
-        <div>
-            <div class="radioSmall sortStatusSet" style="padding: 0px !important;">
-                <div style="display:flex; align-items: center; padding: 8px">
-                    <div class="ios_switch radio_btn_switch">
-                        <input name="{{ 'batch_' . $name }}" type="text" value="">
-                        <div class="box">
-                            <span class="ball"></span>
+    {!! $sontable === false ? ' <div class="title">' : '' !!}
+    <div class="subtitle">
+        @if ($batch || $search)
+            <div>
+                <div class="radioSmall sortStatusSet" style="padding: 0px !important;">
+                    <div style="display:flex; align-items: center; padding: 8px">
+                        <div class="ios_switch radio_btn_switch">
+                            <input name="{{ 'batch_' . $name }}" type="text" value="">
+                            <div class="box">
+                                <span class="ball"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    @endif
-
-    {!! $sontable === false ? ' <div class="title">' : '' !!}
-        <p class="subtitle">{{ $title }}</p>
-        {!! $sontable === false ? '</div>' : '' !!}
+        @endif
+        <div>{{ $title }}</div>
+    </div>
+    {!! $sontable === false ? '</div>' : '' !!}
 
     {!! $sontable === false ? '<div class="inner">' : '' !!}
 
