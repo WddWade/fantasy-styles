@@ -3668,6 +3668,7 @@ body.isContent .backEnd_quill {
 }
 .datatable .tables th,
 .datatable .tables td {
+  width: 100px;
   padding-block: 8px;
   padding-inline: 18px;
 }
@@ -3732,10 +3733,16 @@ body.isContent .backEnd_quill {
   height: 13px;
 }
 .datatable .tables .main_field {
-  min-width: 260px;
+  width: 260px;
 }
-.datatable .tables .order_field {
-  min-width: 30px;
+.datatable .tables .dimension_field {
+  width: 150px;
+}
+.datatable .tables .last_modified_field {
+  width: 200px;
+}
+.datatable .tables .owner_field {
+  width: 120px;
 }
 .datatable .tables .select-item {
   width: 13px;

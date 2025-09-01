@@ -340,6 +340,7 @@
 
     th,
     td {
+      width: 100px;
       padding-block: 8px;
       padding-inline: 18px;
       &:first-child {
@@ -398,11 +399,19 @@
     }
 
     .main_field {
-      min-width: 180px;
+      width: 260px;
     }
 
-    .order_field {
-      min-width: 70px;
+    .dimension_field {
+      width: 150px;
+    }
+
+    .last_modified_field {
+      width: 200px;
+    }
+
+    .owner_field {
+      width: 120px;
     }
 
     .select-item {
