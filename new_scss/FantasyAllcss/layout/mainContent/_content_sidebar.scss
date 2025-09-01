@@ -9,21 +9,21 @@
     }
   }
 
-  &:not(.content-sidebar-open) {
-    // .content-wrap {
-    //   .content-head {
-    //     width: calc(100% - 172px);
-    //   }
-    // }
+  // &:not(.content-sidebar-open) {
+  // .content-wrap {
+  //   .content-head {
+  //     width: calc(100% - 172px);
+  //   }
+  // }
 
-    .datatable {
-      .tables {
-        .fake-thead {
-          width: calc(100% - 172px);
-        }
-      }
-    }
-  }
+  // .datatable {
+  //   .tables {
+  //     .fake-thead {
+  //       width: calc(100% - 172px);
+  //     }
+  //   }
+  // }
+  // }
   .content {
     .content-sidebar {
       width: 220px;

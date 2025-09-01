@@ -26,6 +26,7 @@
 
 .ag-header-row {
   font-weight: 500 !important;
+  color: #000 !important;
 }
 
 .ag-cell-focus,
@@ -81,6 +82,7 @@
 }
 .ag-header * {
   font-size: 1.2rem !important;
+  font-weight: 500;
 }
 
 .ag-pinned-left-header {

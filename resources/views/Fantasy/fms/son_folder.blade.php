@@ -49,37 +49,38 @@
                     </div>
                 </div>
             </td>
-            <td class="tool_ctrl">
+            <td class="main_field">
                 <div class="tableMaintitle fms_folder_on_list" data-id="{{ $val['id'] }}" data-parent-id="{{ $val['parent_id'] }}">
                     <div class="title-img rwdhide">
                         <img src="/vender/assets/img/folder.png" alt="">
                     </div>
                     <span class="title-name bold">{{ $val['title'] }}</span>
+                    {{-- wade:delete --}}
                     {{-- <div class="fms_bulider_new edit file-edit" data-id="{{ $val['id'] }}">
                         <span class="fa fa-pencil"></span>
                         <span class="edit-txt">編輯</span>
                     </div> --}}
                 </div>
             </td>
-            <td>
+            <td class="order_field">
                 <div class="tableContent"><div class="folder_edit_rank" contenteditable="true">{{$val['w_rank']}}</div></div>
             </td>
-            <td>
+            <td class="format_field">
                 <div class="tableContent">Folder</div>
             </td>
-            <td>
+            <td class="type_field">
                 <div class="tableContent">資料夾</div>
             </td>
-            <td>
+            <td class="size_field">
                 <div class="tableContent"></div>
             </td>
-            <td>
+            <td class="dimension_field">
                 <div class="tableContent"></div>
             </td>
-            <td>
+            <td class="last_modified_field">
                 <div class="tableContent">{{ $val['updated_at'] }}</div>
             </td>
-            <td>
+            <td class="owner_field">
                 <div class="tableContent">{{ $val['create_user']['name'] }}</div>
             </td>
         </tr>

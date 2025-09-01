@@ -129,6 +129,8 @@
                                                 <div class="fake-thead">
                                                     <div class="fake-th first">
                                                         <label class="select-item">
+                                                            {{-- wade:add --}}
+                                                            <input type="checkbox">
                                                             <span class="check-circle icon-check Leon-fms-check-all"></span>
                                                         </label>
                                                     </div>
@@ -141,47 +143,47 @@
                                             </th> --}}
 
                                             {{-- wade:add --}}                                            
-                                            <th>
+                                            <th class="edit_ctrl">
                                                 <div class="fake-th ">
                                                     <span class="sort theadSortBtn" data-column="99" data-sort="0">Edit</span>
                                                 </div>
                                             </th>
-                                            <th>
+                                            <th class="main_field">
                                                 <div class="fake-th ">
                                                     <span class="sort theadSortBtn" data-column="1" data-sort="0">Folder/File Name</span>
                                                 </div>
                                             </th>
-                                            <th>
+                                            <th class="order_field">
                                                 <div class="fake-th">
-                                                    <span class="" data-column="8" data-sort="0">Order/Usage</span>
+                                                    <span class="" data-column="8" data-sort="0">Order</span>
                                                 </div>
                                             </th>
-                                            <th>
+                                            <th class="format_field">
                                                 <div class="fake-th">
-                                                    <span class="sort theadSortBtn" data-column="2" data-sort="0">File Format</span>
+                                                    <span class="sort theadSortBtn" data-column="2" data-sort="0">Format</span>
                                                 </div>
                                             </th>
-                                            <th>
+                                            <th class="type_field">
                                                 <div class="fake-th">
-                                                    <span class="" data-column="3" data-sort="0">File Type</span>
+                                                    <span class="" data-column="3" data-sort="0">Type</span>
                                                 </div>
                                             </th>
-                                            <th>
+                                            <th class="size_field">
                                                 <div class="fake-th">
-                                                    <span class="sort theadSortBtn" data-column="4" data-sort="0">File Size</span>
+                                                    <span class="sort theadSortBtn" data-column="4" data-sort="0">Size</span>
                                                 </div>
                                             </th>
-                                            <th>
+                                            <th class="dimension_field">
                                                 <div class="fake-th">
                                                     <span class="sort theadSortBtn" data-column="5" data-sort="0">Dimensions</span>
                                                 </div>
                                             </th>
-                                            <th>
+                                            <th class="last_modified_field">
                                                 <div class="fake-th">
                                                     <span class="sort theadSortBtn" data-column="6" data-sort="0">Last Modified</span>
                                                 </div>
                                             </th>
-                                            <th>
+                                            <th class="owner_field">
                                                 <div class="fake-th">
                                                     <span class="" data-column="7" data-sort="0">Owner</span>
                                                 </div>
@@ -197,32 +199,32 @@
                                             </td>
                                             <td class="back_ctrl fms_folder_on_list fms_folder_back" data-id="0" data-parent_id="0">
                                                 <div class="back_controller">
-                                                    <div class="fms-back" style="font-size: 17px;color: #735ebc"></div>
-                                                    <span>BackK to Previous Folder</span>
+                                                    <div class="fms-back"></div>
+                                                    <span>Back to Previous</span>
                                                 </div>
                                             </td>
-                                            <td>
+                                            <td class="main_field">
                                                 <div class="tableContent"></div>
                                             </td>
-                                            <td>
+                                            <td class="order_field">
                                                 <div class="tableContent"></div>
                                             </td>
-                                            <td>
+                                            <td class="format_field">
                                                 <div class="tableContent"></div>
                                             </td>
-                                            <td>
+                                            <td class="type_field">
                                                 <div class="tableContent"></div>
                                             </td>
-                                            <td>
+                                            <td class="size_field">
                                                 <div class="tableContent"></div>
                                             </td>
-                                            <td>
+                                            <td class="dimension_field">
                                                 <div class="tableContent"></div>
                                             </td>
-                                            <td>
+                                            <td class="last_modified_field">
                                                 <div class="tableContent"></div>
                                             </td>
-                                            <td>
+                                            <td class="owner_field">
                                                 <div class="tableContent">-</div>
                                             </td>
                                         </tr>
@@ -256,38 +258,39 @@
                                                 </div>
                                             </td>
 
-                                            <td class="tool_ctrl">
+                                            <td class="main_field">
                                                 <div class="tableMaintitle fms_folder_on_list @if($row['is_delete']) is_delete @endif" data-id="{{$row['id']}}" data-parent-id="{{$row['parent_id']}}">
                                                     <div class="title-img rwdhide">
                                                         <img src="/vender/assets/img/folder.png" alt="">
                                                     </div>
                                                     <span class="title-name bold">{{ $row['title'] }}</span>
+                                                    {{-- wade:delete --}}
                                                     {{-- <div class="fms_bulider_new edit file-edit" data-id="{{$row['id']}}">
                                                         <span class="fa fa-pencil"></span>
                                                         <span class="edit-txt">編輯</span>
                                                     </div> --}}
                                                 </div>
                                             </td>
-                                            <td>
+                                            <td class="order_field">
                                                 <div class="tableContent"><div class="folder_edit_rank" contenteditable="true">{{$row['w_rank']}}</div></div>
                                             </td>
-                                            <td>
+                                            <td class="format_field">
                                                 <div class="tableContent">Folder</div>
                                             </td>
-                                            <td>
+                                            <td class="type_field">
                                                 <div class="tableContent">資料夾</div>
                                             </td>
-                                            <td>
+                                            <td class="size_field">
                                                 <div class="tableContent"></div>
                                             </td>
-                                            <td>
+                                            <td class="dimension_field">
                                                 <div class="tableContent"></div>
                                             </td>
-                                            <td>
+                                            <td class="last_modified_field">
                                                 <div class="tableContent">{{ $row['updated_at'] }}</div>
                                             </td>
-                                            <td>
-                                                <div class="tableContent">{{$row['create_user']['name'] ?? ''}}</div>
+                                            <td class="owner_field">
+                                                <div class="tableContent">{{ $row['create_user']['name'] }}</div>
                                             </td>
                                         </tr>
                                         @if(!empty($row['son_folder_withSession']))
