@@ -3,7 +3,7 @@
 /* content-scrollbox : wade */
 .inner-content {
   .content-scrollbox {
-    height: calc(100vh - 110px);
+    height: calc(100vh - 40px);
   }
 }
 
@@ -200,10 +200,6 @@
       }
     }
   }
-
-  .content-body {
-    padding: 134px 0 60px 0;
-  }
 }
 
 .ams_theme {
@@ -211,11 +207,13 @@
     .content-head {
       width: 100%;
       background-color: #e4e4e4;
+      border-bottom: 1px solid #e4e4e4;
       display: flex;
       flex-direction: column;
       gap: 1px 0;
-      -webkit-transition: 0.5s;
       transition: 0.5s;
+      position: sticky;
+      top: 0;
       .content-head-container {
       }
       .content-title {
@@ -224,6 +222,14 @@
       }
     }
     .content-body {
+      .datatable {
+        // .thead {
+        //   background-color: #fff;
+        //   position: sticky;
+        //   top: 43px;
+        //   z-index: 2;
+        // }
+      }
     }
   }
 }

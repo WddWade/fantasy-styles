@@ -73,9 +73,9 @@
                         <div class="content-body">
                             <div class="datatable">
                                 <table class="tables">
-                                    <thead style="border-bottom: 1px solid #000;">
+                                    <thead>
                                         <tr>
-                                            <th class="w_TableMaintitle" style="padding: 3px 20px 0 20px;">
+                                            <th class="w_TableMaintitle">
                                                 <div class="fake-thead fake-thead-ams">
                                                     <div class="fake-th first">
                                                     </div>

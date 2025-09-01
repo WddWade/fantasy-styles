@@ -10,10 +10,6 @@
 .data-aggrid.defaultPaging {
   height: calc(100vh - 123px);
 }
-.data-aggrid .ag-header-row,
-.data-aggrid .ag-pinned-left-header {
-  background-color: #f5f5f5;
-}
 .data-aggrid .ag-center-aligned-header .ag-header-cell-label {
   -webkit-box-pack: center;
       -ms-flex-pack: center;

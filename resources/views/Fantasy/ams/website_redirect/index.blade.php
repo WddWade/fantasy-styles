@@ -72,6 +72,7 @@
                                             <span class="icon-add"></span>
                                             <span class="text">新增導向設定</span>
                                         </a>
+                                    </div>
                                 </div>
                             </div>
                             {{-- wade:delete --}}
@@ -90,7 +91,7 @@
                         <div class="content-body">
                             <div class="datatable">
                                 <table class="tables">
-                                    <thead style="border-bottom: 1px solid #000;">
+                                    <thead>
                                         <tr>
                                             <th class="w_TableMaintitle ">
                                                 <div class="fake-th ">

@@ -50,8 +50,21 @@
                             {{-- <div class="content-nav">
                             </div> --}}
                         </div>
+                        {{-- wade:add --}}
+                        <div class="data-aggrid ag-theme-alpine" id="main"></div>
+                        <div class="content-bottom">
+                            <div class="content-bottom-info">
+                                <span class="blod" id="d-index-s">-</span>
+                                <span id="ag-26-to">to</span>
+                                <span class="blod" id="d-index-e">-</span>
+                                <span id="ag-26-of">of</span>
+                                <span class="blod" id="d-index-t">-</span>
+                            </div>
+                            <div class="content-bottom-page ag-theme-alpine"></div>
+                        </div>
                     </div>
-                    <div class="data-aggrid ag-theme-alpine" id="main"></div>
+                    {{-- wade:delete --}}
+                    {{-- <div class="data-aggrid ag-theme-alpine" id="main"></div>
                     <div class="content-bottom">
                         <div class="content-bottom-info">
                             <span class="blod" id="d-index-s">-</span>
@@ -61,7 +74,7 @@
                             <span class="blod" id="d-index-t">-</span>
                         </div>
                         <div class="content-bottom-page ag-theme-alpine"></div>
-                    </div>
+                    </div> --}}
                     <div class="hiddenArea editContentArea cms_hiddenArea cmsDetailAjaxArea">
                         {{-- Fantasy.cms.Edit.edit --}}
                     </div>

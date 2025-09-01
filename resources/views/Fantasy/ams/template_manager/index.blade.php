@@ -66,15 +66,14 @@
                                     <h1>CMS Template 管理與設定</h1>
                                 </div>
                                 <div class="content-nav">
-                                    <div class="btn-item">
                                     {{-- 有開分館設定才可以新增 --}}
                                     @if ( Config::get('cms.setBranchs') )
-                                    <div class="btn-item">
-                                        <a href="javascript:void(0)" class="create_ams_wrapper" data-type="template-manager" data-id="0">
-                                            <span class="icon-add"></span>
-                                            <span class="text">新增分站</span>
-                                        </a>
-                                    </div>
+                                        <div class="btn-item">
+                                            <a href="javascript:void(0)" class="create_ams_wrapper" data-type="template-manager" data-id="0">
+                                                <span class="icon-add"></span>
+                                                <span class="text">新增分站</span>
+                                            </a>
+                                        </div>
                                     @endif
                                 </div>
                             </div>
@@ -98,9 +97,9 @@
                         <div class="content-body">
                             <div class="datatable">
                                 <table class="tables">
-                                    <thead style="border-bottom: 1px solid #000;">
+                                    <thead>
                                         <tr>
-                                            <th class="w_TableMaintitle" style="padding: 3px 20px 0 20px;">
+                                            <th class="w_TableMaintitle">
                                                 <div class="fake-thead fake-thead-ams">
                                                     <div class="fake-th first">
                                                     </div>

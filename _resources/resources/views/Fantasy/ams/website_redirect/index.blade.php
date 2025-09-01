@@ -90,7 +90,7 @@
                         <div class="content-body">
                             <div class="datatable">
                                 <table class="tables">
-                                    <thead style="border-bottom: 1px solid #000;">
+                                    <thead>
                                         <tr>
                                             <th class="w_TableMaintitle ">
                                                 <div class="fake-th ">
