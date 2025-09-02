@@ -1,0 +1,37 @@
+.fms_page {
+  .fms_index {
+    .content-sidebar {
+      .body-list {
+      }
+    }
+    .content-head {
+      .content-nav {
+        .search {
+          display: flex;
+          align-items: center;
+          .searchbar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+          }
+          input {
+            border: none;
+            border-bottom: 1px solid #ccc;
+            &:hover,
+            &:focus {
+              outline: none;
+              border-bottom: 1px solid #000000;
+              &::placeholder {
+                color: 000;
+              }
+            }
+
+            &::placeholder {
+              color: e5e5e5;
+            }
+          }
+        }
+      }
+    }
+  }
+}

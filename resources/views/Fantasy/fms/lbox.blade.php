@@ -1,4 +1,4 @@
-<div class="fixed-header fms_theme ajax_fms ajax_temp">
+<div class="fms_page ajax_fms ajax_temp">
     <!-- 中間主區塊 -->
     <div class="page-container extract-block">
         <!-- 最上面的 header bar -->

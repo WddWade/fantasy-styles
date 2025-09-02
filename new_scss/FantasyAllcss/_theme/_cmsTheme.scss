@@ -3,7 +3,7 @@
 /* cms theme */
 
 // CMS Review 特殊色
-.cms_theme.Cms_review {
+.cms_page.Cms_review {
   .mainNav {
     border-right: 1px solid $cms-review;
   }
@@ -55,7 +55,7 @@
   }
 }
 
-.cms_theme {
+.cms_page {
   @include main-nav($cms-main);
   @include main-body($cms-main, cms);
   .page-container

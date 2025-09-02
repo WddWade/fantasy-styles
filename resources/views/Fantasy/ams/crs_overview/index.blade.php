@@ -1,5 +1,5 @@
 @extends('Fantasy.template')
-@section('bodySetting', 'uiv2 ams_theme')
+@section('bodySetting', 'ams_page')
 @section('css')
 @stop
 @section('css_back')

@@ -20,7 +20,7 @@ import { getTableData } from "./ajax/cms_table_ajax.js";
     });
 
     const EditTarget = document.querySelector(
-        ".cms_theme .cms_hiddenArea.cmsDetailAjaxArea"
+        ".cms_page .cms_hiddenArea.cmsDetailAjaxArea"
     );
     const editControl = EditController(EditTarget, {
         afterSave,
@@ -70,7 +70,7 @@ import { getTableData } from "./ajax/cms_table_ajax.js";
     })();
 
     const SearchTarget = document.querySelector(
-        ".cms_theme .cms_hiddenArea.cmsDetailAjaxSearch"
+        ".cms_page .cms_hiddenArea.cmsDetailAjaxSearch"
     );
     const searchControl = EditController(SearchTarget, {
         afterSearch,

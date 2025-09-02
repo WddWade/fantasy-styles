@@ -1,5 +1,5 @@
 @extends('Fantasy.template')
-@section('bodySetting', 'fixed-header')
+@section('bodySetting')
 @section('css')
 
 @stop

@@ -20,7 +20,7 @@ $(document).ready(function () {
         $('.fms_list.selected').removeClass('selected');
         $('.w_Check').removeClass('selected');
     });
-    if ($('body').hasClass('fms_theme')) {
+    if ($('body').hasClass('fms_page')) {
         window.addEventListener("popstate", function (event) {
             let folder_id = location.search.replace('?folder_id=', '') || 0;
             treeclick($('.tree-title[data-folder-id="' + folder_id + '"]'), false);
@@ -51,7 +51,7 @@ function treeclick(_this, _push) {
         $(".leon-trash-show").css("display", "none");
     }
     if (_push) {
-        if ($("body").hasClass('cms_theme')) {
+        if ($("body").hasClass('cms_page')) {
             if (!$("body")[0].fms_open) {
                 history.pushState({ folder_id: -1, fms_open_index: -1 }, null);
             }
@@ -72,7 +72,7 @@ function treeclick(_this, _push) {
     $('.w_Check').removeClass('selected');
     $(".tree-title").removeClass('active');
     $('.check-circle.icon-check:first').siblings('input').prop('checked', false);
-    if(trash){
+    if (trash) {
         $(".tree-title.trash").addClass('active');
     }
     // generateBreadcrumb(_this, 1);

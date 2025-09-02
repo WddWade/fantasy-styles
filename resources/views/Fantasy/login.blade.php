@@ -25,7 +25,7 @@
     <link type="text/css" href="{{ asset('/vender/assets/css/FantasyAllcss.css?181001') }}" rel="stylesheet" />
 </head>
 
-<body class="fixed-header dashboard">
+<body class="dashboard">
     {{-- @dump(Hash::make('wddasdzxc')) --}}
     <main class="wddLoginMain">
         <article class="login_sec">

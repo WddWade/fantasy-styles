@@ -1,5 +1,5 @@
 @extends('Fantasy.template')
-@section('bodySetting', 'fixed-header fms_theme uiv2')
+@section('bodySetting', 'fms_page')
 @section('css')
 <link rel="stylesheet" href="/vender/assets/font/fmsIcon/style.css">
 @stop
@@ -10,7 +10,7 @@
 @include('Fantasy.includes.sidebar')
 <!-- 左邊滑動的 sidebar -->
 <!-- 中間主區塊 -->
-<div class="page-container extract-block">
+<div class="page-container extract-block fms_index">
     <!-- 最上面的 header bar -->
     @include('Fantasy.includes.header')
     <!-- 最上面的 header bar -->

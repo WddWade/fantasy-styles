@@ -1,0 +1,505 @@
+.datatable {
+  .tables {
+    color: black;
+    width: 100%;
+
+    thead {
+      background-color: #f8f8f8;
+      position: sticky;
+      top: 43px;
+      z-index: 2;
+      box-shadow: 0 1px 0 #ddd;
+      height: 40px;
+      white-space: nowrap;
+
+      th {
+        font-size: 1.2rem;
+        font-weight: 500;
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 2px;
+          height: 30%;
+          background-color: #dde2eb;
+          right: 0;
+          top: 51%;
+          transform: translateY(-50%);
+        }
+        &:first-child {
+          &::before {
+            content: none;
+          }
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        height: 50px;
+        box-shadow: 0 1px 0 #ddd;
+      }
+      td {
+        font-size: 1.2rem;
+        font-weight: 400;
+      }
+    }
+
+    th,
+    td {
+      padding-block: 8px;
+      padding-inline: 18px;
+    }
+
+    .title-img {
+      width: 30px;
+      min-height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 20px;
+      }
+    }
+
+    .fms_folder_on_list {
+      .title-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          width: 25px;
+        }
+      }
+    }
+
+    .tableMaintitle {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .title-name {
+        font-weight: 500;
+      }
+    }
+
+    .tableContent {
+      white-space: nowrap;
+    }
+
+    .edit_ctrl {
+      width: 60px;
+
+      > * {
+        display: flex;
+        justify-content: center;
+      }
+      .file-edit {
+        font-size: 1.3rem;
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .back_ctrl {
+      position: relative;
+      .back_controller {
+        font-weight: 600;
+        text-transform: uppercase;
+        color: #000;
+        width: max-content;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        position: absolute;
+        top: 16px;
+      }
+    }
+
+    .w_Check {
+      width: 43px;
+      position: relative;
+      border: 0;
+      .fake-thead,
+      .tableContent {
+        position: absolute;
+        top: 14px;
+        z-index: 1;
+      }
+      .tableContent {
+        top: 19px;
+        height: 13px;
+      }
+      .fake-th {
+        height: 13px;
+      }
+    }
+
+    .main_field {
+      min-width: 250px;
+    }
+
+    .format_field {
+      text-align: center;
+      width: 120px;
+    }
+
+    .type_field {
+      width: 120px;
+    }
+
+    .size_field {
+      width: 120px;
+    }
+
+    .order_field {
+      width: 150px;
+      text-align: center;
+      .tableContent {
+        display: flex;
+        justify-content: center;
+      }
+      .folder_edit_rank {
+        width: 50px;
+        &[contenteditable="true"]:focus {
+          outline: 2px solid rgb(0, 128, 255);
+          background: #fff;
+        }
+      }
+    }
+
+    .dimension_field {
+      width: 150px;
+    }
+
+    .last_modified_field {
+      width: 120px;
+      .tableContent {
+        white-space: wrap;
+      }
+    }
+
+    .owner_field {
+      width: 120px;
+    }
+
+    .select-item {
+      width: 13px;
+      height: 13px;
+      margin: 0;
+      position: relative;
+      .check-circle {
+        font-size: 12px;
+        color: white;
+        background-color: white;
+        width: 100%;
+        height: 100%;
+        border: 1.5px solid #999999;
+        border-radius: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        &::before {
+          display: none;
+        }
+      }
+
+      input {
+        height: 0;
+        &:checked {
+          + .check-circle {
+            background-color: #5e00ff;
+            border: none;
+            &::before {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // .pageCountContent {
+  //   display: -webkit-box;
+  //   display: -ms-flexbox;
+  //   display: flex;
+  //   -webkit-box-pack: justify;
+  //   -ms-flex-pack: justify;
+  //   justify-content: space-between;
+  //   -webkit-box-align: center;
+  //   -ms-flex-align: center;
+  //   align-items: center;
+
+  //   .page-count {
+  //     font-family: var(--baseFont);
+  //     color: #010101;
+  //     font-size: 12px;
+
+  //     span {
+  //       font-weight: bold;
+  //     }
+  //   }
+
+  //   .page-select {
+  //     .pagination {
+  //       .page-item {
+  //         &:first-child {
+  //           .page-link {
+  //             color: black;
+  //           }
+  //         }
+
+  //         &:last-child {
+  //           .page-link {
+  //             color: black;
+  //           }
+  //         }
+
+  //         &.active {
+  //           .page-link {
+  //             background: none;
+  //             color: black;
+  //           }
+  //         }
+  //       }
+  //     }
+
+  //     .page-link {
+  //       font-family: var(--baseFont);
+  //       font-weight: bold;
+  //       border: none;
+  //       color: #c6c6c6;
+  //       padding: 0.5rem 0.5rem;
+  //       font-size: 12px;
+
+  //       &:hover {
+  //         background: none;
+  //         color: black;
+  //       }
+  //     }
+  //   }
+  // }
+}
+/*
+  FMS 中間資料表格
+  Layout Content Datatable
+*/
+
+// .card-block {
+//   &.table_mode {
+//     &.lp_mode {
+//       padding: 0 50px;
+
+//       .dataTables_wrapper {
+//         .dataTables_scroll {
+//           .dataTables_scrollHead {
+//             .dataTables_scrollHeadInner {
+//               padding-right: 0 !important;
+//               width: 100% !important;
+//             }
+
+//             .dataTable {
+//               padding-right: 0 !important;
+//               width: 100% !important;
+//             }
+//           }
+
+//           .dataTables_scrollBody {
+//             max-height: calc(100vh - 217px) !important;
+
+//             tbody {
+//               .dataTables_empty {
+//                 font-weight: bold;
+//                 height: 50vh;
+//                 background-color: #f3f3f3;
+//                 border-bottom: 1px solid #000;
+//               }
+
+//               .text_pic {
+//                 min-width: 350px;
+//                 max-width: 500px;
+//                 display: -webkit-box;
+//                 display: -ms-flexbox;
+//                 display: flex;
+//                 -webkit-box-pack: start;
+//                 -ms-flex-pack: start;
+//                 justify-content: flex-start;
+//                 -webkit-box-align: center;
+//                 -ms-flex-align: center;
+//                 align-items: center;
+
+//                 .head_img {
+//                   width: 50px !important;
+//                   height: 50px !important;
+//                   margin-right: 20px;
+//                   display: -webkit-box;
+//                   display: -ms-flexbox;
+//                   display: flex;
+//                   -webkit-box-pack: center;
+//                   -ms-flex-pack: center;
+//                   justify-content: center;
+//                   -webkit-box-align: center;
+//                   -ms-flex-align: center;
+//                   align-items: center;
+
+//                   img {
+//                     width: 100% !important;
+//                     height: auto !important;
+//                     border-radius: 0 !important;
+//                   }
+//                 }
+
+//                 p {
+//                   word-break: break-all;
+//                 }
+
+//                 .tool {
+//                   width: 50px;
+//                   margin-left: 15px;
+//                   opacity: 0;
+//                   -webkit-transition: 0.5s;
+//                   -o-transition: 0.5s;
+//                   transition: 0.5s;
+//                   display: -webkit-box;
+//                   display: -ms-flexbox;
+//                   display: flex;
+//                   -webkit-box-orient: vertical;
+//                   -webkit-box-direction: normal;
+//                   -ms-flex-direction: column;
+//                   flex-direction: column;
+
+//                   span {
+//                     padding: 5px !important;
+//                     cursor: pointer;
+//                   }
+//                 }
+
+//                 &:hover {
+//                   .tool {
+//                     opacity: 1;
+//                   }
+//                 }
+//               }
+
+//               .text {
+//                 padding: 0 0 0 10px !important;
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+// table.dataTable {
+//   thead {
+//     th,
+//     td {
+//       border-top: 1px solid #111;
+//       border-bottom: 1px solid #111;
+//     }
+//   }
+// }
+
+// .fmsAjaxArea {
+//   .card-block {
+//     &.table_mode {
+//       &.lp_mode {
+//         .dataTables_wrapper {
+//           .dataTables_scroll {
+//             .dataTables_scrollBody {
+//               max-height: calc(100vh - 343px) !important;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+// .table {
+//   tbody {
+//     tr {
+//       &.selected {
+//         td {
+//           background: #f1f1f1;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// .mainContent {
+//   .pageCountContent {
+//     display: -webkit-box;
+//     display: -ms-flexbox;
+//     display: flex;
+//     -webkit-box-pack: justify;
+//     -ms-flex-pack: justify;
+//     justify-content: space-between;
+//     -webkit-box-align: center;
+//     -ms-flex-align: center;
+//     align-items: center;
+
+//     .page-count {
+//       color: #000;
+
+//       span {
+//         font-weight: bold;
+//       }
+//     }
+//   }
+// }
+
+// .content-sidebar-open {
+//   .datatable {
+//     .tables {
+//       .fake-thead {
+//         width: calc(100% - 471px);
+//         -webkit-transition: 0.5s;
+//         -o-transition: 0.5s;
+//         transition: 0.5s;
+//       }
+//     }
+//   }
+// }
+
+// .folder_edit_rank {
+//   background-color: #eee;
+//   text-align: center;
+//   width: 50px;
+// }
+
+// .fileUse {
+//   background-color: #eee;
+//   text-align: center;
+//   width: 50px;
+//   &:hover {
+//     background-color: #007bff;
+//     color: #fff !important;
+//   }
+// }
+
+// .Leon-fms-check-all.checked {
+//   background-color: #000 !important;
+//   border: none !important;
+// }
+
+// @media screen and (max-width: 1550px) {
+//   .datatable {
+//     .tables {
+//       .fake-thead {
+//         min-width: calc(100vw - 171px);
+//       }
+
+//       .rwdhide {
+//         display: none;
+//       }
+//     }
+//   }
+// }

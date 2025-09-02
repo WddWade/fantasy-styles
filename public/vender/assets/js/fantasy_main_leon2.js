@@ -878,7 +878,7 @@ fmsFunctions.grid_mode = () => {
     });
 }
 fmsFunctions.calculate_grid = () => {
-    const _innerContent = $(".fms_theme .inner-content")
+    const _innerContent = $(".fms_page .inner-content")
     const _innerHeight = _innerContent.height()
     const _jumbotronHeight = _innerContent.find(".jumbotron").outerHeight()
     const _cardHeaderHeight = _innerContent.find(".card-header").outerHeight()
@@ -1012,7 +1012,7 @@ $(() => {
     // wade_datepicker();
 
 
-    if ($("body").hasClass("cms_theme")) {
+    if ($("body").hasClass("cms_page")) {
         components.tooltip($('[data-toggle="tooltip"]'));
         //cms
         // card_table($(".main-table").attr("data-tableID")); wade先註解，因為執行頁面會噴錯
@@ -1034,7 +1034,7 @@ $(() => {
 
         return;
 
-    } else if ($("body").hasClass("fms_theme")) {
+    } else if ($("body").hasClass("fms_page")) {
         components.tooltip($('[data-toggle="tooltip"]'));
 
         //fms
@@ -1056,7 +1056,7 @@ $(() => {
         return;
 
 
-    } else if ($("body").hasClass("ams_theme")) {
+    } else if ($("body").hasClass("ams_page")) {
         components.tooltip($('[data-toggle="tooltip"]'));
 
         //ams

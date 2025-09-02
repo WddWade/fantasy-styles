@@ -7,7 +7,7 @@ bd.data('base', {});
 bd.data('fms', {});
 bd.data('cms', {});
 
-$(document).ready(function() {
+$(document).ready(function () {
 
     // 設定左邊slideBar滑鼠移入移出時，顯示/隱葳
     left_slideBar();
@@ -42,11 +42,11 @@ function left_slideBar() {
     var bar = $('.left-slide'),
         bar_menu_item = bar.find('.sidebar-menu ul.menu-items');
 
-    bar.mouseenter(function() {
+    bar.mouseenter(function () {
         bar_menu_item.addClass('show');
     });
 
-    bar.mouseleave(function() {
+    bar.mouseleave(function () {
         bar_menu_item.removeClass('show');
     });
 }
@@ -56,8 +56,8 @@ function left_slideBar() {
 function close_notifyScreen() {
     var object = '.quickview-wrapper';
 
-    $('.notify-screen').on('click', '.btn', function() {
-        setTimeout(function() {
+    $('.notify-screen').on('click', '.btn', function () {
+        setTimeout(function () {
             $(object).css('left', 'calc(100%)');
         }, 450);
     });
@@ -71,7 +71,7 @@ function small_content_sidebar() {
         _this;
 
     //打開
-    $('body').on('click', side_bar, function() {
+    $('body').on('click', side_bar, function () {
         _this = $(this);
 
         if (window_w < 1366 && _this.hasClass('open_bar') == false) {
@@ -80,7 +80,7 @@ function small_content_sidebar() {
     });
 
     //關閉
-    $(document).on('click', function(e) {
+    $(document).on('click', function (e) {
         if (window_w < 1366 && $(side_bar).has(e.target).length > 0 || e.target.className == 'content-sidebar') {
             return;
         } else {
@@ -96,7 +96,7 @@ function language_category() {
     var lng = $('.language .sub-menu .lng'), //語系
         display_title = $('.language .display-title .title'); //顯示的標題
 
-    lng.on('click', function() {
+    lng.on('click', function () {
 
         if ($(this).hasClass('level-3')) {
             //兩層，把被選取的語系文字 跟 他上一層的 分類標題名稱 做組合
@@ -156,7 +156,7 @@ function card_table(target) {
         case 'fms_table':
             fms_card_table(settings);
             //選單開關
-            $('.switch-menu').off().click(function() {
+            $('.switch-menu').off().click(function () {
                 $('.page-content-wrapper').toggleClass('content-sidebar-open')
             })
             break;
@@ -180,10 +180,10 @@ function card_table(target) {
 
         default:
             $('.menu_content.editContentFormArea').scrollbar({});
-            // console.log('目標table不存在');
+        // console.log('目標table不存在');
     }
 
-    settings.fnPreDrawCallback = function(oSettings) {
+    settings.fnPreDrawCallback = function (oSettings) {
         $('.main-table .dataTables_scrollBody tbody tr.selected').removeClass('selected');
     }
 
@@ -209,7 +209,7 @@ function cms_card_table(settings) {
         leftColumns: 2
     }; //datatable還沒改，功能先不隱藏#HondaDebug
 
-    settings.initComplete = function() {
+    settings.initComplete = function () {
         $(this).closest('.card-block').addClass('open');
 
         //左右按鈕 滑動table
@@ -229,7 +229,7 @@ function cms_card_table(settings) {
 }
 
 function fms_card_table(settings) {
-    settings.initComplete = function() {
+    settings.initComplete = function () {
         // $('.card-block').eq(0).addClass('open');
         //打開右邊隱藏選單
         open_wrapper();
@@ -240,7 +240,7 @@ function fms_card_table(settings) {
 }
 
 function ams_card_table(settings) {
-    settings.initComplete = function() {
+    settings.initComplete = function () {
         $(this).closest('.card-block').addClass('open');
         //計算有幾個可以勾的checkbox
         dataTable_tickCount();
@@ -248,7 +248,7 @@ function ams_card_table(settings) {
 }
 
 function ams_ajax_card_table(settings) {
-    settings.initComplete = function() {
+    settings.initComplete = function () {
         $(this).closest('.card-block').addClass('open');
         //計算有幾個可以勾的checkbox
         dataTable_tickCount();
@@ -260,7 +260,7 @@ function ams_ajax_card_table(settings) {
 function click_event() {
     var count_number = [];
 
-    $('.main-table tbody tr .checkbox').on('click', function() {
+    $('.main-table tbody tr .checkbox').on('click', function () {
 
         $(this).closest('tr').toggleClass('selected');
         //yuan
@@ -291,9 +291,9 @@ function click_event() {
 // 頁腳切換頁面事件
 // 只在card_table使用#Honda
 function pagination_event() {
-    $('.main-table .dataTables_paginate').on('click', function() {
+    $('.main-table .dataTables_paginate').on('click', function () {
 
-        $('.main-table .DTFC_LeftWrapper tbody tr input').on('click', function() {
+        $('.main-table .DTFC_LeftWrapper tbody tr input').on('click', function () {
 
             $(this).closest('tr').addClass('selected');
             var b = ($(this).closest('tr')[0].dataset.dtRow) / 1 + 1;
@@ -359,7 +359,7 @@ function Table_scrollBtn() {
     // var x = 0, //初始值
     //     distance = 200; //移動距離
 
-    $('.table-box .arrow-group .arrow').on('click', 'span', function() {
+    $('.table-box .arrow-group .arrow').on('click', 'span', function () {
 
         var box = $(this).closest('.table-box').find('.dataTables_scroll .dataTables_scrollBody'),
             box_head = $(this).closest('.table-box').find('.dataTables_scroll .dataTables_scrollHead'),
@@ -587,7 +587,7 @@ function active_scrollBar(object) {
 // Date Pickers
 // 可移#Honda
 function wade_datepicker() {
-    $('.datepicker-input').each(function(index, el) {
+    $('.datepicker-input').each(function (index, el) {
         var _this = $(this);
         if (!_this.hasClass('active_date')) {
             _this.datepicker({
@@ -610,7 +610,7 @@ function grid_mode() {
         icon_unlock = unlock.find('.icon_unlock');
 
     //unlock check event
-    unlock.on('click', '.icon_unlock', function() {
+    unlock.on('click', '.icon_unlock', function () {
         if ($(this).closest(list).hasClass('check') == false) {
             $(this).closest(list).addClass('check');
         } else {
@@ -620,7 +620,7 @@ function grid_mode() {
 }
 
 function calculate_grid() {
-    var _innerContent = $('.fms_theme .inner-content'),
+    var _innerContent = $('.fms_page .inner-content'),
         _innerHeight = _innerContent.height(),
         _jumbotronHeight = _innerContent.find('.jumbotron').outerHeight(),
         _cardHeaderHeight = _innerContent.find('.card-header').outerHeight(),
@@ -638,7 +638,7 @@ function table_view_mode() {
     var _mode_btn = $('.card-header .mode_btn'),
         _table_mode = $('.table_mode');
 
-    _mode_btn.on('click', function() {
+    _mode_btn.on('click', function () {
         var _area = $('input.fileAreaSupportSet');
         var _area_zero = _area.data('zero');
         var _area_first = _area.data('first');
@@ -670,7 +670,7 @@ function table_view_mode() {
         if (a == 'gd_mode') {
             $('.grid_mode .frame').scrollbar({});
             calculate_grid();
-            $(window).resize(function() {
+            $(window).resize(function () {
                 calculate_grid();
             });
         }
@@ -707,13 +707,13 @@ function randomWord(randomFlag, min, max) {
 // 登出後台
 function basic_logout() {
     $.ajax({
-            url: $('.base-url-plus').val() + "/auth/logout",
-            type: 'GET',
-        })
-        .done(function(data) {
+        url: $('.base-url-plus').val() + "/auth/logout",
+        type: 'GET',
+    })
+        .done(function (data) {
             document.location.href = $('.base-url-plus').val() + "/Fantasy";
         })
-        .fail(function() {
+        .fail(function () {
             console.log("logout error");
         });
 }

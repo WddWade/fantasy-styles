@@ -68,9 +68,10 @@
             <td class="format_field">
                 <div class="tableContent">Folder</div>
             </td>
-            <td class="type_field">
+            {{-- wade:delete --}}
+            {{-- <td class="type_field">
                 <div class="tableContent">資料夾</div>
-            </td>
+            </td> --}}
             <td class="size_field">
                 <div class="tableContent"></div>
             </td>

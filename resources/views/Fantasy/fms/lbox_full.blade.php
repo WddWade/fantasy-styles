@@ -5,7 +5,8 @@
                 {{-- @include('Fantasy.fms.sidebar') --}}
                 @include('Fantasy.fms.sidebar_rev')
             </nav>
-            <div class="quill_sidebarWall close"></div>
+            {{-- wade:delete --}}
+            {{-- <div class="quill_sidebarWall close"></div> --}}
             <!-- 左邊 SECONDARY SIDEBAR MENU -->
             <!-- 右邊 PAGE CONTENT -->
             <div class="inner-content">
@@ -58,7 +59,8 @@
 
                     {{-- wade:add --}}
                     <div class="table-box content-wrap" data-tableID="fms_table" style="position: relative;">
-                        <div class="content-head cms-index_table">
+                        {{-- <div class="content-head cms-index_table"> --}}
+                        <div class="content-head">
                             <div class="content-head-container">
                                 <div class="content-title">
                                     <div class="switch-menu navigation-toggle">
@@ -72,46 +74,48 @@
                                     <div class="btn-item leon-trash-show" style="display: none;">
                                         <a href="javascript:;" class="fms_recovery_data" data-model="All_colunm">
                                             <span class="fms-upload"></span>
-                                            <span class="text">復原資料</span>
+                                            <span class="text">復原</span>
                                         </a>
                                     </div>
                                     <div class="btn-item leon-trash-hide">
                                         <a href="javascript:;" class="fms_bulider_upload" data-model="All_colunm">
                                             <span class="fms-upload"></span>
-                                            <span class="text">新增檔案</span>
+                                            <span class="text">上傳</span>
                                         </a>
                                     </div>
                                     <div class="btn-item leon-trash-hide">
                                         <a href="javascript:;" class="fms_bulider_new" id="leon-cms-delete-list" data-model="All_colunm">
                                             <span class="fms-folder-add"></span>
-                                            <span class="text">新增資料夾</span>
+                                            <span class="text">新資料夾</span>
                                         </a>
                                     </div>
                                     <div class="btn-item ">
                                         <a href="javascript:;" class="LeonMoveFiles delete" id="leon-cms-delete-list" data-model="All_colunm">
                                             <span class="fms-delete"></span>
-                                            <span class="text">刪除檔案</span>
+                                            <span class="text">刪除</span>
                                         </a>
                                     </div>
                                     <div class="btn-item">
                                         <a href="javascript:;" class="localeToDownloadFiles" id="leon-cms-delete-list" data-model="All_colunm">
                                             <span class="fms-download"></span>
-                                            <span class="text">下載檔案</span>
+                                            <span class="text">下載</span>
                                         </a>
                                     </div>
                                     @if(!isset($cms_open) || !$cms_open)
                                     <div class="btn-item leon-trash-hide">
                                         <a href="javascript:;" class="LeonMoveFiles" id="leon-cms-delete-list" data-model="All_colunm">
                                             <span class="fms-move"></span>
-                                            <span class="text">移動檔案</span>
+                                            <span class="text">移動</span>
                                         </a>
                                     </div>
                                     @endif
-                                    <div class="search leon-trash-hide">
+                                    <div class="btn-item search leon-trash-hide">
                                         <a href="javascript:void(0)" class="btn-item searchbar" data-quick="textInput">
+                                            {{-- wade:add --}}
+                                            <input type="text" placeholder="search" class="search-data LeonSearchInput">
                                             <span class="icon-search LeonSearchBtn"></span>
-                                            <input type="text" class="search-data LeonSearchInput">
-                                            <span class="text LeonSearchBtn">SEARCH</span>
+                                            {{-- wade:delete --}}
+                                            {{-- <span class="text LeonSearchBtn">SEARCH</span> --}}
                                         </a>
                                     </div>
                                 </div>
@@ -163,11 +167,12 @@
                                                     <span class="sort theadSortBtn" data-column="2" data-sort="0">Format</span>
                                                 </div>
                                             </th>
-                                            <th class="type_field">
+                                            {{-- wade:delete --}}
+                                            {{-- <th class="type_field">
                                                 <div class="fake-th">
                                                     <span class="" data-column="3" data-sort="0">Type</span>
                                                 </div>
-                                            </th>
+                                            </th> --}}
                                             <th class="size_field">
                                                 <div class="fake-th">
                                                     <span class="sort theadSortBtn" data-column="4" data-sort="0">Size</span>
@@ -193,18 +198,15 @@
                                     <tbody class="multi_shot Leon_fms_table">
                                         <tr class="tbody_tick Leon_folder_back" style="cursor: pointer;display: none;" data-folder-id="0">
                                             <td class="w_Check">
-                                                <div class="tableContent">
-
-                                                </div>
+                                                <div class="tableContent"></div>
                                             </td>
-                                            <td class="back_ctrl fms_folder_on_list fms_folder_back" data-id="0" data-parent_id="0">
-                                                <div class="back_controller">
+                                            <td class="edit_ctrl" >
+                                            </td>
+                                            <td class="main_field back_ctrl fms_folder_on_list fms_folder_back" data-id="0" data-parent_id="0">
+                                                 <div class="back_controller">
                                                     <div class="fms-back"></div>
                                                     <span>Back to Previous</span>
                                                 </div>
-                                            </td>
-                                            <td class="main_field">
-                                                <div class="tableContent"></div>
                                             </td>
                                             <td class="order_field">
                                                 <div class="tableContent"></div>
@@ -212,9 +214,10 @@
                                             <td class="format_field">
                                                 <div class="tableContent"></div>
                                             </td>
-                                            <td class="type_field">
+                                            {{-- wade:delete --}}
+                                            {{-- <td class="type_field">
                                                 <div class="tableContent"></div>
-                                            </td>
+                                            </td> --}}
                                             <td class="size_field">
                                                 <div class="tableContent"></div>
                                             </td>
@@ -277,9 +280,10 @@
                                             <td class="format_field">
                                                 <div class="tableContent">Folder</div>
                                             </td>
-                                            <td class="type_field">
+                                            {{-- wade:delete --}}
+                                            {{-- <td class="type_field">
                                                 <div class="tableContent">資料夾</div>
-                                            </td>
+                                            </td> --}}
                                             <td class="size_field">
                                                 <div class="tableContent"></div>
                                             </td>

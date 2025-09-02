@@ -1,0 +1,109 @@
+/*
+  ch img light box
+  圖片放大瀏覽燈箱
+*/
+
+.chImgLightBox {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  visibility: hidden;
+  opacity: 0;
+
+  .for_scroll {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .inner_box {
+    position: relative;
+  }
+
+  .close_btn {
+    cursor: pointer;
+    color: #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+
+  .img {
+    position: relative;
+  }
+
+  img {
+    max-width: 100%;
+    width: auto;
+    max-height: 80vh;
+  }
+
+  &.open {
+    z-index: 14;
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: opacity 0.5s ease 0s;
+    -moz-transition: opacity 0.5s ease 0s;
+    -ms-transition: opacity 0.5s ease 0s;
+    -o-transition: opacity 0.5s ease 0s;
+    transition: opacity 0.5s ease 0s;
+  }
+
+  &.close {
+    opacity: 0;
+    -webkit-transition: all 0.5s ease 0s;
+    -moz-transition: all 0.5s ease 0s;
+    -ms-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
+  }
+}
+
+.cms_page {
+  .chImgLightBox {
+    .close_btn {
+      background-color: #10cfbd;
+    }
+  }
+}
+
+.fms_page {
+  .chImgLightBox {
+    .close_btn {
+      background-color: #775bc2;
+    }
+  }
+}
+
+.ams_page {
+  .chImgLightBox {
+    .close_btn {
+      background-color: #3a9eea;
+    }
+  }
+}

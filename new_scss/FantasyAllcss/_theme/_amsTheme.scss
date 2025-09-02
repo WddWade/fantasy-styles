@@ -1,7 +1,7 @@
 @import "./themeMixin.scss";
 
 /* ams theme */
-.ams_theme {
+.ams_page {
   @include main-nav($ams-main);
   @include main-body($ams-main, ams);
   @include dark-theme($ams-main, ams);
@@ -12,7 +12,7 @@
   @include response($ams-main);
 }
 
-.ams_theme {
+.ams_page {
   .productImage {
     .has_img:hover .box {
       border-color: #3a9eea;

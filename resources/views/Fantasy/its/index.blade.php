@@ -1,6 +1,6 @@
 @extends('Fantasy.template')
 
-@section('bodySetting', 'fixed-header')
+@section('bodySetting')
 
 @section('css')
 <link href="/vender/assets/css/cms_style.css" rel="stylesheet" type="text/css">

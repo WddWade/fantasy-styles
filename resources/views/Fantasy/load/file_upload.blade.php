@@ -1,5 +1,5 @@
 <!-- 右邊滑動的 隱藏區塊1213 -->
-<article class="hiddenArea fms_hiddenArea uploadArea fmsDetailAjaxArea fms_theme">
+<article class="hiddenArea fms_hiddenArea uploadArea fmsDetailAjaxArea fms_page">
     <!--FILE UPLOAD 檔案上傳-->
     <div class="ajaxItem fms">
         <form action="" class="fmsUpload ajaxContainer">

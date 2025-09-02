@@ -1,5 +1,5 @@
 @extends('Fantasy.template')
-@section('bodySetting', 'ams_theme uiv2')
+@section('bodySetting', 'ams_page')
 @section('css')
 @stop
 @section('css_back')
@@ -26,7 +26,7 @@
                 <div class="scroll-wrapper content-scrollbox" style="position: relative;">
                     <div class="content-scrollbox scroll-content" style="height: auto; margin-bottom: 0px; margin-right: 0px; max-height: 953px;">
                         <div class="content-wrap">
-                            <div class="ams-index">
+                            <div class="ams_index">
                                 <div class="main-title">AMS</div>
                             </div>
                         </div>

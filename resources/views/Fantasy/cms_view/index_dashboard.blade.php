@@ -1,6 +1,6 @@
 @extends('Fantasy.template')
 
-@section('bodySetting', 'fixed-header cms_theme uiv2')
+@section('bodySetting', 'cms_page')
 
 @section('css')
 

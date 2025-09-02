@@ -20,7 +20,7 @@
             </div>
         </div>
     </td>
-    <td class="tool_ctrl @if(!isset($cms_open)) open_file_edit @endif" @if(isset($cms_open)) onclick="Leon_open_file_edit(this);" @endif>
+    <td class="main_field tool_ctrl @if(!isset($cms_open)) open_file_edit @endif" @if(isset($cms_open)) onclick="Leon_open_file_edit(this);" @endif>
         <div class="tableMaintitle">
             @php
             $ext = strtolower(pathinfo($row['real_m_route'],PATHINFO_EXTENSION));
@@ -42,27 +42,28 @@
             </div> --}}
         </div>
     </td>
-    <td>
+    <td class="order_field">
         <div class="tableContent"><a class="fileUse" data-key="{{$row['file_key']}}">{{$row['fms_file_use_count']}}</a></div>
     </td>
-    <td>
+    <td class="format_field">
         <div class="tableContent">{{ $row['type'] }}</div>
     </td>
-    <td>
+    {{-- wade:delete --}}
+    {{-- <td class="type_field">
         <div class="tableContent">檔案</div>
-    </td>
-    <td>
+    </td> --}}
+    <td class="size_field">
         <div class="tableContent">{{ formatBytes($row['size']) }}</div>
     </td>
-    <td>
+    <td class="dimension_field">
         <div class="tableContent">
             {{ (!empty($row['img_w'])) ? $row['img_w'] .' x '.$row['img_h'] : '' }}
         </div>
     </td>
-    <td>
+    <td class="last_modified_field">
         <div class="tableContent">{{ $row['updated_at'] }}</div>
     </td>
-    <td>
+    <td class="owner_field">
         <div class="tableContent">{{ isset($row['create_user']) ? $row['create_user']['name'] : 'N/A' }} </div>
     </td>
 </tr>

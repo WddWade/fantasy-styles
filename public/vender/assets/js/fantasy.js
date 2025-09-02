@@ -730,7 +730,7 @@ fmsFunctions.grid_mode = () => {
     });
 }
 fmsFunctions.calculate_grid = () => {
-    const _innerContent = $(".fms_theme .inner-content")
+    const _innerContent = $(".fms_page .inner-content")
     const _innerHeight = _innerContent.height()
     const _jumbotronHeight = _innerContent.find(".jumbotron").outerHeight()
     const _cardHeaderHeight = _innerContent.find(".card-header").outerHeight()

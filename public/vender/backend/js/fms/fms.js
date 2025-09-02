@@ -24,7 +24,7 @@ $(document).ready(function () {
 });
 
 function calculate_grid() {
-    var _innerContent = $('.fms_theme .inner-content'),
+    var _innerContent = $('.fms_page .inner-content'),
         _innerHeight = _innerContent.heightƒ(),
         _jumbotronHeight = _innerContent.find('.jumbotron').outerHeight(),
         _cardHeaderHeight = _innerContent.find('.card-header').outerHeight(),

@@ -1,7 +1,7 @@
 @import "./themeMixin.scss";
 
 /* fms theme */
-.fms_theme {
+.fms_page {
   @include main-nav($fms-main);
   @include main-body($fms-main, fms);
   @include dark-theme($fms-main, fms);

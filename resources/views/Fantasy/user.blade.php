@@ -10,7 +10,7 @@
     <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('pages/ico/152.png') }}" />
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>
-<body class="fixed-header dashboard">
+<body class="dashboard">
 	<input type="hidden" class="base-url" value="{{ url('/') }}">
 </body>
 <script type="text/javascript" src=" asset{{('/vender/assets/plugins/jquery/jquery-2.2.4.min.js') }}"></script>

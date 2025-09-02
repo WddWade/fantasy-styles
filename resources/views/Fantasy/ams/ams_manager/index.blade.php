@@ -1,5 +1,5 @@
 @extends('Fantasy.template')
-@section('bodySetting', 'uiv2 ams_theme')
+@section('bodySetting', 'ams_page')
 @section('css')
 @stop
 @section('css_back')
@@ -55,7 +55,8 @@
 
                 <div class="content-scrollbox">
                     <div class="content-wrap main-table index-table-div" data-tableid="new_cms_table">
-                        <div class="content-head cms-index_table" data-edit="1" data-delete="1" data-create="1" data-model="" data-page="1" data-pn="1" data-auth="0" data-pagetitle="AMS 權限管理">
+                        {{-- <div class="content-head cms-index_table" data-edit="1" data-delete="1" data-create="1" data-model="" data-page="1" data-pn="1" data-auth="0" data-pagetitle="AMS 權限管理"> --}}
+                        <div class="content-head" data-edit="1" data-delete="1" data-create="1" data-model="" data-page="1" data-pn="1" data-auth="0" data-pagetitle="AMS 權限管理">
                             {{-- wade:add --}}
                             <div class="content-head-container">
                                 <div class="content-title">

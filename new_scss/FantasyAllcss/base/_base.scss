@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Noto+Sans+TC:wght@100..900&display=swap");
 
 :root {
-  --baseFont: "Noto Sans TC", "Microsoft JhengHei", "微軟正黑體",
+  --baseFont: "Inter", "Noto Sans TC", "Microsoft JhengHei", "微軟正黑體",
     "Microsoft YaHei", sans-serif;
   --cms-main: #10cfbd;
   --cms-review: #f95775;
@@ -292,6 +292,8 @@ body {
 }
 
 [class^="icon-"],
-[class*=" icon-"] {
+[class*=" icon-"],
+[class^="fms-"],
+[class*=" fms-"] {
   font-size: 1rem !important;
 }

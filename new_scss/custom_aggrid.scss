@@ -1,7 +1,7 @@
 .data-aggrid {
   &.ag-theme-alpine {
     --ag-header-height: 40px;
-    --ag-row-height: 40px;
+    --ag-row-height: 50px;
     --ag-selected-row-background-color: rgb(240 240 249);
     --ag-row-hover-color: rgb(245 245 245);
     // --ag-header-background-color:""
@@ -45,6 +45,9 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+  > span.fa {
+    margin-right: 3.5px;
+  }
 }
 
 .rank_edit {
@@ -82,7 +85,7 @@
   border-bottom: 1px solid #e4e4e4 !important;
   * {
     font-size: 1.2rem !important;
-    font-weight: 500;
+    font-weight: 600;
   }
 }
 
@@ -148,8 +151,8 @@
     justify-content: center;
     align-items: center;
     /* width: 100px; */
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     margin: 0 auto;
 
     &::after {

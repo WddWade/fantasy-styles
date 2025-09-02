@@ -1,5 +1,5 @@
 @extends('Fantasy.template')
-@section('bodySetting', 'uiv2 ams_theme')
+@section('bodySetting', 'ams_page')
 @section('css')
 @stop
 @section('css_back')
@@ -151,7 +151,8 @@
     <!-- 下面列表 -->
     <div class="content-scrollbox" style="position: relative;">
         <div class="content-wrap main-table index-table-div" data-tableid="new_cms_table">
-            <div class="content-head cms-index_table" data-edit="1" data-delete="1" data-create="1" data-model="" data-page="1" data-pn="1" data-auth="0" data-pagetitle="Fms Folder 基本目錄管理">
+            {{-- <div class="content-head cms-index_table" data-edit="1" data-delete="1" data-create="1" data-model="" data-page="1" data-pn="1" data-auth="0" data-pagetitle="Fms Folder 基本目錄管理"> --}}
+            <div class="content-head" data-edit="1" data-delete="1" data-create="1" data-model="" data-page="1" data-pn="1" data-auth="0" data-pagetitle="Fms Folder 基本目錄管理">
                 <h1>Fms Folder 基本目錄管理
                     {{-- <i class="fa fa-info-circle i_tooltip" data-toggle="tooltip" data-placement="top"
                                     data-original-title="Wade No.1"></i> --}}

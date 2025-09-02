@@ -5,7 +5,7 @@ $formarr = [
 
 @extends('Fantasy.template')
 
-@section('bodySetting', 'fixed-header cms_theme')
+@section('bodySetting', 'cms_page')
 
 @section('css')
 <link href="/vender/assets/css/cms_style.css" rel="stylesheet" type="text/css">

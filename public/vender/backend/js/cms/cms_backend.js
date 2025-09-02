@@ -1,5 +1,5 @@
-var cms = $('.cms_theme');
-var fms = $('.fms_theme');
+var cms = $('.cms_page');
+var fms = $('.fms_page');
 
 let draggingRow = null;
 let LeonSearchLock = false;
@@ -1183,7 +1183,7 @@ $('body').on('click', '.datatable .tables thead th', function (e) {
     let _this = $(this);
     let theadSortBtn = _this.find('.theadSortBtn');
     if (theadSortBtn.length > 0) {
-        if ($(".ajax_fms").length > 0 || $("body.fms_theme").length > 0) {
+        if ($(".ajax_fms").length > 0 || $("body.fms_page").length > 0) {
             var search_column = theadSortBtn.data('column');
             var column_sort = theadSortBtn.attr('data-sort');
             var folder_id = $("#folder_id").val();
@@ -1606,15 +1606,15 @@ function open_fms_light_box() {
 
 function close_wrapper() {
     // cms關閉按鈕 //wade
-    // $('.cms_theme .cms_hiddenArea.cmsDetailAjaxArea').on('click', '.close_btn', function () {
-    //     $('.cms_theme .cms_hiddenArea.cmsDetailAjaxArea .ajaxItem').addClass('remove');
+    // $('.cms_page .cms_hiddenArea.cmsDetailAjaxArea').on('click', '.close_btn', function () {
+    //     $('.cms_page .cms_hiddenArea.cmsDetailAjaxArea .ajaxItem').addClass('remove');
     //     setTimeout(function () {
-    //         $('.cms_theme .cms_hiddenArea.cmsDetailAjaxArea .ajaxItem').removeClass('open remove');
-    //         $('.cms_theme .cms_hiddenArea.cmsDetailAjaxArea').addClass('remove');
+    //         $('.cms_page .cms_hiddenArea.cmsDetailAjaxArea .ajaxItem').removeClass('open remove');
+    //         $('.cms_page .cms_hiddenArea.cmsDetailAjaxArea').addClass('remove');
     //     }, 0);
 
     //     setTimeout(function () {
-    //         $('.cms_theme .cms_hiddenArea.cmsDetailAjaxArea').removeClass('open remove');
+    //         $('.cms_page .cms_hiddenArea.cmsDetailAjaxArea').removeClass('open remove');
     //         $('.editContentFormArea form:nth-child(n+3)').empty();
     //         $('.editFormName').text('-');
     //         $('ul.editContentMenu').children('li').removeClass('opened');
@@ -1632,7 +1632,7 @@ function close_wrapper() {
     // });
 
     // fms關閉按鈕 //wade
-    $('.fms_theme .ajaxContainer').on('click', '.close_btn', function () {
+    $('.fms_page .ajaxContainer').on('click', '.close_btn', function () {
         // $('.fmsDetailAjaxArea.uploadArea .ajaxItem').addClass('remove');
         // $('.fmsDetailAjaxArea.uploadArea .ajaxItem .ajaxContainer').addClass('remove');
         // setTimeout(function () {

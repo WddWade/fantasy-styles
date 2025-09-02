@@ -1,0 +1,12 @@
+.ams_page {
+  .ams_index {
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .main-title {
+      font-size: 15vw;
+      color: #000;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 @extends('Fantasy.template')
 
-@section('bodySetting', 'fixed-header photos_theme')
+@section('bodySetting', 'photos_theme')
 
   @section('css')
     <!--cropperjs-master(2019/09/08 引入) -->
