@@ -6989,13 +6989,13 @@ body.isContent .backEnd_quill {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
 }
-.datatable .tables thead th:not(.w_Check, .edit_ctrl) > *:has([data-sort="1"]):after {
+.datatable .tables thead th:not(.w_Check, .edit_ctrl) > *:has([data-sort="0"]):after {
   color: #000;
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
   display: block;
 }
-.datatable .tables thead th:not(.w_Check, .edit_ctrl) > *:has([data-sort="0"]):after {
+.datatable .tables thead th:not(.w_Check, .edit_ctrl) > *:has([data-sort="1"]):after {
   color: #000;
   display: block;
 }
@@ -7023,7 +7023,6 @@ body.isContent .backEnd_quill {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 40px;
 }
 .datatable .tables tbody tr {
   height: 50px;

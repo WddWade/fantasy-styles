@@ -38,14 +38,14 @@
               transform: rotate(90deg);
             }
 
-            &:has([data-sort="1"]) {
+            &:has([data-sort="0"]) {
               &:after {
                 color: #000;
                 transform: rotate(-90deg);
                 display: block;
               }
             }
-            &:has([data-sort="0"]) {
+            &:has([data-sort="1"]) {
               &:after {
                 color: #000;
                 display: block;
@@ -74,7 +74,6 @@
             justify-content: center;
             display: flex;
             align-items: center;
-            height: 40px;
           }
         }
       }
