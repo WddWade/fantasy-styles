@@ -2,6 +2,11 @@
   .fms_index {
     .content-sidebar {
       .body-list {
+        .active {
+          > .fms-folder {
+            display: none;
+          }
+        }
       }
     }
     .content-head {
@@ -14,20 +19,36 @@
             align-items: center;
             gap: 10px;
           }
+          .icon-search {
+            position: absolute;
+            right: 10px;
+          }
           input {
             border: none;
-            border-bottom: 1px solid #ccc;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+            padding: 2px 30px 2px 10px;
+            border-radius: 3px;
+            transition: 0.2s;
+
             &:hover,
             &:focus {
+              box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3);
               outline: none;
-              border-bottom: 1px solid #000000;
+              &::placeholder {
+                color: 000;
+              }
+            }
+
+            &:not(:placeholder-shown) {
+              background-color: #f8f8f8;
+              box-shadow: 0 0 0 3px #5e00ff;
               &::placeholder {
                 color: 000;
               }
             }
 
             &::placeholder {
-              color: e5e5e5;
+              color: #e5e5e5;
             }
           }
         }

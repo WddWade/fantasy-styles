@@ -3,8 +3,6 @@
         <ul class="main-tree">
             <li class="tree-title ready-tree active" data-folder-id="0" data-parent-id="-1">
                 {{-- wade:add --}}
-                <span class="fms-folder-open"></span>
-                <span class="fms-folder"></span>
                 <span class="title">根目錄</span>
                 <span class="arrow"></span>
             </li>
@@ -15,8 +13,6 @@
                         {{-- <li class="tree-title {{ $val['open_class'] }} {{ $val['use_auth'] }} @if ($val['is_delete']) is_delete @endif" style="display: none;" data-folder-id="{{ $val['id'] }}" data-parent-id="{{ $val['parent_id'] }}"> --}}
 
                         {{-- wade:add --}}
-                        <span class="fms-folder-open"></span>
-                        <span class="fms-folder"></span>
                         <span class="title">{{ $val['title'] }}</span>
                         <span class="arrow"></span>
 
