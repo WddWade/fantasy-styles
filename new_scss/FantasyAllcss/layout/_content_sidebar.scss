@@ -255,20 +255,19 @@
             width: 12px;
             height: 12px;
             padding-right: 0;
-            margin-bottom: 3px;
             float: right;
             position: relative;
             opacity: 0.3;
             &::before {
               content: "\f105";
-              font-size: 16px;
+              font-size: 1rem;
               font-family: FontAwesome;
               text-shadow: none;
               margin: 0;
               display: block;
               position: absolute;
-              top: -1px;
-              // left: calc(50% + 3px);
+              top: 1px;
+              right: 0;
               -webkit-transition: 0.12s ease;
               -o-transition: 0.12s ease;
               transition: 0.12s ease;

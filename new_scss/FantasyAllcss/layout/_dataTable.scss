@@ -16,7 +16,43 @@
         font-size: 1.2rem;
         font-weight: 500;
         position: relative;
+        cursor: pointer;
 
+        &:not(.w_Check, .edit_ctrl) {
+          position: relative;
+          > * {
+            display: flex;
+            gap: 0 10px;
+
+            &:after {
+              content: "\f105";
+
+              color: transparent;
+              font-size: 1rem;
+              font-family: FontAwesome;
+              text-shadow: none;
+              padding-top: 1px;
+              margin: 0;
+              display: none;
+              transform-origin: center;
+              transform: rotate(90deg);
+            }
+
+            &:has([data-sort="1"]) {
+              &:after {
+                color: #000;
+                transform: rotate(-90deg);
+                display: block;
+              }
+            }
+            &:has([data-sort="0"]) {
+              &:after {
+                color: #000;
+                display: block;
+              }
+            }
+          }
+        }
         &::before {
           content: "";
           position: absolute;
@@ -30,6 +66,15 @@
         &:first-child {
           &::before {
             content: none;
+          }
+        }
+        &.order_field,
+        &.format_field {
+          > * {
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            height: 40px;
           }
         }
       }
@@ -160,10 +205,10 @@
 
     .order_field {
       width: 150px;
-      text-align: center;
       .tableContent {
         display: flex;
         justify-content: center;
+        text-align: center;
       }
       .folder_edit_rank {
         width: 50px;

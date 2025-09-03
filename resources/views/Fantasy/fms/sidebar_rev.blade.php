@@ -13,8 +13,45 @@
     <!--列表list-->
     <div class="body-list content-scrollbox">
         {{-- 資料夾樹 --}}
-        @include('Fantasy.fms.son_folder_rev',['for_son_folder'=>$folderAll,'firstTime'=>1])
-    </div>
 
-    <div class="clearfix"></div>
+        {{-- wade:add --}}
+        <div class="menu-block">
+            <div class="menu-block-title">Controls</div>
+            <div class="menu-block-content">
+                <div class="fms_controls">
+                    <a href="javascript:;" class="fms_bulider_upload" data-model="All_colunm">
+                        <span class="fms-upload"></span>
+                        <span class="text">上傳檔案</span>
+                    </a>
+                    <a href="javascript:;" class="fms_bulider_new" id="leon-cms-delete-list" data-model="All_colunm">
+                        <span class="fms-folder-add"></span>
+                        <span class="text">新增資料夾</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        {{-- wade:add --}}
+        <div class="menu-block">
+            <div class="menu-block-title">Files Navigation</div>
+            <div class="menu-block-content">
+                @include('Fantasy.fms.son_folder_rev',['for_son_folder'=>$folderAll,'firstTime'=>1])
+            </div>
+        </div>
+
+        {{-- wade:add --}}
+        <div class="menu-block">
+            <div class="menu-block-title">Others</div>
+            <div class="menu-block-content">
+                <div class="fms_controls">
+                    <div class="fms_trash tree-title trash" data-folder-id="">
+                        <span class="fms-delete"></span>
+                        <span class="title">垃圾桶</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- wade:delete --}}
+    {{-- <div class="clearfix"></div> --}}
 </div>

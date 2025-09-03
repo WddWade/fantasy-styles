@@ -29,11 +29,13 @@
             @endforeach
         </ul>
 
-        <ul class="main-tree">
+        {{-- wade:delete --}}
+        {{-- <ul class="main-tree">
             <li class="tree-title trash" data-folder-id="">
                 <span class="fms-delete"></span>
                 <span class="title">垃圾桶</span></li>
-        </ul>
+        </ul> --}}
+        
     </div>
 @else
     @foreach ($for_son_folder as $val)

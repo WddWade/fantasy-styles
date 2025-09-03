@@ -749,163 +749,128 @@ body.isContent .backEnd_quill {
   background-color: #eee;
 }
 
-.filetree .main-tree ul {
-  position: relative;
-  padding-left: 26px;
-  padding-top: 0;
+.folder-tree {
+  background-color: #fff;
+  padding: 0 20px;
 }
-.filetree .tree,
-.filetree .main-tree {
+.folder-tree .main-tree {
   margin: 0;
   text-align: left;
 }
-.filetree .main-tree > .tree-title {
-  padding: 10px 15px 10px 0;
+.folder-tree .main-tree ul {
+  position: relative;
+  padding-left: 7px;
+  padding-top: 0;
 }
-.filetree .main-tree > .tree-title > span.arrow {
-  top: calc(50% - 3px);
-}
-.filetree .tree > .tree-title::before {
-  content: "";
-  display: inline-block;
-  border-top: 1px dashed #6c6c6c;
-  width: 20px;
-  height: 1px;
-  position: absolute;
-  left: -20px;
-  top: 50%;
-  background-color: transparent;
-}
-.filetree .tree > .tree-title::after {
-  content: "";
-  border-left: 1px dashed #6c6c6c;
-  width: 1px;
-  height: 100%;
-  position: absolute;
-  left: -20px;
-  bottom: 50%;
-  background-color: transparent;
-}
-.filetree .tree-title.active ~ ul:not(.main-tree):not(.last-visible):not(:last-child)::before {
-  content: "";
-  border-left: 1px dashed #6c6c6c;
-  width: 1px;
-  height: calc(100% - 32px);
-  position: absolute;
-  left: 6px;
-  bottom: 16px;
-  background-color: transparent;
-  z-index: -1;
-}
-.filetree .tree-title.active ~ ul.main-tree:not(:last-child)::before {
-  content: "";
-  border-left: 1px dashed #6c6c6c;
-  width: 1px;
-  height: calc(100% - 41px);
-  position: absolute;
-  left: 6px;
-  top: 24px;
-  background-color: transparent;
-}
-.filetree .tree-title {
-  font-size: 13px;
+.folder-tree .tree-title {
+  font-size: 1.3rem;
   line-height: 1.5;
-  font-weight: bold;
   color: #626262;
-  padding: 6px 12px 6px 0;
-  list-style-type: none;
+  padding: 4px 0;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   cursor: pointer;
+  list-style-type: none;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  padding-left: 0px;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
-.filetree .tree-title.active {
-  color: #735ebc;
-}
-.filetree .tree-title > .title {
+.folder-tree .tree-title > .title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 1.2rem;
 }
-.filetree .tree-title > .title > .text {
+.folder-tree .tree-title > .title::before {
+  width: 16px;
+  height: 17px;
+  position: relative;
+  content: "\e903";
+  font-family: "fmsIcon";
+  font-size: 1rem;
+  z-index: 1;
+  padding-top: 2px;
+  margin-right: 4px;
+}
+.folder-tree .tree-title > .title > .text {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.filetree .tree-title > .title::before {
+.folder-tree .tree-title > .arrow {
+  width: 15px;
   position: relative;
-  content: "\e903";
-  font-family: "fmsIcon";
-  margin-right: 5px;
-  font-size: 14px;
-  font-weight: normal;
-  z-index: 1;
 }
-.filetree .tree-title.active > .title::before {
-  content: "\e905";
-}
-.filetree .tree-title.trash > .title::before {
-  content: "\e907";
-}
-.filetree .tree-title > span.arrow {
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  top: 50%;
-  right: 0;
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
-}
-.filetree .tree-title > span.arrow::before {
+.folder-tree .tree-title > .arrow::before {
   content: "\f105";
   position: absolute;
-  top: 0;
-  left: calc(50% - 2px);
-  font-size: 16px;
+  top: 3px;
+  right: 0;
+  font-size: 1rem;
   font-family: FontAwesome;
   margin: 0;
-  font-weight: normal;
   line-height: 12px;
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
-  -webkit-transition: transform 0.12s ease;
   -webkit-transition: -webkit-transform 0.12s ease;
   transition: -webkit-transform 0.12s ease;
   transition: transform 0.12s ease;
   transition: transform 0.12s ease, -webkit-transform 0.12s ease;
   -webkit-transform-origin: center;
-  transform-origin: center;
+          transform-origin: center;
 }
-.filetree .tree-title.active > span.arrow::before {
+.folder-tree .tree-title.active {
+  color: #000;
+}
+.folder-tree .tree-title.active:has(~ * .active) > .title::before {
+  color: #626262;
+  content: "\e905";
+}
+.folder-tree .tree-title.active > .title::before {
+  color: #5e00ff;
+  content: "\e905";
+}
+.folder-tree .tree-title.active > span.arrow::before {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
+  color: #5e00ff;
 }
-.filetree .tree-title.lock > span.arrow::before {
+.folder-tree .tree-title.active .fms-delete::before {
+  color: #5e00ff;
+}
+.folder-tree .tree-title.lock > span.arrow::before {
   content: "\e900" !important;
   font-family: "fmsIcon" !important;
   -webkit-transform: none !important;
           transform: none !important;
-  font-size: 12px;
+  font-size: 1.2rem;
   left: 3px;
 }
-.filetree .tree-item {
-  word-wrap: break-word;
-  white-space: -moz-pre-wrap;
-  white-space: pre-wrap;
-  cursor: pointer;
-  list-style-type: none;
-  margin-left: 20px;
-  display: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  padding-left: 10px;
+.folder-tree .tree-title.trash {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.folder-tree .tree-title.trash > .fms-delete {
+  width: 16px;
+  height: 17px;
+  position: relative;
+}
+.folder-tree .tree-title.trash > .fms-delete::before {
+  position: absolute;
+  top: 2px;
+  font-size: 1.2rem;
+}
+.folder-tree .tree-title.trash > .title::before {
+  content: none;
 }
 
 /*
@@ -6609,20 +6574,20 @@ body.isContent .backEnd_quill {
   width: 12px;
   height: 12px;
   padding-right: 0;
-  margin-bottom: 3px;
   float: right;
   position: relative;
   opacity: 0.3;
 }
 .page-container .content .content-sidebar .body-list .menu-block-content .arrow::before {
   content: "\f105";
-  font-size: 16px;
+  font-size: 1rem;
   font-family: FontAwesome;
   text-shadow: none;
   margin: 0;
   display: block;
   position: absolute;
-  top: -1px;
+  top: 1px;
+  right: 0;
   -webkit-transition: 0.12s ease;
   transition: 0.12s ease;
   -webkit-transform-origin: center;
@@ -6999,6 +6964,40 @@ body.isContent .backEnd_quill {
   font-size: 1.2rem;
   font-weight: 500;
   position: relative;
+  cursor: pointer;
+}
+.datatable .tables thead th:not(.w_Check, .edit_ctrl) {
+  position: relative;
+}
+.datatable .tables thead th:not(.w_Check, .edit_ctrl) > * {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0 10px;
+}
+.datatable .tables thead th:not(.w_Check, .edit_ctrl) > *:after {
+  content: "\f105";
+  color: transparent;
+  font-size: 1rem;
+  font-family: FontAwesome;
+  text-shadow: none;
+  padding-top: 1px;
+  margin: 0;
+  display: none;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+.datatable .tables thead th:not(.w_Check, .edit_ctrl) > *:has([data-sort="1"]):after {
+  color: #000;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  display: block;
+}
+.datatable .tables thead th:not(.w_Check, .edit_ctrl) > *:has([data-sort="0"]):after {
+  color: #000;
+  display: block;
 }
 .datatable .tables thead th::before {
   content: "";
@@ -7013,6 +7012,18 @@ body.isContent .backEnd_quill {
 }
 .datatable .tables thead th:first-child::before {
   content: none;
+}
+.datatable .tables thead th.order_field > *, .datatable .tables thead th.format_field > * {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 40px;
 }
 .datatable .tables tbody tr {
   height: 50px;
@@ -7152,7 +7163,6 @@ body.isContent .backEnd_quill {
 }
 .datatable .tables .order_field {
   width: 150px;
-  text-align: center;
 }
 .datatable .tables .order_field .tableContent {
   display: -webkit-box;
@@ -7161,6 +7171,7 @@ body.isContent .backEnd_quill {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  text-align: center;
 }
 .datatable .tables .order_field .folder_edit_rank {
   width: 50px;
@@ -11217,8 +11228,35 @@ body.isContent .backEnd_quill {
   display: flex;
 }
 
-.fms_page .fms_index .content-sidebar .body-list .active > .fms-folder {
-  display: none;
+.fms_page .fms_index .content-sidebar .body-list .fms_controls {
+  padding: 0 20px;
+}
+.fms_page .fms_index .content-sidebar .body-list .fms_controls > * {
+  padding: 6px 0;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  font-size: 1.2rem;
+  gap: 0 5px;
+  cursor: pointer;
+}
+.fms_page .fms_index .content-sidebar .body-list .fms_controls .fms-upload,
+.fms_page .fms_index .content-sidebar .body-list .fms_controls .fms-folder-add,
+.fms_page .fms_index .content-sidebar .body-list .fms_controls .fms-delete {
+  width: 15px;
+  height: 12px;
+}
+.fms_page .fms_index .content-sidebar .body-list .fms_controls .fms-folder-add::before {
+  font-size: 1.1rem;
+}
+.fms_page .fms_index .content-sidebar .body-list .fms_controls .fms-delete {
+  position: relative;
+}
+.fms_page .fms_index .content-sidebar .body-list .fms_controls .fms-delete::before {
+  font-size: 1.3rem;
+  font-weight: 600;
+  position: absolute;
+  top: 1px;
 }
 .fms_page .fms_index .content-head .content-nav .search {
   display: -webkit-box;

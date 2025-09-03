@@ -77,7 +77,8 @@
                                             <span class="text">復原</span>
                                         </a>
                                     </div>
-                                    <div class="btn-item leon-trash-hide">
+                                    {{-- wade:delete --}}
+                                    {{-- <div class="btn-item leon-trash-hide">
                                         <a href="javascript:;" class="fms_bulider_upload" data-model="All_colunm">
                                             <span class="fms-upload"></span>
                                             <span class="text">上傳</span>
@@ -88,7 +89,8 @@
                                             <span class="fms-folder-add"></span>
                                             <span class="text">新資料夾</span>
                                         </a>
-                                    </div>
+                                    </div> --}}
+
                                     <div class="btn-item ">
                                         <a href="javascript:;" class="LeonMoveFiles delete" id="leon-cms-delete-list" data-model="All_colunm">
                                             <span class="fms-delete"></span>

@@ -2,11 +2,41 @@
   .fms_index {
     .content-sidebar {
       .body-list {
-        .active {
-          > .fms-folder {
-            display: none;
+        .fms_controls {
+          padding: 0 20px;
+          > * {
+            padding: 6px 0;
+            display: flex !important;
+            font-size: 1.2rem;
+            gap: 0 5px;
+            cursor: pointer;
+          }
+          .fms-upload,
+          .fms-folder-add,
+          .fms-delete {
+            width: 15px;
+            height: 12px;
+          }
+          .fms-folder-add {
+            &::before {
+              font-size: 1.1rem;
+            }
+          }
+          .fms-delete {
+            position: relative;
+            &::before {
+              font-size: 1.3rem;
+              font-weight: 600;
+              position: absolute;
+              top: 1px;
+            }
           }
         }
+        // .active {
+        //   > .fms-folder {
+        //     display: none;
+        //   }
+        // }
       }
     }
     .content-head {
