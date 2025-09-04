@@ -57,9 +57,41 @@
             <input type="hidden" name="fms[folder_id]" value="{{$File['folder_id']}}">
             <div class="editorContent">
                 <ul class="box_block_frame frame">
+                    <li class="inventory row_style">
+                        <div class="title">
+                            <p class="subtitle">檔案名稱</p>
+                        </div>
+                        <div class="inner">
+                            <input class="normal_input" name="fms[title]" type="text" placeholder="" value="{{ $File['title']}}">
+                            <div class="tips">
+                                <span class="title">TIPS</span>
+                                <p>單行輸入，內容不支援HTML及CSS、JQ、JS等語法，特殊符號如 : @#$%?/\|*.及全形也盡量避免。</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="inventory row_style">
+                        <div class="title">
+                            <p class="subtitle">檔案目錄位置</p>
+                        </div>
+                        <div class="inner">
+                            <div class="select_Box" data-type="path">
+                                <div class="select_Btn" data-id="0">
+                                    <p class="title">{{$nowFolderPathText}}</p>
+                                    <i class="arrow pg-arrow_down"></i>
+                                </div>
+                                <ul class="option_list" data-id="0" data-level="-1">
+                                    @include('Fantasy.fms.folder_all_select')
+                                </ul>
+                            </div>
+                            <div class="tips">
+                                <span class="title">TIPS</span>
+                                <p>你可以更改檔案的資料夾位置。</p>
+                            </div>
+                        </div>
+                    </li>                    
                     <li class="inventory file_box fileInformation">
                         <div class="title">
-                            <p class="subtitle">檔案資訊</p>
+                            <p class="subtitle">檔案預覽</p>
                         </div>
                         <div class="file_frame">
                             <div class="file_frame_info">
@@ -117,44 +149,12 @@
                                 15MB，若你需要更大的上傳容量，請與開發者聯繫。</p>
                         </div>
                     </li>
-                    <li class="inventory fileUpload">
-                        <p class="subtitle">
-                            <span class="en_title"></span> 確認檔案
-                        </p>
-                        <ul class="upload_list locale_file_list_one">
-                            <!--待上傳列表-->
-                        </ul>
-                    </li>
-                    <li class="inventory row_style">
-                        <div class="title">
-                            <p class="subtitle">檔案名稱</p>
-                        </div>
+                    <li class="inventory fileUpload upload_list change_file">
+                        <p class="subtitle">確認更換的檔案</p>
                         <div class="inner">
-                            <input class="normal_input" name="fms[title]" type="text" placeholder="" value="{{ $File['title']}}">
-                            <div class="tips">
-                                <span class="title">TIPS</span>
-                                <p>單行輸入，內容不支援HTML及CSS、JQ、JS等語法，特殊符號如 : @#$%?/\|*.及全形也盡量避免。</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="inventory row_style">
-                        <div class="title">
-                            <p class="subtitle">檔案目錄位置</p>
-                        </div>
-                        <div class="inner">
-                            <div class="select_Box" data-type="path">
-                                <div class="select_Btn" data-id="0">
-                                    <p class="title">{{$nowFolderPathText}}</p>
-                                    <i class="arrow pg-arrow_down"></i>
-                                </div>
-                                <ul class="option_list" data-id="0" data-level="-1">
-                                    @include('Fantasy.fms.folder_all_select')
-                                </ul>
-                            </div>
-                            <div class="tips">
-                                <span class="title">TIPS</span>
-                                <p>你可以更改檔案的資料夾位置。</p>
-                            </div>
+                            <ul class="upload_list locale_file_list_one">
+                                <!--待上傳列表-->
+                            </ul>
                         </div>
                     </li>
                     @if(config('fms.s3_use') === false)

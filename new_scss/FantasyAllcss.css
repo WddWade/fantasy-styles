@@ -7314,8 +7314,8 @@ body.isContent .backEnd_quill {
 }
 .detailEditor .editorBody .editorHeader {
   width: 100%;
-  min-height: 67px;
-  padding: 20px 45px;
+  min-height: 57px;
+  padding: 20px 45px 10px 45px;
   background-color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7478,9 +7478,9 @@ body.isContent .backEnd_quill {
   width: 100%;
   line-height: 1.2;
   width: 100%;
-  min-height: 67px;
   background-color: #f5f5f5;
-  padding: 20px 45px;
+  min-height: 57px;
+  padding: 20px 45px 10px 45px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7835,7 +7835,7 @@ body.isContent .backEnd_quill {
   max-width: none;
   height: calc(100% - 50px);
   -webkit-transform: translateX(0%);
-  transform: translateX(0%);
+          transform: translateX(0%);
   overflow: hidden;
   padding: 25px 50px 25px 50px;
 }
@@ -7857,10 +7857,10 @@ body.isContent .backEnd_quill {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .state_button li {
   width: 100%;
@@ -7900,11 +7900,11 @@ body.isContent .backEnd_quill {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 /* fms 編輯資料夾 時間文字 */
@@ -7913,8 +7913,8 @@ body.isContent .backEnd_quill {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .file_date .name {
   font-weight: 600;
@@ -7924,7 +7924,7 @@ body.isContent .backEnd_quill {
 /* cms 顏色選擇 */
 .color_picker {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   width: 100%;
   max-width: 500px;
   display: -webkit-box;
@@ -7939,8 +7939,8 @@ body.isContent .backEnd_quill {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .color_picker .ticket_field p {
   line-height: 1;
@@ -8027,19 +8027,19 @@ body.isContent .backEnd_quill {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .sp-container .btn_group {
   -webkit-box-ordinal-group: 3;
-  -ms-flex-order: 2;
-  order: 2;
+      -ms-flex-order: 2;
+          order: 2;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
   z-index: 1;
 }
@@ -8052,11 +8052,11 @@ body.isContent .backEnd_quill {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .sp-container .btn_group .click_btn span {
   margin-right: 8px;
@@ -8083,7 +8083,7 @@ body.isContent .backEnd_quill {
   left: 50%;
   top: calc(50% - 25px);
   -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .sp-palette .sp-thumb-el {
@@ -8091,7 +8091,7 @@ body.isContent .backEnd_quill {
   width: 20px;
   height: 20px;
   -webkit-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0px 5px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   border-radius: 5px;
   display: block;
@@ -8103,20 +8103,20 @@ body.isContent .backEnd_quill {
 
 .sp-picker-container {
   -webkit-box-ordinal-group: 1;
-  -ms-flex-order: 0;
-  order: 0;
+      -ms-flex-order: 0;
+          order: 0;
   width: 50%;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .sp-palette-container {
   -webkit-box-ordinal-group: 2;
-  -ms-flex-order: 1;
-  order: 1;
+      -ms-flex-order: 1;
+          order: 1;
   width: 50%;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   border: none;
 }
 
@@ -8132,20 +8132,16 @@ body.isContent .backEnd_quill {
   height: 18px;
   overflow: hidden;
   text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
   line-clamp: 1;
-  -webkit-box-orient: vertical;
   word-break: break-all;
-  -webkit-box-orient: vertical;
 }
 .hiddenArea .check_box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .hiddenArea .check_box .content_input {
   display: inline-block !important;
@@ -8177,7 +8173,7 @@ body.isContent .backEnd_quill {
   left: -1px;
   top: -1px;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   display: inline-block;
   -webkit-transition: border 0.2s linear 0s, color 0.2s linear 0s;
   transition: border 0.2s linear 0s, color 0.2s linear 0s;
@@ -8195,12 +8191,12 @@ body.isContent .backEnd_quill {
   font-size: 12px;
   left: 50%;
   -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 .hiddenArea .sort_number {
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .hiddenArea .sort_number p {
   font-family: var(--baseFont);
@@ -8221,8 +8217,8 @@ body.isContent .backEnd_quill {
 }
 .hiddenArea .switch_btn {
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .hiddenArea .switch_btn .switchery {
   width: 35px;
@@ -8234,8 +8230,8 @@ body.isContent .backEnd_quill {
 }
 .hiddenArea .edit_btnGroup {
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .hiddenArea .edit_btnGroup span {
   margin: 0 10px;
@@ -8290,8 +8286,8 @@ body.isContent .backEnd_quill {
 }
 .hiddenArea .img_title .title {
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-  align-self: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 .hiddenArea .img_title .subtitle {
   font-size: 0.8125rem;
@@ -8581,11 +8577,11 @@ body.isContent .backEnd_quill {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
   height: 60px;
   overflow: hidden;
@@ -8778,11 +8774,11 @@ body.isContent .backEnd_quill {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
   -webkit-user-select: none;
@@ -8805,11 +8801,11 @@ body.isContent .backEnd_quill {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .hiddenArea .detailEditor .list_frame .inventory .table_head .table_head_th .td.input input, .hiddenArea .detailEditor .list_frame .inventory .table_head .table_head_th .td.dropdown input {
   padding: 10px;
@@ -8849,8 +8845,8 @@ body.isContent .backEnd_quill {
 .hiddenArea .detailEditor .list.stack_state {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .hiddenArea .detailEditor .list_box {
   width: 100%;
@@ -8894,7 +8890,7 @@ body.isContent .backEnd_quill {
   }
   .hiddenArea .detailEditor .list_frame .part_img .inventory .table_head .table_head_th {
     -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+        flex-wrap: wrap;
   }
   .hiddenArea .detailEditor .list_frame .part_img .inventory .table_head .table_head_th .td {
     width: 33.333%;
@@ -8905,7 +8901,7 @@ body.isContent .backEnd_quill {
   }
   .hiddenArea .detailEditor .list_frame .part_table .inventory .table_head .table_head_th {
     -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+        flex-wrap: wrap;
   }
   .hiddenArea .detailEditor .list_frame .part_table .inventory .table_head .table_head_th td {
     width: 50%;
@@ -8940,8 +8936,8 @@ body.isContent .backEnd_quill {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .file_path_frame .open_file_path_btn p {
   padding-right: 20px;
@@ -8962,11 +8958,11 @@ body.isContent .backEnd_quill {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .file_path_frame .close_file_path_btn p {
   color: #fff;
@@ -8980,19 +8976,19 @@ body.isContent .backEnd_quill {
 }
 .file_path_frame .content-sidebar.show_path_box {
   -webkit-animation-name: content-sidebar-show;
-  animation-name: content-sidebar-show;
+          animation-name: content-sidebar-show;
   -webkit-animation-duration: 1s;
-  animation-duration: 1s;
+          animation-duration: 1s;
   -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 .file_path_frame .content-sidebar.unshow_path_box {
   -webkit-animation-name: content-sidebar-unshow;
-  animation-name: content-sidebar-unshow;
+          animation-name: content-sidebar-unshow;
   -webkit-animation-duration: 1s;
-  animation-duration: 1s;
+          animation-duration: 1s;
   -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 @-webkit-keyframes content-sidebar-show {
@@ -9133,15 +9129,15 @@ body.isContent .backEnd_quill {
 }
 .inventory .with_icon {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   border: solid 1px #c7c7c7;
   border-radius: 3px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .inventory .with_icon input {
   border: none;
@@ -9155,8 +9151,8 @@ body.isContent .backEnd_quill {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .inventory .owner img {
   width: 32px;
@@ -9169,8 +9165,7 @@ body.isContent .backEnd_quill {
 }
 .inventory .upload_frame {
   cursor: pointer;
-  background-color: #f0f0f0;
-  border: solid 1px #c7c7c7;
+  background-color: #f5f5f5;
   border-radius: 3px;
   width: 100%;
   height: 200px;
@@ -9179,15 +9174,15 @@ body.isContent .backEnd_quill {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .inventory .file_box {
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
   padding-top: 0;
   padding-bottom: 0;
 }
@@ -9210,7 +9205,7 @@ body.isContent .backEnd_quill {
   right: 0;
   top: 50%;
   -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 .inventory:first-child {
   border-top: solid 1px #000;
@@ -9219,12 +9214,6 @@ body.isContent .backEnd_quill {
   border-bottom: none;
 }
 
-/*
-  不確定 sortStatusSet 差在哪裡
-  在 cms 編輯資料右側選單中前三個 inventory 帶有此類別
-*/
-/* 找不到 fileDownloadConnect */
-/* 未找到 file_authority */
 .ThreeContent .type {
   line-height: 1;
   margin-bottom: 10px;
@@ -9505,7 +9494,7 @@ body.isContent .backEnd_quill {
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 .tips .title {
   color: #5e00ff;
@@ -10835,26 +10824,24 @@ body.isContent .backEnd_quill {
 .fmsDetailAjaxArea .ajaxItem .ajaxContainer .detailEditor .editorBody .editorContent .box_block_frame .inventory {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 20px 0 20px 0;
 }
 .fmsDetailAjaxArea .ajaxItem .ajaxContainer .detailEditor .editorBody .editorContent .box_block_frame .inventory.fileInformation {
-  padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  border-bottom: 5px solid #775ac2;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .fmsDetailAjaxArea .ajaxItem .ajaxContainer .detailEditor .editorBody .editorContent .box_block_frame .inventory.fileInformation .file_frame {
   background-color: #3d4042;
@@ -10864,11 +10851,11 @@ body.isContent .backEnd_quill {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
 }
 .fmsDetailAjaxArea .ajaxItem .ajaxContainer .detailEditor .editorBody .editorContent .box_block_frame .inventory.fileInformation .file_frame .file_frame_info .img_box {
@@ -10877,11 +10864,11 @@ body.isContent .backEnd_quill {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .fmsDetailAjaxArea .ajaxItem .ajaxContainer .detailEditor .editorBody .editorContent .box_block_frame .inventory.fileInformation .file_frame .file_frame_info .img_box img {
   width: auto;
@@ -10919,11 +10906,11 @@ body.isContent .backEnd_quill {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .fmsDetailAjaxArea .ajaxItem .ajaxContainer .detailEditor .editorBody .editorContent .box_block_frame .inventory > .title {
   padding-top: 0;
@@ -10938,8 +10925,8 @@ body.isContent .backEnd_quill {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsDetail .detailEditor .editorBody .editorContent .box_block_frame .inventory .title {
   padding: 0;
@@ -10947,38 +10934,38 @@ body.isContent .backEnd_quill {
 .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsDetail_edit .editorContent .inventory {
   -webkit-box-orient: vertical !important;
   -webkit-box-direction: normal !important;
-  -ms-flex-direction: column !important;
-  flex-direction: column !important;
+      -ms-flex-direction: column !important;
+          flex-direction: column !important;
   -webkit-box-align: start !important;
-  -ms-flex-align: start !important;
-  align-items: flex-start !important;
+      -ms-flex-align: start !important;
+          align-items: flex-start !important;
 }
 .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsFolder_add .editorContent .inventory {
   -webkit-box-orient: vertical !important;
   -webkit-box-direction: normal !important;
-  -ms-flex-direction: column !important;
-  flex-direction: column !important;
+      -ms-flex-direction: column !important;
+          flex-direction: column !important;
   -webkit-box-align: start !important;
-  -ms-flex-align: start !important;
-  align-items: flex-start !important;
+      -ms-flex-align: start !important;
+          align-items: flex-start !important;
 }
 .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsFolder_edit .editorContent .inventory {
   -webkit-box-orient: vertical !important;
   -webkit-box-direction: normal !important;
-  -ms-flex-direction: column !important;
-  flex-direction: column !important;
+      -ms-flex-direction: column !important;
+          flex-direction: column !important;
   -webkit-box-align: start !important;
-  -ms-flex-align: start !important;
-  align-items: flex-start !important;
+      -ms-flex-align: start !important;
+          align-items: flex-start !important;
 }
 .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload .editorContent .inventory, .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload_done .editorContent .inventory, .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload_ing .editorContent .inventory {
   -webkit-box-orient: vertical !important;
   -webkit-box-direction: normal !important;
-  -ms-flex-direction: column !important;
-  flex-direction: column !important;
+      -ms-flex-direction: column !important;
+          flex-direction: column !important;
   -webkit-box-align: start !important;
-  -ms-flex-align: start !important;
-  align-items: flex-start !important;
+      -ms-flex-align: start !important;
+          align-items: flex-start !important;
 }
 .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload .editorContent .inventory .subtitle, .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload_done .editorContent .inventory .subtitle, .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload_ing .editorContent .inventory .subtitle {
   position: relative;
@@ -11001,11 +10988,11 @@ body.isContent .backEnd_quill {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   position: absolute;
   right: 0;
   top: -20px;
@@ -11047,11 +11034,11 @@ body.isContent .backEnd_quill {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload .editorContent .inventory .upload_frame_info .info_box, .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload_done .editorContent .inventory .upload_frame_info .info_box, .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload_ing .editorContent .inventory .upload_frame_info .info_box {
   text-align: center;
@@ -11062,9 +11049,6 @@ body.isContent .backEnd_quill {
   font-size: 1.125rem;
   font-weight: 900;
 }
-.fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload .editorContent .inventory .upload_frame, .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload_done .editorContent .inventory .upload_frame, .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload_ing .editorContent .inventory .upload_frame {
-  height: 170px;
-}
 .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload .editorContent .inventory.uploading .info_box, .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload_done .editorContent .inventory.uploading .info_box, .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload_ing .editorContent .inventory.uploading .info_box {
   color: #fff;
 }
@@ -11073,7 +11057,7 @@ body.isContent .backEnd_quill {
 }
 .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload .editorContent .inventory .upload_list .list, .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload_done .editorContent .inventory .upload_list .list, .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsDetail_edit .editorContent .inventory .upload_list .list, .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload_ing .editorContent .inventory .upload_list .list {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   border: solid 1px #c7c7c7;
   border-top: none;
   padding: 14px 25px;
@@ -11082,8 +11066,8 @@ body.isContent .backEnd_quill {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
 }
 .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload .editorContent .inventory .upload_list .list .option, .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload_done .editorContent .inventory .upload_list .list .option, .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsDetail_edit .editorContent .inventory .upload_list .list .option, .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload_ing .editorContent .inventory .upload_list .list .option {
@@ -11099,7 +11083,7 @@ body.isContent .backEnd_quill {
   right: 0;
   top: 50%;
   -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload .editorContent .inventory .upload_list .list .option:last-child::after, .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload_done .editorContent .inventory .upload_list .list .option:last-child::after, .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsDetail_edit .editorContent .inventory .upload_list .list .option:last-child::after, .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload_ing .editorContent .inventory .upload_list .list .option:last-child::after {
   display: none;
@@ -11124,11 +11108,11 @@ body.isContent .backEnd_quill {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload .editorContent .inventory .upload_list .list_img img, .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload_done .editorContent .inventory .upload_list .list_img img, .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsDetail_edit .editorContent .inventory .upload_list .list_img img, .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload_ing .editorContent .inventory .upload_list .list_img img {
   max-width: 42px;
@@ -11139,8 +11123,8 @@ body.isContent .backEnd_quill {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload .editorContent .inventory .upload_list .list_title p, .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload_done .editorContent .inventory .upload_list .list_title p, .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsDetail_edit .editorContent .inventory .upload_list .list_title p, .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload_ing .editorContent .inventory .upload_list .list_title p {
   margin-right: 12px;
@@ -11155,14 +11139,22 @@ body.isContent .backEnd_quill {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload .editorContent .inventory .upload_list .list_tool .icon, .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload_done .editorContent .inventory .upload_list .list_tool .icon, .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsDetail_edit .editorContent .inventory .upload_list .list_tool .icon, .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload_ing .editorContent .inventory .upload_list .list_tool .icon {
   cursor: pointer;
 }
 .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload .editorContent .inventory .upload_list .list_tool span, .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload_done .editorContent .inventory .upload_list .list_tool span, .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsDetail_edit .editorContent .inventory .upload_list .list_tool span, .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload_ing .editorContent .inventory .upload_list .list_tool span {
   margin: 0;
+}
+.fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload .inventory.upload_list {
+  display: none;
+}
+.fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload .inventory.upload_list:has(.list) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsUpload .editorContent .inventory .radio_area .content,

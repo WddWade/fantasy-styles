@@ -59,10 +59,7 @@
                             <ul class="box_block_frame frame">
                                 <li class="inventory row_style">
                                     <div class="title">
-                                        <p class="subtitle">
-                                            <strong>Step1</strong> 
-                                            <span>選擇資料夾位置</span>                            
-                                        </p>
+                                        <p class="subtitle">選擇上傳至哪個資料夾</p>
                                     </div>                                    
                                     <div class="inner">
                                         <div class="select_Box" data-type="path">
@@ -77,35 +74,48 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li class="inventory fileUpload upload_box">
-                                    <input type="file" name="file[]" style="display:none;" class="fileInputClick" multiple>
+                                <li class="inventory fileUpload">
                                     <div class="title">
-                                        <p class="subtitle">
-                                            <strong>Step2</strong> 
-                                            <span>選擇要上傳的檔案</span>                            
-                                        </p>
+                                        <p class="subtitle">選擇檔案或拖曳檔案到下方區塊</p>
                                     </div>
-                                    <div class="upload_frame fileUploadClick" ondrop="javascript: drop_image(event);" ondragover="javascript: dragHandler(event);">
-                                        <div class="upload_frame_info">
-                                            <div class="center_box">
-                                                <span class="fa fa-cloud-upload"></span>
+                                    <div class="inner">
+                                        <div class="upload_box">
+                                            <input type="file" name="file[]" style="display:none;" class="fileInputClick" multiple>
+                                            <div class="upload_frame fileUploadClick" ondrop="javascript: drop_image(event);" ondragover="javascript: dragHandler(event);">
+                                                <div class="upload_frame_info">
+                                                    <div class="center_box">
+                                                        <span class="fa fa-cloud-upload"></span>
+                                                    </div>
+                                                    <div class="info_box">
+                                                        <p class="en">Press or Drag Files to Here</p>
+                                                        <p>按下按鈕或拖曳檔案到這裡</p>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="info_box">
-                                                <p class="en">Press or Drag Files to Here</p>
-                                                <p>按下按鈕或拖曳檔案到這裡</p>
+                                            <div class="tips">
+                                                <span class="title">TIPS</span>
+                                                <p>你可以選擇多個檔案上傳，也可以直接將檔案拖曳到區塊中 ( <span style="color:#ff0000;">拖曳功能只支援
+                                                        Chrome</span> )，預設的檔案上傳容量為
+                                                    15MB，若你需要更大的上傳容量，請與開發者聯繫。
+                                                </p>
                                             </div>
                                         </div>
+                                    </div>     
+                                </li>                                
+                                <li class="inventory upload_list">
+                                    <div class="title">
+                                        <p class="subtitle">上傳檔案列表</p>
                                     </div>
-                                    <div class="tips">
-                                        <span class="title">TIPS</span>
-                                        <p>你可以選擇多個檔案上傳，也可以直接將檔案拖曳到區塊中 ( <span style="color:#ff0000;">拖曳功能只支援
-                                                Chrome</span> )，預設的檔案上傳容量為
-                                            15MB，若你需要更大的上傳容量，請與開發者聯繫。</p>
+                                    <div class="inner">
+                                        <ul class="upload_list locale_file_list">
+                                            <!--待上傳列表-->
+                                        </ul>
                                     </div>
-                                </li>
+                                </li>      
+
                                 <li class="inventory row_style">
                                     <div class="title">
-                                        <p class="subtitle">使用者權限</p>
+                                        <p class="subtitle">設定檔案權限</p>
                                     </div>                                    
                                     <div class="inner">
                                         <div class="radio_area">
@@ -114,13 +124,13 @@
                                                 <label class="box {{ (isset($selfFolder['is_private']) && $selfFolder['is_private']==1) ? '':'active' }}" data-value="0" data-hide="can_use">
                                                     <div class="plan">
                                                         <span class="circle"></span>
-                                                        <span class="yearly">公開</span>
+                                                        <span class="yearly">其他管理者可使用</span>
                                                     </div>
                                                 </label>
                                                 <label class="box {{ (isset($selfFolder['is_private']) && $selfFolder['is_private']==1) ? 'active':'' }}" data-value="1" data-hide="">
                                                     <div class="plan">
                                                         <span class="circle"></span>
-                                                        <span class="yearly">私人</span>
+                                                        <span class="yearly">僅限自己使用</span>
                                                     </div>
                                                 </label>
                                             </div>
@@ -137,7 +147,7 @@
                                 @endphp
                                 <li class="inventory row_style auth_group" style="{{(isset($selfFolder['is_private']) && $selfFolder['is_private']==1) ? '':'display: none;'}}">
                                     <div class="title">
-                                        <p class="subtitle">使用者權限</p>
+                                        <p class="subtitle">檔案權限</p>
                                     </div>
                                     <div class="inner">
                                         <select class="____select2 valid" id="can_use" name="fms[can_use][]" aria-invalid="false" multiple="multiple">
@@ -157,8 +167,7 @@
                                     <li class="inventory row_style">
                                         <div class="title">
                                             <p class="subtitle">
-                                                <strong>Step4</strong> 
-                                                <span>確認下載檔案是否使用原檔名</span>                            
+                                                <span>下載檔案是否使用原檔名</span>                            
                                             </p>
                                         </div>                                        
                                         <div class="inner">
@@ -185,26 +194,10 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="inventory fileUpload">
-                                         <div class="title">
-                                            <p class="subtitle">
-                                                <strong>Step5</strong> 
-                                                <span>確認檔案上傳清單</span>                            
-                                            </p>
-                                        </div>
-                                        <div class="inner">
-                                             <ul class="upload_list locale_file_list">
-                                            <!--待上傳列表-->
-                                            </ul>
-                                        </div>     
-                                    </li>
                                 @else
                                     <li class="inventory fileUpload">
                                         <div class="title">
-                                            <p class="subtitle">
-                                                <strong>Step4</strong> 
-                                                <span>確認下載檔案是否使用原檔名</span>                            
-                                            </p>
+                                            <p class="subtitle">確認下載檔案是否使用原檔名</p>
                                         </div>
                                         <div class="inner">
                                              <ul class="upload_list locale_file_list">

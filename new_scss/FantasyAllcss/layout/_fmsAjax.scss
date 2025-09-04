@@ -177,8 +177,6 @@
           //       -webkit-box-pack: justify;
           //       -ms-flex-pack: justify;
           //       justify-content: space-between;
-          //       -webkit-box-align: center;
-          //       -ms-flex-align: center;
           //       align-items: center;
           //       margin-left: auto;
 
@@ -194,8 +192,6 @@
           //         position: static;
           //         padding: 0;
           //         margin: 0;
-          //         -webkit-box-align: center;
-          //         -ms-flex-align: center;
           //         align-items: center;
 
           //         .btnGroup {
@@ -214,55 +210,30 @@
 
             .box_block_frame {
               .inventory {
-                -webkit-box-orient: horizontal;
-                -webkit-box-direction: normal;
-                -ms-flex-direction: row;
                 flex-direction: row;
-                -webkit-box-pack: start;
-                -ms-flex-pack: start;
                 justify-content: flex-start;
-                -webkit-box-align: center;
-                -ms-flex-align: center;
                 align-items: center;
                 padding: 20px 0 20px 0;
 
                 &.fileInformation {
-                  padding: 0;
-                  display: -webkit-box;
-                  display: -ms-flexbox;
                   display: flex;
-                  -webkit-box-orient: vertical;
-                  -webkit-box-direction: normal;
-                  -ms-flex-direction: column;
                   flex-direction: column;
-                  border-bottom: 5px solid #775ac2;
+                  // border-bottom: 5px solid #775ac2;
 
                   .file_frame {
                     background-color: #3d4042;
                     width: 100%;
                     height: 350px;
-                    display: -webkit-box;
-                    display: -ms-flexbox;
                     display: flex;
-                    -webkit-box-pack: center;
-                    -ms-flex-pack: center;
                     justify-content: center;
-                    -webkit-box-align: center;
-                    -ms-flex-align: center;
                     align-items: center;
                     position: relative;
 
                     .file_frame_info {
                       .img_box {
                         width: 100%;
-                        display: -webkit-box;
-                        display: -ms-flexbox;
                         display: flex;
-                        -webkit-box-pack: center;
-                        -ms-flex-pack: center;
                         justify-content: center;
-                        -webkit-box-align: center;
-                        -ms-flex-align: center;
                         align-items: center;
 
                         img {
@@ -304,14 +275,8 @@
                         height: 33px;
                         margin-bottom: 1px;
                         background-color: #fff;
-                        display: -webkit-box;
-                        display: -ms-flexbox;
                         display: flex;
-                        -webkit-box-align: center;
-                        -ms-flex-align: center;
                         align-items: center;
-                        -webkit-box-pack: center;
-                        -ms-flex-pack: center;
                         justify-content: center;
                       }
                     }
@@ -347,12 +312,7 @@
 
                   &.fileInformation {
                     padding: 0;
-                    display: -webkit-box;
-                    display: -ms-flexbox;
                     display: flex;
-                    -webkit-box-orient: vertical;
-                    -webkit-box-direction: normal;
-                    -ms-flex-direction: column;
                     flex-direction: column;
                   }
 
@@ -369,12 +329,7 @@
       &.fmsDetail_edit {
         .editorContent {
           .inventory {
-            -webkit-box-orient: vertical !important;
-            -webkit-box-direction: normal !important;
-            -ms-flex-direction: column !important;
             flex-direction: column !important;
-            -webkit-box-align: start !important;
-            -ms-flex-align: start !important;
             align-items: flex-start !important;
           }
         }
@@ -383,12 +338,7 @@
       &.fmsFolder_add {
         .editorContent {
           .inventory {
-            -webkit-box-orient: vertical !important;
-            -webkit-box-direction: normal !important;
-            -ms-flex-direction: column !important;
             flex-direction: column !important;
-            -webkit-box-align: start !important;
-            -ms-flex-align: start !important;
             align-items: flex-start !important;
           }
         }
@@ -397,12 +347,7 @@
       &.fmsFolder_edit {
         .editorContent {
           .inventory {
-            -webkit-box-orient: vertical !important;
-            -webkit-box-direction: normal !important;
-            -ms-flex-direction: column !important;
             flex-direction: column !important;
-            -webkit-box-align: start !important;
-            -ms-flex-align: start !important;
             align-items: flex-start !important;
           }
         }
@@ -413,12 +358,7 @@
       &.fmsUpload_ing {
         .editorContent {
           .inventory {
-            -webkit-box-orient: vertical !important;
-            -webkit-box-direction: normal !important;
-            -ms-flex-direction: column !important;
             flex-direction: column !important;
-            -webkit-box-align: start !important;
-            -ms-flex-align: start !important;
             align-items: flex-start !important;
 
             .subtitle {
@@ -441,14 +381,8 @@
               width: 40px;
               height: 40px;
               border-radius: 50%;
-              display: -webkit-box;
-              display: -ms-flexbox;
               display: flex;
-              -webkit-box-align: center;
-              -ms-flex-align: center;
               align-items: center;
-              -webkit-box-pack: center;
-              -ms-flex-pack: center;
               justify-content: center;
               position: absolute;
               right: 0;
@@ -497,14 +431,8 @@
                   margin: 0 auto;
                   border: solid 4px #000;
                   border-radius: 50%;
-                  display: -webkit-box;
-                  display: -ms-flexbox;
                   display: flex;
-                  -webkit-box-align: center;
-                  -ms-flex-align: center;
                   align-items: center;
-                  -webkit-box-pack: center;
-                  -ms-flex-pack: center;
                   justify-content: center;
                 }
               }
@@ -519,10 +447,6 @@
                   font-weight: 900;
                 }
               }
-            }
-
-            .upload_frame {
-              height: 170px;
             }
 
             &.uploading {
@@ -544,17 +468,12 @@
               width: 100%;
 
               .list {
-                -webkit-box-sizing: border-box;
                 box-sizing: border-box;
                 border: solid 1px #c7c7c7;
                 border-top: none;
                 padding: 14px 25px;
                 max-height: 70px;
-                display: -webkit-box;
-                display: -ms-flexbox;
                 display: flex;
-                -webkit-box-align: center;
-                -ms-flex-align: center;
                 align-items: center;
                 position: relative;
 
@@ -570,8 +489,6 @@
                     position: absolute;
                     right: 0;
                     top: 50%;
-                    -webkit-transform: translateY(-50%);
-                    -ms-transform: translateY(-50%);
                     transform: translateY(-50%);
                   }
 
@@ -605,14 +522,8 @@
                 width: 42px;
                 height: 40px;
                 margin-right: 16px;
-                display: -webkit-box;
-                display: -ms-flexbox;
                 display: flex;
-                -webkit-box-align: center;
-                -ms-flex-align: center;
                 align-items: center;
-                -webkit-box-pack: center;
-                -ms-flex-pack: center;
                 justify-content: center;
 
                 img {
@@ -622,11 +533,7 @@
 
               .list_title {
                 width: 100%;
-                display: -webkit-box;
-                display: -ms-flexbox;
                 display: flex;
-                -webkit-box-align: center;
-                -ms-flex-align: center;
                 align-items: center;
 
                 p {
@@ -641,11 +548,7 @@
 
               .list_tool {
                 width: 40px;
-                display: -webkit-box;
-                display: -ms-flexbox;
                 display: flex;
-                -webkit-box-pack: end;
-                -ms-flex-pack: end;
                 justify-content: flex-end;
 
                 .icon {
@@ -657,6 +560,15 @@
                 }
               }
             }
+          }
+        }
+      }
+
+      &.fmsUpload {
+        .inventory.upload_list {
+          display: none;
+          &:has(.list) {
+            display: flex;
           }
         }
       }

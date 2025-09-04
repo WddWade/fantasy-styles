@@ -81,7 +81,7 @@
                         <div class="title">
                             <p class="subtitle">
                                 <strong>Step2</strong> 
-                                <span>選擇要上傳的檔案</span>                            
+                                <span>選擇要上傳的檔案13222</span>                            
                             </p>
                         </div>
 

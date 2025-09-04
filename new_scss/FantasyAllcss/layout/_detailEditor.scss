@@ -56,8 +56,8 @@
     .editorHeader {
       // width: calc(100% - 460px);
       width: 100%;
-      min-height: 67px;
-      padding: 20px 45px;
+      min-height: 57px;
+      padding: 20px 45px 10px 45px;
       background-color: #fff;
       // border-bottom: solid 1px #000;
       display: flex;
@@ -252,9 +252,9 @@
       width: 100%;
       line-height: 1.2;
       width: 100%;
-      min-height: 67px;
       background-color: #f5f5f5;
-      padding: 20px 45px;
+      min-height: 57px;
+      padding: 20px 45px 10px 45px;
       display: flex;
       align-items: flex-start;
       justify-content: center;
@@ -589,8 +589,6 @@
       position: sticky;
       bottom: 0;
       z-index: 3;
-      -webkit-transition: 0.5s;
-      -o-transition: 0.5s;
       transition: 0.5s;
 
       ul {
@@ -715,8 +713,6 @@
     width: 100%;
     max-width: none;
     height: calc(100% - 50px);
-    -webkit-transform: translateX(0%);
-    -ms-transform: translateX(0%);
     transform: translateX(0%);
     overflow: hidden;
     padding: 25px 50px 25px 50px;
@@ -740,13 +736,8 @@
 
 /* 在 ams 權限管理設定中有找到對應結構 但是被 display: none 不確定有沒有用到 */
 .state_button {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 
   li {
@@ -786,25 +777,15 @@
     background-color: #c7c7c7;
     color: #000;
     min-width: 25px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
   }
 }
 
 /* fms 編輯資料夾 時間文字 */
 .file_date {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 
   .name {
@@ -815,23 +796,16 @@
 
 /* cms 顏色選擇 */
 .color_picker {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
   max-width: 500px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 
   .ticket_field {
     border: solid 1px #c7c7c7;
     border-left: none;
     padding: 4px 16px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
 
     p {
@@ -912,22 +886,13 @@
   max-width: 480px;
   background-color: #fff;
   border: solid 1px #c7c7c7;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 
   .btn_group {
-    -webkit-box-ordinal-group: 3;
-    -ms-flex-order: 2;
     order: 2;
     width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
     position: relative;
     z-index: 1;
@@ -937,14 +902,8 @@
       color: #fff;
       width: 100%;
       height: 45px;
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
       align-items: center;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
       justify-content: center;
 
       span {
@@ -977,8 +936,6 @@
     position: absolute;
     left: 50%;
     top: calc(50% - 25px);
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
     transform: translateY(-50%);
   }
 }
@@ -988,7 +945,6 @@
     border: solid 0px #d0d0d0;
     width: 20px;
     height: 20px;
-    -webkit-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.3);
     box-shadow: 0 0px 5px rgba(0, 0, 0, 0.3);
     cursor: pointer;
     border-radius: 5px;
@@ -1002,20 +958,14 @@
 }
 
 .sp-picker-container {
-  -webkit-box-ordinal-group: 1;
-  -ms-flex-order: 0;
   order: 0;
   width: 50%;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 .sp-palette-container {
-  -webkit-box-ordinal-group: 2;
-  -ms-flex-order: 1;
   order: 1;
   width: 50%;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   border: none;
 }
@@ -1035,23 +985,14 @@
       // font-family: var(--baseFont);
       height: 18px;
       overflow: hidden;
-      -o-text-overflow: ellipsis;
       text-overflow: ellipsis;
-      display: -webkit-box;
-      -webkit-line-clamp: 1;
       line-clamp: 1;
-      -webkit-box-orient: vertical;
       word-break: break-all;
-      -webkit-box-orient: vertical;
     }
   }
 
   .check_box {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
 
     .content_input {
@@ -1084,11 +1025,8 @@
         position: absolute;
         left: -1px;
         top: -1px;
-        -webkit-box-sizing: border-box;
         box-sizing: border-box;
         display: inline-block;
-        -webkit-transition: border 0.2s linear 0s, color 0.2s linear 0s;
-        -o-transition: border 0.2s linear 0s, color 0.2s linear 0s;
         transition: border 0.2s linear 0s, color 0.2s linear 0s;
       }
     }
@@ -1108,8 +1046,6 @@
           top: -2px;
           font-size: 12px;
           left: 50%;
-          -webkit-transform: translateX(-50%);
-          -ms-transform: translateX(-50%);
           transform: translateX(-50%);
         }
       }
@@ -1117,8 +1053,6 @@
   }
 
   .sort_number {
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
 
     p {
@@ -1140,8 +1074,6 @@
   }
 
   .switch_btn {
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
 
     .switchery {
@@ -1156,8 +1088,6 @@
   }
 
   .edit_btnGroup {
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
 
     span {
@@ -1166,8 +1096,6 @@
   }
 
   .paragraph_type {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
 
     span {
@@ -1237,8 +1165,6 @@
 
   .img_title {
     .title {
-      -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
       align-self: center;
     }
 
@@ -1549,14 +1475,8 @@
         max-width: 80px;
         max-height: 60px;
         padding: 0 10px;
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
         align-items: center;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
         justify-content: center;
         width: 100%;
         height: 60px;
@@ -1802,19 +1722,9 @@
               width: 100%;
               padding: 9px 0;
               border-right: solid 1px #c7c7c7;
-              display: -webkit-box;
-              display: -ms-flexbox;
               display: flex;
-              -webkit-box-align: center;
-              -ms-flex-align: center;
               align-items: center;
-              -webkit-box-pack: center;
-              -ms-flex-pack: center;
               justify-content: center;
-              -webkit-transition: all 0.5s ease 0s;
-              -moz-transition: all 0.5s ease 0s;
-              -ms-transition: all 0.5s ease 0s;
-              -o-transition: all 0.5s ease 0s;
               transition: all 0.5s ease 0s;
               user-select: none;
 
@@ -1831,14 +1741,8 @@
                   height: 100%;
                   margin: 0;
                   border-left: solid 1px #c7c7c7;
-                  display: -webkit-box;
-                  display: -ms-flexbox;
                   display: flex;
-                  -webkit-box-align: center;
-                  -ms-flex-align: center;
                   align-items: center;
-                  -webkit-box-pack: center;
-                  -ms-flex-pack: center;
                   justify-content: center;
                 }
 
@@ -1886,9 +1790,6 @@
 
     .list {
       &.stack_state {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
         flex-direction: column;
       }
     }
@@ -1935,7 +1836,6 @@
               border-bottom: none;
 
               .table_head_th {
-                -ms-flex-wrap: wrap;
                 flex-wrap: wrap;
 
                 .td {
@@ -1955,7 +1855,6 @@
           .inventory {
             .table_head {
               .table_head_th {
-                -ms-flex-wrap: wrap;
                 flex-wrap: wrap;
 
                 td {
@@ -1999,11 +1898,7 @@
     width: 100%;
     padding: 10px 12px;
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
 
     p {
@@ -2024,14 +1919,8 @@
       background-color: #775bc2;
       width: 100px;
       height: 50px;
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
       align-items: center;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
       justify-content: center;
     }
 
@@ -2048,20 +1937,14 @@
     height: 100%;
 
     &.show_path_box {
-      -webkit-animation-name: content-sidebar-show;
       animation-name: content-sidebar-show;
-      -webkit-animation-duration: 1s;
       animation-duration: 1s;
-      -webkit-animation-fill-mode: forwards;
       animation-fill-mode: forwards;
     }
 
     &.unshow_path_box {
-      -webkit-animation-name: content-sidebar-unshow;
       animation-name: content-sidebar-unshow;
-      -webkit-animation-duration: 1s;
       animation-duration: 1s;
-      -webkit-animation-fill-mode: forwards;
       animation-fill-mode: forwards;
     }
   }
@@ -2214,15 +2097,10 @@
   }
 
   .with_icon {
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     border: solid 1px #c7c7c7;
     border-radius: 3px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
 
     input {
@@ -2236,11 +2114,7 @@
   }
 
   .owner {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
 
     img {
@@ -2257,25 +2131,17 @@
 
   .upload_frame {
     cursor: pointer;
-    background-color: #f0f0f0;
-    border: solid 1px #c7c7c7;
+    background-color: #f5f5f5;
     border-radius: 3px;
     width: 100%;
     height: 200px;
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
   }
 
   .file_box {
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     padding-top: 0;
     padding-bottom: 0;
@@ -2301,8 +2167,6 @@
       position: absolute;
       right: 0;
       top: 50%;
-      -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
       transform: translateY(-50%);
     }
   }
@@ -2314,67 +2178,6 @@
     border-bottom: none;
   }
 }
-
-/*
-  不確定 sortStatusSet 差在哪裡
-  在 cms 編輯資料右側選單中前三個 inventory 帶有此類別
-*/
-
-// .sortStatusSet {
-//   &.inventory {
-//     display: flex;
-//     align-items: flex-start;
-
-//     > .inner {
-//       display: flex;
-//       align-items: center;
-//       // padding-top: 10px;
-//       .state_button {
-//         width: 100%;
-//       }
-//     }
-//   }
-
-//   .state_box {
-//     -ms-flex-wrap: wrap;
-//     flex-wrap: wrap;
-//   }
-
-//   .normal_input {
-//     max-width: 100px;
-//     margin-right: 20px;
-//     text-align: center;
-//   }
-
-//   .ios_switch,
-//   .____ios_switch {
-//     margin-right: 20px;
-//   }
-
-//   .tips {
-//     margin: 0;
-//   }
-// }
-
-/* 找不到 fileDownloadConnect */
-// .fileDownloadConnect {
-//   .text {
-//     span {
-//       margin-right: 12px;
-//       padding-top: 5px;
-//     }
-//   }
-// }
-
-/* 未找到 file_authority */
-// .file_authority {
-//   input {
-//     &[type="password"] {
-//       font-size: 0.875rem;
-//       letter-spacing: 1px;
-//     }
-//   }
-// }
 
 .ThreeContent {
   .type {
