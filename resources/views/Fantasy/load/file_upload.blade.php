@@ -10,10 +10,14 @@
                     <div class="editorBody">
                         <div class="editorHeader">
                             <div class="info">
-                                <div class="title">
+                                {{-- wade:delete --}}
+                                {{-- <div class="title">
                                     <p>FILE UPLOAD 檔案上傳</p>
-                                </div>
-                                <div class="area">
+                                </div> --}}
+
+                                <h3 class="dataEditTitle">檔案上傳</h3>   
+                                {{-- wade:delete --}}
+                                {{-- <div class="area">
                                     <h3>請依下列步驟進行操作</h3>
                                     <div class="control">
                                         <ul class="btnGroup">
@@ -24,13 +28,42 @@
                                             </li>
                                         </ul>
                                     </div>
-                                </div>
+                                </div> --}}
+
+                            </div>
+                            {{-- wade:add --}}
+                            <div class="control">
+                                <ul class="btnGroup">
+            
+                                    {{-- wade:add --}}
+                                    <li class="cancel">
+                                        <a href="javascript:;" class="close_btn">
+                                            <span class="fa fa-remove"></span>
+                                            <span class="label">Cancel</span>
+                                        </a>
+                                    </li>
+
+                                    {{-- wade:add --}}
+                                    <li class="check">
+                                        <a href="javascript:void(0)" class="localeToNameFolder">
+                                            <span class="fa fa-cloud-upload"></span>
+                                            <span class="label">Upload</span>
+                                        </a>
+                                    </li>
+                                
+                                </ul>
                             </div>
                         </div>
+
                         <div class="editorContent">
                             <ul class="box_block_frame frame">
                                 <li class="inventory row_style">
-                                    <p class="subtitle"><span class="en_title">Step1.</span>選擇檔案上傳的資料夾位置</p>
+                                    <div class="title">
+                                        <p class="subtitle">
+                                            <strong>Step1</strong> 
+                                            <span>選擇資料夾位置</span>                            
+                                        </p>
+                                    </div>                                    
                                     <div class="inner">
                                         <div class="select_Box" data-type="path">
                                             <div class="select_Btn Select_folder_id" data-id="0">
@@ -46,9 +79,12 @@
                                 </li>
                                 <li class="inventory fileUpload upload_box">
                                     <input type="file" name="file[]" style="display:none;" class="fileInputClick" multiple>
-                                    <p class="subtitle">
-                                        <span class="en_title">Step2.</span> 選擇要上傳的檔案
-                                    </p>
+                                    <div class="title">
+                                        <p class="subtitle">
+                                            <strong>Step2</strong> 
+                                            <span>選擇要上傳的檔案</span>                            
+                                        </p>
+                                    </div>
                                     <div class="upload_frame fileUploadClick" ondrop="javascript: drop_image(event);" ondragover="javascript: dragHandler(event);">
                                         <div class="upload_frame_info">
                                             <div class="center_box">
@@ -68,7 +104,9 @@
                                     </div>
                                 </li>
                                 <li class="inventory row_style">
-                                    <p class="subtitle"><span class="en_title">Step3.</span>權限設定</p>
+                                    <div class="title">
+                                        <p class="subtitle">使用者權限</p>
+                                    </div>                                    
                                     <div class="inner">
                                         <div class="radio_area">
                                             <div class="radio_area_content">
@@ -117,8 +155,12 @@
                                 </li>
                                 @if(config('fms.s3_use') === false)
                                     <li class="inventory row_style">
-                                        <p class="subtitle"><span class="en_title">Step4.</span>下載時使用原檔名</p>
-                                        <p class="subtitle">檔案上傳後系統會重新編寫檔名，如 dog.png -> {{ date('YmdHi') }}abcdefg.png，若勾選下載時使用原檔名可使下載的檔案檔名同上傳時的檔名，但相對的會使用較多的伺服器資源。</p>
+                                        <div class="title">
+                                            <p class="subtitle">
+                                                <strong>Step4</strong> 
+                                                <span>確認下載檔案是否使用原檔名</span>                            
+                                            </p>
+                                        </div>                                        
                                         <div class="inner">
                                             <div class="radio_area">
                                                 <div class="radio_area_content">
@@ -137,24 +179,38 @@
                                                     </label>
                                                 </div>
                                             </div>
+                                            <div class="tips">
+                                                <span class="title">TIPS</span>
+                                                <p>檔案上傳後系統會重新編寫檔名，如 dog.png -> {{ date('YmdHi') }}abcdefg.png，若勾選下載時使用原檔名可使下載的檔案檔名同上傳時的檔名，但相對的會使用較多的伺服器資源。</p>
+                                            </div>
                                         </div>
                                     </li>
                                     <li class="inventory fileUpload">
-                                        <p class="subtitle">
-                                            <span class="en_title">Step5.</span> 確認檔案上傳清單
-                                        </p>
-                                        <ul class="upload_list locale_file_list">
+                                         <div class="title">
+                                            <p class="subtitle">
+                                                <strong>Step5</strong> 
+                                                <span>確認檔案上傳清單</span>                            
+                                            </p>
+                                        </div>
+                                        <div class="inner">
+                                             <ul class="upload_list locale_file_list">
                                             <!--待上傳列表-->
-                                        </ul>
+                                            </ul>
+                                        </div>     
                                     </li>
                                 @else
                                     <li class="inventory fileUpload">
-                                        <p class="subtitle">
-                                            <span class="en_title">Step4.</span> 確認檔案上傳清單
-                                        </p>
-                                        <ul class="upload_list locale_file_list">
+                                        <div class="title">
+                                            <p class="subtitle">
+                                                <strong>Step4</strong> 
+                                                <span>確認下載檔案是否使用原檔名</span>                            
+                                            </p>
+                                        </div>
+                                        <div class="inner">
+                                             <ul class="upload_list locale_file_list">
                                             <!--待上傳列表-->
-                                        </ul>
+                                            </ul>
+                                        </div>
                                     </li>
                                 @endif
                             </ul>
@@ -191,11 +247,14 @@
                     <div class="editorBody">
                         <div class="editorHeader">
                             <div class="info">
-                                <div class="title">
+                                {{-- wade:delete --}}
+                                {{-- <div class="title">
                                     <p>FILE UPLOAD 檔案上傳-上傳進行中</p>
-                                </div>
-                                <div class="area">
-                                    {{-- <h3>請依下列步驟進行操作</h3> --}}
+                                </div> --}}
+                                <h3>上傳檔案中</h3>
+                                {{-- wade:delete --}}
+                                {{-- <div class="area">
+                                    <h3>請依下列步驟進行操作</h3>
                                     <div class="control">
                                         <ul class="btnGroup">
                                             <li class="remove">
@@ -205,7 +264,18 @@
                                             </li>
                                         </ul>
                                     </div>
-                                </div>
+                                {{-- <div class="area">
+                                    <h3>請依下列步驟進行操作</h3>
+                                    <div class="control">
+                                        <ul class="btnGroup">
+                                            <li class="remove">
+                                                <a href="javascript:;" class="close_btn">
+                                                    <span class="fa fa-remove"></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div> --}}
                             </div>
                         </div>
                         <div class="editorContent">
@@ -249,10 +319,14 @@
                     <div class="editorBody">
                         <div class="editorHeader">
                             <div class="info">
-                                <div class="title">
-                                    <p>FILE UPLOAD 檔案上傳-上傳完成</p>
-                                </div>
-                                <div class="area">
+                                {{-- wade:add --}}
+                                <h3>檔案上傳已完成</h3>
+
+                                {{-- wade:delete --}}
+                                {{-- <div class="title">
+                                    <p>檔案上傳上傳完成</p>
+                                </div> --}}
+                                {{-- <div class="area">
                                     <div class="control">
                                         <ul class="btnGroup">
                                             <li class="remove">
@@ -262,7 +336,7 @@
                                             </li>
                                         </ul>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                         <div class="editorContent">

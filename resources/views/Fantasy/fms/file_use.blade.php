@@ -3,9 +3,10 @@
         <div class="editorBody">
             <div class="editorHeader">
                 <div class="info">
-                    <div class="title">
+                    {{-- wade:delete --}}
+                    {{-- <div class="title">
                         <p>{!! $area_title !!}</p>
-                    </div>
+                    </div> --}}
                     <div class="area">
                         <div class="control">
                             <ul class="btnGroup">

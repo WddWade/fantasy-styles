@@ -5,10 +5,13 @@
         <div class="editorBody">
             <div class="editorHeader">
                 <div class="info">
-                    <div class="title">
+                    {{-- wade:delete --}}
+                    {{-- <div class="title">
                         <p>FILE UPLOAD 檔案上傳</p>
-                    </div>
-                    <div class="area">
+                    </div> --}}
+                    <h3 class="dataEditTitle">請依下列步驟進行操作</h3>
+                    {{-- wade:delete --}}
+                    {{-- <div class="area">
                         <h3>請依下列步驟進行操作</h3>
                         <div class="control">
                             <ul class="btnGroup">
@@ -19,13 +22,42 @@
                                 </li>
                             </ul>
                         </div>
+                    </div> --}}
+
+
+                    {{-- wade:add --}}
+                    <div class="control">
+                        <ul class="btnGroup">
+     
+                            {{-- wade:add --}}
+                            <li class="cancel">
+                                <a href="javascript:;" class="close_btn">
+                                    <span class="fa fa-remove"></span>
+                                    <span class="label">Cancel</span>
+                                </a>
+                            </li>
+
+                            {{-- wade:add --}}
+                            <li class="check">
+                                <a href="javascript:void(0)" class="localeToServer">
+                                    <span class="fa fa-cloud-upload"></span>
+                                     <span class="label">Upload</span>
+                                </a>
+                            </li>
+                         
+                        </ul>
                     </div>
                 </div>
             </div>
             <div class="editorContent">
                 <ul class="box_block_frame">
                     <li class="inventory row_style">
-                        <p class="subtitle"><span class="en_title">step1.</span>選擇檔案上傳的資料夾位置</p>
+                        <div class="title">
+                            <p class="subtitle">
+                                <strong>Step1</strong> 
+                                <span>選擇資料夾位置</span>
+                            </p>
+                        </div>
                         <div class="inner">
                             <div class="select_Box" data-type="path">
                                 <div class="select_Btn Select_folder_id" data-id="0">
@@ -45,9 +77,14 @@
                     </li>
                     <li class="inventory fileUpload upload_box">
                         <input type="file" name="file[]" style="display:none;" class="fileInputClick" multiple>
-                        <p class="subtitle">
-                            <span class="en_title">step2.</span> 選擇要上傳的檔案
-                        </p>
+                        
+                        <div class="title">
+                            <p class="subtitle">
+                                <strong>Step2</strong> 
+                                <span>選擇要上傳的檔案</span>                            
+                            </p>
+                        </div>
+
                         <div class="upload_frame fileUploadClick" ondrop="javascript: drop_image(event);" ondragover="javascript: dragHandler(event);">
                             <div class="upload_frame_info">
                                 <div class="center_box">
@@ -61,15 +98,19 @@
                         </div>
                         <div class="tips">
                             <span class="title">TIPS</span>
-                            <p>你可以選擇多個檔案上傳，也可以直接將檔案拖曳到區塊中 ( <span style="color:#ff0000;">拖曳功能只支援
-                                    Chrome</span> )，預設的檔案上傳容量為
-                                15MB，若你需要更大的上傳容量，請與開發者聯繫。</p>
+                            <p>你可以選擇多個檔案上傳，也可以直接將檔案拖曳到區塊中 ( 
+                                <span style="color:#ff0000;">拖曳功能只支援 Chrome</span> )，預設的檔案上傳容量為
+                                15MB，若你需要更大的上傳容量，請與開發者聯繫。
+                            </p>
                         </div>
                     </li>
                     <li class="inventory fileUpload">
-                        <p class="subtitle">
-                            <span class="en_title">step3.</span> 確認檔案上傳清單
-                        </p>
+                        <div class="title">
+                            <p class="subtitle">
+                                <strong>Step3</strong> 
+                                <span>確認檔案</span>                            
+                            </p>
+                        </div>
                         <ul class="upload_list locale_file_list">
                             <!--待上傳列表-->
                         </ul>

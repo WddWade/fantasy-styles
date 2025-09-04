@@ -98,9 +98,10 @@
       }
 
       .control {
-        // margin: 54px 0 0 50px;
         display: flex;
         align-items: flex-start;
+        height: fit-content;
+        padding-top: 5px;
 
         .btnGroup {
           display: flex;
@@ -163,7 +164,10 @@
             }
 
             a {
-              display: block;
+              display: flex;
+              .fa {
+                margin-top: -1px;
+              }
               &:not(.btn) {
                 opacity: 1;
               }
@@ -804,7 +808,7 @@
   align-items: center;
 
   .name {
-    font-weight: 900;
+    font-weight: 600;
     margin-right: 3px;
   }
 }
@@ -2160,6 +2164,9 @@
     flex-direction: row;
     align-items: center;
     word-break: break-all;
+    strong {
+      font-weight: 600;
+    }
   }
 
   > .title {
@@ -2188,6 +2195,7 @@
       // width: calc(100% - 210px);
     }
     &:has(> .radio_btn_switch) {
+      display: flex;
       justify-content: space-between;
       flex-direction: row-reverse;
       align-items: flex-start;

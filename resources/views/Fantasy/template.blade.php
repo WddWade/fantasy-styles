@@ -285,7 +285,7 @@
     <!--QuillCircleProgram.js(2018/5/14 引入)-->
     {{-- wade:delete --}}
     {{-- 僅在上傳檔案時fms有使用#HondaDebug --}}
-    {{-- <script type="text/javascript" src="{{ asset('/vender/backend/js/QuillCircleProgram/QuillCircleProgram.js') }}"> </script>--}}
+    <script type="text/javascript" src="{{ asset('/vender/backend/js/QuillCircleProgram/QuillCircleProgram.js') }}"> </script>
 
     <script type="text/javascript" src="{{ asset('/vender/backend/js/custom.js') }}"></script>
     <script type="text/javascript" src="{{ asset('/vender/backend/js/js_builder.js') }}"></script>

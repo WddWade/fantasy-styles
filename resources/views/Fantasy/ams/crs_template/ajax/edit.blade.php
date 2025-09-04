@@ -6,10 +6,11 @@
 		         <div class="editorBody">
 		              <div class="editorHeader">
                 <div class="info">
-                    <div class="title">
+                    {{-- wade:delete --}}
+                    {{-- <div class="title">
                         <p class="ams_type_create_zz" style="display:none;">Create CMS Template 新增功能設定</p>
                         <p class="ams_type_edit_zz" style="display:none;">Edit CMS Template 編輯功能設定</p>
-                    </div>
+                    </div> --}}
                     <div class="area">
                         <div class="control">
                             <ul class="btnGroup">

@@ -81,8 +81,8 @@
 
     tbody {
       tr {
-        height: 50px;
-        box-shadow: 0 1px 0 #ddd;
+        height: 49px;
+        border-bottom: 1px solid #ddd;
         &:has(.fms_lbox_file_select_checkbox:checked) {
           background-color: rgb(240 240 249);
         }
@@ -109,7 +109,8 @@
       justify-content: center;
       align-items: center;
       img {
-        width: 20px;
+        max-width: 20px;
+        max-height: 30px;
       }
     }
 
@@ -119,7 +120,8 @@
         justify-content: center;
         align-items: center;
         img {
-          width: 25px;
+          max-width: 20px;
+          max-height: 30px;
         }
       }
     }

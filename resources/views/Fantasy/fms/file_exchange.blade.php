@@ -3,9 +3,12 @@
         <div class="editorBody">
             <div class="editorHeader">
                 <div class="info">
-                    <div class="title">
+                    {{-- wade:delete --}}
+                    {{-- <div class="title">
                         <p>{{ $area_title }}</p>
-                    </div>
+                    {{-- <div class="title">
+                        <p>{{ $area_title }}</p>
+                    </div> --}}
                     <div class="area">
                         <h3>共選取 {{ $allCount }} 個檔案</h3>
                         <div class="control">

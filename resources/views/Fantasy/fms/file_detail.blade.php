@@ -3,9 +3,10 @@
         <div class="editorBody">
             <div class="editorHeader">
                 <div class="info">
-                    <div class="title">
+                    {{-- wade:delete --}}
+                    {{-- <div class="title">
                         <p>{{ $area_title }}</p>
-                    </div>
+                    </div> --}}
                     <div class="area">
                         <h3>{{ $File['title'].((!empty($File['type']))?'.'.$File['type']:'') }}</h3>
                         <div class="control">

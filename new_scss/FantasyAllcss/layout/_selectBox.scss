@@ -8,20 +8,14 @@
 
   &[data-type="path"] {
     .select_Btn {
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
       align-items: center;
       border: 1px solid #c7c7c7;
       border-radius: 3px;
-      padding: 10px 12px;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
+      padding: 5px 12px;
       user-select: none;
       cursor: pointer;
+      height: 42px;
 
       p {
         &.title {
@@ -91,7 +85,11 @@
             p {
               &.title {
                 position: relative;
-                padding: 10px 40px;
+                padding: 5px 40px;
+                &:hover {
+                  color: #fff;
+                  background-color: #000000;
+                }
 
                 span {
                   &.arrow {
@@ -103,7 +101,6 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    background-color: #eee;
 
                     &::before {
                       content: "\f105";
@@ -184,11 +181,11 @@
 
             &.focus {
               > p {
-                background-color: #785ac1;
-                color: white;
+                background-color: #f5f5f5;
+                color: 000;
 
                 &::before {
-                  color: #fff;
+                  color: #ccc;
                 }
               }
             }
@@ -247,4 +244,3 @@
 .icon.left {
   margin-right: 5px;
 }
-

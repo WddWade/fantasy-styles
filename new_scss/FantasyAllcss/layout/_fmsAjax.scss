@@ -154,59 +154,59 @@
         .editorBody {
           // height: calc(100vh - 50px);
 
-          .editorHeader {
-            width: 100%;
-            border: none;
-            position: sticky;
+          // .editorHeader {
+          //   width: 100%;
+          //   border: none;
+          //   position: sticky;
 
-            .info {
-              display: flex;
-              justify-content: space-between;
-              width: 100%;
+          //   .info {
+          //     display: flex;
+          //     justify-content: space-between;
+          //     width: 100%;
 
-              .title {
-                position: static;
-                width: 160px;
+          //     .title {
+          //       position: static;
+          //       width: 160px;
 
-                &::after {
-                  background-color: #775bc2;
-                }
-              }
+          //       &::after {
+          //         background-color: #775bc2;
+          //       }
+          //     }
 
-              .area {
-                -webkit-box-pack: justify;
-                -ms-flex-pack: justify;
-                justify-content: space-between;
-                -webkit-box-align: center;
-                -ms-flex-align: center;
-                align-items: center;
-                margin-left: auto;
+          //     .area {
+          //       -webkit-box-pack: justify;
+          //       -ms-flex-pack: justify;
+          //       justify-content: space-between;
+          //       -webkit-box-align: center;
+          //       -ms-flex-align: center;
+          //       align-items: center;
+          //       margin-left: auto;
 
-                h3 {
-                  width: 100%;
-                  margin: 15px 30px 15px 0;
-                  word-break: break-all;
-                  min-height: 55px;
-                  height: auto;
-                }
+          //       h3 {
+          //         width: 100%;
+          //         margin: 15px 30px 15px 0;
+          //         word-break: break-all;
+          //         min-height: 55px;
+          //         height: auto;
+          //       }
 
-                .control {
-                  position: static;
-                  padding: 0;
-                  margin: 0;
-                  -webkit-box-align: center;
-                  -ms-flex-align: center;
-                  align-items: center;
+          //       .control {
+          //         position: static;
+          //         padding: 0;
+          //         margin: 0;
+          //         -webkit-box-align: center;
+          //         -ms-flex-align: center;
+          //         align-items: center;
 
-                  .btnGroup {
-                    .check {
-                      background-color: #775bc2;
-                    }
-                  }
-                }
-              }
-            }
-          }
+          //         .btnGroup {
+          //           .check {
+          //             background-color: #775bc2;
+          //           }
+          //         }
+          //       }
+          //     }
+          //   }
+          // }
 
           .editorContent {
             margin-top: 0;

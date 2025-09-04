@@ -268,47 +268,64 @@ $('body').on('click', '.file_edit_upload', function () {
                             //如果有更新檔案
                             if (fantasy_files_uploads.length > 0 && parsedObj.data != "") {
                                 var fast_table = '';
-                                fast_table += ' <td class="text-center w_Check">                                                                                          ';
-                                fast_table += '     <div class="tableContent">                                                                                            ';
-                                fast_table += '         <label class="select-item">                                                                                       ';
-                                fast_table += '             <input type="checkbox"                                                                                        ';
-                                fast_table += '                 class="input_number fms_lbox_file_select_checkbox"                                                        ';
-                                fast_table += '                 data-id="' + parsedObj.data['id'] + '"                                                                                               ';
-                                fast_table += '                 data-src="' + parsedObj.data['real_m_route'] + '"                                                                                               ';
-                                fast_table += '                 data-title="' + parsedObj.data['title'] + '"                                                                                             ';
-                                fast_table += '                 data-type="' + parsedObj.data['type'] + '"                                                                                              ';
-                                fast_table += '                 data-key="">                                                                                              ';
-                                fast_table += '             <span class="check-circle icon-check"></span>                                                                 ';
-                                fast_table += '         </label>                                                                                                          ';
-                                fast_table += '     </div>                                                                                                                ';
-                                fast_table += ' </td>                                                                                                                     ';
-                                fast_table += ' <td class="tool_ctrl open_file_edit">                                                                                     ';
-                                fast_table += '     <div class="tableMaintitle">                                                                                          ';
+                                fast_table += ' <td class=" w_Check">';
+                                fast_table += '     <div class="tableContent">';
+                                fast_table += '         <label class="select-item">';
+                                fast_table += '             <input type="checkbox"';
+                                fast_table += '                 class="input_number fms_lbox_file_select_checkbox"';
+                                fast_table += '                 data-id="' + parsedObj.data['id'] + '"';
+                                fast_table += '                 data-src="' + parsedObj.data['real_m_route'] + '"';
+                                fast_table += '                 data-type="' + parsedObj.data['type'] + '"';
+                                fast_table += '                 data-key="">';
+                                fast_table += '             <span class="check-circle icon-check"></span>';
+                                fast_table += '         </label>';
+                                fast_table += '     </div>';
+                                fast_table += ' </td>';
+
+                                fast_table += ' <td class="edit_ctrl open_file_edit">';
+                                fast_table += '     <div class="tableMaintitle">';
+                                fast_table += '         <div';
+                                fast_table += '             class="cms_open_file_edit file-edit"';
+                                fast_table += '             data-id="' + parsedObj.data['id'] + '"';
+                                fast_table += '         >';
+                                fast_table += '             <span class="fa fa-pencil-square-o edit-txt"></span>';
+                                fast_table += '         </div>';
+                                fast_table += '     </div>';
+                                fast_table += ' </td>';
+
+                                fast_table += ' <td class="main_field tool_ctrl open_file_edit">';
+                                fast_table += '     <div class="tableMaintitle">';
                                 fast_table += '     <div class="title-img rwdhide ' + parsedObj.data['notImgStyle'] + '" data-src="' + parsedObj.data['real_m_route'] + '">                                                                                          ';
-                                fast_table += '         <img src="' + parsedObj.data['real_m_route'] + '"  data-src="" alt="">                                                                            ';
-                                fast_table += '     </div>                                                                                                                ';
-                                fast_table += '         <span class="title-name bold">' + parsedObj.data['title'] + '.' + parsedObj.data['type'] + '</span>                                         ';
+                                fast_table += '         <img src="' + parsedObj.data['real_m_route'] + '"  data-src="" alt="">';
+                                fast_table += '     </div>';
+                                fast_table += '         <span class="title-name bold">' + parsedObj.data['title'] + '.' + parsedObj.data['type'] + '</span>';
                                 fast_table += '         <div class="cms_open_file_edit file-edit" data-id="' + parsedObj.data['id'] + '"><span class="fa fa-pencil"></span></div>';
-                                fast_table += '     </div>                                                                                                                ';
-                                fast_table += ' </td>                                                                                                                     ';
-                                fast_table += ' <td class="text-center">                                                                                                  ';
-                                fast_table += '     <div class="tableContent">' + parsedObj.data['type'] + '</div>                                                                    ';
-                                fast_table += ' </td>                                                                                                                     ';
-                                fast_table += ' <td class="text-center">                                                                                                  ';
-                                fast_table += '     <div class="tableContent">檔案</div>                                                      ';
-                                fast_table += ' </td>                                                                                                                     ';
-                                fast_table += ' <td class="text-center">                                                                                                  ';
-                                fast_table += '     <div class="tableContent">' + parsedObj.data['size'] + '</div>                                                              ';
-                                fast_table += ' </td>                                                                                                                     ';
-                                fast_table += ' <td class="text-center">                                                                                                  ';
-                                fast_table += '     <div class="tableContent">' + parsedObj.data['img_w'] + ' x ' + parsedObj.data['img_h'] + '</div>                                                              ';
-                                fast_table += ' </td>                                                                                                                     ';
-                                fast_table += ' <td class="text-center">                                                                                                  ';
-                                fast_table += '     <div class="tableContent">' + parsedObj.data['updated_at'] + '</div>                                                              ';
-                                fast_table += ' </td>                                                                                                                     ';
-                                fast_table += ' <td class="text-center">                                                                                                  ';
-                                fast_table += '     <div class="tableContent">' + $(".userName").text() + '</div>                                                                                     ';
-                                fast_table += ' </td>                                                                                                                     ';
+                                fast_table += '     </div>';
+                                fast_table += ' </td>';
+
+                                fast_table += ' <td class="order_field">';
+                                fast_table += '     <div class="tableContent">' + parsedObj.data['type'] + '</div>';
+                                fast_table += ' </td>';
+
+                                // fast_table += ' <td class="">';
+                                // fast_table += '     <div class="tableContent">檔案</div>';
+                                // fast_table += ' </td>';
+                                fast_table += ' <td class="format_field">';
+                                fast_table += '     <div class="tableContent">' + parsedObj.data['size'] + '</div>';
+                                fast_table += ' </td>';
+
+                                fast_table += ' <td class="size_field">';
+                                fast_table += '     <div class="tableContent">' + parsedObj.data['img_w'] + ' x ' + parsedObj.data['img_h'] + '</div>';
+                                fast_table += ' </td>';
+
+                                fast_table += ' <td class="dimension_field">';
+                                fast_table += '     <div class="tableContent">' + parsedObj.data['updated_at'] + '</div>';
+                                fast_table += ' </td>';
+
+                                fast_table += ' <td class="last_modified_field">';
+                                fast_table += '     <div class="tableContent">' + $(".userName").text() + '</div>';
+                                fast_table += ' </td>';
+
                                 $('.fms_list .fms_lbox_file_select_checkbox[data-id="' + _val_id + '"]').closest('tr').html(fast_table);
                             }
                             //更新資料夾位置
@@ -398,47 +415,66 @@ $('body').on('click', '.file_edit_upload', function () {
                             //如果有更新檔案
                             if (fantasy_files_uploads.length > 0 && parsedObj.data != "") {
                                 var fast_table = '';
-                                fast_table += ' <td class="text-center w_Check">                                                                                          ';
-                                fast_table += '     <div class="tableContent">                                                                                            ';
-                                fast_table += '         <label class="select-item">                                                                                       ';
-                                fast_table += '             <input type="checkbox"                                                                                        ';
-                                fast_table += '                 class="input_number fms_lbox_file_select_checkbox"                                                        ';
-                                fast_table += '                 data-id="' + parsedObj.data['id'] + '"                                                                                               ';
-                                fast_table += '                 data-src="' + parsedObj.data['real_m_route'] + '"                                                                                               ';
-                                fast_table += '                 data-title="' + parsedObj.data['title'] + '"                                                                                             ';
-                                fast_table += '                 data-type="' + parsedObj.data['type'] + '"                                                                                              ';
-                                fast_table += '                 data-key="">                                                                                              ';
-                                fast_table += '             <span class="check-circle icon-check"></span>                                                                 ';
-                                fast_table += '         </label>                                                                                                          ';
-                                fast_table += '     </div>                                                                                                                ';
-                                fast_table += ' </td>                                                                                                                     ';
-                                fast_table += ' <td class="tool_ctrl open_file_edit">                                                                                     ';
-                                fast_table += '     <div class="tableMaintitle">                                                                                          ';
-                                fast_table += '     <div class="title-img rwdhide ' + parsedObj.data['notImgStyle'] + '" data-src="' + parsedObj.data['real_m_route'] + '">                                                                                          ';
-                                fast_table += '         <img src="' + parsedObj.data['real_m_route'] + '"  data-src="" alt="">                                                                            ';
-                                fast_table += '     </div>                                                                                                                ';
-                                fast_table += '         <span class="title-name bold">' + parsedObj.data['title'] + '.' + parsedObj.data['type'] + '</span>                                         ';
+                                fast_table += ' <td class=" w_Check">';
+                                fast_table += '     <div class="tableContent">';
+                                fast_table += '         <label class="select-item">';
+                                fast_table += '             <input type="checkbox"';
+                                fast_table += '                 class="input_number fms_lbox_file_select_checkbox"';
+                                fast_table += '                 data-id="' + parsedObj.data['id'] + '"';
+                                fast_table += '                 data-src="' + parsedObj.data['real_m_route'] + '"';
+                                fast_table += '                 data-title="' + parsedObj.data['title'] + '"';
+                                fast_table += '                 data-type="' + parsedObj.data['type'] + '"';
+                                fast_table += '                 data-key="">';
+                                fast_table += '             <span class="check-circle icon-check"></span>';
+                                fast_table += '         </label>';
+                                fast_table += '     </div>';
+                                fast_table += ' </td>';
+
+                                fast_table += ' <td class="edit_ctrl open_file_edit">';
+                                fast_table += '     <div class="tableMaintitle">';
+                                fast_table += '         <div';
+                                fast_table += '             class="cms_open_file_edit file-edit"';
+                                fast_table += '             data-id="' + parsedObj.data['id'] + '"';
+                                fast_table += '         >';
+                                fast_table += '             <span class="fa fa-pencil-square-o edit-txt"></span>';
+                                fast_table += '         </div>';
+                                fast_table += '     </div>';
+                                fast_table += ' </td>';
+
+                                fast_table += ' <td class="main_field tool_ctrl open_file_edit">';
+                                fast_table += '     <div class="tableMaintitle">';
+                                fast_table += '     <div class="title-img rwdhide ' + parsedObj.data['notImgStyle'] + '" data-src="' + parsedObj.data['real_m_route'] + '">';
+                                fast_table += '         <img src="' + parsedObj.data['real_m_route'] + '"  data-src="" alt="">';
+                                fast_table += '     </div>';
+                                fast_table += '         <span class="title-name bold">' + parsedObj.data['title'] + '.' + parsedObj.data['type'] + '</span>';
                                 fast_table += '         <div class="cms_open_file_edit file-edit" data-id="' + parsedObj.data['id'] + '"><span class="fa fa-pencil"></span></div>';
-                                fast_table += '     </div>                                                                                                                ';
-                                fast_table += ' </td>                                                                                                                     ';
-                                fast_table += ' <td class="text-center">                                                                                                  ';
-                                fast_table += '     <div class="tableContent">' + parsedObj.data['type'] + '</div>                                                                    ';
-                                fast_table += ' </td>                                                                                                                     ';
-                                fast_table += ' <td class="text-center">                                                                                                  ';
-                                fast_table += '     <div class="tableContent">檔案</div>                                                      ';
-                                fast_table += ' </td>                                                                                                                     ';
-                                fast_table += ' <td class="text-center">                                                                                                  ';
-                                fast_table += '     <div class="tableContent">' + parsedObj.data['size'] + '</div>                                                              ';
-                                fast_table += ' </td>                                                                                                                     ';
-                                fast_table += ' <td class="text-center">                                                                                                  ';
-                                fast_table += '     <div class="tableContent">' + parsedObj.data['img_w'] + ' x ' + parsedObj.data['img_h'] + '</div>                                                              ';
-                                fast_table += ' </td>                                                                                                                     ';
-                                fast_table += ' <td class="text-center">                                                                                                  ';
-                                fast_table += '     <div class="tableContent">' + parsedObj.data['updated_at'] + '</div>                                                              ';
-                                fast_table += ' </td>                                                                                                                     ';
-                                fast_table += ' <td class="text-center">                                                                                                  ';
-                                fast_table += '     <div class="tableContent">' + $(".userName").text() + '</div>                                                                                     ';
-                                fast_table += ' </td>                                                                                                                     ';
+                                fast_table += '     </div>';
+                                fast_table += ' </td>';
+
+                                fast_table += ' <td class="order_field">';
+                                fast_table += '     <div class="tableContent">' + parsedObj.data['type'] + '</div>';
+                                fast_table += ' </td>';
+
+                                // fast_table += ' <td class="">';
+                                // fast_table += '     <div class="tableContent">檔案</div>';
+                                // fast_table += ' </td>';
+
+                                fast_table += ' <td class="format_field">';
+                                fast_table += '     <div class="tableContent">' + parsedObj.data['size'] + '</div>';
+                                fast_table += ' </td>';
+
+                                fast_table += ' <td class="size_field">';
+                                fast_table += '     <div class="tableContent">' + parsedObj.data['img_w'] + ' x ' + parsedObj.data['img_h'] + '</div>';
+                                fast_table += ' </td>';
+
+                                fast_table += ' <td class="dimension_field">';
+                                fast_table += '     <div class="tableContent">' + parsedObj.data['updated_at'] + '</div>';
+                                fast_table += ' </td>';
+
+                                fast_table += ' <td class="last_modified_field">';
+                                fast_table += '     <div class="tableContent">' + $(".userName").text() + '</div>';
+                                fast_table += ' </td>';
+
                                 $('.fms_list .fms_lbox_file_select_checkbox[data-id="' + _val_id + '"]').closest('tr').html(fast_table);
                             }
                             //更新資料夾位置
@@ -918,52 +954,71 @@ function checkWhatFileNotUpload() {
                 }
                 if (_this.hasClass('upload_ok')) {
                     fast_table += '<tr class="tbody_tick fms_list fms_list_' + $(".Select_folder_id").attr('data-id') + ' can_use" data-folder-id="' + $(".Select_folder_id").attr('data-id') + '" style="cursor: pointer;">';
-                    fast_table += ' <td class="text-center w_Check">                                                                                          ';
-                    fast_table += '     <div class="tableContent">                                                                                            ';
-                    fast_table += '         <label class="select-item">                                                                                       ';
-                    fast_table += '             <input type="checkbox"                                                                                        ';
-                    fast_table += '                 class="input_number fms_lbox_file_select_checkbox"                                                        ';
-                    fast_table += '                 data-id="' + _this.attr('data-id') + '"                                                                                               ';
-                    fast_table += '                 data-src="' + _this.attr('data-src') + '"                                                                                               ';
-                    fast_table += '                 data-title="' + _this.children('div.list_title').text() + '"                                                                                             ';
-                    fast_table += '                 data-type="' + _this.attr('data-type') + '"                                                                                              ';
-                    fast_table += '                 data-key="' + _this.attr('data-key') + '">                                                                                              ';
-                    fast_table += '             <span class="check-circle icon-check"></span>                                                                 ';
-                    fast_table += '         </label>                                                                                                          ';
-                    fast_table += '     </div>                                                                                                                ';
-                    fast_table += ' </td>                                                                                                                     ';
-                    fast_table += ' <td class="tool_ctrl open_file_edit">                                                                                     ';
-                    fast_table += '     <div class="tableMaintitle">                                                                                          ';
-                    fast_table += '     <div class="title-img rwdhide">                                                                                          ';
-                    fast_table += '         <img src="' + _this.find('div.list_title .list_img img').attr('src') + '" data-src="" alt="">                                                                            ';
-                    fast_table += '     </div>                                                                                                                ';
+                    fast_table += ' <td class="w_Check">';
+                    fast_table += '     <div class="tableContent">';
+                    fast_table += '         <label class="select-item">';
+                    fast_table += '             <input type="checkbox"';
+                    fast_table += '                 class="input_number fms_lbox_file_select_checkbox"';
+                    fast_table += '                 data-id="' + _this.attr('data-id') + '"';
+                    fast_table += '                 data-src="' + _this.attr('data-src') + '"';
+                    fast_table += '                 data-title="' + _this.children('div.list_title').text() + '"';
+                    fast_table += '                 data-type="' + _this.attr('data-type') + '"';
+                    fast_table += '                 data-key="' + _this.attr('data-key') + '">';
+                    fast_table += '             <span class="check-circle icon-check"></span>';
+                    fast_table += '         </label>';
+                    fast_table += '     </div>';
+                    fast_table += ' </td>';
 
-                    fast_table += '         <span class="title-name bold">' + _this.children('div.list_title').text() + '</span>                                         ';
+                    fast_table += ' <td class="edit_ctrl open_file_edit">';
+                    fast_table += '     <div class="tableMaintitle">';
+                    fast_table += '         <div';
+                    fast_table += '             class="cms_open_file_edit file-edit"';
+                    fast_table += '             data-id="' + _this.attr('data-id') + '"';
+                    fast_table += '         >';
+                    fast_table += '             <span class="fa fa-pencil-square-o edit-txt"></span>';
+                    fast_table += '         </div>';
+                    fast_table += '     </div>';
+                    fast_table += ' </td>';
+
+                    fast_table += ' <td class="main_field tool_ctrl open_file_edit">';
+                    fast_table += '     <div class="tableMaintitle">';
+                    fast_table += '     <div class="title-img rwdhide">';
+                    fast_table += '         <img src="' + _this.find('div.list_title .list_img img').attr('src') + '" data-src="" alt="">';
+                    fast_table += '     </div>';
+
+                    fast_table += '         <span class="title-name bold">' + _this.children('div.list_title').text() + '</span>';
                     fast_table += '         <div class="cms_open_file_edit file-edit" data-id="' + _this.attr('data-id') + '"><span class="fa fa-pencil"></span></div>';
-                    fast_table += '     </div>                                                                                                                ';
-                    fast_table += ' </td>                                                                                                                     ';
-                    fast_table += ' <td class="text-center">                                                                                                  ';
-                    fast_table += '     <div class="tableContent"><a class="fileUse" data-key="' + _this.attr('data-key') + '">0</a></div>                                                                    ';
-                    fast_table += ' </td>                                                                                                                     ';
-                    fast_table += ' <td class="text-center">                                                                                                  ';
-                    fast_table += '     <div class="tableContent">' + _this.attr('data-type') + '</div>                                                                    ';
-                    fast_table += ' </td>                                                                                                                     ';
-                    fast_table += ' <td class="text-center">                                                                                                  ';
-                    fast_table += '     <div class="tableContent">檔案</div>                                                      ';
-                    fast_table += ' </td>                                                                                                                     ';
-                    fast_table += ' <td class="text-center">                                                                                                  ';
-                    fast_table += '     <div class="tableContent">' + _this.children('div.list_capacity').text() + '</div>                                                              ';
-                    fast_table += ' </td>                                                                                                                     ';
-                    fast_table += ' <td class="text-center">                                                                                                  ';
-                    fast_table += '     <div class="tableContent">' + _img_wh + '</div>                                                              ';
-                    fast_table += ' </td>                                                                                                                     ';
-                    fast_table += ' <td class="text-center">                                                                                                  ';
-                    fast_table += '     <div class="tableContent">' + _this.attr('data-updated') + '</div>                                                              ';
-                    fast_table += ' </td>                                                                                                                     ';
-                    fast_table += ' <td class="text-center">                                                                                                  ';
-                    fast_table += '     <div class="tableContent">' + _this.attr('data-admin') + '</div>                                                                                     ';
-                    fast_table += ' </td>                                                                                                                     ';
-                    fast_table += '</tr>                                                                                                                      ';
+                    fast_table += '     </div>';
+                    fast_table += ' </td>';
+
+                    fast_table += ' <td class="order_field">';
+                    fast_table += '     <div class="tableContent"><a class="fileUse" data-key="' + _this.attr('data-key') + '">0</a></div>';
+                    fast_table += ' </td>';
+
+                    fast_table += ' <td class="format_field">';
+                    fast_table += '     <div class="tableContent">' + _this.attr('data-type') + '</div>';
+                    fast_table += ' </td>';
+
+                    // fast_table += ' <td class="">';
+                    // fast_table += '     <div class="tableContent">檔案</div>';
+                    // fast_table += ' </td>';
+
+                    fast_table += ' <td class="size_field">';
+                    fast_table += '     <div class="tableContent">' + _this.children('div.list_capacity').text() + '</div>';
+                    fast_table += ' </td>';
+
+                    fast_table += ' <td class="dimension_field">';
+                    fast_table += '     <div class="tableContent">' + _img_wh + '</div>';
+                    fast_table += ' </td>';
+
+                    fast_table += ' <td class="last_modified_field">';
+                    fast_table += '     <div class="tableContent">' + _this.attr('data-updated') + '</div>';
+                    fast_table += ' </td>';
+
+                    fast_table += ' <td class="">';
+                    fast_table += '     <div class="owner_field">' + _this.attr('data-admin') + '</div>';
+                    fast_table += ' </td>';
+                    fast_table += '</tr>';
                 }
             });
 

@@ -3,10 +3,12 @@
         <div class="editorBody">
             <div class="editorHeader">
                 <div class="info">
-                    <div class="title">
+                    {{-- wade:delete --}}
+                    {{-- <div class="title">
                         <p>{{ $area_title }}</p>
-                    </div>
+                    </div> --}}
                     <h3 class="dataEditTitle">{{ $folderData['title'] }}</h3>
+                    {{-- wade:delete --}}
                     {{-- <div class="area"> --}}
                         {{-- <h3>{{ $folderData['title'] }}</h3> --}}
                         {{--  --}}
@@ -22,18 +24,31 @@
                     {{-- </div> --}}
                 </div>
 
+                {{-- wade:add --}}
                 <div class="control">
                     <ul class="btnGroup">
+                         <li class="cancel">
+                            <a href="javascript:;" class="close_btn">
+                                <span class="fa fa-remove"></span>
+                                <span class="label">Cancel</span>
+                            </a>
+                        </li>
+
+                        {{-- wade:add --}}
+                         @if($folderData['id']!='0')
+                        <li class="trash folder_edit_delete">
+                            <a href="javascript:void(0)">
+                                <span class="fa fa-trash"></span>
+                                <span class="label">Delete</span>
+                            </a>
+                        </li>
+                        @endif
+
+                        {{-- wade:add --}}
                         <li class="check folder_edit_upload_new">
                             <a href="javascript:void(0)">
                                 <span class="fa fa-check"></span>
-                                <p>SETTING</p>
-                            </a>
-                        </li>
-                   
-                        <li class="cancel">
-                            <a href="javascript:;" class="close_btn">
-                                <span class="fa fa-remove"></span>
+                                <span class="label">Save</span>
                             </a>
                         </li>
                     </ul>
@@ -48,7 +63,7 @@
                 <ul class="box_block_frame frame">
                     <li class="inventory row_style">
                         <div class="title">
-                            <p class="subtitle">資料夾名稱22222</p>
+                            <p class="subtitle">資料夾名稱</p>
                         </div>
                         <div class="inner">
                             <input class="normal_input" name="fms[title]" type="text" placeholder="" value="{{ $folderData['title']}}">
@@ -230,7 +245,7 @@
             <li class="check folder_edit_upload_new">
                 <a href="javascript:void(0)">
                     <span class="fa fa-check"></span>
-                    <p>SETTING</p>
+                    <p>SAVE</p>
                 </a>
             </li>
         </ul>

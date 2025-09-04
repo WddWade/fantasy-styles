@@ -3,11 +3,13 @@
         <div class="editorBody">
             <div class="editorHeader">
                 <div class="info">
-                    <div class="title">
+                    {{-- wade:delete --}}
+                    {{-- <div class="title">
                         <p>{{ $area_title }}</p>
-                    </div>
-                    <div class="area">
-                        <h3>{{ $File['title'].((!empty($File['type']))?'.'.$File['type']:'') }}</h3>
+                    </div> --}}
+                    <h3>{{ $File['title'].((!empty($File['type']))?'.'.$File['type']:'') }}</h3>
+                    {{-- wade:delete --}}
+                    {{-- <div class="area">
                         <div class="control">
                             <ul class="btnGroup">
                                 <li class="remove">
@@ -17,9 +19,38 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
+                    </div> --}}
+                </div>
+
+                {{-- wade:add --}}
+                <div class="control">
+                    <ul class="btnGroup">
+                         <li class="cancel">
+                            <a href="javascript:;" class="close_btn">
+                                <span class="fa fa-remove"></span>
+                                <span class="label">Cancel</span>
+                            </a>
+                        </li>
+
+                        {{-- wade:add --}}
+                        <li class="trash file_edit_delete">
+                            <a href="javascript:void(0)">
+                                <span class="fa fa-trash"></span>
+                                <span class="label">Delete</span>
+                            </a>
+                        </li>
+
+                        {{-- wade:add --}}
+                        <li class="check file_edit_upload">
+                            <a href="javascript:void(0)">
+                                <span class="fa fa-check"></span>
+                                <span class="label">Save</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
+
             <input type="hidden" name="fms[edit_id]" value="0">
             <input type="hidden" name="fms[file_use_count]" value="{{$File['fms_file_use_count']}}">
             <input type="hidden" name="fms[folder_level]" value="{{$File['level']}}">
@@ -96,7 +127,7 @@
                     </li>
                     <li class="inventory row_style">
                         <div class="title">
-                            <p class="subtitle">檔案名稱333</p>
+                            <p class="subtitle">檔案名稱</p>
                         </div>
                         <div class="inner">
                             <input class="normal_input" name="fms[title]" type="text" placeholder="" value="{{ $File['title']}}">
@@ -317,22 +348,28 @@
 @else
 <div class="hiddenArea_frame_controlBtn" data-delete="false">
     <ul class="btnGroup">
-        <li class="check file_edit_upload {{$File['use_auth']}}">
-            <a href="javascript:void(0)">
-                <span class="fa fa-check"></span>
-                <p>SETTING 設定</p>
-            </a>
-        </li>
-        <li class="trash file_edit_delete {{$File['use_auth']}}">
-            <a href="javascript:void(0)">
-                <span class="fa fa-trash"></span>
-                <p>DELETE 刪除</p>
-            </a>
-        </li>
+       
+ 
         <li class="cancel">
             <a href="javascript:void(0)" class="close_btn">
                 <span class="fa fa-remove"></span>
-                <p>CANCEL 取消</p>
+                <p>CANCEL</p>
+            </a>
+        </li>
+
+        {{-- wade:add --}}
+               <li class="trash file_edit_delete {{$File['use_auth']}}">
+            <a href="javascript:void(0)">
+                <span class="fa fa-trash"></span>
+                <p>DELETE</p>
+            </a>
+        </li>
+
+        {{-- wade:add --}}
+         <li class="check file_edit_upload {{$File['use_auth']}}">
+            <a href="javascript:void(0)">
+                <span class="fa fa-check"></span>
+                <p>SAVE</p>
             </a>
         </li>
     </ul>

@@ -4449,16 +4449,17 @@ body.isContent .backEnd_quill {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   border: 1px solid #c7c7c7;
   border-radius: 3px;
-  padding: 10px 12px;
+  padding: 5px 12px;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   cursor: pointer;
+  height: 42px;
 }
 .select_Box[data-type=path] .select_Btn p.title {
   white-space: nowrap;
@@ -4513,7 +4514,11 @@ body.isContent .backEnd_quill {
 }
 .select_Box[data-type=path] .select_Btn + ul.option_list li p.title {
   position: relative;
-  padding: 10px 40px;
+  padding: 5px 40px;
+}
+.select_Box[data-type=path] .select_Btn + ul.option_list li p.title:hover {
+  color: #fff;
+  background-color: #000000;
 }
 .select_Box[data-type=path] .select_Btn + ul.option_list li p.title span.arrow {
   position: absolute;
@@ -4530,7 +4535,6 @@ body.isContent .backEnd_quill {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #eee;
 }
 .select_Box[data-type=path] .select_Btn + ul.option_list li p.title span.arrow::before {
   content: "\f105";
@@ -4578,11 +4582,11 @@ body.isContent .backEnd_quill {
   content: "\f07c";
 }
 .select_Box[data-type=path] .select_Btn + ul.option_list li.focus > p {
-  background-color: #785ac1;
-  color: white;
+  background-color: #f5f5f5;
+  color: 0;
 }
 .select_Box[data-type=path] .select_Btn + ul.option_list li.focus > p::before {
-  color: #fff;
+  color: #ccc;
 }
 .select_Box[data-type=path] .select_Btn + ul.option_list li ul.option_list {
   display: none;
@@ -7025,9 +7029,8 @@ body.isContent .backEnd_quill {
           align-items: center;
 }
 .datatable .tables tbody tr {
-  height: 50px;
-  -webkit-box-shadow: 0 1px 0 #ddd;
-          box-shadow: 0 1px 0 #ddd;
+  height: 49px;
+  border-bottom: 1px solid #ddd;
 }
 .datatable .tables tbody tr:has(.fms_lbox_file_select_checkbox:checked) {
   background-color: rgb(240, 240, 249);
@@ -7058,7 +7061,8 @@ body.isContent .backEnd_quill {
           align-items: center;
 }
 .datatable .tables .title-img img {
-  width: 20px;
+  max-width: 20px;
+  max-height: 30px;
 }
 .datatable .tables .fms_folder_on_list .title-img {
   display: -webkit-box;
@@ -7072,7 +7076,8 @@ body.isContent .backEnd_quill {
           align-items: center;
 }
 .datatable .tables .fms_folder_on_list .title-img img {
-  width: 25px;
+  max-width: 20px;
+  max-height: 30px;
 }
 .datatable .tables .tableMaintitle {
   display: -webkit-box;
@@ -7362,6 +7367,10 @@ body.isContent .backEnd_quill {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding-top: 5px;
 }
 .detailEditor .editorBody .editorHeader .control .btnGroup {
   display: -webkit-box;
@@ -7397,7 +7406,12 @@ body.isContent .backEnd_quill {
   padding: 0;
 }
 .detailEditor .editorBody .editorHeader .control .btnGroup li a {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.detailEditor .editorBody .editorHeader .control .btnGroup li a .fa {
+  margin-top: -1px;
 }
 .detailEditor .editorBody .editorHeader .control .btnGroup li a:not(.btn) {
   opacity: 1;
@@ -7903,7 +7917,7 @@ body.isContent .backEnd_quill {
   align-items: center;
 }
 .file_date .name {
-  font-weight: 900;
+  font-weight: 600;
   margin-right: 3px;
 }
 
@@ -9071,6 +9085,9 @@ body.isContent .backEnd_quill {
           align-items: center;
   word-break: break-all;
 }
+.inventory .subtitle strong {
+  font-weight: 600;
+}
 .inventory > .title {
   width: 100%;
   min-height: 20px;
@@ -9093,6 +9110,9 @@ body.isContent .backEnd_quill {
   overflow: hidden;
 }
 .inventory > .inner:has(> .radio_btn_switch) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -10252,19 +10272,6 @@ body.isContent .backEnd_quill {
   justify-content: center;
 }
 
-.file_date {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-.file_date .name {
-  font-weight: 900;
-  margin-right: 3px;
-}
-
 .color_picker .ticket_field {
   border: solid 1px #c7c7c7;
   border-left: none;
@@ -10820,54 +10827,6 @@ body.isContent .backEnd_quill {
   width: 90%;
   max-width: 800px;
   min-width: 500px;
-}
-.fmsDetailAjaxArea .ajaxItem .ajaxContainer .detailEditor .editorBody .editorHeader {
-  width: 100%;
-  border: none;
-  position: sticky;
-}
-.fmsDetailAjaxArea .ajaxItem .ajaxContainer .detailEditor .editorBody .editorHeader .info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 100%;
-}
-.fmsDetailAjaxArea .ajaxItem .ajaxContainer .detailEditor .editorBody .editorHeader .info .title {
-  position: static;
-  width: 160px;
-}
-.fmsDetailAjaxArea .ajaxItem .ajaxContainer .detailEditor .editorBody .editorHeader .info .title::after {
-  background-color: #775bc2;
-}
-.fmsDetailAjaxArea .ajaxItem .ajaxContainer .detailEditor .editorBody .editorHeader .info .area {
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin-left: auto;
-}
-.fmsDetailAjaxArea .ajaxItem .ajaxContainer .detailEditor .editorBody .editorHeader .info .area h3 {
-  width: 100%;
-  margin: 15px 30px 15px 0;
-  word-break: break-all;
-  min-height: 55px;
-  height: auto;
-}
-.fmsDetailAjaxArea .ajaxItem .ajaxContainer .detailEditor .editorBody .editorHeader .info .area .control {
-  position: static;
-  padding: 0;
-  margin: 0;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-.fmsDetailAjaxArea .ajaxItem .ajaxContainer .detailEditor .editorBody .editorHeader .info .area .control .btnGroup .check {
-  background-color: #775bc2;
 }
 .fmsDetailAjaxArea .ajaxItem .ajaxContainer .detailEditor .editorBody .editorContent {
   margin-top: 0;
