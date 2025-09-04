@@ -7691,8 +7691,6 @@ body.isContent .backEnd_quill {
 .cmsAjaxArea .ajaxItem .hiddenArea_frame_controlBtn {
   width: 100%;
   position: sticky;
-  left: 80px;
-  right: auto;
   bottom: 0;
   z-index: 3;
   -webkit-transition: 0.5s;
@@ -10823,14 +10821,10 @@ body.isContent .backEnd_quill {
   max-width: 800px;
   min-width: 500px;
 }
-.fmsDetailAjaxArea .ajaxItem .ajaxContainer .detailEditor .editorBody {
-  height: calc(100vh - 50px);
-}
 .fmsDetailAjaxArea .ajaxItem .ajaxContainer .detailEditor .editorBody .editorHeader {
   width: 100%;
   border: none;
   position: sticky;
-  border-bottom: 1px solid;
 }
 .fmsDetailAjaxArea .ajaxItem .ajaxContainer .detailEditor .editorBody .editorHeader .info {
   display: -webkit-box;
@@ -10974,12 +10968,6 @@ body.isContent .backEnd_quill {
 }
 .fmsDetailAjaxArea .ajaxItem .ajaxContainer .detailEditor .editorBody .editorContent .box_block_frame .inventory > .title {
   padding-top: 0;
-}
-.fmsDetailAjaxArea .ajaxItem .ajaxContainer .hiddenArea_frame_controlBtn {
-  width: calc(100% - 160px);
-}
-.fmsDetailAjaxArea .ajaxItem .ajaxContainer .hiddenArea_frame_controlBtn .btnGroup .check {
-  background-color: #775bc2;
 }
 .fmsDetailAjaxArea .ajaxItem .ajaxContainer.fmsDetail .detailEditor .editorBody .editorContent .box_block_frame .inventory {
   padding: 20px 0;

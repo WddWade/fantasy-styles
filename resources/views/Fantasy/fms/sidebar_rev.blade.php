@@ -33,7 +33,7 @@
 
         {{-- wade:add --}}
         <div class="menu-block">
-            <div class="menu-block-title">Files Navigation</div>
+            <div class="menu-block-title">Folders</div>
             <div class="menu-block-content">
                 @include('Fantasy.fms.son_folder_rev',['for_son_folder'=>$folderAll,'firstTime'=>1])
             </div>

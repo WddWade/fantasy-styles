@@ -6,9 +6,11 @@
                     <div class="title">
                         <p>{{ $area_title }}</p>
                     </div>
-                    <div class="area">
-                        <h3>{{ $folderData['title'] }}</h3>
-                        <div class="control">
+                    <h3 class="dataEditTitle">{{ $folderData['title'] }}</h3>
+                    {{-- <div class="area"> --}}
+                        {{-- <h3>{{ $folderData['title'] }}</h3> --}}
+                        {{--  --}}
+                        {{-- <div class="control">
                             <ul class="btnGroup">
                                 <li class="remove">
                                     <a href="javascript:;" class="close_btn">
@@ -16,8 +18,25 @@
                                     </a>
                                 </li>
                             </ul>
-                        </div>
-                    </div>
+                        </div> --}}
+                    {{-- </div> --}}
+                </div>
+
+                <div class="control">
+                    <ul class="btnGroup">
+                        <li class="check folder_edit_upload_new">
+                            <a href="javascript:void(0)">
+                                <span class="fa fa-check"></span>
+                                <p>SETTING</p>
+                            </a>
+                        </li>
+                   
+                        <li class="cancel">
+                            <a href="javascript:;" class="close_btn">
+                                <span class="fa fa-remove"></span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <input type="hidden" name="fms[parent_folder_id]" value="{{ $folderData['parent_id'] }}">
@@ -29,7 +48,7 @@
                 <ul class="box_block_frame frame">
                     <li class="inventory row_style">
                         <div class="title">
-                            <p class="subtitle">資料夾名稱</p>
+                            <p class="subtitle">資料夾名稱22222</p>
                         </div>
                         <div class="inner">
                             <input class="normal_input" name="fms[title]" type="text" placeholder="" value="{{ $folderData['title']}}">

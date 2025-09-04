@@ -26,9 +26,77 @@
             <input type="hidden" name="fms[folder_id]" value="{{$File['folder_id']}}">
             <div class="editorContent">
                 <ul class="box_block_frame frame">
+                    <li class="inventory file_box fileInformation">
+                        <div class="title">
+                            <p class="subtitle">檔案資訊</p>
+                        </div>
+                        <div class="file_frame">
+                            <div class="file_frame_info">
+                                <div class="img_box">
+                                    @php
+                                    $ext = strtolower(pathinfo($File['real_m_route'],PATHINFO_EXTENSION));
+                                    $filepath = $File['real_m_route'];
+                                    if(in_array($ext,['pdf','doc','docx','ppt','pptx','xls','xlsx','txt','zip','rar','video','mpg','mpeg','avi','mp4','webm'])){
+                                        $filepath = '/vender/assets/img/icon/'.$ext.'.png';
+                                    }
+                                    @endphp
+                                    <img src="{{ BaseFunction::imgSrc($filepath) }}" alt="">
+                                </div>
+                                <div class="info_box">
+                                    <p class="type">
+                                        <span>{{ $file_type['title'].', '.$File['type'] }}</span>
+                                        <i>|</i>
+                                        <span class="number">
+                                            @if($file_type['title']=='影像'){{ $File['img_w'].'x'.$File['img_h'] }},
+                                            @endif{{ formatBytes($File['size']) }}
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="toolBtn">
+                                @if($area_detail!='資料夾')
+                                @if($file_type['title']=='影像')
+                                <span class="icon fa fa-eye  open_img_box" data-src="{{ $File['real_route'] }}"></span>
+                                @endif
+                                <span class="icon pg-download file_fantasy_download" data-src="{{ $File['real_route'] }}" data-title="{{ $File['title'].".".$File['type'] }}"></span>
+                                @endif
+                            </div>
+                        </div>
+                    </li>
+                    <li class="inventory row_style fileUpload upload_box">
+                        <input type="file" name="file_one" style="display:none;" class="fileInputClick_one" multiple>
+                        <p class="subtitle">
+                            <span class="en_title"></span> 選擇要更換的檔案
+                        </p>
+                        <div class="upload_frame fileUploadClick_one" ondrop="javascript: drop_image_one(event);" ondragover="javascript: dragHandler(event);">
+                            <div class="upload_frame_info">
+                                <div class="center_box">
+                                    <span class="fa fa-cloud-upload"></span>
+                                </div>
+                                <div class="info_box">
+                                    <p class="en">Press or Drag Files to Here</p>
+                                    <p>按下按鈕或拖曳檔案到這裡</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tips">
+                            <span class="title">TIPS</span>
+                            <p>你可以選擇檔案上傳，也可以直接將檔案拖曳到區塊中 ( <span style="color:#ff0000;">拖曳功能只支援
+                                    Chrome</span> )，預設的檔案上傳容量為
+                                15MB，若你需要更大的上傳容量，請與開發者聯繫。</p>
+                        </div>
+                    </li>
+                    <li class="inventory fileUpload">
+                        <p class="subtitle">
+                            <span class="en_title"></span> 確認檔案
+                        </p>
+                        <ul class="upload_list locale_file_list_one">
+                            <!--待上傳列表-->
+                        </ul>
+                    </li>
                     <li class="inventory row_style">
                         <div class="title">
-                            <p class="subtitle">檔案名稱</p>
+                            <p class="subtitle">檔案名稱333</p>
                         </div>
                         <div class="inner">
                             <input class="normal_input" name="fms[title]" type="text" placeholder="" value="{{ $File['title']}}">
@@ -172,71 +240,6 @@
                         </div>
                     </li>
                     @endif
-                    <li class="inventory file_box fileInformation">
-                        <div class="file_frame">
-                            <div class="file_frame_info">
-                                <div class="img_box">
-                                    @php
-                                    $ext = strtolower(pathinfo($File['real_m_route'],PATHINFO_EXTENSION));
-                                    $filepath = $File['real_m_route'];
-                                    if(in_array($ext,['pdf','doc','docx','ppt','pptx','xls','xlsx','txt','zip','rar','video','mpg','mpeg','avi','mp4','webm'])){
-                                    $filepath = '/vender/assets/img/icon/'.$ext.'.png';
-                                    }
-                                    @endphp
-                                    <img src="{{ BaseFunction::imgSrc($filepath) }}" alt="">
-                                </div>
-                                <div class="info_box">
-                                    <p class="type">
-                                        <span>{{ $file_type['title'].', '.$File['type'] }}</span>
-                                        <i>|</i>
-                                        <span class="number">
-                                            @if($file_type['title']=='影像'){{ $File['img_w'].'x'.$File['img_h'] }},
-                                            @endif{{ formatBytes($File['size']) }}
-                                        </span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="toolBtn">
-                                @if($area_detail!='資料夾')
-                                @if($file_type['title']=='影像')
-                                <span class="icon fa fa-eye  open_img_box" data-src="{{ $File['real_route'] }}"></span>
-                                @endif
-                                <span class="icon pg-download file_fantasy_download" data-src="{{ $File['real_route'] }}" data-title="{{ $File['title'].".".$File['type'] }}"></span>
-                                @endif
-                            </div>
-                        </div>
-                    </li>
-                    <li class="inventory row_style fileUpload upload_box">
-                        <input type="file" name="file_one" style="display:none;" class="fileInputClick_one" multiple>
-                        <p class="subtitle">
-                            <span class="en_title"></span> 選擇要更換的檔案
-                        </p>
-                        <div class="upload_frame fileUploadClick_one" ondrop="javascript: drop_image_one(event);" ondragover="javascript: dragHandler(event);">
-                            <div class="upload_frame_info">
-                                <div class="center_box">
-                                    <span class="fa fa-cloud-upload"></span>
-                                </div>
-                                <div class="info_box">
-                                    <p class="en">Press or Drag Files to Here</p>
-                                    <p>按下按鈕或拖曳檔案到這裡</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tips">
-                            <span class="title">TIPS</span>
-                            <p>你可以選擇檔案上傳，也可以直接將檔案拖曳到區塊中 ( <span style="color:#ff0000;">拖曳功能只支援
-                                    Chrome</span> )，預設的檔案上傳容量為
-                                15MB，若你需要更大的上傳容量，請與開發者聯繫。</p>
-                        </div>
-                    </li>
-                    <li class="inventory fileUpload">
-                        <p class="subtitle">
-                            <span class="en_title"></span> 確認檔案
-                        </p>
-                        <ul class="upload_list locale_file_list_one">
-                            <!--待上傳列表-->
-                        </ul>
-                    </li>
                     <li class="inventory row_style">
                         <div class="title">
                             <p class="subtitle">最後異動時間</p>
@@ -326,7 +329,7 @@
                 <p>DELETE 刪除</p>
             </a>
         </li>
-        <li class="remove">
+        <li class="cancel">
             <a href="javascript:void(0)" class="close_btn">
                 <span class="fa fa-remove"></span>
                 <p>CANCEL 取消</p>

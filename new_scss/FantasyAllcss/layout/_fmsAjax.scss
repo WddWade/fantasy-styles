@@ -152,13 +152,12 @@
     .ajaxContainer {
       .detailEditor {
         .editorBody {
-          height: calc(100vh - 50px);
+          // height: calc(100vh - 50px);
 
           .editorHeader {
             width: 100%;
             border: none;
             position: sticky;
-            border-bottom: 1px solid;
 
             .info {
               display: flex;
@@ -328,15 +327,15 @@
         }
       }
 
-      .hiddenArea_frame_controlBtn {
-        width: calc(100% - 160px);
+      // .hiddenArea_frame_controlBtn {
+      //   width: calc(100% - 160px);
 
-        .btnGroup {
-          .check {
-            background-color: #775bc2;
-          }
-        }
-      }
+      //   .btnGroup {
+      //     .check {
+      //       background-color: #775bc2;
+      //     }
+      //   }
+      // }
 
       &.fmsDetail {
         .detailEditor {
@@ -676,4 +675,13 @@
 .fmsDetail_edit .radio_area .content,
 .fmsFolder_add .radio_area .content {
   display: flex;
+}
+
+.fmsFolder_add {
+  .detailEditor {
+    .editorBody {
+    }
+  }
+  .hiddenArea_frame_controlBtn {
+  }
 }
