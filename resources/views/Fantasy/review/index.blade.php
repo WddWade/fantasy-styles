@@ -75,7 +75,7 @@
                                                         </th>
                                                         <th class="w150">
                                                             <div class="fake-th">
-                                                                <span>分館</span>
+                                                                <span>分站</span>
                                                             </div>
                                                         </th>
                                                         <th style="width:200px;">

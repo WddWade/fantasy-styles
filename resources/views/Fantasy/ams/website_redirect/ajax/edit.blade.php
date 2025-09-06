@@ -7,46 +7,53 @@
                 <div class="editorBody">
                     <div class="editorHeader">
                         <div class="info">
-                            <div class="title">
+                            @if(isset($data['title']))
+                            <h3 class="dataEditTitle">{{$data['title']}}</h3>
+                            @else
+                            <h3 class="dataEditTitle">301轉址設定</h3>
+                            @endif                            
+
+                            {{-- <div class="title">
                                 <!-- <p class="ams_type_create_zz" style="display:none;">Create CMS Template 新增功能設定</p> -->
-                                <p class="ams_type_edit_zz">Website Redirect 管理</p>
-                            </div>
-                            <div class="area">
-                                @if(isset($data['title']))
-                                <h3>{{$data['title']}}</h3>
-                                @else
-                                <h3>301轉址設定</h3>
-                                @endif
-                                <div class="control">
-                                    <ul class="btnGroup">
-                                        <li class="check">
-                                            <a href="javascript:void(0)" class="updated_ams_edit_btn" data-type="autoredirect">
-                                                <span class="fa fa-check"></span>
-                                            </a>
-                                        </li>
-                                        <li class="trash delete_ams_hiddenArea">
-                                            <a href="javascript:void(0)" class="delete_ams_information" data-type="autoredirect">
-                                                <span class="fa fa-trash"></span>
-                                            </a>
-                                        </li>
-                                        <!--<li class="file">-->
-                                        <!--<a href="javascript:void(0)">-->
-                                        <!--<<span class="fa fa-files-o"></span>-->
-                                        <!--<</a>-->
-                                        <!--<</li>-->
-                                        <li class="remove">
-                                            <a href="javascript:void(0)" class="close_btn close_ams_hiddenArea">
-                                                <span class="fa fa-remove"></span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <p class="ams_type_edit_zz">網址導向設定</p>
+                            </div> --}}
+                            {{-- <div class="area">
+                                
+                                
                             </div>
                             <div class="tips">
                                 <span class="title">Tips</span>
                                 <p>設定與管理 Website Redirect，你可以在這裡設定301轉址</p>
-                            </div>
+                            </div> --}}
                         </div>
+                        <div class="control">
+                            <ul class="btnGroup">
+                                <li class="cancel">
+                                    <a href="javascript:void(0)" class="close_btn close_ams_hiddenArea">
+                                        <span class="fa fa-remove"></span>
+                                        <span class="label">Cancel</span>
+                                    </a>
+                                </li>                                
+                                <li class="trash delete_ams_hiddenArea">
+                                    <a href="javascript:void(0)" class="delete_ams_information" data-type="autoredirect">
+                                        <span class="fa fa-trash"></span>
+                                        <div class="label">Delete</div>
+                                    </a>
+                                </li>
+                                <li class="check">
+                                    <a href="javascript:void(0)" class="updated_ams_edit_btn" data-type="autoredirect">
+                                        <span class="fa fa-check"></span>
+                                        <span class="label">Save</span>
+                                    </a>
+                                </li>                                
+                                <!--<li class="file">-->
+                                <!--<a href="javascript:void(0)">-->
+                                <!--<<span class="fa fa-files-o"></span>-->
+                                <!--<</a>-->
+                                <!--<</li>-->
+
+                            </ul>
+                        </div>                        
                     </div>
                     <div class="editorContent">
                         <ul class="box_block_frame">

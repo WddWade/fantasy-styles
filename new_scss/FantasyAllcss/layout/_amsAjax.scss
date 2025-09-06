@@ -8,13 +8,12 @@
 
   .ajaxItem {
     width: 90%;
-    max-width: 950px;
-    min-width: 750px;
+    max-width: 650px;
 
     .ajaxContainer {
       .detailEditor {
         .editorBody {
-          height: calc(100vh - 50px);
+          // height: calc(100vh - 50px);
 
           .editorHeader {
             width: 100%;
@@ -77,11 +76,11 @@
 
             .box_block_frame {
               .inventory {
-                flex-direction: column;
-                justify-content: flex-start;
-                align-items: flex-start;
-                padding: 30px 0 30px 0;
-                border-bottom: solid 1px #000;
+                // flex-direction: column;
+                // justify-content: flex-start;
+                // align-items: flex-start;
+                // padding: 30px 0 30px 0;
+                // border-bottom: solid 1px #000;
 
                 &.fileInformation {
                   padding: 0;
@@ -297,57 +296,57 @@
         }
       }
 
-      .hiddenArea_frame_controlBtn {
-        width: calc(100% - 160px);
+      // .hiddenArea_frame_controlBtn {
+      //   width: calc(100% - 160px);
 
-        .btnGroup {
-          .check {
-            background-color: #3a9eea;
-          }
-        }
-      }
+      //   .btnGroup {
+      //     .check {
+      //       background-color: #3a9eea;
+      //     }
+      //   }
+      // }
 
-      &.ams_manager {
-        .editorContent {
-          .inventory {
-            padding: 30px 0;
+      // &.ams_manager {
+      //   .editorContent {
+      //     .inventory {
+      //       padding: 30px 0;
 
-            &.row_style {
-              .inner {
-                .inner_box {
-                  padding: 0;
-                  border: none;
+      //       &.row_style {
+      //         .inner {
+      //           .inner_box {
+      //             padding: 0;
+      //             border: none;
 
-                  &:first-child {
-                    padding: 0;
-                    border: none;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
+      //             &:first-child {
+      //               padding: 0;
+      //               border: none;
+      //             }
+      //           }
+      //         }
+      //       }
+      //     }
+      //   }
+      // }
     }
   }
 
-  .tips {
-    margin-top: 15px;
+  // .tips {
+  //   margin-top: 15px;
 
-    .title {
-      color: #3a9eea;
-    }
-  }
+  //   .title {
+  //     color: #3a9eea;
+  //   }
+  // }
 
-  .btnGroup {
-    .check {
-      background-color: #3a9eea;
-    }
-  }
+  // .btnGroup {
+  //   .check {
+  //     background-color: #3a9eea;
+  //   }
+  // }
 
-  .no_selfie {
-    .img_box {
-      background-color: #3a9eea;
-    }
-  }
+  // .no_selfie {
+  //   .img_box {
+  //     background-color: #3a9eea;
+  //   }
+  // }
 }

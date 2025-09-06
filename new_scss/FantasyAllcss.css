@@ -11305,11 +11305,7 @@ body.isContent .backEnd_quill {
 }
 .amsDetailAjaxArea .ajaxItem {
   width: 90%;
-  max-width: 950px;
-  min-width: 750px;
-}
-.amsDetailAjaxArea .ajaxItem .ajaxContainer .detailEditor .editorBody {
-  height: calc(100vh - 50px);
+  max-width: 650px;
 }
 .amsDetailAjaxArea .ajaxItem .ajaxContainer .detailEditor .editorBody .editorHeader {
   width: 100%;
@@ -11358,20 +11354,6 @@ body.isContent .backEnd_quill {
 .amsDetailAjaxArea .ajaxItem .ajaxContainer .detailEditor .editorBody .editorContent {
   margin-top: 0;
   margin-bottom: 50px;
-}
-.amsDetailAjaxArea .ajaxItem .ajaxContainer .detailEditor .editorBody .editorContent .box_block_frame .inventory {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  padding: 30px 0 30px 0;
-  border-bottom: solid 1px #000;
 }
 .amsDetailAjaxArea .ajaxItem .ajaxContainer .detailEditor .editorBody .editorContent .box_block_frame .inventory.fileInformation {
   padding: 0;
@@ -11540,35 +11522,6 @@ body.isContent .backEnd_quill {
   width: 15px;
   height: 15px;
   top: -5px;
-}
-.amsDetailAjaxArea .ajaxItem .ajaxContainer .hiddenArea_frame_controlBtn {
-  width: calc(100% - 160px);
-}
-.amsDetailAjaxArea .ajaxItem .ajaxContainer .hiddenArea_frame_controlBtn .btnGroup .check {
-  background-color: #3a9eea;
-}
-.amsDetailAjaxArea .ajaxItem .ajaxContainer.ams_manager .editorContent .inventory {
-  padding: 30px 0;
-}
-.amsDetailAjaxArea .ajaxItem .ajaxContainer.ams_manager .editorContent .inventory.row_style .inner .inner_box {
-  padding: 0;
-  border: none;
-}
-.amsDetailAjaxArea .ajaxItem .ajaxContainer.ams_manager .editorContent .inventory.row_style .inner .inner_box:first-child {
-  padding: 0;
-  border: none;
-}
-.amsDetailAjaxArea .tips {
-  margin-top: 15px;
-}
-.amsDetailAjaxArea .tips .title {
-  color: #3a9eea;
-}
-.amsDetailAjaxArea .btnGroup .check {
-  background-color: #3a9eea;
-}
-.amsDetailAjaxArea .no_selfie .img_box {
-  background-color: #3a9eea;
 }
 
 .ams_page .ams_index {

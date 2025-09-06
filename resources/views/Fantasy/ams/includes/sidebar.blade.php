@@ -27,7 +27,7 @@
             @if ($amsRoleArray['is_ams'] == '1')
                 <li class="level-1 level_list">
                     <a href="{{ url('Fantasy/Ams/ams-manager') }}" class="level-1-link">
-                        <span class="title">帳號權限管理</span>
+                        <span class="title">權限設定</span>
                     </a>
                 </li>
             @endif
@@ -57,7 +57,7 @@
     </ul>
     </li> --}}
 
-    {{-- 只有Leon帳號有權限開分館語系 ?? basic_ams_role => is_cover_page --}}
+    {{-- 只有Leon帳號有權限開分站語系 ?? basic_ams_role => is_cover_page --}}
     
     {{-- wade:add --}}
     <div class="menu-block">
@@ -66,21 +66,21 @@
             @if ($amsRoleArray['is_cover_page'] == '1')
                 <li class="level-1 level_list">
                     <a href="{{ url('Fantasy/Ams/template-manager') }}" class="level-1-link">
-                        <span class="title">分站設定</span>
+                        <span class="title">分站管理</span>
                     </a>
                 </li>
             @endif
             @if ($amsRoleArray['is_cms_template'] == '1')
                 <li class="level-1 level_list">
                     <a href="{{ url('Fantasy/Ams/template-setting') }}" class="level-1-link">
-                        <span class="title">分站內容設定</span>
+                        <span class="title">分站單元設定</span>
                     </a>
                 </li>
             @endif
             @if ($amsRoleArray['is_cms_template_ma'] == '1')
                 <li class="level-1 level_list">
                     <a href="{{ url('Fantasy/Ams/cms-manager') }}" class="level-1-link">
-                        <span class="title">分站帳號管理</span>
+                        <span class="title">分站權限設定</span>
                     </a>
                 </li>
             @endif

@@ -39,7 +39,7 @@
                                             <li class="breadcrumb-item">
                                                 <a href="{{ url('Fantasy/Ams') }}">AMS Overview 資訊總覽</a>
                                             </li>
-                                            <li class="breadcrumb-item active" aria-current="page">CMS Template 權限管理</li>
+                                            <li class="breadcrumb-item active" aria-current="page">分站權限設定</li>
                                         </ol>
                                     </nav>
                                 </div>
@@ -60,7 +60,7 @@
                             {{-- <div class="content-head cms-index_table" data-edit="1" data-delete="1" data-create="1" --}}
                             <div class="content-head" data-edit="1" data-delete="1" data-create="1"
                                 data-model="" data-page="1" data-pn="1" data-auth="0"
-                                data-pagetitle="CMS Template 權限管理">
+                                data-pagetitle="分站權限設定">
 
                                 {{-- wade:add --}}
                                 <div class="content-head-container">
@@ -70,7 +70,7 @@
                                             <span class="bar"></span>
                                             <span class="bar"></span>
                                         </div>
-                                        <h1>CMS Template 權限管理</h1>
+                                        <h1>分站權限設定</h1>
                                     </div>
                                     <div class="content-nav">
                                         <div class="btn-item">
@@ -82,7 +82,7 @@
                                 </div>
 
                                 {{-- wade:delete --}}
-                                {{-- <h1>CMS Template 權限管理</h1>
+                                {{-- <h1>分站權限設定</h1>
                                 <div class="content-nav">
                                     <div class="navleft">
                                         <div class="btn-item">
@@ -111,7 +111,7 @@
                                                 </th>
                                                 <th class="w_Category w180">
                                                     <div class="fake-th ">
-                                                        <span class="" data-column="name">分館</span>
+                                                        <span class="" data-column="name">分站</span>
                                                     </div>
                                                 </th>
                                                 <th class="w_Category w180">

@@ -39,7 +39,7 @@
                                         <li class="breadcrumb-item">
                                             <a href="{{url('Fantasy/Ams')}}">AMS Overview 資訊總覽</a>
                                         </li>
-                                        <li class="breadcrumb-item active" aria-current="page">CMS Template 管理與設定</li>
+                                        <li class="breadcrumb-item active" aria-current="page">分站管理</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -64,10 +64,10 @@
                                         <span class="bar"></span>
                                         <span class="bar"></span>
                                     </div>
-                                    <h1>CMS Template 管理與設定</h1>
+                                    <h1>分站管理</h1>
                                 </div>
                                 <div class="content-nav">
-                                    {{-- 有開分館設定才可以新增 --}}
+                                    {{-- 有開分站設定才可以新增 --}}
                                     @if ( Config::get('cms.setBranchs') )
                                         <div class="btn-item">
                                             <a href="javascript:void(0)" class="create_ams_wrapper" data-type="template-manager" data-id="0">
@@ -80,10 +80,10 @@
                             </div>
                             
                             {{-- wade:delete --}}
-                            {{-- <h1>CMS Template 管理與設定</h1> --}}
+                            {{-- <h1>分站管理</h1> --}}
                             {{-- <div class="content-nav"> --}}
                                 {{-- <div class="navleft"> --}}
-                                    {{-- 有開分館設定才可以新增 --}}
+                                    {{-- 有開分站設定才可以新增 --}}
                                     {{-- @if ( Config::get('cms.setBranchs') )
                                     <div class="btn-item">
                                         <a href="javascript:void(0)" class="create_ams_wrapper" data-type="template-manager" data-id="0">

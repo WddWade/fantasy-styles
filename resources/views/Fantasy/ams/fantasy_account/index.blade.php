@@ -64,7 +64,7 @@
                                         <span class="bar"></span>
                                         <span class="bar"></span>
                                     </div>
-                                    <h1>Fantasy Account 帳號管理</h1>
+                                    <h1>帳號管理</h1>
                                 </div>
                                 <div class="content-nav">
                                     <div class="btn-item">

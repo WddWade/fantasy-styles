@@ -6,39 +6,50 @@
                 <div class="editorBody">
                     <div class="editorHeader">
                         <div class="info">
-                            <div class="title">
+                            @if (isset($data['title']))
+                                <h3 class="dataEditTitle">{{ $data['title'] }}-分站管理</h3>
+                            @else
+                                <h3 class="dataEditTitle">新增分站</h3>
+                            @endif                      
+                            {{-- <div class="title">
                                 <p class="ams_type_create_zz" style="display:none;">Create CMS Template 新增管理與設定</p>
                                 <p class="ams_type_edit_zz" style="display:none;">Edit CMS Template 編輯管理與設定</p>
-                            </div>
-                            <div class="area">
-                                <div class="control">
-                                    <ul class="btnGroup">
-                                        <li class="check">
-                                            <a href="javascript:void(0)" class="updated_ams_edit_btn" data-type="template-manager">
-                                                <span class="fa fa-check"></span>
-                                            </a>
-                                        </li>
-                                        {{-- 有開分館設定才可以刪除 --}}
-                                        @if ( Config::get('cms.setBranchs') )
-                                        <li class="trash delete_ams_hiddenArea">
-                                            <a href="javascript:void(0)" class="delete_ams_information" data-type="template-manager">
-                                                <span class="fa fa-trash"></span>
-                                            </a>
-                                        </li>
-                                        @endif
-                                        <li class="remove">
-                                            <a href="javascript:void(0)" class="close_btn close_ams_hiddenArea">
-                                                <span class="fa fa-remove"></span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
+                            </div> --}}
+                            {{-- <div class="area">
+                                
                             </div>
                             <div class="tips">
-                                <span class="title">{{-- TIPS --}}</span>
+                                <span class="title">TIPS</span>
                                 <p></p>
-                            </div>
+                            </div> --}}
                         </div>
+                        <div class="control">
+                            <ul class="btnGroup">
+                                <li class="cancel">
+                                    <a href="javascript:void(0)" class="close_btn close_ams_hiddenArea">
+                                        <span class="fa fa-remove"></span>
+                                        <span class="label">Cancel</span>
+                                    </a>
+                                </li>                                
+                               
+                                {{-- 有開分站設定才可以刪除 --}}
+                                @if ( Config::get('cms.setBranchs') )
+                                <li class="trash delete_ams_hiddenArea">
+                                    <a href="javascript:void(0)" class="delete_ams_information" data-type="template-manager">
+                                        <span class="fa fa-trash"></span>
+                                        <div class="label">Delete</div>
+                                    </a>
+                                </li>
+                                @endif
+
+                                <li class="check">
+                                    <a href="javascript:void(0)" class="updated_ams_edit_btn" data-type="template-manager">
+                                        <span class="fa fa-check"></span>
+                                        <span class="label">Save</span>
+                                    </a>
+                                </li>                                
+                            </ul>
+                        </div>                        
                     </div>
                     <div class="editorContent">
                         <ul class="box_block_frame">
@@ -54,7 +65,7 @@
                                 <div class="inner">
                                     <div class="inner_box row_style">
                                         <div class="info_text">
-                                            <p class="title">設定 CMS Template 分館是否啟用</p>
+                                            <p class="title">設定 CMS Template 分站是否啟用</p>
                                         </div>
                                         <div class="switch_box">
                                             <div class="ios_switch mrg-l-30 ams_ios_switch {{ (isset($data['is_active']) && $data['is_active'] == 0) ? '':'on' }}">
@@ -94,8 +105,8 @@
                             {{UnitMaker::textInput([
                                 'name' => 'amsData[url_title]',
                                 'title' => '站點網址',
-                                'tip' => '基本分館網址 = https://'.\Route::getCurrentRequest()->server('HTTP_HOST').'/{站點網址}<br>
-                                子網域分館網址 = https://{站點網址}.'.\Route::getCurrentRequest()->server('HTTP_HOST').'<br>
+                                'tip' => '基本分站網址 = https://'.\Route::getCurrentRequest()->server('HTTP_HOST').'/{站點網址}<br>
+                                子網域分站網址 = https://{站點網址}.'.\Route::getCurrentRequest()->server('HTTP_HOST').'<br>
                                 不可與其他站點網址名稱重複，特殊符號如 : @#$%?/\|*.及全形輸入也請盡量避免。',
                                 'value' => ( !empty($data['url_title']) )? $data['url_title'] : '',
                             ])}}
@@ -168,7 +179,7 @@
                         <p>CANCEL</p>
                     </a>
                 </li>
-                {{-- 有開分館設定才可以刪除 --}}
+                {{-- 有開分站設定才可以刪除 --}}
                 @if ( Config::get('cms.setBranchs') )
                 <li class="trash delete_ams_hiddenArea">
                     <a href="javascript:void(0)" class="delete_ams_information" data-type="template-manager">

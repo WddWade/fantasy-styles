@@ -39,7 +39,7 @@
                                         <li class="breadcrumb-item">
                                             <a href="{{url('Fantasy/Ams')}}">AMS Overview 資訊總覽</a>
                                         </li>
-                                        <li class="breadcrumb-item active" aria-current="page">AMS 權限管理</li>
+                                        <li class="breadcrumb-item active" aria-current="page">權限管理</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -55,8 +55,8 @@
 
                 <div class="content-scrollbox">
                     <div class="content-wrap main-table index-table-div" data-tableid="new_cms_table">
-                        {{-- <div class="content-head cms-index_table" data-edit="1" data-delete="1" data-create="1" data-model="" data-page="1" data-pn="1" data-auth="0" data-pagetitle="AMS 權限管理"> --}}
-                        <div class="content-head" data-edit="1" data-delete="1" data-create="1" data-model="" data-page="1" data-pn="1" data-auth="0" data-pagetitle="AMS 權限管理">
+                        {{-- <div class="content-head cms-index_table" data-edit="1" data-delete="1" data-create="1" data-model="" data-page="1" data-pn="1" data-auth="0" data-pagetitle="權限管理"> --}}
+                        <div class="content-head" data-edit="1" data-delete="1" data-create="1" data-model="" data-page="1" data-pn="1" data-auth="0" data-pagetitle="權限管理">
                             {{-- wade:add --}}
                             <div class="content-head-container">
                                 <div class="content-title">
@@ -65,7 +65,7 @@
                                         <span class="bar"></span>
                                         <span class="bar"></span>
                                     </div>
-                                    <h1>AMS 權限管理</h1>
+                                    <h1>權限管理</h1>
                                 </div>
                                 <div class="content-nav">
                                     <div class="btn-item">
@@ -78,7 +78,7 @@
                             </div>
 
                             {{-- wade:delete --}}
-                            {{-- <h1>AMS 權限管理</h1>
+                            {{-- <h1>權限管理</h1>
                             <div class="content-nav">
                                 <div class="navleft">
                                     <div class="btn-item">

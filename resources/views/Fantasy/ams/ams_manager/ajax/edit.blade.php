@@ -6,40 +6,42 @@
                 <div class="editorBody">
                     <div class="editorHeader">
                         <div class="info">
-                            <div class="title">
+                            {{-- <div class="title">
                                 <!-- <p class="ams_type_create_zz" style="display:none;">Create AMS 新增管理權限</p> -->
-                                <p class="ams_type_edit_zz">Edit AMS 權限管理</p>
-                            </div>
-                            <div class="area">
-                                @if(isset($data['UsersData']))
-                                <h3>{{ $data['UsersData']['name'] }}</h3>
-                                @else
-                                <h3>歡迎，新冒險家</h3>
-                                @endif
-                                <div class="control">
-                                    <ul class="btnGroup">
-                                        <li class="check">
-                                            <a href="javascript:void(0)" class="updated_ams_edit_btn" data-type="ams-manager">
-                                                <span class="fa fa-check"></span>
-                                            </a>
-                                        </li>
-                                        <li class="trash delete_ams_hiddenArea">
-                                            <a href="javascript:void(0)" class="delete_ams_information" data-type="ams-manager">
-                                                <span class="fa fa-trash"></span>
-                                            </a>
-                                        </li>
-                                        <li class="remove">
-                                            <a href="javascript:void(0)" class="close_btn close_ams_hiddenArea">
-                                                <span class="fa fa-remove"></span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="tips">
+                                <p class="ams_type_edit_zz">Edit 權限管理</p>
+                            </div> --}}
+                            @if(isset($data['UsersData']))
+                            <h3 class="dataEditTitle">{{ $data['UsersData']['name'] }}</h3>
+                            @else
+                            <h3 class="dataEditTitle">歡迎，新冒險家</h3>
+                            @endif
+                            {{-- <div class="tips">
                                 <span class="title">Tips{{-- TIPS --}}</span>
-                                <p>設定與管理 Fantasy Account 在 AMS 中的操作權限</p>
-                            </div>
+                                {{-- <p>設定與管理 Fantasy Account 在 AMS 中的操作權限</p>
+                            </div> --}} 
+                        </div>
+                        <div class="control">
+                            <ul class="btnGroup">
+                                <li class="cancel">
+                                    <a href="javascript:void(0)" class="close_btn close_ams_hiddenArea">
+                                        <span class="fa fa-remove"></span>
+                                        <span class="label">Cancel</span>
+                                    </a>
+                                </li>
+                                <li class="trash delete_ams_hiddenArea">
+                                    <a href="javascript:void(0)" class="delete_ams_information" data-type="ams-manager">
+                                        <span class="fa fa-trash"></span>
+                                        <div class="label">Delete</div>
+                                    </a>
+                                </li>
+
+                                    <li class="check">
+                                    <a href="javascript:void(0)" class="updated_ams_edit_btn" data-type="ams-manager">
+                                        <span class="fa fa-check"></span>
+                                        <span class="label">Save</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                     <div class="editorContent">
@@ -153,7 +155,7 @@
                                         <div class="info_text">
                                             <p class="title">AMS 管理權限是否啟用</p>
                                             <p>打開授權開關，將授權管理帳號管理
-                                                <strong>AMS 權限管理</strong>，並對內容及設定進行編輯作業
+                                                <strong>權限管理</strong>，並對內容及設定進行編輯作業
                                             </p>
                                         </div>
                                         <div class="switch_box">
@@ -176,9 +178,9 @@
                                 <div class="inner">
                                     <div class="inner_box row_style">
                                         <div class="info_text">
-                                            <p class="title">CMS Template 分館語系設定</p>
+                                            <p class="title">CMS Template 分站語系設定</p>
                                             <p>打開授權開關，將授權管理帳號管理
-                                                <strong>CMS Template 分館後台語系啟用設定、分館網址設定</strong>，並對內容及設定進行編輯作業
+                                                <strong>CMS Template 分站後台語系啟用設定、分站網址設定</strong>，並對內容及設定進行編輯作業
                                             </p>
                                         </div>
                                         <div class="switch_box">
@@ -200,9 +202,9 @@
                                 <div class="inner">
                                     <div class="inner_box row_style">
                                         <div class="info_text">
-                                            <p class="title">CMS Template 分館資料設定</p>
+                                            <p class="title">分站單元設定</p>
                                             <p>打開授權開關，將授權管理帳號管理
-                                                <strong>CMS Template 設定分館可編輯的資料類別</strong>，並對內容及設定進行編輯作業
+                                                <strong>CMS Template 設定分站可編輯的資料類別</strong>，並對內容及設定進行編輯作業
                                             </p>
                                         </div>
                                         <div class="switch_box">
@@ -298,9 +300,9 @@
                                 <div class="inner">
                                     <div class="inner_box row_style">
                                         <div class="info_text">
-                                            <p class="title">Website Redirect 管理權限是否啟用</p>
+                                            <p class="title">網址導向設定權限是否啟用</p>
                                             <p>打開授權開關，將授權管理帳號可進入
-                                                <strong>Website Redirect 管理</strong>，並對內容及設定進行編輯作業
+                                                <strong>網址導向設定</strong>，並對內容及設定進行編輯作業
                                             </p>
                                         </div>
                                         <div class="switch_box">

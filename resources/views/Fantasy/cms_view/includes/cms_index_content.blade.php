@@ -10,9 +10,9 @@
             <!-- SIDEBAR MENU-->
             <nav class="content-sidebar">
                 <div class="sidebar-menu">
-                    <!--分館/語系 head-bar-->
+                    <!--分站/語系 head-bar-->
                     @include('Fantasy.cms_view.includes.list')
-                    <!--分館/語系 head-bar-->
+                    <!--分站/語系 head-bar-->
                     <div class="clearfix"></div>
                 </div>
             </nav>

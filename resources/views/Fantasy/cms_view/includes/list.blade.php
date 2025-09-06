@@ -1,6 +1,6 @@
 <input class="base-url-cms" type="hidden" value="{{ BaseFunction::cms_url('/') }}">
 
-<!--分館/語系 head-bar-->
+<!--分站/語系 head-bar-->
 <ul class="head-bar">
     <li class="level-1">
         <a class="display-title" href="javascript:;">
@@ -57,7 +57,7 @@
         </ul>
     </li>
 </ul>
-<!--分館/語系 head-bar-->
+<!--分站/語系 head-bar-->
 
 <!--CMS主選項-->
 {{-- wade:add --}}

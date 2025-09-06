@@ -65,7 +65,7 @@
                   <div class="frameName">TODAY’S DATA 本日數據</div>
                   <div class="toolItem dropdown">
                     <div class="showName" style="display: none;">
-                      <p class="toolTitle">查詢分館</p>
+                      <p class="toolTitle">查詢分站</p>
                       <p class="dropdownValue">振宇五金 購物網站</p>
                       <i class="icon-arrow"></i>
                     </div>

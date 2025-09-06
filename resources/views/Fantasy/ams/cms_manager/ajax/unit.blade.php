@@ -39,7 +39,7 @@
                             <div class="switch_box" style="display: flex;">
                                 <div
                                     class="ios_switch @if ((isset($jsonSup[$row2['id']][0]) && $jsonSup[$row2['id']][0]) || !isset($jsonSup[$row2['id']][0])) on @endif ams_ios_switch switch-block mrg-l-30 view-switch">
-                                    <p class="title mrg-r-10">檢視</p>
+                                    <label class="title mrg-r-10">檢視</label>
                                     <input class="check_ams_rabio" name="jsonData[{{ $row2['id'] }}][]"
                                         type="hidden" value="{{ $jsonSup[$row2['id']][0] ?? '1' }}">
 
@@ -49,7 +49,7 @@
                                 @if (empty($row2['is_content']))
                                     <div
                                         class="ios_switch @if ((isset($jsonSup[$row2['id']][1]) && $jsonSup[$row2['id']][1]) || !isset($jsonSup[$row2['id']][1])) on @endif ams_ios_switch switch-block mrg-l-30">
-                                        <p class="title mrg-r-10">新增</p>
+                                        <label class="title mrg-r-10">新增</label>
                                         <input class="check_ams_rabio" name="jsonData[{{ $row2['id'] }}][]"
                                             type="hidden" value="{{ $jsonSup[$row2['id']][1] ?? '1' }}">
                                         <input type="checkbox">
@@ -57,7 +57,7 @@
                                     </div>
                                     <div
                                         class="ios_switch @if ((isset($jsonSup[$row2['id']][2]) && $jsonSup[$row2['id']][2]) || !isset($jsonSup[$row2['id']][2])) on @endif ams_ios_switch switch-block mrg-l-30">
-                                        <p class="title mrg-r-10">刪除</p>
+                                        <label class="title mrg-r-10">刪除</label>
                                         <input class="check_ams_rabio" name="jsonData[{{ $row2['id'] }}][]"
                                             type="hidden" value="{{ $jsonSup[$row2['id']][2] ?? '1' }}">
                                         <input type="checkbox">
@@ -73,7 +73,7 @@
                                 @endif
                                 <div
                                     class="ios_switch @if ((isset($jsonSup[$row2['id']][3]) && $jsonSup[$row2['id']][3]) || !isset($jsonSup[$row2['id']][3])) on @endif ams_ios_switch switch-block mrg-l-30">
-                                    <p class="title mrg-r-10">編輯</p>
+                                    <label class="title mrg-r-10">編輯</label>
                                     <input class="check_ams_rabio" name="jsonData[{{ $row2['id'] }}][]"
                                         type="hidden" value="{{ $jsonSup[$row2['id']][3] ?? '1' }}">
 
@@ -83,7 +83,7 @@
                                 @if ($need_review && !$row2['no_review'])
                                     <div class="ios_switch review-action @if ((isset($jsonSup[$row2['id']][4]) && $jsonSup[$row2['id']][4]) || !isset($jsonSup[$row2['id']][4])) on @endif review-switch ams_ios_switch switch-block mrg-l-30"
                                         style="">
-                                        <p class="title mrg-r-10">審核</p>
+                                        <label class="title mrg-r-10">審核</label>
                                         <input class="check_ams_rabio" name="jsonData[{{ $row2['id'] }}][]"
                                             type="hidden" value="{{ $jsonSup[$row2['id']][4] ?? '1' }}">
                                         <input type="checkbox">

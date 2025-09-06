@@ -4,45 +4,47 @@
         <div class="hiddenArea_frame_box">
             <div class="detailEditor">
 		         <div class="editorBody">
-		              <div class="editorHeader">
-                <div class="info">
-                    {{-- wade:delete --}}
-                    {{-- <div class="title">
-                        <p class="ams_type_create_zz" style="display:none;">Create CMS Template 新增功能設定</p>
-                        <p class="ams_type_edit_zz" style="display:none;">Edit CMS Template 編輯功能設定</p>
-                    </div> --}}
-                    <div class="area">
+                    <div class="editorHeader">
+                        <div class="info">
+                            <h3 class="dataEditTitle">ooooo</h3>
+                        </div>
+
+                        {{-- wade:delete --}}
+                        {{-- <div class="title">
+                            <p class="ams_type_create_zz" style="display:none;">Create CMS Template 新增功能設定</p>
+                            <p class="ams_type_edit_zz" style="display:none;">Edit CMS Template 編輯功能設定</p>
+                        </div> --}}
+                        {{-- <div class="area">
+                            
+                        </div>
+                        <div class="tips">
+                            <span class="title">TIPS</span>
+                            <p></p>
+                        </div> --}}
                         <div class="control">
                             <ul class="btnGroup">
+                                <li class="cancel">
+                                    <a href="javascript:void(0)" class="close_btn close_ams_hiddenArea">
+                                        <span class="fa fa-remove"></span>
+                                        <span class="label">Cancel</span>
+                                    </a>
+                                </li>                               
+                                <li class="trash delete_ams_hiddenArea">
+                                    <a href="javascript:void(0)" class="delete_ams_information" data-type="crs-template">
+                                        <span class="fa fa-trash"></span>
+                                        <div class="label">Delete</div>
+                                    </a>
+                                </li>
                                 <li class="check">
                                     <a href="javascript:void(0)" class="updated_ams_edit_btn" data-type="crs-template">
                                         <span class="fa fa-check"></span>
+                                        <span class="label">Save</span>
                                     </a>
-                                </li>
-                                <li class="trash delete_ams_hiddenArea">
-                                    <a href="javascript:void(0)" class="delete_ams_information"
-                                        data-type="crs-template">
-                                        <span class="fa fa-trash"></span>
-                                    </a>
-                                </li>
-                                <!--<li class="file">-->
-                                <!--<a href="javascript:void(0)">-->
-                                <!--<<span class="fa fa-files-o"></span>-->
-                                <!--<</a>-->
-                                <!--<</li>-->
-                                <li class="remove">
-                                    <a href="javascript:void(0)" class="close_btn close_ams_hiddenArea">
-                                        <span class="fa fa-remove"></span>
-                                    </a>
-                                </li>
+                                </li>                                
                             </ul>
                         </div>
                     </div>
-                    <div class="tips">
-                        <span class="title">{{-- TIPS --}}</span>
-                        <p></p>
-                    </div>
-                </div>
+                </div>                
             </div>
             <div class="editorContent">
                 <ul class="box_block_frame">
@@ -139,7 +141,7 @@
                     </li>
                     {{UnitMaker::select([
                         'name' => 'amsData[branch_id]',
-                        'title' => '分館-語係',
+                        'title' => '分站-語係',
                         'value' => ( !empty($data['branch_id']) )? $data['branch_id'] : '',
                         'options' => $branch_unit_options
                     ])}}

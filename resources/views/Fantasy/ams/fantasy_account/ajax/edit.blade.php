@@ -6,39 +6,36 @@
                 <div class="editorBody">
                     <div class="editorHeader">
                         <div class="info">
-                            <div class="title">
+                            {{-- <div class="title">
                                 <p class="ams_type_edit_zz">Fantasy Account Management 帳號管理</p>
-                            </div>
-                            <div class="area">
-                                @if(isset($data['account']))
-                                <h3>{{$data['account']}}</H3>
-                                @else
-                                <h3>歡迎，新冒險家</h3>
-                                @endif
-                                <div class="control">
-                                    <ul class="btnGroup">
-                                        <li class="check">
-                                            <a href="javascript:void(0)" class="updated_ams_edit_btn" data-type="fantasy-account">
-                                                <span class="fa fa-check"></span>
-                                            </a>
-                                        </li>
-                                        <li class="trash delete_ams_hiddenArea">
-                                            <a href="javascript:void(0)" class="delete_ams_information" data-type="fantasy-account">
-                                                <span class="fa fa-trash"></span>
-                                            </a>
-                                        </li>
-                                        <li class="remove">
-                                            <a href="javascript:void(0)" class="close_btn close_ams_hiddenArea">
-                                                <span class="fa fa-remove"></span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="tips">
-                                <span class="title">Tips</span>
-                                <p>設定與管理 Fantasy Account，擁有 Account 才能夠登入 Fantasy 進行操作</p>
-                            </div>
+                            </div> --}}
+                            @if(isset($data['account']))
+                            <h3 class="dataEditTitle">{{$data['account']}}</H3>
+                            @else
+                            <h3 class="dataEditTitle">歡迎，新冒險家</h3>
+                            @endif
+                        </div>
+                         <div class="control">
+                            <ul class="btnGroup">
+                                <li class="cancel">
+                                    <a href="javascript:void(0)" class="close_btn close_ams_hiddenArea">
+                                        <span class="fa fa-remove"></span>
+                                        <span class="label">Cancel</span>
+                                    </a>
+                                </li>
+                                <li class="trash delete_ams_hiddenArea">
+                                    <a href="javascript:void(0)" class="delete_ams_information" data-type="fantasy-account">
+                                        <span class="fa fa-trash"></span>
+                                        <div class="label">Delete</div>
+                                    </a>
+                                </li>
+                                <li class="check">
+                                    <a href="javascript:void(0)" class="updated_ams_edit_btn" data-type="fantasy-account">
+                                        <span class="fa fa-check"></span>
+                                        <span class="label">Save</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                     <div class="editorContent">
@@ -76,6 +73,20 @@
                                     </div>
                                 </div>
                             </li>
+                            <li class="inventory row_style">
+                                <div class="title">
+                                    <p class="subtitle">注意事項</p>
+                                </div>
+                                <div class="inner">
+                                    ...
+                                    <div class="tips">
+                                        <span class="title">Tips</span>
+                                        <p>設定與管理 Fantasy Account，擁有 Account 才能夠登入 Fantasy 進行操作</p>
+                                    </div>
+                                </div>
+                               
+                            </li>
+
                             {{UnitMaker::imageGroup([
                                 'title' => '帳號大頭照',
                                 'image_array' =>[[
@@ -85,8 +96,8 @@
                                     'set_size' => 'yes',
                                     'width' => '100',
                                     'height' => '100',
-                                ]],
-                                'tip' => '圖片尺寸 100 x 100 像素，圖片解析度限制 : 72DPI，檔案格式限定 : JPG、PNG、GIF。'
+                                    ]],
+                                    'tip' => '圖片尺寸 100 x 100 像素，圖片解析度限制 : 72DPI，檔案格式限定 : JPG、PNG、GIF。'
                             ])}}
                             <li class="inventory row_style">
                                 <div class="title">
@@ -99,7 +110,6 @@
                                         <p>不可與其他管理帳號重複，特殊符號如 : @#$%?/\|*.及全形輸入也請盡量避免。</p>
                                     </div>
                                 </div>
-                            </li>
                             @if(empty($data))
                             <li class="inventory row_style">
                                 <div class="title">

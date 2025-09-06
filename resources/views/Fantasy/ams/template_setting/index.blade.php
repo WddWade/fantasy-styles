@@ -38,7 +38,7 @@
                                         <li class="breadcrumb-item">
                                             <a href="{{url('Fantasy/Ams')}}">AMS Overview 資訊總覽</a>
                                         </li>
-                                        <li class="breadcrumb-item active" aria-current="page">CMS Template 分館資料設定</li>
+                                        <li class="breadcrumb-item active" aria-current="page">分站單元設定</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -64,7 +64,7 @@
                                         <span class="bar"></span>
                                         <span class="bar"></span>
                                     </div>
-                                    <h1>CMS Template 分館資料設定</h1>
+                                    <h1>分站單元設定</h1>
                                 </div>
                                 <div class="content-nav">
                                     <div class="btn-item">
@@ -77,7 +77,7 @@
                             </div>
 
                             {{-- wade:delete --}}
-                            {{-- <h1>CMS Template 分館資料設定</h1>
+                            {{-- <h1>分站單元設定</h1>
                             <div class="content-nav">
                                 <div class="navleft">
 
@@ -95,7 +95,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="fake-th ">
-                                                    <span class="" data-column="account">分館</span>
+                                                    <span class="" data-column="account">分站</span>
                                                 </div>
                                             </th>
                                             <th class="w_Category w180">

@@ -6,32 +6,40 @@
                 <div class="editorBody">
                     <div class="editorHeader">
                         <div class="info">
-                            <div class="title">
+                            @if(isset($branch_options[$data['origin_id']]))
+                                <h3 class="dataEditTitle">{{$branch_options[$data['origin_id']]}}-分站單元設定</H3>
+                            @else
+                                <h3 class="dataEditTitle">新增分站單元設定</h3>
+                            @endif
+                            {{-- <div class="title">
                                 <p class="ams_type_create_zz" style="display:none;">Create CMS Template 新增功能設定</p>
                                 <p class="ams_type_edit_zz" style="display:none;">Edit CMS Template 編輯功能設定</p>
-                            </div>
-                            <div class="area">
-                                <div class="control">
-                                    <ul class="btnGroup">
-                                        <li class="check">
-                                            <a class="updated_ams_edit_btn" data-type="template-setting"
-                                                href="javascript:void(0)">
-                                                <span class="fa fa-check"></span>
-                                            </a>
-                                        </li>
-                                        <li class="remove">
-                                            <a class="close_btn close_ams_hiddenArea" href="javascript:void(0)">
-                                                <span class="fa fa-remove"></span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
+                            </div> --}}
+                            {{-- <div class="area">
+                                
                             </div>
                             <div class="tips">
-                                <span class="title">{{-- TIPS --}}</span>
+                                <span class="title">TIPS</span>
                                 <p></p>
-                            </div>
+                            </div> --}}
                         </div>
+                        <div class="control">
+                            <ul class="btnGroup">
+                                <li class="cancel">
+                                    <a class="close_btn close_ams_hiddenArea" href="javascript:void(0)">
+                                        <span class="fa fa-remove"></span>
+                                        <span class="label">Cancel</span>
+                                    </a>
+                                </li>
+                                <li class="check">
+                                    <a class="updated_ams_edit_btn" data-type="template-setting"
+                                        href="javascript:void(0)">
+                                        <span class="fa fa-check"></span>
+                                        <span class="label">Save</span>
+                                    </a>
+                                </li>                                
+                            </ul>
+                        </div>                        
                     </div>
                     <div class="editorContent">
                         <ul class="box_block_frame">
@@ -48,7 +56,7 @@
                                 <div class="inner">
                                     <div class="inner_box row_style">
                                         <div class="info_text">
-                                            <p class="title">設定該分館是否啟用，未開啟將無法瀏覽</p>
+                                            <p class="title">設定該分站是否啟用，未開啟將無法瀏覽</p>
                                         </div>
                                         <div class="switch_box">
                                             <div
@@ -66,7 +74,7 @@
                             </li>
                             {{UnitMaker::textInput([
                                 'name' => '',
-                                'title' => '分館',
+                                'title' => '分站',
                                 'tip' => '',
                                 'value' => ( !empty($branch_options[$data['origin_id']]) )? $branch_options[$data['origin_id']] : '',
                                 'disabled'=>true,
@@ -84,7 +92,7 @@
                                 <div class="inner" style="width:100%;">
                                     <div class="inner_box row_style">
                                         <div class="info_text">
-                                            <p class="f-900" style="font-size: 18px;">請設定此分館/語系，可管理的單元</p>
+                                            <p class="f-900" style="font-size: 18px;">請設定此分站/語系，可管理的單元</p>
                                         </div>
                                         <div class="switch_box">
                                             <div style="display: flex;width: 95px;">

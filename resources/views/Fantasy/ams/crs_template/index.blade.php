@@ -106,7 +106,7 @@
                                             </button>
                                         </th>
                                         <th style="width:35%">帳號名稱</th>
-                                        <th style="width:35%">分館-語系</th>
+                                        <th style="width:35%">分站-語系</th>
                                         <th style="width:9%">狀態</th>
                                         <th style="width:20%">最後異動日期</th>
                                     </tr>
@@ -249,7 +249,7 @@
                                 </th>
                                 <th class="w_Category ">
                                     <div class="fake-th ">
-                                        <span class="" data-column="name">分館-語系</span>
+                                        <span class="" data-column="name">分站-語系</span>
                                     </div>
                                 </th>
                                 {{-- <th class="w_Category ">

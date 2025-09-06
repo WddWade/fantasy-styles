@@ -7,36 +7,37 @@
                 <div class="editorBody">
                     <div class="editorHeader">
                         <div class="info">
-                            <div class="title">
+                            @if (isset($data['log_type']))
+                                <h3  class="dataEditTitle">
+                                    {{ $data['user_name'] . ' ' . $actions[$data['log_type']] ?? $data['log_type'] }}
+                                </h3>
+                            @else
+                                <h3  class="dataEditTitle">Log 紀錄</h3>
+                            @endif
+                            {{-- <div class="title">
                                 <!-- <p class="ams_type_create_zz" style="display:none;">Create CMS Template 新增功能設定</p> -->
                                 <p class="ams_type_edit_zz">Log 紀錄</p>
-                            </div>
-                            <div class="area">
-                                @if (isset($data['log_type']))
-                                    <h3>{{ $data['user_name'] . ' ' . $actions[$data['log_type']] ?? $data['log_type'] }}
-                                    </h3>
-                                @else
-                                    <h3>Log 紀錄</h3>
-                                @endif
-                                <div class="control">
-                                    <ul class="btnGroup">
-                                        <li class="remove">
-                                            <a class="close_btn close_ams_hiddenArea" href="javascript:void(0)">
-                                                <span class="fa fa-remove"></span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            @if(count($old_data) > 0)
-                            <div class="tips">
-                                <span class="title">Tips</span>
-                                <p style="color:#ff0000;">紅字為本次異動的資料</p>
-                            </div>
-                            @endif
+                            </div> --}}
+                          
+                        </div>
+                        <div class="control">
+                            <ul class="btnGroup">
+                                <li class="cancel">
+                                    <a class="close_btn close_ams_hiddenArea" href="javascript:void(0)">
+                                        <span class="fa fa-remove"></span>
+                                        <span class="label">Cancel</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                     <div class="editorContent">
+                        @if(count($old_data) > 0)
+                        <div class="tips">
+                            <span class="title">Tips</span>
+                            <p style="color:#ff0000;">紅字為本次異動的資料</p>
+                        </div>
+                        @endif
                         <ul class="box_block_frame">
                             @if (isset($data['id']) and !empty($data['id']))
                                 <input class="supportAmsId_Input" name="log[id]" type="hidden"

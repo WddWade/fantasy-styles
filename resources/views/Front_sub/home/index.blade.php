@@ -4,7 +4,7 @@
 <head itemscope="itemscope" itemtype="http://schema.org/WebSite"></head>
 
 <body>
-    分館首頁
+    分站首頁
 </body>
 
 </html>
