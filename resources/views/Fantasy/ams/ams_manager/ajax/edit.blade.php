@@ -11,14 +11,10 @@
                                 <p class="ams_type_edit_zz">Edit 權限管理</p>
                             </div> --}}
                             @if(isset($data['UsersData']))
-                            <h3 class="dataEditTitle">{{ $data['UsersData']['name'] }}</h3>
+                                <h3 class="dataEditTitle">{{ $data['UsersData']['name'] }} 權限設定</h3>
                             @else
-                            <h3 class="dataEditTitle">歡迎，新冒險家</h3>
+                                <h3 class="dataEditTitle">新增權限設定</h3>
                             @endif
-                            {{-- <div class="tips">
-                                <span class="title">Tips{{-- TIPS --}}</span>
-                                {{-- <p>設定與管理 Fantasy Account 在 AMS 中的操作權限</p>
-                            </div> --}} 
                         </div>
                         <div class="control">
                             <ul class="btnGroup">

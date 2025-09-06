@@ -7,7 +7,7 @@
                     <div class="editorHeader">
                         <div class="info">
                             @if(isset($branch_options[$data['origin_id']]))
-                                <h3 class="dataEditTitle">{{$branch_options[$data['origin_id']]}}-分站單元設定</H3>
+                                <h3 class="dataEditTitle">{{$branch_options[$data['origin_id']]}}-單元設定</H3>
                             @else
                                 <h3 class="dataEditTitle">新增分站單元設定</h3>
                             @endif

@@ -10,9 +10,9 @@
                                 <p class="ams_type_edit_zz">Fantasy Account Management 帳號管理</p>
                             </div> --}}
                             @if(isset($data['account']))
-                            <h3 class="dataEditTitle">{{$data['account']}}</H3>
+                                <h3 class="dataEditTitle">{{$data['account']}}</H3>
                             @else
-                            <h3 class="dataEditTitle">歡迎，新冒險家</h3>
+                                <h3 class="dataEditTitle">歡迎，新冒險家</h3>
                             @endif
                         </div>
                          <div class="control">

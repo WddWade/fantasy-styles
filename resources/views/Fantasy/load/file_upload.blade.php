@@ -15,7 +15,7 @@
                                     <p>FILE UPLOAD 檔案上傳</p>
                                 </div> --}}
 
-                                <h3 class="dataEditTitle">檔案上傳</h3>   
+                                <h3 class="dataEditTitle">上傳檔案</h3>   
                                 {{-- wade:delete --}}
                                 {{-- <div class="area">
                                     <h3>請依下列步驟進行操作</h3>

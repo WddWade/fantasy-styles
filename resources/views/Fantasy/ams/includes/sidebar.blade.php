@@ -80,7 +80,7 @@
             @if ($amsRoleArray['is_cms_template_ma'] == '1')
                 <li class="level-1 level_list">
                     <a href="{{ url('Fantasy/Ams/cms-manager') }}" class="level-1-link">
-                        <span class="title">分站權限設定</span>
+                        <span class="title">分站管理權限設定</span>
                     </a>
                 </li>
             @endif

@@ -4,29 +4,29 @@
 */
 
 .isContent {
-  .main-table,
-  .cms-copy-btn {
-    display: none !important;
-  }
+  // .main-table,
+  // .cms-copy-btn {
+  //   display: none !important;
+  // }
 
   .editContentArea {
     width: 100% !important;
     position: static !important;
 
-    .remove,
-    .trash {
-      display: none !important;
-    }
+    // .remove,
+    // .trash {
+    //   display: none !important;
+    // }
 
-    .hiddenArea_frame {
-      height: calc(100vh - 110px) !important;
-      position: relative !important;
-      width: 100% !important;
-    }
+    // .hiddenArea_frame {
+    //   height: calc(100vh - 110px) !important;
+    //   position: relative !important;
+    //   width: 100% !important;
+    // }
 
-    .detailEditor .editorNav ul.navGroup {
-      padding: 110px 60px 150px 0;
-    }
+    // .detailEditor .editorNav ul.navGroup {
+    //   padding: 110px 60px 150px 0;
+    // }
   }
 
   // .editContentFormArea {
@@ -37,9 +37,9 @@
   //   }
   // }
 
-  #main {
-    display: none;
-  }
+  // #main {
+  //   display: none;
+  // }
 }
 
 .onCms_review,

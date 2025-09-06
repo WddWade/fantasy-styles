@@ -14,21 +14,10 @@
                             <p class="ams_type_edit_zz">Edit CMS Template 權限設定</p>
                         </div> --}}
                          @if(isset($data['branch_unit_id']))
-                            <h3 class="dataEditTitle">{{$data['branch_unit_id']}}-分站權限設定</H3>
+                            <h3 class="dataEditTitle">分站管理權限設定</H3>
                         @else
-                            <h3 class="dataEditTitle">新增分站權限設定</h3>
+                            <h3 class="dataEditTitle">新增分站管理權限</h3>
                         @endif
-
-                        {{-- @if (isset($data['UsersData']))
-                            <h3 class="dataEditTitle">{{ $data['UsersData']['name'] }}</h3>
-                        @else
-                            <h3 class="dataEditTitle">歡迎，新冒險家</h3>
-                        @endif --}}
-                            
-                        {{-- <div class="tips">
-                            <span class="title">Tips</span>
-                            <p>設定 Fantasy Account 的 CMS Template 管理權限，若未開啟管理權限，則管理者無法於 CMS 中檢視/編輯 Template 內容</p>
-                        </div> --}}
                     </div>
                         <div class="control">
                             <ul class="btnGroup">
@@ -98,7 +87,7 @@
                             </li>
                             <li class="inventory row_style">
                                 <div class="title">
-                                    <p class="subtitle">管理者</p>
+                                    <p class="subtitle">分站管理者</p>
                                 </div>
                                 <div class="inner">
                                     <select class="____select2 valid" name="amsData[user_id]" aria-invalid="false">

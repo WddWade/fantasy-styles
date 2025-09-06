@@ -2501,28 +2501,9 @@ body.isContent .backEnd_quill {
   共用
   isContent 找不到
 */
-.isContent .main-table,
-.isContent .cms-copy-btn {
-  display: none !important;
-}
 .isContent .editContentArea {
   width: 100% !important;
   position: static !important;
-}
-.isContent .editContentArea .remove,
-.isContent .editContentArea .trash {
-  display: none !important;
-}
-.isContent .editContentArea .hiddenArea_frame {
-  height: calc(100vh - 110px) !important;
-  position: relative !important;
-  width: 100% !important;
-}
-.isContent .editContentArea .detailEditor .editorNav ul.navGroup {
-  padding: 110px 60px 150px 0;
-}
-.isContent #main {
-  display: none;
 }
 
 .onCms_review,
@@ -6392,7 +6373,7 @@ body.isContent .backEnd_quill {
           flex: 1;
   padding: 0 20px;
   z-index: 14;
-  height: 50px;
+  height: 43px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8883,40 +8864,6 @@ body.isContent .backEnd_quill {
   padding: 8px 12px;
 }
 
-@media (max-width: 1500px) {
-  .hiddenArea .detailEditor .list_frame .part_img .inventory .table_head {
-    border-right: none;
-    border-bottom: none;
-  }
-  .hiddenArea .detailEditor .list_frame .part_img .inventory .table_head .table_head_th {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-  .hiddenArea .detailEditor .list_frame .part_img .inventory .table_head .table_head_th .td {
-    width: 33.333%;
-    border-bottom: solid 1px #c7c7c7;
-  }
-  .hiddenArea .detailEditor .list_frame .part_img .inventory .table_head .table_head_th .td:last-child {
-    border-right: solid 1px #c7c7c7;
-  }
-  .hiddenArea .detailEditor .list_frame .part_table .inventory .table_head .table_head_th {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-  .hiddenArea .detailEditor .list_frame .part_table .inventory .table_head .table_head_th td {
-    width: 50%;
-  }
-  .hiddenArea .detailEditor .list_frame .part_table .inventory .table_head .table_head_th td.tool_btn {
-    width: 25%;
-    border-bottom: solid 1px #c7c7c7;
-  }
-  .hiddenArea .detailEditor .list_frame .part_table .inventory .table_head .table_head_th td:last-child {
-    border-right: solid 1px #c7c7c7;
-  }
-  .hiddenArea .detailEditor .list_frame .list_body {
-    padding: 60px 5% 0 5%;
-  }
-}
 /* 未知 */
 .file_path_frame {
   width: 50vw;
@@ -9005,6 +8952,7 @@ body.isContent .backEnd_quill {
     z-index: 1;
   }
 }
+
 @keyframes content-sidebar-show {
   0% {
     left: 0;
@@ -9217,6 +9165,93 @@ body.isContent .backEnd_quill {
 .ThreeContent .type {
   line-height: 1;
   margin-bottom: 10px;
+}
+
+.isContent .content-wrap {
+  height: auto;
+}
+.isContent .content-wrap .content-head {
+  position: static;
+}
+.isContent #main {
+  display: none;
+}
+.isContent .editContentArea {
+  width: 100% !important;
+  height: auto;
+  position: static !important;
+}
+.isContent .editContentArea > .hiddenArea_frame {
+  height: calc(100vh - 83px) !important;
+  max-width: 100%;
+  -webkit-transition: none;
+  transition: none;
+}
+.isContent .editContentArea > .hiddenArea_frame .detailEditor {
+  height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+.isContent .editContentArea > .hiddenArea_frame .detailEditor .editorHeader {
+  height: 0;
+  padding: 0;
+  min-height: 0;
+}
+.isContent .editContentArea > .hiddenArea_frame .detailEditor .editorHeader .infor {
+  display: none;
+}
+.isContent .editContentArea > .hiddenArea_frame .detailEditor .editorHeader .control {
+  position: fixed;
+  right: 20px;
+  top: 50px;
+}
+.isContent .editContentArea > .hiddenArea_frame .detailEditor .editorContent {
+  max-width: 990px;
+  margin: 0 auto;
+}
+.isContent .editContentArea > .hiddenArea_frame .detailEditor .editorContent .inventory:first-child {
+  border-top: none;
+}
+.isContent .editContentArea > .hiddenArea_frame .detailEditor .hiddenArea_frame_controlBtn {
+  max-width: 990px;
+  padding-inline: 45px;
+  margin: 0 auto;
+}
+.isContent .editContentArea > .hiddenArea_frame .detailEditor .editorNav {
+  width: 100%;
+  height: 40px;
+  background-color: #f8f8f8;
+  -webkit-box-shadow: 0 0 1px 1px #e4e4e4;
+          box-shadow: 0 0 1px 1px #e4e4e4;
+}
+.isContent .editContentArea > .hiddenArea_frame .detailEditor .editorNav .editorTitle {
+  display: none;
+}
+.isContent .editContentArea > .hiddenArea_frame .detailEditor .editorNav .editContentMenu {
+  overflow-x: auto;
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+.isContent .editContentArea > .hiddenArea_frame .detailEditor .editorNav .editContentMenu li {
+  white-space: nowrap;
+}
+.isContent .editContentArea > .hiddenArea_frame .detailEditor .editorNav .editContentMenu li p {
+  font-size: 1.2rem;
+  font-weight: 400;
 }
 
 /* 內容段落編輯 ， 應用/解決方案/商品關聯 ， 檔案下載關聯 */

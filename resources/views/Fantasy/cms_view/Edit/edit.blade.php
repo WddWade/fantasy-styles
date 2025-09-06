@@ -80,18 +80,25 @@
                             </a>
                         </li>
                     @endif
-                  
-                     @if ($role['edit'] || ($action === 'create' && $role['create']))
-                        <li class="check editSentBtn" data-reviewed="{{ $is_reviewed }}"
-                            data-reviewed-pass="{{ $role['can_review'] }}">
-                            <a href="javascript:void(0)">
-                                <span class="fa fa-check"></span>
-                                <p>Setting</p>
-                            </a>
-                        </li>
-                    @endif
                     
                     @if ($role['need_review'] && !$role['can_review'] && ($action === 'edit' || $action === 'batch'))
+                         @if ($action == 'batch')
+                            <li class="cancel notify_admin_cancel" data-action="review" style="background-color: #424242;">
+                                <a href="javascript:void(0)">
+                                    <span class="fa fa-trash"></span>
+                                    <p>取消審核</p>
+                                </a>
+                            </li>
+                        @endif
+                        @if (!$role['delete'])
+                            <li class="remove notify_admin {{ $menu['is_content'] || !$menu['no_review'] ? 'hide' : '' }}" data-acion="remove">
+                                <a href="javascript:void(0)">
+                                    <span class="fa fa-trash"></span>
+                                    <p>通知管理者刪除</p>
+                                </a>
+                            </li>
+                        @endif
+
                         <li class="notify_admin {{ $is_reviewed ? 'hide' : '' }}" data-action="review"
                             style="background-color: #ee4c4c;">
                             <a href="javascript:void(0)">
@@ -99,23 +106,16 @@
                                 <p>通知管理者審核</p>
                             </a>
                         </li>
-                        @if (!$role['delete'])
-                            <li class="notify_admin {{ $menu['is_content'] || !$menu['no_review'] ? 'hide' : '' }}" data-acion="remove"
-                                style="background-color: #424242;">
-                                <a href="javascript:void(0)">
-                                    <span class="fa fa-trash"></span>
-                                    <p>通知管理者刪除</p>
-                                </a>
-                            </li>
-                        @endif
-                        @if ($action == 'batch')
-                            <li class="notify_admin_cancel" data-action="review" style="background-color: #424242;">
-                                <a href="javascript:void(0)">
-                                    <span class="fa fa-trash"></span>
-                                    <p>取消審核</p>
-                                </a>
-                            </li>
-                        @endif
+                    @endif
+
+                    @if ($role['edit'] || ($action === 'create' && $role['create']))
+                        <li class="check editSentBtn" data-reviewed="{{ $is_reviewed }}"
+                            data-reviewed-pass="{{ $role['can_review'] }}">
+                            <a href="javascript:void(0)">
+                                <span class="fa fa-check"></span>
+                                <p>Save</p>
+                            </a>
+                        </li>
                     @endif
                 </ul>
             </div>

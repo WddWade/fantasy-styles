@@ -1825,62 +1825,62 @@
   }
 }
 
-@media (max-width: 1500px) {
-  .hiddenArea {
-    .detailEditor {
-      .list_frame {
-        .part_img {
-          .inventory {
-            .table_head {
-              border-right: none;
-              border-bottom: none;
+// @media (max-width: 1500px) {
+//   .hiddenArea {
+//     .detailEditor {
+//       .list_frame {
+//         .part_img {
+//           .inventory {
+//             .table_head {
+//               border-right: none;
+//               border-bottom: none;
 
-              .table_head_th {
-                flex-wrap: wrap;
+//               .table_head_th {
+//                 flex-wrap: wrap;
 
-                .td {
-                  width: 33.333%;
-                  border-bottom: solid 1px #c7c7c7;
+//                 .td {
+//                   width: 33.333%;
+//                   border-bottom: solid 1px #c7c7c7;
 
-                  &:last-child {
-                    border-right: solid 1px #c7c7c7;
-                  }
-                }
-              }
-            }
-          }
-        }
+//                   &:last-child {
+//                     border-right: solid 1px #c7c7c7;
+//                   }
+//                 }
+//               }
+//             }
+//           }
+//         }
 
-        .part_table {
-          .inventory {
-            .table_head {
-              .table_head_th {
-                flex-wrap: wrap;
+//         .part_table {
+//           .inventory {
+//             .table_head {
+//               .table_head_th {
+//                 flex-wrap: wrap;
 
-                td {
-                  width: 50%;
+//                 td {
+//                   width: 50%;
 
-                  &.tool_btn {
-                    width: 25%;
-                    border-bottom: solid 1px #c7c7c7;
-                  }
+//                   &.tool_btn {
+//                     width: 25%;
+//                     border-bottom: solid 1px #c7c7c7;
+//                   }
 
-                  &:last-child {
-                    border-right: solid 1px #c7c7c7;
-                  }
-                }
-              }
-            }
-          }
-        }
+//                   &:last-child {
+//                     border-right: solid 1px #c7c7c7;
+//                   }
+//                 }
+//               }
+//             }
+//           }
+//         }
 
-        .list_body {
-          padding: 60px 5% 0 5%;
-        }
-      }
-    }
-  }
-}
+//         .list_body {
+//           padding: 60px 5% 0 5%;
+//         }
+//       }
+//     }
+//   }
+// }
 
 /* 未知 */
 .file_path_frame {
@@ -1950,23 +1950,6 @@
   }
 }
 
-@-webkit-keyframes content-sidebar-show {
-  0% {
-    left: 0;
-    z-index: -1;
-  }
-
-  99% {
-    left: -300px;
-    z-index: -1;
-  }
-
-  100% {
-    left: -300px;
-    z-index: 1;
-  }
-}
-
 @keyframes content-sidebar-show {
   0% {
     left: 0;
@@ -1981,18 +1964,6 @@
   100% {
     left: -300px;
     z-index: 1;
-  }
-}
-
-@-webkit-keyframes content-sidebar-unshow {
-  0% {
-    left: -300px;
-    z-index: -1;
-  }
-
-  100% {
-    left: 0px;
-    z-index: -1;
   }
 }
 
@@ -2183,5 +2154,90 @@
   .type {
     line-height: 1;
     margin-bottom: 10px;
+  }
+}
+
+.isContent {
+  .content-wrap {
+    height: auto;
+    .content-head {
+      position: static;
+    }
+  }
+  #main {
+    display: none;
+  }
+  // .main-table,
+  // .cms-copy-btn {
+  //   display: none !important;
+  // }
+
+  .editContentArea {
+    width: 100% !important;
+    height: auto;
+    position: static !important;
+
+    > .hiddenArea_frame {
+      height: calc(100vh - 83px) !important;
+      max-width: 100%;
+      transition: none;
+
+      .detailEditor {
+        height: 100%;
+        flex-direction: column-reverse;
+        .editorHeader {
+          height: 0;
+          padding: 0;
+          min-height: 0;
+          .infor {
+            display: none;
+          }
+          .control {
+            position: fixed;
+            right: 20px;
+            top: 50px;
+          }
+        }
+        .editorContent {
+          max-width: 990px;
+          margin: 0 auto;
+          .inventory:first-child {
+            border-top: none;
+          }
+        }
+        .hiddenArea_frame_controlBtn {
+          max-width: 990px;
+          padding-inline: 45px;
+          margin: 0 auto;
+        }
+        .editorNav {
+          width: 100%;
+          height: 40px;
+          background-color: #f8f8f8;
+          box-shadow: 0 0 1px 1px #e4e4e4;
+
+          .editorTitle {
+            display: none;
+          }
+          .editContentMenu {
+            overflow-x: auto;
+            width: 100%;
+            height: 100%;
+            padding: 0 20px;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 20px;
+            li {
+              white-space: nowrap;
+              p {
+                font-size: 1.2rem;
+                font-weight: 400;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
