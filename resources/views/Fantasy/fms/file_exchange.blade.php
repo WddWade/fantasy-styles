@@ -34,7 +34,7 @@
 
                     <li class="inventory row_style">
                         <div class="title">
-                            <p class="subtitle">檔案目錄位置</p>
+                            <div class="subtitle">檔案目錄位置</div>
                         </div>
                         <div class="inner">
                             <div class="select_Box" data-type="path">

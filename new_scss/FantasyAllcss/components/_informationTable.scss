@@ -1,9 +1,13 @@
 .detailEditor {
-  .informationTable {
-    margin-bottom: 80px;
-    &:last-child {
+  &:has(.informationTable + .tips) {
+    .informationTable {
       margin-bottom: 0;
     }
+  }
+  .informationTable {
+    width: 100%;
+    margin-bottom: 80px;
+    &:last-child,
     .table-header {
       display: flex;
       flex-direction: row;

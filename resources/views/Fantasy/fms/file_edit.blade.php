@@ -59,7 +59,7 @@
                 <ul class="box_block_frame frame">
                     <li class="inventory row_style">
                         <div class="title">
-                            <p class="subtitle">檔案名稱</p>
+                            <div class="subtitle">檔案名稱</div>
                         </div>
                         <div class="inner">
                             <input class="normal_input" name="fms[title]" type="text" placeholder="" value="{{ $File['title']}}">
@@ -71,7 +71,7 @@
                     </li>
                     <li class="inventory row_style">
                         <div class="title">
-                            <p class="subtitle">檔案目錄位置</p>
+                            <div class="subtitle">檔案目錄位置</div>
                         </div>
                         <div class="inner">
                             <div class="select_Box" data-type="path">
@@ -91,7 +91,7 @@
                     </li>                    
                     <li class="inventory file_box fileInformation">
                         <div class="title">
-                            <p class="subtitle">檔案預覽</p>
+                            <div class="subtitle">檔案預覽</div>
                         </div>
                         <div class="file_frame">
                             <div class="file_frame_info">
@@ -128,9 +128,9 @@
                     </li>
                     <li class="inventory row_style fileUpload upload_box">
                         <input type="file" name="file_one" style="display:none;" class="fileInputClick_one" multiple>
-                        <p class="subtitle">
+                        <div class="subtitle">
                             <span class="en_title"></span> 選擇要更換的檔案
-                        </p>
+                        </div>
                         <div class="upload_frame fileUploadClick_one" ondrop="javascript: drop_image_one(event);" ondragover="javascript: dragHandler(event);">
                             <div class="upload_frame_info">
                                 <div class="center_box">
@@ -150,7 +150,7 @@
                         </div>
                     </li>
                     <li class="inventory fileUpload upload_list change_file">
-                        <p class="subtitle">確認更換的檔案</p>
+                        <div class="subtitle">確認更換的檔案</div>
                         <div class="inner">
                             <ul class="upload_list locale_file_list_one">
                                 <!--待上傳列表-->
@@ -159,8 +159,8 @@
                     </li>
                     @if(config('fms.s3_use') === false)
                     <li class="inventory row_style">
-                        <p class="subtitle">下載時使用原檔名</p>
-                        <p class="subtitle">檔案上傳後系統會重新編寫檔名，如 dog.png -> {{ date('YmdHi') }}abcdefg.png，若勾選下載時使用原檔名可使下載的檔案檔名同上傳時的檔名，但相對的會使用較多的伺服器資源。</p>
+                        <div class="subtitle">下載時使用原檔名</div>
+                        <div class="subtitle">檔案上傳後系統會重新編寫檔名，如 dog.png -> {{ date('YmdHi') }}abcdefg.png，若勾選下載時使用原檔名可使下載的檔案檔名同上傳時的檔名，但相對的會使用較多的伺服器資源。</div>
                         <div class="inner">
                             <div class="radio_area">
                                 <div class="radio_area_content">
@@ -184,7 +184,7 @@
                     @endif
                     <li class="inventory row_style">
                         <div class="title">
-                            <p class="subtitle">自訂網址名稱</p>
+                            <div class="subtitle">自訂網址名稱</div>
                         </div>
                         <div class="inner">
                             <div class="fms_url_name">
@@ -199,7 +199,7 @@
                     </li>
                     <li class="inventory row_style">
                         <div class="title">
-                            <p class="subtitle">Alt 名稱</p>
+                            <div class="subtitle">Alt 名稱</div>
                         </div>
                         <div class="inner">
                             <input class="normal_input" name="fms[alt]" type="text" placeholder="" value="{{ $File['alt']}}">
@@ -211,7 +211,7 @@
                     </li>
                     <li class="inventory row_style">
                         <div class="title">
-                            <p class="subtitle">備註與說明</p>
+                            <div class="subtitle">備註與說明</div>
                         </div>
                         <div class="inner">
                             <textarea name="fms[note]" id="file_outSite_textarea3" placeholder="">{{ $File['note']}}</textarea>
@@ -223,7 +223,7 @@
                     </li>
                     @if($File['create_id'] == $user['id'] || $user['fms_admin'] == 1)
                     <li class="inventory row_style">
-                        <p class="subtitle">權限設定</p>
+                        <div class="subtitle">權限設定</div>
                         <div class="inner">
                             <div class="radio_area">
                                 <div class="radio_area_content">
@@ -254,7 +254,7 @@
                     @endphp
                     <li class="inventory row_style auth_group" @if($File['is_private']==0) style="display: none;" @endif>
                         <div class="title">
-                            <p class="subtitle">使用者權限</p>
+                            <div class="subtitle">使用者權限</div>
                         </div>
                         <div class="inner">
                             <select class="____select2 valid" name="fms[can_use][]" aria-invalid="false" multiple="multiple">
@@ -273,7 +273,7 @@
                     @endif
                     <li class="inventory row_style">
                         <div class="title">
-                            <p class="subtitle">最後異動時間</p>
+                            <div class="subtitle">最後異動時間</div>
                         </div>
                         <div class="inner">
                             <div class="file_date">
@@ -293,7 +293,7 @@
                     </li>
                     <li class="inventory row_style">
                         <div class="title">
-                            <p class="subtitle">建立日期</p>
+                            <div class="subtitle">建立日期</div>
                         </div>
                         <div class="inner">
                             <div class="file_date">
@@ -308,7 +308,7 @@
                     </li>
                     <li class="inventory row_style">
                         <div class="title">
-                            <p class="subtitle">擁有者</p>
+                            <div class="subtitle">擁有者</div>
                         </div>
                         <div class="inner">
                             <div class="owner">

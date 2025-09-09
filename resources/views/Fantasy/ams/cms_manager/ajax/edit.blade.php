@@ -87,7 +87,7 @@
                             </li>
                             <li class="inventory row_style">
                                 <div class="title">
-                                    <p class="subtitle">分站管理者</p>
+                                    <div class="subtitle">分站管理者</div>
                                 </div>
                                 <div class="inner">
                                     <select class="____select2 valid" name="amsData[user_id]" aria-invalid="false">
@@ -108,7 +108,7 @@
                             {{-- <li class="inventory row_style tr_style review-action"
                                 @if (!$need_review) style="display: none" @endif>
                                 <div class="title">
-                                    <p class="subtitle">編輯免審核</p>
+                                    <div class="subtitle">編輯免審核</div>
                                 </div>
                                 <div class="inner">
                                     <div class="inner_box row_style">
@@ -134,7 +134,7 @@
                             </li> --}}
                             <li class="inventory row_style unit_all" style=" {{ (!empty($data)) ? '':'display: none;' }}">
                                 <div class="title">
-                                    <p class="subtitle">控制全部單元</p>
+                                    <div class="subtitle">控制全部單元</div>
                                 </div>
                                 <div class="inner">
                                     <div class="row_style">
@@ -158,7 +158,7 @@
                             @if(!empty($data))
                             <li class="inventory row_style tr_style">
                                 <div class="title">
-                                    <p class="subtitle">最後異動時間</p>
+                                    <div class="subtitle">最後異動時間</div>
                                 </div>
                                 <div class="inner">
                                     <div class="file_date">
@@ -168,7 +168,7 @@
                             </li>
                             <li class="inventory row_style tr_style">
                                 <div class="title">
-                                    <p class="subtitle">建立日期</p>
+                                    <div class="subtitle">建立日期</div>
                                 </div>
                                 <div class="inner">
                                     <div class="file_date">

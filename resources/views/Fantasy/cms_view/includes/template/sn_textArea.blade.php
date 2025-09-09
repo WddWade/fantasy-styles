@@ -1,6 +1,6 @@
 <li class="inventory{{ $sontable === false ? ' row_style' : '' }}">
     {!! $sontable === false ? '<div class="title">' : '' !!}
-    <p class="subtitle">{{ $title }}</p>
+    <div class="subtitle">{{ $title }}</div>
     {!! $sontable === false ? '</div>' : '' !!}
 
     {!! $sontable === false ? '<div class="inner">' : '' !!}

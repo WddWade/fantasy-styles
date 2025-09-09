@@ -61,7 +61,7 @@
                             @else
                             <input type="hidden" value="0" name="amsData[id]" class="supportAmsId_Input">
                             @endif
-                            <li class="inventory row_style tr_style img_title open_ams_lightbox">
+                            <li class="inventory open_ams_lightbox">
                                 <!--有大頭照時，就把no_selfie拿掉-->
                                 <!--沒大頭照時，就把<p>的內容改成Select Accout-->
                                 @php
@@ -143,7 +143,7 @@
                             @foreach($key_group as $key =>$row)
                             <li class="inventory row_style tr_style">
                                 <div class="title">
-                                    <p class="subtitle">{{$row['title']}}</p>
+                                    <div class="subtitle">{{$row['title']}}</div>
                                 </div>
                                 <div class="inner">
                                     @foreach($row['templateMenu'] as $key2 => $row2)
@@ -231,7 +231,7 @@
                             @endforeach
                             <li class="inventory row_style tr_style">
                                 <div class="title">
-                                    <p class="subtitle">最後異動時間</p>
+                                    <div class="subtitle">最後異動時間</div>
                                 </div>
                                 <div class="inner">
                                     <div class="file_date">
@@ -249,7 +249,7 @@
                             </li>
                             <li class="inventory row_style tr_style">
                                 <div class="title">
-                                    <p class="subtitle">建立日期</p>
+                                    <div class="subtitle">建立日期</div>
                                 </div>
                                 <div class="inner">
                                     <div class="file_date">

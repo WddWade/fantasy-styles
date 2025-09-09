@@ -59,7 +59,7 @@
                             <ul class="box_block_frame frame">
                                 <li class="inventory row_style">
                                     <div class="title">
-                                        <p class="subtitle">選擇上傳至哪個資料夾</p>
+                                        <div class="subtitle">選擇上傳至哪個資料夾</div>
                                     </div>                                    
                                     <div class="inner">
                                         <div class="select_Box" data-type="path">
@@ -76,7 +76,7 @@
                                 </li>
                                 <li class="inventory fileUpload">
                                     <div class="title">
-                                        <p class="subtitle">選擇檔案或拖曳檔案到下方區塊</p>
+                                        <div class="subtitle">選擇檔案或拖曳檔案到下方區塊</div>
                                     </div>
                                     <div class="inner">
                                         <div class="upload_box">
@@ -104,7 +104,7 @@
                                 </li>                                
                                 <li class="inventory upload_list">
                                     <div class="title">
-                                        <p class="subtitle">上傳檔案列表</p>
+                                        <div class="subtitle">上傳檔案列表</div>
                                     </div>
                                     <div class="inner">
                                         <ul class="upload_list locale_file_list">
@@ -115,7 +115,7 @@
 
                                 <li class="inventory row_style">
                                     <div class="title">
-                                        <p class="subtitle">設定檔案權限</p>
+                                        <div class="subtitle">設定檔案權限</div>
                                     </div>                                    
                                     <div class="inner">
                                         <div class="radio_area">
@@ -147,7 +147,7 @@
                                 @endphp
                                 <li class="inventory row_style auth_group" style="{{(isset($selfFolder['is_private']) && $selfFolder['is_private']==1) ? '':'display: none;'}}">
                                     <div class="title">
-                                        <p class="subtitle">檔案權限</p>
+                                        <div class="subtitle">檔案權限</div>
                                     </div>
                                     <div class="inner">
                                         <select class="____select2 valid" id="can_use" name="fms[can_use][]" aria-invalid="false" multiple="multiple">
@@ -166,9 +166,9 @@
                                 @if(config('fms.s3_use') === false)
                                     <li class="inventory row_style">
                                         <div class="title">
-                                            <p class="subtitle">
+                                            <div class="subtitle">
                                                 <span>下載檔案是否使用原檔名</span>                            
-                                            </p>
+                                            </div>
                                         </div>                                        
                                         <div class="inner">
                                             <div class="radio_area">
@@ -197,7 +197,7 @@
                                 @else
                                     <li class="inventory fileUpload">
                                         <div class="title">
-                                            <p class="subtitle">確認下載檔案是否使用原檔名</p>
+                                            <div class="subtitle">確認下載檔案是否使用原檔名</div>
                                         </div>
                                         <div class="inner">
                                              <ul class="upload_list locale_file_list">
@@ -409,8 +409,8 @@
                                 </div>
                                 <ul class="box_block_frame">
                                     <li class="inventory fileUpload">
-                                        <p class="subtitle"><span class="en_title">step1.</span>
-                                            選擇新增的資料夾位置{{-- <span class="upload_icon fa fa-cloud-upload"></span> --}}</p>
+                                        <div class="subtitle"><span class="en_title">step1.</span>
+                                            選擇新增的資料夾位置{{-- <span class="upload_icon fa fa-cloud-upload"></span> --}}</div>
                                         <div class="">
                                             <div class="select_object">
                                                 <p class="subtitle fms_area_name"><span class="icon fa fa-folder"></span></p>
@@ -421,7 +421,7 @@
                                     </li>
                                     <li class="inventory row_style">
                                         <div class="title">
-                                            <p class="subtitle">資料夾名稱</p>
+                                            <div class="subtitle">資料夾名稱</div>
                                         </div>
                                         <div class="inner">
                                             <input class="normal_input" type="text" placeholder="資料夾名稱" name="newFolder">
@@ -476,10 +476,10 @@
                                 </div>
                                 <ul class="box_block_frame">
                                     <li class="inventory fileUpload">
-                                        <p class="subtitle">
+                                        <div class="subtitle">
                                             <span class="en_title">step1.</span>
                                             選擇資料夾{{-- <span class="upload_icon fa fa-cloud-upload"></span> --}}
-                                        </p>
+                                        </div>
                                         <div class="">
                                             <div class="select_object">
                                                 <p class="subtitle fms_area_name"><span class="icon fa fa-folder"></span></p>
@@ -490,7 +490,7 @@
                                     </li>
                                     <li class="inventory row_style">
                                         <div class="title">
-                                            <p class="subtitle">資料夾名稱</p>
+                                            <div class="subtitle">資料夾名稱</div>
                                         </div>
                                         <div class="inner">
                                             <input class="normal_input" type="text" placeholder="資料夾名稱" name="nameFolder">

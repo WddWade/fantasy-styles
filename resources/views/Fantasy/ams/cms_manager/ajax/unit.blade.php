@@ -2,7 +2,7 @@
 @foreach ($key_group as $key => $row)
     <li class="inventory row_style tr_style hide_auth hide_auth_{{ $row['CmsMenu'][0]['key_id'] ?? '' }}">
         <div class="title">
-            <p class="subtitle">{{ $row['title'] }}</p>
+            <div class="subtitle">{{ $row['title'] }}</div>
             <div style="display: flex;">
                 <a class="ios_switch_select_block" data-val="0" href="javascript:void(0)"
                     style="background-color: #c5c5c5;padding: 5px;color: #fff;">全關</a>

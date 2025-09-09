@@ -1,7 +1,7 @@
  {{-- 產生控件 --}}
  <li class="inventory sortStatusSet">
      <div class="title">
-         <p class="subtitle">{{ $title }}</p>
+         <div class="subtitle">{{ $title }}</div>
      </div>
 
      <div class="inner">

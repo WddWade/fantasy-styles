@@ -14,7 +14,7 @@
         </div>
     @endif
     <div class="title">
-        <p class="subtitle">{{ $title }}</p>
+        <div class="subtitle">{{ $title }}</div>
     </div>
     <div class="inner">
         <textarea class="____normal_textarea" name="{{ $disabled ? '' : $name }}" type="text" @if (!empty($set['verify']) && !$disabled) data-verify="{{ json_encode($set['verify']) }}" @endif {{ $disabled ? 'disabled' : '' }}>{{ gettype($value)!="string" ? json_encode($value) : $value}}</textarea>

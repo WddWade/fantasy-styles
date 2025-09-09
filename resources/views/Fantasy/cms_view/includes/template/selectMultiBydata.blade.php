@@ -1,6 +1,6 @@
 <li class="inventory {!! $sontable===false?'row_style':'' !!} open_db_lightbox">
 	{!! $sontable===false?'<div class="title">':'' !!}
-		<p class="subtitle">{{ $title }}</p>
+		<div class="subtitle">{{ $title }}</div>
 	{!! $sontable===false?'</div>':'' !!}
 	<div class="inner">
 		<div class="quill_select multi_select no_effect">

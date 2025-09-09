@@ -209,6 +209,9 @@
         .menu-block {
           background-color: #fff;
           padding: 10px 0;
+          &:last-child {
+            height: 100%;
+          }
 
           .menu-block-title {
             font-size: 0.8rem;

@@ -39,15 +39,93 @@
                         </div>
                     </div>
                     <div class="editorContent">
-                        <ul class="box_block_frame">
+                        <ul class="frame">
                             @if(isset($data['id']) AND !empty($data['id']))
                             <input type="hidden" value="{{$data['id']}}" name="amsData[id]" class="supportAmsId_Input">
                             @else
                             <input type="hidden" value="0" name="amsData[id]" class="supportAmsId_Input">
                             @endif
-                            <li class="inventory row_style">
+                            
+                            <li class="inventory">
                                 <div class="title">
-                                    <p class="subtitle">帳號是否啟用</p>
+                                    <div class="subtitle">注意事項</div>
+                                </div>
+                                <div class="inner">
+                                    <div class="tips">
+                                        <span class="title">Tips</span>
+                                        <p>設定與管理 Fantasy Account，擁有 Account 才能夠登入 Fantasy 進行操作</p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            {{UnitMaker::imageGroup([
+                                'title' => '帳號大頭照',
+                                'image_array' =>[[
+                                    'name' => 'amsData[photo_image]',
+                                    'title' => '',
+                                    'value' => ( !empty($data['photo_image']) )? $data['photo_image'] : '',
+                                    'set_size' => 'yes',
+                                    'width' => '100',
+                                    'height' => '100',
+                                    ]],
+                                    'tip' => '圖片尺寸 100 x 100 像素，圖片解析度限制 : 72DPI，檔案格式限定 : JPG、PNG、GIF。'
+                            ])}}
+
+                            <li class="inventory">
+                                <div class="title">
+                                    <div class="subtitle">帳號設定</div>
+                                </div>
+                                <div class="inner">
+                                    <input class="normal_input" type="text" placeholder="" name="amsData[account]" value="{{$data['account'] ?? ''}}" autocomplete="off">
+                                    <div class="tips">
+                                        <span class="title">TIPS</span>
+                                        <p>不可與其他管理帳號重複，特殊符號如 : @#$%?/\|*.及全形輸入也請盡量避免。</p>
+                                    </div>
+                                </div>
+                            </li>
+                             <li class="inventory">
+                                <div class="title">
+                                    <div class="subtitle">姓名</div>
+                                </div>
+                                <div class="inner">
+                                    <input class="normal_input" type="text" placeholder="" name="amsData[name]" value="{{$data['name'] ?? ''}}">
+                                </div>
+                            </li>
+                            <li class="inventory">
+                                <div class="title">
+                                    <div class="subtitle">電子郵件</div>
+                                </div>
+                                <div class="inner">
+                                    <input class="normal_input" type="text" placeholder="" name="amsData[mail]" value="{{$data['mail'] ?? ''}}">
+                                </div>
+                            </li>
+                            
+                            @if(empty($data))
+                            <li class="inventory">
+                                <div class="title">
+                                    <div class="subtitle">密碼設定</div>
+                                </div>
+                                <div class="inner">
+                                    <div class="inner_box row_style">
+                                        <div class="psbox gray w-50 mrg-r-10">
+                                            <input class="normal_input" type="password" placeholder="請輸入密碼" name="amsData[password]">
+                                            {{-- <span class="icon blind fa fa-eye-slash"></span> --}}
+                                        </div>
+                                        <div class="psbox w-50 mrg-l-10">
+                                            <input class="normal_input" type="password" placeholder="密碼驗證，請再次輸入密碼" name="amsData[password2]">
+                                            {{-- <span class="icon blind fa fa-eye-slash"></span> --}}
+                                        </div>
+                                    </div>
+                                    <div class="tips">
+                                        <span class="title">TIPS</span>
+                                        <p>請輸入8-12 位英文字母與數字、符號組合而成的密碼，英文字母至少有一位為大寫字母。</p>
+                                    </div>
+                                </div>
+                            </li>
+                            @endif
+                            <li class="inventory">
+                                <div class="title">
+                                    <div class="subtitle">帳號是否啟用</div>
                                 </div>
                                 <div class="inner">
                                     <div class="radio_area">
@@ -72,84 +150,22 @@
                                         <p>啟用後此帳號才能登入</p>
                                     </div>
                                 </div>
-                            </li>
-                            <li class="inventory row_style">
+                            </li>                            
+                            <li class="inventory">
                                 <div class="title">
-                                    <p class="subtitle">注意事項</p>
-                                </div>
-                                <div class="inner">
-                                    ...
-                                    <div class="tips">
-                                        <span class="title">Tips</span>
-                                        <p>設定與管理 Fantasy Account，擁有 Account 才能夠登入 Fantasy 進行操作</p>
-                                    </div>
-                                </div>
-                               
-                            </li>
-
-                            {{UnitMaker::imageGroup([
-                                'title' => '帳號大頭照',
-                                'image_array' =>[[
-                                    'name' => 'amsData[photo_image]',
-                                    'title' => '',
-                                    'value' => ( !empty($data['photo_image']) )? $data['photo_image'] : '',
-                                    'set_size' => 'yes',
-                                    'width' => '100',
-                                    'height' => '100',
-                                    ]],
-                                    'tip' => '圖片尺寸 100 x 100 像素，圖片解析度限制 : 72DPI，檔案格式限定 : JPG、PNG、GIF。'
-                            ])}}
-                            <li class="inventory row_style">
-                                <div class="title">
-                                    <p class="subtitle">登入帳號設定</p>
-                                </div>
-                                <div class="inner">
-                                    <input class="normal_input" type="text" placeholder="" name="amsData[account]" value="{{$data['account'] ?? ''}}" autocomplete="off">
-                                    <div class="tips">
-                                        <span class="title">TIPS</span>
-                                        <p>不可與其他管理帳號重複，特殊符號如 : @#$%?/\|*.及全形輸入也請盡量避免。</p>
-                                    </div>
-                                </div>
-                            @if(empty($data))
-                            <li class="inventory row_style">
-                                <div class="title">
-                                    <p class="subtitle">登入密碼設定</p>
-                                </div>
-                                <div class="inner">
-                                    <div class="inner_box row_style">
-                                        <div class="psbox gray w-50 mrg-r-10">
-                                            <input class="normal_input" type="password" placeholder="請輸入密碼" name="amsData[password]">
-                                            {{-- <span class="icon blind fa fa-eye-slash"></span> --}}
-                                        </div>
-                                        <div class="psbox w-50 mrg-l-10">
-                                            <input class="normal_input" type="password" placeholder="密碼驗證，請再次輸入密碼" name="amsData[password2]">
-                                            {{-- <span class="icon blind fa fa-eye-slash"></span> --}}
-                                        </div>
-                                    </div>
-                                    <div class="tips">
-                                        <span class="title">TIPS</span>
-                                        <p>請輸入8-12 位英文字母與數字、符號組合而成的密碼，英文字母至少有一位為大寫字母。</p>
-                                    </div>
-                                </div>
-                            </li>
-                            @endif
-                            <li class="inventory row_style">
-                                <div class="title">
-                                    <p class="subtitle">限制登入IP</p>
+                                    <div class="subtitle">限制登入IP</div>
                                 </div>
                                 <div class="inner">
                                     <input class="normal_input" type="text" placeholder="" name="amsData[lock_ip]" value="{{$data['lock_ip'] ?? ''}}">
                                     <div class="tips">
                                         <span class="title">TIPS</span>
-                                        <p>若空白則不限制，多個IP請用逗號區分</p>
+                                        <p>設定登入IP將限制該帳號只能於登入IP位址登入系統，若需設定多個IP請使用逗號區分。</p>
                                     </div>
                                 </div>
                             </li>
-
-
-                            {{-- <li class="inventory row_style">
+                            {{-- <li class="inventory">
                                 <div class="title">
-                                    <p class="subtitle">FMS最大權限管理者</p>
+                                    <div class="subtitle">FMS最大權限管理者</div>
                                 </div>
                                 <div class="inner">
                                     <div class="inner_box row_style">
@@ -169,25 +185,9 @@
                                     </div>
                                 </div>
                             </li> --}}
-                            <li class="inventory row_style">
+                            <li class="inventory">
                                 <div class="title">
-                                    <p class="subtitle">姓名</p>
-                                </div>
-                                <div class="inner">
-                                    <input class="normal_input" type="text" placeholder="" name="amsData[name]" value="{{$data['name'] ?? ''}}">
-                                </div>
-                            </li>
-                            <li class="inventory row_style">
-                                <div class="title">
-                                    <p class="subtitle">電子郵件</p>
-                                </div>
-                                <div class="inner">
-                                    <input class="normal_input" type="text" placeholder="" name="amsData[mail]" value="{{$data['mail'] ?? ''}}">
-                                </div>
-                            </li>
-                            <li class="inventory row_style">
-                                <div class="title">
-                                    <p class="subtitle">備註說明</p>
+                                    <div class="subtitle">備註說明</div>
                                 </div>
                                 <div class="inner">
                                     <textarea name="amsData[note]" id="" placeholder="">{{$data['note'] ?? ''}}</textarea>
@@ -198,9 +198,9 @@
                                 </div>
                             </li>
                             @if(!empty($data))
-                            <li class="inventory row_style">
+                            <li class="inventory">
                                 <div class="title">
-                                    <p class="subtitle">最後異動時間</p>
+                                    <div class="subtitle">最後異動時間</div>
                                 </div>
                                 <div class="inner">
                                     <div class="file_date">
@@ -208,9 +208,9 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="inventory row_style">
+                            <li class="inventory">
                                 <div class="title">
-                                    <p class="subtitle">帳號建立日期</p>
+                                    <div class="subtitle">帳號建立日期</div>
                                 </div>
                                 <div class="inner">
                                     <div class="file_date">

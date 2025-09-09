@@ -19,7 +19,7 @@ $value = (is_array($value)) ? $value : [];
     </div>
     @endif
     {!! $sontable===false?' <div class="title">':'' !!}
-    <p class="subtitle">{{ $title }}</p>
+    <div class="subtitle">{{ $title }}</div>
     {!! $sontable===false?'</div>':'' !!}
     <div class="inner">
         <select class="____select2" name="{{ $name }}[]" multiple="multiple">
