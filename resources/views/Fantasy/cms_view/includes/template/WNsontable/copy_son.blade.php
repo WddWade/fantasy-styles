@@ -236,7 +236,7 @@ $randomWord_va = \Illuminate\Support\Str::random(5);
                                         @foreach ($row_3['content'] as $mkey_3 => $mrow_3)
                                         @if ($mrow_3['type'] == 'textInput')
                                         <li class="inventory">
-                                            <p class="subtitle">{{(!empty($mrow_3['title'])) ? $mrow_3['title'] : ''}}</p>
+                                            <div class="subtitle">{{(!empty($mrow_3['title'])) ? $mrow_3['title'] : ''}}</div>
                                             <input class="normal_input {{$auto}}" data-autosetup="{{$autosetup}}" type="text" value="{{$row[$multiLocalVal['key'].'_'.$mrow_3['value']]}}" name="{{$set['name']}}[{{$multiLocalVal['key'].'_'.$mrow_3['value']}}][]" {{(!empty($mrow_3['disabled'])) ? $mrow_3['disabled'] : ''}}>
                                             @if (!empty($mrow_3['tip']))
                                             <div class="tips">
@@ -274,7 +274,7 @@ $randomWord_va = \Illuminate\Support\Str::random(5);
 
                     @elseif (in_array($row_3['type'],['textInput','textInputTarget','textInputTargetAcc']))
                     <li class="inventory">
-                        <p class="subtitle">{{!empty($row_3['title']) ? $row_3['title'] : ''}}</p>
+                        <div class="subtitle">{{!empty($row_3['title']) ? $row_3['title'] : ''}}</div>
                         <div class="inner {{ (isset($row_3['target']) && !empty($row_3['target'])) ? 'url_target':'' }}">
                             <input class="normal_input {{$auto}}" data-autosetup="{{$autosetup}}" type="text" value="{{$row[$row_3['value']]}}" name="{{$set['name']}}[{{$row_3['value']}}][]" {{!empty($row_3['disabled']) ? $row_3['disabled'] : ''}}>
                             @if(isset($row_3['target']) && !empty($row_3['target']))
@@ -417,7 +417,7 @@ $randomWord_va = \Illuminate\Support\Str::random(5);
                     $image_array = !empty($row_3['image_array']) ? $row_3['image_array'] : [];
                     @endphp
                     <li class="inventory productImage">
-                        <p class="subtitle">{{!empty($row_3['title']) ? $row_3['title'] : ''}}</p>
+                        <div class="subtitle">{{!empty($row_3['title']) ? $row_3['title'] : ''}}</div>
                         <div class="picture_box">
                             @foreach ($image_array as $key_img => $value_img)
                             @php
@@ -510,7 +510,7 @@ $randomWord_va = \Illuminate\Support\Str::random(5);
                     // 隨機亂碼
                     $randomWord=\Illuminate\Support\Str::random(30);
                     if (!empty($select_value)) { $value_array=json_decode($select_value, true); } else { $value_array=[]; } $select_value=htmlentities($select_value); @endphp <li class="inventory">
-                        <p class="subtitle">{{!empty($row_3['title']) ? $row_3['title'] : ''}}</p>
+                        <div class="subtitle">{{!empty($row_3['title']) ? $row_3['title'] : ''}}</div>
 
                         <div class="inner">
                             <div class="quill_select multi_select">
@@ -655,7 +655,7 @@ $randomWord_va = \Illuminate\Support\Str::random(5);
 
 
                     $randomWord=\Illuminate\Support\Str::random(12); if (isset($fileInformationArray[$row[$row_3['value']]]) and !empty($fileInformationArray[$row[$row_3['value']]])) { $fileData=$fileInformationArray[$row[$row_3['value']]]['title'] . '.' . $fileInformationArray[$row[$row_3['value']]]['type']; $fileRoute=$fileInformationArray[$row[$row_3['value']]]['real_route']; } else { $fileData='' ; $fileRoute='' ; } @endphp <li class="inventory" style="display: block;">
-                        <p class="subtitle">{{$title}}</p>
+                        <div class="subtitle">{{$title}}</div>
 
                         <input class="normal_input filepicker_input_{{$randomWord}}" type="text" value="{{$fileData}}" style="width:70%;" disabled>
                         <input class="normal_input {{$openClass}}" type="button" value="..." style="width:5%;cursor: pointer;" data-key="{{$randomWord}}" data-type="file">
@@ -717,7 +717,7 @@ $randomWord_va = \Illuminate\Support\Str::random(5);
                     @endphp
 
                     <li class="inventory" style="display:block">
-                        <p class="subtitle">{{$three['title']}}</p>
+                        <div class="subtitle">{{$three['title']}}</div>
                         @if(!empty($three['tip']))
                         <div class="tips">
                             <span class="title">TIPS</span>

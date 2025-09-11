@@ -1,6 +1,6 @@
 <li class="inventory {!! $sontable===false?'row_style':'' !!} {{ ($search===true)? 'card_search_input':''}}" {!! ($search===true)?'data-search_type="single_select" data-search_field="'.$search_field.'"':'' !!}>
     {!! $sontable===false?'<div class="title">':'' !!}
-        <p class="subtitle">{{ $title }}</p>
+        <div class="subtitle">{{ $title }}</div>
     {!! $sontable===false?'</div>':'' !!}
     <div class="inner">
         <div class="quill_select">

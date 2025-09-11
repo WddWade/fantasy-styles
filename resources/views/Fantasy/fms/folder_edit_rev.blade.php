@@ -63,7 +63,7 @@
                 <ul class="box_block_frame frame">
                     <li class="inventory row_style">
                         <div class="title">
-                            <p class="subtitle">資料夾名稱</p>
+                            <div class="subtitle">資料夾名稱</div>
                         </div>
                         <div class="inner">
                             <input class="normal_input" name="fms[title]" type="text" placeholder="" value="{{ $folderData['title']}}">
@@ -76,7 +76,7 @@
                     {{-- @if($File['id']=='0')  --}}
                     <li class="inventory row_style">
                         <div class="title">
-                            <p class="subtitle">資料夾目錄位置</p>
+                            <div class="subtitle">資料夾目錄位置</div>
                         </div>
                         <div class="inner">
                             <div class="select_Box" data-type="path">
@@ -99,7 +99,7 @@
                     {{-- @endif --}}
                     <li class="inventory row_style">
                         <div class="title">
-                            <p class="subtitle">資料夾排序</p>
+                            <div class="subtitle">資料夾排序</div>
                         </div>
                         <div class="inner">
                             <input class="normal_input" name="fms[w_rank]" type="text" placeholder="" value="{{ $folderData['w_rank']}}">
@@ -110,7 +110,7 @@
                         </div>
                     </li>
                     <li class="inventory row_style">
-                        <p class="subtitle">權限設定</p>
+                        <div class="subtitle">權限設定</div>
                         <div class="inner">
                             <div class="radio_area">
                                 <div class="radio_area_content">
@@ -141,7 +141,7 @@
                     @endphp
                     <li class="inventory row_style auth_group" style="display: none;{{(isset($selfFolder['is_private']) && $selfFolder['is_private']==1) ? '':'display: none;'}}">
                         <div class="title">
-                            <p class="subtitle">使用者權限</p>
+                            <div class="subtitle">使用者權限</div>
                         </div>
                         <div class="inner">
                             <select class="____select2 valid" name="fms[can_use][]" aria-invalid="false" multiple="multiple">
@@ -160,7 +160,7 @@
 
                     <li class="inventory row_style">
                         <div class="title">
-                            <p class="subtitle">備註與說明</p>
+                            <div class="subtitle">備註與說明</div>
                         </div>
                         <div class="inner">
                             <textarea name="fms[note]" id="file_outSite_textarea3" placeholder="">{{ $folderData['note']}}</textarea>
@@ -174,7 +174,7 @@
                     @if($folderData['id']!='0')
                     <li class="inventory row_style">
                         <div class="title">
-                            <p class="subtitle">最後異動時間</p>
+                            <div class="subtitle">最後異動時間</div>
                         </div>
                         <div class="inner">
                             <div class="file_date">
@@ -194,7 +194,7 @@
                     </li>
                     <li class="inventory row_style">
                         <div class="title">
-                            <p class="subtitle">建立日期</p>
+                            <div class="subtitle">建立日期</div>
                         </div>
                         <div class="inner">
                             <div class="file_date">
@@ -211,7 +211,7 @@
 
                     <li class="inventory row_style">
                         <div class="title">
-                            <p class="subtitle">擁有者</p>
+                            <div class="subtitle">擁有者</div>
                         </div>
                         <div class="inner">
                             <div class="owner">

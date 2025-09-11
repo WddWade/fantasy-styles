@@ -90,6 +90,7 @@ import { getTableData } from "./ajax/cms_table_ajax.js";
     function refresh(url = "", page = 1, option = {}, cb = (response) => { }) {
         return new Promise(async (res) => {
             try {
+                console.log('開始');
                 unitState.changing = true;
                 unitState.has_auth = 0;
                 colSortManager.url = url;
@@ -97,6 +98,8 @@ import { getTableData } from "./ajax/cms_table_ajax.js";
                     url,
                     Object.assign({ page }, option)
                 );
+                console.log(response);
+                
                 await tableControl.updateGrid(
                     response,
                     colSortManager.colSort,
@@ -144,6 +147,11 @@ import { getTableData } from "./ajax/cms_table_ajax.js";
     }
 
     function menuInit() {
+        console.log('xxx');
+        
+        //選單進入啟用
+        $('.body-list li[data-route="'+window.location.href+'"]').addClass('active');
+
         $(".body-list li[data-route]").each(async function () {
             const route = $(this).attr("data-route");
             if (route.length > 0 && route !== "javascript:;") {

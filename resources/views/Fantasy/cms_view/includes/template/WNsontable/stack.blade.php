@@ -181,9 +181,9 @@
                                                             @foreach($row_3['content'] as $mkey_3 => $mrow_3)
                                                                 @if($mrow_3['type'] == 'textInput')
                                                                     <li class="inventory">
-                                                                        <p class="subtitle">
+                                                                        <div class="subtitle">
                                                                             {{ !empty($mrow_3['title']) ? $mrow_3['title'] : '' }}
-                                                                        </p>
+                                                                        </div>
                                                                         <input class="normal_input {{ $auto }}" name="{{ $set['name'] }}[{{ $multiLocalVal['key'] . '_' . $mrow_3['value'] }}]" data-autosetup="{{ $autosetup }}" type="text" value="" {{ !empty($mrow_3['disabled']) ? $mrow_3['disabled'] : '' }}>
                                                                         @if(!empty($mrow_3['tip']))
                                                                             <div class="tips">
@@ -271,7 +271,7 @@
                                     {{ UnitMaker::textArea($row_3) }}
                                 @elseif($row_3['type'] == 'lang_textArea')
                                     <li class="inventory">
-                                        <p class="subtitle">{{ !empty($row_3['title']) ? $row_3['title'] : '' }}</p>
+                                        <div class="subtitle">{{ !empty($row_3['title']) ? $row_3['title'] : '' }}</div>
                                         @foreach(Config::get('cms.langArray') as $val)
                                             <div class="Leon-langs-input">
                                                 <span>{{ $val['abb_title'] }}</span>
@@ -315,7 +315,7 @@
         </li>
     @elseif($row_3['type'] == 'lang_textInput')
         <li class="inventory">
-            <p class="subtitle">{{ !empty($row_3['title']) ? $row_3['title'] : '' }}</p>
+            <div class="subtitle">{{ !empty($row_3['title']) ? $row_3['title'] : '' }}</div>
             @foreach(Config::get('cms.langArray') as $val)
                 <div class="Leon-langs-input">
                     <span>{{ $val['abb_title'] }}</span>
@@ -332,7 +332,7 @@
         </li>
         @elseif ($row_3['type'] == 'article_select')
         <li class="inventory">
-            <p class="subtitle">{{(!empty($row_3['title'])) ? $row_3['title'] : ''}}</p>
+            <div class="subtitle">{{(!empty($row_3['title'])) ? $row_3['title'] : ''}}</div>
             <div class="inner">
                 <div class="article_select" data-option="{{ implode(",", array_keys($row_3['options'])) }}" >
                     <input type="hidden" value="{{$row_3['options'][array_key_first($row_3['options'])]['key']}}" name="{{$set['name']}}[{{$row_3['value']}}]">
@@ -344,7 +344,7 @@
         </li>
         @elseif ($row_3['type'] == 'article_wysiwyg')
         <li class="inventory">
-            <p class="subtitle">即時預覽 - (最終排版及樣式以Fesd框架為主)</p>
+            <div class="subtitle">即時預覽 - (最終排版及樣式以Fesd框架為主)</div>
             <div class="inner article_wysiwyg">
                 <article data-aost-offset="30" class="_article aost-show" img-row="" img-firstbig="" img-merge="" img-flex="" description-color="" description-align="left" article-flex="center" h-align="left" p-align="left" button-color="rgba(255, 255, 255, 0)" button-color-hover="" button-textcolor="#000" button-align="left" data-index="typeR-2" data-aost="" data-aost-fade-up="" data-aost-active="">
                     <div class="_backgroundWrap aost-show" data-aost="" data-aot-clip="" style="" data-aost-active="">
@@ -521,7 +521,7 @@
         {{ UnitMaker::textArea($row_3) }}
     @elseif($row_3['type'] == 'lang_textArea')
         <li class="inventory">
-            <p class="subtitle">{{ !empty($row_3['title']) ? $row_3['title'] : '' }}</p>
+            <div class="subtitle">{{ !empty($row_3['title']) ? $row_3['title'] : '' }}</div>
             @foreach(Config::get('cms.langArray') as $val)
                 <div class="Leon-langs-input">
                     <span>{{ $val['abb_title'] }}</span>
@@ -598,7 +598,7 @@
         @endphp
 
         <li class="inventory">
-            <p class="subtitle">{{ $title }}</p>
+            <div class="subtitle">{{ $title }}</div>
             <div class="inner">
                 <div class="quill_select multi_select">
                     <div class="select_object">

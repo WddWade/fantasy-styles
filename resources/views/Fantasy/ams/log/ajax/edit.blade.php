@@ -33,12 +33,37 @@
                     </div>
                     <div class="editorContent">
                         @if(count($old_data) > 0)
-                        <div class="tips">
-                            <span class="title">Tips</span>
-                            <p style="color:#ff0000;">紅字為本次異動的資料</p>
-                        </div>
+                       
                         @endif
-                        <ul class="box_block_frame">
+                        <ul class="frame">
+                            {{-- <li class="inventory">
+                                <div class="title">
+                                    <div class="subtitle">紀錄時間</div>
+                                </div>
+                                <div class="inner">
+                                    <p style="margin-top: 5px;font-size: 1rem;">{{ $data['create_time'] }}</p>
+                                </div>
+                            </li>
+                            <li class="inventory">
+                                <div class="title">
+                                    <div class="subtitle">IP位址</div>
+                                </div>
+                                <div class="inner">
+                                    <p style="margin-top: 5px;font-size: 1rem;">{{ $data['ip'] }}</p>
+                                </div>
+                            </li> --}}
+
+                            {{-- <li class="inventory">
+                                <div class="title">
+                                    <div class="subtitle">紅色文字為本次異動的資料</div>
+                                </div>
+                                 <div class="inner">
+                                    <div class="tips">
+                                        <span class="title">Tips</span>
+                                        <p>紅色文字為本次異動的資料</p>
+                                    </div>
+                                 </div>
+                            </li> --}}
                             @if (isset($data['id']) and !empty($data['id']))
                                 <input class="supportAmsId_Input" name="log[id]" type="hidden"
                                     value="{{ $data['id'] }}">
@@ -54,49 +79,48 @@
                                 unset($ChangeData['created_at']);
                                 $isNew = in_array($data['log_type'], ['create', 'insert']);
 
-                            @endphp
-                            <li class="inventory row_style">
-                                <div class="title">
-                                    <p class="subtitle">紀錄時間</p>
-                                </div>
+                            @endphp                            
+                            <li class="inventory">
                                 <div class="inner">
-                                    <p style="margin-top: 5px;font-size: 1rem;">{{ $data['create_time'] }}</p>
+                                    <div class="informationTable">
+                                        <div class="table-header">
+                                            <h2 class="table-title">紀錄時間 : {{ $data['create_time'] }}</h2>
+                                            <div class="table-controllers">
+                                                <button onclick="printOrder()">Export CSV</button>
+                                            </div>
+                                        </div>
+                                        <div class="table-content">
+                                            <section data-style="default-odd">
+                                                <div class="section-content">
+                                                    <div class="items">
+                                                        <span><strong>IP位址 :</strong></span>
+                                                        <span>{{ $data['ip'] }}</span>
+                                                    </div>
+                                                    @foreach ($ChangeData as $key => $val)
+                                                        @if (!isset($OldChangeData[$key]))
+                                                            <div class="items">
+                                                                <span><strong>{{ $columns[$key]['Comment'] ?: $key }}：</strong></span>
+                                                                <span>{{ $val ?: '-' }}</span>
+                                                            </div>
+                                                        @else
+                                                            <div class="items">
+                                                                <span style="color:#ff0000;"><strong>{{ $columns[$key]['Comment'] ?: $key }}：</strong></span>
+                                                                @if($OldChangeData[$key] != $val)
+                                                                <span>{{ $val ?: '-' }}</span>
+                                                                @endif
+                                                            </div>
+                                                        @endif
+                                                    @endforeach
+                                                </div>
+                                            </section>
+                                        </div>
+                                    </div>
+                                    <div class="tips">
+                                        <span class="title">Tips</span>
+                                        <p>紅色文字為本次異動的資料</p>
+                                    </div>                                    
                                 </div>
                             </li>
-                            <li class="inventory row_style">
-                                <div class="title">
-                                    <p class="subtitle">IP位址</p>
-                                </div>
-                                <div class="inner">
-                                    <p style="margin-top: 5px;font-size: 1rem;">{{ $data['ip'] }}</p>
-                                </div>
-                            </li>
-                            @foreach ($ChangeData as $key => $val)
-                                @if (!isset($OldChangeData[$key]))
-                                    <li class="inventory row_style">
-                                        <div class="title">
-                                            <p class="subtitle">
-                                                {{ $columns[$key]['Comment'] ?: $key }}
-                                            </p>
-                                        </div>
-                                        <div class="inner"><p style="margin-top: 5px;font-size: 1rem;">{{ $val ?: '-' }}</p></div>
-                                    </li>
-                                @else
-                                    <li class="inventory row_style">
-                                        <div class="title">
-                                            <p class="subtitle">
-                                                {{ $columns[$key]['Comment'] ?: $key }}
-                                            </p>
-                                        </div>
-                                        <div class="inner">
-                                            @if($OldChangeData[$key] != $val)
-                                            <p style="margin-top: 5px;font-size: 1rem;color:#ff0000; font-size: 20px">{{ $val ?: '-' }}</p>
-                                            @endif
-                                            <p style="margin-top: 5px;font-size: 1rem;">{{ $OldChangeData[$key] ?: '-' }}</p>
-                                        </div>
-                                    </li>
-                                @endif
-                            @endforeach
                         </ul>
                     </div>
                 </div>

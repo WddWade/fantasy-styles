@@ -2001,6 +2001,64 @@
   flex-direction: column;
   gap: 10px;
 
+  &.ams_permissions {
+    .title {
+      display: flex;
+      justify-content: space-between;
+      padding: 0;
+      .title_conteollers {
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+        white-space: nowrap;
+      }
+    }
+
+    .group {
+      padding: 15px 0;
+      border-bottom: 1px solid #ccc;
+      display: flex;
+      justify-content: space-between;
+      gap: 0 20px;
+      &:last-child {
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+      .left {
+        width: 250px;
+      }
+      .options {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 25px 0;
+      }
+      .switch_box {
+        display: flex;
+        justify-content: flex-start;
+        gap: 15px;
+        .ios_switch {
+          margin: 0;
+        }
+      }
+    }
+
+    .inner_box {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-bottom: 25px;
+      border-bottom: 1px solid #ccc;
+      &:last-child {
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+    }
+    .info_text {
+      padding-bottom: 10px;
+    }
+  }
+
   .input {
     padding: 10px 12px;
 
@@ -2054,6 +2112,9 @@
       flex-direction: row-reverse;
       align-items: flex-start;
       gap: 0 30px;
+      .tips {
+        margin-top: 0px;
+      }
     }
   }
 

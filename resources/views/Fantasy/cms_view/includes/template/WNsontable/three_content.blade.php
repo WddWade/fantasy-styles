@@ -213,7 +213,7 @@
                 $value_array = [];
             }
         $select_value = htmlentities($select_value); @endphp <li class="inventory">
-            <p class="subtitle">{{ !empty($item['title']) ? $item['title'] : '' }}</p>
+            <div class="subtitle">{{ !empty($item['title']) ? $item['title'] : '' }}</div>
 
             <div class="inner">
                 <div class="quill_select multi_select">

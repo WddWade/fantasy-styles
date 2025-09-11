@@ -57,7 +57,7 @@
                                     </div>
                                 </div>
                                 <div class="inner">
-                                    {{-- <div class="inner_box row_style"> --}}
+                                    {{-- <div class="inner_box "> --}}
                                         {{-- <div class="info_text">
                                             <p class="title">該管理權限設定 是否啟用</p> --}}
                                             {{-- <p>未啟用視同該使用者無權限</p> --}}
@@ -85,9 +85,9 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="inventory row_style">
+                            <li class="inventory ">
                                 <div class="title">
-                                    <p class="subtitle">分站管理者</p>
+                                    <div class="subtitle">分站管理者</div>
                                 </div>
                                 <div class="inner">
                                     <select class="____select2 valid" name="amsData[user_id]" aria-invalid="false">
@@ -105,13 +105,13 @@
                                 'value' => !empty($data['branch_unit_id']) ? $data['branch_unit_id'] : '',
                                 'options' => $branch_unit_options,
                             ]) }}
-                            {{-- <li class="inventory row_style tr_style review-action"
+                            {{-- <li class="inventory review-action"
                                 @if (!$need_review) style="display: none" @endif>
                                 <div class="title">
-                                    <p class="subtitle">編輯免審核</p>
+                                    <div class="subtitle">編輯免審核</div>
                                 </div>
                                 <div class="inner">
-                                    <div class="inner_box row_style">
+                                    <div class="inner_box ">
                                         <div class="info_text">
                                             <p class="title">無審核權限編輯是否免審核</p>
                                             <p>預設無審核權限者，編輯後會資料會自動下架，若不讓資料下架，可開啟此功能
@@ -132,20 +132,18 @@
                                     </div>
                                 </div>
                             </li> --}}
-                            <li class="inventory row_style unit_all" style=" {{ (!empty($data)) ? '':'display: none;' }}">
+                            <li class="inventory ams_permissions  unit_all" style=" {{ (!empty($data)) ? '':'display: none;' }}">
                                 <div class="title">
-                                    <p class="subtitle">控制全部單元</p>
-                                </div>
-                                <div class="inner">
-                                    <div class="row_style">
-                                        <div style="display: flex;">
-                                            <a class="ios_switch_select_block_all" data-val="0"
-                                                href="javascript:void(0)"
-                                                style="background-color: #c5c5c5;padding: 5px;color: #fff;">全關</a>
-                                            <a class="ios_switch_select_block_all" data-val="1"
-                                                href="javascript:void(0)"
-                                                style="background-color: #3a9eea;padding: 5px;color: #fff;">全開</a>
-                                        </div>
+                                    <div class="subtitle">
+                                        <div>控制全部單元</div>
+                                    </div>
+                                     <div class="title_conteollers">
+                                        <a class="ios_switch_select_block_all" data-val="0"
+                                            href="javascript:void(0)"
+                                            style="background-color: #c5c5c5;padding: 5px;color: #fff;">全關</a>
+                                        <a class="ios_switch_select_block_all" data-val="1"
+                                            href="javascript:void(0)"
+                                            style="background-color: #3a9eea;padding: 5px;color: #fff;">全開</a>
                                     </div>
                                 </div>
                             </li>
@@ -156,9 +154,9 @@
                             ])
                             {{-- </div> --}}
                             @if(!empty($data))
-                            <li class="inventory row_style tr_style">
+                            <li class="inventory">
                                 <div class="title">
-                                    <p class="subtitle">最後異動時間</p>
+                                    <div class="subtitle">最後異動時間</div>
                                 </div>
                                 <div class="inner">
                                     <div class="file_date">
@@ -166,9 +164,9 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="inventory row_style tr_style">
+                            <li class="inventory">
                                 <div class="title">
-                                    <p class="subtitle">建立日期</p>
+                                    <div class="subtitle">建立日期</div>
                                 </div>
                                 <div class="inner">
                                     <div class="file_date">

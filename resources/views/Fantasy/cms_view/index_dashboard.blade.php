@@ -85,7 +85,7 @@
                   <ul class="frame">
                     <li class="grid_style_M" style="--bgColor: #2E2E2E;--textColor: #FFFFFF;">
                       <div class="title">
-                        <p class="subtitle">本日訂單數</p>
+                        <div class="subtitle">本日訂單數</div>
                       </div>
                       <div class="inner">
                         <div class="number">
@@ -95,7 +95,7 @@
                     </li>
                     <li class="grid_style_M" style="--bgColor: #10B0A1;--textColor: #FFFFFF;">
                       <div class="title">
-                        <p class="subtitle">訂單成立(未付款)</p>
+                        <div class="subtitle">訂單成立(未付款)</div>
                       </div>
                       <div class="inner">
                         <div class="number">
@@ -105,7 +105,7 @@
                     </li>
                     <li class="grid_style_M" style="--bgColor: #D86643;--textColor: #FFFFFF;">
                       <div class="title">
-                        <p class="subtitle">訂單生效(已付款)</p>
+                        <div class="subtitle">訂單生效(已付款)</div>
                       </div>
                       <div class="inner">
                         <div class="number">
@@ -115,7 +115,7 @@
                     </li>
                     <li class="grid_style_S">
                       <div class="title">
-                        <p class="subtitle">訂單取消</p>
+                        <div class="subtitle">訂單取消</div>
                       </div>
                       <div class="inner">
                         <div class="number">
@@ -125,7 +125,7 @@
                     </li>
                     <li class="grid_style_S">
                       <div class="title">
-                        <p class="subtitle">訂單失效</p>
+                        <div class="subtitle">訂單失效</div>
                       </div>
                       <div class="inner">
                         <div class="number">
@@ -142,7 +142,7 @@
                   <ul class="frame">
                     <li class="grid_style_M">
                       <div class="title">
-                        <p class="subtitle">未處理 (已付款)</p>
+                        <div class="subtitle">未處理 (已付款)</div>
                       </div>
                       <div class="inner">
                         <div class="number">
@@ -152,7 +152,7 @@
                     </li>
                     <li class="grid_style_M">
                       <div class="title">
-                        <p class="subtitle">確認訂單中</p>
+                        <div class="subtitle">確認訂單中</div>
                       </div>
                       <div class="inner">
                         <div class="number">
@@ -162,7 +162,7 @@
                     </li>
                     <li class="grid_style_M">
                       <div class="title">
-                        <p class="subtitle">備貨中</p>
+                        <div class="subtitle">備貨中</div>
                       </div>
                       <div class="inner">
                         <div class="number">
@@ -172,7 +172,7 @@
                     </li>
                     <li class="grid_style_S">
                       <div class="title">
-                        <p class="subtitle">發貨中</p>
+                        <div class="subtitle">發貨中</div>
                       </div>
                       <div class="inner">
                         <div class="number">
@@ -182,7 +182,7 @@
                     </li>
                     <li class="grid_style_S">
                       <div class="title">
-                        <p class="subtitle">已到貨</p>
+                        <div class="subtitle">已到貨</div>
                       </div>
                       <div class="inner">
                         <div class="number">
@@ -201,7 +201,7 @@
                     <li class="grid_style_L">
                       <div class="title">
                         <p class="type">類型{{ $i }}</p>
-                        <p class="subtitle">副標{{ $i }}</p>
+                        <div class="subtitle">副標{{ $i }}</div>
                       </div>
                       <div class="inner">
                         <div class="number">

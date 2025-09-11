@@ -53,10 +53,10 @@
                 <ul class="box_block_frame">
                     <li class="inventory row_style">
                         <div class="title">
-                            <p class="subtitle">
+                            <div class="subtitle">
                                 <strong>Step1</strong> 
                                 <span>選擇資料夾位置</span>
-                            </p>
+                            </div>
                         </div>
                         <div class="inner">
                             <div class="select_Box" data-type="path">
@@ -79,10 +79,10 @@
                         <input type="file" name="file[]" style="display:none;" class="fileInputClick" multiple>
                         
                         <div class="title">
-                            <p class="subtitle">
+                            <div class="subtitle">
                                 <strong>Step2</strong> 
                                 <span>選擇要上傳的檔案</span>                            
-                            </p>
+                            </div>
                         </div>
 
                         <div class="upload_frame fileUploadClick" ondrop="javascript: drop_image(event);" ondragover="javascript: dragHandler(event);">
@@ -106,10 +106,10 @@
                     </li>
                     <li class="inventory fileUpload">
                         <div class="title">
-                            <p class="subtitle">
+                            <div class="subtitle">
                                 <strong>Step3</strong> 
                                 <span>確認檔案</span>                            
-                            </p>
+                            </div>
                         </div>
                         <ul class="upload_list locale_file_list">
                             <!--待上傳列表-->

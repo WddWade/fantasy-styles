@@ -14,7 +14,7 @@
         </div>
     @endif
     <div class="title">
-        <p class="subtitle">{{ $title }}</p>
+        <div class="subtitle">{{ $title }}</div>
     </div>
 
     <div class="inner file-picker">

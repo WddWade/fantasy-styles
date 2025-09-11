@@ -56,36 +56,37 @@
                         </div>                        
                     </div>
                     <div class="editorContent">
-                        <ul class="box_block_frame">
-                            @if(isset($data['id']) AND !empty($data['id']))
-                            <input type="hidden" value="{{$data['id']}}" name="Autoredirect[id]" class="supportAmsId_Input">
-                            @else
-                            <input type="hidden" value="0" name="Autoredirect[id]" class="supportAmsId_Input">
-                            @endif
-                            <li class="inventory row_style tr_style img_title open_ams_lightbox">
+                        <ul class="frame">
+
+                            <li class="inventory open_ams_lightbox">
                                 <div class="title">
-                                    <p class="subtitle">是否啟用301轉址</p>
+                                    <div class="subtitle">啟用301轉址</div>
                                 </div>
                                 <div class="inner">
-                                    <div class="inner_box row_style">
+                                    {{-- <div class="inner_box row_style">
                                         <div class="info_text">
                                             <p style="color:#ff0000;">預設為302轉址，若未確定轉址是否正常，請勿啟用301轉址，避免造成使用者預覽器暫存設定，將無法正常運作</p>
                                         </div>
                                         <div class="switch_box">
-                                            <div class="ios_switch mrg-l-30 ams_ios_switch {{(isset($data['active_301']) && $data['active_301'] == 1) ? 'on':''}}">
-                                                <input type="hidden" value="{{(isset($data['active_301']) && $data['active_301'] == 1) ? '1':''}}" class="check_ams_rabio" name="amsData[active_301]">
-                                                <input type="checkbox">
-                                                <div class="box ams_switch_ball">
-                                                    <span class="ball"></span>
-                                                </div>
-                                            </div>
+                                           
                                         </div>
-                                    </div>
+                                    </div> --}}
+                                    <div class="ios_switch radio_btn_switch mrg-l-30 ams_ios_switch {{(isset($data['active_301']) && $data['active_301'] == 1) ? 'on':''}}">
+                                        <input type="hidden" value="{{(isset($data['active_301']) && $data['active_301'] == 1) ? '1':''}}" class="check_ams_rabio" name="amsData[active_301]">
+                                        <input type="checkbox">
+                                        <div class="box ams_switch_ball">
+                                            <span class="ball"></span>
+                                        </div>
+                                    </div>                                    
+                                    <div class="tips">
+                                        <span class="title">TIPS</span>
+                                         <p>預設為 <strong>302</strong> 轉址，若未確定轉址是否正常，請勿啟用 <strong>301</strong> 轉址，避免造成使用者預覽器暫存設定，將無法正常運作</p>
+                                    </div>                                    
                                 </div>
                             </li>
-                            <li class="inventory row_style">
+                            <li class="inventory">
                                 <div class="title">
-                                    <p class="subtitle">舊網址</p>
+                                    <div class="subtitle">舊網址</div>
                                 </div>
                                 <div class="inner">
                                     @if(isset($data['old_url']) AND !empty($data['old_url']))
@@ -99,9 +100,9 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="inventory row_style">
+                            <li class="inventory">
                                 <div class="title">
-                                    <p class="subtitle">轉向網址</p>
+                                    <div class="subtitle">轉向網址</div>
                                 </div>
                                 <div class="inner">
                                     @if(isset($data['new_url']) AND !empty($data['new_url']))
@@ -115,6 +116,11 @@
                                     </div>
                                 </div>
                             </li>
+                            @if(isset($data['id']) AND !empty($data['id']))
+                            <input type="hidden" value="{{$data['id']}}" name="Autoredirect[id]" class="supportAmsId_Input">
+                            @else
+                            <input type="hidden" value="0" name="Autoredirect[id]" class="supportAmsId_Input">
+                            @endif                            
                         </ul>
                     </div>
                 </div>

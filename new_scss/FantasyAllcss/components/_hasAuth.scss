@@ -1,31 +1,31 @@
-/*
-  共用
-  has auth 找不到
-*/
+// /*
+//   共用
+//   has auth 找不到
+// */
 
-.has_auth {
-  flex-wrap: wrap;
-  flex-direction: row;
+// .has_auth {
+//   flex-wrap: wrap;
+//   flex-direction: row;
 
-  > div {
-    width: 50% !important;
-  }
+//   > div {
+//     width: 50% !important;
+//   }
 
-  .switch_box_auth {
-    width: 100% !important;
-  }
-  
-  .switch_box_list {
-    text-align: revert;
-    display: flex;
-    justify-content: flex-end;
-  }
-}
+//   .switch_box_auth {
+//     width: 100% !important;
+//   }
 
-.multi_select_has_auth {
-  li {
-    .title {
-      display: none;
-    }
-  }
-}
+//   .switch_box_list {
+//     text-align: revert;
+//     display: flex;
+//     justify-content: flex-end;
+//   }
+// }
+
+// .multi_select_has_auth {
+//   li {
+//     .title {
+//       display: none;
+//     }
+//   }
+// }

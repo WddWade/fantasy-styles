@@ -54,7 +54,7 @@
                             @endif
                             <li class="inventory row_style">
                                 <div class="title">
-                                    <p class="subtitle">資料夾名稱</p>
+                                    <div class="subtitle">資料夾名稱</div>
                                 </div>
                                 <div class="inner">
                                     @if(isset($data['title']) AND !empty($data['title']))
@@ -72,7 +72,7 @@
                             </li>
                             <li class="inventory row_style">
                                 <div class="title">
-                                    <p class="subtitle">備註說明</p>
+                                    <div class="subtitle">備註說明</div>
                                 </div>
                                 <div class="inner">
                                     @if(isset($data['note']) AND !empty($data['note']))
@@ -88,7 +88,7 @@
                             </li>
                             <li class="inventory row_style tr_style">
                                 <div class="title">
-                                    <p class="subtitle">最後異動時間</p>
+                                    <div class="subtitle">最後異動時間</div>
                                 </div>
                                 <div class="inner">
                                     <div class="file_date">
@@ -106,7 +106,7 @@
                             </li>
                             <li class="inventory row_style tr_style">
                                 <div class="title">
-                                    <p class="subtitle">建立日期</p>
+                                    <div class="subtitle">建立日期</div>
                                 </div>
                                 <div class="inner">
                                     <div class="file_date">

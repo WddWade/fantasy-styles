@@ -14,7 +14,7 @@
         </div>
     @endif
     {!! $sontable ? '' : '<div class="title">' !!}
-        <p class="subtitle">{{ $title }}</p>
+        <div class="subtitle">{{ $title }}</div>
         {!! $sontable ? '' : '</div>' !!}
 
     {!! $sontable ? '' : '<div class="inner">' !!}

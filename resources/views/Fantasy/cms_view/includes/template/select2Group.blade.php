@@ -19,7 +19,7 @@ $is_tableData = !empty($tableData) ? 'is_tableData' : '';
                 </div>
             @endif
             {!! $sontable === false ? '<div class="title">' : '' !!}
-                <p class="subtitle">{{ $title }}</p>
+                <div class="subtitle">{{ $title }}</div>
                 {!! $sontable === false ? '</div>' : '' !!}
             <div class="inner">
                 <select class="____select2" name="{{ $disabled ? '' : $name }}" data-model="{{ $tableData['model'] }}" @if (!empty($set['verify']) && !$disabled) data-verify="{{ json_encode($set['verify']) }}" @endif {{ $disabled ? 'disabled' : '' }}>

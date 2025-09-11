@@ -26,7 +26,7 @@
                 <ul class="box_block_frame">
                     <li class="inventory row_style">
                         <div class="title">
-                            <p class="subtitle">資料夾名稱</p>
+                            <div class="subtitle">資料夾名稱</div>
                         </div>
                         <div class="inner">
                             <input class="normal_input" name="fms[title]" type="text" placeholder="" value="{{ $folder['title']}}">
@@ -39,7 +39,7 @@
                     {{-- @if($File['id']=='0')  --}}
                     <li class="inventory row_style">
                         <div class="title">
-                            <p class="subtitle">檔案目錄位置</p>
+                            <div class="subtitle">檔案目錄位置</div>
                         </div>
                         <div class="inner">
                             <div class="select_Box" data-type="path">
@@ -64,7 +64,7 @@
                     @if($folder['id']!='0')
                     <li class="inventory row_style">
                         <div class="title">
-                            <p class="subtitle">最後異動時間</p>
+                            <div class="subtitle">最後異動時間</div>
                         </div>
                         <div class="inner">
                             <div class="file_date">
@@ -84,7 +84,7 @@
                     </li>
                     <li class="inventory row_style">
                         <div class="title">
-                            <p class="subtitle">建立日期</p>
+                            <div class="subtitle">建立日期</div>
                         </div>
                         <div class="inner">
                             <div class="file_date">
@@ -100,7 +100,7 @@
                     @endif
                     <li class="inventory row_style">
                         <div class="title">
-                            <p class="subtitle">擁有者</p>
+                            <div class="subtitle">擁有者</div>
                         </div>
                         <div class="inner">
                             <div class="owner">

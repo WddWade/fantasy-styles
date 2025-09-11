@@ -18,7 +18,7 @@ foreach($options as $val){if($value == $val['key']){$explanation = $val['title']
     </div>
     @endif
     {!! $sontable===false?' <div class="title">':'' !!}
-    <p class="subtitle">{{ $title }}</p>
+    <div class="subtitle">{{ $title }}</div>
     {!! $sontable===false?'</div>':'' !!}
     <div class="inner">
         @if($article4)

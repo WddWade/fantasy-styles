@@ -43,33 +43,32 @@
                     </div>
                     <div class="editorContent">
                         <ul class="box_block_frame">
-                            @if (isset($data['id']) and !empty($data['id']))
-                                <input class="supportAmsId_Input" name="amsData[id]" type="hidden"
-                                    value="{{ $data['id'] }}">
-                            @else
-                                <input class="supportAmsId_Input" name="amsData[id]" type="hidden" value="0">
-                            @endif
-                            <li class="inventory row_style">
+                            <li class="inventory">
                                 <div class="title">
-                                    <p class="subtitle">是否啟用</p>
+                                    <div class="subtitle">是否啟用</div>
                                 </div>
                                 <div class="inner">
-                                    <div class="inner_box row_style">
+                                    {{-- <div class="inner_box ">
                                         <div class="info_text">
                                             <p class="title">設定該分站是否啟用，未開啟將無法瀏覽</p>
                                         </div>
                                         <div class="switch_box">
-                                            <div
-                                                class="ios_switch mrg-l-30 ams_ios_switch {{ isset($data['is_active']) && $data['is_active'] == 0 ? '' : 'on' }}">
-                                                <input class="check_ams_rabio" name="amsData[is_active]" type="hidden"
-                                                    value="{{ isset($data['is_active']) && $data['is_active'] == 0 ? '0' : '1' }}">
-                                                <input type="checkbox">
-                                                <div class="box ams_switch_ball">
-                                                    <span class="ball"></span>
-                                                </div>
-                                            </div>
+                                            
                                         </div>
-                                    </div>
+                                    </div> --}}
+
+                                    <div class="ios_switch radio_btn_switch mrg-l-30 ams_ios_switch {{ isset($data['is_active']) && $data['is_active'] == 0 ? '' : 'on' }}">
+                                        <input class="check_ams_rabio" name="amsData[is_active]" type="hidden"
+                                            value="{{ isset($data['is_active']) && $data['is_active'] == 0 ? '0' : '1' }}">
+                                        <input type="checkbox">
+                                        <div class="box ams_switch_ball">
+                                            <span class="ball"></span>
+                                        </div>
+                                    </div>                                    
+                                    <div class="tips">
+                                        <span class="title">TIPS</span>
+                                         <p>啟用該分站單元權限，未開啟或為設定啟用的分站單元將無法被瀏覽</p>
+                                    </div>                                        
                                 </div>
                             </li>
                             {{UnitMaker::textInput([
@@ -86,11 +85,10 @@
                                 'value' => ( !empty($locale_options[$data['locale']]) )? $locale_options[$data['locale']] : '',
                                 'disabled' => true,
                             ])}}
-                            <input name="amsData[origin_id]" type="hidden" value="{{ $data['origin_id'] }}">
-                            <input name="amsData[locale]" type="hidden" value="{{ $data['locale'] }}">
-                            <li class="inventory row_style tr_style">
+
+                            <li class="inventory">
                                 <div class="inner" style="width:100%;">
-                                    <div class="inner_box row_style">
+                                    <div class="inner_box ">
                                         <div class="info_text">
                                             <p class="f-900" style="font-size: 18px;">請設定此分站/語系，可管理的單元</p>
                                         </div>
@@ -108,15 +106,15 @@
                                 </div>
                             </li>
                             @foreach ($key_group as $key => $row)
-                                <li class="inventory row_style tr_style">
+                                <li class="inventory">
                                     <div class="inner" style="width:100%;">
-                                        <div class="inner_box row_style">
+                                        <div class="inner_box ">
                                             <div class="info_text">
                                                 <p class="f-900">{{ $row['title'] }}</p>
                                             </div>
                                             <div class="switch_box">
                                                 <div
-                                                    class="ios_switch mrg-l-30 ams_ios_switch switch-block {{ isset($row['is_active']) && $row['is_active'] == 1 ? 'on' : '' }}">
+                                                    class="ios_switch radio_btn_switch mrg-l-30 ams_ios_switch switch-block {{ isset($row['is_active']) && $row['is_active'] == 1 ? 'on' : '' }}">
                                                     <input class="check_ams_rabio" name="jsonData[{{ $row['id'] }}]"
                                                         type="hidden"
                                                         value="{{ isset($row['is_active']) && $row['is_active'] == 1 ? '1' : '0' }}">
@@ -130,9 +128,9 @@
                                     </div>
                                 </li>
                             @endforeach
-                            <li class="inventory row_style tr_style">
+                            <li class="inventory">
                                 <div class="title">
-                                    <p class="subtitle">最後異動時間</p>
+                                    <div class="subtitle">最後異動時間</div>
                                 </div>
                                 <div class="inner">
                                     <div class="file_date">
@@ -148,9 +146,9 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="inventory row_style tr_style">
+                            <li class="inventory">
                                 <div class="title">
-                                    <p class="subtitle">帳號建立日期</p>
+                                    <div class="subtitle">單元設定建立日期</div>
                                 </div>
                                 <div class="inner">
                                     <div class="file_date">
@@ -166,6 +164,13 @@
                                     </div>
                                 </div>
                             </li>
+                            <input name="amsData[origin_id]" type="hidden" value="{{ $data['origin_id'] }}">
+                            <input name="amsData[locale]" type="hidden" value="{{ $data['locale'] }}">
+                            @if (isset($data['id']) and !empty($data['id']))
+                            <input class="supportAmsId_Input" name="amsData[id]" type="hidden" value="{{ $data['id'] }}">
+                            @else
+                            <input class="supportAmsId_Input" name="amsData[id]" type="hidden" value="0">
+                            @endif
                         </ul>
                     </div>
                 </div>
