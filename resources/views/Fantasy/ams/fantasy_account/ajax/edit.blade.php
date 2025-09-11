@@ -46,16 +46,11 @@
                             <input type="hidden" value="0" name="amsData[id]" class="supportAmsId_Input">
                             @endif
                             
-<<<<<<< HEAD
                             {{-- <li class="inventory">
-=======
-                            <li class="inventory">
->>>>>>> 674bf40978c984d5d1cb0eda679c9af9a9dd33b9
                                 <div class="title">
                                     <div class="subtitle">注意事項</div>
                                 </div>
                                 <div class="inner">
-<<<<<<< HEAD
                                     <div class="tips">
                                         <span class="title">Tips</span>
                                         <p>設定與管理 Fantasy Account，擁有 Account 才能夠登入 Fantasy 進行操作</p>
@@ -74,8 +69,6 @@
                                             <span class="ball"></span>
                                         </div>
                                     </div>
-=======
->>>>>>> 674bf40978c984d5d1cb0eda679c9af9a9dd33b9
                                     <div class="tips">
                                         <span class="title">TIPS</span>
                                          <p>設定與管理 Fantasy Account，擁有 Account 才能夠登入 Fantasy 進行操作<br>啟用後此帳號才能登入</p>
@@ -147,11 +140,7 @@
                                 </div>
                             </li>
                             @endif
-<<<<<<< HEAD
                             {{-- <li class="inventory">
-=======
-                            <li class="inventory">
->>>>>>> 674bf40978c984d5d1cb0eda679c9af9a9dd33b9
                                 <div class="title">
                                     <div class="subtitle">帳號是否啟用</div>
                                 </div>
@@ -178,12 +167,8 @@
                                         <p>啟用後此帳號才能登入</p>
                                     </div>
                                 </div>
-<<<<<<< HEAD
                             </li>        --}}
                             
-=======
-                            </li>                            
->>>>>>> 674bf40978c984d5d1cb0eda679c9af9a9dd33b9
                             <li class="inventory">
                                 <div class="title">
                                     <div class="subtitle">限制登入IP</div>

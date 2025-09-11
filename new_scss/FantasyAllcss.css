@@ -9130,11 +9130,7 @@ body.isContent .backEnd_quill {
   gap: 0 30px;
 }
 .inventory > .inner:has(> .radio_btn_switch) .tips {
-<<<<<<< HEAD
-  margin-top: 0px;
-=======
   margin-top: 2px;
->>>>>>> 674bf40978c984d5d1cb0eda679c9af9a9dd33b9
 }
 .inventory .no_selfie img {
   display: none;
