@@ -134,6 +134,7 @@
                             </li> --}}
                             <li class="inventory ams_permissions  unit_all" style=" {{ (!empty($data)) ? '':'display: none;' }}">
                                 <div class="title">
+<<<<<<< HEAD
                                     <div class="subtitle">
                                         <div>控制全部單元</div>
                                     </div>
@@ -144,6 +145,20 @@
                                         <a class="ios_switch_select_block_all" data-val="1"
                                             href="javascript:void(0)"
                                             style="background-color: #3a9eea;padding: 5px;color: #fff;">全開</a>
+=======
+                                    <div class="subtitle">控制全部單元</div>
+                                </div>
+                                <div class="inner">
+                                    <div class="row_style">
+                                        <div style="display: flex;">
+                                            <a class="ios_switch_select_block_all" data-val="0"
+                                                href="javascript:void(0)"
+                                                style="background-color: #c5c5c5;padding: 5px;color: #fff;">全關</a>
+                                            <a class="ios_switch_select_block_all" data-val="1"
+                                                href="javascript:void(0)"
+                                                style="background-color: #3a9eea;padding: 5px;color: #fff;">全開</a>
+                                        </div>
+>>>>>>> 674bf40978c984d5d1cb0eda679c9af9a9dd33b9
                                     </div>
                                 </div>
                             </li>

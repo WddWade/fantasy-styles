@@ -9,12 +9,12 @@
   }
 
   .ajaxItem {
+    width: 90%;
+    max-width: 1440px;
     .ajaxContainer {
       height: auto;
 
       .detailEditor {
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
         flex-direction: column;
 
@@ -29,14 +29,14 @@
             }
 
             .mainContent {
-              height: calc(92vh - 50px) !important;
+              height: calc(100vh - 40px) !important;
               min-height: auto !important;
 
               .content {
                 height: 100% !important;
 
                 .content-sidebar {
-                  margin-top: 60px;
+                  // margin-top: 60px;
 
                   .sidebar-menu {
                     .head-bar {
@@ -44,8 +44,23 @@
                     }
 
                     .body-list {
-                      padding-bottom: 50px;
-                      height: calc(92vh - 110px);
+                      height: calc(100vh - 83px);
+                      .fms_controls {
+                        padding: 0 20px;
+                        & > * {
+                          padding: 6px 0;
+                          font-size: 1.2rem;
+                          gap: 0 5px;
+                          cursor: pointer;
+                        }
+                        .fms-folder-add {
+                          width: 15px;
+                          height: 12px;
+                          &::before {
+                            font-size: 1.1rem;
+                          }
+                        }
+                      }
 
                       &.scroll-wrapper {
                         > .scroll-element {
@@ -59,9 +74,10 @@
                 }
 
                 .inner-content {
-                  height: calc(92vh - 110px);
-                  min-height: auto;
-                  margin-top: 60px;
+                  // height: 100vh;
+                  // height: calc(92vh - 110px);
+                  // min-height: auto;
+                  // margin-top: 60px;
 
                   // .jumbotron {
                   //   width: calc(100% - 300px);
@@ -76,15 +92,15 @@
                   // }
 
                   .content-scrollbox {
-                    height: calc(92vh - 110px);
+                    height: 100%;
 
                     .content-head {
-                      width: calc(100% - 412px);
+                      // width: calc(100% - 412px);
                     }
 
-                    .content-body {
-                      padding: 130px 0 0 0;
-                    }
+                    // .content-body {
+                    //   padding: 130px 0 0 0;
+                    // }
                   }
                 }
 
@@ -105,7 +121,10 @@
         .hiddenArea_frame_controlBtn {
           &.ajax_control_btn {
             width: 100%;
-            position: static;
+            position: sticky;
+            > * {
+              height: 40px;
+            }
 
             .btnGroup {
               .check {
@@ -114,11 +133,11 @@
             }
 
             .selected {
-              background-color: #000;
+              background-color: #686868;
             }
 
             .setting {
-              background-color: #775ac2;
+              background-color: #000;
             }
 
             .close_ajax_btn {
@@ -145,8 +164,8 @@
   z-index: 14 !important;
 
   .ajaxItem {
-    width: 90%;
-    min-width: 500px;
+    // width: 90%;
+    // max-width: 1440px;
 
     .ajaxContainer {
       .detailEditor {

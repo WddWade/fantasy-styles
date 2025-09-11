@@ -43,7 +43,11 @@
                     <div class="editorContent">
                         <ul class="box_block_frame" style="min-height: 1000px;">
                            
+<<<<<<< HEAD
                             {{-- <li class="inventory ">
+=======
+                            <li class="inventory ">
+>>>>>>> 674bf40978c984d5d1cb0eda679c9af9a9dd33b9
                                 <div class="title">
                                     <div class="subtitle">權限是否啟用</div>
                                 </div>
@@ -89,8 +93,11 @@
                                     </div>
                                 </div>
                             </li>
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 674bf40978c984d5d1cb0eda679c9af9a9dd33b9
                             {{-- <li class="inventory open_ams_lightbox" style="display:none;">
                                 <div class="title">
                                     是否啟用
@@ -148,6 +155,16 @@
                                         </div>
                                         <div class="switch_box">
                                             
+<<<<<<< HEAD
+=======
+                                        </div>
+                                    </div> --}}
+                                    <div class="ios_switch radio_btn_switch mrg-l-30  {{ (isset($data['is_fantasy']) && $data['is_fantasy'] == 0) ? '':'on' }}">
+                                        <input type="hidden" value="{{ (isset($data['is_fantasy']) && $data['is_fantasy'] == 0) ? '0':'1' }}" class="check_ams_rabio" name="amsData[is_fantasy]">
+                                        <input type="checkbox">
+                                        <div class="box ">
+                                            <span class="ball"></span>
+>>>>>>> 674bf40978c984d5d1cb0eda679c9af9a9dd33b9
                                         </div>
                                     </div> --}}
                                     <div class="ios_switch radio_btn_switch mrg-l-30  {{ (isset($data['is_fantasy']) && $data['is_fantasy'] == 0) ? '':'on' }}">
@@ -156,6 +173,10 @@
                                         <div class="box ">
                                             <span class="ball"></span>
                                         </div>
+                                    </div>
+                                    <div class="tips">
+                                        <span class="title">TIPS</span>
+                                         <p>啟用授權，將授權管理帳號可進入 <strong>帳號管理</strong>，並對內容及設定進行編輯作業</p>
                                     </div>
                                     <div class="tips">
                                         <span class="title">TIPS</span>

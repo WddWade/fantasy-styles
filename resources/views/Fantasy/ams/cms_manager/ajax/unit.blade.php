@@ -2,12 +2,21 @@
 @foreach ($key_group as $key => $row)
     <li class="inventory ams_permissions hide_auth hide_auth_{{ $row['CmsMenu'][0]['key_id'] ?? '' }}">
         <div class="title">
+<<<<<<< HEAD
             <div class="subtitle">
                 <div>{{ $row['title'] }}</div>
             </div>
             <div class="title_conteollers">
                 <a class="ios_switch_select_block" data-val="0" href="javascript:void(0)" style="background-color: #c5c5c5;padding: 5px;color: #fff;">全關</a>
                 <a class="ios_switch_select_block" data-val="1" href="javascript:void(0)" style="background-color: #3a9eea;padding: 5px;color: #fff;">全開</a>
+=======
+            <div class="subtitle">{{ $row['title'] }}</div>
+            <div style="display: flex;">
+                <a class="ios_switch_select_block" data-val="0" href="javascript:void(0)"
+                    style="background-color: #c5c5c5;padding: 5px;color: #fff;">全關</a>
+                <a class="ios_switch_select_block" data-val="1" href="javascript:void(0)"
+                    style="background-color: #3a9eea;padding: 5px;color: #fff;">全開</a>
+>>>>>>> 674bf40978c984d5d1cb0eda679c9af9a9dd33b9
             </div>
         </div>
         <div class="inner">
