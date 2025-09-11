@@ -319,60 +319,60 @@
                     </li>
                 </ul>
             </div>
+            <!--區塊功能按鈕-->
+            @if($is_delete == "true")
+            <div class="hiddenArea_frame_controlBtn" data-delete="true">
+                <ul class="btnGroup">
+                    <li class="check file_edit_upload">
+                        <a href="javascript:void(0)">
+                            <span class="fa fa-check"></span>
+                            <p>Recovery 復原</p>
+                        </a>
+                    </li>
+                    <li class="trash file_edit_delete">
+                        <a href="javascript:void(0)">
+                            <span class="fa fa-trash"></span>
+                            <p>DELETE 永久刪除</p>
+                        </a>
+                    </li>
+                    <li class="remove">
+                        <a href="javascript:void(0)" class="close_btn">
+                            <span class="fa fa-remove"></span>
+                            <p>CANCEL 取消</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            @else
+            <div class="hiddenArea_frame_controlBtn" data-delete="false">
+                <ul class="btnGroup">
+                
+            
+                    <li class="cancel">
+                        <a href="javascript:void(0)" class="close_btn">
+                            <span class="fa fa-remove"></span>
+                            <p>CANCEL</p>
+                        </a>
+                    </li>
+
+                    {{-- wade:add --}}
+                        <li class="trash file_edit_delete {{$File['use_auth']}}">
+                        <a href="javascript:void(0)">
+                            <span class="fa fa-trash"></span>
+                            <p>DELETE</p>
+                        </a>
+                    </li>
+
+                    {{-- wade:add --}}
+                    <li class="check file_edit_upload {{$File['use_auth']}}">
+                        <a href="javascript:void(0)">
+                            <span class="fa fa-check"></span>
+                            <p>SAVE</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            @endif
         </div>
     </div>
-<!--區塊功能按鈕-->
-@if($is_delete == "true")
-<div class="hiddenArea_frame_controlBtn" data-delete="true">
-    <ul class="btnGroup">
-        <li class="check file_edit_upload">
-            <a href="javascript:void(0)">
-                <span class="fa fa-check"></span>
-                <p>Recovery 復原</p>
-            </a>
-        </li>
-        <li class="trash file_edit_delete">
-            <a href="javascript:void(0)">
-                <span class="fa fa-trash"></span>
-                <p>DELETE 永久刪除</p>
-            </a>
-        </li>
-        <li class="remove">
-            <a href="javascript:void(0)" class="close_btn">
-                <span class="fa fa-remove"></span>
-                <p>CANCEL 取消</p>
-            </a>
-        </li>
-    </ul>
-</div>
-@else
-<div class="hiddenArea_frame_controlBtn" data-delete="false">
-    <ul class="btnGroup">
-       
- 
-        <li class="cancel">
-            <a href="javascript:void(0)" class="close_btn">
-                <span class="fa fa-remove"></span>
-                <p>CANCEL</p>
-            </a>
-        </li>
-
-        {{-- wade:add --}}
-               <li class="trash file_edit_delete {{$File['use_auth']}}">
-            <a href="javascript:void(0)">
-                <span class="fa fa-trash"></span>
-                <p>DELETE</p>
-            </a>
-        </li>
-
-        {{-- wade:add --}}
-         <li class="check file_edit_upload {{$File['use_auth']}}">
-            <a href="javascript:void(0)">
-                <span class="fa fa-check"></span>
-                <p>SAVE</p>
-            </a>
-        </li>
-    </ul>
-</div>
-@endif
 </div>

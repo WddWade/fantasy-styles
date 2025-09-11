@@ -123,19 +123,19 @@
                             </li>
                         </ul>
                     </div>
+                    <!--區塊功能按鈕-->
+                    <div class="hiddenArea_frame_controlBtn">
+                        <ul class="btnGroup">
+                            <li class="cancel">
+                                <a class="close_btn close_ams_hiddenArea" href="javascript:void(0)">
+                                    <span class="fa fa-remove"></span>
+                                    <p>CANCEL</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>                    
                 </div>
             </div>
-        </div>
-        <!--區塊功能按鈕-->
-        <div class="hiddenArea_frame_controlBtn">
-            <ul class="btnGroup">
-                <li class="cancel">
-                    <a class="close_btn close_ams_hiddenArea" href="javascript:void(0)">
-                        <span class="fa fa-remove"></span>
-                        <p>CANCEL</p>
-                    </a>
-                </li>
-            </ul>
         </div>
     </div>
 </div>

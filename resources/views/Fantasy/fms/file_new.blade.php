@@ -117,25 +117,26 @@
                     </li>
                 </ul>
             </div>
+            <!-- </div> -->
+            <!--區塊功能按鈕-->
+            <div class="hiddenArea_frame_controlBtn">
+                <ul class="btnGroup">
+                    <li class="cancel">
+                        <a href="javascript:void(0)" class="close_btn">
+                            <span class="fa fa-remove"></span>
+                            <p>CANCEL</p>
+                        </a>
+                    </li>
+                    <li class="check">
+                        <a href="javascript:void(0)" class="localeToServer">
+                            <span class="fa fa-cloud-upload"></span>
+                            <p>UPLOAD</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- </div> -->
         </div>
     </div>
-    <!-- </div> -->
-    <!--區塊功能按鈕-->
-    <div class="hiddenArea_frame_controlBtn">
-        <ul class="btnGroup">
-            <li class="cancel">
-                <a href="javascript:void(0)" class="close_btn">
-                    <span class="fa fa-remove"></span>
-                    <p>CANCEL</p>
-                </a>
-            </li>
-            <li class="check">
-                <a href="javascript:void(0)" class="localeToServer">
-                    <span class="fa fa-cloud-upload"></span>
-                    <p>UPLOAD</p>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <!-- </div> -->
+   
 </div>

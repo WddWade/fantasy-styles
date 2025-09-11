@@ -111,31 +111,31 @@
                     </li>
                 </ul>
             </div>
+            <!--區塊功能按鈕-->
+            <div class="hiddenArea_frame_controlBtn">
+                <ul class="btnGroup">
+                    <li class="cancel">
+                        <a href="javascript:void(0)" class="close_btn">
+                            <span class="fa fa-remove"></span>
+                            <p>CANCEL</p>
+                        </a>
+                    </li>
+                    @if($folder['id']!='0')
+                    <li class="trash folder_edit_delete">
+                        <a href="javascript:void(0)">
+                            <span class="fa fa-trash"></span>
+                            <p>DELETE</p>
+                        </a>
+                    </li>
+                    @endif
+                    <li class="check folder_edit_upload">
+                        <a href="javascript:void(0)">
+                            <span class="fa fa-check"></span>
+                            <p>SETTING</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>            
         </div>
-    </div>
-    <!--區塊功能按鈕-->
-    <div class="hiddenArea_frame_controlBtn">
-        <ul class="btnGroup">
-            <li class="cancel">
-                <a href="javascript:void(0)" class="close_btn">
-                    <span class="fa fa-remove"></span>
-                    <p>CANCEL</p>
-                </a>
-            </li>
-            @if($folder['id']!='0')
-            <li class="trash folder_edit_delete">
-                <a href="javascript:void(0)">
-                    <span class="fa fa-trash"></span>
-                    <p>DELETE</p>
-                </a>
-            </li>
-            @endif
-            <li class="check folder_edit_upload">
-                <a href="javascript:void(0)">
-                    <span class="fa fa-check"></span>
-                    <p>SETTING</p>
-                </a>
-            </li>
-        </ul>
     </div>
 </div>

@@ -9,10 +9,6 @@
   top: 0;
   z-index: -1;
   overflow: hidden;
-  -webkit-transition: background-color 1s ease 0s;
-  -moz-transition: background-color 1s ease 0s;
-  -ms-transition: background-color 1s ease 0s;
-  -o-transition: background-color 1s ease 0s;
   transition: background-color 1s ease 0s;
 
   &.go_animation {
@@ -30,7 +26,7 @@
       opacity: 1;
       visibility: visible;
     }
-    
+
     .ajax_control_btn {
       .list {
         opacity: 1;
@@ -41,14 +37,8 @@
 
   .frame {
     height: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
   }
 
@@ -59,9 +49,7 @@
     .box_container {
       -webkit-animation-name: ajax_open;
       animation-name: ajax_open;
-      -webkit-animation-duration: 1s;
       animation-duration: 1s;
-      -webkit-animation-fill-mode: both;
       animation-fill-mode: both;
     }
   }
@@ -70,11 +58,8 @@
     background-color: rgba(105, 105, 105, 0);
 
     .box_container {
-      -webkit-animation-name: ajax_close;
       animation-name: ajax_close;
-      -webkit-animation-duration: 0.8s;
       animation-duration: 0.8s;
-      -webkit-animation-fill-mode: both;
       animation-fill-mode: both;
     }
   }
@@ -108,10 +93,6 @@
     position: relative;
     opacity: 0;
     visibility: hidden;
-    -webkit-transition: all 0.7s ease 0s;
-    -moz-transition: all 0.7s ease 0s;
-    -ms-transition: all 0.7s ease 0s;
-    -o-transition: all 0.7s ease 0s;
     transition: all 0.7s ease 0s;
 
     .info {
@@ -128,8 +109,6 @@
       position: absolute;
       right: 30px;
       top: 50%;
-      -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
       transform: translateY(-50%);
     }
   }
@@ -138,26 +117,16 @@
     background-color: #000;
     color: #fff;
     padding: 10px 50px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
     opacity: 0;
     visibility: hidden;
-    -webkit-transition: all 0.7s ease 0.3s;
-    -moz-transition: all 0.7s ease 0.3s;
-    -ms-transition: all 0.7s ease 0.3s;
-    -o-transition: all 0.7s ease 0.3s;
     transition: all 0.7s ease 0.3s;
 
     .title_area {
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
       align-items: center;
 
       &::after {
@@ -178,7 +147,7 @@
         line-height: 1;
       }
     }
-    
+
     .clear_btn {
       cursor: pointer;
       padding: 10px;
@@ -195,10 +164,6 @@
     padding: 20px 0;
     opacity: 0;
     visibility: hidden;
-    -webkit-transition: all 0.7s ease 0.6s;
-    -moz-transition: all 0.7s ease 0.6s;
-    -ms-transition: all 0.7s ease 0.6s;
-    -o-transition: all 0.7s ease 0.6s;
     transition: all 0.7s ease 0.6s;
 
     /* 重複 */
@@ -208,10 +173,6 @@
     opacity: 0;
     visibility: hidden;
     overflow-y: scroll;
-    -webkit-transition: all 0.7s ease 0.6s;
-    -moz-transition: all 0.7s ease 0.6s;
-    -ms-transition: all 0.7s ease 0.6s;
-    -o-transition: all 0.7s ease 0.6s;
     transition: all 0.7s ease 0.6s;
   }
 
@@ -219,18 +180,10 @@
     background-color: rgba(255, 255, 255, 0);
 
     .list {
-      -webkit-transition: all 0.7s ease 0.9s;
-      -moz-transition: all 0.7s ease 0.9s;
-      -ms-transition: all 0.7s ease 0.9s;
-      -o-transition: all 0.7s ease 0.9s;
       transition: all 0.7s ease 0.9s;
 
       /* 重複 */
       width: 33.3%;
-      -webkit-transition: all 0.7s ease 0.9s;
-      -moz-transition: all 0.7s ease 0.9s;
-      -ms-transition: all 0.7s ease 0.9s;
-      -o-transition: all 0.7s ease 0.9s;
       transition: all 0.7s ease 0.9s;
     }
 
@@ -284,4 +237,3 @@
     }
   }
 }
-

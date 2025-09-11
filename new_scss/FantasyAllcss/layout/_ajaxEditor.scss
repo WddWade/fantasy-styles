@@ -492,38 +492,38 @@
   overflow: hidden;
 }
 
-.main_container_frame {
-  background-color: inherit;
-  width: 100%;
-  height: 100%;
-  opacity: 1;
-  z-index: 1;
-  position: relative;
+// .main_container_frame {
+//   background-color: inherit;
+//   width: 100%;
+//   height: 100%;
+//   opacity: 1;
+//   z-index: 1;
+//   position: relative;
 
-  .hiddenArea_frame {
-    width: 100%;
-    max-width: none;
-    height: calc(100% - 50px);
-    -webkit-transform: translateX(0%);
-    -ms-transform: translateX(0%);
-    transform: translateX(0%);
-    overflow: hidden;
-  }
+//   .hiddenArea_frame {
+//     width: 100%;
+//     max-width: none;
+//     height: calc(100% - 50px);
+//     -webkit-transform: translateX(0%);
+//     -ms-transform: translateX(0%);
+//     transform: translateX(0%);
+//     overflow: hidden;
+//   }
 
-  .hiddenArea_frame_box {
-    padding: 25px 50px 25px 50px;
+//   .hiddenArea_frame_box {
+//     padding: 25px 50px 25px 50px;
 
-    .editorHeader {
-      .control {
-        margin-top: 0;
-      }
-    }
-  }
+//     .editorHeader {
+//       .control {
+//         margin-top: 0;
+//       }
+//     }
+//   }
 
-  .hiddenArea_frame_controlBtn {
-    position: relative;
-  }
-}
+//   .hiddenArea_frame_controlBtn {
+//     position: relative;
+//   }
+// }
 
 .____summernote {
   .note-editor {
