@@ -91,6 +91,7 @@
                                 </div>
                                 <div class="inner">
                                     <select class="____select2 valid" name="amsData[user_id]" aria-invalid="false">
+                                        <option value="0">請選擇管理者</option>
                                         @foreach ($FantasyUsers as $row)
                                             <option value="{{ $row['id'] }}" @if(isset($data['user_id']) && $row['id'] == $data['user_id'] ) selected @endif>
                                                 {{ $row['name'] ?: $row['account'] ?: '未設定帳號名稱'}}
@@ -132,27 +133,12 @@
                                     </div>
                                 </div>
                             </li> --}}
-                            <li class="inventory ams_permissions  unit_all" style=" {{ (!empty($data)) ? '':'display: none;' }}">
-                                <div class="title">
-                                    <div class="subtitle">
-                                        <div>控制全部單元</div>
-                                    </div>
-                                     <div class="title_conteollers">
-                                        <a class="ios_switch_select_block_all" data-val="0"
-                                            href="javascript:void(0)"
-                                            style="background-color: #c5c5c5;padding: 5px;color: #fff;">全關</a>
-                                        <a class="ios_switch_select_block_all" data-val="1"
-                                            href="javascript:void(0)"
-                                            style="background-color: #3a9eea;padding: 5px;color: #fff;">全開</a>
-                                    </div>
-                                </div>
-                            </li>
                             {{-- wade:delete --}}
-                            {{-- <div class="ajax_html"> --}}
+                            <div class="ajax_html">
                             @include('Fantasy.ams.cms_manager.ajax.unit', [
                                 'need_review' => $need_review,
                             ])
-                            {{-- </div> --}}
+                            </div>
                             @if(!empty($data))
                             <li class="inventory">
                                 <div class="title">

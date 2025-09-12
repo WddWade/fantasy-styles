@@ -103,7 +103,7 @@
                                                     <span class="" data-column="name">語系</span>
                                                 </div>
                                             </th>
-                                            <th class="text-center w_Preview">
+                                            <th class="w_Preview">
                                                 <div class="fake-th ">
                                                     <span class="" data-column="is_active">狀態</span>
                                                 </div>
@@ -128,7 +128,7 @@
                                                     {{ collect($locale_options)->where('key',$row['locale'])->first()['title'] ?? '-' }}
                                                 </div>
                                             </td>
-                                            <td class="text-center w_Preview edit_ams_wrapper" data-type="template-setting" data-id="{{ $row['id'] }}">
+                                            <td class="w_Preview edit_ams_wrapper" data-type="template-setting" data-id="{{ $row['id'] }}">
                                                 <div class="tableContent">{{ ($row['is_active'] == 1) ? '啟用' : '未啟用' }}</div>
                                             </td>
                                             <td class="w_Update open_builder" data-type="template-setting" data-id="{{ $row['id'] }}">

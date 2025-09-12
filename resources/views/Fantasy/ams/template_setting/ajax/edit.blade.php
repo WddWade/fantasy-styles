@@ -87,26 +87,50 @@
                             ])}}
 
                             <li class="inventory">
-                                <div class="inner" style="width:100%;">
-                                    <div class="inner_box ">
-                                        <div class="info_text">
-                                            <p class="f-900" style="font-size: 18px;">請設定此分站/語系，可管理的單元</p>
-                                        </div>
-                                        <div class="switch_box">
-                                            <div style="display: flex;width: 95px;">
-                                                <a class="ios_switch_select_block_all" data-val="0"
-                                                    href="javascript:void(0)"
-                                                    style="background-color: #c5c5c5;padding: 5px;color: #fff;">全關</a>
-                                                <a class="ios_switch_select_block_all" data-val="1"
-                                                    href="javascript:void(0)"
-                                                    style="background-color: #3a9eea;padding: 5px;color: #fff;">全開</a>
+                                <div class="title">
+                                    <div class="subtitle">
+                                        <div>請設定此分站/語系，可管理的單元</div>
+                                    </div>
+                                </div>
+                                <div class="inner">
+                                    <div class="switch_box radio_btn_switch ios_switch_select_block_all {{ ($key_group->where('is_active',0)->count() == 0) ? 'on':'' }}">
+                                        <div class="ios_switch ams_ios_switch {{ ($key_group->where('is_active',0)->count() == 0) ? 'on':'' }}">
+                                                <label class="title mrg-r-10">全關/全開</label>
+                                                <input type="checkbox" value="{{ ($key_group->where('is_active',0)->count() == 0) ? '1':'0' }}">
+                                                <div class="box">
+                                                    <span class="ball"></span>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="tips">
+                                        <span class="title">TIPS</span>
+                                        <p>此功能可控制全部單元的狀態。</p>
+                                    </div>
                                 </div>
                             </li>
+                            
                             @foreach ($key_group as $key => $row)
                                 <li class="inventory">
+                                <div class="title">
+                                    <div class="subtitle f-900">{{ $row['title'] }}</div>
+                                </div>
+                                <div class="inner">
+                                    <div class="ios_switch radio_btn_switch mrg-l-30 ams_ios_switch switch-block {{ isset($row['is_active']) && $row['is_active'] == 0 ? '' : 'on' }}">
+                                        <input class="check_ams_rabio" name="jsonData[is_active]" type="hidden"
+                                            value="{{ isset($row['is_active']) && $row['is_active'] == 0 ? '0' : '1' }}">
+                                        <input type="checkbox">
+                                        <div class="box ams_switch_ball">
+                                            <span class="ball"></span>
+                                        </div>
+                                    </div>                                    
+                                    <div class="tips">
+                                        <span class="title">TIPS</span>
+                                         <p>啟用本區塊單元,此分站才能管理此單元</p>
+                                    </div>                                        
+                                </div>
+                            </li>
+
+                                {{-- <li class="inventory">
                                     <div class="inner" style="width:100%;">
                                         <div class="inner_box ">
                                             <div class="info_text">
@@ -126,7 +150,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </li>
+                                </li> --}}
                             @endforeach
                             <li class="inventory">
                                 <div class="title">

@@ -1,4 +1,27 @@
-{{-- @dd($key_group) --}}
+@if(count($key_group) > 0)
+<li class="inventory">
+    <div class="title">
+        <div class="subtitle">
+            <div>控制全部單元</div>
+        </div>
+    </div>
+    <div class="inner">
+        <div class="switch_box radio_btn_switch ios_switch_select_block_all">
+            <div class="ios_switch ams_ios_switch">
+                <label class="title mrg-r-10">全關/全開</label>
+                <input type="checkbox">
+                <div class="box">
+                    <span class="ball"></span>
+                </div>
+            </div>
+        </div>                                    
+        <div class="tips">
+            <span class="title">TIPS</span>
+            <p>此功能可控制全部區塊的權限狀態。</p>
+        </div>
+    </div>
+</li>
+@endif
 @foreach ($key_group as $key => $row)
     <li class="inventory ams_permissions hide_auth hide_auth_{{ $row['CmsMenu'][0]['key_id'] ?? '' }}">
         <div class="title">
@@ -6,8 +29,17 @@
                 <div>{{ $row['title'] }}</div>
             </div>
             <div class="title_conteollers">
-                <a class="ios_switch_select_block" data-val="0" href="javascript:void(0)" style="background-color: #c5c5c5;padding: 5px;color: #fff;">全關</a>
-                <a class="ios_switch_select_block" data-val="1" href="javascript:void(0)" style="background-color: #3a9eea;padding: 5px;color: #fff;">全開</a>
+                <div class="inner">
+                    <div class="switch_box radio_btn_switch ios_switch_select_block">
+                        <div class="ios_switch ams_ios_switch">
+                            <label class="title mrg-r-10">全關/全開</label>
+                            <input type="checkbox">
+                            <div class="box">
+                                <span class="ball"></span>
+                            </div>
+                        </div>
+                    </div>                                    
+                </div>
             </div>
         </div>
         <div class="inner">
@@ -97,7 +129,17 @@
                                         @endif
                                     </div>
                                 </div>
-                                <div class="switch_box_auth">
+                                <div class="select2 switch_box_auth">
+                                    <select class="____select2 __leonselect2multiple" name="" multiple="multiple">
+                        
+                                            @foreach(OptionFunction::City_List() as $item)
+                                       
+                                                    <option value="">{{ $item['title'] }}</option>
+                                              
+                                            @endforeach
+                             
+                                   
+                                    </select>
                                     @if ($row2['has_auth'] == $row2['id'])
                                         <input name='auth_menu_id[][]' type='hidden' value="{{ $row2['id'] }}" />
                                         <ul class="multi_select_has_auth" id="multi_select_has_auth_{{ $row2['id'] }}"

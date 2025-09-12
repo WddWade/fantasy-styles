@@ -252,15 +252,10 @@ textarea,
       height: 23px;
       width: 23px;
       background-color: white;
-      -webkit-box-shadow: 1px 0px 5px #888888;
       box-shadow: 1px 0px 5px #888888;
       top: 50%;
       left: 0;
-      -webkit-transform: translate(0, -50%);
-      -ms-transform: translate(0, -50%);
       transform: translate(0, -50%);
-      -webkit-transition: 0.4s;
-      -o-transition: 0.4s;
       transition: 0.4s;
     }
   }
@@ -274,6 +269,7 @@ textarea,
 
   .title {
     word-break: keep-all;
+    font-size: 1.2rem;
   }
 
   input {
@@ -395,10 +391,7 @@ textarea,
       position: absolute;
       right: 0;
       bottom: 0;
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-
       flex-direction: column;
       opacity: 0;
       visibility: hidden;
@@ -411,14 +404,8 @@ textarea,
       width: 33px;
       height: 33px;
       margin-top: 1px;
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
       align-items: center;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
       justify-content: center;
     }
   }
@@ -445,7 +432,6 @@ textarea,
   &.select2-hidden-accessible {
     border: 0 !important;
     clip: rect(0 0 0 0) !important;
-    -webkit-clip-path: inset(50%) !important;
     clip-path: inset(50%) !important;
     height: 1px !important;
     overflow: hidden !important;
@@ -716,14 +702,8 @@ textarea,
 //       .select2-search--dropdown {
 //         background: #eee !important;
 //         padding: 10px 30px;
-//         display: -webkit-box;
-//         display: -ms-flexbox;
 //         display: flex;
-//         -webkit-box-pack: center;
-//         -ms-flex-pack: center;
 //         justify-content: center;
-//         -webkit-box-align: center;
-//         -ms-flex-align: center;
 //         align-items: center;
 //         border-bottom: 1px solid #c7c7c7 !important;
 
@@ -788,11 +768,7 @@ textarea,
 //           &[aria-selected] {
 //             cursor: pointer;
 //             padding: 7px 35px;
-//             display: -webkit-box;
-//             display: -ms-flexbox;
 //             display: flex;
-//             -webkit-box-align: center;
-//             -ms-flex-align: center;
 //             align-items: center;
 //             -webkit-transition: 0.2s;
 //             -o-transition: 0.2s;
