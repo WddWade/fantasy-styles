@@ -125,10 +125,10 @@
                                     <tbody class="ams_tbody" data-type="template-manager">
                                         @foreach($data as $key => $row)
                                         <tr>
-                                            <td class="ams_site_address w_Preview edit_ams_wrapper" data-type="template-manager" data-id="{{ $row['id'] }}">
+                                            <td class="ams_site_status w_Preview edit_ams_wrapper" data-type="template-manager" data-id="{{ $row['id'] }}">
                                                 <div class="tableContent">{{ ($row['is_active'] == 1) ? '啟用' : '未啟用' }}</div>
                                             </td>
-                                            <td class="ams_site_status edit_ams_wrapper" data-type="template-manager" data-id="{{ $row['id'] }}">
+                                            <td class="ams_site_name edit_ams_wrapper" data-type="template-manager" data-id="{{ $row['id'] }}">
                                                 <div class="tableContent">
                                                     {{ $row['title'] ?: '-' }}
                                                 </div>
@@ -136,7 +136,7 @@
                                                     / {{ $row['en_title'] ?: '-' }}
                                                 </div>
                                             </td>
-                                            <td class="ams_site_name edit_ams_wrapper" data-type="template-manager" data-id="{{ $row['id'] }}">
+                                            <td class="ams_site_address edit_ams_wrapper" data-type="template-manager" data-id="{{ $row['id'] }}">
                                                 <div class="tableContent">
                                                     {{ $row['url_title'] ?: '-' }}
                                                 </div>

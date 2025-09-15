@@ -64,11 +64,11 @@
           top: 51%;
           transform: translateY(-50%);
         }
-        &:first-child {
-          &::before {
-            content: none;
-          }
-        }
+        // &:first-child {
+        //   &::before {
+        //     content: none;
+        //   }
+        // }
         &.order_field,
         &.format_field {
           > * {
@@ -273,6 +273,30 @@
           }
         }
       }
+    }
+
+    .ams_updated {
+      width: 120px;
+    }
+    .ams_status,
+    .ams_site_status {
+      width: 80px;
+    }
+    .ams_name,
+    .ams_mail {
+      min-width: 150px;
+    }
+    .ams_account {
+      width: 250px;
+    }
+
+    .ams_site_name {
+      width: 250px;
+      display: flex;
+    }
+
+    .ams_permission .tableContent {
+      white-space: normal;
     }
   }
 

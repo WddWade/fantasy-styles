@@ -7100,9 +7100,6 @@ body.isContent .backEnd_quill {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
-.datatable .tables thead th:first-child::before {
-  content: none;
-}
 .datatable .tables thead th.order_field > *, .datatable .tables thead th.format_field > * {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -7321,6 +7318,29 @@ body.isContent .backEnd_quill {
 }
 .datatable .tables .select-item input:checked + .check-circle::before {
   display: block;
+}
+.datatable .tables .ams_updated {
+  width: 120px;
+}
+.datatable .tables .ams_status,
+.datatable .tables .ams_site_status {
+  width: 80px;
+}
+.datatable .tables .ams_name,
+.datatable .tables .ams_mail {
+  min-width: 150px;
+}
+.datatable .tables .ams_account {
+  width: 250px;
+}
+.datatable .tables .ams_site_name {
+  width: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.datatable .tables .ams_permission .tableContent {
+  white-space: normal;
 }
 
 /*
@@ -12450,17 +12470,19 @@ textarea:focus::-webkit-input-placeholder,
   padding: 15px 0;
   border-radius: 3px;
 }
+.select2-container .select2-dropdown:has(.select2-search) {
+  padding: 0 0 15px 0;
+}
 .select2-container .select2-dropdown .select2-search {
   display: block;
   padding: 4px;
   padding-inline: 15px;
   margin-bottom: 10px;
+  background-color: #f5f5f5;
 }
 .select2-container .select2-dropdown .select2-search .select2-search__field {
   border: 1px solid transparent;
-  border-radius: 3px;
-  background-color: #f5f5f5;
-  padding: 4px 12px;
+  background-color: transparent;
   min-height: 40px;
 }
 
