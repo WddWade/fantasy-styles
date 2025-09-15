@@ -95,7 +95,12 @@
                                 <table class="tables">
                                     <thead>
                                         <tr>
-                                            <th class="w_TableMaintitle">
+                                            <th class="ams_status">
+                                                <div class="fake-th ">
+                                                    <span class="" data-column="is_active">狀態</span>
+                                                </div>
+                                            </th>
+                                            <th class="ams_account">
                                                 <div class="fake-thead fake-thead-ams">
                                                     <div class="fake-th first">
                                                     </div>
@@ -104,22 +109,18 @@
                                                     <span class="" data-column="account">帳號</span>
                                                 </div>
                                             </th>
-                                            <th class="w_Category w180">
+                                            <th class="ams_name">
                                                 <div class="fake-th ">
                                                     <span class="" data-column="name">姓名</span>
                                                 </div>
                                             </th>
-                                            <th class="w_Category w180">
+                                            <th class="ams_mail">
                                                 <div class="fake-th ">
                                                     <span class="" data-column="mail">信箱</span>
                                                 </div>
                                             </th>
-                                            <th class="text-center w_Preview w180">
-                                                <div class="fake-th ">
-                                                    <span class="" data-column="is_active">狀態</span>
-                                                </div>
-                                            </th>
-                                            <th class="w_Update">
+                                        
+                                            <th class="ams_updated">
                                                 <div class="fake-th ">
                                                     <span class="" data-column="updated_at">最後異動時間</span>
                                                 </div>
@@ -129,7 +130,10 @@
                                     <tbody class="ams_tbody" data-type="fantasy-account">
                                         @foreach($data as $key => $row)
                                         <tr>
-                                            <td class="w_TableMaintitle edit_ams_wrapper" data-type="fantasy-account" data-id="{{ $row['id'] }}">
+                                            <td class="ams_status w_Preview edit_ams_wrapper" data-type="fantasy-account" data-id="{{ $row['id'] }}">
+                                                <div class="tableContent">{{ ($row['is_active'] == 1) ? '啟用' : '未啟用' }}</div>
+                                            </td>
+                                            <td class="ams_account edit_ams_wrapper" data-type="fantasy-account" data-id="{{ $row['id'] }}">
                                                 <div class="tableMaintitle open_builder">
                                                     <div class="title-img rwdhide">
                                                         @if(!empty($row['_photo_image']))
@@ -146,16 +150,13 @@
                                                     @endif
                                                 </div>
                                             </td>
-                                            <td class=" w_Category edit_ams_wrapper" data-type="fantasy-account" data-id="{{ $row['id'] }}">
+                                            <td class=" ams_name edit_ams_wrapper" data-type="fantasy-account" data-id="{{ $row['id'] }}">
                                                 <div class="tableContent">{{ !empty($row['name']) ? $row['name'] : '-'}}</div>
                                             </td>
-                                            <td class=" w_Category edit_ams_wrapper" data-type="fantasy-account" data-id="{{ $row['id'] }}">
+                                            <td class=" ams_mail edit_ams_wrapper" data-type="fantasy-account" data-id="{{ $row['id'] }}">
                                                 <div class="tableContent">{{ !empty($row['mail']) ? $row['mail'] : ''}}</div>
                                             </td>
-                                            <td class="text-center w_Preview edit_ams_wrapper" data-type="fantasy-account" data-id="{{ $row['id'] }}">
-                                                <div class="tableContent">{{ ($row['is_active'] == 1) ? '啟用' : '未啟用' }}</div>
-                                            </td>
-                                            <td class="w_Update open_builder" data-type="fantasy-account" data-id="{{ $row['id'] }}">
+                                                 <td class="ams_updated open_builder" data-type="fantasy-account" data-id="{{ $row['id'] }}">
                                                 <div class="tableContent">{{ $row['updated_at'] }}</div>
                                             </td>
                                         </tr>

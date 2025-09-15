@@ -89,26 +89,17 @@
                                 <table class="tables">
                                     <thead>
                                         <tr>
-                                            <th class="w_TableMaintitle">
-                                                <div class="fake-thead fake-thead-ams">
-                                                    <div class="fake-th first">
-                                                    </div>
-                                                </div>
-                                                <div class="fake-th ">
-                                                    <span class="" data-column="account">分站</span>
-                                                </div>
-                                            </th>
-                                            <th class="w_Category w180">
-                                                <div class="fake-th ">
-                                                    <span class="" data-column="name">語系</span>
-                                                </div>
-                                            </th>
-                                            <th class="w_Preview">
+                                            <th class="ams_site_status">
                                                 <div class="fake-th ">
                                                     <span class="" data-column="is_active">狀態</span>
                                                 </div>
+                                            </th>                                            
+                                            <th class="ams_site_name">
+                                                <div class="fake-th ">
+                                                    <span class="" data-column="account">分站-語系</span>
+                                                </div>
                                             </th>
-                                            <th class="w_Update">
+                                            <th class="ams_updated">
                                                 <div class="fake-th ">
                                                     <span class="" data-column="updated_at">最後異動時間</span>
                                                 </div>
@@ -118,20 +109,15 @@
                                     <tbody class="ams_tbody" data-type="template-setting">
                                         @foreach($data as $key => $row)
                                         <tr>
-                                            <td class="w_TableMaintitle edit_ams_wrapper" data-type="template-setting" data-id="{{ $row['id'] }}">
-                                                <div class="tableContent">
-                                                    {{ collect($branch_options)->where('key',$row['origin_id'])->first()['title'] ?? '-' }}
-                                                </div>
-                                            </td>
-                                            <td class="w_Category w180 edit_ams_wrapper" data-type="template-setting" data-id="{{ $row['id'] }}">
-                                                <div class="tableContent">
-                                                    {{ collect($locale_options)->where('key',$row['locale'])->first()['title'] ?? '-' }}
-                                                </div>
-                                            </td>
-                                            <td class="w_Preview edit_ams_wrapper" data-type="template-setting" data-id="{{ $row['id'] }}">
+                                            <td class="ams_site_status edit_ams_wrapper" data-type="template-setting" data-id="{{ $row['id'] }}">
                                                 <div class="tableContent">{{ ($row['is_active'] == 1) ? '啟用' : '未啟用' }}</div>
+                                            </td>                                            
+                                            <td class="ams_site_name edit_ams_wrapper" data-type="template-setting" data-id="{{ $row['id'] }}">
+                                                <div class="tableContent">
+                                                    {{ collect($branch_options)->where('key',$row['origin_id'])->first()['title'] ?? '-' }}-{{ collect($locale_options)->where('key',$row['locale'])->first()['title'] ?? '-' }}
+                                                </div>
                                             </td>
-                                            <td class="w_Update open_builder" data-type="template-setting" data-id="{{ $row['id'] }}">
+                                            <td class="w_Update ams_updated" data-type="template-setting" data-id="{{ $row['id'] }}">
                                                 <div class="tableContent">{{ $row['updated_at'] }}</div>
                                             </td>
                                         </tr>

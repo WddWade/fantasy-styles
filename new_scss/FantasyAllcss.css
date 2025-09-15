@@ -877,22 +877,6 @@ body.isContent .backEnd_quill {
   共用
   ams 頁面 log table
 */
-.log_table {
-  width: 100%;
-}
-.log_table thead tr {
-  background-color: #2e2e2e;
-  color: #fff;
-}
-.log_table tbody tr:hover {
-  cursor: pointer;
-  background-color: #eee;
-}
-.log_table th,
-.log_table td {
-  padding: 10px;
-}
-
 /*
   共用
   cms 切換到正式站資料按鈕
@@ -7054,6 +7038,7 @@ body.isContent .backEnd_quill {
 .datatable .tables {
   color: black;
   width: 100%;
+  background-color: #fff;
 }
 .datatable .tables thead {
   background-color: #f8f8f8;
@@ -7760,6 +7745,7 @@ body.isContent .backEnd_quill {
 }
 .hiddenArea .detailEditor .inventory.ams_permissions > .inner .group .left {
   width: 250px;
+  font-weight: 600;
 }
 .hiddenArea .detailEditor .inventory.ams_permissions > .inner .group .options {
   -webkit-box-flex: 1;
@@ -7810,6 +7796,7 @@ body.isContent .backEnd_quill {
 }
 .hiddenArea .detailEditor .inventory.ams_permissions .info_text {
   padding-bottom: 10px;
+  font-weight: 300;
 }
 .hiddenArea .detailEditor .inventory .input {
   padding: 10px 12px;
@@ -12269,7 +12256,11 @@ textarea:focus::-webkit-input-placeholder,
   background-color: #f5f5f5;
   border-radius: 3px;
   border: 1px solid transparent;
-  padding: 4px 12px !important;
+  padding: 4px 10px !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
   -webkit-transition: border 0.2s linear 0s !important;
   transition: border 0.2s linear 0s !important;
 }
@@ -12349,7 +12340,7 @@ textarea:focus::-webkit-input-placeholder,
 }
 .____select2 + .select2 .selection .select2-selection .select2-selection__rendered {
   color: #333;
-  line-height: 1.5;
+  line-height: 1;
   padding: 0;
   display: inline-block;
   overflow: hidden;
@@ -12358,13 +12349,10 @@ textarea:focus::-webkit-input-placeholder,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 10px;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
 }
 .____select2 + .select2 .selection .select2-selection .select2-selection__rendered input {
   width: 100% !important;
@@ -12395,12 +12383,8 @@ textarea:focus::-webkit-input-placeholder,
   position: absolute;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  -webkit-transform: rotate(-90deg);
-  transform: rotate(-90deg);
-}
-.____select2 + .select2 .selection .select2-selection:hover .select2-selection__arrow b {
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
 }
 .____select2 + .select2.select2-container--open .selection .select2-selection {
   border: 1px solid #5e00ff !important;
@@ -12436,15 +12420,15 @@ textarea:focus::-webkit-input-placeholder,
   transform: rotate(360deg);
 }
 
-.select2-container .select2-dropdown {
-  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
-          box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
-  border: none;
-  padding: 15px 0;
-  border-radius: 3px;
-}
 .select2-container .select2-results__option {
-  background-color: #fff !important;
+  padding: 8px 15px;
+}
+.select2-container .select2-results__option[aria-selected=true] {
+  background-color: #f5f5f5 !important;
+}
+.select2-container .select2-results__option.select2-results__option--highlighted[aria-selected] {
+  background-color: #000000 !important;
+  color: white !important;
 }
 .select2-container .select2-results__option .select2-results__group {
   padding: 0 20px;
@@ -12458,6 +12442,26 @@ textarea:focus::-webkit-input-placeholder,
 .select2-container .select2-results__option .select2-results__options--nested li.select2-results__option--highlighted {
   color: #fff;
   background-color: #000 !important;
+}
+.select2-container .select2-dropdown {
+  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+  border: none;
+  padding: 15px 0;
+  border-radius: 3px;
+}
+.select2-container .select2-dropdown .select2-search {
+  display: block;
+  padding: 4px;
+  padding-inline: 15px;
+  margin-bottom: 10px;
+}
+.select2-container .select2-dropdown .select2-search .select2-search__field {
+  border: 1px solid transparent;
+  border-radius: 3px;
+  background-color: #f5f5f5;
+  padding: 4px 12px;
+  min-height: 40px;
 }
 
 .c-datepicker-picker {

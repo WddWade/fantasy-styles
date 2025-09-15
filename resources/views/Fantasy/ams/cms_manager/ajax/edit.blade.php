@@ -140,7 +140,7 @@
                             ])
                             </div>
                             @if(!empty($data))
-                            <li class="inventory">
+                            <li class="change_dom_top inventory">
                                 <div class="title">
                                     <div class="subtitle">最後異動時間</div>
                                 </div>

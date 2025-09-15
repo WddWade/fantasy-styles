@@ -1,5 +1,5 @@
 @if(count($key_group) > 0)
-<li class="inventory">
+<li class="change_dom inventory">
     <div class="title">
         <div class="subtitle">
             <div>控制全部單元</div>
@@ -23,7 +23,7 @@
 </li>
 @endif
 @foreach ($key_group as $key => $row)
-    <li class="inventory ams_permissions hide_auth hide_auth_{{ $row['CmsMenu'][0]['key_id'] ?? '' }}">
+    <li class="change_dom inventory ams_permissions hide_auth hide_auth_{{ $row['CmsMenu'][0]['key_id'] ?? '' }}">
         <div class="title">
             <div class="subtitle">
                 <div>{{ $row['title'] }}</div>

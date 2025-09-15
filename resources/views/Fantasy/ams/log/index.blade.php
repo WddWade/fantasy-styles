@@ -140,30 +140,71 @@
                             </div>
                             <div class="content-body">
                                 <div class="datatable">
-                                    <table class="log_table">
+                                    <table class="tables">
                                         <thead>
                                             <tr>
-                                                <th style="width:170px;">時間</th>
-                                                <th style="width:170px;">使用者</th>
-                                                <th>單元</th>
-                                                <th style="width:170px;">動作</th>
-                                                <th style="width:170px;">IP位址</th>
+                                                <th class="ams_account">
+                                                      <div class="fake-th ">
+                                                        <span>使用者</span>
+                                                    </div>
+                                                </th>
+                                                <th class="ams_log_action">
+                                                    <div class="fake-th ">
+                                                        <span>動作</span>
+                                                    </div>
+                                                </th>                                                
+                                                <th class="ams_log_unit">
+                                                    <div class="fake-th ">
+                                                        <span>單元</span>
+                                                    </div>
+                                                </th>
+
+                                                <th class="ams_log_ip">
+                                                    <div class="fake-th ">
+                                                        <span>IP位址</span>
+                                                    </div>
+                                                </th>
+                                                <th class="ams_log_date">
+                                                    <div class="fake-th ">
+                                                        <span>時間</span>
+                                                    </div>
+                                                </th>                                                
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @foreach ($data as $key => $row)
                                                 <tr class="edit_ams_wrapper" data-type="log" data-id="{{ $row['id'] }}" data-ym="{{ $ShowTime }}">
-                                                    <td>{{ $row['create_time'] }}</td>
-                                                    <td>{{ $row['user_name'] }}</td>
-                                                    <td>{{ $DB_Names[$row['table_name']] ?? $tables[$row['table_name']]->Comment ?? $row['table_name'] }}</td>
-                                                    <td>{{ $actions[$row['log_type']] }}</td>
-                                                    <td>{{ $row['ip'] }}</td>
+                                                    <td class="ams_account">
+                                                        <div class="tableMaintitle open_builder">
+                                                            <span class="title-name open_builder">{{ $row['user_name'] }}</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="ams_log_action">
+                                                        <div class="tableMaintitle open_builder">
+                                                            <span class="title-name open_builder">{{ $actions[$row['log_type']] }}</span>
+                                                        </div>
+                                                    </td>                                                    
+                                                    <td class="ams_log_unit">
+                                                        <div class="tableMaintitle open_builder">
+                                                            <span class="title-name open_builder"> {{ $DB_Names[$row['table_name']] ?? $tables[$row['table_name']]->Comment ?? $row['table_name'] }}</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="ams_log_ip">
+                                                        <div class="tableMaintitle open_builder">
+                                                            <span class="title-name open_builder">{{ $row['ip'] }}</span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="ams_log_date">
+                                                         <div class="tableMaintitle open_builder">
+                                                            <span class="title-name open_builder">{{ $row['create_time'] }}</span>
+                                                        </div>
+                                                    </td>                                                    
                                                 </tr>
                                             @endforeach
                                         </tbody>
                                     </table>
                                 </div>
-                            </div>
+                            </div>                            
                         </div>
                     </div>
                 </div>

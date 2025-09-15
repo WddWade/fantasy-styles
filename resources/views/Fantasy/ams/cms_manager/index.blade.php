@@ -74,7 +74,8 @@
                                     </div>
                                     <div class="content-nav">
                                         <div class="btn-item">
-                                            <a class="create_ams_wrapper" data-type="cms-manager" data-id="0" href="javascript:void(0)">                                       <span class="icon-add"></span>
+                                            <a class="create_ams_wrapper" data-type="cms-manager" data-id="0" href="javascript:void(0)">
+                                                <span class="icon-add"></span>
                                                 <span class="text">新增權限</span>
                                             </a>
                                         </div>
@@ -100,31 +101,26 @@
                                     <table class="tables">
                                         <thead>
                                             <tr>
-                                                <th class="w_TableMaintitle">
+                                                <th class="ams_status">
+                                                    <div class="fake-th ">
+                                                        <span class="" data-column="is_active">狀態</span>
+                                                    </div>
+                                                </th>                                                
+                                                <th class="ams_account">
                                                     <div class="fake-thead fake-thead-ams">
                                                         <div class="fake-th first">
                                                         </div>
                                                     </div>
                                                     <div class="fake-th ">
-                                                        <span class="" data-column="account">帳號名稱</span>
+                                                        <span class="" data-column="account">管理者</span>
                                                     </div>
                                                 </th>
-                                                <th class="w_Category w180">
+                                                <th class="ams_site">
                                                     <div class="fake-th ">
-                                                        <span class="" data-column="name">分站</span>
+                                                        <span class="" data-column="name">分站-語系</span>
                                                     </div>
                                                 </th>
-                                                <th class="w_Category w180">
-                                                    <div class="fake-th ">
-                                                        <span class="" data-column="name">語系</span>
-                                                    </div>
-                                                </th>
-                                                <th class="w_Preview">
-                                                    <div class="fake-th ">
-                                                        <span class="" data-column="is_active">狀態</span>
-                                                    </div>
-                                                </th>
-                                                <th class="w_Update">
+                                                <th class="ams_updated">
                                                     <div class="fake-th ">
                                                         <span class="" data-column="updated_at">最後異動時間</span>
                                                     </div>
@@ -134,7 +130,12 @@
                                         <tbody class="ams_tbody" data-type="cms-manager">
                                             @foreach ($data as $key => $row)
                                                 <tr>
-                                                    <td class="w_TableMaintitle edit_ams_wrapper" data-type="cms-manager"
+                                                    <td class="ams_status edit_ams_wrapper"
+                                                        data-type="cms-manager" data-id="{{ $row['id'] }}">
+                                                        <div class="tableContent">
+                                                            {{ $row['is_active'] == 1 ? '啟用' : '未啟用' }}</div>
+                                                    </td>                                                    
+                                                    <td class="ams_account edit_ams_wrapper" data-type="cms-manager"
                                                         data-id="{{ $row['id'] }}">
                                                         <div class="tableMaintitle open_builder">
                                                             <div class="title-img rwdhide">
@@ -147,30 +148,21 @@
                                                                 class="title-name open_builder">{{ $row['UsersData']['name'] }}</span>
                                                             @if (!empty($row['UsersData']['mail']))
                                                                 <div class="tool">
-                                                                    <a href="mailto:{{ $row['UsersData']['mail'] }}"><span
-                                                                            class="fa fa-envelope open_builder"></span></a>
+                                                                    <a href="mailto:{{ $row['UsersData']['mail'] }}">
+                                                                        <span class="fa fa-envelope open_builder"></span>
+                                                                    </a>
                                                                 </div>
                                                             @endif
                                                         </div>
                                                     </td>
-                                                    <td class=" w_Category edit_ams_wrapper" data-type="cms-manager"
+                                                    <td class=" ams_site edit_ams_wrapper" data-type="cms-manager"
                                                         data-id="{{ $row['id'] }}">
                                                         <div class="tableContent">
-                                                            {{ collect($branch_unit_options)->where('key', $row['branch_unit_id'])->first()['branch'] ?? '-' }}
+                                                            {{ collect($branch_unit_options)->where('key', $row['branch_unit_id'])->first()['branch'] ?? '-' }}-{{ collect($branch_unit_options)->where('key', $row['branch_unit_id'])->first()['locale'] ?? '-' }}
                                                         </div>
                                                     </td>
-                                                    <td class=" w_Category edit_ams_wrapper" data-type="cms-manager"
-                                                        data-id="{{ $row['id'] }}">
-                                                        <div class="tableContent">
-                                                            {{ collect($branch_unit_options)->where('key', $row['branch_unit_id'])->first()['locale'] ?? '-' }}
-                                                        </div>
-                                                    </td>
-                                                    <td class="w_Preview edit_ams_wrapper"
-                                                        data-type="cms-manager" data-id="{{ $row['id'] }}">
-                                                        <div class="tableContent">
-                                                            {{ $row['is_active'] == 1 ? '啟用' : '未啟用' }}</div>
-                                                    </td>
-                                                    <td class="w_Update open_builder" data-type="cms-manager"
+
+                                                    <td class="ams_updated open_builder" data-type="cms-manager"
                                                         data-id="{{ $row['id'] }}">
                                                         <div class="tableContent">{{ $row['updated_at'] }}</div>
                                                     </td>
@@ -225,7 +217,8 @@
                             return false;
                         }
                         $(".review-action").hide();
-                        $(".ajax_html").html(result[0].html);
+                        $(".change_dom").remove();
+                        $(".change_dom_top").before(result[0].html);
                         $(".unit_all").show();
 
                         $("input[type='hidden'][name='_lang']").val(result[0].locale);

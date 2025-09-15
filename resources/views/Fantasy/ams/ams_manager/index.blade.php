@@ -95,31 +95,31 @@
                                 <table class="tables">
                                     <thead>
                                         <tr>
-                                            <th class="w_TableMaintitle">
+                                            <th class="ams_status">
+                                                <div class="fake-th ">
+                                                    <span class="" data-column="is_active">狀態</span>
+                                                </div>
+                                            </th>                                            
+                                            <th class="ams_account">
                                                 <div class="fake-thead fake-thead-ams">
                                                     <div class="fake-th first">
                                                     </div>
                                                 </div>
                                                 <div class="fake-th ">
-                                                    <span class="" data-column="account">帳號名稱</span>
+                                                    <span class="" data-column="account">帳號</span>
                                                 </div>
                                             </th>
-                                            <th class="w_Category">
+                                            <th class="ams_permission_level">
                                                 <div class="fake-th ">
                                                     <span class="" data-column="name">權限等級</span>
                                                 </div>
                                             </th>
-                                            <th class="">
+                                            <th class="ams_permission">
                                                 <div class="fake-th ">
-                                                    <span class="" data-column="mail">AMS管理權限</span>
+                                                    <span class="" data-column="mail">管理項目</span>
                                                 </div>
                                             </th>
-                                            <th class="text-center w_Preview">
-                                                <div class="fake-th ">
-                                                    <span class="" data-column="is_active">狀態</span>
-                                                </div>
-                                            </th>
-                                            <th class="w_Update">
+                                            <th class="ams_updated">
                                                 <div class="fake-th ">
                                                     <span class="" data-column="updated_at">最後異動時間</span>
                                                 </div>
@@ -129,7 +129,10 @@
                                     <tbody class="ams_tbody" data-type="ams-manager">
                                         @foreach($data as $key => $row)
                                         <tr>
-                                            <td class="w_Category edit_ams_wrapper" data-type="ams-manager" data-id="{{ $row['id'] }}">
+                                            <td class="ams_status w_Preview edit_ams_wrapper" data-type="ams-manager" data-id="{{ $row['id'] }}">
+                                                <div class="tableContent">{{ ($row['is_active'] == 1) ? '啟用' : '未啟用' }}</div>
+                                            </td>                                            
+                                            <td class="ams_account edit_ams_wrapper" data-type="ams-manager" data-id="{{ $row['id'] }}">
                                                 <div class="tableMaintitle">
                                                     <div class="title-img rwdhide">
                                                         @if(!empty($row['UsersData']['_photo_image']))
@@ -144,20 +147,17 @@
                                                     @endif
                                                 </div>
                                             </td>
-                                            <td class=" w_Category edit_ams_wrapper" data-type="ams-manager" data-id="{{ $row['id'] }}">
+                                            <td class="ams_permission_level edit_ams_wrapper" data-type="ams-manager" data-id="{{ $row['id'] }}">
                                                 <div class="tableContent">
                                                     {{ $row['role_identity'] ?: '-'}}
                                                 </div>
                                             </td>
-                                            <td class=" edit_ams_wrapper" data-type="ams-manager" data-id="{{ $row['id'] }}">
+                                            <td class="ams_permission edit_ams_wrapper" data-type="ams-manager" data-id="{{ $row['id'] }}">
                                                 <div class="tableContent">
                                                     {{ $row['role_group'] ?: '-'}}
                                                 </div>
                                             </td>
-                                            <td class="text-center w_Preview edit_ams_wrapper" data-type="ams-manager" data-id="{{ $row['id'] }}">
-                                                <div class="tableContent">{{ ($row['is_active'] == 1) ? '啟用' : '未啟用' }}</div>
-                                            </td>
-                                            <td class="w_Update " data-type="ams-manager" data-id="{{ $row['id'] }}">
+                                            <td class="ams_updated " data-type="ams-manager" data-id="{{ $row['id'] }}">
                                                 <div class="tableContent">{{ $row['updated_at'] }}</div>
                                             </td>
                                         </tr>
