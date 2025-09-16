@@ -69,7 +69,7 @@ function selectAjaxSearch(_this, options_model, main_model, foreign_key, keyword
     }).done(function (response) {
         _this.find('.options_item').empty();
         if (response.count == 0) {
-            _this.find('.options_item').append(`<span>找不到相關資料</span>`);
+            _this.find('.options_item').append(`<span>No results found</span>`);
         } else {
             if (response.count > parseInt(_this.attr('data-max'))) {
                 if (keyword == "") {
@@ -208,6 +208,8 @@ $('body').on('paste', '.CheckDomain', function (e) {
     $(this).val(text);
 });
 var SearchLock = false;
+
+
 $('body').on('compositionstart', '.select2MultiNew_search input', function (event) {
     SearchLock = true;
     event.preventDefault();
@@ -238,6 +240,41 @@ $('body').on('keydown', '.select2MultiNew_search input', function (event) {
         selectSearch(_this.closest('.inner'), options_model, main_model, foreign_key, keyword, two_level);
     }
 });
+
+$('body').on('click', function (e) {
+    if (!$(e.target).closest('.____select2MultiNew').length) {
+        $('.____select2MultiNew').removeClass('active'); // 隱藏所有選單
+    }
+});
+
+//select2MultiNew_search
+//wade:20250916
+$('body').on('click', '.____select2MultiNew .select2MultiNew', function () {
+    const $this = $(this).parents('.____select2MultiNew')
+    const isActive = $this.has('.active')
+
+    if (isActive) return $this.toggleClass('active')
+
+
+
+    $this.toggleClass('active')
+
+    // if (!isActive) {
+    //     $('body').on('click', function (e) {
+    //         if (!$(e.target).closest('.select2MultiNew').length) {
+    //             $('.leon-select').removeClass('active'); // 隱藏所有選單
+    //         }
+    //     });
+    // }
+
+
+    // $('body').on('click', function (e) {
+    //     if (!$(e.target).closest('.leon-select').length) {
+    //         $('.leon-select').removeClass('active'); // 隱藏所有選單
+    //     }
+    // });
+
+})
 $('body').on('click', '.select2MultiNew_search a', function () {
     let _this = $(this);
     let options_model = _this.closest('.select2MultiNew_search').attr('data-options_model');
@@ -254,7 +291,7 @@ $('body').on('click', '.select2MultiNew_all', function () {
         return $(el).attr('data-id');
     }));
     let _valuehtml = _this.closest('.inventory').find('.select2MultiNew_option span').get().map(function (el) {
-        return '<span data-id="' + $(el).attr('data-id') + '" draggable="true"><a class="fa fa-remove"></a>' + $(el).data('text') + '</span>';
+        return '<span data-id="' + $(el).attr('data-id') + '" draggable="true"><a class="remove_selected">x</a>' + $(el).data('text') + '</span>';
     }).join("");
     _this.closest('.inventory').find('.normal_input').val(_value);
     _this.closest('.inventory').find('.select2MultiNew_option span').addClass('active');
@@ -266,6 +303,7 @@ $('body').on('click', '.select2MultiNew_unall', function () {
     _this.closest('.inventory').find('.select2MultiNew_option span').removeClass('active');
     _this.closest('.inventory').find('.select2MultiNew').html('');
 });
+
 function selectSearchData(_this, two_level, response) {
     let selectItem = _this.closest('.inner').find('.select2MultiNew').find('span').get().map(function (el) {
         return parseInt($(el).attr('data-id'));
@@ -306,7 +344,7 @@ function selectSearch(_this, options_model, main_model, foreign_key, keyword, tw
         cache: false,
     }).done(function (response) {
         if (response.count == 0) {
-            _this.find('.select2MultiNewtip').html(`找不到相關資料`).addClass('active');
+            _this.find('.select2MultiNewtip').html(`No results found`).addClass('active');
         } else {
             let maxCount = parseInt(_this.find('.select2MultiNew_search').attr('data-max'));
             if (two_level) {
@@ -338,6 +376,7 @@ $('body').on('click', '.select2MultiNew a', function (e) {
     }));
     _inventory.find('.normal_input').val(_value);
 });
+
 $('body').on('click', '.select2MultiNew_option a', function (e) {
     let _this = $(this);
     let _relation = _this.closest('.select2MultiNew_option_relation');
@@ -346,13 +385,14 @@ $('body').on('click', '.select2MultiNew_option a', function (e) {
     _relation.find('span[data-key="' + _this.data('key') + '"]').show();
     _this.addClass('active');
 });
+
 $('body').on('click', '.select2MultiNew_option span', function (e) {
     let _this = $(this);
     let _inner = _this.closest('.inner');
     _this.toggleClass('active');
 
     if (_this.hasClass('active')) {
-        _inner.find('.select2MultiNew').append('<span data-id="' + _this.attr('data-id') + '" draggable="true"><a class="fa fa-remove"></a>' + _this.data('text') + '</span>');
+        _inner.find('.select2MultiNew').append('<span data-id="' + _this.attr('data-id') + '" draggable="true"><a class="remove_selected">x</a>' + _this.data('text') + '</span>');
         _inner.find('.select2MultiNew_option span[data-id="' + _this.attr('data-id') + '"]').addClass('active');
     } else {
         _inner.find('.select2MultiNew span[data-id="' + _this.attr('data-id') + '"]').remove();
@@ -363,6 +403,9 @@ $('body').on('click', '.select2MultiNew_option span', function (e) {
     }));
     _this.closest('.inventory').find('.normal_input').val(_value);
 });
+
+//end select2MultiNew_search
+
 $('body').on('click', '.radio_action_fuc', function () {
     let _this = $(this);
     let _key = _this.closest('.tabulation_head').attr('data-table');

@@ -1378,7 +1378,7 @@
                                             'height' => '370',
                                         ],
                                     ],
-                                    'tip' => '<br>圖片解析度限制:72DPI，檔案格式限定:JPG、PNG、GIF。',
+                                    'tip' => '圖片解析度限制:72DPI，檔案格式限定:JPG、PNG、GIF。',
                                 ]) }}
                                 {{ UnitMaker::textArea([
                                     'name' => $model . '[textArea]',
@@ -1512,7 +1512,7 @@
                                 {{ UnitMaker::radio_btn([
                                     'name' => $model . '[radio_btn]',
                                     'title' => 'radio_btn',
-                                    'tip' => '',
+                                    'tip' => '這是按鈕開關',
                                     'value' => !empty($data['radio_btn']) ? $data['radio_btn'] : '',
                                     'disabled' => '',
                                     'class' => '',
@@ -1576,7 +1576,7 @@
                                             'height' => '370',
                                         ],
                                     ],
-                                    'tip' => '<br>圖片解析度限制:72DPI，檔案格式限定:JPG、PNG、GIF。',
+                                    'tip' => '圖片解析度限制:72DPI，檔案格式限定:JPG、PNG、GIF。',
                                 ]) }}
                                 {{ UnitMaker::colorPicker([
                                     'name' => $model . '[colorPicker]',
@@ -1868,7 +1868,7 @@
                                                             'height' => '370',
                                                         ],
                                                     ],
-                                                    'tip' => '<br>圖片解析度限制:72DPI，檔案格式限定:JPG、PNG、GIF。',
+                                                    'tip' => '圖片解析度限制:72DPI，檔案格式限定:JPG、PNG、GIF。',
                                                 ],
                                                 [
                                                     'type' => 'colorPicker',
@@ -2089,7 +2089,7 @@
                                                                 'height' => '370',
                                                             ],
                                                         ],
-                                                        'tip' => '<br>圖片解析度限制:72DPI，檔案格式限定:JPG、PNG、GIF。',
+                                                        'tip' => '圖片解析度限制:72DPI，檔案格式限定:JPG、PNG、GIF。',
                                                     ],
                                                     [
                                                         'type' => 'colorPicker',

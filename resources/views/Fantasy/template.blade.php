@@ -378,20 +378,24 @@
         });
     }
     //全選事件
+    //wade:20250916
     $(document).on('click', '.__multiple2all', function() {
-        var all = $(this).closest('div').find('select option').map(function(val, index) {
+
+        const $select=$(this).parents('.select2_multiple').find('select');
+
+        var all = $select.find('option').map(function(val, index) {
             return $(index).val();
         }).get();
 
-        var select = $(this).closest('div').find('select');
-
-        select.val(all);
-        select.trigger('change');
+        $select.val(all);
+        $select.trigger('change');
     })
+
     $(document).on('click', '.__multiple2all_close', function() {
-        var select = $(this).closest('div').find('select');
-        select.val('');
-        select.trigger('change');
+        const $select=$(this).parents('.select2_multiple').find('select');
+
+        $select.val('');
+        $select.trigger('change');
     });
 </script>
 

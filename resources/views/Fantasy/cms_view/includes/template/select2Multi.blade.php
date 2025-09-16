@@ -19,15 +19,18 @@
     </div>
     {!! $sontable ? '' : '</div>' !!}
     <div class="inner">
-        @if($isAll)
-            <a class="__multiple2all" href="javascript:void(0)" style="padding: 6px 8px;margin-bottom: 10px;display: inline-flex;align-items:center;background-color: #434343;color: #fff;">
-                <span class="icon-check" style="margin-right: 6px;"></span>
-                <span>全選</span>
+        <div class="select2_multiple">
+            @if($isAll)
+           <div class="select2_controllers">
+             <a class="__multiple2all" href="javascript:void(0)">
+                <span class="icon-check"></span>
+                <span>All</span>
             </a>
-            <a class="__multiple2all_close" href="javascript:void(0)" style="padding: 6px 8px;margin-bottom: 10px;display: inline-flex;align-items:center;background-color: #434343;color: #fff;">
-                <span class="fa fa-remove" style="margin-right: 6px;"></span>
-                <span>全不選</span>
+            <a class="__multiple2all_close" href="javascript:void(0)">
+                <span class="fa fa-remove"></span>
+                <span>Clear</span>
             </a>
+           </div>
         @endif
 
         <select class="____select2 {{ isset($auto) ? $auto : '' }} __leonselect2multiple" name="{{ $disabled ? '' : $name . '[]' }}" data-original="{{ $original }}" data-autosetup="{{ isset($autosetup) ? $autosetup : '' }}" @if (!empty($set['verify']) && !$disabled) data-verify="{{ json_encode($set['verify']) }}" @endif multiple="multiple" {{ $disabled ? 'disabled' : '' }}>
@@ -50,6 +53,7 @@
             </optgroup>
             @endif
         </select>
+        </div>
 
         @if(!empty($tip))
             <div class="tips">

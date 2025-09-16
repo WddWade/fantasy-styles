@@ -145,7 +145,7 @@
                                             'height' => '370',
                                         ]
                                     ],
-                                    'tip' => '<br>圖片解析度限制:72DPI，檔案格式限定:JPG、PNG、GIF。',
+                                    'tip' => '圖片解析度限制:72DPI，檔案格式限定:JPG、PNG、GIF。',
                                 ]) }}
 								{{ UnitMaker::colorPicker([
 									'name' => $model . '[colorPicker]',
@@ -326,7 +326,7 @@
                                                             'height' => '370',
                                                         ]
                                                     ],
-                                                    'tip' => '<br>圖片解析度限制:72DPI，檔案格式限定:JPG、PNG、GIF。',
+                                                    'tip' => '圖片解析度限制:72DPI，檔案格式限定:JPG、PNG、GIF。',
                                                 ],
                                                 [
                                                     'type' => 'colorPicker',
@@ -488,7 +488,7 @@
                                                             'height' => '370',
                                                         ]
                                                     ],
-                                                    'tip' => '<br>圖片解析度限制:72DPI，檔案格式限定:JPG、PNG、GIF。',
+                                                    'tip' => '圖片解析度限制:72DPI，檔案格式限定:JPG、PNG、GIF。',
                                                 ],
                                                 [
                                                     'type' => 'colorPicker',

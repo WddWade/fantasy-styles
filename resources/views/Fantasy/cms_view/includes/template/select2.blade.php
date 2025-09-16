@@ -29,6 +29,13 @@
             >
                 <input class="__value" type="hidden" name="{{ $disabled ? '' : $name }}" value="{{$value}}">
                 <div class="selected">{{ collect($selectValues)->first()['title'] ?? '請選擇選項'}}</div>
+                <span class="selected_arrow"></span>
+                <div class="leon_select2_controllers">
+                    <a class="__multiple2all_close" href="javascript:void(0)">
+                        <span class="fa fa-remove"></span>
+                        <span>Clear</span>
+                    </a>
+                </div>
                 <div class="options">
                     <div class="leon-select-bar">
                         <span class="icon-search"></span>

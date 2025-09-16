@@ -55,6 +55,10 @@
   border: solid 1px transparent;
   background-color: #f5f5f5;
 
+  & + .normal_input {
+    margin-top: 10px;
+  }
+
   &::placeholder {
     color: #9e9e9e;
   }
@@ -428,6 +432,20 @@ textarea,
   }
 }
 
+.select2_multiple {
+  position: relative;
+  .select2_controllers {
+    position: absolute;
+    z-index: 1;
+    top: 18px;
+    right: 35px;
+    display: flex;
+    gap: 0 15px;
+    text-transform: uppercase;
+    font-size: 1rem;
+  }
+}
+
 .____select2 {
   &.select2-hidden-accessible {
     border: 0 !important;
@@ -460,8 +478,23 @@ textarea,
         padding: 4px 10px !important;
         display: flex;
         gap: 10px;
+        position: relative;
 
         transition: border 0.2s linear 0s !important;
+
+        &::before {
+          content: "\f105";
+          font-size: 1rem;
+          font-family: FontAwesome;
+          text-shadow: none;
+          margin: 0;
+          display: block;
+          position: absolute;
+          top: 17px;
+          right: 15px;
+          transition: 0.12s ease;
+          transform-origin: center;
+        }
 
         &.select2-selection--single {
           height: 42px;
@@ -471,7 +504,7 @@ textarea,
           box-sizing: border-box;
           cursor: pointer;
           display: block;
-          padding: 4px 10px !important;
+          padding: 4px 150px 4px 10px !important;
           min-height: 42px;
 
           user-select: none;
@@ -599,6 +632,10 @@ textarea,
         .select2-selection {
           border: 1px solid #5e00ff !important;
           transition: border 0.2s linear 0s !important;
+          &::before {
+            transform: rotate(90deg);
+            color: #5e00ff;
+          }
 
           &.select2-selection--single {
             background-color: #fff !important;

@@ -66,7 +66,7 @@
     {{-- <!--阻擋視窗 想要阻擋視窗出現 就在 block_out 後面再加ㄧ個 show--> --}}
     <div class="block_out show" style="display: none">
         <div class="box">
-            <div class="progress-circle-indeterminate"></div>
+            <div class="pace-activity"></div>
         </div>
     </div>
 </body>

@@ -347,72 +347,61 @@ body.isContent .backEnd_quill {
   select2MultiNew 好像是套件，考慮更換到 plugin 資料夾
   檔案編輯 多選選項 顯示最新 100 筆
 */
-/* 全選按鈕 */
-.select2MultiNew_all {
-  margin: 2px;
-  padding: 8px 12px;
+.____select2MultiNew {
+  position: relative;
+}
+.____select2MultiNew .select2_controllers {
+  position: absolute;
+  z-index: 1;
+  top: 18px;
+  right: 35px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  cursor: pointer;
-  -webkit-transition: all 0.25s ease;
-  transition: all 0.25s ease;
-  color: #000000;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  gap: 0 15px;
+  text-transform: uppercase;
+  font-size: 1rem;
+  /* 全選按鈕 */
 }
-.select2MultiNew_all::before {
-  content: " ";
-  width: 6px;
-  height: 10px;
-  border-right: 2px solid #11cfbd;
-  border-bottom: 2px solid #11cfbd;
-  -webkit-transform: rotate(40deg);
-          transform: rotate(40deg);
-  margin-right: 10px;
+.____select2MultiNew .select2MultiNew_dropdown {
+  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+  border: none;
+  padding: 0 0 15px 0;
+  border-radius: 3px;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  max-height: 450px;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #fff;
+  z-index: 1;
 }
-
-/* 清除全選按鈕 */
-.select2MultiNew_unall {
-  margin: 2px;
-  padding: 8px 12px;
+.____select2MultiNew.active .select2MultiNew_dropdown {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  cursor: pointer;
-  -webkit-transition: all 0.25s ease;
-  transition: all 0.25s ease;
-  color: #000000;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
 }
-.select2MultiNew_unall::before {
-  content: "X";
-  color: #7f7f7f;
-  font-weight: 600;
-  margin-right: 5px;
+.____select2MultiNew.active .select2MultiNew {
+  border: solid 1px #5e00ff;
+}
+.____select2MultiNew.active .select2MultiNew::after {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  color: #5e00ff;
 }
 
 .select2MultiNew {
   width: 100%;
   min-height: 42px;
-  border-radius: 0;
-  border: solid 1px #c7c7c7;
-  background-color: #efefef;
+  padding: 4px 150px 4px 10px !important;
+  border-radius: 3px;
+  border: solid 1px transparent;
+  background-color: #f5f5f5;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -423,42 +412,81 @@ body.isContent .backEnd_quill {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 5px;
-  padding: 5px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  gap: 5px;
+  position: relative;
+  cursor: pointer;
+}
+.select2MultiNew:has(span)::before {
+  content: none;
+}
+.select2MultiNew:hover {
+  border: solid 1px #5e00ff;
+}
+.select2MultiNew::before {
+  content: "Please Select Option";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  color: #757575;
+}
+.select2MultiNew::after {
+  content: "\f105";
+  font-size: 1rem;
+  font-family: FontAwesome;
+  text-shadow: none;
+  margin: 0;
+  display: block;
+  position: absolute;
+  top: 17px;
+  right: 15px;
+  -webkit-transition: 0.12s ease;
+  transition: 0.12s ease;
+  -webkit-transform-origin: center;
+          transform-origin: center;
 }
 .select2MultiNew span {
-  color: #fff;
-  background-color: #10cfbd;
-  padding: 7px 10px;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  color: #000000;
+  line-height: 1;
+  background-color: #ffffff;
+  background-image: none;
+  border: 2px solid transparent;
+  border-radius: 3px;
+  width: auto;
+  padding: 7px 11px;
+  margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: relative;
-  padding-left: 28px;
-  cursor: move;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  gap: 0 5px;
+  -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  cursor: -webkit-grab;
+  cursor: grab;
 }
-.select2MultiNew span a {
-  height: 28px;
-  position: absolute;
-  width: 28px;
-  left: 0;
-  top: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.select2MultiNew span:hover {
+  color: #000;
+  border: 2px solid #5e00ff;
+}
+.select2MultiNew span:hover .remove_selected {
+  color: #000;
+}
+.select2MultiNew span .remove_selected {
+  color: #888888;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-top: 2px;
   cursor: pointer;
+  display: inline-block;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .select2MultiNew_option {
@@ -472,7 +500,6 @@ body.isContent .backEnd_quill {
   min-height: 150px;
   max-height: 350px;
   overflow: auto;
-  border: 1px solid #c7c7c7;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -501,7 +528,7 @@ body.isContent .backEnd_quill {
           user-select: none;
 }
 .select2MultiNew_option span.active {
-  background: #ffd683;
+  background: #5e00ff;
   margin: 2px;
   padding: 8px 12px;
   display: -webkit-box;
@@ -512,7 +539,7 @@ body.isContent .backEnd_quill {
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
   border: 1px solid #ffffff;
-  color: #000000;
+  color: #fff;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -520,8 +547,8 @@ body.isContent .backEnd_quill {
   content: " ";
   width: 6px;
   height: 10px;
-  border-right: 2px solid #000000;
-  border-bottom: 2px solid #000000;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
   -webkit-transform: rotate(40deg);
           transform: rotate(40deg);
   margin-right: 10px;
@@ -537,6 +564,7 @@ body.isContent .backEnd_quill {
   margin-right: 10px;
 }
 .select2MultiNew_option a {
+  font-size: 1rem;
   background: #ffffff;
   margin: 2px;
   padding: 8px 12px;
@@ -626,9 +654,7 @@ body.isContent .backEnd_quill {
       -ms-flex-align: center;
           align-items: center;
   background-color: #f5f5f5;
-  border: 1px solid #c7c7c7;
   border-bottom: 0;
-  padding: 5px;
 }
 .select2MultiNew_search div {
   -webkit-box-flex: 1;
@@ -641,13 +667,6 @@ body.isContent .backEnd_quill {
       -ms-flex-align: center;
           align-items: center;
   padding-left: 10px;
-}
-.select2MultiNew_search div::before {
-  content: " ";
-  width: 5px;
-  height: 20px;
-  padding-right: 20px;
-  border-left: 2px solid #11cfbd;
 }
 .select2MultiNew_search input {
   -webkit-box-flex: 1;
@@ -664,13 +683,12 @@ body.isContent .backEnd_quill {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-weight: 600;
-  padding: 0px 10px;
+  padding: 8px 15px;
   border: 0;
   background-color: transparent;
 }
 .select2MultiNew_search a {
-  width: 120px;
+  width: 80px;
   height: 40px;
   background-color: #434343;
   color: #fff !important;
@@ -678,13 +696,15 @@ body.isContent .backEnd_quill {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   font-weight: 600;
   cursor: pointer;
+  font-size: 1rem;
+  text-transform: uppercase;
 }
 
 .select2MultiNewtip {
@@ -2391,7 +2411,7 @@ body.isContent .backEnd_quill {
   color: #000;
   width: 100%;
   min-height: 42px;
-  padding: 4px 12px;
+  padding: 4px 100px 4px 15px;
   border-radius: 3px;
   border: solid 1px transparent;
   background-color: #f5f5f5;
@@ -2414,6 +2434,7 @@ body.isContent .backEnd_quill {
   border: solid 1px #5e00ff;
 }
 .leon-select .options {
+  max-height: 450px;
   display: none;
   border-radius: 3px;
   position: absolute;
@@ -2421,12 +2442,11 @@ body.isContent .backEnd_quill {
   left: 0;
   right: 0;
   background: white;
-  z-index: 1;
+  z-index: 2;
   -webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.2);
 }
 .leon-select .options .options_item {
-  height: 200px;
   overflow: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2437,20 +2457,47 @@ body.isContent .backEnd_quill {
           flex-direction: column;
 }
 .leon-select .options .options_item div {
-  padding: 10px;
+  padding: 10px 20px;
   cursor: pointer;
 }
 .leon-select .options .options_item div:hover {
-  background: #11cfbd;
+  color: #fff;
+  background: #000000;
 }
 .leon-select .options .options_item span {
-  padding: 20px 10px;
-  background-color: #fff0c0;
-  font-weight: 600;
-  text-align: center;
+  padding: 20px 20px;
+  color: #626262;
+}
+.leon-select .selected_arrow::before {
+  content: "\f105";
+  font-size: 1rem;
+  font-family: FontAwesome;
+  text-shadow: none;
+  margin: 0;
+  display: block;
+  position: absolute;
+  top: 17px;
+  right: 15px;
+  -webkit-transition: 0.12s ease;
+  transition: 0.12s ease;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+.leon-select .leon_select2_controllers {
+  position: absolute;
+  right: 35px;
+  top: 18px;
+  z-index: 1;
+  font-size: 1rem;
+  text-transform: uppercase;
 }
 .leon-select.active .options {
   display: block;
+}
+.leon-select.active .selected_arrow::before {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  color: #5e00ff;
 }
 .leon-select .search-box {
   padding: 10px;
@@ -2459,6 +2506,7 @@ body.isContent .backEnd_quill {
   border-bottom: 1px solid #ccc;
 }
 .leon-select .leon-select-bar {
+  max-height: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2466,20 +2514,20 @@ body.isContent .backEnd_quill {
       -ms-flex-align: center;
           align-items: center;
   background-color: #f5f5f5;
-  padding: 5px;
-  gap: 10px;
+}
+.leon-select .leon-select-bar .icon-search {
+  margin-left: 20px;
 }
 .leon-select .leon-select-bar input {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  font-weight: 600;
-  padding: 0px 10px;
+  padding: 8px 15px;
   border: 0;
   background-color: transparent;
 }
 .leon-select .leon-select-bar a {
-  width: 120px;
+  width: 80px;
   height: 40px;
   background-color: #434343;
   color: #fff !important;
@@ -2494,6 +2542,8 @@ body.isContent .backEnd_quill {
           align-items: center;
   font-weight: 600;
   cursor: pointer;
+  font-size: 1rem;
+  text-transform: uppercase;
 }
 
 /*
@@ -2797,29 +2847,26 @@ body.isContent .backEnd_quill {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-transition: opacity 0.5s ease;
   transition: opacity 0.5s ease;
 }
 .block_out .box {
   width: 35%;
   height: 40%;
-  background-color: rgba(0, 0, 0, 0.6);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-transition: all 0.8s ease 0s;
-  transition: all 0.8s ease 0s;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .block_out .progress-circle-indeterminate {
   width: 100px;
@@ -2830,10 +2877,45 @@ body.isContent .backEnd_quill {
   visibility: visible;
   opacity: 1;
 }
-.block_out.show .box {
-  background-color: white;
+.block_out.show .pace-activity {
+  width: 50px;
+  height: 50px;
+  border: solid 8px transparent;
+  border-top-color: #5e00ff;
+  border-left-color: #5e00ff;
+  border-radius: 50px;
+  background-size: 100% auto;
+  margin: 0 auto;
+  display: block;
+  -webkit-animation: pace-spinner 400ms linear infinite;
+          animation: pace-spinner 400ms linear infinite;
 }
 
+@-webkit-keyframes pace-spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pace-spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
 /* 左側 Slide */
 .mainNav {
   width: 250px;
@@ -5647,12 +5729,6 @@ body.isContent .backEnd_quill {
   display: none;
 }
 
-.url_target {
-  position: relative;
-}
-.url_target input {
-  width: calc(100% - 165px);
-}
 .url_target .checkbox_area {
   position: absolute;
   top: 0;
@@ -7882,6 +7958,26 @@ body.isContent .backEnd_quill {
 .hiddenArea .detailEditor .inventory > .inner:has(> .radio_btn_switch) .tips {
   margin-top: 2px;
 }
+.hiddenArea .detailEditor .inventory .input_with_switch {
+  position: relative;
+}
+.hiddenArea .detailEditor .inventory .input_with_switch .switch_with_tips {
+  margin-top: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 0 20px;
+}
+.hiddenArea .detailEditor .inventory .input_with_switch .switch_with_tips .tips {
+  margin-top: 0;
+}
 .hiddenArea .detailEditor .inventory .no_selfie img {
   display: none;
 }
@@ -8520,7 +8616,7 @@ body.isContent .backEnd_quill {
   display: -ms-flexbox;
   display: flex;
   position: sticky;
-  top: 977px;
+  top: 97px;
   z-index: 1;
   background-color: #000;
 }
@@ -11848,6 +11944,10 @@ body.isContent .backEnd_quill {
   border: solid 1px transparent;
   background-color: #f5f5f5;
 }
+.normal_input + .normal_input,
+.____input input + .normal_input {
+  margin-top: 10px;
+}
 .normal_input::-webkit-input-placeholder, .____input input::-webkit-input-placeholder {
   color: #9e9e9e;
 }
@@ -12252,6 +12352,22 @@ textarea:focus::-webkit-input-placeholder,
   visibility: visible;
 }
 
+.select2_multiple {
+  position: relative;
+}
+.select2_multiple .select2_controllers {
+  position: absolute;
+  z-index: 1;
+  top: 18px;
+  right: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0 15px;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
 .____select2.select2-hidden-accessible {
   border: 0 !important;
   clip: rect(0 0 0 0) !important;
@@ -12282,8 +12398,24 @@ textarea:focus::-webkit-input-placeholder,
   display: -ms-flexbox;
   display: flex;
   gap: 10px;
+  position: relative;
   -webkit-transition: border 0.2s linear 0s !important;
   transition: border 0.2s linear 0s !important;
+}
+.____select2 + .select2 .selection .select2-selection::before {
+  content: "\f105";
+  font-size: 1rem;
+  font-family: FontAwesome;
+  text-shadow: none;
+  margin: 0;
+  display: block;
+  position: absolute;
+  top: 17px;
+  right: 15px;
+  -webkit-transition: 0.12s ease;
+  transition: 0.12s ease;
+  -webkit-transform-origin: center;
+          transform-origin: center;
 }
 .____select2 + .select2 .selection .select2-selection.select2-selection--single {
   height: 42px;
@@ -12293,7 +12425,7 @@ textarea:focus::-webkit-input-placeholder,
           box-sizing: border-box;
   cursor: pointer;
   display: block;
-  padding: 4px 10px !important;
+  padding: 4px 150px 4px 10px !important;
   min-height: 42px;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -12411,6 +12543,11 @@ textarea:focus::-webkit-input-placeholder,
   border: 1px solid #5e00ff !important;
   -webkit-transition: border 0.2s linear 0s !important;
   transition: border 0.2s linear 0s !important;
+}
+.____select2 + .select2.select2-container--open .selection .select2-selection::before {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  color: #5e00ff;
 }
 .____select2 + .select2.select2-container--open .selection .select2-selection.select2-selection--single {
   background-color: #fff !important;

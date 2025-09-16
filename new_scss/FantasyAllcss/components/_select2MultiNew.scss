@@ -4,82 +4,149 @@
   檔案編輯 多選選項 顯示最新 100 筆
 */
 
-/* 全選按鈕 */
-.select2MultiNew_all {
-  margin: 2px;
-  padding: 8px 12px;
-  display: flex;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  color: #000000;
-  box-sizing: border-box;
-  align-items: center;
-  user-select: none;
+.____select2MultiNew {
+  position: relative;
+  .select2_controllers {
+    position: absolute;
+    z-index: 1;
+    top: 18px;
+    right: 35px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 0 15px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    /* 全選按鈕 */
+    // .select2MultiNew_all {
+    //   margin: 2px;
+    //   padding: 8px 12px;
+    //   display: flex;
+    //   cursor: pointer;
+    //   transition: all 0.25s ease;
+    //   color: #000000;
+    //   box-sizing: border-box;
+    //   align-items: center;
+    //   user-select: none;
+    // }
 
-  &::before {
-    content: " ";
-    width: 6px;
-    height: 10px;
-    border-right: 2px solid #11cfbd;
-    border-bottom: 2px solid #11cfbd;
-    transform: rotate(40deg);
-    margin-right: 10px;
+    // /* 清除全選按鈕 */
+    // .select2MultiNew_unall {
+    //   margin: 2px;
+    //   padding: 8px 12px;
+    //   display: flex;
+    //   cursor: pointer;
+    //   transition: all 0.25s ease;
+    //   color: #000000;
+    //   box-sizing: border-box;
+    //   align-items: center;
+    //   user-select: none;
+    // }
   }
-}
-
-/* 清除全選按鈕 */
-.select2MultiNew_unall {
-  margin: 2px;
-  padding: 8px 12px;
-  display: flex;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  color: #000000;
-  box-sizing: border-box;
-  align-items: center;
-  user-select: none;
-
-  &::before {
-    content: "X";
-    color: #7f7f7f;
-    font-weight: 600;
-    margin-right: 5px;
+  .select2MultiNew_dropdown {
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+    border: none;
+    padding: 0 0 15px 0;
+    border-radius: 3px;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    max-height: 450px;
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    z-index: 1;
+  }
+  &.active {
+    .select2MultiNew_dropdown {
+      display: flex;
+    }
+    .select2MultiNew {
+      border: solid 1px #5e00ff;
+      &::after {
+        transform: rotate(90deg);
+        color: #5e00ff;
+      }
+    }
   }
 }
 
 .select2MultiNew {
   width: 100%;
   min-height: 42px;
-  border-radius: 0;
-  border: solid 1px #c7c7c7;
-  background-color: #efefef;
+  padding: 4px 150px 4px 10px !important;
+  border-radius: 3px;
+  border: solid 1px transparent;
+  background-color: #f5f5f5;
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 5px;
-  padding: 5px;
   flex-wrap: wrap;
+  gap: 5px;
+  position: relative;
+  cursor: pointer;
+  &:has(span) {
+    &::before {
+      content: none;
+    }
+  }
+  &:hover {
+    border: solid 1px #5e00ff;
+  }
+  &::before {
+    content: "Please Select Option";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: #757575;
+  }
+  &::after {
+    content: "\f105";
+    font-size: 1rem;
+    font-family: FontAwesome;
+    text-shadow: none;
+    margin: 0;
+    display: block;
+    position: absolute;
+    top: 17px;
+    right: 15px;
+    transition: 0.12s ease;
+    transform-origin: center;
+  }
 
   span {
-    color: #fff;
-    background-color: #10cfbd;
-    padding: 7px 10px;
-    user-select: none;
+    color: #000000;
+    line-height: 1;
+    background-color: #ffffff;
+    background-image: none;
+    border: 2px solid transparent;
+    border-radius: 3px;
+    width: auto;
+    padding: 7px 11px;
+    margin: 0;
     display: flex;
-    position: relative;
-    padding-left: 28px;
-    cursor: move;
+    flex-direction: row-reverse;
+    gap: 0 5px;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
+    transition: 0.5s;
+    cursor: grab;
+    &:hover {
+      color: #000;
+      border: 2px solid #5e00ff;
+      .remove_selected {
+        color: #000;
+      }
+    }
 
-    a {
-      height: 28px;
-      position: absolute;
-      width: 28px;
-      left: 0;
-      top: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .remove_selected {
+      color: #888888;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-top: 2px;
       cursor: pointer;
+      display: inline-block;
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
     }
   }
 }
@@ -92,7 +159,6 @@
   min-height: 150px;
   max-height: 350px;
   overflow: auto;
-  border: 1px solid #c7c7c7;
   align-items: flex-start;
   border-top: 0px;
   user-select: none;
@@ -109,7 +175,7 @@
     user-select: none;
 
     &.active {
-      background: #ffd683;
+      background: #5e00ff;
       margin: 2px;
       padding: 8px 12px;
       display: flex;
@@ -117,15 +183,15 @@
       cursor: pointer;
       transition: all 0.25s ease;
       border: 1px solid #ffffff;
-      color: #000000;
+      color: #fff;
       box-sizing: border-box;
 
       &::before {
         content: " ";
         width: 6px;
         height: 10px;
-        border-right: 2px solid #000000;
-        border-bottom: 2px solid #000000;
+        border-right: 2px solid #fff;
+        border-bottom: 2px solid #fff;
         transform: rotate(40deg);
         margin-right: 10px;
       }
@@ -144,6 +210,7 @@
 
   /* 2025.06.20 Ash 同步 Leon 新增 */
   a {
+    font-size: 1rem;
     background: #ffffff;
     margin: 2px;
     padding: 8px 12px;
@@ -213,23 +280,12 @@
   display: flex;
   align-items: center;
   background-color: #f5f5f5;
-  border: 1px solid #c7c7c7;
   border-bottom: 0;
-  padding: 5px;
-
   div {
     flex: 1;
     display: flex;
     align-items: center;
     padding-left: 10px;
-
-    &::before {
-      content: " ";
-      width: 5px;
-      height: 20px;
-      padding-right: 20px;
-      border-left: 2px solid #11cfbd;
-    }
   }
 
   input {
@@ -239,22 +295,29 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 600;
-    padding: 0px 10px;
+    padding: 8px 15px;
     border: 0;
     background-color: transparent;
   }
 
   a {
-    width: 120px;
+    width: 80px;
     height: 40px;
     background-color: #434343;
     color: #fff !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     font-weight: 600;
     cursor: pointer;
+    font-size: 1rem;
+    text-transform: uppercase;
   }
 }
 

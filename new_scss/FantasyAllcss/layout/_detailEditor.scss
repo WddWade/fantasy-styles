@@ -625,6 +625,20 @@
         }
       }
 
+      .input_with_switch {
+        position: relative;
+        .switch_with_tips {
+          margin-top: 15px;
+          display: flex;
+          flex-direction: row-reverse;
+          justify-content: space-between;
+          gap: 0 20px;
+          .tips {
+            margin-top: 0;
+          }
+        }
+      }
+
       .no_selfie {
         img {
           display: none;
@@ -1326,7 +1340,7 @@
         width: 100%;
         display: flex;
         position: sticky;
-        top: 977px;
+        top: 97px;
         z-index: 1;
         background-color: #000;
         &.top {

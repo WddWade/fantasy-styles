@@ -1,14 +1,8 @@
 /* wdd 修改密碼燈箱 */
 
 .wddChangePWDMain {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
 
   .changePwd_sec {
@@ -18,8 +12,6 @@
     height: 600px;
     max-width: 650px;
     padding: 0 3%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -35,8 +27,6 @@
 
     .title {
       width: 100%;
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
       -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -49,7 +39,7 @@
       -ms-flex-direction: column;
       flex-direction: column;
       margin-bottom: 20px;
-      
+
       .fantasylogo {
         font-size: 2.8rem;
         font-weight: bold;
@@ -94,15 +84,8 @@
       border: solid 1px #7b7b7b;
       padding: 10px;
       margin-bottom: 10px;
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: row;
       flex-direction: row;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
       align-items: center;
       background-color: #ffffff;
 
@@ -132,8 +115,6 @@
     border-radius: 50px;
     background-color: #0275d8;
     letter-spacing: 1px;
-    -webkit-transition: 0.5s;
-    -o-transition: 0.5s;
     transition: 0.5s;
 
     &:hover {
@@ -153,4 +134,3 @@
     background-repeat: no-repeat;
   }
 }
-
