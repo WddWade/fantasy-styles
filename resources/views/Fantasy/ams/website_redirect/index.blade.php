@@ -114,7 +114,7 @@
                                                     <span class="" data-column="account">新網址</span>
                                                 </div>
                                             </th>
-                                            <th class="ams_new_address ">
+                                            <th class="ams_updated ">
                                                 <div class="fake-th ">
                                                     <span class="" data-column="updated_at">最後異動時間</span>
                                                 </div>
@@ -129,19 +129,20 @@
                                                     <span class="title-name open_builder">啟用</span>
                                                 </div>
                                             </td>
-                                            <td class="ams_type edit_ams_wrapper" data-type="autoredirect" data-id="{{ $row['id'] }}">
+                                            <td class="ams_type w_Preview edit_ams_wrapper" data-type="autoredirect" data-id="{{ $row['id'] }}">
+                                                <div class="tableContent">{{ ($row['active301'] == 1) ? '301' : '302' }}</div>
+                                            </td>        
+                                            <td class="ams_old_address  edit_ams_wrapper" data-type="autoredirect" data-id="{{ $row['id'] }}">
                                                 <div class="tableMaintitle open_builder">
                                                     <span class="title-name open_builder">{{ $row['old_url'] }}</span>
                                                 </div>
                                             </td>
-                                            <td class="ams_old_address edit_ams_wrapper" data-type="autoredirect" data-id="{{ $row['id'] }}">
+                                            <td class="ams_new_address edit_ams_wrapper" data-type="autoredirect" data-id="{{ $row['id'] }}">
                                                 <div class="tableMaintitle open_builder">
                                                     <span class="title-name open_builder">{{ $row['new_url'] }}</span>
                                                 </div>
                                             </td>
-                                            <td class="ams_new_address w_Preview edit_ams_wrapper" data-type="autoredirect" data-id="{{ $row['id'] }}">
-                                                <div class="tableContent">{{ ($row['active301'] == 1) ? '301' : '302' }}</div>
-                                            </td>                                              
+                                      
                                             <td class="ams_updated w_Preview edit_ams_wrapper" data-type="autoredirect" data-id="{{ $row['id'] }}">
                                                 <div class="tableContent">2025-09-04 14:06:54</div>
                                             </td>

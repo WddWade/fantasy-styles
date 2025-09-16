@@ -289,10 +289,11 @@
     .ams_account {
       width: 250px;
     }
-
+    .ams_site_language {
+      font-weight: 400;
+    }
     .ams_site_name {
-      width: 250px;
-      display: flex;
+      min-width: 150px;
     }
 
     .ams_permission .tableContent {

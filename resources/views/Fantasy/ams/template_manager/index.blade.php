@@ -110,9 +110,14 @@
                                                     <span class="" data-column="account">分站名稱</span>
                                                 </div>
                                             </th>
-                                                <th class="ams_site_address">
+                                            <th class="ams_site_language">
+                                                <div class="fake-th">
+                                                    <span class="" data-column="account">啟用語系</span>
+                                                </div>
+                                            </th>
+                                            <th class="ams_site_address">
                                                 <div class="fake-th ">
-                                                    <span class="" data-column="mail">分站網址</span>
+                                                    <span class="" data-column="mail">分站網址名稱</span>
                                                 </div>
                                             </th>
                                             <th class="ams_updated">
@@ -130,12 +135,14 @@
                                             </td>
                                             <td class="ams_site_name edit_ams_wrapper" data-type="template-manager" data-id="{{ $row['id'] }}">
                                                 <div class="tableContent">
-                                                    {{ $row['title'] ?: '-' }}
-                                                </div>
-                                                <div class="tableContent">
-                                                    / {{ $row['en_title'] ?: '-' }}
+                                                    {{ $row['title'] ?: '-' }} / {{ $row['en_title'] ?: '-' }}
                                                 </div>
                                             </td>
+                                            <th class="ams_site_language">
+                                                <div class="fake-th">
+                                                    <span class="" data-column="account">繁體中文 / 英文語系 / 簡體中文</span>
+                                                </div>
+                                            </th>
                                             <td class="ams_site_address edit_ams_wrapper" data-type="template-manager" data-id="{{ $row['id'] }}">
                                                 <div class="tableContent">
                                                     {{ $row['url_title'] ?: '-' }}

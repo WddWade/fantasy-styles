@@ -3,10 +3,7 @@
 .card-header,
 .card-footer {
   padding: 50px 50px 30px 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 
   .btn-area {
@@ -15,14 +12,8 @@
 
   .subtitle {
     width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
     justify-content: space-between;
-    -webkit-box-align: baseline;
-    -ms-flex-align: baseline;
     align-items: baseline;
 
     .btn-group {
@@ -36,14 +27,8 @@
         border-radius: 50%;
         margin-right: 8px;
         padding: 0;
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
         align-items: center;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
         justify-content: center;
 
         a {
@@ -55,11 +40,7 @@
     }
 
     .arrow-group {
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
       align-items: center;
 
       p {
@@ -75,21 +56,12 @@
         border-radius: 50%;
         border: 3px solid #dcdcdc;
         margin-right: 3px;
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
         align-items: center;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
         justify-content: center;
 
         &.nowPage {
           position: relative;
-          -webkit-user-select: none;
-          -moz-user-select: none;
-          -ms-user-select: none;
           user-select: none;
 
           &.active {
@@ -101,8 +73,6 @@
                 content: "";
                 position: absolute;
                 left: 50%;
-                -webkit-transform: translateX(-50%);
-                -ms-transform: translateX(-50%);
                 transform: translateX(-50%);
                 border-right: 10px solid transparent;
                 border-left: 10px solid transparent;
@@ -121,14 +91,8 @@
       }
 
       .arrow {
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
         align-items: center;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
         justify-content: center;
       }
     }
@@ -157,8 +121,6 @@
   background-color: transparent;
 
   .subtitle {
-    -webkit-box-pack: end;
-    -ms-flex-pack: end;
     justify-content: flex-end;
   }
 }
@@ -167,14 +129,10 @@
   visibility: hidden;
   position: absolute;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   width: 70px;
   background-color: #464646;
   color: #fff;
-  -webkit-transition: 0.6s;
-  -o-transition: 0.6s;
   transition: 0.6s;
   opacity: 0;
 
@@ -202,8 +160,6 @@
     content: "";
     position: absolute;
     left: 50%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     border-right: 10px solid transparent;
     border-left: 10px solid transparent;
@@ -231,14 +187,8 @@
   }
 
   .pageNum {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
     padding: 8px 0;
   }
@@ -285,10 +235,6 @@
 }
 
 .pace {
-  pointer-events: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 
   &::before {
@@ -325,10 +271,7 @@
       opacity: 1;
       position: absolute;
       right: 0px;
-      -webkit-box-shadow: none;
       box-shadow: none;
-      -webkit-transform: rotate(3deg) translate(0px, -4px);
-      -ms-transform: rotate(3deg) translate(0px, -4px);
       transform: rotate(3deg) translate(0px, -4px);
     }
   }
@@ -345,10 +288,9 @@
     display: block;
     position: fixed;
     z-index: 2000;
-    top: 50%;
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
     right: auto;
-    left: 50%;
-    -webkit-animation: pace-spinner 400ms linear infinite;
     animation: pace-spinner 400ms linear infinite;
   }
 }
@@ -421,8 +363,6 @@
         left: auto;
         right: 1px;
         top: 1px;
-        -webkit-transition: all 0.2s;
-        -o-transition: all 0.2s;
         transition: all 0.2s;
 
         .scroll-element_size {

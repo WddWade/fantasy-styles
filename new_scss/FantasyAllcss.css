@@ -4880,7 +4880,7 @@ body.isContent .backEnd_quill {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .card-header .btn-area,
 .card-footer .btn-area {
@@ -4893,11 +4893,11 @@ body.isContent .backEnd_quill {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: baseline;
-  -ms-flex-align: baseline;
-  align-items: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
 }
 .card-header .subtitle .btn-group,
 .card-footer .subtitle .btn-group {
@@ -4916,11 +4916,11 @@ body.isContent .backEnd_quill {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .card-header .subtitle .btn-group li a span,
 .card-footer .subtitle .btn-group li a span {
@@ -4932,8 +4932,8 @@ body.isContent .backEnd_quill {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .card-header .subtitle .arrow-group p,
 .card-footer .subtitle .arrow-group p {
@@ -4953,19 +4953,19 @@ body.isContent .backEnd_quill {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .card-header .subtitle .arrow-group span.nowPage,
 .card-footer .subtitle .arrow-group span.nowPage {
   position: relative;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .card-header .subtitle .arrow-group span.nowPage.active .pageSelectorBox,
 .card-footer .subtitle .arrow-group span.nowPage.active .pageSelectorBox {
@@ -4978,7 +4978,7 @@ body.isContent .backEnd_quill {
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
+          transform: translateX(-50%);
   border-right: 10px solid transparent;
   border-left: 10px solid transparent;
 }
@@ -4996,11 +4996,11 @@ body.isContent .backEnd_quill {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .card-header a:not(.btn) {
@@ -5021,8 +5021,8 @@ body.isContent .backEnd_quill {
 }
 .card-footer .subtitle {
   -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .pageSelectorBox {
@@ -5030,7 +5030,7 @@ body.isContent .backEnd_quill {
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
+          transform: translateX(-50%);
   width: 70px;
   background-color: #464646;
   color: #fff;
@@ -5059,7 +5059,7 @@ body.isContent .backEnd_quill {
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
+          transform: translateX(-50%);
   border-right: 10px solid transparent;
   border-left: 10px solid transparent;
 }
@@ -5085,11 +5085,11 @@ body.isContent .backEnd_quill {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 8px 0;
 }
 
@@ -5115,11 +5115,10 @@ body.isContent .backEnd_quill {
 }
 
 .pace {
-  pointer-events: none;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .pace::before {
   content: "";
@@ -5154,9 +5153,9 @@ body.isContent .backEnd_quill {
   position: absolute;
   right: 0px;
   -webkit-box-shadow: none;
-  box-shadow: none;
+          box-shadow: none;
   -webkit-transform: rotate(3deg) translate(0px, -4px);
-  transform: rotate(3deg) translate(0px, -4px);
+          transform: rotate(3deg) translate(0px, -4px);
 }
 .pace .pace-activity {
   width: 50px;
@@ -5170,11 +5169,11 @@ body.isContent .backEnd_quill {
   display: block;
   position: fixed;
   z-index: 2000;
-  top: 50%;
+  top: calc(50% - 25px);
+  left: calc(50% - 25px);
   right: auto;
-  left: 50%;
   -webkit-animation: pace-spinner 400ms linear infinite;
-  animation: pace-spinner 400ms linear infinite;
+          animation: pace-spinner 400ms linear infinite;
 }
 
 .scroll-wrapper > .scroll-element {
@@ -5408,11 +5407,11 @@ body.isContent .backEnd_quill {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .wddChangePWDMain .changePwd_sec {
   -webkit-box-sizing: border-box;
@@ -5495,11 +5494,11 @@ body.isContent .backEnd_quill {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #ffffff;
 }
 .wddChangePWDMain .changePwd_sec .input_box label {
@@ -7409,11 +7408,11 @@ body.isContent .backEnd_quill {
 .datatable .tables .ams_account {
   width: 250px;
 }
+.datatable .tables .ams_site_language {
+  font-weight: 400;
+}
 .datatable .tables .ams_site_name {
-  width: 250px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  min-width: 150px;
 }
 .datatable .tables .ams_permission .tableContent {
   white-space: normal;
@@ -12511,6 +12510,7 @@ textarea:focus::-webkit-input-placeholder,
   width: 100% !important;
 }
 .____select2 + .select2 .selection .select2-selection .select2-selection__arrow {
+  display: none;
   width: 20px;
   height: 26px;
   border: 0px;
