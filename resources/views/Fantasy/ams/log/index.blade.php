@@ -124,6 +124,7 @@
                                                 style="margin-right: 15px;">{{ $val }}</a>
                                             @endforeach
                                         </div> --}}
+                                    </div>
                                 </div>
 
                                 {{-- wade"delete --}}
@@ -204,7 +205,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                            </div>                            
+                            </div>                                
                         </div>
                     </div>
                 </div>

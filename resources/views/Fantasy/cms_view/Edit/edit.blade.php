@@ -49,15 +49,13 @@
                     <div
                         class="review_info review_info_push {{ isset($ReviewNotify) && !empty($ReviewNotify) && $ReviewNotify['action'] == '審核' ? 'active' : '' }}">
                         <div>
-                            <p>目前資料正在等待發佈審核中<span class="notify_admin_cancel"
-                                    style="cursor: pointer;margin-left: 20px;color: #c90a0a;">取消審核</span></p>
+                            <p>目前資料正在等待發佈審核中<span class="notify_admin_cancel">取消審核</span></p>
                         </div>
                     </div>
                     <div
                         class="review_info review_info_del {{ isset($ReviewNotify) && !empty($ReviewNotify) && $ReviewNotify['action'] == '刪除' ? 'active' : '' }}">
                         <div>
-                            <p>目前資料正在等待刪除審核中<span class="notify_admin_cancel"
-                                    style="cursor: pointer;margin-left: 20px;color: #c90a0a;">取消審核</span></p>
+                            <p>目前資料正在等待刪除審核中<span class="notify_admin_cancel">取消審核</span></p>
                         </div>
                     </div>
                 @endif
@@ -83,7 +81,7 @@
                     
                     @if ($role['need_review'] && !$role['can_review'] && ($action === 'edit' || $action === 'batch'))
                          @if ($action == 'batch')
-                            <li class="cancel notify_admin_cancel" data-action="review" style="background-color: #424242;">
+                            <li class="cancel notify_admin_cancel" data-action="review">
                                 <a href="javascript:void(0)">
                                     <span class="fa fa-trash"></span>
                                     <p>取消審核</p>
@@ -99,8 +97,7 @@
                             </li>
                         @endif
 
-                        <li class="notify_admin {{ $is_reviewed ? 'hide' : '' }}" data-action="review"
-                            style="background-color: #ee4c4c;">
+                        <li class="notify_admin {{ $is_reviewed ? 'hide' : '' }}" data-action="review">
                             <a href="javascript:void(0)">
                                 <span class="fa fa-envelope"></span>
                                 <p>通知管理者審核</p>

@@ -163,7 +163,7 @@
                            </li>
  
                            @if($need_Review && $can_review == 0)
-                           <li style="background-color: #ee4c4c;" class="notify_admin" data-action="review">
+                           <li class="notify_admin" data-action="review">
                                <a href="javascript:void(0)">
                                    <span class="fa fa-envelope"></span>
                                    <p>通知管理者審核</p>
@@ -171,7 +171,7 @@
                            </li>
                            @endif
                            @if($need_Review && $can_review==0 && $isDelete == 1)
-                           <li style="background-color: #424242;" class="notify_admin" data-acion="remove">
+                           <li class="notify_admin_remove" data-acion="remove">
                                <a href="javascript:void(0)">
                                    <span class="fa fa-trash"></span>
                                    <p>通知管理者刪除</p>
