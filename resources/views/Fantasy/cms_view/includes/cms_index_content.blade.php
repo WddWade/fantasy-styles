@@ -192,7 +192,7 @@
                                     </li>
                                     @endif
                                     @if($need_Review && $can_review == 0 && $isDelete == 1)
-                                    <li class="notify_admin_remove" data-acion="remove">
+                                    <li class="trash" data-acion="remove">
                                         <a href="javascript:void(0)">
                                             <span class="fa fa-trash"></span>
                                             <p>通知管理者刪除</p>

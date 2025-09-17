@@ -89,7 +89,7 @@
                             </li>
                         @endif
                         @if (!$role['delete'])
-                            <li class="remove notify_admin {{ $menu['is_content'] || !$menu['no_review'] ? 'hide' : '' }}" data-acion="remove">
+                            <li class="trash {{ $menu['is_content'] || !$menu['no_review'] ? 'hide' : '' }}" data-acion="remove">
                                 <a href="javascript:void(0)">
                                     <span class="fa fa-trash"></span>
                                     <p>通知管理者刪除</p>
