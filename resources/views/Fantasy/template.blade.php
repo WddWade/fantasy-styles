@@ -55,6 +55,7 @@
     <link rel="stylesheet" href="{{ asset('dist-summernote/css/summernote/summernote-lite.min.css') }}" attr="attr" />
     <link rel="stylesheet" href="{{ asset('dist-summernote/icon/style.css') }}" attr="attr" />
     <link rel="stylesheet" href="{{ asset('dist-summernote/css/editor.css') }}" attr="attr" />
+    <link type="text/css" rel="stylesheet" href="{{ asset('/vender/assets/plugins/jodit/jodit.fat.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('/vender/assets/font/fmsIcon/style.css') }}">
     <link rel="stylesheet" href="{{ asset('/vender/assets/css/custom_aggrid.css') }}">
     <!--============  引入FantasyAllcss  ============-->
@@ -254,6 +255,7 @@
     <!--editors文字編輯器-->
     <script src="{{ asset('dist-summernote/js/summernote/summernote-lite.min.js') }}"></script>
     <script src="{{ asset('dist-summernote/js/summernote/summernote-zh-TW.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('/vender/assets/plugins/jodit/jodit.fat.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('/vender/assets/plugins/bootstrap-tag/bootstrap-tagsinput.min.js') }}">
     </script>
     <!--input裡有tag的插件-->

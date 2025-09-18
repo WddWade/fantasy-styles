@@ -1509,6 +1509,14 @@
                                     'value' => $data,
                                     'disabled' => '',
                                 ]) }}
+                                {{ UnitMaker::textJodit([
+                                    'name' => $model . '[textJodit]',
+                                    'title' => 'textJodit',
+                                    'tip' => '',
+                                    'value' => $data['textJodit'] ?? '',
+                                    'disabled' => '',
+                                    'toolbar' => 'full',
+                                ]) }}
                                 {{ UnitMaker::radio_btn([
                                     'name' => $model . '[radio_btn]',
                                     'title' => 'radio_btn',

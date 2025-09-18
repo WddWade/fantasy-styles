@@ -574,6 +574,10 @@
         }
       }
 
+      .jodit p {
+        margin: 0;
+      }
+
       .subtitle {
         // font-size: 1.4rem;
         font-weight: 600;
@@ -648,6 +652,7 @@
           display: block;
         }
       }
+      letter-spacing: 1px;
 
       .with_icon {
         box-sizing: border-box;

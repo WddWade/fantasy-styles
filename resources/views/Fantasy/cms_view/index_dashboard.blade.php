@@ -30,7 +30,7 @@
       <nav class="content-sidebar">
 
         <div class="sidebar-menu">
-
+          
           @include('Fantasy.cms_view.includes.list')
 
           <div class="clearfix"></div>

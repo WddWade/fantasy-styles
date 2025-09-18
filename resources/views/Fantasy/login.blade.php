@@ -173,7 +173,7 @@
                                 verifyCodeReload();
                             }
                         }else{
-                            location.replace("{{ url('/Fantasy/Cms') }}");
+                            location.replace("{{ url('/Fantasy') }}");
                         }
                     } else {
                         alert(response.message);

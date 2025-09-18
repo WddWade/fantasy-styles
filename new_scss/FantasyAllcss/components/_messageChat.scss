@@ -43,20 +43,19 @@
       }
     }
     .message-typing {
-      width: calc(100% - 80px);
+      width: 100%;
       background-color: #fff;
-      margin: 0 40px;
       display: flex;
       flex-direction: row;
       position: absolute;
-      bottom: 40px;
+      bottom: 0;
       z-index: 2;
-      gap: 5px;
       textarea {
         flex: 1;
         height: 16px;
         min-height: 45px;
         padding: 12px 15px;
+        border-radius: 3px 0 0 3px;
         background-color: #fff;
         border-color: #e5e5e5;
         box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
@@ -85,6 +84,7 @@
             font-weight: 700;
             box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
             transition: 0.2s;
+            border-radius: 0 0 3px 3px;
             cursor: pointer;
             &:hover {
               background-color: #5e00ff;

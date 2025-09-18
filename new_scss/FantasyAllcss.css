@@ -74,8 +74,10 @@ a {
 }
 
 p {
-  margin-bottom: 0;
+  font-weight: 400;
+  margin: 0;
   line-height: 1.6;
+  letter-spacing: normal;
 }
 
 img {
@@ -1294,9 +1296,8 @@ body.isContent .backEnd_quill {
   padding-inline: 40px;
 }
 .detailEditor .messageChat .message-typing {
-  width: calc(100% - 80px);
+  width: 100%;
   background-color: #fff;
-  margin: 0 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1305,9 +1306,8 @@ body.isContent .backEnd_quill {
       -ms-flex-direction: row;
           flex-direction: row;
   position: absolute;
-  bottom: 40px;
+  bottom: 0;
   z-index: 2;
-  gap: 5px;
 }
 .detailEditor .messageChat .message-typing textarea {
   -webkit-box-flex: 1;
@@ -1316,6 +1316,7 @@ body.isContent .backEnd_quill {
   height: 16px;
   min-height: 45px;
   padding: 12px 15px;
+  border-radius: 3px 0 0 3px;
   background-color: #fff;
   border-color: #e5e5e5;
   -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
@@ -1364,6 +1365,7 @@ body.isContent .backEnd_quill {
           box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
   -webkit-transition: 0.2s;
   transition: 0.2s;
+  border-radius: 0 0 3px 3px;
   cursor: pointer;
 }
 .detailEditor .messageChat .message-typing .controllers button.send:hover {
@@ -1756,7 +1758,7 @@ body.isContent .backEnd_quill {
   padding: 10px 0 10px 10px !important;
 }
 .article_video .picture_box {
-  padding: 0 10px;
+  padding: 10px;
 }
 .article_video .check_box {
   min-width: 20px !important;
@@ -7801,6 +7803,7 @@ body.isContent .backEnd_quill {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 10px;
+  letter-spacing: 1px;
 }
 .hiddenArea .detailEditor .inventory.ams_permissions > .title {
   display: -webkit-box;
@@ -7898,6 +7901,9 @@ body.isContent .backEnd_quill {
 }
 .hiddenArea .detailEditor .inventory .input input {
   width: 100%;
+}
+.hiddenArea .detailEditor .inventory .jodit p {
+  margin: 0;
 }
 .hiddenArea .detailEditor .inventory .subtitle {
   font-weight: 600;
@@ -10433,6 +10439,70 @@ body.isContent .backEnd_quill {
     width: 90%;
   }
 }
+.fantasy_index {
+  height: 100%;
+  padding-bottom: 7vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 150px 0;
+}
+.fantasy_index .main_title {
+  font-size: 10vw;
+  line-height: 1;
+  color: #000;
+}
+.fantasy_index .main_content {
+  width: 80%;
+  max-width: 1440px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 0 50px;
+}
+.fantasy_index .main_content > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px 0;
+}
+.fantasy_index .main_content > div a {
+  font-size: 5.6rem;
+  font-weight: 400;
+  line-height: 1;
+  color: #000;
+}
+.fantasy_index .main_content > div p {
+  font-size: 1.2rem;
+  color: #000;
+}
+
 /*
   fmsAjax
   cms 中段落編輯選擇圖片時跳出 fms 燈箱

@@ -2,7 +2,9 @@
     <div class="blockCover">
 
         {{-- wade:add --}}
-         <h1 class="logo">Fantasy</h1>
+        <a href="{{ url('Fantasy') }}">
+            <h1 class="logo">Fantasy</h1>
+        </a>
          <div class="navigations">
             <div>
                 <a href="{{ url('Fantasy/Cms') }}">CMS</a>
@@ -35,7 +37,7 @@
     </div>
     <div class="inforCover">
         <div class="projectName">{{ Config::get('app.name') }}</div>
-        @if(config('cms.reviewfunction'))
+        {{-- @if(config('cms.reviewfunction'))
             @if(isset($locale) && $unitTitle == 'Cms 審核站')
             <div class="projectName">
                 <span class="cms_change"><a href="{{ url('Fantasy/Cms_review') }}" target="_blank">Cms 正式站</a></span>
@@ -50,7 +52,7 @@
 
         @if(isset($locale) && ($unitTitle == 'Cms' || $unitTitle == 'Cms 審核站' || $unitTitle == 'Cms 正式站' ))
             <a href="{{ BaseFunction::preview_url('') }}" target="_blank" class="previewButton" data-toggle="tooltip" data-placement="bottom" data-original-title="前往預覽未正式發佈的網站內容">PREVIEW</a>
-        @endif
+        @endif --}}
         <div class="projectName">
             <span class="">{{ Session::get('fantasy_user')['name'] }}</span>
         </div>

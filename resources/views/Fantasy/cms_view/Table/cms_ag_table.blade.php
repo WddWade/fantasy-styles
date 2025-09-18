@@ -28,7 +28,13 @@
                     </div>
                 </div> --}}
                 <div class="content-scrollbox">
-                    <div class="content-wrap main-table index-table-div" data-tableid="new_cms_table">
+                    @if(isset($branchData) && isset($branchMenuList))
+                    <div class="cms_home">
+                        <div class="main-title">{{$branchData['title']}}</div>
+                        <div class="lang-title">{{$branchMenuList['now_locale']}}</div>
+                    </div>
+                    @endif
+                    <div class="content-wrap main-table index-table-div" data-tableid="new_cms_table" style="{{ (isset($branchData) && isset($branchMenuList)) ? 'display: none;':'' }}">
                         <div class="content-head cms-index_table">
                             {{-- wade:add --}}
                             <div class="content-head-container">
