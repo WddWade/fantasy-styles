@@ -7,7 +7,9 @@
   .informationTable {
     width: 100%;
     margin-bottom: 80px;
-    &:last-child,
+    &:last-child {
+      margin-bottom: 10px;
+    }
     .table-header {
       display: flex;
       flex-direction: row;

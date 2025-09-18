@@ -1,19 +1,24 @@
 .fantasy_index {
   height: 100%;
-  padding-bottom: 7vh;
+  padding-bottom: 10vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 150px 0;
+  .main_title,
+  .main_content,
+  .main_footer {
+    width: 90%;
+    max-width: 1440px;
+  }
   .main_title {
-    font-size: 10vw;
+    font-size: 8vw;
+    font-weight: 600;
     line-height: 1;
     color: #000;
   }
   .main_content {
-    width: 80%;
-    max-width: 1440px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -21,12 +26,10 @@
     > div {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
       gap: 15px 0;
       a {
         font-size: 5.6rem;
-        font-weight: 400;
+        font-weight: 600;
         line-height: 1;
         color: #000;
       }
@@ -35,5 +38,16 @@
         color: #000;
       }
     }
+  }
+  .main_footer {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 15px;
+    position: fixed;
+    bottom: 20px;
   }
 }

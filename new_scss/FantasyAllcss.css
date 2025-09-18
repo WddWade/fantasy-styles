@@ -432,6 +432,8 @@ body.isContent .backEnd_quill {
   top: 15px;
   left: 15px;
   color: #757575;
+  letter-spacing: normal;
+  font-weight: 400;
 }
 .select2MultiNew::after {
   content: "\f105";
@@ -1021,7 +1023,9 @@ body.isContent .backEnd_quill {
   width: 100%;
   margin-bottom: 80px;
 }
-.detailEditor .informationTable:last-child,
+.detailEditor .informationTable:last-child {
+  margin-bottom: 10px;
+}
 .detailEditor .informationTable .table-header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1038,12 +1042,10 @@ body.isContent .backEnd_quill {
           align-items: flex-start;
   margin-bottom: 10px;
 }
-.detailEditor .informationTable:last-child .table-title,
 .detailEditor .informationTable .table-header .table-title {
   font-size: 1.3rem;
   font-weight: 600;
 }
-.detailEditor .informationTable:last-child .table-controllers button,
 .detailEditor .informationTable .table-header .table-controllers button {
   color: #ffffff;
   background-color: #000000;
@@ -5304,7 +5306,7 @@ body.isContent .backEnd_quill {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 .wddLoginMain .login_sec .title .fantasylogo {
   font-size: 18vw;
@@ -5326,7 +5328,7 @@ body.isContent .backEnd_quill {
 }
 .wddLoginMain .login_sec #accountForm {
   width: 450px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 .wddLoginMain .login_sec #accountForm .frame {
   display: -webkit-box;
@@ -5401,6 +5403,10 @@ body.isContent .backEnd_quill {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+.wddLoginMain .login_sec .refresh-btn {
+  display: block;
+  height: 40px;
 }
 
 /* wdd 修改密碼燈箱 */
@@ -10441,7 +10447,7 @@ body.isContent .backEnd_quill {
 }
 .fantasy_index {
   height: 100%;
-  padding-bottom: 7vh;
+  padding-bottom: 10vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10457,14 +10463,19 @@ body.isContent .backEnd_quill {
           align-items: center;
   gap: 150px 0;
 }
+.fantasy_index .main_title,
+.fantasy_index .main_content,
+.fantasy_index .main_footer {
+  width: 90%;
+  max-width: 1440px;
+}
 .fantasy_index .main_title {
-  font-size: 10vw;
+  font-size: 8vw;
+  font-weight: 600;
   line-height: 1;
   color: #000;
 }
 .fantasy_index .main_content {
-  width: 80%;
-  max-width: 1440px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10484,23 +10495,35 @@ body.isContent .backEnd_quill {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   gap: 15px 0;
 }
 .fantasy_index .main_content > div a {
   font-size: 5.6rem;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1;
   color: #000;
 }
 .fantasy_index .main_content > div p {
   font-size: 1.2rem;
   color: #000;
+}
+.fantasy_index .main_footer {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 15px;
+  position: fixed;
+  bottom: 20px;
 }
 
 /*

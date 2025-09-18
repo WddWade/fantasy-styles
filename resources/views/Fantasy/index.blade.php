@@ -53,6 +53,13 @@
                                                 <p>Preview Your Website</p>
                                             </div>
                                         </div>
+                                        <div class="main_footer">
+                                            <div>
+                                                <span>Fantasy © WADE DIGITAL DESIGN, LTD.</span>
+                                                <span>Designed & Developed by WDD</span>
+                                            </div>
+                                            <div>FANTASY VERSION 2.0</div>
+                                        </div>
                                     </div>
 
                                     {{-- wade:add --}}
