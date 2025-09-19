@@ -20,22 +20,23 @@
   }
   .main_content {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
     gap: 0 50px;
-    > div {
-      display: flex;
-      flex-direction: column;
-      gap: 15px 0;
-      a {
-        font-size: 5.6rem;
-        font-weight: 600;
-        line-height: 1;
-        color: #000;
+    .content_left {
+      flex: 1;
+      .cms_sitename {
       }
-      p {
-        font-size: 1.2rem;
-        color: #000;
+      .cms_language {
+      }
+    }
+    .content_right {
+      width: 330px;
+      .preview {
+      }
+      .fms {
+      }
+      .ams {
       }
     }
   }

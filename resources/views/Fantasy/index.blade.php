@@ -36,21 +36,47 @@
                                     <div class="fantasy_index">
                                         <div class="main_title">Hi, {{$user['name']}}</div>
                                         <div class="main_content">
-                                            <div>
-                                                <a href="{{ url('Fantasy/Cms') }}">CMS</a>
-                                                <p>Content Management</p>
+                                            <div class="content_left">
+                                                <div class="cms_sitename">
+                                                    <span>CMS:</span>
+                                                    <p>創意電子科技官方網站</p>
+                                                </div>
+                                                <div class="cms_language">
+                                                    <button>
+                                                        <span>ZH-TW</span>
+                                                        <span>繁體中文語系</span>
+                                                    </button>
+                                                    <button>
+                                                        <span>ZH-TW</span>
+                                                        <span>繁體中文語系</span>
+                                                    </button>
+                                                    <button>
+                                                        <span>ZH-TW</span>
+                                                        <span>繁體中文語系</span>
+                                                    </button>
+                                                    <button>
+                                                        <span>ZH-TW</span>
+                                                        <span>繁體中文語系</span>
+                                                    </button>
+                                                    <button>
+                                                        <span>ZH-TW</span>
+                                                        <span>繁體中文語系</span>
+                                                    </button>
+                                                </div>
                                             </div>
-                                            <div>
-                                                <a href="{{ url('Fantasy/Fms') }}">FMS</a>
-                                                <p>Online File Manager</p>
-                                            </div>
-                                            <div>
-                                                <a href="{{ url('Fantasy/Ams') }}">AMS</a>
-                                                <p>Account and Settings</p>
-                                            </div>
-                                            <div>
-                                                <a href="{{ BaseFunction::preview_url('') }}" target="_blank" class="previewButton" data-toggle="tooltip" data-placement="bottom" data-original-title="前往預覽未正式發佈的網站內容">PREVIEW</a>
-                                                <p>Preview Your Website</p>
+                                            <div class="content_right">
+                                                <div class="preview">
+                                                    <a href="{{ BaseFunction::preview_url('') }}" target="_blank" class="previewButton" data-toggle="tooltip" data-placement="bottom" data-original-title="前往預覽未正式發佈的網站內容">PREVIEW</a>
+                                                    <p>Preview Your Website</p>
+                                                </div>
+                                                <div class="fms">
+                                                    <a href="{{ url('Fantasy/Fms') }}">FMS</a>
+                                                    <p>Online File Manager</p>
+                                                </div>
+                                                <div class="ams">
+                                                    <a href="{{ url('Fantasy/Ams') }}">AMS</a>
+                                                    <p>Account and Settings</p>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="main_footer">
