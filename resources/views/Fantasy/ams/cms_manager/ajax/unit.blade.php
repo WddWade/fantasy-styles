@@ -134,7 +134,7 @@
                         
                                             @foreach(OptionFunction::City_List() as $item)
                                        
-                                                    <option value="">{{ $item['title'] }}</option>
+                                                    <option value="{{ $item['title'] }}">{{ $item['title'] }}</option>
                                               
                                             @endforeach
                              

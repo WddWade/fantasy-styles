@@ -7127,7 +7127,7 @@ body.isContent .backEnd_quill {
   background-color: #f8f8f8;
   position: sticky;
   top: 43px;
-  z-index: 1;
+  z-index: 2;
   -webkit-box-shadow: 0 1px 0 #ddd;
           box-shadow: 0 1px 0 #ddd;
   height: 40px;
@@ -10447,7 +10447,7 @@ body.isContent .backEnd_quill {
 }
 .fantasy_index {
   height: 100%;
-  padding-bottom: 10vh;
+  padding: 60px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10461,7 +10461,7 @@ body.isContent .backEnd_quill {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 150px 0;
+  gap: 100px 0;
 }
 .fantasy_index .main_title,
 .fantasy_index .main_content,
@@ -10470,7 +10470,7 @@ body.isContent .backEnd_quill {
   max-width: 1440px;
 }
 .fantasy_index .main_title {
-  font-size: 8vw;
+  font-size: 7vw;
   font-weight: 600;
   line-height: 1;
   color: #000;
@@ -10485,15 +10485,81 @@ body.isContent .backEnd_quill {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  gap: 0 50px;
+  gap: 0 100px;
 }
 .fantasy_index .main_content .content_left {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 82px;
+}
+.fantasy_index .main_content .content_left .cms_sitename {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0 10px;
+  color: #000;
+}
+.fantasy_index .main_content .content_left .cms_sitename span {
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 1;
+}
+.fantasy_index .main_content .content_left .cms_sitename p {
+  font-size: 3.6rem;
+  font-weight: 400;
+  line-height: 1;
+}
+.fantasy_index .main_content .content_left .cms_language {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 15px;
 }
 .fantasy_index .main_content .content_right {
   width: 330px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 60px;
+}
+.fantasy_index .main_content .content_right a {
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 1;
+  color: #000;
+}
+.fantasy_index .main_content .content_right > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 5px;
 }
 .fantasy_index .main_footer {
   font-size: 1rem;
@@ -10510,8 +10576,69 @@ body.isContent .backEnd_quill {
       -ms-flex-pack: justify;
           justify-content: space-between;
   gap: 15px;
-  position: fixed;
-  bottom: 20px;
+}
+.fantasy_index .cms_language a,
+.fantasy_index .site_language a {
+  font-size: 1.4rem;
+  color: #000;
+  background-color: #f5f5f5;
+  min-width: 250px;
+  padding: 12px 40px 12px 20px;
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+  position: relative;
+}
+.fantasy_index .cms_language a::before,
+.fantasy_index .site_language a::before {
+  content: "\f105";
+  font-size: 1rem;
+  font-family: FontAwesome;
+  text-shadow: none;
+  margin: 0;
+  display: block;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  -webkit-transition: 0.12s ease;
+  transition: 0.12s ease;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+.fantasy_index .cms_language a span,
+.fantasy_index .site_language a span {
+  font-weight: 800;
+}
+.fantasy_index .cms_language a p,
+.fantasy_index .site_language a p {
+  font-weight: 400;
+}
+.fantasy_index .cms_language a:hover,
+.fantasy_index .site_language a:hover {
+  color: #fff;
+  background-color: #000;
+}
+.fantasy_index.subs {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.fantasy_index .site_language .languages {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 15px;
 }
 
 /*
@@ -10705,9 +10832,6 @@ body.isContent .backEnd_quill {
 }
 .fmsAjaxArea .ajaxItem .ajaxContainer .detailEditor .editorBody .page-container .mainContent .content .content-sidebar .sidebar-menu .body-list.scroll-wrapper > .scroll-element.scroll-y.scroll-scrolly_visible {
   opacity: 1 !important;
-}
-.fmsAjaxArea .ajaxItem .ajaxContainer .detailEditor .editorBody .page-container .mainContent .content .inner-content .content-scrollbox {
-  height: 100%;
 }
 .fmsAjaxArea .ajaxItem .ajaxContainer .detailEditor .editorBody .page-container .mainContent .content .datatable .fake-thead {
   width: calc(100% - 412px);

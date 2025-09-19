@@ -33,6 +33,67 @@
                                 <div class="content-wrap main-table index-table-div" data-tableid="new_cms_table">
 
                                     {{-- wade:add --}}
+                                    <div class="fantasy_index subs">
+                                        <div class="main_title">Hi, {{$user['name']}}</div>
+                                        <div class="main_content">
+                                            <div class="subs_table">
+                                                <div class="thead">
+                                                    <div>sites Overview</div>
+                                                    <p>
+                                                        <span>1 Main-Site</span>
+                                                        <span>5 Subs-Sites</span>
+                                                    </p>
+                                                </div>
+                                                <div class="tbody">
+                                                    <section>
+                                                        <div class="site_content">
+                                                            <div class="site_sort">01.</div>
+                                                            <div class="site_type">Main-site</div>
+                                                            <div class="site_name">
+                                                                <div class="title">
+                                                                    <span>Balalala</span>
+                                                                    <p>創意電子科技官方網站</p>
+                                                                </div>
+                                                                <a href="">www.figma.com</a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="site_language">
+                                                            <span>Language :</span>
+                                                            <div class="languages">
+                                                                <a href="">
+                                                                    <span>ZH-TW</span>
+                                                                    <p>繁體中文語系</p>
+                                                                </a>
+                                                                <a href="">
+                                                                    <span>ZH-TW</span>
+                                                                    <p>繁體中文語系</p>
+                                                                </a>
+                                                                <a href="">
+                                                                    <span>ZH-TW</span>
+                                                                    <p>繁體中文語系</p>
+                                                                </a>
+                                                                <a href="">
+                                                                    <span>ZH-TW</span>
+                                                                    <p>繁體中文語系</p>
+                                                                </a>
+                                                                <a href="">
+                                                                    <span>ZH-TW</span>
+                                                                    <p>繁體中文語系</p>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </section>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="main_footer">
+                                            <div>
+                                                <span>Fantasy © WADE DIGITAL DESIGN, LTD.</span>
+                                                <span>Designed & Developed by WDD</span>
+                                            </div>
+                                            <div>FANTASY VERSION 2.0</div>
+                                        </div>
+                                    </div>
                                     <div class="fantasy_index">
                                         <div class="main_title">Hi, {{$user['name']}}</div>
                                         <div class="main_content">
@@ -42,26 +103,26 @@
                                                     <p>創意電子科技官方網站</p>
                                                 </div>
                                                 <div class="cms_language">
-                                                    <button>
+                                                    <a href="">
                                                         <span>ZH-TW</span>
-                                                        <span>繁體中文語系</span>
-                                                    </button>
-                                                    <button>
+                                                        <p>繁體中文語系</p>
+                                                    </a>
+                                                    <a href="">
                                                         <span>ZH-TW</span>
-                                                        <span>繁體中文語系</span>
-                                                    </button>
-                                                    <button>
+                                                        <p>繁體中文語系</p>
+                                                    </a>
+                                                    <a href="">
                                                         <span>ZH-TW</span>
-                                                        <span>繁體中文語系</span>
-                                                    </button>
-                                                    <button>
+                                                        <p>繁體中文語系</p>
+                                                    </a>
+                                                    <a href="">
                                                         <span>ZH-TW</span>
-                                                        <span>繁體中文語系</span>
-                                                    </button>
-                                                    <button>
+                                                        <p>繁體中文語系</p>
+                                                    </a>
+                                                    <a href="">
                                                         <span>ZH-TW</span>
-                                                        <span>繁體中文語系</span>
-                                                    </button>
+                                                        <p>繁體中文語系</p>
+                                                    </a>
                                                 </div>
                                             </div>
                                             <div class="content_right">
