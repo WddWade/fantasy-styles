@@ -10,7 +10,7 @@
   .main_content,
   .main_footer {
     width: 90%;
-    max-width: 1440px;
+    max-width: 1600px;
   }
   .main_title {
     font-size: 7vw;
@@ -118,22 +118,6 @@
         color: #fff;
         background-color: #000;
       }
-    }
-  }
-
-  &.subs {
-    justify-content: flex-start;
-  }
-
-  .subs_table {
-  }
-
-  .site_language {
-    .languages {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 15px;
     }
   }
 }

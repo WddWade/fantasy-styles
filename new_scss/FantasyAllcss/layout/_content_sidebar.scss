@@ -119,6 +119,21 @@
               font-weight: 500;
               color: #000;
               white-space: nowrap;
+              display: flex;
+              flex-wrap: nowrap;
+              gap: 5px;
+              .title_block {
+                font-weight: 700;
+              }
+              .title_site {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width: 100px;
+                display: block;
+              }
+              .title_language {
+              }
             }
             .icon-open-menu {
               font-size: 1.3rem !important;

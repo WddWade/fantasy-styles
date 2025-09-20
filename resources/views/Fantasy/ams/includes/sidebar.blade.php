@@ -5,9 +5,12 @@
 <ul class="head-bar">
     <li class="level-1">
         <!---->
-        <a href="javascript:;" class="display-title" style="cursor: auto;">
-            <span class="title">AMS 帳號與設定</span>
-        </a>
+        <div class="display-title">
+            <div class="title">
+                <span class="title_block">AMS</span>
+                <span>帳號與設定</span>
+            </div>
+        </div>
         <!---->
     </li>
 </ul>

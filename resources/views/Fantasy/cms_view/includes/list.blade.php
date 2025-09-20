@@ -4,7 +4,11 @@
 <ul class="head-bar">
     <li class="level-1">
         <a class="display-title" href="javascript:;">
-            <span class="title">CMS {{ $branchMenuList['now'] }}</span>
+            <div class="title">
+                <span class="title_block">CMS</span>
+                <span class="title_site">{{ $branchMenuList['now'] }}</span>
+                <span class="title_language">{{$branchMenuList['now_locale']}}</span>
+            </div>
             <span class="icon-open-menu"></span>
         </a>
 

@@ -61,11 +61,68 @@
 
                                     {{-- wade:add --}}
                                     <div class="cms_index">
-                                        <div class="main-title">CMS</div>
+                                        <div class="main_title">CMS : Hi, WDD</div>
+                                        <div class="main_content">
+                                            <div class="subs_table">
+                                                <div class="thead">
+                                                    <div>sites Overview</div>
+                                                    <p>
+                                                        <span>1 Main-Site</span>
+                                                        <span>5 Subs-Sites</span>
+                                                    </p>
+                                                </div>
+                                                <div class="tbody">
+                                                    @foreach($branchMenuList['list'] as $key => $row)
+                                                        <section>
+                                                            <div class="site_content">
+                                                                <div class="site_sort">{{ sprintf('%02d', $key + 1) }}.</div>
+                                                                {{-- site_type: main-site | sub-site | event-site --}}
+                                                                <div class="site_type">event-site</div>
+                                                                <div class="site_name">
+                                                                    <div class="title">
+                                                                        <span>{{ $row['en_title'] }}</span>
+                                                                        <p>{{ $row['title'] }}</p>
+                                                                    </div>
+                                                                    @if($row['blade_template'] == 1)
+                                                                        <a target="_blank" href="{{preg_replace('/^(https?:\/\/)([^.]+)(\..+)$/', '$1' . $row['url_title'] . '$3', url(''))}}">{{preg_replace('/^(https?:\/\/)([^.]+)(\..+)$/', '$1' . $row['url_title'] . '$3', url(''))}}</a>
+                                                                    @else
+                                                                        <a target="_blank" href="{{url($row['url_title'])}}">{{url($row['url_title'])}}</a>
+                                                                    @endif
+                                                                </div>
+                                                            </div>
+                                                            <div class="site_language">
+                                                                <div class="language_content">
+                                                                    <div class="languages dropup">
+                                                                        <a class="" data-toggle="dropdown" href="javascript:void(0)" aria-haspopup="true" aria-expanded="false">
+                                                                            <span class="text">Select Language</span>
+                                                                        </a>
+                                                                        <div class="dropdown-menu dropdown-menu-right profile-dropdown" role="menu">
+                                                                             @foreach($row['list'] as $key2 => $row2)
+                                                                                <a class="dropdown-item" href="{{ $row2['link'] }}">
+                                                                                    <span>ZH-TW</span>
+                                                                                    <p>{{ $row2['title'] }}</p>
+                                                                                </a>
+                                                                            @endforeach
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </section>
+                                                    @endforeach
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="main_footer">
+                                            <div>
+                                                <span>Fantasy © WADE DIGITAL DESIGN, LTD.</span>
+                                                <span>Designed & Developed by WDD</span>
+                                            </div>
+                                            <div>FANTASY VERSION 2.0</div>
+                                        </div>
                                     </div>
 
                                     {{-- wade:add --}}
-                                    <div class="content-head cms-index_table" data-can_review="1" data-edit="1" data-delete="1" data-create="1" data-model="Class_faq" data-page="1" data-pn="1" data-auth="206" data-pagetitle="常見問題分類" data-issearch="1" data-isbatch="1" data-isclone="1" data-isexport="">
+                                    {{-- <div class="content-head cms-index_table" data-can_review="1" data-edit="1" data-delete="1" data-create="1" data-model="Class_faq" data-page="1" data-pn="1" data-auth="206" data-pagetitle="常見問題分類" data-issearch="1" data-isbatch="1" data-isclone="1" data-isexport="">
                                         <h1>品牌總覽</h1>
                                     </div>
                                     <div class="content-body">
@@ -95,7 +152,7 @@
                                                 </div>
                                             @endforeach
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>

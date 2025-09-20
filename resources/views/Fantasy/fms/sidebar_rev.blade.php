@@ -3,10 +3,13 @@
     <ul class="head-bar">
         <li class="level-1">
             <!---->
-            <a href="javascript:void(0);" class="display-title">
-                <span class="title">FMS 檔案管理</span>
+            <div class="display-title">
+                <div class="title">
+                    <span class="title_block">FMS</span>
+                    <span>檔案管理</span>
+                </div>
                 {{-- <span class="arrow"></span> --}}
-            </a>
+            </div>
             <!--==============================-->
         </li>
     </ul>
