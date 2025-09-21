@@ -6,12 +6,12 @@
     <div class="sites dropdown">
         <div class="current-site" data-toggle="dropdown">
             <span >CMS</span>
-            <p>{{ $branchMenuList['now'] }}</p>
+            <p>{{$branchData['title']}}</p>
         </div>
         <div class="sites-list dropdown-menu">
             @foreach ($branchMenuList['list'] as $key => $row)
                 <div class="dropdown-item">
-                    <a href="" data-site="{{$row['en_title']}}">
+                    <a href={{ $row['list'][0]['link'] ?? '#' }} data-site="{{$row['en_title']}}">
                         <span class="iconSquare"></span>
                         <span>{{$row['title']}}</span>
                     </a>            
@@ -27,12 +27,14 @@
         <div class="languages-list dropdown-menu">
             @foreach ($branchMenuList['list'] as $key => $row)
                 @foreach ($row['list'] as $key2 => $row2)
-                   <div class="dropdown-item" data-site="{{$row['en_title']}}">
-                        <a href="{{ $row2['link'] }}">
-                            <span class="iconSquare"></span>
-                            <span class="title">{{ $row2['title'] }}</span>
-                        </a>
-                   </div>
+                    @if($branchData['title']==$row['title'])
+                        <div class="dropdown-item" data-site="{{$row['en_title']}}">
+                            <a href="{{ $row2['link'] }}">
+                                <span class="iconSquare"></span>
+                                <span class="title">{{ $row2['title'] }}</span>
+                            </a>
+                        </div>
+                    @endif
                 @endforeach          
             @endforeach
         </div>
