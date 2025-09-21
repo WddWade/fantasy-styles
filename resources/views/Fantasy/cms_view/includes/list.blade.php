@@ -1,7 +1,45 @@
 <input class="base-url-cms" type="hidden" value="{{ BaseFunction::cms_url('/') }}">
 
 <!--分站/語系 head-bar-->
-<ul class="head-bar">
+{{-- wade:add --}}
+<div class="site-head">
+    <div class="sites dropdown">
+        <div class="current-site" data-toggle="dropdown">
+            <span >CMS</span>
+            <p>{{ $branchMenuList['now'] }}</p>
+        </div>
+        <div class="sites-list dropdown-menu">
+            @foreach ($branchMenuList['list'] as $key => $row)
+                <div class="dropdown-item">
+                    <a href="" data-site="{{$row['en_title']}}">
+                        <span class="iconSquare"></span>
+                        <span>{{$row['title']}}</span>
+                    </a>            
+                </div>
+            @endforeach
+        </div>
+    </div>
+    <div class="languages dropdown">
+        <div class="current-language" data-toggle="dropdown">
+            <div class="language-title">繁體中文語系</div>
+            <span class="icon-open-menu"></span>
+        </div>
+        <div class="languages-list dropdown-menu">
+            @foreach ($branchMenuList['list'] as $key => $row)
+                @foreach ($row['list'] as $key2 => $row2)
+                   <div class="dropdown-item" data-site="{{$row['en_title']}}">
+                        <a href="{{ $row2['link'] }}">
+                            <span class="iconSquare"></span>
+                            <span class="title">{{ $row2['title'] }}</span>
+                        </a>
+                   </div>
+                @endforeach          
+            @endforeach
+        </div>
+    </div>
+</div>
+{{-- wade:delete --}}
+{{-- <ul class="head-bar" style="display:none">
     <li class="level-1">
         <a class="display-title" href="javascript:;">
             <div class="title">
@@ -60,7 +98,7 @@
             @endforeach
         </ul>
     </li>
-</ul>
+</ul> --}}
 <!--分站/語系 head-bar-->
 
 <!--CMS主選項-->
