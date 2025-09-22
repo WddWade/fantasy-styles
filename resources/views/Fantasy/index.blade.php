@@ -39,29 +39,15 @@
                                             <div class="content_left">
                                                 <div class="cms_sitename">
                                                     <span>CMS:</span>
-                                                    <p>創意電子科技官方網站</p>
+                                                    <p>{{$branch['title']}}</p>
                                                 </div>
                                                 <div class="cms_language">
-                                                    <a href="">
-                                                        <span>ZH-TW</span>
-                                                        <p>繁體中文語系</p>
+                                                    @foreach($branchWithLocale as $val)
+                                                    <a href="//{{ request()->getHost().'/Fantasy/Cms/'.$branch['url_title'].'/'.$val['locale'] }}">
+                                                        <span>{{$langArray[$val['locale']]['en_title']}}</span>
+                                                        <p>{{$langArray[$val['locale']]['title']}}</p>
                                                     </a>
-                                                    <a href="">
-                                                        <span>ZH-TW</span>
-                                                        <p>繁體中文語系</p>
-                                                    </a>
-                                                    <a href="">
-                                                        <span>ZH-TW</span>
-                                                        <p>繁體中文語系</p>
-                                                    </a>
-                                                    <a href="">
-                                                        <span>ZH-TW</span>
-                                                        <p>繁體中文語系</p>
-                                                    </a>
-                                                    <a href="">
-                                                        <span>ZH-TW</span>
-                                                        <p>繁體中文語系</p>
-                                                    </a>
+                                                    @endforeach
                                                 </div>
                                             </div>
                                             <div class="content_right">
@@ -74,7 +60,7 @@
                                                     <p>Account and Settings</p>
                                                 </div>
                                                  <div class="preview">
-                                                    <a href="{{ BaseFunction::preview_url('') }}" target="_blank" class="previewButton" data-toggle="tooltip" data-placement="bottom" data-original-title="前往預覽未正式發佈的網站內容">PREVIEW</a>
+                                                    <a href="{{ url('preview_'.$branchWithLocaleFirst['locale']) }}" target="_blank" class="previewButton" data-toggle="tooltip" data-placement="bottom" data-original-title="前往預覽未正式發佈的網站內容">PREVIEW</a>
                                                     <p>Preview Your Website</p>
                                                 </div>
                                             </div>

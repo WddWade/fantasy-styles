@@ -12,7 +12,7 @@
             <nav class="content-sidebar">
                 <div class="sidebar-menu">
                     <!--分站/語系 head-bar-->
-                    @include('Fantasy.cms_view.includes.list')
+                    @include('Fantasy.cms_view.includes.list',['branchData'=>$nowBranchData])
                     <!--分站/語系 head-bar-->
                     <div class="clearfix"></div>
                 </div>

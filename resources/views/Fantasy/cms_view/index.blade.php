@@ -61,14 +61,15 @@
 
                                     {{-- wade:add --}}
                                     <div class="cms_index">
-                                        <div class="main_title">CMS : Hi, WDD</div>
+                                        <div class="main_title">CMS : Hi, {{$FantasyUser['name']}}</div>
                                         <div class="main_content">
                                             <div class="subs_table">
                                                 <div class="thead">
                                                     <div>sites Overview</div>
                                                     <p>
-                                                        <span>1 Main-Site</span>
-                                                        <span>5 Subs-Sites</span>
+                                                        @foreach($blade_template as $val)
+                                                        <span>{{ collect($branchMenuList['list'])->where('blade_template',$val['key'])->count() }} {{$val['en_title']}}</span>
+                                                        @endforeach
                                                     </p>
                                                 </div>
                                                 <div class="tbody">
@@ -77,10 +78,12 @@
                                                             <div class="site_content">
                                                                 <div class="site_sort">{{ sprintf('%02d', $key + 1) }}.</div>
                                                                 {{-- site_type: main-site | sub-site | event-site --}}
-                                                                <div class="site_type">event-site</div>
+                                                                <div class="site_type">{{$blade_template[$row['blade_template']]['en_title']}}</div>
                                                                 <div class="site_name">
                                                                     <div class="title">
+                                                                        @if(!empty($row['en_title']))
                                                                         <span>{{ $row['en_title'] }}</span>
+                                                                        @endif
                                                                         <p>{{ $row['title'] }}</p>
                                                                     </div>
                                                                     @if($row['blade_template'] == 1)

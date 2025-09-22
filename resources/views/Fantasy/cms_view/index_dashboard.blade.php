@@ -16,7 +16,6 @@
 @include('Fantasy.includes.sidebar')
 <!-- 左邊滑動的 sidebar -->
 
-
 <!-- 中間主區塊 -->
 <div class="page-container extract-block">
 

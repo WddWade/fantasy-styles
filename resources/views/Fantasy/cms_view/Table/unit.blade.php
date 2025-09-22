@@ -13,7 +13,7 @@
     <!-- mainNav 系統主選單 -->
     @include('Fantasy.includes.sidebar')
     <!-- mainNav 系統主選單 -->
-    @include('Fantasy.cms_view.Table.cms_ag_table')
+    @include('Fantasy.cms_view.Table.cms_ag_table',['branchData'=>$nowBranchData,'branchMenuList'=>$branchMenuList])
 
     <!-- 圖片 / 影片管理 燈箱 -->
     @include('Fantasy.cms_view.includes.partImg_lightbox')

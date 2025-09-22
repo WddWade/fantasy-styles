@@ -4,7 +4,7 @@
         <div class="content full-height">
             <nav class="content-sidebar">
                 <div class="sidebar-menu">
-                    @include('Fantasy.cms_view.includes.list')
+                    @include('Fantasy.cms_view.includes.list',['branchData'=>$branchData])
                     <div class="clearfix"></div>
                 </div>
             </nav>
