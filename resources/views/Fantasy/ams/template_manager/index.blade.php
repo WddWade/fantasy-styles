@@ -100,6 +100,11 @@
                                 <table class="tables">
                                     <thead>
                                         <tr>
+                                            <th class="edit_ctrl">
+                                                <div class="fake-th ">
+                                                    <span class="sort theadSortBtn" data-column="99" data-sort="0">Edit</span>
+                                                </div>
+                                            </th>                                            
                                             <th class="ams_site_status w_Preview">
                                                 <div class="fake-th ">
                                                     <span class="" data-column="is_active">狀態</span>
@@ -130,6 +135,13 @@
                                     <tbody class="ams_tbody" data-type="template-manager">
                                         @foreach($data as $key => $row)
                                         <tr>
+                                            <td class="edit_ctrl">
+                                                <div class="tableMaintitle fms_folder_on_list " data-id="1" data-parent-id="0">
+                                                    <div class="fms_bulider_new edit file-edit" data-id="1">
+                                                        <span class="fa fa-pencil-square-o edit-txt"></span>
+                                                    </div>
+                                                </div>
+                                            </td>                                            
                                             <td class="ams_site_status w_Preview edit_ams_wrapper" data-type="template-manager" data-id="{{ $row['id'] }}">
                                                 <div class="tableContent">{{ ($row['is_active'] == 1) ? '啟用' : '未啟用' }}</div>
                                             </td>

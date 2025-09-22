@@ -2,18 +2,12 @@
 @php
     $index = 0;
 @endphp
-<ul class="head-bar">
-    <li class="level-1">
-        <!---->
-        <div class="display-title">
-            <div class="title">
-                <span class="title_block">AMS</span>
-                <span>帳號與設定</span>
-            </div>
-        </div>
-        <!---->
-    </li>
-</ul>
+<div class="head-title">
+    <div class="title">
+        <span class="title_block">AMS</span>
+        <span>帳號與設定</span>
+    </div>
+</div>
 <!--列表list-->
 <div class="body-list ams-list-doyouwanttobeagoodman">
 

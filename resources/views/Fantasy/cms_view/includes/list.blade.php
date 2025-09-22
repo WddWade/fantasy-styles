@@ -5,8 +5,9 @@
 <div class="site-head">
     <div class="sites dropdown">
         <div class="current-site" data-toggle="dropdown">
-            <span >CMS</span>
+            <div >CMS</div>
             <p>{{$branchData['title']}}</p>
+            <span class="icon-cms"></span>
         </div>
         <div class="sites-list dropdown-menu">
             @foreach ($branchMenuList['list'] as $key => $row)

@@ -1,18 +1,11 @@
 <div class="sidebar-menu">
     <!--語系-->
-    <ul class="head-bar">
-        <li class="level-1">
-            <!---->
-            <div class="display-title">
-                <div class="title">
-                    <span class="title_block">FMS</span>
-                    <span>檔案管理</span>
-                </div>
-                {{-- <span class="arrow"></span> --}}
-            </div>
-            <!--==============================-->
-        </li>
-    </ul>
+    <div class="head-title">
+        <div class="title">
+            <span class="title_block">FMS</span>
+            <span>檔案管理</span>
+        </div>
+    </div>
     <!--列表list-->
     <div class="body-list content-scrollbox">
         {{-- 資料夾樹 --}}

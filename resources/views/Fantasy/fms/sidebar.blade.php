@@ -1,15 +1,11 @@
 <div class="sidebar-menu">
     <!--語系-->
-    <ul class="head-bar">
-        <li class="level-1">
-            <!---->
-            <a href="javascript:void(0);" class="display-title">
-                <span class="title">檔案管理</span>
-                {{-- <span class="arrow"></span> --}}
-            </a>
-            <!--==============================-->
-        </li>
-    </ul>
+    <div class="head-title">
+        <div class="title">
+            <span class="title_block">FMS</span>
+            <span>檔案管理</span>
+        </div>
+    </div>
     <!--列表list-->
     <ul class="body-list">
         @foreach($folder as $val)

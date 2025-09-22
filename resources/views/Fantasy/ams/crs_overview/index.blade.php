@@ -101,6 +101,11 @@
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
+                                        <th class="edit_ctrl">
+                                            <div class="fake-th ">
+                                                <span class="sort theadSortBtn" data-column="99" data-sort="0">Edit</span>
+                                            </div>
+                                        </th>                                        
                                         <th style="width:20px" class="text-center">
                                             <button class="btn btn-link">
                                                 <i class="pg-unordered_list"></i>
@@ -115,6 +120,13 @@
                                 <tbody class="ams_tbody" data-type="crs-overview">
                                     @foreach($data as $key => $row)
                                     <tr class="tbody_tick">
+                                        <td class="edit_ctrl">
+                                            <div class="tableMaintitle fms_folder_on_list " data-id="1" data-parent-id="0">
+                                                <div class="fms_bulider_new edit file-edit" data-id="1">
+                                                    <span class="fa fa-pencil-square-o edit-txt"></span>
+                                                </div>
+                                            </div>
+                                        </td>                                          
                                         <td class="v-align-middle">
                                             <div class="checkbox text-center">
                                                 <input type="checkbox" id="" class="input_number">

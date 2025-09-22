@@ -232,6 +232,11 @@
                     <table class="tables">
                         <thead>
                             <tr>
+                                <th class="edit_ctrl">
+                                    <div class="fake-th ">
+                                        <span class="sort theadSortBtn" data-column="99" data-sort="0">Edit</span>
+                                    </div>
+                                </th>                                
                                 <th class="w_Check">
                                     <div class="fake-thead">
                                         <div class="fake-th first">
@@ -272,6 +277,13 @@
                         <tbody class="ams_tbody" data-type="crs-template">
                             @foreach($data as $key => $row)
                             <tr>
+                                <td class="edit_ctrl">
+                                    <div class="tableMaintitle fms_folder_on_list " data-id="1" data-parent-id="0">
+                                        <div class="fms_bulider_new edit file-edit" data-id="1">
+                                            <span class="fa fa-pencil-square-o edit-txt"></span>
+                                        </div>
+                                    </div>
+                                </td>                                  
                                 <td class="w_Check">
                                     <div class="tableContent">
                                         <label class="select-item">

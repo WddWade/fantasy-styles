@@ -6467,6 +6467,48 @@ body.isContent .backEnd_quill {
   position: relative;
   width: 100%;
 }
+.page-container .content .content-sidebar .head-title {
+  width: 100%;
+  height: 43px;
+  list-style: none;
+  padding-bottom: 0;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: visible;
+  position: sticky;
+  border-bottom: 1px solid #e4e4e4;
+  top: 0;
+  z-index: 12;
+  -webkit-transition: width 0.5s;
+  transition: width 0.5s;
+}
+.page-container .content .content-sidebar .head-title .title {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding: 0 20px;
+  color: #000;
+  white-space: nowrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  gap: 5px;
+}
+.page-container .content .content-sidebar .head-title .title .title_block {
+  font-weight: 700;
+}
 .page-container .content .content-sidebar .site-head {
   font-size: 1.2rem;
   width: 100%;
@@ -6514,6 +6556,7 @@ body.isContent .backEnd_quill {
   border-bottom: 1px solid #e4e4e4;
 }
 .page-container .content .content-sidebar .site-head .sites .current-site {
+  font-size: 1.3rem;
   padding: 10px 20px;
   height: 42px;
   width: 100%;
@@ -6530,18 +6573,26 @@ body.isContent .backEnd_quill {
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   gap: 5px;
+  cursor: pointer;
 }
 .page-container .content .content-sidebar .site-head .sites .current-site > * {
   line-height: 1;
 }
-.page-container .content .content-sidebar .site-head .sites .current-site span {
+.page-container .content .content-sidebar .site-head .sites .current-site div {
   font-weight: 800;
 }
 .page-container .content .content-sidebar .site-head .sites .current-site p {
   font-weight: 500;
-  white-space: nowrap;
-  overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  overflow: hidden;
+}
+.page-container .content .content-sidebar .site-head .sites .current-site span {
+  font-weight: 600;
+  font-size: 1.1rem !important;
 }
 .page-container .content .content-sidebar .site-head .languages {
   width: 100%;
@@ -6561,6 +6612,7 @@ body.isContent .backEnd_quill {
   min-height: 40px;
 }
 .page-container .content .content-sidebar .site-head .languages .current-language {
+  font-size: 1.3rem;
   height: 40px;
   width: 100%;
   padding: 10px 20px;
@@ -6577,6 +6629,7 @@ body.isContent .backEnd_quill {
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   gap: 5px;
+  cursor: pointer;
 }
 .page-container .content .content-sidebar .site-head .languages .language-title {
   width: 100%;
@@ -6599,13 +6652,38 @@ body.isContent .backEnd_quill {
   text-overflow: ellipsis;
   line-height: 1;
 }
+.page-container .content .content-sidebar .site-head .dropdown.show {
+  background-color: #f5f5f5;
+}
+.page-container .content .content-sidebar .site-head .dropdown.show .dropdown-item {
+  background-color: transparent;
+}
 .page-container .content .content-sidebar .site-head .dropdown-menu {
   width: 100%;
-  padding: 0 20px 10px 20px;
+  padding: 0 0 10px 0;
   position: static;
   -webkit-box-shadow: none;
           box-shadow: none;
   gap: 0;
+  background-color: transparent;
+}
+.page-container .content .content-sidebar .site-head .dropdown-menu .dropdown-item {
+  font-size: 1.3rem;
+  padding: 5px 20px;
+  background-color: transparent;
+  border-radius: 0;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.page-container .content .content-sidebar .site-head .dropdown-menu .dropdown-item:hover {
+  color: #fff;
+  background-color: #000;
+}
+.page-container .content .content-sidebar .site-head .dropdown-menu .dropdown-item:hover a {
+  color: #fff;
+}
+.page-container .content .content-sidebar .site-head .dropdown-menu .dropdown-item:hover .iconSquare {
+  background-color: #fff;
 }
 .page-container .content .content-sidebar .site-head .dropdown-menu .dropdown-item a {
   display: -webkit-box;
@@ -6927,7 +7005,7 @@ body.isContent .backEnd_quill {
 .content-wrap .content-head .content-title h1 {
   height: 20px;
   font-weight: 500;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   line-height: 1;
   color: #000;
   margin: 0;
@@ -8817,7 +8895,7 @@ body.isContent .backEnd_quill {
 }
 .hiddenArea .detailEditor .table-editor {
   overflow: hidden;
-  border-radius: 3px;
+  border-radius: 3px 3px 0 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8825,7 +8903,6 @@ body.isContent .backEnd_quill {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 10px 0;
 }
 .hiddenArea .detailEditor .table-editor .bk_spreadsheet_header_style {
   background-color: #f4f4f4 !important;
@@ -8837,25 +8914,25 @@ body.isContent .backEnd_quill {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-  gap: 2px;
+  background: #fff;
+  border: 1px solid #dadada;
+  border-bottom: none;
 }
 .hiddenArea .detailEditor .table-editor .button-group button {
   margin: 0;
-  padding: 8px 12px;
-  border-radius: 3px;
-  border: 1px solid #e2e2e2;
+  border: none;
+  padding: 7px 12px;
   cursor: pointer;
   -webkit-transition: background 0.25s ease;
   transition: background 0.25s ease;
-  background: #fff;
+  background-color: #fff;
+  border-right: 1px solid #ccc;
+}
+.hiddenArea .detailEditor .table-editor .button-group button:last-child {
+  border-right: none;
 }
 .hiddenArea .detailEditor .table-editor .button-group button:hover {
-  border: 1px solid #000;
-}
-.hiddenArea .detailEditor .table-editor .button-group button.bkSpreadsheetNewCol, .hiddenArea .detailEditor .table-editor .button-group button.bkSpreadsheetNewRow {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  background-color: #f5f5f5;
 }
 .hiddenArea .detailEditor .table-editor .jss_spreadsheet {
   display: -webkit-box;
@@ -12788,13 +12865,22 @@ textarea:focus::-webkit-input-placeholder,
 }
 .picture_box .frame .box,
 .____picture_box .frame .box {
-  min-height: 99px;
+  min-height: 102px;
   max-width: 200px;
   border: solid 1px transparent;
   border-radius: 3px;
   background-color: #fff;
   width: 177.78px;
   height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   overflow: hidden;
   position: relative;
 }
@@ -12833,6 +12919,7 @@ textarea:focus::-webkit-input-placeholder,
 .____picture_box .frame img {
   cursor: pointer;
   max-width: 100%;
+  max-height: 100px;
 }
 .picture_box .frame .tool,
 .____picture_box .frame .tool {

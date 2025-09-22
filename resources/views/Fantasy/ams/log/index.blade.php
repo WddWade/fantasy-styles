@@ -144,6 +144,11 @@
                                     <table class="tables">
                                         <thead>
                                             <tr>
+                                                <th class="edit_ctrl">
+                                                    <div class="fake-th ">
+                                                        <span class="sort theadSortBtn" data-column="99" data-sort="0">Edit</span>
+                                                    </div>
+                                                </th>                                                
                                                 <th class="ams_account">
                                                       <div class="fake-th ">
                                                         <span>使用者</span>
@@ -175,6 +180,13 @@
                                         <tbody>
                                             @foreach ($data as $key => $row)
                                                 <tr class="edit_ams_wrapper" data-type="log" data-id="{{ $row['id'] }}" data-ym="{{ $ShowTime }}">
+                                                    <td class="edit_ctrl">
+                                                        <div class="tableMaintitle fms_folder_on_list " data-id="1" data-parent-id="0">
+                                                            <div class="fms_bulider_new edit file-edit" data-id="1">
+                                                                <span class="fa fa-pencil-square-o edit-txt"></span>
+                                                            </div>
+                                                        </div>
+                                                    </td>                                                      
                                                     <td class="ams_account">
                                                         <div class="tableMaintitle open_builder">
                                                             <span class="title-name open_builder">{{ $row['user_name'] }}</span>
