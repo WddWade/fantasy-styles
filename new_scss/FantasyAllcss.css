@@ -11042,6 +11042,54 @@ body.isContent .backEnd_quill {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 100%;
+  gap: 15px;
+}
+.cms_site_index .site_name {
+  font-size: 3rem;
+  color: #000;
+}
+.cms_site_index .site_name_en {
+  font-size: clamp(60px, 7vw, 7vw);
+  font-weight: 600;
+  line-height: 1;
+  color: #000;
+}
+.cms_site_index .site_links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 100px;
+  margin-top: 50px;
+}
+.cms_site_index .site_links a {
+  color: #000;
+  text-transform: uppercase;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
+}
+.cms_site_index .site_links span {
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1;
+  color: #000;
+}
+.cms_site_index .site_links p {
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.6;
+  letter-spacing: normal;
 }
 
 /*
@@ -12025,7 +12073,7 @@ body.isContent .backEnd_quill {
       -ms-flex-align: center;
           align-items: center;
 }
-.ams_page .ams_index .main-title {
+.ams_page .ams_index .main_title {
   font-size: 15vw;
   color: #000;
 }

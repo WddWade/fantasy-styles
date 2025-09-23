@@ -4,4 +4,41 @@
   justify-content: center;
   flex-direction: column;
   height: 100%;
+  gap: 15px;
+  .site_name {
+    font-size: 3rem;
+    color: #000;
+  }
+  .site_name_en {
+    font-size: clamp(60px, 7vw, 7vw);
+    font-weight: 600;
+    line-height: 1;
+    color: #000;
+  }
+  .site_links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    margin-top: 50px;
+    a {
+      color: #000;
+      text-transform: uppercase;
+      flex-direction: column;
+      display: flex;
+      gap: 5px;
+    }
+    span {
+      font-size: 3rem;
+      font-weight: 600;
+      line-height: 1;
+      color: #000;
+    }
+    p {
+      font-weight: 400;
+      margin: 0;
+      line-height: 1.6;
+      letter-spacing: normal;
+    }
+  }
 }

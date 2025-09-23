@@ -27,7 +27,7 @@
                     <div class="content-scrollbox scroll-content" style="height: auto; margin-bottom: 0px; margin-right: 0px; max-height: 953px;">
                         <div class="content-wrap">
                             <div class="ams_index">
-                                <div class="main-title">AMS</div>
+                                <div class="main_title">AMS</div>
                             </div>
                         </div>
                     </div>

@@ -30,11 +30,18 @@
                 <div class="content-scrollbox">
                     @if(isset($branchData) && isset($branchMenuList))
                     <div class="cms_site_index">
-                        <div class="site_name">{{$branchData['title']}}</div>
                         <div class="site_name_en">{{$branchData['en_title']}}</div>
-                        <div class="site_language">{{$branchMenuList['now_locale']}}</div>
-                        <a href="https://laravel11.wdd.idv.tw">Published Site</a>
-                        <a href="https://laravel11.wdd.idv.tw">Preview Site</a>
+                        <div class="site_name">{{$branchData['title']}}-{{$branchMenuList['now_locale']}}語系</div>
+                        <div class="site_links">
+                            <a href="https://laravel11.wdd.idv.tw">
+                                <span>Published</span>
+                                <p>前往正式網站</p>
+                            </a>
+                            <a href="https://laravel11.wdd.idv.tw">
+                                <span>Preview</span>
+                                <p>前往預覽網站</p>
+                            </a>
+                        </div>
                     </div>
                     @endif
                     <div class="content-wrap main-table index-table-div" data-tableid="new_cms_table" style="{{ (isset($branchData) && isset($branchMenuList)) ? 'display: none;':'' }}">
