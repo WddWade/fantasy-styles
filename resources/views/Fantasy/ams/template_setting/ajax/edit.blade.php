@@ -25,19 +25,19 @@
                         </div>
                         <div class="control">
                             <ul class="btnGroup">
-                                <li class="cancel">
-                                    <a class="close_btn close_ams_hiddenArea" href="javascript:void(0)">
-                                        <span class="fa fa-remove"></span>
-                                        <span class="label">Cancel</span>
-                                    </a>
-                                </li>
                                 <li class="check">
                                     <a class="updated_ams_edit_btn" data-type="template-setting"
                                         href="javascript:void(0)">
                                         <span class="fa fa-check"></span>
                                         <span class="label">Save</span>
                                     </a>
-                                </li>                                
+                                </li>   
+                                <li class="cancel">
+                                    <a class="close_btn close_ams_hiddenArea" href="javascript:void(0)">
+                                        <span class="fa fa-remove"></span>
+                                        <span class="label">Cancel</span>
+                                    </a>
+                                </li>                         
                             </ul>
                         </div>                        
                     </div>
@@ -88,18 +88,14 @@
 
                             <li class="inventory">
                                 <div class="title">
-                                    <div class="subtitle">
-                                        <div>請設定此分站/語系，可管理的單元</div>
-                                    </div>
+                                    <div class="subtitle f-900">請設定此分站/語系，可管理的單元</div>
                                 </div>
                                 <div class="inner">
-                                    <div class="switch_box radio_btn_switch ios_switch_select_block_all {{ ($key_group->where('is_active',0)->count() == 0) ? 'on':'' }}">
-                                        <div class="ios_switch ams_ios_switch {{ ($key_group->where('is_active',0)->count() == 0) ? 'on':'' }}">
+                                    <div class="ios_switch radio_btn_switch mrg-l-30 ams_ios_switch switch-block ios_switch_select_block_all {{ ($key_group->where('is_active',0)->count() == 0) ? 'on':'' }}">
                                                 <label class="title mrg-r-10">全關/全開</label>
-                                                <input type="checkbox" value="{{ ($key_group->where('is_active',0)->count() == 0) ? '1':'0' }}">
-                                                <div class="box">
+                                        <input class="check_ams_rabio" type="hidden" value="{{ ($key_group->where('is_active',0)->count() == 0) ? '1':'0' }}">
+                                        <div class="box ams_switch_ball">
                                                     <span class="ball"></span>
-                                            </div>
                                         </div>
                                     </div>
                                     <div class="tips">
@@ -108,15 +104,14 @@
                                     </div>
                                 </div>
                             </li>
-                            
                             @foreach ($key_group as $key => $row)
-                                <li class="inventory">
+                            <li class="inventory">
                                 <div class="title">
                                     <div class="subtitle f-900">{{ $row['title'] }}</div>
                                 </div>
                                 <div class="inner">
                                     <div class="ios_switch radio_btn_switch mrg-l-30 ams_ios_switch switch-block {{ isset($row['is_active']) && $row['is_active'] == 0 ? '' : 'on' }}">
-                                        <input class="check_ams_rabio" name="jsonData[is_active]" type="hidden"
+                                        <input class="check_ams_rabio" name="jsonData[{{ $row['id'] }}]" type="hidden"
                                             value="{{ isset($row['is_active']) && $row['is_active'] == 0 ? '0' : '1' }}">
                                         <input type="checkbox">
                                         <div class="box ams_switch_ball">

@@ -6,9 +6,6 @@
                 <div class="editorBody">
                     <div class="editorHeader">
                         <div class="info">
-                            {{-- <div class="title">
-                                <p class="ams_type_edit_zz">Fantasy Account Management 帳號管理</p>
-                            </div> --}}
                             @if(isset($data['account']))
                                 <h3 class="dataEditTitle">{{$data['account']}}</H3>
                             @else
@@ -17,12 +14,6 @@
                         </div>
                          <div class="control">
                             <ul class="btnGroup">
-                                <li class="cancel">
-                                    <a href="javascript:void(0)" class="close_btn close_ams_hiddenArea">
-                                        <span class="fa fa-remove"></span>
-                                        <span class="label">Cancel</span>
-                                    </a>
-                                </li>
                                 <li class="trash delete_ams_hiddenArea">
                                     <a href="javascript:void(0)" class="delete_ams_information" data-type="fantasy-account">
                                         <span class="fa fa-trash"></span>
@@ -35,6 +26,12 @@
                                         <span class="label">Save</span>
                                     </a>
                                 </li>
+                                <li class="cancel">
+                                    <a href="javascript:void(0)" class="close_btn close_ams_hiddenArea">
+                                        <span class="fa fa-remove"></span>
+                                        <span class="label">Cancel</span>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -45,18 +42,6 @@
                             @else
                             <input type="hidden" value="0" name="amsData[id]" class="supportAmsId_Input">
                             @endif
-                            
-                            {{-- <li class="inventory">
-                                <div class="title">
-                                    <div class="subtitle">注意事項</div>
-                                </div>
-                                <div class="inner">
-                                    <div class="tips">
-                                        <span class="title">Tips</span>
-                                        <p>設定與管理 Fantasy Account，擁有 Account 才能夠登入 Fantasy 進行操作</p>
-                                    </div>
-                                </div>
-                            </li> --}}
                             <li class="inventory">
                                 <div class="title">
                                     <div class="subtitle">帳號是否啟用</div>
@@ -126,11 +111,9 @@
                                     <div class="inner_box row_style">
                                         <div class="psbox gray w-50 mrg-r-10">
                                             <input class="normal_input" type="password" placeholder="請輸入密碼" name="amsData[password]">
-                                            {{-- <span class="icon blind fa fa-eye-slash"></span> --}}
                                         </div>
                                         <div class="psbox w-50 mrg-l-10">
                                             <input class="normal_input" type="password" placeholder="密碼驗證，請再次輸入密碼" name="amsData[password2]">
-                                            {{-- <span class="icon blind fa fa-eye-slash"></span> --}}
                                         </div>
                                     </div>
                                     <div class="tips">
@@ -140,35 +123,6 @@
                                 </div>
                             </li>
                             @endif
-                            {{-- <li class="inventory">
-                                <div class="title">
-                                    <div class="subtitle">帳號是否啟用</div>
-                                </div>
-                                <div class="inner">
-                                    <div class="radio_area">
-                                        <div class="radio_area_content">
-                                            <input id="is_active" name="amsData[is_active]" type="hidden" value="{{$data['is_active'] ?? 0}}">
-                                            <label class="box {{ (isset($data['is_active']) && $data['is_active']==1) ? '':'active' }}" data-value="0" data-hide="">
-                                                <div class="plan">
-                                                    <span class="circle"></span>
-                                                    <span class="yearly">否</span>
-                                                </div>
-                                            </label>
-                                            <label class="box {{ (isset($data['is_active']) && $data['is_active']==1) ? 'active':'' }}" data-value="1" data-hide="">
-                                                <div class="plan">
-                                                    <span class="circle"></span>
-                                                    <span class="yearly">是</span>
-                                                </div>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="tips">
-                                        <span class="title">TIPS</span>
-                                        <p>啟用後此帳號才能登入</p>
-                                    </div>
-                                </div>
-                            </li>        --}}
-                            
                             <li class="inventory">
                                 <div class="title">
                                     <div class="subtitle">限制登入IP</div>

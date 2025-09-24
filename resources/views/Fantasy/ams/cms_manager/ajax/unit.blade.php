@@ -9,7 +9,7 @@
         <div class="switch_box radio_btn_switch ios_switch_select_block_all">
             <div class="ios_switch ams_ios_switch">
                 <label class="title mrg-r-10">全關/全開</label>
-                <input type="checkbox">
+                <input class="check_ams_rabio" type="hidden">
                 <div class="box">
                     <span class="ball"></span>
                 </div>
@@ -30,13 +30,11 @@
             </div>
             <div class="title_conteollers">
                 <div class="inner">
-                    <div class="switch_box radio_btn_switch ios_switch_select_block">
-                        <div class="ios_switch ams_ios_switch">
+                    <div class="ios_switch radio_btn_switch mrg-l-30 ams_ios_switch switch-block ios_switch_select_block">
                             <label class="title mrg-r-10">全關/全開</label>
-                            <input type="checkbox">
-                            <div class="box">
+                        <input class="check_ams_rabio" type="hidden">
+                        <div class="box ams_switch_ball">
                                 <span class="ball"></span>
-                            </div>
                         </div>
                     </div>                                    
                 </div>
@@ -130,55 +128,39 @@
                                     </div>
                                 </div>
                                 <div class="select2 switch_box_auth">
-                                    <select class="____select2 __leonselect2multiple" name="" multiple="multiple">
-                        
-                                            @foreach(OptionFunction::City_List() as $item)
-                                       
-                                                    <option value="{{ $item['title'] }}">{{ $item['title'] }}</option>
-                                              
-                                            @endforeach
-                             
-                                   
-                                    </select>
                                     @if ($row2['has_auth'] == $row2['id'])
-                                        <input name='auth_menu_id[][]' type='hidden' value="{{ $row2['id'] }}" />
-                                        <ul class="multi_select_has_auth" id="multi_select_has_auth_{{ $row2['id'] }}"
-                                            data-menu_id="{{ $row2['id'] }}" data-model="{{ $row2['model'] }}">
-                                            @php
-                                                $get_cms_option = [];
-                                                if (!empty($BranchOriginUnit)) {
-                                                    $LeonTableName = M_table_Config(M($row2['model']));
-                                                    $model_locale = explode('_', $LeonTableName);
-                                                    $SaveToMany = false;
-                                                    if (count($model_locale) > 1) {
-                                                        unset($model_locale[0]);
-                                                        $LeonTableName = implode('_', $model_locale);
-                                                        $SaveToMany = true;
-                                                    }
-                                                    $TableName = $SaveToMany ? $BranchOriginUnit['locale'] . '_' . $LeonTableName : $LeonTableName;
-                                                
-                                                    $get_cms_option = DB::table($TableName)
-                                                        ->where('branch_id', $row2['branch_id'])
-                                                        ->get()
-                                                        ->map(function ($item) {
-                                                            return [
-                                                                'key' => $item->id,
-                                                                'title' => $item->w_title ?? $item->title,
-                                                            ];
-                                                        })
-                                                        ->prepend(['key' => 'pass', 'title' => '+++ 全部授權 +++']);
+                                        @php
+                                            $get_cms_option = [];
+                                            if (!empty($BranchOriginUnit)) {
+                                                $LeonTableName = M_table_Config(M($row2['model']));
+                                                $model_locale = explode('_', $LeonTableName);
+                                                $SaveToMany = false;
+                                                if (count($model_locale) > 1) {
+                                                    unset($model_locale[0]);
+                                                    $LeonTableName = implode('_', $model_locale);
+                                                    $SaveToMany = true;
                                                 }
-                                                
-                                            @endphp
-                                            {{ UnitMaker::select2Multi([
-                                                'name' => 'authData[auth_data][' . $row2['id'] . ']',
-                                                'options' => $get_cms_option,
-                                                'value' =>
-                                                    array_key_exists($row2['id'], $data['CmsDataAuth']) && $data['CmsDataAuth'][$row2['id']]['data_id'] != ''
-                                                        ? $data['CmsDataAuth'][$row2['id']]['data_id']
-                                                        : '',
-                                            ]) }}
-                                        </ul>
+                                                $TableName = $SaveToMany ? $BranchOriginUnit['locale'] . '_' . $LeonTableName : $LeonTableName;
+                                            
+                                                $get_cms_option = DB::table($TableName)
+                                                    ->where('branch_id', $row2['branch_id'])
+                                                    ->get()
+                                                    ->map(function ($item) {
+                                                        return [
+                                                            'key' => $item->id,
+                                                            'title' => $item->w_title ?? $item->title,
+                                                        ];
+                                                    })
+                                                    ->prepend(['key' => 'pass', 'title' => '+++ 全部授權 +++']);
+                                            }
+                                            $CmsDataAuth = json_decode($data['CmsDataAuth'][$row2['id']]['data_id'] ?? '[]',true);
+                                        @endphp
+                                        <input name='auth_menu_id[][]' type='hidden' value="{{ $row2['id'] }}" />
+                                        <select class="____select2 __leonselect2multiple" name="{{'authData[auth_data][' . $row2['id'] . ']'}}" multiple="multiple">
+                                            @foreach($get_cms_option as $item)
+                                                <option value="{{ $item['key'] }}" {{ (in_array($item['key'],$CmsDataAuth)) ? 'selected':'' }}>{{ $item['title'] }}</option>
+                                            @endforeach
+                                        </select>
                                     @endif
                                 </div>
                             </div>

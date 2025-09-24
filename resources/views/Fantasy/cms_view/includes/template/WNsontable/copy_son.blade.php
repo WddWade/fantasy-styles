@@ -314,6 +314,14 @@ $randomWord_va = \Illuminate\Support\Str::random(5);
                     $row_3['value'] = $row[$row_3['value']];
                     @endphp
                     {{UnitMaker::radio_area($row_3)}}
+                    @elseif ($row_3['type'] == 'checkbox')
+                    @php
+                    $row_3['sontable'] = true;
+                    $row_3['sontable_add'] = true;
+                    $row_3['name'] = $set['name'] . '[' . $row_3['value'] . '][]';
+                    $row_3['value'] = $row[$row_3['value']];
+                    @endphp
+                    {{UnitMaker::checkbox($row_3)}}
                     @elseif ($row_3['type'] == 'numberInput')
                     @php
                         $row_3['sontable'] = true;
@@ -712,6 +720,7 @@ $randomWord_va = \Illuminate\Support\Str::random(5);
                     'son_son_db' => $son_son_db,
                     'sort_field'=>$row_2['sort_field'] ?? '',
                     'three'=>$three,
+                    'row_2'=>$row_2
                     ];
                     $add_html = View::make('Fantasy.cms_view.includes.template.WNsontable.add_html', $threeDataArray)->render();
                     @endphp

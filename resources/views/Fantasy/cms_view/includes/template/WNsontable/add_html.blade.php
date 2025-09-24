@@ -15,9 +15,11 @@
         <input class="addFantasyKey" name="{{ $son_son_db }}[quillSonFantasyKey]" type="hidden">
         <input class="addThirdSid" name="SecondIdColumn" type="hidden" value="{{ $three['SecondIdColumn'] }}">
         <input class="addThirdSid" name="modelName" type="hidden" value="{{ $son_son_db }}">
+        @if(isset($row_2['sort']) && $row_2['sort'] == 'yes' || !isset($row_2['sort']))
         <div class="item sort_number">
             <input name="{{ $son_son_db }}[{{ $sort_field ?: 'w_rank' }}]" type="text">
         </div>
+        @endif
         @foreach ($three['three_tableSet'] as $three_val)
             @if ($three_val['type'] == 'just_show')
                 <div class="item text btn_ctable">

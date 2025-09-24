@@ -228,12 +228,7 @@
                     //     滿版圖文於手機版預設皆為圖上文下',
                     'default' => '',
                     'options' => $article_options['mobileRWD'],
-                ],
-                [
-                    'type' => 'article_wysiwyg',
-                    'title' => '即時預覽',
-                    'sub_title'=> false, //是否有副標題
-                ],
+                ]
             ]
         ],
         [

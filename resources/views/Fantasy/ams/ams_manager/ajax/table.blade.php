@@ -1,34 +1,30 @@
 @foreach($data as $key => $row)
 <tr>
-    <td class="w_Category edit_ams_wrapper" data-type="ams-manager" data-id="{{ $row['id'] }}">
-        <div class="tableMaintitle ">
+    <td class="edit_ctrl">
+        <div class="edit-icon edit_ams_wrapper" data-type="ams-manager" data-id="{{ $row['id'] }}">
+            <span class="fa fa-pencil-square-o edit-txt"></span>
+        </div>
+    </td>                                          
+    <td class="ams_status w_Preview">
+        <div class="tableContent">{{ ($row['is_active'] == 1) ? '啟用' : '未啟用' }}</div>
+    </td>                                            
+    <td class="ams_account">
+        <div class="tableMaintitle">
+            @if(!empty($row['UsersData']['_photo_image']))
             <div class="title-img rwdhide">
-                @if(!empty($row['UsersData']['_photo_image']))
                 <img src="{{$row['UsersData']['_photo_image']['real_route']}}">
-                @endif
-            </div>
-            <span class="title-name ">{{ $row['UsersData']['name'] ?: $row['UsersData']['account'] ?: '未設定帳號名稱' }}</span>
-            @if(!empty($row['UsersData']['mail']))
-            <div class="tool">
-                <a href="mailto:{{$row['UsersData']['mail']}}"><span class="fa fa-envelope "></span></a>
             </div>
             @endif
+            <span class="title-name">{{ $row['UsersData']['name'] }}</span>
         </div>
     </td>
-    <td class=" w_Category edit_ams_wrapper" data-type="ams-manager" data-id="{{ $row['id'] }}">
-        <div class="tableContent">
-            {{ $row['role_identity'] ?: '-'}}
-        </div>
+    <td class="ams_permission_level">
+        <div class="tableContent">{{ $row['role_identity'] ?: '-'}}</div>
     </td>
-    <td class=" w_TableMaintitle edit_ams_wrapper" data-type="ams-manager" data-id="{{ $row['id'] }}">
-        <div class="tableContent">
-            {{ $row['role_group'] ?: '-'}}
-        </div>
+    <td class="ams_permission">
+        <div class="tableContent">{{ $row['role_group'] ?: '-'}}</div>
     </td>
-    <td class="text-center w_Preview edit_ams_wrapper" data-type="ams-manager" data-id="{{ $row['id'] }}">
-        <div class="tableContent">{{ ($row['is_active'] == 1) ? '啟用' : '未啟用' }}</div>
-    </td>
-    <td class="w_Update " data-type="ams-manager" data-id="{{ $row['id'] }}">
+    <td class="ams_updated">
         <div class="tableContent">{{ $row['updated_at'] }}</div>
     </td>
 </tr>

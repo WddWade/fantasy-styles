@@ -18,23 +18,22 @@
                         </div>
                         <div class="control">
                             <ul class="btnGroup">
-                                <li class="cancel">
-                                    <a href="javascript:void(0)" class="close_btn close_ams_hiddenArea">
-                                        <span class="fa fa-remove"></span>
-                                        <span class="label">Cancel</span>
-                                    </a>
-                                </li>
                                 <li class="trash delete_ams_hiddenArea">
                                     <a href="javascript:void(0)" class="delete_ams_information" data-type="ams-manager">
                                         <span class="fa fa-trash"></span>
                                         <div class="label">Delete</div>
                                     </a>
                                 </li>
-
-                                    <li class="check">
+                                <li class="check">
                                     <a href="javascript:void(0)" class="updated_ams_edit_btn" data-type="ams-manager">
                                         <span class="fa fa-check"></span>
                                         <span class="label">Save</span>
+                                    </a>
+                                </li>
+                                <li class="cancel">
+                                    <a href="javascript:void(0)" class="close_btn close_ams_hiddenArea">
+                                        <span class="fa fa-remove"></span>
+                                        <span class="label">Cancel</span>
                                     </a>
                                 </li>
                             </ul>

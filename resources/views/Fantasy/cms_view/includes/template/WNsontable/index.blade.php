@@ -948,6 +948,7 @@
                                                 'son_son_db' => $son_son_db,
                                                 'sort_field' => $son_sort_field,
                                                 'three' => $three,
+                                                'row_2' => $row_2
                                             ];
                                             $add_html = View::make('Fantasy.cms_view.includes.template.WNsontable.add_html', $threeDataArray)->render();
                                         @endphp
@@ -1012,9 +1013,11 @@
                                                             <div class="item t-a-c check_box">
                                                                 <p>選擇</p>
                                                             </div>
+                                                            @if(isset($row_2['sort']) && $row_2['sort'] == 'yes' || !isset($row_2['sort']))
                                                             <div class="item t-a-c sort_number">
                                                                 <p>順序</p>
                                                             </div>
+                                                            @endif
                                                             @foreach ($three['three_tableSet'] as $three_val)
                                                                 <div
                                                                     class="item t-a-c {{ $three_val['type'] == 'radio_btn' ? 'switch_btn' : 'text' }}">
@@ -1092,11 +1095,13 @@
                                                                     type="hidden"
                                                                     value="{{ $value_son[$three['SecondIdColumn']] }}">
 
+                                                                @if(isset($row_2['sort']) && $row_2['sort'] == 'yes' || !isset($row_2['sort']))
                                                                 <div class="item sort_number">
                                                                     <input
                                                                         name="{{ $son_son_db }}[{{ $son_sort_field }}]"
                                                                         type="text" value="{{ $value_son[$son_sort_field] }}">
                                                                 </div>
+                                                                @endif
                                                                 @foreach ($three['three_tableSet'] as $three_val)
                                                                     @if ($three_val['type'] == 'just_show')
                                                                         <div class="item text btn_ctable">

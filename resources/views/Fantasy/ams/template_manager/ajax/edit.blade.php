@@ -24,14 +24,7 @@
                             </div> --}}
                         </div>
                         <div class="control">
-                            <ul class="btnGroup">
-                                <li class="cancel">
-                                    <a href="javascript:void(0)" class="close_btn close_ams_hiddenArea">
-                                        <span class="fa fa-remove"></span>
-                                        <span class="label">Cancel</span>
-                                    </a>
-                                </li>                                
-                               
+                            <ul class="btnGroup">                            
                                 {{-- 有開分站設定才可以刪除 --}}
                                 @if ( Config::get('cms.setBranchs') )
                                 <li class="trash delete_ams_hiddenArea">
@@ -41,11 +34,16 @@
                                     </a>
                                 </li>
                                 @endif
-
                                 <li class="check">
                                     <a href="javascript:void(0)" class="updated_ams_edit_btn" data-type="template-manager">
                                         <span class="fa fa-check"></span>
                                         <span class="label">Save</span>
+                                    </a>
+                                </li>  
+                                <li class="cancel">
+                                    <a href="javascript:void(0)" class="close_btn close_ams_hiddenArea">
+                                        <span class="fa fa-remove"></span>
+                                        <span class="label">Cancel</span>
                                     </a>
                                 </li>                                
                             </ul>

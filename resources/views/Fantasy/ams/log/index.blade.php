@@ -69,54 +69,22 @@
                                     </div>
                                     <div class="content-nav">
                                         {{-- wade:add --}}
+                                        @foreach($groupedByYear as $Year => $month)
                                         <div class="btn-item dropdown btn-role">
                                             <a class="" data-toggle="dropdown" href="javascript:void(0)" aria-haspopup="true" aria-expanded="true">
-                                                <span class="text">2024</span>
+                                                <span class="text">{{$Year}}</span>
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right profile-dropdown" role="menu">
-                                                <a class="dropdown-item ExportBtnCheck" href="javascript:void(0)" title="下載勾選項目"">１月</a>
-                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">2月</a>
-                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">3月</a>
-                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">4月</a>
-                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">5月</a>
-                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">6月</a>
-                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">7月</a>
-                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">8月</a>
-                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">9月</a>
-                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">１0月</a>
-                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">１1月</a>
-                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">１2月</a>
+                                                @foreach($month as $val)
+                                                <a class="dropdown-item ExportBtnCheck" href="/Fantasy/Ams/log?date={{ $Year.$val }}" title="下載勾選項目">{{$val}}月</a>
+                                                @endforeach
                                                 <a class="clearfix bg-master-lighter dropdown-item" href="javascript:void(0)">
                                                     <span class="pull-left">關閉選單</span>
                                                     <span class="pull-right"><i class="pg-power"></i></span>
                                                 </a>
                                             </div>
                                         </div>
-
-                                        <div class="btn-item dropdown btn-role">
-                                            <a class="" data-toggle="dropdown" href="javascript:void(0)" aria-haspopup="true" aria-expanded="true">
-                                                <span class="text">2023</span>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right profile-dropdown" role="menu">
-                                                <a class="dropdown-item ExportBtnCheck" href="javascript:void(0)" title="下載勾選項目"">１月</a>
-                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">2月</a>
-                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">3月</a>
-                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">4月</a>
-                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">5月</a>
-                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">6月</a>
-                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">7月</a>
-                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">8月</a>
-                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">9月</a>
-                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">１0月</a>
-                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">１1月</a>
-                                                <a class="dropdown-item ExportBtnSrh" data-href="javascript:;" href="javascript:void(0)" title="目前篩選資料">１2月</a>
-                                                <a class="clearfix bg-master-lighter dropdown-item" href="javascript:void(0)">
-                                                    <span class="pull-left">關閉選單</span>
-                                                    <span class="pull-right"><i class="pg-power"></i></span>
-                                                </a>
-                                            </div>
-                                        </div>
-
+                                        @endforeach
                                         {{-- wade:delete --}}
                                         {{-- <div class="btn-item">
                                             @foreach ($M_list as $val)
@@ -179,37 +147,36 @@
                                         </thead>
                                         <tbody>
                                             @foreach ($data as $key => $row)
-                                                <tr class="edit_ams_wrapper" data-type="log" data-id="{{ $row['id'] }}" data-ym="{{ $ShowTime }}">
+                                                <tr>
                                                     <td class="edit_ctrl">
-                                                        <div class="tableMaintitle fms_folder_on_list " data-id="1" data-parent-id="0">
-                                                            <div class="fms_bulider_new edit file-edit" data-id="1">
-                                                                <span class="fa fa-pencil-square-o edit-txt"></span>
-                                                            </div>
+                                                        <div class="edit-icon edit_ams_wrapper" data-type="log" data-id="{{ $row['id'] }}" data-ym="{{ $ShowTime }}">
+                                                            <span class="fa fa-pencil-square-o edit-txt"></span>
                                                         </div>
-                                                    </td>                                                      
+                                                    </td>   
+                                                    
                                                     <td class="ams_account">
-                                                        <div class="tableMaintitle open_builder">
-                                                            <span class="title-name open_builder">{{ $row['user_name'] }}</span>
+                                                        <div class="tableMaintitle">
+                                                            <span class="title-name">{{ $row['user_name'] }}</span>
                                                         </div>
                                                     </td>
                                                     <td class="ams_log_action">
-                                                        <div class="tableMaintitle open_builder">
-                                                            <span class="title-name open_builder">{{ $actions[$row['log_type']] }}</span>
+                                                        <div class="tableMaintitle">
+                                                            <span class="title-name">{{ $actions[$row['log_type']] }}</span>
                                                         </div>
                                                     </td>                                                    
                                                     <td class="ams_log_unit">
-                                                        <div class="tableMaintitle open_builder">
-                                                            <span class="title-name open_builder"> {{ $DB_Names[$row['table_name']] ?? $tables[$row['table_name']]->Comment ?? $row['table_name'] }}</span>
+                                                        <div class="tableMaintitle">
+                                                            <span class="title-name"> {{ $DB_Names[$row['table_name']] ?? $tables[$row['table_name']]->Comment ?? $row['table_name'] }}</span>
                                                         </div>
                                                     </td>
                                                     <td class="ams_log_ip">
-                                                        <div class="tableMaintitle open_builder">
-                                                            <span class="title-name open_builder">{{ $row['ip'] }}</span>
+                                                        <div class="tableMaintitle">
+                                                            <span class="title-name">{{ $row['ip'] }}</span>
                                                         </div>
                                                     </td>
                                                     <td class="ams_log_date">
-                                                         <div class="tableMaintitle open_builder">
-                                                            <span class="title-name open_builder">{{ $row['create_time'] }}</span>
+                                                         <div class="tableMaintitle">
+                                                            <span class="title-name">{{ $row['create_time'] }}</span>
                                                         </div>
                                                     </td>                                                    
                                                 </tr>

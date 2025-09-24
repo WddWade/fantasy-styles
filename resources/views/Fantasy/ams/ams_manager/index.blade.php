@@ -135,41 +135,30 @@
                                         @foreach($data as $key => $row)
                                         <tr>
                                             <td class="edit_ctrl">
-                                                <div class="tableMaintitle fms_folder_on_list " data-id="1" data-parent-id="0">
-                                                    <div class="fms_bulider_new edit file-edit" data-id="1">
-                                                        <span class="fa fa-pencil-square-o edit-txt"></span>
-                                                    </div>
+                                                <div class="edit-icon edit_ams_wrapper" data-type="ams-manager" data-id="{{ $row['id'] }}">
+                                                    <span class="fa fa-pencil-square-o edit-txt"></span>
                                                 </div>
-                                            </td>                                              
-                                            <td class="ams_status w_Preview edit_ams_wrapper" data-type="ams-manager" data-id="{{ $row['id'] }}">
+                                            </td>                                          
+                                            <td class="ams_status w_Preview">
                                                 <div class="tableContent">{{ ($row['is_active'] == 1) ? '啟用' : '未啟用' }}</div>
                                             </td>                                            
-                                            <td class="ams_account edit_ams_wrapper" data-type="ams-manager" data-id="{{ $row['id'] }}">
+                                            <td class="ams_account">
                                                 <div class="tableMaintitle">
+                                                    @if(!empty($row['UsersData']['_photo_image']))
                                                     <div class="title-img rwdhide">
-                                                        @if(!empty($row['UsersData']['_photo_image']))
                                                         <img src="{{$row['UsersData']['_photo_image']['real_route']}}">
-                                                        @endif
-                                                    </div>
-                                                    <span class="title-name">{{ $row['UsersData']['name'] }}</span>
-                                                    @if(!empty($row['UsersData']['mail']))
-                                                    <div class="tool">
-                                                        <a href="mailto:{{$row['UsersData']['mail']}}"><span class="fa fa-envelope"></span></a>
                                                     </div>
                                                     @endif
+                                                    <span class="title-name">{{ $row['UsersData']['name'] }}</span>
                                                 </div>
                                             </td>
-                                            <td class="ams_permission_level edit_ams_wrapper" data-type="ams-manager" data-id="{{ $row['id'] }}">
-                                                <div class="tableContent">
-                                                    {{ $row['role_identity'] ?: '-'}}
-                                                </div>
+                                            <td class="ams_permission_level">
+                                                <div class="tableContent">{{ $row['role_identity'] ?: '-'}}</div>
                                             </td>
-                                            <td class="ams_permission edit_ams_wrapper" data-type="ams-manager" data-id="{{ $row['id'] }}">
-                                                <div class="tableContent">
-                                                    {{ $row['role_group'] ?: '-'}}
-                                                </div>
+                                            <td class="ams_permission">
+                                                <div class="tableContent">{{ $row['role_group'] ?: '-'}}</div>
                                             </td>
-                                            <td class="ams_updated " data-type="ams-manager" data-id="{{ $row['id'] }}">
+                                            <td class="ams_updated">
                                                 <div class="tableContent">{{ $row['updated_at'] }}</div>
                                             </td>
                                         </tr>

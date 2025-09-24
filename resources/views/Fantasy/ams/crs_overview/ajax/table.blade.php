@@ -1,5 +1,10 @@
                     @foreach($data as $key => $row)
                     <tr class="tbody_tick">
+                        <td class="edit_ctrl">
+                            <div class="edit-icon edit_ams_wrapper" data-type="crs-overview" data-id="{{ $row['id'] }}">
+                                <span class="fa fa-pencil-square-o edit-txt"></span>
+                            </div>
+                        </td>                                          
                         <td class="v-align-middle">
                             <div class="checkbox text-center">
                                 <input type="checkbox" id="" class="input_number">
@@ -8,12 +13,13 @@
                                 </label>
                             </div>
                         </td>
-                        <td class="v-align-middle tool_ctrl edit_ams_wrapper" data-type="crs-overview"
+                        <td class="v-align-middle tool_ctrl" data-type="crs-overview"
                             data-id="{{ $row['id'] }}">
                             <div class="box text_pic">
                                 <div class="head_img open_builder">
-                                    @if(isset($fileInformationArray[ $row['users_data']['photo_image'] ]) AND
-                                    !empty($fileInformationArray[ $row['users_data']['photo_image'] ]))
+                                    @if(isset($fileInformationArray[ $row['users_data']['photo_image']
+                                    ]) AND !empty($fileInformationArray[
+                                    $row['users_data']['photo_image'] ]))
                                     <img src="{{ $fileInformationArray[ $row['users_data']['photo_image'] ]['real_route'] }}"
                                         alt="">
                                     @endif
@@ -27,7 +33,8 @@
                                 @endif
                             </div>
                         </td>
-                        <td class="v-align-middle edit_ams_wrapper" data-type="crs-overview" data-id="{{ $row['id'] }}">
+                        <td class="v-align-middle" data-type="crs-overview"
+                            data-id="{{ $row['id'] }}">
                             <div class="box text">
                                 @if(!empty($row['branch_id']))
                                 @foreach($branch_unit_options as $key2 => $row2)
@@ -43,8 +50,8 @@
                         <td class="v-align-middle">
                             <div class="box multi">
                                 <ul>
-                                    <li class="{{ ($row['is_active'] == 1) ? 'ch' : '' }} rabioAmsBtn"
-                                        data-id="{{$row['id']}}" data-model="CmsRole" data-column="is_active">
+                                    <li class="{{ ($row['is_active'] == 1) ? 'ch' : '' }} rabioAmsBtn" data-id="{{$row['id']}}"
+                                        data-model="CmsRole" data-column="is_active">
                                         <p>P</p>
                                     </li>
                                 </ul>

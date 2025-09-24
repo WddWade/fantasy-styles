@@ -59,11 +59,27 @@
         display: flex;
         align-items: center;
         position: relative;
-
-        i {
-          font-size: 16px;
-          display: block;
-          margin: 0 0 2px 10px;
+        span {
+          position: relative;
+          padding-right: 20px;
+          &::before {
+            content: "\f105";
+            font-size: 1rem;
+            font-family: FontAwesome;
+            text-shadow: none;
+            margin: 0;
+            display: block;
+            position: absolute;
+            top: 1px;
+            right: 7px;
+            transition: 0.12s ease;
+            transform-origin: center;
+          }
+          &:last-child {
+            &::before {
+              content: none;
+            }
+          }
         }
       }
     }

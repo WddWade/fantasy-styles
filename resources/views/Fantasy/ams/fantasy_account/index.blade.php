@@ -135,40 +135,31 @@
                                         @foreach($data as $key => $row)
                                         <tr>
                                             <td class="edit_ctrl">
-                                                <div class="tableMaintitle fms_folder_on_list " data-id="1" data-parent-id="0">
-                                                    <div class="fms_bulider_new edit file-edit" data-id="1">
-                                                        <span class="fa fa-pencil-square-o edit-txt"></span>
-                                                    </div>
+                                                <div class="edit-icon edit_ams_wrapper" data-type="fantasy-account" data-id="{{ $row['id'] }}">
+                                                    <span class="fa fa-pencil-square-o edit-txt"></span>
                                                 </div>
                                             </td>
-                                            <td class="ams_status w_Preview edit_ams_wrapper" data-type="fantasy-account" data-id="{{ $row['id'] }}">
+                                            <td class="ams_status w_Preview">
                                                 <div class="tableContent">{{ ($row['is_active'] == 1) ? '啟用' : '未啟用' }}</div>
                                             </td>
-                                            <td class="ams_account edit_ams_wrapper" data-type="fantasy-account" data-id="{{ $row['id'] }}">
-                                                <div class="tableMaintitle open_builder">
+                                            <td class="ams_account">
+                                                <div class="tableMaintitle">
+                                                    @if(!empty($row['_photo_image']))
                                                     <div class="title-img rwdhide">
-                                                        @if(!empty($row['_photo_image']))
                                                         <img src="{{$row['_photo_image']['real_route']}}">
-                                                        @endif
-                                                    </div>
-                                                    <span class="title-name open_builder">{{ $row['account'] }}</span>
-                                                    @if(!empty($row['mail']))
-                                                    <div class="tool">
-                                                        <a href="mailto:{{$row['mail']}}">
-                                                            <span class="fa fa-envelope open_builder"></span>
-                                                        </a>
                                                     </div>
                                                     @endif
+                                                    <span class="title-name">{{$row['account']}}</span>
                                                 </div>
                                             </td>
-                                            <td class=" ams_name edit_ams_wrapper" data-type="fantasy-account" data-id="{{ $row['id'] }}">
-                                                <div class="tableContent">{{ !empty($row['name']) ? $row['name'] : '-'}}</div>
+                                            <td class="ams_name">
+                                                <div class="tableContent">{{$row['name'] ?: '-'}}</div>
                                             </td>
-                                            <td class=" ams_mail edit_ams_wrapper" data-type="fantasy-account" data-id="{{ $row['id'] }}">
-                                                <div class="tableContent">{{ !empty($row['mail']) ? $row['mail'] : ''}}</div>
+                                            <td class="ams_mail">
+                                                <div class="tableContent">{{$row['mail'] ?: ''}}</div>
                                             </td>
-                                                 <td class="ams_updated open_builder" data-type="fantasy-account" data-id="{{ $row['id'] }}">
-                                                <div class="tableContent">{{ $row['updated_at'] }}</div>
+                                            <td class="ams_updated">
+                                                <div class="tableContent">{{$row['updated_at'] }}</div>
                                             </td>
                                         </tr>
                                         @endforeach

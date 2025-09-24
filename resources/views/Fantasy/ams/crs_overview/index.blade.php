@@ -121,10 +121,8 @@
                                     @foreach($data as $key => $row)
                                     <tr class="tbody_tick">
                                         <td class="edit_ctrl">
-                                            <div class="tableMaintitle fms_folder_on_list " data-id="1" data-parent-id="0">
-                                                <div class="fms_bulider_new edit file-edit" data-id="1">
-                                                    <span class="fa fa-pencil-square-o edit-txt"></span>
-                                                </div>
+                                            <div class="edit-icon edit_ams_wrapper" data-type="crs-overview" data-id="{{ $row['id'] }}">
+                                                <span class="fa fa-pencil-square-o edit-txt"></span>
                                             </div>
                                         </td>                                          
                                         <td class="v-align-middle">
@@ -135,7 +133,7 @@
                                                 </label>
                                             </div>
                                         </td>
-                                        <td class="v-align-middle tool_ctrl edit_ams_wrapper" data-type="crs-overview"
+                                        <td class="v-align-middle tool_ctrl" data-type="crs-overview"
                                             data-id="{{ $row['id'] }}">
                                             <div class="box text_pic">
                                                 <div class="head_img open_builder">
@@ -155,7 +153,7 @@
                                                 @endif
                                             </div>
                                         </td>
-                                        <td class="v-align-middle edit_ams_wrapper" data-type="crs-overview"
+                                        <td class="v-align-middle" data-type="crs-overview"
                                             data-id="{{ $row['id'] }}">
                                             <div class="box text">
                                                 @if(!empty($row['branch_id']))

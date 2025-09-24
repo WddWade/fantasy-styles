@@ -7,15 +7,6 @@
                 </div>
                 <div class="control">
                     <ul class="btnGroup">
-                         @if (!$menu['is_content'])
-                            <li class="cancel">
-                                <a class="close_btn" href="javascript:;">
-                                    <span class="fa fa-remove"></span>
-                                    <span class="label">Cancel</span>
-                                </a>
-                            </li>
-                        @endif
-
                         @if ($role['delete'] && $action === 'edit' && !$menu['is_content'])
                             <li class="trash cms-delete-btn">
                                 <a href="javascript:void(0)">
@@ -24,8 +15,7 @@
                                 </a>
                             </li>
                         @endif
-
-                         @if ($role['edit'] || ($action === 'create' && $role['create']))
+                        @if ($role['edit'] || ($action === 'create' && $role['create']))
                             <li class="check editSentBtn">
                                 <a href="javascript:;">
                                     <span class="fa fa-check"></span>
@@ -33,7 +23,14 @@
                                 </a>
                             </li>
                         @endif
-                       
+                        @if (!$menu['is_content'])
+                            <li class="cancel">
+                                <a class="close_btn" href="javascript:;">
+                                    <span class="fa fa-remove"></span>
+                                    <span class="label">Cancel</span>
+                                </a>
+                            </li>
+                        @endif
                     </ul>
                 </div>
             </div>

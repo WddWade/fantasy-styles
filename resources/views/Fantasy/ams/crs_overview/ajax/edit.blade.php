@@ -20,13 +20,7 @@
                             </div> --}}
                         </div>
                         <div class="control">
-                            <ul class="btnGroup">
-                                <li class="cancel">
-                                    <a href="javascript:void(0)" class="close_btn close_ams_hiddenArea">
-                                        <span class="fa fa-remove"></span>
-                                        <span class="label">Cancel</span>
-                                    </a>
-                                </li>                                
+                            <ul class="btnGroup">                              
                                 <li class="trash delete_ams_hiddenArea">
                                     <a href="javascript:void(0)" class="delete_ams_information"
                                         data-type="crs-overview">
@@ -41,6 +35,12 @@
                                         <span class="label">Save</span>
                                     </a>
                                 </li>
+                                <li class="cancel">
+                                    <a href="javascript:void(0)" class="close_btn close_ams_hiddenArea">
+                                        <span class="fa fa-remove"></span>
+                                        <span class="label">Cancel</span>
+                                    </a>
+                                </li>  
                             </ul>
                         </div>                        
                     </div>

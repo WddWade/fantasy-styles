@@ -99,6 +99,14 @@
             $item['value'] = $value_son[$item['value']] ?? '';
         @endphp
         {{ UnitMaker::radio_area($item) }}
+    @elseif ($item['type'] == 'checkbox')
+        @php
+            $item['sontable'] = true;
+            $item['sontable_add'] = true;
+            $item['name'] = $son_son_db . '[' . $item['value'] . ']';
+            $item['value'] = $value_son[$item['value']] ?? '';
+        @endphp
+        {{ UnitMaker::checkbox($item) }}
     @elseif ($item['type'] == 'select2')
         @php
             $item['auto'] = $autoSelect;

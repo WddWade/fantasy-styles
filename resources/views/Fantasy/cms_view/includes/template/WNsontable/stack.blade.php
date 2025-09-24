@@ -754,6 +754,7 @@
             'son_son_db' => $son_son_db,
             'sort_field' => $row_2['sort_field'] ?? '',
             'three' => $three,
+            'row_2' => $row_2
             ];
             $add_html = View::make('Fantasy.cms_view.includes.template.WNsontable.add_html', $threeDataArray)->render();
             $third_randomWord = \Illuminate\Support\Str::random(9) . $key_2;

@@ -33,11 +33,11 @@
                         <div class="site_name_en">{{$branchData['en_title']}}</div>
                         <div class="site_name">{{$branchData['title']}}-{{$branchMenuList['now_locale']}}語系</div>
                         <div class="site_links">
-                            <a href="https://laravel11.wdd.idv.tw">
+                            <a href="{{ url('') }}">
                                 <span>Published</span>
                                 <p>前往正式網站</p>
                             </a>
-                            <a href="https://laravel11.wdd.idv.tw">
+                            <a href="{{ BaseFunction::preview_url('') }}">
                                 <span>Preview</span>
                                 <p>前往預覽網站</p>
                             </a>

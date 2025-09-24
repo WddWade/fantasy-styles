@@ -142,7 +142,9 @@
 
     .edit_ctrl {
       width: 60px;
-
+      .edit_ams_wrapper {
+        cursor: pointer;
+      }
       > * {
         display: flex;
         justify-content: center;

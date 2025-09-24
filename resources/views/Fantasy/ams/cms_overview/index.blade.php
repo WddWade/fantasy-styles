@@ -279,12 +279,10 @@
                             @foreach($data as $key => $row)
                             <tr>
                                 <td class="edit_ctrl">
-                                    <div class="tableMaintitle fms_folder_on_list " data-id="1" data-parent-id="0">
-                                        <div class="fms_bulider_new edit file-edit" data-id="1">
-                                            <span class="fa fa-pencil-square-o edit-txt"></span>
-                                        </div>
+                                    <div class="edit-icon edit_ams_wrapper" data-type="cms-overview" data-id="{{ $row['id'] }}">
+                                        <span class="fa fa-pencil-square-o edit-txt"></span>
                                     </div>
-                                </td>                                  
+                                </td>                                
                                 <td class="w_Check">
                                     <div class="tableContent">
                                         <label class="select-item">
@@ -293,7 +291,7 @@
                                         </label>
                                     </div>
                                 </td>
-                                <td class="w_TableMaintitle edit_ams_wrapper" data-type="cms-overview" data-id="{{ $row['id'] }}">
+                                <td class="w_TableMaintitle">
                                     <div class="tableMaintitle open_builder">
                                         <div class="title-img rwdhide">
                                             @if(isset($fileInformationArray[ $row['users_data']['photo_image']]) AND !empty($fileInformationArray[$row['users_data']['photo_image'] ]))
@@ -308,7 +306,7 @@
                                         @endif
                                     </div>
                                 </td>
-                                <td class=" w_Category edit_ams_wrapper" data-type="cms-overview" data-id="{{ $row['id'] }}">
+                                <td class=" w_Category">
                                     <div class="tableContent">
                                         @if(!empty($row['branch_id']))
                                         @foreach($branch_unit_options as $key2 => $row2)
@@ -321,13 +319,13 @@
                                         @endif
                                     </div>
                                 </td>
-                                {{-- <td class=" w_Category edit_ams_wrapper" data-type="fms-folder" data-id="{{ $row['id'] }}">
+                                {{-- <td class=" w_Category" data-type="fms-folder" data-id="{{ $row['id'] }}">
                                 <div class="tableContent">{{ !empty($row['mail']) ? $row['mail'] : ''}}</div>
                                 </td> --}}
-                                <td class="text-center w_Preview edit_ams_wrapper" data-type="cms-overview" data-id="{{ $row['id'] }}">
+                                <td class="text-center w_Preview">
                                     <div class="tableContent">{{ ($row['is_active'] == 1) ? '啟用' : '未啟用' }}</div>
                                 </td>
-                                <td class="w_Update open_builder" data-type="cms-overview" data-id="{{ $row['id'] }}">
+                                <td class="w_Update open_builder">
                                     <div class="tableContent">{{ $row['updated_at'] }}</div>
                                 </td>
                             </tr>
